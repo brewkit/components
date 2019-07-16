@@ -1,0 +1,217 @@
+@import "material-colors";
+
+
+// ==============================================
+// Colors
+// ==============================================
+
+$colors: (
+
+    brand: (
+        primary:        materialColor(lightBlue),
+        secondary:      materialColor(deepOrange),
+        tertiary:       materialColor(blueGrey, 100),
+    ),
+
+    accent: (
+        success:        materialColor(green),
+        warning:        materialColor(amber, 300),
+        danger:         materialColor(deepOrange),
+        info:           materialColor(lightBlue),
+        light:          materialColor(blueGrey, 300),
+        dark:           materialColor(blueGrey, 800),
+    ),
+
+    base: (
+        red:            materialColor(red),
+        pink:           materialColor(pink),
+        purple:         materialColor(purple),
+        deepPurple:     materialColor(deepPurple),
+        indigo:         materialColor(indigo),
+        blue:           materialColor(blue),
+        lightBlue:      materialColor(lightBlue),
+        cyan:           materialColor(cyan),
+        teal:           materialColor(teal),
+        green:          materialColor(green),
+        lightGreen:     materialColor(lightGreen),
+        lime:           materialColor(lime),
+        yellow:         materialColor(yellow),
+        amber:          materialColor(amber),
+        orange:         materialColor(orange),
+        deepOrange:     materialColor(deepOrange),
+        brown:          materialColor(brown),
+        grey:           materialColor(grey),
+        blueGrey:       materialColor(blueGrey),
+    ),
+
+    grey: map-get($material_colors, blueGrey),
+
+);
+
+@function color($palette, $color) {
+    @return map-get(map-get($colors, $palette), $color);
+}
+
+
+// ==============================================
+// General
+// ==============================================
+
+$general: (
+
+    border-radius: 3px,
+
+    sizes: (
+        xx-large:   2rem,
+        x-large:    1.5rem,
+        large:      1.25rem,
+        normal:     1rem,
+        small:      0.75rem,
+        x-small:    0.5rem,
+        xx-small:   0.25rem,
+        base:       1rem,
+    ),
+
+);
+
+
+// ==============================================
+// Typography
+// ==============================================
+
+$typography: (
+
+    colors: (
+        primary:    color(grey, 500),
+        secondary:  color(grey, 300),
+        tertiary:   color(grey, 700),
+        success:    color(accent, success),
+        info:       color(accent, info),
+        warning:    color(accent, warning),
+        danger:     color(accent, danger),
+        h1:         color(brand, primary),
+        h2:         materialColor(lightBlue, 900),
+        h3:         materialColor(lightBlue, 900),
+        body1:      color(grey, 500),
+        body2:      color(grey, 500),
+        label:      color(grey, 500),
+    ),
+
+    font-sizes: (
+        h1:     2rem,
+        h2:     1.5rem,
+        h3:     1.25rem,
+        body1:  1rem,
+        body2:  1rem,
+        label:  0.75rem,
+    ),
+
+    font-weights: (
+        h1:     bolder,
+        h2:     bold,
+        h3:     bold,
+        body1:  lighter,
+        body2:  normal,
+        label:  normal,
+    ),
+
+    line-heights: (
+        h1:     3rem,
+        h2:     2rem,
+        h3:     1.5rem,
+        body1:  1.25,
+        body2:  1.25,
+        label:  1rem,
+    ),
+
+);
+
+
+// ==============================================
+// Button
+// ==============================================
+
+$button: (
+
+    border_radius: map_get($general, border-radius),
+
+    colors: (
+        primary: color(brand, primary),
+        secondary: color(brand, secondary),
+        success: color(accent, success),
+        danger: color(accent, danger),
+        warning: color(accent, warning),
+        info: color(accent, info),
+        dark: color(accent, dark),
+        light: color(accent, light),
+        link: color(accent, info),
+    )
+
+);
+
+
+// ==============================================
+// Progress
+// ==============================================
+
+$progress: (
+
+    colors: (
+        primary: color(brand, primary),
+        secondary: color(brand, secondary),
+        success: color(accent, success),
+        danger: color(accent, danger),
+        warning: color(accent, warning),
+        info: color(accent, info),
+        dark: color(accent, dark),
+        light: color(accent, light),
+    )
+
+);
+
+
+// ==============================================
+// Breakpoints (min device width)
+// ==============================================
+
+$breakpoints: (
+    tablet-portrait:    600px,
+    tablet-landscape:   900px,
+    desktop:            1800px,
+);
+
+
+// ==============================================
+// Components
+// ==============================================
+
+$border-radius: 3px;
+
+
+// ==============================================
+// Box Shadows
+// ==============================================
+%height-1 {
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+%height-2 {
+    position: relative;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+%height-3 {
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+%height-4 {
+    position: relative;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+%height-5 {
+    position: relative;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}

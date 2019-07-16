@@ -1,0 +1,18 @@
+[ignore]
+node_modules
+
+[include]
+
+[libs]
+.build/flow/globals.js.flow
+.build/flow/webpackHMR.js.flow
+
+[options]
+module.file_ext=.js
+module.file_ext=.json
+module.file_ext=.scss
+module.name_mapper.extension='scss' -> '<PROJECT_ROOT>/.build/flow/CSSModule.js.flow'
+module.ignore_non_literal_requires=true
+emoji=true
+
+[lints]

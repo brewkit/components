@@ -1,0 +1,145 @@
+@import "../../styles/utilities";
+
+
+// ==============================================
+// Colors
+// ==============================================
+
+$colors: primary, secondary, success, info, warning, danger, light, dark;
+
+@mixin color-styles($colorName) {
+    $progress_color: map_get(map_get($progress, colors), $colorName);
+
+    &.variant--circular {
+        border: 2px solid $progress_color;
+        border-top: 2px solid rgba($progress_color, 0.25);
+    }
+
+    &.variant--horizontal {
+        background: rgba($progress_color, 0.25);
+        &:before,
+        &:after { background: $progress_color; }
+    }
+
+}
+
+@each $color in $colors {
+    .color--#{$color} {
+        @include color-styles($color);
+    }
+}
+
+
+// ==============================================
+// Variants
+// ==============================================
+
+.variant--circular {
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.variant--horizontal {
+    position: relative;
+    overflow: hidden;
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: -25%;
+        top: 0;
+        width: 25%;
+        height: 100%;
+        z-index: 2;
+        animation: line2 2s ease-in-out infinite;
+    }
+    &:after {
+        left: -150%;
+        animation: line 2s ease-in-out 0.75s infinite;
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes line {
+    0% {
+        width: 5%;
+        left: -25%;
+    }
+    75%, 100% {
+        width: 150%;
+        left: 100%;
+    }
+}
+
+@keyframes line2 {
+    0% {
+        width: 150%;
+        left: -150%;
+    }
+    75%, 100% {
+        width: 5%;
+        left: 100%;
+    }
+}
+
+
+// ==============================================
+// Sizes
+// ==============================================
+
+.size--inherit {
+
+    &.variant--circular {
+        width: 1em;
+        height: 1em;
+    }
+
+    &.variant--horizontal {
+        height: 1em;
+    }
+
+}
+
+.size--small {
+
+    &.variant--circular {
+        width: size(normal);
+        height: size(normal);
+    }
+
+    &.variant--horizontal {
+        height: 2px;
+    }
+
+}
+
+.size--medium {
+
+    &.variant--circular {
+        width: size(normal) * 2;
+        height: size(normal) * 2;
+    }
+
+    &.variant--horizontal {
+        height: 4px;
+    }
+
+}
+
+.size--large {
+
+    &.variant--circular {
+        width: size(normal) * 3;
+        height: size(normal) * 3;
+    }
+
+    &.variant--horizontal {
+        height: 8px;
+    }
+
+}

@@ -1,0 +1,14 @@
+@import "utilities";
+@import "normalize";
+@import "spacing";
+
+
+:global(.flex-spacer) {
+    display: block;
+    flex-grow: 1;
+}
+
+:global(html, body) {
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

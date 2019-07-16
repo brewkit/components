@@ -1,0 +1,523 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components|Display Divider 1`] = `
+Array [
+  <span
+    className="wrapper variant--body1 color--initial display--initial align--inherit"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in, egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id feugiat risus dapibus. Ut auctor imperdiet turpis, vel mollis dolor sollicitudin in. Quisque ut dui luctus, tincidunt mauris eu, congue quam. Quisque sodales, nisi sit amet sagittis consequat, dui purus tincidunt lorem, ac pulvinar lacus nunc at sapien. Ut quis erat convallis, pellentesque ligula sed, imperdiet tortor. Curabitur tempor felis et metus consequat, pellentesque hendrerit diam consequat. Praesent malesuada faucibus augue, ut vulputate est ullamcorper a. Curabitur metus orci, efficitur at congue ac, pretium eu nisl. In urna velit, ultrices ac ante eget, eleifend accumsan leo. Morbi gravida lobortis viverra. Sed porta nunc in imperdiet efficitur.
+  </span>,
+  <div
+    className="wrapper align--center"
+  >
+    <hr />
+    <span
+      className="wrapper variant--label color--initial display--initial align--inherit"
+    >
+      Lorem ipsum dolor sit amet
+    </span>
+    <hr />
+  </div>,
+  <span
+    className="wrapper variant--body1 color--initial display--initial align--inherit"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in, egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id feugiat risus dapibus. Ut auctor imperdiet turpis, vel mollis dolor sollicitudin in. Quisque ut dui luctus, tincidunt mauris eu, congue quam. Quisque sodales, nisi sit amet sagittis consequat, dui purus tincidunt lorem, ac pulvinar lacus nunc at sapien. Ut quis erat convallis, pellentesque ligula sed, imperdiet tortor. Curabitur tempor felis et metus consequat, pellentesque hendrerit diam consequat. Praesent malesuada faucibus augue, ut vulputate est ullamcorper a. Curabitur metus orci, efficitur at congue ac, pretium eu nisl. In urna velit, ultrices ac ante eget, eleifend accumsan leo. Morbi gravida lobortis viverra. Sed porta nunc in imperdiet efficitur.
+  </span>,
+]
+`;
+
+exports[`Storyshots Components|Display Icon 1`] = `
+<div>
+  <span
+    className="wrapper color--primary size--inherit"
+  >
+    <svg
+      height="100%"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      ☐
+    </svg>
+  </span>
+</div>
+`;
+
+exports[`Storyshots Components|Display Popup 1`] = `
+Array [
+  <span>
+    <div
+      className="wrapper color--primary position--bottom-left"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      <div>
+        <button
+          className="wrapper variant--standard color--primary size--medium"
+          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+          data-flip-id="wrapper"
+          data-portal-key="portal"
+          type="button"
+        >
+          <div
+            className="content"
+            data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+            data-flip-id="content"
+            data-portal-key="portal"
+          >
+            <span
+              className="buttonText"
+            >
+              <span
+                className="wrapper variant--inherit color--initial display--initial align--inherit"
+              >
+                Hover over me!
+              </span>
+            </span>
+          </div>
+          <div
+            className="loadingIndicator"
+            data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+            data-flip-id="loader"
+            data-portal-key="portal"
+          >
+            <div
+              className="variant--circular color--primary size--inherit"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        className="popup"
+        data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+        data-flip-id="popup"
+        data-portal-key="portal"
+      >
+        <span
+          className="wrapper variant--inherit color--initial display--initial align--inherit"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in, egestas nulla.
+        </span>
+      </div>
+    </div>
+  </span>,
+  <div
+    className="wrapper align--center"
+  >
+    <hr />
+    <span
+      className="wrapper variant--label color--initial display--initial align--inherit"
+    >
+      Examples
+    </span>
+    <hr />
+  </div>,
+  <span>
+    <div
+      className="wrapper color--primary position--right"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "marginRight": "1rem",
+        }
+      }
+    >
+      <div>
+        <button
+          className="wrapper variant--standard color--primary size--medium"
+          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+          data-flip-id="wrapper"
+          data-portal-key="portal"
+          type="button"
+        >
+          <div
+            className="content"
+            data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+            data-flip-id="content"
+            data-portal-key="portal"
+          >
+            <span
+              className="buttonText"
+            >
+              <span
+                className="wrapper variant--inherit color--initial display--initial align--inherit"
+              >
+                Right
+              </span>
+            </span>
+          </div>
+          <div
+            className="loadingIndicator"
+            data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+            data-flip-id="loader"
+            data-portal-key="portal"
+          >
+            <div
+              className="variant--circular color--primary size--inherit"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        className="popup"
+        data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+        data-flip-id="popup"
+        data-portal-key="portal"
+      >
+        <span
+          className="wrapper variant--inherit color--initial display--initial align--inherit"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in, egestas nulla.
+        </span>
+      </div>
+    </div>
+  </span>,
+  <span>
+    <div
+      className="wrapper color--primary position--left"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "marginRight": "1rem",
+        }
+      }
+    >
+      <div>
+        <button
+          className="wrapper variant--standard color--primary size--medium"
+          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+          data-flip-id="wrapper"
+          data-portal-key="portal"
+          type="button"
+        >
+          <div
+            className="content"
+            data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+            data-flip-id="content"
+            data-portal-key="portal"
+          >
+            <span
+              className="buttonText"
+            >
+              <span
+                className="wrapper variant--inherit color--initial display--initial align--inherit"
+              >
+                Left
+              </span>
+            </span>
+          </div>
+          <div
+            className="loadingIndicator"
+            data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+            data-flip-id="loader"
+            data-portal-key="portal"
+          >
+            <div
+              className="variant--circular color--primary size--inherit"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        className="popup"
+        data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+        data-flip-id="popup"
+        data-portal-key="portal"
+      >
+        <span
+          className="wrapper variant--inherit color--initial display--initial align--inherit"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in, egestas nulla.
+        </span>
+      </div>
+    </div>
+  </span>,
+  <span>
+    <div
+      className="wrapper color--primary position--top-left"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "marginRight": "1rem",
+        }
+      }
+    >
+      <div>
+        <button
+          className="wrapper variant--standard color--primary size--medium"
+          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+          data-flip-id="wrapper"
+          data-portal-key="portal"
+          type="button"
+        >
+          <div
+            className="content"
+            data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+            data-flip-id="content"
+            data-portal-key="portal"
+          >
+            <span
+              className="buttonText"
+            >
+              <span
+                className="wrapper variant--inherit color--initial display--initial align--inherit"
+              >
+                top-left
+              </span>
+            </span>
+          </div>
+          <div
+            className="loadingIndicator"
+            data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+            data-flip-id="loader"
+            data-portal-key="portal"
+          >
+            <div
+              className="variant--circular color--primary size--inherit"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        className="popup"
+        data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+        data-flip-id="popup"
+        data-portal-key="portal"
+      >
+        <span
+          className="wrapper variant--inherit color--initial display--initial align--inherit"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in, egestas nulla.
+        </span>
+      </div>
+    </div>
+  </span>,
+  <span>
+    <div
+      className="wrapper color--primary position--top-center"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "marginRight": "1rem",
+        }
+      }
+    >
+      <div>
+        <button
+          className="wrapper variant--standard color--primary size--medium"
+          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+          data-flip-id="wrapper"
+          data-portal-key="portal"
+          type="button"
+        >
+          <div
+            className="content"
+            data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+            data-flip-id="content"
+            data-portal-key="portal"
+          >
+            <span
+              className="buttonText"
+            >
+              <span
+                className="wrapper variant--inherit color--initial display--initial align--inherit"
+              >
+                top-center
+              </span>
+            </span>
+          </div>
+          <div
+            className="loadingIndicator"
+            data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+            data-flip-id="loader"
+            data-portal-key="portal"
+          >
+            <div
+              className="variant--circular color--primary size--inherit"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        className="popup"
+        data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+        data-flip-id="popup"
+        data-portal-key="portal"
+      >
+        <span
+          className="wrapper variant--inherit color--initial display--initial align--inherit"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in, egestas nulla.
+        </span>
+      </div>
+    </div>
+  </span>,
+  <span>
+    <div
+      className="wrapper color--primary position--top-right"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "marginRight": "1rem",
+        }
+      }
+    >
+      <div>
+        <button
+          className="wrapper variant--standard color--primary size--medium"
+          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+          data-flip-id="wrapper"
+          data-portal-key="portal"
+          type="button"
+        >
+          <div
+            className="content"
+            data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+            data-flip-id="content"
+            data-portal-key="portal"
+          >
+            <span
+              className="buttonText"
+            >
+              <span
+                className="wrapper variant--inherit color--initial display--initial align--inherit"
+              >
+                top-right
+              </span>
+            </span>
+          </div>
+          <div
+            className="loadingIndicator"
+            data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+            data-flip-id="loader"
+            data-portal-key="portal"
+          >
+            <div
+              className="variant--circular color--primary size--inherit"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        className="popup"
+        data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+        data-flip-id="popup"
+        data-portal-key="portal"
+      >
+        <span
+          className="wrapper variant--inherit color--initial display--initial align--inherit"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in, egestas nulla.
+        </span>
+      </div>
+    </div>
+  </span>,
+]
+`;
+
+exports[`Storyshots Components|Display Typography 1`] = `
+Array [
+  <h1
+    className="wrapper variant--h1 color--initial display--initial align--inherit hasBottomMargin"
+  >
+    Lorem ipsum dolor sit amet.
+  </h1>,
+  <span
+    className="wrapper variant--body1 color--initial display--initial align--inherit hasBottomMargin"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in, egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id feugiat risus dapibus. Ut auctor imperdiet turpis, vel mollis dolor sollicitudin in. Quisque ut dui luctus, tincidunt mauris eu, congue quam. Quisque sodales, nisi sit amet sagittis consequat, dui purus tincidunt lorem, ac pulvinar lacus nunc at sapien. Ut quis erat convallis, pellentesque ligula sed, imperdiet tortor. Curabitur tempor felis et metus consequat, pellentesque hendrerit diam consequat. Praesent malesuada faucibus augue, ut vulputate est ullamcorper a. Curabitur metus orci, efficitur at congue ac, pretium eu nisl. In urna velit, ultrices ac ante eget, eleifend accumsan leo. Morbi gravida lobortis viverra. Sed porta nunc in imperdiet efficitur.
+  </span>,
+  <div
+    className="wrapper align--center"
+  >
+    <hr />
+    <span
+      className="wrapper variant--label color--initial display--initial align--inherit"
+    >
+      Examples
+    </span>
+    <hr />
+  </div>,
+  <h1
+    className="wrapper variant--h1 color--initial display--initial align--inherit hasBottomMargin shouldTruncate"
+  >
+    H1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  </h1>,
+  <h2
+    className="wrapper variant--h2 color--initial display--initial align--inherit hasBottomMargin shouldTruncate"
+  >
+    H2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  </h2>,
+  <h3
+    className="wrapper variant--h3 color--initial display--initial align--inherit hasBottomMargin shouldTruncate"
+  >
+    H3 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  </h3>,
+  <span
+    className="wrapper variant--body1 color--initial display--initial align--inherit hasBottomMargin shouldTruncate"
+  >
+    body1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in, egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id feugiat risus dapibus. Ut auctor imperdiet turpis, vel mollis dolor sollicitudin in.
+  </span>,
+  <span
+    className="wrapper variant--body2 color--initial display--initial align--inherit hasBottomMargin shouldTruncate"
+  >
+    body1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in, egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id feugiat risus dapibus. Ut auctor imperdiet turpis, vel mollis dolor sollicitudin in.
+  </span>,
+  <span
+    className="wrapper variant--label color--initial display--initial align--inherit hasBottomMargin shouldTruncate"
+  >
+    label - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in, egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id feugiat risus dapibus. Ut auctor imperdiet turpis, vel mollis dolor sollicitudin in.
+  </span>,
+]
+`;
+
+exports[`Storyshots Components|Feedback Progress 1`] = `
+<div
+  className="variant--horizontal color--primary size--medium"
+/>
+`;
+
+exports[`Storyshots Components|User Input Button 1`] = `
+<div>
+  <button
+    className="wrapper variant--standard color--primary size--medium"
+    data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+    data-flip-id="wrapper"
+    data-portal-key="portal"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <div
+      className="content"
+      data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+      data-flip-id="content"
+      data-portal-key="portal"
+    >
+      <span
+        className="buttonText"
+      >
+        <span
+          className="wrapper variant--inherit color--initial display--initial align--inherit"
+        >
+          Click me!
+        </span>
+      </span>
+    </div>
+    <div
+      className="loadingIndicator"
+      data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+      data-flip-id="loader"
+      data-portal-key="portal"
+    >
+      <div
+        className="variant--circular color--primary size--inherit"
+      />
+    </div>
+  </button>
+</div>
+`;

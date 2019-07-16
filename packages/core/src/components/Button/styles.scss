@@ -1,0 +1,201 @@
+@import "../../styles/utilities";
+
+
+// ==============================================
+// General
+// ==============================================
+
+.wrapper {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: map_get($button, border_radius);
+    padding: 1em;
+    font-weight: weight(lighter);
+    font-family: inherit;
+    text-transform: uppercase;
+    line-height: 1em;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.content {
+    position: relative;
+    height: 1em;
+    opacity: 1;
+}
+
+.icon {
+    display: block;
+    position: relative;
+    font-size: 1.5em;
+}
+
+.buttonText {
+    display: block;
+}
+
+.loadingIndicator {
+    pointer-events: none;
+    opacity: 0;
+    position: absolute;
+    top: calc(50% + 1rem);
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+// ----------------------------------------------
+// responsive
+
+@include for-tablet-portrait-up {
+
+    .wrapper {
+        width: auto;
+        min-width: 1em * 10;
+    }
+
+}
+
+
+// ==============================================
+// Colors
+// ==============================================
+
+$colors: primary, secondary, success, info, warning, danger, light, dark;
+
+@mixin color-styles($colorName) {
+    $button_color: map_get(map_get($button, colors), $colorName);
+
+    &.variant--standard,
+    &.variant--icon,
+    &.variant--labeled-icon {
+        background-color: $button_color;
+        border-color: $button_color;
+
+        .content { color: set-text-color($button_color); }
+
+        .icon { fill: set-text-color($button_color); }
+
+        &:hover {
+            background-color: darken($button_color, 10%);
+            border-color: darken($button_color, 10%);
+        }
+
+        &.disabled {
+            background-color: transparent;
+            border-color: $button_color;
+
+            .content { color: $button_color; }
+        }
+
+    }
+
+}
+
+@each $color in $colors {
+    .wrapper.color--#{$color} {
+        @include color-styles($color);
+    }
+}
+
+.color--link {
+    background-color: transparent;
+    border-color: transparent;
+    color: map_get(map_get($button, colors), link);
+
+    &:hover {
+        background-color: rgba(map_get(map_get($button, colors), link), 0.1);
+    }
+}
+
+
+// ==============================================
+// Variants
+// ==============================================
+
+// ----------------------------------------------
+// icon
+
+.variant--icon {
+
+    .buttonText {
+        display: none;
+    }
+
+}
+
+
+// ==============================================
+// Sizes
+// ==============================================
+
+.size--small { font-size: size(small); }
+
+.size--medium { font-size: size(normal); }
+
+.size--large { font-size: size(large); }
+
+
+// ==============================================
+// States
+// ==============================================
+
+// ----------------------------------------------
+// isLoading
+
+.isLoading {
+
+    .content {
+        top: -1rem;
+        opacity: 0;
+    }
+
+    .loadingIndicator {
+        top: 50%;
+        opacity: 1;
+    }
+
+}
+
+// ----------------------------------------------
+// isFluid
+
+.isFluid {
+    width: 100%;
+}
+
+// ----------------------------------------------
+// isCompact
+
+.isCompact {
+    min-width: 0;
+    padding: size(small);
+}
+
+// ----------------------------------------------
+// isCircular
+
+.isCircular.variant--icon {
+    min-width: 0;
+    border-radius: 50%;
+
+    .content {
+        width: 1em;
+    }
+
+    .icon {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+}

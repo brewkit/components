@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@import "../../styles/utilities";
+
+
+// ==============================================
+// General
+// ==============================================
+
+.wrapper {
+    font-family: Roboto, serif;
+    margin: 0;
+}
+
+
+// ==============================================
+// Colors
+// ==============================================
+
+$colors: primary, secondary, tertiary, success, info, warning, danger;
+
+@mixin color-styles($color) {
+    color: map_get(map_get($typography, colors), $color);
+}
+
+@each $color in $colors {
+    .wrapper.color--#{$color} {
+        @include color-styles($color);
+    }
+}
+
+
+// ==============================================
+// Variants
+// ==============================================
+
+$variants: h1, h2, h3, body1, body2, label;
+
+@mixin variant-styles($variant) {
+    font-size: map_get(map_get($typography, font-sizes), $variant);
+    font-weight: map_get(map_get($typography, font-weights), $variant);
+    line-height: map_get(map_get($typography, line-heights), $variant);
+    color: map_get(map_get($typography, colors), $variant);
+}
+
+@each $variant in $variants {
+    .variant--#{$variant} {
+        @include variant-styles($variant);
+    }
+}
+
+.variant--label {
+    text-transform: uppercase;
+}
+
+.variant--inherit {
+    font-size: inherit;
+}
+
+
+// ==============================================
+// Alignments
+// ==============================================
+
+$alignments: inherit, left, right, center, justify;
+
+@each $alignment in $alignments {
+    .align--#{$alignment} {
+        text-align: $alignment;
+    }
+}
+
+
+// ==============================================
+// Display types
+// ==============================================
+
+$displays: block, inline, inline-block;
+
+@each $display in $displays {
+    .display--#{$display} {
+        display: $display;
+    }
+}
+
+
+// ==============================================
+// States
+// ==============================================
+
+.hasBottomMargin {
+    margin-bottom: 1rem;
+}
+
+.shouldTruncate {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
