@@ -9,9 +9,15 @@
 ---
 
 <p align="center">
+  <a href="https://github.com/brewkit/brewkit-ui/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg">
+  </a>
+  <a href="https://github.com/lerna/lerna">
     <img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg">
+  </a>
+  <a href="https://github.com/storybookjs/storybook">
     <img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg">
+  </a>
 </p>
 
 
