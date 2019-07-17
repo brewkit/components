@@ -15,7 +15,6 @@
     border-style: solid;
     border-radius: map_get($button, border_radius);
     padding: 1em;
-    font-weight: weight(lighter);
     font-family: inherit;
     text-transform: uppercase;
     line-height: 1em;
@@ -72,39 +71,45 @@
 
 $colors: primary, secondary, success, info, warning, danger, light, dark;
 
-@mixin color-styles($colorName) {
-    $button_color: map_get(map_get($button, colors), $colorName);
+@each $color in $colors {
 
-    &.variant--standard,
-    &.variant--icon,
-    &.variant--labeled-icon {
-        background-color: $button_color;
-        border-color: $button_color;
+    .wrapper.color--#{$color} {
 
-        .content { color: set-text-color($button_color); }
+        $button_color: map_get(map_get($button, colors), $color);
 
-        .icon { fill: set-text-color($button_color); }
-
-        &:hover {
-            background-color: darken($button_color, 10%);
-            border-color: darken($button_color, 10%);
-        }
-
-        &.disabled {
-            background-color: transparent;
+        &.variant--standard,
+        &.variant--icon,
+        &.variant--labeled-icon {
+            background-color: $button_color;
             border-color: $button_color;
 
-            .content { color: $button_color; }
+            .content {
+                color: set-text-color($button_color);
+            }
+
+            .icon {
+                fill: set-text-color($button_color);
+            }
+
+            &:hover {
+                background-color: darken($button_color, 10%);
+                border-color: darken($button_color, 10%);
+            }
+
+            &.disabled {
+                background-color: transparent;
+                border-color: $button_color;
+
+                .content {
+                    color: $button_color;
+                }
+
+            }
+
         }
 
     }
 
-}
-
-@each $color in $colors {
-    .wrapper.color--#{$color} {
-        @include color-styles($color);
-    }
 }
 
 .color--link {
@@ -115,6 +120,7 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
     &:hover {
         background-color: rgba(map_get(map_get($button, colors), link), 0.1);
     }
+
 }
 
 
