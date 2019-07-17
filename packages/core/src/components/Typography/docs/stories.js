@@ -59,17 +59,17 @@ stories.add(componentName, () => {
             <Typography variant="h3" shouldTruncate hasBottomMargin>
                 H3 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Typography>
-            <Typography variant="body1" shouldTruncate hasBottomMargin>
+            <Typography variant="body1" as="p" shouldTruncate hasBottomMargin>
                 body1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in,
                 egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id
                 feugiat risus dapibus. Ut auctor imperdiet turpis, vel mollis dolor sollicitudin in.
             </Typography>
-            <Typography variant="body2" shouldTruncate hasBottomMargin>
+            <Typography variant="body2" as="p" shouldTruncate hasBottomMargin>
                 body1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in,
                 egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id
                 feugiat risus dapibus. Ut auctor imperdiet turpis, vel mollis dolor sollicitudin in.
             </Typography>
-            <Typography variant="label" shouldTruncate hasBottomMargin>
+            <Typography variant="label" as="p" shouldTruncate hasBottomMargin>
                 label - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in,
                 egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id
                 feugiat risus dapibus. Ut auctor imperdiet turpis, vel mollis dolor sollicitudin in.
