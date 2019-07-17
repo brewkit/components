@@ -9,6 +9,7 @@
 ---
 
 <p align="center">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg">
     <img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg">
     <img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg">
 </p>
