@@ -6,4 +6,5 @@ export type Props = {
     variant?: 'circular' | 'horizontal',
     color?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark',
     size?: 'small' | 'medium' | 'large',
+    as?: string,
 }

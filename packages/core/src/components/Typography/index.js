@@ -15,6 +15,7 @@ function Type(props: Props) {
         hasBottomMargin,
         shouldTruncate,
         className,
+        as,
         ...otherProps
     } = props;
 
@@ -32,7 +33,8 @@ function Type(props: Props) {
 
 
     let TextElement = 'span';
-    if (variant === 'h1' || variant === 'h2' || variant === 'h3') TextElement = variant;
+    if (as) TextElement = as;
+    else if (variant === 'h1' || variant === 'h2' || variant === 'h3') TextElement = variant;
 
 
     return (
