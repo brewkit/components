@@ -46,7 +46,7 @@
     },
     ```
     
-1. Add `brewkit/loader` to the end of your SCSS rules.
+1. Add `@brewkit/loader` to the end of your SCSS rules.
    ```js
     // webpack.config.js
 
