@@ -25,9 +25,7 @@ function Icon(props: Props) {
     );
 
 
-    /**
-     * Lazy load our icon
-     */
+    /** Lazy load our icon */
     const Image = React.lazy(() => {
         return new Promise((resolve) => {
             import(`./material-icons/dist/${children}.js`)
