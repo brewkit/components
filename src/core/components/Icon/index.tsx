@@ -16,9 +16,7 @@ function Icon(props: Props) {
     } = props;
 
 
-    /**
-     * Combine our classes based on props
-     */
+    /** Combine our classes based on props */
     const classes = clsx(
         styles.wrapper,
         styles[`color--${color}`],
