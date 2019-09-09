@@ -3,7 +3,9 @@ import clsx from 'clsx';
 import { Props } from './types';
 import styles from './styles.scss';
 
-
+/**
+ * Icon component
+ */
 function Icon(props: Props) {
 
 
