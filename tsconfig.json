@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "outDir": "build/lib",
+        "module": "esnext",
+        "esModuleInterop": true,
+        "target": "es5",
+        "lib": ["es5", "es6", "es7", "es2017", "dom"],
+        "sourceMap": false,
+        "allowJs": false,
+        "jsx": "react",
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "noUnusedLocals": true,
+        "declaration": true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+    },
+    "exclude": ["node_modules", "build", "scripts", "material-icons"]
+}

@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const prettier = require('prettier');
 
-const SVGsDir = path.resolve(process.cwd(), './packages/core/src/components/Icon/material-icons/src');
-const outputDir = path.resolve(process.cwd(), './packages/core/src/components/Icon/material-icons/dist');
+const SVGsDir = path.resolve(process.cwd(), './src/core/components/Icon/material-icons/src');
+const outputDir = path.resolve(process.cwd(), './src/core/components/Icon/material-icons/dist');
 
 
 // Loop through all the files in the SVG Directory

@@ -1,14 +1,38 @@
+const tsConfig = require('../../tsconfig');
+
+
 module.exports = async ({ config }) => {
 
     config.module.rules.push(
         {
-            test: /\.jsx?$/,
+            test: /\.tsx?$/,
             exclude: [/node_modules/],
             use: [
                 {
-                    loader: 'eslint-loader',
-                    options: { fix: true },
+                    loader: 'babel-loader',
+                    options: {
+                        "presets": [
+                            ["@babel/env", {
+                                "modules": "cjs",
+                            }],
+                            "@babel/react",
+                            "@babel/typescript"
+                        ],
+                        "plugins": [
+                            "react-hot-loader/babel",
+                            "@babel/proposal-class-properties",
+                            "@babel/proposal-object-rest-spread",
+                            "@babel/plugin-transform-object-assign",
+                            "@babel/plugin-syntax-dynamic-import",
+                        ]
+                    },
                 },
+                {
+                    loader: 'react-docgen-typescript-loader',
+                    options: {
+                        compilerOptions: tsConfig.compilerOptions,
+                    }
+                }
             ],
         },
         {
@@ -25,7 +49,7 @@ module.exports = async ({ config }) => {
                             localIdentName: "[local]_[hash:base64]",
                         },
                         importLoaders: 2,
-                        sourceMap: true,
+                        sourceMap: false,
                     }
                 },
                 {
@@ -48,12 +72,13 @@ module.exports = async ({ config }) => {
                 }
             ],
         },
+
     );
 
 
     config.resolve = {
 
-        extensions: ['.js', '.jsx', '.md', '.scss'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.md', '.scss'],
 
     };
 
