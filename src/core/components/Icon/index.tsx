@@ -3,7 +3,9 @@ import clsx from 'clsx';
 import { Props } from './types';
 import styles from './styles.scss';
 
-
+/**
+ * Icon component
+ */
 function Icon(props: Props) {
 
 
@@ -16,9 +18,7 @@ function Icon(props: Props) {
     } = props;
 
 
-    /**
-     * Combine our classes based on props
-     */
+    /** Combine our classes based on props */
     const classes = clsx(
         styles.wrapper,
         styles[`color--${color}`],
@@ -27,9 +27,7 @@ function Icon(props: Props) {
     );
 
 
-    /**
-     * Lazy load our icon
-     */
+    /** Lazy load our icon */
     const Image = React.lazy(() => {
         return new Promise((resolve) => {
             import(`./material-icons/dist/${children}.js`)
@@ -50,7 +48,6 @@ function Icon(props: Props) {
             </svg>
         </span>
     );
-
 
 }
 
