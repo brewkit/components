@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { text, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import Button from './index';
+import { Variants, Colors, Sizes } from './types';
 
 
 export default {
@@ -13,18 +14,16 @@ export default {
 };
 
 
-export const general = () => {
-
-    const children = text('children', 'Click me!');
-    const variant = select('variant', ['standard', 'icon'], 'standard');
-    const color = select('color', ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'link'], 'primary');
-    const size = select('size', ['small', 'medium', 'large'], 'medium');
-    const isLoading = boolean('isLoading', false);
-    const isCompact = boolean('isCompact', false);
-    const isFluid = boolean('isFluid', false);
-    const isCircular = boolean('isCircular', false);
-    const disabled = boolean('disabled', false);
-
+export const General = () => {
+    const children: ReactNode = text('children', 'Click me!');
+    const variant: Variants = select('variant', ['standard', 'icon'], 'standard');
+    const color: Colors = select('color', ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'link'], 'primary');
+    const size: Sizes = select('size', ['small', 'medium', 'large'], 'medium');
+    const isLoading: boolean = boolean('isLoading', false);
+    const isCompact: boolean = boolean('isCompact', false);
+    const isFluid: boolean = boolean('isFluid', false);
+    const isCircular: boolean = boolean('isCircular', false);
+    const disabled: boolean = boolean('disabled', false);
     return (
         <Button
             variant={variant}
@@ -40,14 +39,13 @@ export const general = () => {
             {children}
         </Button>
     );
-
 };
 
 
-export const standard = () => <Button variant="standard">Click me!</Button>;
-export const icon = () => <Button variant="icon">360</Button>;
-export const circular = () => <Button variant="icon" isCircular>add</Button>;
-export const loading = () => <Button variant="standard" isLoading>Click me!</Button>;
-export const fluid = () => <Button variant="standard" isFluid>Click me!</Button>;
-export const compact = () => <Button variant="standard" isCompact>Click me!</Button>;
-export const disabled = () => <Button variant="standard" disabled>Click me!</Button>;
+export const Standard = () => <Button variant="standard">Click me!</Button>;
+export const Icon = () => <Button variant="icon">360</Button>;
+export const Circular = () => <Button variant="icon" isCircular>add</Button>;
+export const Loading = () => <Button variant="standard" isLoading>Click me!</Button>;
+export const Fluid = () => <Button variant="standard" isFluid>Click me!</Button>;
+export const Compact = () => <Button variant="standard" isCompact>Click me!</Button>;
+export const Disabled = () => <Button variant="standard" disabled>Click me!</Button>;

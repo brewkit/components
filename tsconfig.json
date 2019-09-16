@@ -1,8 +1,7 @@
 {
     "compilerOptions": {
         "outDir": "build/lib",
-        "module": "esnext",
-        "esModuleInterop": true,
+        "module": "commonjs",
         "target": "es5",
         "lib": ["es5", "es6", "es7", "es2017", "dom"],
         "sourceMap": false,
@@ -18,7 +17,8 @@
         "declaration": true,
         "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true,
-        "emitDecoratorMetadata": true
+        "emitDecoratorMetadata": true,
+        "plugins": [{ "name": "typescript-plugin-css-modules" }]
     },
     "exclude": ["node_modules", "build", "scripts", "material-icons"]
 }

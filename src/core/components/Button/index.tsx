@@ -48,7 +48,7 @@ function Button({
                     className={buttonClasses}
                     type="button"
                     disabled={disabled || isLoading}
-                    aria-label={variant === 'icon' ? children : undefined}
+                    aria-label={(variant === 'icon' && typeof children === 'string') ? children : undefined}
                     {...otherProps}
                 >
                     <Flipped flipId="content">
