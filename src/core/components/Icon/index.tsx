@@ -3,19 +3,19 @@ import clsx from 'clsx';
 import { Props } from './types';
 import styles from './styles.scss';
 
+
 /**
- * Icon component
+ * The `<Icon />` component renders an SVG icon. By default, it can render any of the icons available in
+ * [Material Design (Outline)](https://material.io/tools/icons/?style=outline). Built-in sizing options are in `em`
+ * units as to be similar to any neighboring fonts.
  */
-function Icon(props: Props) {
-
-
-    const {
-        children,
-        color = 'primary',
-        size = 'inherit',
-        className,
-        ...otherProps
-    } = props;
+function Icon({
+    children,
+    color = 'primary',
+    size = 'inherit',
+    className,
+    ...otherProps
+}: Props) {
 
 
     /** Combine our classes based on props */

@@ -17,7 +17,7 @@ export interface Props {
     /**
      * Classes to be passed through to the component.
      */
-    className?: string | null,
+    className?: string,
     /**
      * If set to "standard", the content of the button will be rendered as is. If set to "icon", the content is expected
      * to be a string and will determine what icon to render.

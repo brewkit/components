@@ -5,17 +5,17 @@ import styles from './styles.scss';
 
 
 /**
- * The `Type` component renders text using the 'Roboto' font in various styles.
+ * The `<Typography />` component renders text using the 'Roboto' font in various styles.
  */
 function Typography({
-    children = null,
+    children,
     variant = 'inherit',
     color = 'initial',
     align = 'inherit',
     display = 'initial',
     hasBottomMargin = false,
     shouldTruncate = false,
-    className = null,
+    className,
     as = null,
     ...otherProps
 }: Props) {

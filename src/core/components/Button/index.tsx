@@ -13,7 +13,7 @@ import styles from './styles.scss';
  * that needs simple, standard button functionality.
  */
 function Button({
-    children = null,
+    children,
     variant = 'icon',
     color = 'primary',
     size = 'medium',
@@ -22,7 +22,7 @@ function Button({
     isCircular = false,
     isFluid = false,
     disabled = false,
-    className = null,
+    className,
     ...otherProps
 }: Props) {
 

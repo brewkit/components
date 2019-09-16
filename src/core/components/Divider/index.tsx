@@ -5,15 +5,16 @@ import { Props } from './types';
 import styles from './styles.scss';
 
 
-function Divider(props: Props) {
-
-
-    const {
-        children,
-        align = 'center',
-        className,
-        ...otherProps
-    } = props;
+/**
+ * The `<Divider />` is used to break up content or provide a visual break. It can optionally hold
+ * content or a message.
+ */
+function Divider({
+    children,
+    align = 'center',
+    className,
+    ...otherProps
+}: Props) {
 
 
     const classes = clsx(

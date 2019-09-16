@@ -7,9 +7,6 @@ import { Variants, Colors, Alignments, Displays } from './types';
 export default {
     title: 'Components|Display/Typography',
     component: Typography,
-    parameters: {
-        componentSubtitle: 'Click. Click. Click.',
-    },
 };
 
 

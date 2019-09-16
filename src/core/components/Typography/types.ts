@@ -15,7 +15,7 @@ export type Props = {
     /**
      * Classes to be passed through to the component.
      */
-    className?: string | null,
+    className?: string,
     /**
      * The overall style to be applied to the typography.
      */
