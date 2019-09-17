@@ -22,3 +22,6 @@ export const General = () => {
         <Label color={color} title={title}>{children}</Label>
     );
 };
+
+
+export const WithLabel = () => <Label title="Status" color="success">complete</Label>;

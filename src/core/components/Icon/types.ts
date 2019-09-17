@@ -1,6 +1,3 @@
-import { ReactNode } from 'react';
-
-
 export type Colors = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'inherit';
 export type Sizes = 'small' | 'medium' | 'large' | 'inherit';
 
@@ -13,7 +10,7 @@ export type Props = {
     /**
      * Determines the icon to render.
      */
-    children: ReactNode,
+    children: string,
     /**
      * Determines the color of the rendered Icon.
      */
