@@ -9,9 +9,9 @@ import styles from './styles.scss';
  * The `<Label />` is used to display content classification.
  */
 function Label({
-    children,
     title,
     color = 'info',
+    children,
     className,
     ...otherProps
 }: Props) {

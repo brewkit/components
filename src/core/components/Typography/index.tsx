@@ -8,15 +8,15 @@ import styles from './styles.scss';
  * The `<Typography />` component renders text using the 'Roboto' font in various styles.
  */
 function Typography({
-    children,
     variant = 'inherit',
     color = 'initial',
     align = 'inherit',
     display = 'initial',
     hasBottomMargin = false,
     shouldTruncate = false,
-    className,
     as = null,
+    children,
+    className,
     ...otherProps
 }: Props) {
 

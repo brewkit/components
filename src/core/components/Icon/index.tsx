@@ -10,9 +10,9 @@ import styles from './styles.scss';
  * units as to be similar to any neighboring fonts.
  */
 function Icon({
-    children,
     color = 'primary',
     size = 'inherit',
+    children,
     className,
     ...otherProps
 }: Props) {

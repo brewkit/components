@@ -10,8 +10,8 @@ import styles from './styles.scss';
  * content or a message.
  */
 function Divider({
-    children,
     align = 'center',
+    children,
     className,
     ...otherProps
 }: Props) {

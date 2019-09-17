@@ -10,12 +10,12 @@ import styles from './styles.scss';
  * The `<Popup />` component allows you to specify content to hover adjacent to another element on hover or click.
  */
 function Popup({
-    children,
     color = 'primary',
     content,
     position = 'top-left',
     isBlock = false,
     isConstrained = false,
+    children,
     className,
     ...otherProps
 }: Props) {
