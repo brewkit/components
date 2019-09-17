@@ -56,7 +56,7 @@ function Button({
                             <span className={styles.buttonText}>
                                 <Typography>{children}</Typography>
                             </span>
-                            {variant === 'icon' &&
+                            {variant === 'icon' && typeof children === 'string' &&
                                 <span className={styles.icon}>
                                     <Icon color="inherit">{children}</Icon>
                                 </span>
