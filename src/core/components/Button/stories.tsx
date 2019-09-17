@@ -3,13 +3,14 @@ import { text, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import Button from './index';
 import { Variants, Colors, Sizes } from './types';
+import Label from "../Label";
 
 
 export default {
     title: 'Components|User Input/Button',
     component: Button,
     parameters: {
-        componentSubtitle: 'Click. Click. Click.',
+        componentSubtitle: <Label color="success">Stable</Label>,
     },
 };
 

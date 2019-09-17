@@ -1,12 +1,16 @@
 import React, { ReactNode } from 'react';
 import { select, text } from '@storybook/addon-knobs';
 import Divider from './index';
+import Label from '../Label';
 import { Alignments } from './types';
 
 
 export default {
     title: 'Components|Display/Divider',
     component: Divider,
+    parameters: {
+        componentSubtitle: <Label color="success">stable</Label>,
+    },
 };
 
 

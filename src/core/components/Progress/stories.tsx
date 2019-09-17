@@ -1,11 +1,15 @@
 import React from 'react';
 import { select } from '@storybook/addon-knobs';
+import Label from '../Label';
 import Progress from './index';
 
 
 export default {
     title: 'Components|Display/Progress',
     component: Progress,
+    parameters: {
+        componentSubtitle: <Label color="success">Stable</Label>,
+    },
 };
 
 

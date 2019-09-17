@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import { text, select, boolean } from '@storybook/addon-knobs';
+import Label from '../Label';
 import Typography from './index';
 import { Variants, Colors, Alignments, Displays } from './types';
 
@@ -7,6 +8,9 @@ import { Variants, Colors, Alignments, Displays } from './types';
 export default {
     title: 'Components|Display/Typography',
     component: Typography,
+    parameters: {
+        componentSubtitle: <Label color="success">Stable</Label>,
+    },
 };
 
 

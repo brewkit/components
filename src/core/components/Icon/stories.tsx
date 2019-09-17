@@ -1,14 +1,18 @@
 import React, { ReactNode } from 'react';
 import { select } from '@storybook/addon-knobs';
 import Icon from './index';
-import Typography from "../Typography";
+import Typography from '../Typography';
 import { Colors, Sizes } from './types';
-import icons from "./material-icons/dist/_list";
+import Label from '../Label';
+import icons from './material-icons/dist/_list';
 
 
 export default {
     title: 'Components|Display/Icon',
     component: Icon,
+    parameters: {
+        componentSubtitle: <Label color="success">Stable</Label>,
+    },
 };
 
 

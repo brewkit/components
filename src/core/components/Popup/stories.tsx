@@ -1,12 +1,16 @@
 import React from 'react';
 import {boolean, select} from '@storybook/addon-knobs';
 import Popup from './index';
+import Label from '../Label';
 import Button from '../Button';
 
 
 export default {
     title: 'Components|Display/Popup',
     component: Popup,
+    parameters: {
+        componentSubtitle: <Label color="success">Stable</Label>,
+    },
 };
 
 
