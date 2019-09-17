@@ -40,6 +40,14 @@ export const General = () => {
 };
 
 
+export const Default = () => (
+    <div style={{ maxWidth: '100%' }}>
+        <Typography>
+            Default Settings - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </Typography>
+    </div>
+);
+
 export const Headers = () => (
     <React.Fragment>
         <div style={{ maxWidth: '100%' }}>

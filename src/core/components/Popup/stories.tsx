@@ -34,7 +34,11 @@ export const General = () => {
 };
 
 
-
+export const Default = () => (
+    <Popup content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in, egestas nulla.">
+        <Button>Default</Button>
+    </Popup>
+);
 export const Unconstrained = () => (
     <Popup content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in, egestas nulla." position="bottom-left">
         <Button>Hover over me!</Button>

@@ -24,4 +24,5 @@ export const General = () => {
 };
 
 
-export const WithLabel = () => <Label title="Status" color="success">complete</Label>;
+export const Default = () => <Label>Default</Label>;
+export const WithTitle = () => <Label title="Status" color="success">complete</Label>;

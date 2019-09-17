@@ -43,6 +43,7 @@ export const General = () => {
 };
 
 
+export const Default = () => <Button>Default</Button>;
 export const Standard = () => <Button variant="standard">Click me!</Button>;
 export const Icon = () => <Button variant="icon">360</Button>;
 export const Circular = () => <Button variant="icon" isCircular>add</Button>;

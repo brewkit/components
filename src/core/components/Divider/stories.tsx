@@ -24,7 +24,7 @@ export const General = () => {
 };
 
 
+export const Default = () => <Divider />;
 export const LeftAligned = () => <Divider align="left">I'm a divider!</Divider>;
 export const CenterAligned = () => <Divider align="center">I'm a divider!</Divider>;
 export const RightAligned = () => <Divider align="right">I'm a divider!</Divider>;
-export const WithoutContent = () => <Divider />;

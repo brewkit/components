@@ -28,5 +28,6 @@ export const General = () => {
 };
 
 
+export const Default = () => <Progress />;
 export const Horizontal = () => <Progress size="medium" />;
 export const Circular = () => <Progress variant="circular" />;
