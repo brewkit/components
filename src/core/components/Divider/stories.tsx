@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import { Preview } from '@storybook/addon-docs/blocks';
 import { select, text } from '@storybook/addon-knobs';
 import Divider from './index';
 import { Alignments } from './types';

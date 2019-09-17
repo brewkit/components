@@ -1,29 +1,28 @@
-/** @flow */
-
-
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, select } from '@storybook/addon-knobs';
-import Progess from '../index';
-import notes from './notes.md';
+import { select } from '@storybook/addon-knobs';
+import Progress from './index';
 
 
-const storiesOld = storiesOf('Components|Feedback', module);
+export default {
+    title: 'Components|Display/Progress',
+    component: Progress,
+};
 
-storiesOld.addDecorator(withKnobs);
 
-storiesOld.add('Progress', () => {
-
+export const General = () => {
     const variant = select('variant', ['circular', 'horizontal'], 'horizontal');
     const color = select('color', ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'], 'primary');
     const size = select('size', ['small', 'medium', 'large'], 'medium');
 
     return (
-        <Progess
+        <Progress
             variant={variant}
             color={color}
             size={size}
         />
     );
+};
 
-}, { notes: { markdown: notes } });
+
+export const Horizontal = () => <Progress size="medium" />;
+export const Circular = () => <Progress variant="circular" />;

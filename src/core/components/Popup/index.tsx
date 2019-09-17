@@ -6,21 +6,23 @@ import { Props } from './types';
 import styles from './styles.scss';
 
 
-function Popup(props: Props) {
+/**
+ * The `<Popup />` component allows you to specify content to hover adjacent to another element on hover or click.
+ */
+function Popup({
+    children,
+    color = 'primary',
+    content,
+    position = 'top-left',
+    isBlock = false,
+    isConstrained = false,
+    className,
+    ...otherProps
+}: Props) {
 
 
-    const {
-        children,
-        color = 'primary',
-        content,
-        position = 'top-left',
-        isBlock,
-        isConstrained,
-        className,
-        ...otherProps
-    } = props;
     const [isDisplaying, setIsDisplaying] = React.useState(false);
-    let intentTimeout = null;
+    let intentTimeout: NodeJS.Timer;
 
 
     const wrapperClasses = clsx(

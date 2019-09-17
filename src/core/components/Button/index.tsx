@@ -14,7 +14,7 @@ import styles from './styles.scss';
  */
 function Button({
     children,
-    variant = 'icon',
+    variant = 'standard',
     color = 'primary',
     size = 'medium',
     isLoading = false,
