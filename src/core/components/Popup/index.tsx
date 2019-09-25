@@ -41,7 +41,7 @@ function Popup({
     );
 
 
-    function handleMouseEnter() {
+    function handleMouseEnter(): void {
         clearTimeout(intentTimeout);
         intentTimeout = setTimeout(() => {
             setIsDisplaying(true);
@@ -49,7 +49,7 @@ function Popup({
     }
 
 
-    function handleMouseLeave() {
+    function handleMouseLeave(): void {
         clearTimeout(intentTimeout);
         intentTimeout = setTimeout(() => {
             setIsDisplaying(false);

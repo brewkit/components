@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Type from './index';
+import Typography from './index';
 
 
 it('renders children when passed in', () => {
     const wrapper = shallow((
-        <Type>
+        <Typography>
             <span>foo</span>
-        </Type>
+        </Typography>
     ));
     expect(wrapper.contains(<span>foo</span>)).toEqual(true);
 });
@@ -15,7 +15,7 @@ it('renders children when passed in', () => {
 
 it('accepts custom classes', () => {
     const wrapper = shallow((
-        <Type className="customClass" />
+        <Typography className="customClass">Lorem ipsum dolor sit amet.</Typography>
     ));
     expect(wrapper.hasClass('customClass')).toEqual(true);
     expect(wrapper.hasClass('wrapper')).toEqual(true);
@@ -24,7 +24,7 @@ it('accepts custom classes', () => {
 
 it('"variant" defaults to "inherit" and applies appropriate class', () => {
     const wrapper = shallow((
-        <Type />
+        <Typography>Lorem ipsum dolor sit amet.</Typography>
     ));
     expect(wrapper.hasClass('variant--inherit')).toEqual(true);
 });
@@ -32,7 +32,7 @@ it('"variant" defaults to "inherit" and applies appropriate class', () => {
 
 it('"color" defaults to "initial" and applies appropriate class', () => {
     const wrapper = shallow((
-        <Type />
+        <Typography>Lorem ipsum dolor sit amet.</Typography>
     ));
     expect(wrapper.hasClass('color--initial')).toEqual(true);
 });
@@ -40,7 +40,7 @@ it('"color" defaults to "initial" and applies appropriate class', () => {
 
 it('"display" defaults to "initial" and applies appropriate class', () => {
     const wrapper = shallow((
-        <Type />
+        <Typography>Lorem ipsum dolor sit amet.</Typography>
     ));
     expect(wrapper.hasClass('display--initial')).toEqual(true);
 });
@@ -48,7 +48,7 @@ it('"display" defaults to "initial" and applies appropriate class', () => {
 
 it('"align" defaults to "inherit" and applies appropriate class', () => {
     const wrapper = shallow((
-        <Type />
+        <Typography>Lorem ipsum dolor sit amet.</Typography>
     ));
     expect(wrapper.hasClass('align--inherit')).toEqual(true);
 });
