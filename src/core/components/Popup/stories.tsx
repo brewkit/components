@@ -9,7 +9,7 @@ export default {
     title: 'Components|Display/Popup',
     component: Popup,
     parameters: {
-        componentSubtitle: <Label color="success">Stable</Label>,
+        componentSubtitle: <Label color="warning">In Development</Label>,
     },
 };
 

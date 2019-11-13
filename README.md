@@ -4,7 +4,7 @@
 
 ---
 
-<p align="center">A design system for creating beautiful, themeable, and fully responsive UIs using Webpack, React, SCSS, and Flow.</p>
+<p align="center">A design system for creating beautiful, themeable, and fully responsive UIs using Webpack, React, SCSS, and TypeScript.</p>
 
 ---
 
@@ -23,7 +23,9 @@
 
 ## Installation
 
-> Brewkit consists of non-transpiled source files, including `.scss` files and flow types. It is up to you and your project to handle these in the way you see fit. The instructions below will assume your project is already configured to support these file types.
+> Brewkit is highly opinionated and consists of non-transpiled source files to help with theming and improve developer UX. It is up to you and your project to handle these in the way you see fit.
+> 
+> If starting your project from scratch, we highly recommend you use our boilerplate.
 
 ### 1. Add brewkit to your project
 `npm install brewkit --save-dev`

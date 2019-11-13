@@ -11,7 +11,7 @@ export interface Props {
      */
     children?: ReactNode,
     /**
-     * Rounds the corners of the button to make a circle.
+     * Fires when button is clicked.
      */
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void,
     /**

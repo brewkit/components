@@ -9,10 +9,7 @@ module.exports = function(source) {
 
     if (fs.existsSync(path)) {
         if (String(source).includes('@import "../../styles/utilities";')) {
-            return (
-                `@import "${path}";\n` +
-                source
-            );
+            return `@import "${path}";\n${source}`;
         }
     }
 
