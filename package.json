@@ -53,6 +53,7 @@
         "@types/node": "^12.12.9",
         "@types/react": "^16.9.11",
         "@types/react-dom": "^16.9.4",
+        "@types/react-router-dom": "^5.1.2",
         "babel-eslint": "^10.0.3",
         "babel-jest": "^24.9.0",
         "babel-loader": "^8.0.5",
@@ -66,13 +67,15 @@
         "react-dom": "^16.12.0",
         "react-flip-toolkit": "^7.0.7",
         "react-hot-loader": "^4.12.18",
+        "react-router-dom": "^5.1.2",
         "sass-loader": "^8.0.0",
         "typescript": "^3.7.2",
         "typescript-plugin-css-modules": "^2.1.0"
     },
     "peerDependencies": {
         "react": "^16.8.6",
-        "react-dom": "^16.8.6"
+        "react-dom": "^16.8.6",
+        "react-router-dom": "^5.1.2"
     },
     "dependencies": {
         "clsx": "^1.0.4",
