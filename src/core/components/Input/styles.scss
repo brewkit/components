@@ -1,0 +1,8 @@
+@import '../../styles/utilities';
+
+.input {
+	font-size: size(normal);
+	padding: size(normal);
+	border-radius: map-get($inputs, border-radius);
+	border: 1px solid color(grey, 100);
+}

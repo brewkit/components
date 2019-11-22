@@ -17,6 +17,7 @@ export default {
 export const General = () => {
     const align: Alignments = select('align', ['inherit', 'left', 'center', 'right', 'justify'], 'inherit');
     const children: ReactNode = text('children', 'Lorem ipsum dolor sit amet.');
+
     const color: Colors = select('color', ['initial', 'primary', 'secondary', 'tertiary', 'success', 'warning', 'info', 'danger'], 'initial');
     const display: Displays = select('display', ['initial', 'block', 'inline', 'inline-block'], 'initial');
     const hasBottomMargin = boolean('hasBottomMargin', true);

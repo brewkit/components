@@ -1,0 +1,7 @@
+@import "../../../../styles/utilities";
+
+.cardHeader {
+  padding: size('base');
+  background-color: color(grey, 50);
+  border-bottom: 1px solid color(gray, 100);
+}
