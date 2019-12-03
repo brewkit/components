@@ -1,10 +1,14 @@
 {
+    "name": "@brewkit/components",
+    "version": "1.0.0",
+    "description": "Brewkit components",
+    "main": "src/index.ts",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Snap-AV/brewkit.git"
     },
-    "author": "",
-    "license": "ISC",
+    "author": "lawren",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/Snap-AV/brewkit/issues"
     },
