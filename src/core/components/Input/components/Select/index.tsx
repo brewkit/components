@@ -1,15 +1,11 @@
 import React from "react";
-import Input from '../../index';
-import clsx from "clsx";
-import { Props } from './types';
+import InputBase from '../InputBase';
+import { Props } from '../InputBase/types';
 
-function Select({ className, children, ...otherProps }: Props) {
-    const classes = clsx(
-        className,
-    );
+function Select({ as, children, ...otherProps }: Props) {
 
     return (
-        <Input as="select" className={classes} {...otherProps}>{children}</Input>
+        <InputBase as="select" {...otherProps}>{children}</InputBase>
     );
 }
 

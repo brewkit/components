@@ -1,28 +1,47 @@
 import React from "react";
-import Input from './index';
-import Label from "../Label";
+import Form from '../Form';
+import {
+    Checkbox as CheckboxComponent,
+    TextInput as TextInputComponent,
+} from './index';
+import Label from '../Label';
 
 export default {
     title: 'Components|User Input/Input',
-    component: Input,
+    component: TextInputComponent,
     parameters: {
         componentSubtitle: <Label color="warning">In Development</Label>,
     },
 };
 
-export const General = () => {
-    // const align: Alignments = select('align', ['inherit', 'left', 'center', 'right', 'justify'], 'inherit');
-
-    //
-    // const color: Colors = select('color', ['initial', 'primary', 'secondary', 'tertiary', 'success', 'warning', 'info', 'danger'], 'initial');
-    // const display: Displays = select('display', ['initial', 'block', 'inline', 'inline-block'], 'initial');
-    // const hasBottomMargin = boolean('hasBottomMargin', true);
-    // const shouldTruncate = boolean('shouldTruncate', false);
-    // const variant: Variants = select('variant', ['h1', 'h2', 'h3', 'body1', 'body2', 'label', 'inherit'], 'h1');
-
+export const TextInput = () => {
     return (
-        <Input
-            type="text"
-        />
+        <Form>
+            <Form.Group>
+                <Form.Label>Text Input</Form.Label>
+                <TextInputComponent />
+            </Form.Group>
+        </Form>
+    );
+};
+
+export const Checkbox = () => {
+    return (
+        <Form>
+            <Form.Group>
+                <Form.Label>Checkbox</Form.Label>
+                <CheckboxComponent />
+            </Form.Group>
+        </Form>
+    );
+};
+
+export const Radio = () => {
+    return (
+        <Form>
+            <Form.Group>
+                <Form.Label>Radio</Form.Label>
+            </Form.Group>
+        </Form>
     );
 };

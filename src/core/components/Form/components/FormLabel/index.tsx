@@ -1,16 +1,17 @@
 import React from "react";
 import clsx from "clsx";
+import Typography from "../../../Typography";
 import { Props } from './types';
+import styles from './styles.scss';
 
-function FormLabel({ as, className, children, ...otherProps }: Props) {
+function FormLabel({ as = 'label', className, children, ...otherProps }: Props) {
     const classes = clsx(
+        styles.formLabel,
         className,
     );
 
-    const Element = as || 'label';
-
     return (
-        <Element className={classes} {...otherProps}>{children}</Element>
+        <Typography as={as} className={classes} variant="label" {...otherProps}>{children}</Typography>
     )
 }
 

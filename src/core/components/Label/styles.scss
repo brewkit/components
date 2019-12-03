@@ -37,7 +37,6 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
     .wrapper.color--#{$color} {
 
         $button_color: map_get(map_get($button, colors), $color);
-@debug $button_color;
         background-color: rgba($button_color, 0.1);
         border-color: $button_color;
 

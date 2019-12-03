@@ -1,7 +1,7 @@
-import {ReactNode} from "react";
+import { ReactNode } from 'react';
 
 export interface Props {
-    as?: 'input' | 'select',
+    color?: 'danger',
     className?: string,
     children?: ReactNode,
 };
