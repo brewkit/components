@@ -11,4 +11,4 @@ addParameters({
 });
 
 
-configure(require.context('../../src/core', true, /stories\.(ts|tsx|mdx)$/), module);
+configure(require.context('../../src', true, /stories\.(ts|tsx|mdx)$/), module);

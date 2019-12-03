@@ -72,7 +72,16 @@ module.exports = async ({ config }) => {
                 }
             ],
         },
-
+        {
+            test: /stories\.[tj]sx?$/,
+            loader: require.resolve('@storybook/source-loader'),
+            enforce: 'pre',
+            options: {
+                injectParameters: true,
+                inspectLocalDependencies: false,
+                inspectDependencies: false
+            }
+        },
     );
 
 
