@@ -1,0 +1,35 @@
+@import '../../../../styles/utilities';
+
+.wrapper {
+    overflow: hidden;
+    display: inline-flex;
+
+    input {
+        position: absolute;
+        left: -9999px;
+        top: 0;
+    }
+}
+
+.checkbox {
+    height: size(xx-large);
+    width: size(xx-large);
+    border: 1px solid color(grey, 100);
+    border-radius: map-get($inputs, border-radius);
+    box-sizing: border-box;
+
+    input:checked + & {
+        background: color(brand, primary);
+        border-color: color(brand, primary);
+    }
+}
+
+.hasError {
+    border-color: color(accent, danger);
+}
+
+.isDisabled {
+    border-color: color(grey, 100);
+    background: color(grey, 100);
+}
+

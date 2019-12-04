@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
+import Typography from '../../../Typography';
 import { Props } from './types';
-import styles from './styles.scss';
 
 /**
  * This component is made to be extended, not to be used directly
@@ -20,24 +20,19 @@ const InputBase = ({
     defaultValue,
     placeholder,
     inputProps = {},
+    customControl,
+    checked,
     children
 }: Props) => {
     const classes = clsx(
-        { [styles.hasError]: !!error },
-        { [styles.fullWidth]: !!fullWidth },
-        styles.inputWrapper,
         className,
     );
 
     const Element = as;
-
-    const { className: inputClassName, ...otherInputProps } = inputProps;
-    const inputClasses = clsx(
-        inputClassName,
-    );
+    const CustomControl = customControl;
 
     return (
-        <div className={classes}>
+        <Typography as="label" className={classes}>
             <Element
                 id={id}
                 name={name}
@@ -47,10 +42,13 @@ const InputBase = ({
                 value={value}
                 defaultValue={defaultValue}
                 placeholder={placeholder}
-                className={inputClasses}
-                {...otherInputProps}
+                checked={checked}
+                {...inputProps}
             >{children}</Element>
-        </div>
+            {customControl && (
+                <CustomControl />
+            )}
+        </Typography>
     );
 };
 

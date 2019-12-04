@@ -1,17 +1,30 @@
-import React from 'react';
-import InputBase from '../InputBase';
-import { Props } from '../InputBase/types';
+import React from "react";
+import clsx from "clsx";
+import InputBase from "../InputBase";
+import styles from './styles.scss';
+import { Props } from "../InputBase/types";
 
 function TextInput({
-    as = 'input',
-    type = 'text',
+    as = "input",
+    type = "text",
     error = false,
-    className = '',
+    inputProps = {},
+    fullWidth,
+    disabled,
     ...otherProps
 }: Props) {
-    return (
-        <InputBase as={as} type={type} error={error} {...otherProps} />
+
+    const { className: inputClassName, ...otherInputProps } = inputProps || {};
+
+    const inputClasses = clsx(
+        { [styles.hasError]: !!error },
+        { [styles.fullWidth]: !!fullWidth },
+        { [styles.isDisabled]: !!disabled },
+        styles.input,
+        inputClassName,
     );
+
+    return <InputBase as={as} type={type} error={error} disabled={disabled} inputProps={{ ...otherInputProps, className: inputClasses }} {...otherProps} />;
 }
 
 export default TextInput;
