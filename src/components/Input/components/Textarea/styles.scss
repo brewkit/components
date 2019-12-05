@@ -1,0 +1,29 @@
+@import '../../../../styles/utilities';
+
+.textarea {
+    font-size: 1rem;
+    color: color(grey, 800);
+    padding: size(normal);
+    border: 1px solid color(grey, 100);
+    border-radius: map-get($inputs, border-radius);
+
+    &:active,
+    &:focus {
+        outline: none;
+        border-color: color(brand, primary);
+
+        &.isDisabled {
+            border-color: color(grey, 100);
+        }
+    }
+}
+
+.hasError {
+    border-color: color(accent, danger);
+}
+
+.isDisabled {
+    border-color: color(grey, 100);
+    background-color: color(grey, 100);
+}
+

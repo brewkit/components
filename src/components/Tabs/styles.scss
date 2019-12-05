@@ -1,11 +1,5 @@
-@import "../../styles/utilities";
+@import '../../styles/utilities';
 
-
-// ==============================================
-// General
-// ==============================================
-
-.wrapper {
-    display: block;
-    border-bottom: 1px solid #000;
+.tabs {
+	display: flex;
 }

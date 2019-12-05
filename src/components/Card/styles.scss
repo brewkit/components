@@ -1,0 +1,17 @@
+@import "../../styles/utilities";
+
+
+// ==============================================
+// General
+// ==============================================
+
+.card {
+    box-shadow: map-get($general, box-shadow);
+}
+
+.noBorder {
+    box-shadow: none;
+}
+
+
+

@@ -1,35 +1,18 @@
 import React from 'react';
-import clsx from 'clsx';
-import Typography from '../../../Typography';
-import { Props } from './types';
+import clsx from "clsx";
 import styles from './styles.scss';
+import { Props } from './types';
+import Typography from "../../../Typography";
 
-
-/**
- * The `Tab` component represents a clickable button, which can be used in forms or anywhere in the application
- * that needs simple, standard button functionality.
- */
-function Tab({
-    children,
-    className,
-    ...otherProps
-}: Props) {
-
-
-    const tabClasses = clsx(
-        styles.wrapper,
+function Tab({ isActive, className, children, ...otherProps }: Props) {
+    const classes = clsx(
+        styles.tab,
+        { [styles.isActive]: !!isActive },
         className,
     );
-
-
     return (
-        <span className={tabClasses}>
-            <Typography>{children}</Typography>
-        </span>
-    );
-
-
+        <div className={classes} {...otherProps}><Typography>{children}</Typography></div>
+    )
 }
-
 
 export default Tab;

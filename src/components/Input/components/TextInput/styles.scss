@@ -1,0 +1,28 @@
+@import '../../../../styles/utilities';
+
+.input {
+	font-size: size(normal);
+	padding: size(normal);
+	border-radius: map-get($inputs, border-radius);
+	border: 1px solid color(grey, 100);
+	box-sizing: border-box;
+
+	&:active,
+	&:focus {
+		border-color: color(brand, primary);
+		outline: none;
+	}
+}
+
+.hasError {
+	border-color: color(accent, danger);
+}
+
+.fullWidth {
+	width: 100%;
+}
+
+.isDisabled {
+	background-color: color(grey, 100);
+	border-color: color(grey, 100);
+}
