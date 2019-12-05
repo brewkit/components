@@ -7,14 +7,11 @@ import { Props } from "../InputBase/types";
 function TextInput({
     as = "input",
     type = "text",
-    error = false,
-    inputProps = {},
-    fullWidth,
-    disabled,
+    inputClassName,
     ...otherProps
 }: Props) {
 
-    const { className: inputClassName, ...otherInputProps } = inputProps || {};
+    const { error, fullWidth, disabled } = otherProps;
 
     const inputClasses = clsx(
         { [styles.hasError]: !!error },
@@ -24,7 +21,7 @@ function TextInput({
         inputClassName,
     );
 
-    return <InputBase as={as} type={type} error={error} disabled={disabled} inputProps={{ ...otherInputProps, className: inputClasses }} {...otherProps} />;
+    return <InputBase as={as} type={type} inputClassName={inputClasses} {...otherProps} />;
 }
 
 export default TextInput;

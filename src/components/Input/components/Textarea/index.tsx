@@ -1,13 +1,12 @@
 import * as React from 'react';
 import clsx from 'clsx';
 import InputBase from '../InputBase';
-import { Props } from '../InputBase/types';
+import { Props } from './types';
 import styles from './styles.scss';
 
-function Textarea({ className, inputProps, ...otherProps }: Props) {
+function Textarea({ className, inputProps, rows = 4, inputClassName, ...otherProps }: Props) {
 
     const { error, disabled } = otherProps;
-    const { className: inputClassName, rows = 4, ...otherInputProps } = inputProps || {};
     const inputClasses = clsx(
         { [styles.isDisabled]: !!disabled },
         { [styles.hasError]: !!error },
@@ -16,7 +15,7 @@ function Textarea({ className, inputProps, ...otherProps }: Props) {
     );
 
     return (
-        <InputBase as="textarea" inputProps={{ ...otherInputProps, className: inputClasses, rows }} {...otherProps} />
+        <InputBase as="textarea" inputClassName={inputClasses} {...otherProps} />
     );
 }
 

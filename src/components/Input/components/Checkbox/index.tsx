@@ -1,7 +1,8 @@
 import React from "react";
 import clsx from 'clsx';
+import Icon from '../../../Icon';
 import InputBase from '../InputBase';
-import { Props } from '../InputBase/types';
+import { Props } from './types';
 import styles from './styles.scss';
 
 
@@ -16,7 +17,9 @@ function Checkbox({ className, type, error, customControl, disabled, ...otherPro
         );
 
         return (
-            <div className={classes} />
+            <div className={classes}>
+                <Icon size="large" className={styles.check}>check</Icon>
+            </div>
         );
     };
 

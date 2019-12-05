@@ -19,7 +19,8 @@ const InputBase = ({
     value,
     defaultValue,
     placeholder,
-    inputProps = {},
+    inputClassName,
+    inputLabel,
     customControl,
     checked,
     children
@@ -43,10 +44,13 @@ const InputBase = ({
                 defaultValue={defaultValue}
                 placeholder={placeholder}
                 checked={checked}
-                {...inputProps}
+                className={inputClassName}
             >{children}</Element>
             {customControl && (
                 <CustomControl />
+            )}
+            {inputLabel && ( type === 'checkbox' || type === 'radio' ) && (
+                <span className={inputLabelClassName}>{inputLabel}</span>
             )}
         </Typography>
     );
