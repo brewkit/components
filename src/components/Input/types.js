@@ -4,5 +4,5 @@ export interface Props extends InputBaseProps {
     /**
      * The variant of the input you want to display.
      */
-    variant: ['text', 'textarea', 'checkbox', 'radio'],
+    variant: 'text'|'textarea'|'checkbox'|'radio',
 };

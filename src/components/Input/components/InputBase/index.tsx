@@ -8,22 +8,24 @@ import { Props } from './types';
  */
 const InputBase = ({
     as = 'input',
-    type,
-    required,
+    checked = undefined,
+    children = undefined,
+    className = undefined,
+    customControl = undefined,
+    defaultChecked = undefined,
+    defaultValue = undefined,
+    disabled = undefined,
     error = false,
-    className,
-    name,
-    id,
-    fullWidth,
-    disabled,
-    value,
-    defaultValue,
-    placeholder,
-    inputClassName,
-    inputLabel,
-    customControl,
-    checked,
-    children
+    fullWidth = false,
+    id = undefined,
+    inputClassName = undefined,
+    inputLabel = undefined,
+    inputLabelClassName = undefined,
+    name = undefined,
+    placeholder = undefined,
+    required = undefined,
+    type = 'text',
+    value = undefined,
 }: Props) => {
     const classes = clsx(
         className,
@@ -35,16 +37,17 @@ const InputBase = ({
     return (
         <Typography as="label" className={classes}>
             <Element
-                id={id}
-                name={name}
-                type={type}
-                required={required}
-                disabled={disabled}
-                value={value}
-                defaultValue={defaultValue}
-                placeholder={placeholder}
                 checked={checked}
                 className={inputClassName}
+                defaultChecked={defaultChecked}
+                defaultValue={defaultValue}
+                disabled={disabled}
+                id={id}
+                name={name}
+                placeholder={placeholder}
+                required={required}
+                type={type}
+                value={value}
             >{children}</Element>
             {customControl && (
                 <CustomControl />

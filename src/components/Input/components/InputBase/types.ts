@@ -4,19 +4,29 @@ export interface Props {
     /**
      * The component used for the `input` element
      */
-    as?: 'input' | 'select',
+    as?: 'input' | 'select' | 'textarea',
     /**
      *  Whether or not the radio or checkbox input is checked
      */
     checked?: boolean,
     /**
-     * The content inside the component.
+     * The `children` prop can be used for certain inputs like `select` and `textarea`
      */
     children?: ReactNode,
     /**
      * The wrapper class
      */
     className?: string,
+    /**
+     * The custom control to show instead of the default control.  Can be used for any input type,
+     * but is intended mostly for inputs that don't accept styling well like select boxes, radio buttons and
+     * checkboxes.
+     */
+    customControl?: ReactNode,
+    /**
+     * Whether the `input` is checked by default.  Used for checkboxes.
+     */
+    defaultChecked?: boolean,
     /**
      *  The `defaultValue` of the `input` element
      */
@@ -38,9 +48,17 @@ export interface Props {
      */
     id?: string,
     /**
-     *  Attributes that are applied to the `input` element
+     * The `input` element className.
      */
-    inputProps?: object,
+    inputClassName?: string,
+    /**
+     * The `input` label for radio buttons and checkboxes
+     */
+    inputLabel?: string,
+    /**
+     * The className for the input label
+     */
+    inputLabelClassName?: string,
     /**
      * The `input` element name
      */

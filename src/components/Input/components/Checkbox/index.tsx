@@ -6,18 +6,32 @@ import { Props } from './types';
 import styles from './styles.scss';
 
 
-function Checkbox({ className, type, error, customControl, disabled, ...otherProps }: Props) {
+function Checkbox(
+    { 
+        checked = undefined, 
+        className = undefined, 
+        customControl = undefined, 
+        defaultChecked = undefined,
+        disabled = false, 
+        error = false, 
+        id = undefined,
+        inputClassName = undefined,
+        inputLabel = undefined,
+        inputLabelClassName = undefined,
+        name = undefined,
+        required = false
+    }: Props) {
 
     const defaultCustomControl = () => {
 
-        const classes = clsx(
+        const customControlClasses = clsx(
             { [styles.hasError]: !!error },
             { [styles.isDisabled]: !!disabled },
             styles.checkbox,
         );
 
         return (
-            <div className={classes}>
+            <div className={customControlClasses}>
                 <Icon size="large" className={styles.check}>check</Icon>
             </div>
         );
@@ -29,7 +43,18 @@ function Checkbox({ className, type, error, customControl, disabled, ...otherPro
     );
 
     return (
-        <InputBase type="checkbox" className={classes} customControl={customControl || defaultCustomControl} disabled={disabled} error={error} {...otherProps} />
+        <InputBase 
+            type="checkbox" 
+            className={classes} 
+            customControl={customControl || defaultCustomControl} 
+            disabled={disabled} 
+            error={error}
+            checked={checked}
+            required={required}
+            inputLabel={inputLabel}
+            inputClassName={inputClassName}
+            inputLabelClassName={inputLabelClassName}
+        />
     );
 }
 
