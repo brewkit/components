@@ -16,6 +16,7 @@
     "scripts": {
         "test:generate-output": "jest --watchAll --json --outputFile=.build/jest/test-results.json || true",
         "test": "jest --watchAll --json --outputFile=.build/jest/test-results.json",
+        "commit": "npx git-cz",
         "start": "start-storybook -p 9001 -c .build/storybook"
     },
     "jest": {
@@ -62,6 +63,7 @@
         "babel-jest": "^24.9.0",
         "babel-loader": "^8.0.5",
         "babel-plugin-require-context-hook": "^1.0.0",
+        "cz-conventional-changelog": "^3.0.2",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^24.9.0",
         "node-sass": "^4.13.0",
@@ -84,5 +86,10 @@
     "dependencies": {
         "clsx": "^1.0.4",
         "lodash": "^4.17.15"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     }
 }
