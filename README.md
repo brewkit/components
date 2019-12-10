@@ -111,3 +111,8 @@
   ```
     
 </details>
+
+
+## Theming
+
+You can theme most parts of Brewkit by simply adding `.brewkit/theme.scss` to the root of your project. If your Webpack is correctly configured, this file will automatically apply overrides to Brewkit components.
