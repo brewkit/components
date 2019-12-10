@@ -18,58 +18,96 @@
 </p>
 
 
-## Installation
+## Usage
 
 > Brewkit is highly opinionated and consists of non-transpiled source files to help with theming and improve developer UX. It is up to you and your project to handle these in the way you see fit.
 > 
-> If starting your project from scratch, we highly recommend you use our boilerplate.
+> If starting your project from scratch, we highly recommend you use [@brewkit/create](https://github.com/brewkit/create).
 
-### 1. Add brewkit to your project
-`npm install brewkit --save-dev`
+<details>
+  <summary>
+    The Easy Way
+  </summary>
     
-### 2. Configure Webpack
-1. Include Brewkit in your project's webpack rules for proper loader processing.
-    ```js
-    // webpack.config.js
+  #### 1. Setup a new project using [@brewkit/create](https://github.com/brewkit/create).
+  ```
+  $ npx @brewkit/create
+  ```
+  
+  #### 2. Import and use components as desired.
+  ```js
+  import { Button } from '@brewkit/components';
 
-    {
-        test: /\.jsx?$/,
-        exclude: /node_modules\/(?!(@?brewkit)\/).*/,
-        // or
-        include: [
-            '/app\/src/',
-            '/node_modules\/brewkit/',
-            '/node_modules\/@brewkit/',
-        ],
-        // ...
-    },
-    ```
+
+  function MyComponent() {
+
+      // ..component stuff..
+
+      return(
+          <Button>Submit</Button>
+      );
+  }
+
+  export default MyComponent;
+  ```
     
-1. Add `@brewkit/loader` to the end of your SCSS rules.
-   ```js
-    // webpack.config.js
+</details>
 
-    {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader', '@brewkit/loader'],
-    },
-    ```
-    > `@brewkit/loader` is responsible for applying any brewkit and theme configurations to the brewkit components.
+<details>
+  <summary>
+    The Other Way
+  </summary>
+    
+  #### 1. Add @brewkit/components and @brewkit/loader to your project.
+  ```
+  $ npm i -D @brewkit/components @brewkit/loader
+  ```
+  
+  #### 2. Configure Webpack.
+  1. Include Brewkit in your project's webpack rules for proper loader processing.
+      ```js
+      // webpack.config.js
+
+      {
+          test: /\.jsx?$/,
+          exclude: /node_modules\/(?!(@?brewkit)\/).*/,
+          // or
+          include: [
+              '/app\/src/',
+              '/node_modules\/brewkit/',
+              '/node_modules\/@brewkit/',
+          ],
+          // ...
+      },
+      ```
+
+  1. Add `@brewkit/loader` to the end of your SCSS rules.
+     ```js
+      // webpack.config.js
+
+      {
+          test: /\.scss$/,
+          use: ['style-loader', 'css-loader', 'sass-loader', '@brewkit/loader'],
+      },
+      ```
+      > `@brewkit/loader` is responsible for applying any brewkit and theme configurations to the brewkit components.
+
+  
+  #### 3. Import and use components as desired.
+  ```js
+  import { Button } from '@brewkit/components';
 
 
-### 3. Import and use components as desired
-```js
-import { Button } from 'brewkit';
+  function MyComponent() {
 
+      // ..component stuff..
 
-function MyComponent() {
+      return(
+          <Button>Submit</Button>
+      );
+  }
 
-    // ..component stuff..
-
-    return(
-        <Button>Submit</Button>
-    );
-}
-
-export default MyComponent;
-```
+  export default MyComponent;
+  ```
+    
+</details>
