@@ -3,6 +3,7 @@
 .wrapper {
     overflow: hidden;
     display: inline-flex;
+    align-items: center;
 
     input {
         position: absolute;
@@ -22,6 +23,14 @@
     align-items: center;
     color: white;
 
+    .check {
+        display: none;
+
+        > svg {
+            fill: white;
+        }
+    }
+
     input:checked + & {
         background: color(brand, primary);
         border-color: color(brand, primary);
@@ -30,21 +39,34 @@
             display: initial;
         }
     }
+}
 
-    .check {
-        display: none;
-
-        > svg {
-            fill: white;
-        }
-    }
+.inputLabel {
+    font-weight: map-get(map-get($typography, font-weights), body2);
+    color: color(grey, 800);
+    margin-left: size(small);
 }
 
 .hasError {
-    border-color: color(accent, danger);
+
+    .checkbox {
+        border-color: color(accent, danger);
+    }
 }
 
 .isDisabled {
-    border-color: color(grey, 100);
-    background: color(grey, 100);
+
+    .checkbox,
+    input:checked + .checkbox {
+        border-color: color(grey, 100);
+        background: color(grey, 100);
+    }
+
+    .inputLabel {
+        color: color(grey, 300);
+    }
 }
+
+
+
+

@@ -15,5 +15,6 @@ export const Default = () => {
     const checked = boolean('checked', false);
     const disabled = boolean('disabled', false);
     const inputLabel = text('inputLabel');
-    return <Checkbox checked={checked} disabled={disabled} inputLabel={inputLabel} readOnly />;
+    const error = boolean('error', false);
+    return <Checkbox checked={checked} disabled={disabled} inputLabel={inputLabel} error={error} />;
 }

@@ -5,6 +5,7 @@ import Radio from './components/Radio';
 // import Select from './components/Select';
 import TextInput from './components/TextInput';
 import Textarea from './components/Textarea';
+import InputIcon from './components/InputIcon';
 import { Props } from './types';
 
 const components = {
@@ -20,5 +21,7 @@ function Input({ variant = 'text', ...otherProps }: Props) {
 
     return <Element {...otherProps} />;
 }
+
+Input.Icon = InputIcon;
 
 export default Input;

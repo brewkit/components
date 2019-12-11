@@ -6,32 +6,19 @@ import { Props } from './types';
 import styles from './styles.scss';
 
 
-function Checkbox(
-    { 
-        checked = undefined, 
-        className = undefined, 
-        customControl = undefined, 
-        defaultChecked = undefined,
-        disabled = false, 
-        error = false, 
-        id = undefined,
-        inputClassName = undefined,
-        inputLabel = undefined,
-        inputLabelClassName = undefined,
-        name = undefined,
-        required = false
-    }: Props) {
+function Checkbox({ 
+    className = undefined, 
+    customControl = undefined, 
+    disabled = false, 
+    error = false,
+    fullWidth = false,
+    inputLabelClassName = undefined,
+    ...otherProps
+}: Props) {
 
     const defaultCustomControl = () => {
-
-        const customControlClasses = clsx(
-            { [styles.hasError]: !!error },
-            { [styles.isDisabled]: !!disabled },
-            styles.checkbox,
-        );
-
         return (
-            <div className={customControlClasses}>
+            <div className={styles.checkbox}>
                 <Icon size="large" className={styles.check}>check</Icon>
             </div>
         );
@@ -39,21 +26,27 @@ function Checkbox(
 
     const classes = clsx(
         styles.wrapper,
+        { [styles.isDisabled]: !!disabled },
+        { [styles.hasError]: !!error },
+        { [styles.isFullWidth]: !!fullWidth },
         className,
+    );
+
+    const inputLabelClasses = clsx(
+        styles.inputLabel,
+        inputLabelClassName,
     );
 
     return (
         <InputBase 
-            type="checkbox" 
             className={classes} 
-            customControl={customControl || defaultCustomControl} 
+            customControl={customControl || defaultCustomControl}
             disabled={disabled} 
             error={error}
-            checked={checked}
-            required={required}
-            inputLabel={inputLabel}
-            inputClassName={inputClassName}
-            inputLabelClassName={inputLabelClassName}
+            fullWidth={fullWidth}
+            inputLabelClassName={inputLabelClasses}
+            type="checkbox" 
+            {...otherProps}
         />
     );
 }

@@ -1,5 +1,3 @@
-import { Props as InputBaseProps } from '../InputBase';
+import { Props as InputBaseProps } from '../InputBase/types';
 
-export interface Props extends InputBaseProps {
-    rows?: number,
-};
+export interface Props extends Omit<InputBaseProps, 'as'|'checked'|'children'|'customControl'|'defaultChecked'|'inputLabel'|'inputLabelClassName'|'type'> {};

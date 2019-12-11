@@ -1,11 +1,69 @@
 @import '../../../../styles/utilities';
 
+$radius: map-get($inputs, border-radius);
+
+.inputWrapper {
+	display: inline-flex;
+	align-items: center;
+	height: 52px;
+	width: 100%;
+	max-width: map-get($inputs, width);
+	box-sizing: border-box;
+
+	&, * {
+		box-sizing: border-box;
+	}
+}
+
+.hasBefore {
+
+	.input {
+		border-left: none;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}	
+}
+
+.hasAfter {
+
+	.input {
+		border-right: none;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+}
+
+.prependInput,
+.appendInput {
+	display: flex;
+	height: 100%;
+	align-items: center;
+}
+
+.prependInput {
+	border: 1px solid color(grey, 100);
+	border-right: none;
+	padding: size(normal) 0 size(normal) size(normal);
+	border-top-left-radius: $radius;
+	border-bottom-left-radius: $radius;
+}
+
+.appendInput {
+	border: 1px solid color(grey, 100);
+	border-left: none;
+	padding: size(normal) size(normal) size(normal) 0;
+	border-top-right-radius: $radius;
+	border-bottom-right-radius: $radius;
+}
+
 .input {
 	font-size: size(normal);
+    font-weight: map-get(map-get($typography, font-weights), body2);
 	padding: size(normal);
-	border-radius: map-get($inputs, border-radius);
+	border-radius: $radius;
 	border: 1px solid color(grey, 100);
 	box-sizing: border-box;
+	flex-grow: 1;
 
 	&:active,
 	&:focus {
@@ -15,14 +73,24 @@
 }
 
 .hasError {
-	border-color: color(accent, danger);
+
+	.input,
+	.prependInput,
+	.appendInput {
+		border-color: color(accent, danger);
+	}
 }
 
-.fullWidth {
-	width: 100%;
+.isFullWidth {
+	max-width: initial;
 }
 
 .isDisabled {
-	background-color: color(grey, 100);
-	border-color: color(grey, 100);
+
+	.input,
+	.prependInput,
+	.appendInput {
+		background-color: color(grey, 100);
+		border-color: color(grey, 100);
+	}
 }

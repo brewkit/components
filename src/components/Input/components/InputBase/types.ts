@@ -18,6 +18,10 @@ export interface Props {
      */
     className?: string,
     /**
+     * The number of columns a textarea has.
+     */
+    cols?: string,
+    /**
      * The custom control to show instead of the default control.  Can be used for any input type,
      * but is intended mostly for inputs that don't accept styling well like select boxes, radio buttons and
      * checkboxes.
@@ -64,13 +68,25 @@ export interface Props {
      */
     name?: string,
     /**
+     * The `input` element onChange handler
+     */
+    onChange?: any, // TODO: Fix this
+    /**
      *  The HTML5 placeholder applied to the `input` element
      */
     placeholder?: string,
     /**
+     * Use this to define a read-only field
+     */
+    readOnly?: boolean,
+    /**
      * If `true`, the `input` element will be required
      */
     required?: boolean,
+    /**
+     * The number of rows a textarea has.
+     */
+    rows?: string,
     /**
      * The `input` element type.  Can be any valid HTML5 input type
      */
