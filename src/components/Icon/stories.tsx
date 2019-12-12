@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { select } from '@storybook/addon-knobs';
 import Icon from './index';
 import Typography from '../Typography';
@@ -19,7 +19,7 @@ export default {
 export const General = () => {
     const color: Colors = select('color', ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'inherit'], 'primary');
     const size: Sizes = select('size', ['small', 'medium', 'large', 'inherit'], 'inherit');
-    const children: ReactNode = select(
+    const children: string = select(
         'children',
         icons,
         icons[0],

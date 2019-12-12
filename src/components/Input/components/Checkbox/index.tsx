@@ -1,32 +1,53 @@
 import React from "react";
 import clsx from 'clsx';
+import Icon from '../../../Icon';
 import InputBase from '../InputBase';
-import { Props } from '../InputBase/types';
+import { Props } from './types';
 import styles from './styles.scss';
 
 
-function Checkbox({ className, type, error, customControl, disabled, ...otherProps }: Props) {
+function Checkbox({ 
+    className = undefined, 
+    customControl = undefined, 
+    disabled = false, 
+    error = false,
+    fullWidth = false,
+    inputLabelClassName = undefined,
+    ...otherProps
+}: Props) {
 
     const defaultCustomControl = () => {
-
-        const classes = clsx(
-            { [styles.hasError]: !!error },
-            { [styles.isDisabled]: !!disabled },
-            styles.checkbox,
-        );
-
         return (
-            <div className={classes} />
+            <div className={styles.checkbox}>
+                <Icon size="large" className={styles.check}>check</Icon>
+            </div>
         );
     };
 
     const classes = clsx(
         styles.wrapper,
+        { [styles.isDisabled]: !!disabled },
+        { [styles.hasError]: !!error },
+        { [styles.isFullWidth]: !!fullWidth },
         className,
     );
 
+    const inputLabelClasses = clsx(
+        styles.inputLabel,
+        inputLabelClassName,
+    );
+
     return (
-        <InputBase type="checkbox" className={classes} customControl={customControl || defaultCustomControl} disabled={disabled} error={error} {...otherProps} />
+        <InputBase 
+            className={classes} 
+            customControl={customControl || defaultCustomControl}
+            disabled={disabled} 
+            error={error}
+            fullWidth={fullWidth}
+            inputLabelClassName={inputLabelClasses}
+            type="checkbox" 
+            {...otherProps}
+        />
     );
 }
 
