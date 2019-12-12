@@ -2,21 +2,9 @@
     "compilerOptions": {
         "outDir": "build/lib",
         "module": "commonjs",
-        "target": "es5",
-        "lib": ["es5", "es6", "es7", "es2017", "dom"],
-        "sourceMap": false,
-        "allowJs": false,
+        "lib": ["dom", "esnext"],
         "jsx": "react",
-        "forceConsistentCasingInFileNames": true,
-        "noImplicitReturns": true,
-        "noImplicitThis": true,
-        "strictNullChecks": true,
-        "suppressImplicitAnyIndexErrors": true,
-        "noUnusedLocals": true,
-        "declaration": true,
-        "allowSyntheticDefaultImports": true,
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
         "plugins": [{ "name": "typescript-plugin-css-modules" }]
     },
     "exclude": ["node_modules", "build", "scripts", "material-icons"]

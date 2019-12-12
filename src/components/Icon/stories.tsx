@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { select } from '@storybook/addon-knobs';
 import Icon from './index';
 import Typography from '../Typography';
