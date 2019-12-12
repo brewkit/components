@@ -10,7 +10,7 @@ import styles from './styles.scss';
  * units as to be similar to any neighboring fonts.
  */
 function Icon({
-    color = 'primary',
+    color = 'inherit',
     size = 'inherit',
     children,
     className,

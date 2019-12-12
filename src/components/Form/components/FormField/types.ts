@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { Props as InputProps } from '../../../Input/types';
 
 export interface Props {
     error?: boolean,

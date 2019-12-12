@@ -7,22 +7,32 @@ import { Props } from './types';
  * This component is made to be extended, not to be used directly
  */
 const InputBase = ({
+    after = undefined,
     as = 'input',
-    type,
-    required,
+    before = undefined,
+    checked = undefined,
+    children = undefined,
+    className = undefined,
+    cols = undefined,
+    customControl = undefined,
+    defaultChecked = undefined,
+    defaultValue = undefined,
+    disabled = undefined,
     error = false,
-    className,
-    name,
-    id,
-    fullWidth,
-    disabled,
-    value,
-    defaultValue,
-    placeholder,
-    inputProps = {},
-    customControl,
-    checked,
-    children
+    fullWidth = false,
+    id = undefined,
+    inputClassName = undefined,
+    inputLabel = undefined,
+    inputLabelClassName = undefined,
+    name = undefined,
+    onChange = undefined,
+    placeholder = undefined,
+    readOnly = undefined,
+    required = undefined,
+    rows = undefined,
+    type = 'text',
+    value = undefined,
+    ...otherProps
 }: Props) => {
     const classes = clsx(
         className,
@@ -30,23 +40,35 @@ const InputBase = ({
 
     const Element = as;
     const CustomControl = customControl;
+    const Before = before;
+    const After = after;
 
     return (
-        <Typography as="label" className={classes}>
+        <Typography as="label" className={classes} for={id} {...otherProps}>
+            {before}
             <Element
+                checked={checked}
+                className={inputClassName}
+                cols={cols}
+                defaultChecked={defaultChecked}
+                defaultValue={defaultValue}
+                disabled={disabled}
                 id={id}
                 name={name}
-                type={type}
-                required={required}
-                disabled={disabled}
-                value={value}
-                defaultValue={defaultValue}
+                onChange={onChange}
                 placeholder={placeholder}
-                checked={checked}
-                {...inputProps}
+                readOnly={readOnly}
+                required={required}
+                rows={rows}
+                type={type}
+                value={value}
             >{children}</Element>
+            {after}
             {customControl && (
                 <CustomControl />
+            )}
+            {inputLabel && ( type === 'checkbox' || type === 'radio' ) && (
+                <span className={inputLabelClassName}>{inputLabel}</span>
             )}
         </Typography>
     );

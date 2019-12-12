@@ -3,6 +3,7 @@
 .wrapper {
     display: inline-flex;
     overflow: hidden;
+    align-items: center;
 
     input {
         position: absolute;
@@ -21,14 +22,27 @@
     input:checked + & {
         border-width: 10px;
         border-color: color(brand, primary);
-
-        &.isDisabled {
-            background-color: white;
-            border-color: color(grey, 100);
-        }
     }
 }
 
+.isFullWidth {
+    width: 100%;
+}
+
 .isDisabled {
-    background-color: color(grey, 100);
+
+    input + .radio {
+        background-color: color(grey, 100);
+    }
+
+    input:checked + .radio {
+        background-color: white;
+        border-color: color(grey, 100);
+    }
+}
+
+.inputLabel {
+    font-weight: map-get(map-get($typography, font-weights), body2);
+    color: color(grey, 800);
+    margin-left: size(small);
 }
