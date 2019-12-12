@@ -7,7 +7,16 @@ import Input from '../../../Input';
 import styles from './styles.scss';
 import { Props } from './types';
 
-function FormField({ className, error, helperText, label, variant, children }: Props) {
+function FormField({ 
+    className,
+    inputClassName, 
+    error, 
+    helperText, 
+    label, 
+    variant, 
+    children,
+    ...otherProps
+}: Props) {
     const classes = clsx(
         { [styles.hasError]: !!error },
         className,
@@ -18,7 +27,7 @@ function FormField({ className, error, helperText, label, variant, children }: P
             {label && (
                 <FormLabel>{label}</FormLabel>
             )}
-            <Input variant={variant} />
+            <Input variant={variant} className={inputClassName} {...otherProps} />
             {helperText && (
                 <FormHelperText>{helperText}</FormHelperText>
             )}

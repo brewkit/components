@@ -7,6 +7,8 @@ export interface Props {
     as?: 'input' | 'select' | 'textarea',
     /**
      *  Whether or not the radio or checkbox input is checked
+     *
+     * @default false
      */
     checked?: boolean,
     /**
@@ -33,6 +35,8 @@ export interface Props {
     defaultChecked?: boolean,
     /**
      *  The `defaultValue` of the `input` element
+     * 
+     * @default undefined
      */
     defaultValue?: any,
     /**

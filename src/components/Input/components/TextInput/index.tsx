@@ -5,17 +5,18 @@ import InputIcon from '../InputIcon';
 import styles from './styles.scss';
 import { Props } from "./types";
 
-function TextInput({
-    after = undefined,
-    before = undefined,
-    className = undefined,
-    error = false,
-    disabled = false,
-    fullWidth = false,
-    inputClassName,
-    type = "text",
-    ...otherProps
-}: Props) {
+function TextInput(props: Props) {
+    const {
+        after = undefined,
+        before = undefined,
+        className = undefined,
+        error = false,
+        disabled = false,
+        fullWidth = false,
+        inputClassName,
+        type = "text",
+        ...otherProps
+    } = props;
 
     const Before = () => {
         return (

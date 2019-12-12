@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { select, text } from '@storybook/addon-knobs';
 import Form from './index';
 import Label from "../Label";
-import { TextInput } from "../Input";
+import Input from '../Input';
 
 
 export default {
@@ -23,7 +23,7 @@ export const Default = () => {
         <Form>
             <Form.Group>
                 <Form.Label>Form Label</Form.Label>
-                <TextInput type="text" />
+                <Input variant="text" />
             </Form.Group>
         </Form>
     );
