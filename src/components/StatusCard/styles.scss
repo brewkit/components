@@ -24,6 +24,7 @@
     span {
         height: 3rem;
     }
+
 }
 
 $accentColors: (info, success, danger);
@@ -37,8 +38,10 @@ $accentColors: (info, success, danger);
             border-left-color: color(brand,tertiary);
 
             & h1,
-            span {
+            span,
+            span > svg {
                 color: color(brand,tertiary);
+                fill: color(brand,tertiary)!important;
             }
 
             &.fill {
