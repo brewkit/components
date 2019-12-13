@@ -12,6 +12,7 @@ export const General = () => (
         color={select("Color", ["info", "success", "danger"], "info")}
         disabled={boolean("Disabled", false)}
         fill={boolean("Fill", false)}
+        icon={text("Icon", "accessible")}
     />
 
 )

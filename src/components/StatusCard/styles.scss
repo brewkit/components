@@ -4,15 +4,26 @@
 // color(accent, info,success,danger)
 
 .wrapper {
+    display: inline-flex;
+    justify-content: center;
     box-sizing: border-box;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
-    display: inline-block;
     margin: 1rem;
 }
 .standard {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem 0.5rem 0.75rem;
     border-left: 0.25rem solid;
     margin: 1rem;
+}
+
+.icon {
+    align-items: center;
+    display: flex;
+    margin-right: 0.5rem;
+
+    span {
+        height: 3rem;
+    }
 }
 
 $accentColors: (info, success, danger);
