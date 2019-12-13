@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import Typography from '../Typography';
 import { Props } from './types';
@@ -14,7 +14,7 @@ function Divider({
     children,
     className,
     ...otherProps
-}: Props) {
+}: Props): ReactElement {
 
 
     const classes = clsx(

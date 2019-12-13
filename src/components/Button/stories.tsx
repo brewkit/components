@@ -1,21 +1,21 @@
-import React, { ReactNode } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import { text, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import Button from './index';
 import { Variants, Colors, Sizes } from './types';
-import Label from "../Label";
+import Label from '../Label';
 
 
 export default {
-    title: 'Components|User Input/Button',
     component: Button,
     parameters: {
         componentSubtitle: <Label color="success">Stable</Label>,
     },
+    title: 'Components|User Input/Button',
 };
 
 
-export const General = () => {
+export const General = (): ReactElement => {
     const children: ReactNode = text('children', 'Click me!');
     const variant: Variants = select('variant', ['standard', 'icon'], 'standard');
     const color: Colors = select('color', ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'link'], 'primary');
@@ -27,15 +27,15 @@ export const General = () => {
     const disabled: boolean = boolean('disabled', false);
     return (
         <Button
-            variant={variant}
             color={color}
-            size={size}
+            disabled={disabled}
+            isCircular={isCircular}
             isCompact={isCompact}
             isFluid={isFluid}
-            isCircular={isCircular}
             isLoading={isLoading}
-            disabled={disabled}
             onClick={action('button-click')}
+            size={size}
+            variant={variant}
         >
             {children}
         </Button>
@@ -43,11 +43,11 @@ export const General = () => {
 };
 
 
-export const Default = () => <Button>Default</Button>;
-export const Standard = () => <Button variant="standard">Click me!</Button>;
-export const Icon = () => <Button variant="icon">360</Button>;
-export const Circular = () => <Button variant="icon" isCircular>add</Button>;
-export const Loading = () => <Button variant="standard" isLoading>Click me!</Button>;
-export const Fluid = () => <Button variant="standard" isFluid>Click me!</Button>;
-export const Compact = () => <Button variant="standard" isCompact>Click me!</Button>;
-export const Disabled = () => <Button variant="standard" disabled>Click me!</Button>;
+export const Default = (): ReactElement => <Button>Default</Button>;
+export const Standard = (): ReactElement => <Button variant="standard">Click me!</Button>;
+export const Icon = (): ReactElement => <Button variant="icon">360</Button>;
+export const Circular = (): ReactElement => <Button isCircular variant="icon">add</Button>;
+export const Loading = (): ReactElement => <Button isLoading variant="standard">Click me!</Button>;
+export const Fluid = (): ReactElement => <Button isFluid variant="standard">Click me!</Button>;
+export const Compact = (): ReactElement => <Button isCompact variant="standard">Click me!</Button>;
+export const Disabled = (): ReactElement => <Button disabled variant="standard">Click me!</Button>;

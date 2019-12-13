@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import clsx from 'clsx';
-import { Flipper, Flipped } from 'react-flip-toolkit';
+import { Flipped, Flipper } from 'react-flip-toolkit';
 import Typography from '../Typography';
 import Icon from '../Icon';
 import Progress from '../Progress';
@@ -24,7 +24,7 @@ function Button({
     children,
     className,
     ...otherProps
-}: Props) {
+}: Props): ReactElement {
 
 
     const buttonClasses = clsx(
@@ -45,27 +45,31 @@ function Button({
         <Flipper flipKey={JSON.stringify([isLoading, variant, color, size])}>
             <Flipped flipId="wrapper">
                 <button
-                    className={buttonClasses}
-                    type="button"
-                    disabled={disabled || isLoading}
                     aria-label={(variant === 'icon' && typeof children === 'string') ? children : undefined}
+                    className={buttonClasses}
+                    disabled={disabled || isLoading}
+                    type="button"
                     {...otherProps}
                 >
                     <Flipped flipId="content">
                         <div className={styles.content}>
                             <span className={styles.buttonText}>
-                                <Typography>{children}</Typography>
+                                <Typography>
+                                    {children}
+                                </Typography>
                             </span>
                             {variant === 'icon' && typeof children === 'string' &&
                                 <span className={styles.icon}>
-                                    <Icon color="inherit">{children}</Icon>
+                                    <Icon color="inherit">
+                                        {children}
+                                    </Icon>
                                 </span>
                             }
                         </div>
                     </Flipped>
                     <Flipped flipId="loader">
                         <div className={styles.loadingIndicator}>
-                            <Progress variant="circular" color={color} />
+                            <Progress color={color} variant="circular" />
                         </div>
                     </Flipped>
                 </button>

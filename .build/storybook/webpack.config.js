@@ -5,8 +5,14 @@ module.exports = async ({ config }) => {
 
     config.module.rules.push(
         {
+            enforce: 'pre',
             test: /\.tsx?$/,
-            exclude: [/node_modules/],
+            exclude: /node_modules/,
+            loader: 'eslint-loader',
+        },
+        {
+            test: /\.tsx?$/,
+            exclude: /node_modules/,
             use: [
                 {
                     loader: 'awesome-typescript-loader',
@@ -16,7 +22,7 @@ module.exports = async ({ config }) => {
                     options: {
                         compilerOptions: tsConfig.compilerOptions,
                     }
-                }
+                },
             ],
         },
         {
