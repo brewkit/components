@@ -5,6 +5,7 @@
         "lib": ["dom", "esnext"],
         "jsx": "react",
         "esModuleInterop": true,
+        "allowJs": true,
         "plugins": [{ "name": "typescript-plugin-css-modules" }]
     },
     "exclude": ["node_modules", "build", "scripts", "material-icons"]

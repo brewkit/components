@@ -21,32 +21,27 @@
     },
     "jest": {
         "transform": {
-            ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+            ".(ts|tsx)": "ts-jest"
         },
-        "mapCoverage": true,
         "testPathIgnorePatterns": [
             "/node_modules/",
             "/lib/"
         ],
-        "testRegex": "(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$",
         "moduleFileExtensions": [
             "ts",
             "tsx",
             "js",
             "json"
+        ],
+        "moduleNameMapper": {
+            "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|md)$": "<rootDir>/.build/jest/mocks/fileMock.js",
+            "^.+\\.(css|less|scss)$": "identity-obj-proxy"
+        },
+        "setupFilesAfterEnv": [
+            "<rootDir>/.build/jest/setupTests.js"
         ]
     },
     "devDependencies": {
-        "@babel/core": "^7.7.5",
-        "@babel/plugin-proposal-class-properties": "^7.7.4",
-        "@babel/plugin-proposal-json-strings": "^7.7.4",
-        "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
-        "@babel/plugin-syntax-dynamic-import": "^7.7.4",
-        "@babel/plugin-syntax-import-meta": "^7.7.4",
-        "@babel/plugin-transform-object-assign": "^7.7.4",
-        "@babel/preset-env": "^7.7.6",
-        "@babel/preset-react": "^7.7.4",
-        "@babel/preset-typescript": "^7.7.4",
         "@storybook/addon-actions": "^5.2.8",
         "@storybook/addon-backgrounds": "^5.2.8",
         "@storybook/addon-console": "^1.2.1",
@@ -59,6 +54,7 @@
         "@storybook/react": "^5.2.8",
         "@storybook/theming": "^5.2.8",
         "@types/enzyme": "^3.10.4",
+        "@types/enzyme-adapter-react-16": "^1.0.5",
         "@types/jest": "^24.0.23",
         "@types/node": "^12.12.17",
         "@types/react": "^16.9.16",
@@ -71,6 +67,8 @@
         "babel-loader": "^8.0.5",
         "babel-plugin-require-context-hook": "^1.0.0",
         "cz-conventional-changelog": "^3.0.2",
+        "enzyme": "^3.10.0",
+        "enzyme-adapter-react-16": "^1.15.1",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^24.9.0",
         "node-sass": "^4.13.0",
