@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import { text, select, boolean } from '@storybook/addon-knobs';
 import Label from '../Label';
 import Typography from './index';
@@ -6,42 +6,49 @@ import { Variants, Colors, Alignments, Displays } from './types';
 
 
 export default {
-    title: 'Components|Display/Typography',
     component: Typography,
     parameters: {
         componentSubtitle: <Label color="success">Stable</Label>,
     },
+    title: 'Components|Display/Typography',
 };
 
 
-export const General = () => {
+export const General = (): ReactElement => {
     const align: Alignments = select('align', ['inherit', 'left', 'center', 'right', 'justify'], 'inherit');
     const children: ReactNode = text('children', 'Lorem ipsum dolor sit amet.');
 
-    const color: Colors = select('color', ['initial', 'primary', 'secondary', 'tertiary', 'success', 'warning', 'info', 'danger'], 'initial');
+    const color: Colors = select('color', [
+        'initial',
+        'primary',
+        'secondary',
+        'tertiary',
+        'success',
+        'warning',
+        'info',
+        'danger',
+    ], 'initial');
     const display: Displays = select('display', ['initial', 'block', 'inline', 'inline-block'], 'initial');
     const hasBottomMargin = boolean('hasBottomMargin', true);
     const shouldTruncate = boolean('shouldTruncate', false);
     const variant: Variants = select('variant', ['h1', 'h2', 'h3', 'body1', 'body2', 'label', 'inherit'], 'h1');
 
     return (
-        <React.Fragment>
-            <Typography
-                align={align}
-                color={color}
-                display={display}
-                hasBottomMargin={hasBottomMargin}
-                shouldTruncate={shouldTruncate}
-                variant={variant}
-            >
-                {children}
-            </Typography>
-        </React.Fragment>
+        <Typography
+            align={align}
+            color={color}
+            display={display}
+            hasBottomMargin={hasBottomMargin}
+            shouldTruncate={shouldTruncate}
+            variant={variant}
+        >
+            {children}
+        </Typography>
     );
 };
 
 
-export const Default = () => (
+export const Default = (): ReactElement => (
     <div style={{ maxWidth: '100%' }}>
         <Typography>
             Default Settings - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -49,42 +56,29 @@ export const Default = () => (
     </div>
 );
 
-export const Headers = () => (
-    <React.Fragment>
-        <div style={{ maxWidth: '100%' }}>
-            <Typography variant="h1" shouldTruncate hasBottomMargin>
+export const Headers = (): ReactElement => (
+    <div style={{ maxWidth: '100%' }}>
+        <Typography hasBottomMargin shouldTruncate variant="h1">
                 H1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </Typography>
-            <Typography variant="h2" shouldTruncate hasBottomMargin>
+        </Typography>
+        <Typography hasBottomMargin shouldTruncate variant="h2">
                 H2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </Typography>
-            <Typography variant="h3" shouldTruncate hasBottomMargin>
+        </Typography>
+        <Typography hasBottomMargin shouldTruncate variant="h3">
                 H3 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </Typography>
-        </div>
-    </React.Fragment>
+        </Typography>
+    </div>
 );
 
 
-export const Paragraphs = () => (
+export const Paragraphs = (): ReactElement => (
     <React.Fragment>
-        <Typography variant="body1" as="p" hasBottomMargin>
+        <Typography as="p" hasBottomMargin variant="body1">
             body1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in,
             egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id
             feugiat risus dapibus. Ut auctor imperdiet turpis, vel mollis dolor sollicitudin in.
         </Typography>
-        <Typography variant="body2" as="p" hasBottomMargin>
-            body1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in,
-            egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id
-            feugiat risus dapibus. Ut auctor imperdiet turpis, vel mollis dolor sollicitudin in.
-        </Typography>
-    </React.Fragment>
-);
-
-
-export const Truncated = () => (
-    <React.Fragment>
-        <Typography variant="body1" as="p" shouldTruncate>
+        <Typography as="p" hasBottomMargin variant="body2">
             body1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in,
             egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id
             feugiat risus dapibus. Ut auctor imperdiet turpis, vel mollis dolor sollicitudin in.
@@ -93,11 +87,18 @@ export const Truncated = () => (
 );
 
 
-export const Labels = () => (
-    <React.Fragment>
-        <Typography variant="label" as="p" shouldTruncate hasBottomMargin>
+export const Truncated = (): ReactElement => (
+    <Typography as="p" shouldTruncate variant="body1">
+            body1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in,
+            egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id
+            feugiat risus dapibus. Ut auctor imperdiet turpis, vel mollis dolor sollicitudin in.
+    </Typography>
+);
+
+
+export const Labels = (): ReactElement => (
+    <Typography as="p" hasBottomMargin shouldTruncate variant="label">
             label - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </Typography>
-    </React.Fragment>
+    </Typography>
 );
 

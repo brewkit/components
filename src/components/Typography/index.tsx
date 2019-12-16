@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import { Props } from './types';
 import styles from './styles.scss';
@@ -18,7 +18,7 @@ function Typography({
     children,
     className,
     ...otherProps
-}: Props) {
+}: Props): ReactElement {
 
 
     const classes = clsx(

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import { Props } from './types';
 import styles from './styles.scss';
@@ -13,7 +13,8 @@ function Progress({
     size = 'inherit',
     className,
     ...otherProps
-}: Props) {
+}: Props): ReactElement {
+
 
     const classes = clsx(
         styles[`variant--${variant}`],
@@ -22,9 +23,11 @@ function Progress({
         className,
     );
 
+
     return (
         <div className={classes} {...otherProps} />
     );
+
 
 }
 

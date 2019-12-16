@@ -69,7 +69,7 @@
         "class-methods-use-this": "error",
         "complexity": "error",
         "consistent-return": "error",
-        "curly": "error",
+        "curly": ["error", "multi"],
         "default-case": "error",
         "default-param-last": "error",
         "dot-location": ["error", "property"],

@@ -1,19 +1,19 @@
-import React, { ReactNode } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import { select, text } from '@storybook/addon-knobs';
 import Label from './index';
 import { Colors } from './types';
 
 
 export default {
-    title: 'Components|Display/Label',
     component: Label,
     parameters: {
         componentSubtitle: <Label color="warning">In Development</Label>,
     },
+    title: 'Components|Display/Label',
 };
 
 
-export const General = () => {
+export const General = (): ReactElement => {
     const color: Colors = select('color', ['success', 'danger', 'warning', 'info', 'light', 'dark'], 'info');
     const children: ReactNode = text('children', 'Label');
     const title: ReactNode = text('title', '');
@@ -24,5 +24,5 @@ export const General = () => {
 };
 
 
-export const Default = () => <Label>Default</Label>;
-export const WithTitle = () => <Label title="Status" color="success">complete</Label>;
+export const Default = (): ReactElement => <Label>Default</Label>;
+export const WithTitle = (): ReactElement => <Label color="success" title="Status">complete</Label>;
