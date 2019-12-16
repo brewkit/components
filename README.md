@@ -4,7 +4,7 @@
 
 ---
 
-<p align="center">A design system for creating beautiful, themeable, and fully responsive UIs using Webpack, React, SCSS, and TypeScript.</p>
+<p align="center">A design system for creating beautiful, themeable, and fully responsive UIs using React, SCSS, and TypeScript.</p>
 
 ---
 
