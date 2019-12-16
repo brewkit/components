@@ -1,9 +1,64 @@
+@import '../../../../styles/_utilities.scss';
+
+// ==============================================
+// General
+// ==============================================
+
+.wrapper {
+    display: inline-flex;
+    justify-content: center;
+    box-sizing: border-box;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
+    margin: size(normal);
+    padding: size(x-small) size(normal) size(x-small) size(small);
+    border-left: size(xx-small) solid;
+}
+
+// ==============================================
+// Icon
+// ==============================================
+
 .icon {
     align-items: center;
     display: flex;
-    margin-right: 0.5rem;
+    margin-right: size(x-small);
 
     span {
         height: 3rem;
+    }
+}
+
+// ==============================================
+// Colors
+// ==============================================
+
+$accentColors: (info, success, danger);
+
+@each $color in $accentColors {
+    .color--#{$color} {
+        border-left-color: color(accent, $color);
+
+        &.isFilled {
+            background-color: rgba(color(accent, $color), .2);
+        }
+    }
+}
+
+
+// ----------------------------------------------
+// Disabled Colors
+
+.isDisabled {
+    border-left-color: color(brand,tertiary);
+
+    & h1,
+    span,
+    span > svg {
+        color: color(brand,tertiary)!important;
+        fill: color(brand,tertiary)!important;
+    }
+
+    &.isFilled {
+        background-color: rgba(color(brand, tertiary), .2);
     }
 }
