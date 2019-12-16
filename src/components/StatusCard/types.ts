@@ -1,8 +1,10 @@
-export type Props = {
+export interface Props {
+    className?: string,
+    variant: 'standard' | 'compact',
     color: 'info' | 'success' | 'danger',
     header: string,
+    icon: string,
     body: string,
-    icon?: string,
     disabled?: boolean,
     fill?: boolean
-};
+}

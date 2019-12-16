@@ -13,6 +13,7 @@ export const General = () => (
         disabled={boolean("Disabled", false)}
         fill={boolean("Fill", false)}
         icon={text("Icon", "accessible")}
+        variant={select("Variant", ["standard", "compact"], "standard")}
     />
 
-)
+);
