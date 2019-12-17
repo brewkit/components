@@ -1,26 +1,35 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import Typography from '../../../Typography';
 import { Props } from './types';
 import styles from './styles.scss';
 
 
-const CompactStatusCard = ({ className, color, header, body, disabled, fill, ...otherProps }: Props) => {
+const CompactStatusCard = ({
+    className,
+    color,
+    header,
+    body,
+    disabled,
+    fill,
+    ...otherProps
+}: Props): ReactElement => {
 
     const compactClasses = clsx(
         styles.wrapper,
         styles[`color--${color}`],
-        disabled && styles.isDisabled,
-        fill && styles.isFilled,
+        { [styles.isDisabled]: disabled },
+        { [styles.isFilled]: fill },
         className,
     );
 
     return (
         <div className={compactClasses} {...otherProps}>
-            <Typography align="center" variant="body1" color={color}>{header}</Typography>
-            <Typography className={styles.cardBody} align="center" variant="body1">{body.toUpperCase()}</Typography>
+            <Typography align="center" color={color} variant="body1">{header}</Typography>
+            <Typography align="center" className={styles.cardBody} variant="body1">{body.toUpperCase()}</Typography>
         </div>
     );
 };
+
 
 export default CompactStatusCard;

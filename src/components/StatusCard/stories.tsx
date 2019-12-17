@@ -1,47 +1,50 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { text, select, boolean } from '@storybook/addon-knobs';
 import StandardStatusCard from './Components/Standard';
 import CompactStatusCard from './Components/Compact';
 import StatusCard from './index';
+import { Colors, Variants } from './types';
 
 
 export default { title: 'Components|Display/Status Card' };
 
-export const General = () => (
+const body: string = text('body', 'churros');
+const color: Colors = select('color', ['info', 'success', 'danger'], 'info');
+const disabled: boolean = boolean('disabled', false);
+const fill: boolean = boolean('fill', false);
+const header: string = text('header', '23');
+const icon: string = text('icon', 'business');
+const variant: Variants = select('variant', ['standard', 'compact'], 'standard');
 
+export const General = (): ReactElement => (
     <StatusCard
-        header={text('Header', 'hello')}
-        body={text('Body', 'goodbye')}
-        color={select('Color', ['info', 'success', 'danger'], 'info')}
-        disabled={boolean('Disabled', false)}
-        fill={boolean('Fill', false)}
-        icon={text('Icon', 'accessible')}
-        variant={select('Variant', ['standard', 'compact'], 'standard')}
+        body={body}
+        color={color}
+        disabled={disabled}
+        fill={fill}
+        header={header}
+        icon={icon}
+        variant={variant}
     />
-
 );
 
-export const Standard = () => (
-
+export const Standard = (): ReactElement => (
     <StandardStatusCard
-        icon={text('Icon', 'business')}
-        color={select('Color', ['info', 'success', 'danger'], 'info')}
-        header={text('Header', '28')}
-        body={text('Body', 'errors')}
-        disabled={boolean('Disabled', false)}
-        fill={boolean('Fill', false)}
+        body={body}
+        color={color}
+        disabled={disabled}
+        fill={fill}
+        header={header}
+        icon={icon}
     />
-
 );
 
-export const Compact = () => (
-
+export const Compact = (): ReactElement => (
     <CompactStatusCard
-        color={select('Color', ['info', 'success', 'danger'], 'info')}
-        header={text('Header', '50 Days 23h 2m')}
-        body={text('Body', 'total recorded')}
-        disabled={boolean('Disabled', false)}
-        fill={boolean('Fill', false)}
+        body={body}
+        color={color}
+        disabled={disabled}
+        fill={fill}
+        header={header}
     />
-
 );
