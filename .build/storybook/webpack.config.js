@@ -9,23 +9,7 @@ module.exports = async ({ config }) => {
             exclude: [/node_modules/],
             use: [
                 {
-                    loader: 'babel-loader',
-                    options: {
-                        "presets": [
-                            ["@babel/env", {
-                                "modules": "cjs",
-                            }],
-                            "@babel/react",
-                            "@babel/typescript"
-                        ],
-                        "plugins": [
-                            "react-hot-loader/babel",
-                            "@babel/proposal-class-properties",
-                            "@babel/proposal-object-rest-spread",
-                            "@babel/plugin-transform-object-assign",
-                            "@babel/plugin-syntax-dynamic-import",
-                        ]
-                    },
+                    loader: 'awesome-typescript-loader',
                 },
                 {
                     loader: 'react-docgen-typescript-loader',

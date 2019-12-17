@@ -22,7 +22,7 @@ function Popup({
 
 
     const [isDisplaying, setIsDisplaying] = React.useState(false);
-    let intentTimeout: NodeJS.Timer;
+    let intentTimeout: number;
 
 
     const wrapperClasses = clsx(
@@ -43,7 +43,7 @@ function Popup({
 
     function handleMouseEnter(): void {
         clearTimeout(intentTimeout);
-        intentTimeout = setTimeout(() => {
+        intentTimeout = window.setTimeout(() => {
             setIsDisplaying(true);
         }, 500);
     }
@@ -51,7 +51,7 @@ function Popup({
 
     function handleMouseLeave(): void {
         clearTimeout(intentTimeout);
-        intentTimeout = setTimeout(() => {
+        intentTimeout = window.setTimeout(() => {
             setIsDisplaying(false);
         }, 1000);
     }

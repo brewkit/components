@@ -22,8 +22,10 @@ function Card({ noBorder, className, children, ...otherProps }: Props) {
     );
 }
 
+
 Card.Body = CardBody;
 Card.Header = CardHeader;
 Card.Title = CardTitle;
+
 
 export default Card;

@@ -8,7 +8,6 @@ import styles from './styles.scss';
  * The `<Typography />` component renders text using the 'Roboto' font in various styles.
  */
 function Typography({
-    size = 'initial',
     variant = 'inherit',
     color = 'initial',
     align = 'inherit',

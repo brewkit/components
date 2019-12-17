@@ -1,6 +1,15 @@
 import React from 'react';
+import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import Typography from './index';
+
+
+it('renders correctly', () => {
+    const tree = renderer
+        .create(<Typography>Foo</Typography>)
+        .toJSON();
+    expect(tree).toMatchSnapshot();
+});
 
 
 it('renders children when passed in', () => {
