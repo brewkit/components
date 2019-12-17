@@ -3,12 +3,13 @@ import StandardStatusCard from './Components/Standard';
 import CompactStatusCard from './Components/Compact';
 import { Props } from './types';
 
+
 const components = {
-    standard: StandardStatusCard,
     compact: CompactStatusCard,
+    standard: StandardStatusCard,
 };
 
-const StatusCard = ({ className, variant,color, header, body, disabled, fill, ...otherProps}: Props) => {
+const StatusCard = ({ className, variant,color, header, body, disabled, fill, ...otherProps }: Props) => {
 
     const Element = components[variant] || CompactStatusCard;
 
