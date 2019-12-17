@@ -18,7 +18,17 @@ export default {
 export const General = (): ReactElement => {
     const children: ReactNode = text('children', 'Click me!');
     const variant: Variants = select('variant', ['standard', 'icon'], 'standard');
-    const color: Colors = select('color', ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'link'], 'primary');
+    const color: Colors = select('color', [
+        'primary',
+        'secondary',
+        'success',
+        'danger',
+        'warning',
+        'info',
+        'light',
+        'dark',
+        'link',
+    ], 'primary');
     const size: Sizes = select('size', ['small', 'medium', 'large'], 'medium');
     const isLoading: boolean = boolean('isLoading', false);
     const isCompact: boolean = boolean('isCompact', false);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import FormGroup from '../FormGroup';
 import FormLabel from '../FormLabel';
@@ -7,32 +7,37 @@ import Input from '../../../Input';
 import styles from './styles.scss';
 import { Props } from './types';
 
-function FormField({ 
+
+function FormField({
     className,
-    inputClassName, 
-    error, 
-    helperText, 
-    label, 
-    variant, 
+    inputClassName,
+    error,
+    helperText,
+    label,
+    variant,
     children,
     ...otherProps
-}: Props) {
+}: Props): ReactElement {
     const classes = clsx(
-        { [styles.hasError]: !!error },
+        { [styles.hasError]: Boolean(error) },
         className,
     );
+
 
     return (
         <FormGroup className={classes}>
             {label && (
                 <FormLabel>{label}</FormLabel>
             )}
-            <Input variant={variant} className={inputClassName} {...otherProps} />
+            <Input className={inputClassName} variant={variant} {...otherProps} />
             {helperText && (
                 <FormHelperText>{helperText}</FormHelperText>
             )}
         </FormGroup>
     );
+
+
 }
+
 
 export default FormField;

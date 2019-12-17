@@ -17,7 +17,17 @@ export default {
 
 
 export const General = (): ReactElement => {
-    const color: Colors = select('color', ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'inherit'], 'primary');
+    const color: Colors = select('color', [
+        'primary',
+        'secondary',
+        'success',
+        'danger',
+        'warning',
+        'info',
+        'light',
+        'dark',
+        'inherit',
+    ], 'primary');
     const size: Sizes = select('size', ['small', 'medium', 'large', 'inherit'], 'inherit');
     const children: string = select(
         'children',
