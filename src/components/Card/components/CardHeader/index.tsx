@@ -1,5 +1,5 @@
-import React from "react";
-import clsx from "clsx";
+import React, { ReactElement } from 'react';
+import clsx from 'clsx';
 import styles from './styles.scss';
 import { Props } from './types';
 
@@ -7,10 +7,23 @@ import { Props } from './types';
 /**
  * The `<CardHeader />` component is intended to be used inside the `<Card />` component to create a header.
  */
-function CardHeader({ className, ...otherProps}: Props) {
-    return (
-        <div className={clsx(styles.cardHeader, className)} {...otherProps} />
+function CardHeader({
+    className,
+    ...otherProps
+}: Props): ReactElement {
+
+
+    const classes = clsx(
+        styles.wrapper,
+        className,
     );
+
+
+    return (
+        <div className={classes} {...otherProps} />
+    );
+
+
 }
 
 

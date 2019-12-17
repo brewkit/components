@@ -1,30 +1,23 @@
-import React, { ReactNode } from 'react';
-import { select, text } from '@storybook/addon-knobs';
+import React, { ReactElement } from 'react';
 import Form from './index';
-import Label from "../Label";
+import Label from '../Label';
 import Input from '../Input';
 
 
 export default {
-    title: 'Components|User Input/Form',
     component: Form,
     parameters: {
         componentSubtitle: <Label color="warning">In Development</Label>,
     },
+    title: 'Components|User Input/Form',
 };
 
 
-export const Default = () => {
-    // const color: Colors = select('color', ['success', 'danger', 'warning', 'info', 'light', 'dark'], 'info');
-    // const children: ReactNode = text('children', 'Label');
-    // const title: ReactNode = text('title', '');
-
-    return (
-        <Form>
-            <Form.Group>
-                <Form.Label>Form Label</Form.Label>
-                <Input variant="text" />
-            </Form.Group>
-        </Form>
-    );
-};
+export const Default = (): ReactElement => (
+    <Form>
+        <Form.Group>
+            <Form.Label>Form Label</Form.Label>
+            <Input variant="text" />
+        </Form.Group>
+    </Form>
+);

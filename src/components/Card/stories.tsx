@@ -1,24 +1,20 @@
-import React, { ReactNode } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import { text } from '@storybook/addon-knobs';
 import Label from '../Label';
-// import { action } from '@storybook/addon-actions';
-// import { Variants, Colors, Sizes } from './types';
-
 import Card from './index';
 
 
 export default {
-    title: 'Components|Display/Card',
     component: Card,
     parameters: {
         componentSubtitle: <Label color="warning">In Progress</Label>,
     },
+    title: 'Components|Display/Card',
 };
 
 
-export const BaseExample = () => {
+export const BaseExample = (): ReactElement => {
     const children: ReactNode = text('children', 'Click me!');
-
     return (
         <Card>
             <Card.Header>
@@ -29,28 +25,8 @@ export const BaseExample = () => {
     );
 };
 
-export const CardExample = () => {
-    return <Card>&nbsp;</Card>;
-};
 
-export const CardBodyExample = () => {
-    const children: ReactNode = text('children', 'Card Content');
-
-    return <Card.Body>{children}</Card.Body>
-};
-
-export const CardHeaderExample = () => {
-    const children: ReactNode = text('children', '');
-
-    return <Card.Header>{children}</Card.Header>
-};
-
-export const CardTitleExample = () => {
-    const children: ReactNode = text('children', 'Card Title');
-
-    return <Card.Title>{children}</Card.Title>
-};
-
-
-
-
+export const CardExample = (): ReactElement => <Card>Lorem Ipsum</Card>;
+export const CardBodyExample = (): ReactElement => <Card.Body>Lorem Ipsum</Card.Body>;
+export const CardHeaderExample = (): ReactElement => <Card.Header>Lorem Ipsum</Card.Header>;
+export const CardTitleExample = (): ReactElement => <Card.Title>Lorem Ipsum</Card.Title>;

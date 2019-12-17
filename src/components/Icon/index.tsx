@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import { Props } from './types';
 import styles from './styles.scss';
@@ -15,7 +15,7 @@ function Icon({
     children,
     className,
     ...otherProps
-}: Props) {
+}: Props): ReactElement {
 
 
     /** Combine our classes based on props */
@@ -28,12 +28,7 @@ function Icon({
 
 
     /** Lazy load our icon */
-    const Image = React.lazy(() => {
-        return new Promise((resolve) => {
-            import(`./material-icons/dist/${children}.js`)
-                .then(response => resolve(response));
-        });
-    });
+    const Image = React.lazy(() => import(`./material-icons/dist/${children}.js`));
 
 
     return (
@@ -41,7 +36,7 @@ function Icon({
             className={classes}
             {...otherProps}
         >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="100%">
+            <svg height="100%" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <React.Suspense fallback="&#9744;">
                     <Image />
                 </React.Suspense>

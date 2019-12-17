@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import { select, text } from '@storybook/addon-knobs';
 import Divider from './index';
 import Label from '../Label';
@@ -6,15 +6,15 @@ import { Alignments } from './types';
 
 
 export default {
-    title: 'Components|Display/Divider',
     component: Divider,
     parameters: {
         componentSubtitle: <Label color="success">stable</Label>,
     },
+    title: 'Components|Display/Divider',
 };
 
 
-export const General = () => {
+export const General = (): ReactElement => {
     const align: Alignments = select('align', ['left', 'center', 'right'], 'center');
     const children: ReactNode = text('children', 'divider');
 
@@ -24,7 +24,7 @@ export const General = () => {
 };
 
 
-export const Default = () => <Divider />;
-export const LeftAligned = () => <Divider align="left">I'm a divider!</Divider>;
-export const CenterAligned = () => <Divider align="center">I'm a divider!</Divider>;
-export const RightAligned = () => <Divider align="right">I'm a divider!</Divider>;
+export const Default = (): ReactElement => <Divider />;
+export const LeftAligned = (): ReactElement => <Divider align="left">I am a divider!</Divider>;
+export const CenterAligned = (): ReactElement => <Divider align="center">I am a divider!</Divider>;
+export const RightAligned = (): ReactElement => <Divider align="right">I am a divider!</Divider>;

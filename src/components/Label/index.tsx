@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import Typography from '../Typography';
 import { Props } from './types';
@@ -14,7 +14,7 @@ function Label({
     children,
     className,
     ...otherProps
-}: Props) {
+}: Props): ReactElement {
 
 
     const classes = clsx(
@@ -28,11 +28,11 @@ function Label({
         <div className={classes} {...otherProps}>
             {title && (
                 <div className={styles.title}>
-                    <Typography variant="label" className={styles.titleContent}>{title}</Typography>
+                    <Typography className={styles.titleContent} variant="label">{title}</Typography>
                 </div>
             )}
             <div className={styles.content}>
-                <Typography variant="label" color={color}>{children}</Typography>
+                <Typography color={color} variant="label">{children}</Typography>
             </div>
         </div>
     );
