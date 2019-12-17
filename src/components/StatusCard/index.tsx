@@ -9,7 +9,7 @@ const components = {
     standard: StandardStatusCard,
 };
 
-const StatusCard = ({ className, variant,color, header, body, disabled, fill, ...otherProps }: Props) => {
+const StatusCard = ({ className, variant, color, header, body, disabled, fill, ...otherProps }: Props) => {
 
     const Element = components[variant] || CompactStatusCard;
 
