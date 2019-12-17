@@ -15,7 +15,7 @@ export interface Props {
     /**
      * Body text to display
      */
-    body: string
+    body: string,
     /**
      * Optional disabled attribute to render disabled colors
      */
