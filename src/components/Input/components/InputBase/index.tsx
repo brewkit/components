@@ -37,7 +37,6 @@ const InputBase = ({
 
     const classes = clsx(className);
     const Element = as;
-    const CustomControl = customControl;
 
 
     return (
@@ -68,13 +67,12 @@ const InputBase = ({
 
             {after}
 
-            {customControl && (
-                <CustomControl />
-            )}
+            {customControl && customControl}
 
             {inputLabel && (type === 'checkbox' || type === 'radio') && (
                 <span className={inputLabelClassName}>{inputLabel}</span>
             )}
+
         </Typography>
     );
 };

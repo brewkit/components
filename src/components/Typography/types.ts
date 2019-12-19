@@ -2,7 +2,18 @@ import { ReactNode } from 'react';
 
 
 export type Variants = 'h1' | 'h2' | 'h3' | 'body1' | 'body2' | 'label' | 'inherit';
-export type Colors = 'primary' | 'secondary' | 'tertiary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'initial';
+export type Colors = (
+    'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'success'
+    | 'danger'
+    | 'warning'
+    | 'info'
+    | 'light'
+    | 'dark'
+    | 'initial'
+);
 export type Alignments = 'inherit' | 'left' | 'center' | 'right' | 'justify';
 export type Displays = 'initial' | 'block' | 'inline' | 'inline-block';
 

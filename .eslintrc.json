@@ -102,7 +102,7 @@
         "no-labels": "error",
         "no-lone-blocks": "error",
         "no-loop-func": "error",
-        "no-magic-numbers": ["error", { "ignoreArrayIndexes": true }],
+        "no-magic-numbers": "off",
         "no-multi-spaces": "error",
         "no-multi-str": "error",
         "no-new": "error",
@@ -304,7 +304,7 @@
         "@typescript-eslint/explicit-member-accessibility": "error",
         "@typescript-eslint/func-call-spacing": "error",
         "@typescript-eslint/generic-type-naming": "error",
-        "@typescript-eslint/indent": "error",
+        "@typescript-eslint/indent": "off",
         "@typescript-eslint/interface-name-prefix": "error",
         "@typescript-eslint/member-delimiter-style": ["error", {
             "multiline": {
@@ -454,7 +454,6 @@
         "react/jsx-props-no-spreading": "off",
         "react/jsx-sort-default-props": "error",
         "react/jsx-sort-props": "error",
-        "react/jsx-space-before-closing": "error",
         "react/jsx-tag-spacing": "error",
         "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error",

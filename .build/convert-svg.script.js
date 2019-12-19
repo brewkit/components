@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const prettier = require('prettier');
 
-const SVGsDir = path.resolve(process.cwd(), './src/core/components/Icon/material-icons/src');
-const outputDir = path.resolve(process.cwd(), './src/core/components/Icon/material-icons/dist');
+const SVGsDir = path.resolve(process.cwd(), './src/components/Icon/material-icons/src');
+const outputDir = path.resolve(process.cwd(), './src/components/Icon/material-icons/dist');
 
 
 // Loop through all the files in the SVG Directory
@@ -35,9 +35,8 @@ fs.readdir(SVGsDir, function (err, files) {
 
             /** wrap in our component data */
             convertedFile = prettier.format((
-                '/** @flow */\n\n' +
-                'import React from \'react\';\n\n' +
-                'function SVG() {' +
+                'import React, { ReactElement } from \'react\';\n\n' +
+                'function SVG(): ReactElement {' +
                     'return (' +
                         '<React.Fragment>' +
                             `${convertedFile}` +
@@ -51,7 +50,7 @@ fs.readdir(SVGsDir, function (err, files) {
             });
 
 
-            fs.writeFile(`${outputDir}/${fileName}.js`, convertedFile, (err, data) => {
+            fs.writeFile(`${outputDir}/${fileName}.tsx`, convertedFile, (err, data) => {
                 if (err) throw err;
             });
 
@@ -60,7 +59,7 @@ fs.readdir(SVGsDir, function (err, files) {
     });
 
     /** write out a file that exports all our icon names for easy use in our stories */
-    fs.writeFile(`${outputDir}/_list.js`, (
+    fs.writeFile(`${outputDir}/_list.ts`, (
         `const icons = ${JSON.stringify(fileList)};\n\nexport default icons;\n`
     ), (err, data) => {
         if (err) throw err;
