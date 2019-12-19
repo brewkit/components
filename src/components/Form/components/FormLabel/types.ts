@@ -1,4 +1,4 @@
-import {ReactNode} from "react";
+import { ReactNode } from 'react';
 
 export interface Props {
     as?: 'label' | 'span' | 'div',

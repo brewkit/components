@@ -15,7 +15,6 @@ function FormField({
     helperText,
     label,
     variant,
-    children,
     ...otherProps
 }: Props): ReactElement {
     const classes = clsx(
@@ -26,13 +25,17 @@ function FormField({
 
     return (
         <FormGroup className={classes}>
+
             {label && (
                 <FormLabel>{label}</FormLabel>
             )}
+
             <Input className={inputClassName} variant={variant} {...otherProps} />
+
             {helperText && (
                 <FormHelperText>{helperText}</FormHelperText>
             )}
+
         </FormGroup>
     );
 

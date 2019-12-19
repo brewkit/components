@@ -1,6 +1,7 @@
-import { Props as InputBaseProps } from './components/InputBase';
+import { Props as InputProps } from './components/InputBase/types';
 
-export interface Props extends InputBaseProps {
+
+export interface Props extends InputProps {
 
     /**
      * The variant of the input you want to display.

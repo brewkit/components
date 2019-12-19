@@ -147,11 +147,11 @@ export interface Props {
     /**
      * Content that can be injected after the Input
      */
-    after: ReactNode,
+    after?: ReactNode,
 
     /**
      * Content that can be injected before the Input
      */
-    before: ReactNode,
+    before?: ReactNode,
 
 }

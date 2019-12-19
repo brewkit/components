@@ -5,12 +5,6 @@ module.exports = async ({ config }) => {
 
     config.module.rules.push(
         {
-            enforce: 'pre',
-            test: /\.tsx?$/,
-            exclude: /node_modules/,
-            loader: 'eslint-loader',
-        },
-        {
             test: /\.tsx?$/,
             exclude: /node_modules/,
             use: [

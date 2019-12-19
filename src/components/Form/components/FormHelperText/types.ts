@@ -4,4 +4,4 @@ export interface Props {
     color?: 'danger',
     className?: string,
     children?: ReactNode,
-};
+}
