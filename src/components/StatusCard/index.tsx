@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
-import StandardStatusCard from './Components/Standard';
-import CompactStatusCard from './Components/Compact';
+import StandardStatusCard from './components/Standard';
+import CompactStatusCard from './components/Compact';
 import { Props } from './types';
 
 

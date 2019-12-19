@@ -28,7 +28,7 @@ function Icon({
 
 
     /** Lazy load our icon */
-    const Image = React.lazy(() => import(`./material-icons/dist/${children}.ts`));
+    const Image = React.lazy(() => import(`./material-icons/dist/${children}.tsx`));
 
 
     return (
