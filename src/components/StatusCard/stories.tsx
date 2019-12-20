@@ -8,6 +8,7 @@ import { Colors, Variants } from './types';
 
 export default { title: 'Components|Display/Status Card' };
 
+
 export const General = (): ReactElement => {
     const body: string = text('body', 'churros');
     const color: Colors = select('color', ['info', 'success', 'danger'], 'info');
@@ -29,6 +30,7 @@ export const General = (): ReactElement => {
     );
 };
 
+
 export const Standard = (): ReactElement => {
     const body: string = text('body', 'dude');
     const color: Colors = select('color', ['info', 'success', 'danger'], 'info');
@@ -47,6 +49,7 @@ export const Standard = (): ReactElement => {
         />
     );
 };
+
 
 export const Compact = (): ReactElement => {
     const body: string = text('body', 'wat');

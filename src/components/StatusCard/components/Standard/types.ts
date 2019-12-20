@@ -36,4 +36,5 @@ export interface Props {
      * Optional fill attribute to fill background color
      */
     fill?: boolean,
+
 }

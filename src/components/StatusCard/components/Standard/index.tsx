@@ -17,6 +17,7 @@ const StandardStatusCard = ({
     ...otherProps
 }: Props): ReactElement => {
 
+
     const standardClasses = clsx(
         styles.wrapper,
         styles[`color--${color}`],
@@ -25,17 +26,26 @@ const StandardStatusCard = ({
         className,
     );
 
+
     return (
         <div className={standardClasses} {...otherProps}>
             <section className={styles.icon}>
-                <Icon color={color}>{icon}</Icon>
+                <Icon color={color}>
+                    {icon}
+                </Icon>
             </section>
             <section>
-                <Typography color={color} variant="h1">{header}</Typography>
-                <Typography color={color} variant="body1">{body}</Typography>
+                <Typography color={color} variant="h1">
+                    {header}
+                </Typography>
+                <Typography color={color} variant="body1">
+                    {body}
+                </Typography>
             </section>
         </div>
     );
+
+
 };
 
 

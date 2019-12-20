@@ -15,6 +15,7 @@ const CompactStatusCard = ({
     ...otherProps
 }: Props): ReactElement => {
 
+
     const compactClasses = clsx(
         styles.wrapper,
         styles[`color--${color}`],
@@ -23,12 +24,19 @@ const CompactStatusCard = ({
         className,
     );
 
+
     return (
         <div className={compactClasses} {...otherProps}>
-            <Typography align="center" color={color} variant="body1">{header}</Typography>
-            <Typography align="center" className={styles.cardBody} variant="body1">{body.toUpperCase()}</Typography>
+            <Typography align="center" color={color} variant="body1">
+                {header}
+            </Typography>
+            <Typography align="center" className={styles.cardBody} variant="body1">
+                {body.toUpperCase()}
+            </Typography>
         </div>
     );
+
+
 };
 
 

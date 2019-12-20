@@ -9,6 +9,7 @@ const components = {
     standard: StandardStatusCard,
 };
 
+
 const StatusCard = ({
     className,
     variant,
@@ -18,9 +19,12 @@ const StatusCard = ({
     ...otherProps
 }: Props): ReactElement => {
 
+
     const Element = components[variant] || CompactStatusCard;
 
     return <Element body={body} className={className} color={color} header={header} {...otherProps} />;
+
+
 };
 
 
