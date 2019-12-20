@@ -35,8 +35,8 @@ fs.readdir(SVGsDir, function (err, files) {
 
             /** wrap in our component data */
             convertedFile = prettier.format((
-                'import React, { ReactElement } from \'react\';\n\n' +
-                'function SVG(): ReactElement {' +
+                'import React from \'react\';\n\n' +
+                'function SVG() {' +
                     'return (' +
                         '<React.Fragment>' +
                             `${convertedFile}` +
@@ -50,7 +50,7 @@ fs.readdir(SVGsDir, function (err, files) {
             });
 
 
-            fs.writeFile(`${outputDir}/${fileName}.tsx`, convertedFile, (err, data) => {
+            fs.writeFile(`${outputDir}/${fileName}.js`, convertedFile, (err, data) => {
                 if (err) throw err;
             });
 
