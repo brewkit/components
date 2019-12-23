@@ -1,0 +1,37 @@
+@import "../../styles/utilities";
+
+
+// ==============================================
+// General
+// ==============================================
+
+.wrapper, .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: size(normal);
+}
+
+.content {
+    text-align: center;
+    > *:not(:last-child) {
+        margin-bottom: size(normal);
+    }
+}
+
+.icon {
+    font-size: size(xx-large) * 2;
+    color: color(gray, light);
+}
+
+.message.noTitle {
+    font-weight: bold;
+}
+
+.title {
+    font-size: size(xx-large);
+    font-weight: bold;
+    color: color(gray, mid);
+}
