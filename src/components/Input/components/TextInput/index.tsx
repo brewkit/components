@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import InputBase from '../InputBase';
 import InputIcon from '../InputIcon';
-import styles from './styles.scss';
 import { Props } from './types';
 
 
@@ -12,42 +11,25 @@ function TextInput({
     className = undefined,
     error = false,
     disabled = false,
-    fullWidth = false,
-    inputClassName,
     ...otherProps
 }: Props): ReactElement {
 
-
     const Before = (): ReactElement => (
-        <div className={styles.prependInput}>{before}</div>
+        <div className="brew-Input__before">{before}</div>
     );
 
-
     const After = (): ReactElement => (
-        <div className={styles.appendInput}>
+        <div className="brew-Input__after">
             {error ? (
-                <InputIcon color="danger" variant="error_outline" />
+                <InputIcon className="brew-Input__afterIcon" color="danger" variant="error_outline" />
             ) : after}
         </div>
     );
 
-
     const classes = clsx(
-        styles.inputWrapper,
-        { [styles.hasAfter]: Boolean(after) || (!disabled && error) },
-        { [styles.hasBefore]: Boolean(before) },
-        { [styles.isDisabled]: Boolean(disabled) },
-        { [styles.hasError]: Boolean(error) },
-        { [styles.isFullWidth]: Boolean(fullWidth) },
+        'brew-Input--textInput',
         className,
     );
-
-
-    const inputClasses = clsx(
-        styles.input,
-        inputClassName,
-    );
-
 
     return (
         <InputBase
@@ -56,8 +38,6 @@ function TextInput({
             className={classes}
             disabled={disabled}
             error={error}
-            fullWidth={fullWidth}
-            inputClassName={inputClasses}
             type="text"
             {...otherProps}
         />

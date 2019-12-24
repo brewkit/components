@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import Typography from '../../../Typography';
 import { Props } from './types';
 
-
 /**
  * This component is made to be extended, not to be used directly
  */
@@ -19,6 +18,8 @@ const InputBase = ({
     defaultChecked,
     defaultValue,
     disabled,
+    error,
+    fullWidth,
     id,
     inputClassName,
     inputLabel,
@@ -33,21 +34,24 @@ const InputBase = ({
     value,
     ...otherProps
 }: Props): ReactElement => {
-
-
-    const classes = clsx(className);
+    const classes = clsx(
+        'brew-Input',
+        { 'brew-Input--isDisabled': Boolean(disabled) },
+        { 'brew-Input--hasError': Boolean(error) },
+        { 'brew-Input--isFullWidth': Boolean(fullWidth) },
+        { 'brew-Input--hasPrepend': Boolean(before) },
+        { 'brew-Input--hasAppend': Boolean(after) || (!disabled && error) },
+        className,
+    );
     const Element = as;
-
 
     return (
         <Typography as="label" className={classes} {...otherProps}>
-
-
             {before}
 
             <Element
                 checked={checked}
-                className={inputClassName}
+                className={clsx('brew-Input__element', inputClassName)}
                 cols={cols}
                 defaultChecked={defaultChecked}
                 defaultValue={defaultValue}
@@ -70,12 +74,10 @@ const InputBase = ({
             {customControl && customControl}
 
             {inputLabel && (type === 'checkbox' || type === 'radio') && (
-                <span className={inputLabelClassName}>{inputLabel}</span>
+                <span className={clsx('brew-Input__label', inputLabelClassName)}>{inputLabel}</span>
             )}
-
         </Typography>
     );
 };
-
 
 export default InputBase;
