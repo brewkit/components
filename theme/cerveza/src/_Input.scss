@@ -5,6 +5,112 @@
 // ==============================================
 
 // ==============================================
+// Text Input
+// ==============================================
+.brew-Input--textInput {
+    $radius: map-get($inputs, border-radius);
+
+    @mixin modifyBefore($direction) {
+        border-#{$direction}: none;
+        border-top-#{$direction}-radius: 0;
+        border-bottom-#{$direction}-radius: 0;
+    }
+
+    @mixin beforeAfter($type) {
+        $outsideDirection: if($type == 'before', 'left', 'right');
+        $insideDirection: if($outsideDirection == 'left', 'right', 'left');
+
+        display: flex;
+        height: 100%;
+        align-items: center;
+        border: 1px solid color(grey, 100);
+        border-#{$insideDirection}: none;
+        padding: size(normal);
+        padding-#{$insideDirection}: 0;
+        border-top-#{$outsideDirection}-radius: $radius;
+        border-bottom-#{$outsideDirection}-radius: $radius;
+    }
+
+    display: inline-flex;
+	align-items: center;
+	height: 52px;
+	width: 100%;
+	max-width: map-get($inputs, width);
+	box-sizing: border-box;
+
+	&, * {
+		box-sizing: border-box;
+    }
+
+    .brew-Input {
+
+        &__before {
+            @include beforeAfter('before');
+        }
+
+        &__after {
+            @include beforeAfter('after');
+        }
+
+        &__element {
+            font-size: size(normal);
+            font-weight: map-get(map-get($typography, font-weights), body2);
+            padding: size(normal);
+            border-radius: $radius;
+            border: 1px solid color(grey, 100);
+            box-sizing: border-box;
+            flex-grow: 1;
+        
+            &:active,
+            &:focus {
+                border-color: color(brand, primary);
+                outline: none;
+            }
+        }
+    }
+    
+    &.brew-Input--hasBefore {
+        .brew-Input__element {
+            @include modifyBefore('left');
+        }
+    }
+
+    &.brew-Input--hasAfter {
+        .brew-Input__element {
+            @include modifyBefore('right');
+        }
+    }
+
+    &.brew-Input--hasError {
+
+        .brew-Input {
+            &__element,
+            &__before,
+            &__after {
+                border-color: color(accent, danger);
+            }
+        }
+    }
+
+    &.brew-Input--isFullWidth {
+        max-width: initial;
+    }
+
+    &.brew-Input--isDisabled {
+
+        .brew-Input {
+            &__element,
+            &__before,
+            &__after {
+                background-color: color(grey, 100);
+                border-color: color(grey, 100);
+            }
+        }
+    }
+
+}
+
+// ==============================================
 // Checkbox
 // ==============================================
 .brew-Input--checkbox {

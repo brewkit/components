@@ -39,8 +39,8 @@ const InputBase = ({
         { 'brew-Input--isDisabled': Boolean(disabled) },
         { 'brew-Input--hasError': Boolean(error) },
         { 'brew-Input--isFullWidth': Boolean(fullWidth) },
-        { 'brew-Input--hasPrepend': Boolean(before) },
-        { 'brew-Input--hasAppend': Boolean(after) || (!disabled && error) },
+        { 'brew-Input--hasBefore': Boolean(before) },
+        { 'brew-Input--hasAfter': Boolean(after) || (!disabled && error) },
         className,
     );
 
