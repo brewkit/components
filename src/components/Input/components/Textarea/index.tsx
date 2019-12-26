@@ -15,20 +15,20 @@ function Textarea({
 }: Props): ReactElement {
 
     const classes = clsx(
-        'bk-Input--textarea',
+        'brew-Input--textarea',
         className,
     );
 
     const Before = (): ReactElement => (
-        <div className="bk-Input__before">
+        <div className="brew-Input__before">
             {before}
         </div>
     );
 
     const After = (): ReactElement => (
-        <div className="bk-Input__after">
+        <div className="brew-Input__after">
             {!disabled && error ? (
-                <InputIcon className="bk-Input__afterIcon" color="danger" variant="error_outline" />
+                <InputIcon className="brew-Input__afterIcon" color="danger" variant="error_outline" />
             ) : after}
         </div>
     );

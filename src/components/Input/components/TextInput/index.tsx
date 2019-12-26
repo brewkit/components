@@ -11,6 +11,7 @@ function TextInput({
     className = undefined,
     error = false,
     disabled = false,
+    type = 'text',
     ...otherProps
 }: Props): ReactElement {
 
@@ -38,7 +39,7 @@ function TextInput({
             className={classes}
             disabled={disabled}
             error={error}
-            type="text"
+            type={type}
             {...otherProps}
         />
     );
