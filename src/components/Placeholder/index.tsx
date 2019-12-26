@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react';
+import clsx from 'clsx';
 import Icon from '../Icon';
 import styles from './styles.scss';
 import { Props } from './types';
@@ -6,6 +7,7 @@ import Typography from "../Typography";
 
 
 function Placeholder({
+    className,
     icon,
     title,
     description,
@@ -13,8 +15,14 @@ function Placeholder({
 }: Props): ReactElement {
 
 
+    const placeholderClasses = clsx(
+        styles.wrapper,
+        className,
+    );
+
+
     return (
-        <div className={styles.wrapper}>
+        <div className={placeholderClasses}>
             {
                 (
                     <div className={styles.content}>
