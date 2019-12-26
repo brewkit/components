@@ -4,7 +4,7 @@ import Icon from '../../../Icon';
 import InputBase from '../InputBase';
 import { Props } from './types';
 
-function checkboxCustomControl(): ReactElement {
+function CheckboxCustomControl(): ReactElement {
     return (
         <div className="brew-Input__customControl">
             <Icon className="brew-Input__customControlIcon" size="large">check</Icon>
@@ -25,7 +25,7 @@ function Checkbox({
     return (
         <InputBase
             className={classes}
-            customControl={checkboxCustomControl}
+            customControl={<CheckboxCustomControl />}
             type="checkbox"
             {...otherProps}
         />

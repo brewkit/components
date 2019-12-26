@@ -1,0 +1,87 @@
+@import "utilities";
+
+// ==============================================
+// General Input styles
+// ==============================================
+
+// ==============================================
+// Checkbox
+// ==============================================
+.brew-Input--checkbox {
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+
+    .brew-Input {
+
+        &__element {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+
+            &:checked + .brew-Input__customControl {
+                background: color(brand, primary);
+                border-color: color(brand, primary);
+        
+                .brew-Input__customControlIcon {
+                    display: initial;
+                }
+            }
+        }
+
+        &__customControl {
+            height: size(xx-large);
+            width: size(xx-large);
+            border: 1px solid color(grey, 100);
+            border-radius: map-get($inputs, border-radius);
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+
+            &Icon {
+                display: none;
+
+                > svg {
+                    fill: white;
+                }
+            }
+
+        }
+
+        &__label {
+            font-weight: map-get(map-get($typography, font-weights), body2);
+            color: color(grey, 800);
+            margin-left: size(small);
+        }
+    }
+
+    &.brew-Input--hasError {
+
+        .brew-Input {
+            
+            &__customControl {
+                border-color: color(accent, danger);
+            }
+        }
+    }
+
+    &.brew-Input--isDisabled {
+
+        .brew-Input {
+
+            &__element {
+
+                &:checked + .brew-Input__customControl {
+                    border-color: color(grey, 100);
+                    background: color(grey, 100);
+                }
+            }
+
+            &__label {
+                color: color(grey, 300);
+            }
+        }
+    }
+}

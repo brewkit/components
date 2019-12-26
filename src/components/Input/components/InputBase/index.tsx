@@ -43,6 +43,7 @@ const InputBase = ({
         { 'brew-Input--hasAppend': Boolean(after) || (!disabled && error) },
         className,
     );
+
     const Element = as;
 
     return (
@@ -71,7 +72,7 @@ const InputBase = ({
 
             {after}
 
-            {customControl && customControl}
+            {Boolean(customControl) && customControl}
 
             {inputLabel && (type === 'checkbox' || type === 'radio') && (
                 <span className={clsx('brew-Input__label', inputLabelClassName)}>{inputLabel}</span>
