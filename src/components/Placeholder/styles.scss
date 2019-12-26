@@ -16,14 +16,10 @@
 
 .content {
     text-align: center;
-    > *:not(:last-child) {
-        margin-bottom: size(normal);
-    }
 }
 
 .icon {
     font-size: size(xx-large) * 2;
-    color: color(gray, light);
 }
 
 .message.noTitle {

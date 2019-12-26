@@ -1,8 +1,7 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React, { ReactElement } from 'react';
 import { text } from '@storybook/addon-knobs';
-import Typography from '../Typography';
 import Label from '../Label';
-import Icon from '../Icon';
+import Card from '../Card';
 import Button from '../Button';
 import Placeholder from './index';
 
@@ -18,8 +17,8 @@ export default {
 
 export const General = (): ReactElement => {
     const errorIcon: string = text('icon', 'business');
-    const title: string = text('title', 'No Users Found');
-    const description: string = text('description', 'Please create a new user.');
+    const title: string = text('title', 'No Content Found');
+    const description: string = text('description', 'Action needs to be taken in order to see content here.');
 
     return (
         <Placeholder
@@ -31,36 +30,36 @@ export const General = (): ReactElement => {
 };
 
 
-export const WithChildren = (): ReactElement => {
-    const childIcon: string = text('icon', 'business');
-    const title: string = text('title', 'Error');
-
-    return (
-        <Placeholder>
-            <Icon children={childIcon} size="large" />
-            <Typography hasBottomMargin shouldTruncate variant="h1" color="tertiary">
-                {title}
-            </Typography>
-        </Placeholder>
-    );
-};
-
-
 export const WithAction = (): ReactElement => {
     const childIcon: string = text('icon', 'business');
-    const title: string = text('title', 'No devices to display');
-    const description: string = text('description', 'Please add a new device to continue');
+    const title: string = text('title', 'No content to display');
+    const description: string = text('description', 'Please add new content to continue');
 
     return (
-        <Placeholder>
-            <Icon children={childIcon} size="large" />
-            <Typography hasBottomMargin shouldTruncate variant="h1" color="tertiary">
-                {title}
-            </Typography>
-            <Typography as="p" hasBottomMargin variant="body1">
-                {description}
-            </Typography>
-            <Button>Add Device</Button>
+        <Placeholder
+            icon={childIcon}
+            title={title}
+            description={description}
+        >
+            <Button isFluid color="light" onClick={() => console.log('clicked')}>Add Content</Button>
         </Placeholder>
     );
 };
+
+
+export const FullCustom = (): ReactElement => {
+    const title: string = text('title', 'Custom Header');
+    const body: string = text('body', 'This is a custom body describing a custom experience with other components');
+
+    return (
+        <Placeholder>
+            <Card>
+                <Card.Header>
+                    <Card.Title>{title}</Card.Title>
+                </Card.Header>
+                <Card.Body>{body}</Card.Body>
+            </Card>
+        </Placeholder>
+    );
+};
+
