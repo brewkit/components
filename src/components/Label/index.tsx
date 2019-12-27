@@ -17,8 +17,8 @@ function Label({
 
 
     const classes = clsx(
-        'Label__wrapper',
-        `Label__color--${color}`,
+        'brew-Label',
+        `brew-Label__color--${color}`,
         className,
     );
 
@@ -26,11 +26,11 @@ function Label({
     return (
         <div className={classes} {...otherProps}>
             {title && (
-                <div className="Label__title">
-                    <Typography className="Label__titleContent" variant="label">{title}</Typography>
+                <div className="title">
+                    <Typography className="titleContent" variant="label">{title}</Typography>
                 </div>
             )}
-            <div className="Label__content">
+            <div className="content">
                 <Typography color={color} variant="label">{children}</Typography>
             </div>
         </div>
