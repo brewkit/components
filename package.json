@@ -16,6 +16,7 @@
     "scripts": {
         "test:generate-output": "jest --watchAll --json --outputFile=.build/jest/test-results.json || true",
         "test": "jest --watchAll --json --outputFile=.build/jest/test-results.json",
+        "sass": "npx sass --no-source-map --style=compressed ./theme/cerveza/src/index.scss ./.build/storybook/assets/css/theme.css",
         "commit": "npx git-cz",
         "start": "start-storybook -p 9001 -c .build/storybook"
     },
