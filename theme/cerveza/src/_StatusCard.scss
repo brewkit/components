@@ -1,10 +1,24 @@
-@import '../../../../styles/_utilities.scss';
+@import "utilities";
 
 // ==============================================
 // General
 // ==============================================
 
-.wrapper {
+.StatusCard__wrapper--compact {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
+    margin: size(normal);
+    padding: size(x-small) size(small);
+
+    .StatusCard__cardBody {
+        font-size: size(small);
+    }
+}
+
+.StatusCard__wrapper--standard {
     display: inline-flex;
     justify-content: center;
     box-sizing: border-box;
@@ -18,7 +32,7 @@
 // Icon
 // ==============================================
 
-.icon {
+.StatusCard__icon {
     align-items: center;
     display: flex;
     margin-right: size(x-small);
@@ -35,10 +49,10 @@
 $accentColors: (info, success, danger);
 
 @each $color in $accentColors {
-    .color--#{$color} {
+    .StatusCard__color--#{$color} {
         border-left-color: color(accent, $color);
 
-        &.isFilled {
+        &.StatusCard--isFilled {
             background-color: rgba(color(accent, $color), .2);
         }
     }
@@ -48,7 +62,7 @@ $accentColors: (info, success, danger);
 // ----------------------------------------------
 // Disabled Colors
 
-.isDisabled {
+.StatusCard--isDisabled {
     border-left-color: color(brand,tertiary);
 
     & h1,
@@ -58,7 +72,7 @@ $accentColors: (info, success, danger);
         fill: color(brand,tertiary)!important;
     }
 
-    &.isFilled {
+    &.StatusCard--isFilled {
         background-color: rgba(color(brand, tertiary), .2);
     }
 }
