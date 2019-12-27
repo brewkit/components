@@ -18,17 +18,18 @@ const StandardStatusCard = ({
 
 
     const standardClasses = clsx(
-        'StatusCard__wrapper--standard',
-        `StatusCard__color--${color}`,
-        { 'StatusCard--isDisabled': disabled },
-        { 'StatusCard--isFilled': fill },
+        'brew-StatusCard',
+        'brew-StatusCard--standard',
+        `brew-StatusCard__color--${color}`,
+        { 'brew-StatusCard--isDisabled': disabled },
+        { 'isFilled': fill },
         className,
     );
 
 
     return (
         <div className={standardClasses} {...otherProps}>
-            <section className="StatusCard__icon">
+            <section className="icon">
                 <Icon color={color}>
                     {icon}
                 </Icon>

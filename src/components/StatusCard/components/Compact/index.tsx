@@ -16,10 +16,11 @@ const CompactStatusCard = ({
 
 
     const compactClasses = clsx(
-        'StatusCard__wrapper--compact',
-        `StatusCard__color--${color}`,
-        { 'StatusCard--isDisabled': disabled },
-        { 'StatusCard--isFilled': fill },
+        'brew-StatusCard',
+        'brew-StatusCard--compact',
+        `brew-StatusCard__color--${color}`,
+        { 'brew-StatusCard--isDisabled': disabled },
+        { 'isFilled': fill },
         className,
     );
 
@@ -29,7 +30,7 @@ const CompactStatusCard = ({
             <Typography align="center" color={color} variant="body1">
                 {header}
             </Typography>
-            <Typography align="center" className="StatusCard__cardBody" variant="body1">
+            <Typography align="center" className="cardBody" variant="body1">
                 {body.toUpperCase()}
             </Typography>
         </div>
