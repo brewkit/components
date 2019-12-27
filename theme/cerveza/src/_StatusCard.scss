@@ -1,15 +1,21 @@
 @import "utilities";
 
+
+@mixin wrapper {
+    display: inline-flex;
+    justify-content: center;
+    box-sizing: border-box;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
+    margin: size(normal);
+}
+
 // ==============================================
 // General
 // ==============================================
 
 .StatusCard__wrapper--compact {
-    display: inline-flex;
+    @include wrapper;
     flex-direction: column;
-    justify-content: center;
-    box-sizing: border-box;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
     margin: size(normal);
     padding: size(x-small) size(small);
 
@@ -19,11 +25,8 @@
 }
 
 .StatusCard__wrapper--standard {
-    display: inline-flex;
+    @include wrapper;
     justify-content: center;
-    box-sizing: border-box;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
-    margin: size(normal);
     padding: size(x-small) size(normal) size(x-small) size(small);
     border-left: size(xx-small) solid;
 }
