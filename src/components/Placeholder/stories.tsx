@@ -16,13 +16,13 @@ export default {
 
 
 export const General = (): ReactElement => {
-    const errorIcon: string = text('icon', 'business');
+    const errorGraphic: string = text('graphic', 'business');
     const title: string = text('title', 'No Content Found');
     const description: string = text('description', 'Action needs to be taken in order to see content here.');
 
     return (
         <Placeholder
-            icon={errorIcon}
+            graphic={errorGraphic}
             title={title}
             description={description}
         />
@@ -31,17 +31,17 @@ export const General = (): ReactElement => {
 
 
 export const WithAction = (): ReactElement => {
-    const childIcon: string = text('icon', 'business');
+    const childGraphic: string = text('graphic', 'business');
     const title: string = text('title', 'No content to display');
     const description: string = text('description', 'Please add new content to continue');
 
     return (
         <Placeholder
-            icon={childIcon}
+            graphic={childGraphic}
             title={title}
             description={description}
         >
-            <Button isFluid color="light" onClick={() => console.log('clicked')}>Add Content</Button>
+            <Button isFluid onClick={() => console.log('clicked')}>Add Content</Button>
         </Placeholder>
     );
 };

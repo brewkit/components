@@ -1,14 +1,9 @@
-@import '../../../../styles/utilities';
+@import '../../../../../../styles/utilities';
 
 .wrapper {
     display: inline-flex;
     overflow: hidden;
     align-items: center;
-
-    input {
-        position: absolute;
-        left: -9999px;
-    }
 }
 
 .radio {
@@ -39,10 +34,4 @@
         background-color: white;
         border-color: color(grey, 100);
     }
-}
-
-.inputLabel {
-    font-weight: map-get(map-get($typography, font-weights), body2);
-    color: color(grey, 800);
-    margin-left: size(small);
 }

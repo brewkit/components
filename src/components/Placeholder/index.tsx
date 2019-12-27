@@ -1,14 +1,14 @@
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import Icon from '../Icon';
+import Typography from '../Typography';
 import styles from './styles.scss';
 import { Props } from './types';
-import Typography from "../Typography";
 
 
 function Placeholder({
     className,
-    icon,
+    graphic,
     title,
     description,
     children,
@@ -26,9 +26,9 @@ function Placeholder({
             {
                 (
                     <div className={styles.content}>
-                        {icon &&
-                            <Typography className={styles.icon} as="p" variant="body1">
-                                <Icon children={icon} />
+                        {graphic &&
+                            <Typography className={styles.graphic} as="p" variant="body1">
+                                <Icon children={graphic} />
                             </Typography>
                         }
                         {title &&

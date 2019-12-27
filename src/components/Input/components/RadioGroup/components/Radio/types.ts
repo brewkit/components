@@ -1,4 +1,4 @@
-import { Props as InputBaseProps } from '../InputBase/types';
+import { Props as InputBaseProps } from '../../../InputBase/types';
 
 export type Props = Omit<InputBaseProps,
     'as'
