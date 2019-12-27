@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import Typography from '../Typography';
 import { Props } from './types';
-import styles from './styles.scss';
 
 
 /**
@@ -18,8 +17,8 @@ function Label({
 
 
     const classes = clsx(
-        styles.wrapper,
-        styles[`color--${color}`],
+        'Label__wrapper',
+        `Label__color--${color}`,
         className,
     );
 
@@ -27,11 +26,11 @@ function Label({
     return (
         <div className={classes} {...otherProps}>
             {title && (
-                <div className={styles.title}>
-                    <Typography className={styles.titleContent} variant="label">{title}</Typography>
+                <div className="Label__title">
+                    <Typography className="Label__titleContent" variant="label">{title}</Typography>
                 </div>
             )}
-            <div className={styles.content}>
+            <div className="Label__content">
                 <Typography color={color} variant="label">{children}</Typography>
             </div>
         </div>

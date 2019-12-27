@@ -1,24 +1,24 @@
-@import "../../styles/utilities";
+@import "utilities";
 
 
 // ==============================================
 // General
 // ==============================================
 
-.wrapper {
+.Label__wrapper {
     display: inline-flex;
     border-width: 2px;
     border-style: solid;
     border-radius: $border-radius * 2;
 
-    .title {
+    .Label__title {
         display: inline-flex;
         border-right-width: 2px;
         border-right-style: solid;
         padding: 0 0.5em;
     }
 
-    .content {
+    .Label__content {
         display: inline-flex;
         padding: 0 0.5em;
     }
@@ -34,30 +34,31 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
 
 @each $color in $colors {
 
-    .wrapper.color--#{$color} {
+    .Label__wrapper.Label__color--#{$color} {
 
         $button_color: map_get(map_get($button, colors), $color);
         background-color: rgba($button_color, 0.1);
         border-color: $button_color;
 
-        .title {
+        .Label__title {
             background-color: $button_color;
             border-right-color: $button_color;
         }
 
-        .title span {
+        .Label__title span {
             font-weight: bold;
             color: set-text-color($button_color);
         }
 
-        .content {
+        .Label__content {
             color: $button_color;
         }
 
-        .content span {
+        .Label__content span {
             font-weight: bold;
         }
 
     }
 
 }
+
