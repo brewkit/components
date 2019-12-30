@@ -23,6 +23,7 @@ function Input({
         text: TextInput,
         textarea: Textarea,
     };
+
     const Element = components[variant] || TextInput;
 
 
