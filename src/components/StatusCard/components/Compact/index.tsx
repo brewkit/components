@@ -20,7 +20,7 @@ const CompactStatusCard = ({
         'brew-StatusCard--compact',
         `brew-StatusCard__color--${color}`,
         { 'brew-StatusCard--isDisabled': disabled },
-        { 'isFilled': fill },
+        { 'brew-StatusCard--isFilled': fill },
         className,
     );
 

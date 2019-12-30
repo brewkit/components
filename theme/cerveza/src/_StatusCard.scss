@@ -40,7 +40,7 @@ $accentColors: (info, success, danger);
         &__color--#{$color} {
             border-left-color: color(accent, $color);
 
-            &.isFilled {
+            &.brew-StatusCard--isFilled {
                 background-color: rgba(color(accent, $color), .2);
             }
         }
@@ -56,7 +56,7 @@ $accentColors: (info, success, danger);
             fill: color(brand,tertiary)!important;
         }
 
-        &.isFilled {
+        &.brew-StatusCard--isFilled {
             background-color: rgba(color(brand, tertiary), .2);
         }
     }
