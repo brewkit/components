@@ -13,6 +13,8 @@ function Checkbox({
     error = false,
     fullWidth = false,
     inputLabelClassName = undefined,
+    onChange,
+    checked,
     ...otherProps
 }: Props): ReactElement {
 
@@ -39,6 +41,11 @@ function Checkbox({
     );
 
 
+    function handleOnChange() {
+        checked = !checked;
+    }
+
+
     return (
         <InputBase
             className={classes}
@@ -48,6 +55,7 @@ function Checkbox({
             fullWidth={fullWidth}
             inputLabelClassName={inputLabelClasses}
             type="checkbox"
+            onChange={handleOnChange}
             {...otherProps}
         />
     );

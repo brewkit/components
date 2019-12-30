@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import Checkbox from './components/Checkbox';
-import Radio from './components/Radio';
+import Radio from './components/RadioGroup/components/Radio';
 import TextInput from './components/TextInput';
 import Textarea from './components/Textarea';
 import InputIcon from './components/InputIcon';

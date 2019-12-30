@@ -18,5 +18,12 @@ export const Default = (): ReactElement => {
     const disabled = boolean('disabled', false);
     const inputLabel = text('inputLabel', 'some label');
     const error = boolean('error', false);
-    return <Checkbox checked={checked} disabled={disabled} error={error} inputLabel={inputLabel} />;
+    return (
+        <Checkbox
+            checked={checked}
+            disabled={disabled}
+            error={error}
+            inputLabel={inputLabel}
+        />
+    );
 };
