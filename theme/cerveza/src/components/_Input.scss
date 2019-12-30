@@ -1,4 +1,4 @@
-@import "utilities";
+@import "../utilities";
 
 // ==============================================
 // General Input styles
@@ -60,7 +60,7 @@
             border: 1px solid color(grey, 100);
             box-sizing: border-box;
             flex-grow: 1;
-        
+
             &:active,
             &:focus {
                 border-color: color(brand, primary);
@@ -68,7 +68,7 @@
             }
         }
     }
-    
+
     &.brew-Input--hasBefore {
         .brew-Input__element {
             @include modifyBefore('left');
@@ -128,7 +128,7 @@
             &:checked + .brew-Input__customControl {
                 background: color(brand, primary);
                 border-color: color(brand, primary);
-        
+
                 .brew-Input__customControlIcon {
                     display: initial;
                 }
@@ -166,7 +166,7 @@
     &.brew-Input--hasError {
 
         .brew-Input {
-            
+
             &__customControl {
                 border-color: color(accent, danger);
             }
@@ -197,7 +197,7 @@
 // Textarea
 // ==============================================
 .brew-Input--textarea {
-    display: inline-flex; 
+    display: inline-flex;
     width: 100%;
     max-width: map-get($inputs, width);
 
@@ -240,12 +240,12 @@
             border: 1px solid color(grey, 100);
             border-radius: $border-radius;
             box-sizing: border-box;
-        
+
             &:active,
             &:focus {
                 outline: none;
                 border-color: color(brand, primary);
-        
+
                 &.isDisabled {
                     border-color: color(grey, 100);
                 }
@@ -261,7 +261,7 @@
     }
 
     &.brew-Input--hasAfter {
-        
+
         .brew-Input__element {
             @include appendStyles('after');
         }
@@ -288,11 +288,11 @@
                 background-color: color(grey, 100);
             }
         }
-        
+
     }
 
     &.brew-Input--isFullWidth {
         max-width: initial;
     }
-    
+
 }

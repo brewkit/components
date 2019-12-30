@@ -19,7 +19,7 @@ function Button({
     isCompact = false,
     isCircular = false,
     isFluid = false,
-    disabled = false,
+    isDisabled = false,
     children,
     className,
     ...otherProps
@@ -27,12 +27,12 @@ function Button({
 
 
     const buttonClasses = clsx(
-        'Button__wrapper',
+        'Button',
         `Button__variant--${variant}`,
         `Button__color--${color}`,
         `Button__size--${size}`,
         { 'Button--isLoading': isLoading },
-        { 'Button--isDisabled': disabled || isLoading },
+        { 'Button--isDisabled': isDisabled || isLoading },
         { 'Button--isCompact': isCompact },
         { 'Button--isCircular': isCircular && !isFluid },
         { 'Button--isFluid': isFluid },
@@ -46,7 +46,7 @@ function Button({
                 <button
                     aria-label={(variant === 'icon' && typeof children === 'string') ? children : undefined}
                     className={buttonClasses}
-                    disabled={disabled || isLoading}
+                    disabled={isDisabled || isLoading}
                     type="button"
                     {...otherProps}
                 >

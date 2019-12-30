@@ -43,7 +43,7 @@ export interface Props {
     /**
      * If `true`, will disable the button.
      */
-    disabled?: boolean,
+    isDisabled?: boolean,
 
     /**
      * If `true`, the button will be disabled and show a spinner.
