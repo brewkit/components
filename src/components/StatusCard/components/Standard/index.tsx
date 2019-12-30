@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import Icon from '../../../Icon';
 import Typography from '../../../Typography';
-import styles from './styles.scss';
 import { Props } from './types';
 
 
@@ -19,17 +18,18 @@ const StandardStatusCard = ({
 
 
     const standardClasses = clsx(
-        styles.wrapper,
-        styles[`color--${color}`],
-        { [styles.isDisabled]: disabled },
-        { [styles.isFilled]: fill },
+        'brew-StatusCard',
+        'brew-StatusCard--standard',
+        `brew-StatusCard__color--${color}`,
+        { 'brew-StatusCard--isDisabled': disabled },
+        { 'brew-StatusCard--isFilled': fill },
         className,
     );
 
 
     return (
         <div className={standardClasses} {...otherProps}>
-            <section className={styles.icon}>
+            <section className="icon">
                 <Icon color={color}>
                     {icon}
                 </Icon>
