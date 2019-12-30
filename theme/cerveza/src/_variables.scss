@@ -1,6 +1,11 @@
 @import "material-colors";
 
 
+@function color($palette, $color) {
+    @return map-get(map-get($colors, $palette), $color);
+}
+
+
 // ==============================================
 // Colors
 // ==============================================

@@ -1,0 +1,30 @@
+@import "../utilities";
+
+
+// ==============================================
+// Card
+// ==============================================
+
+.brew-Card--hasBorder {
+    box-shadow: map-get($general, box-shadow);
+}
+
+
+// ==============================================
+// Card.Header
+// ==============================================
+
+.brew-CardHeader {
+    padding: size('base');
+    background-color: color(grey, 50);
+    border-bottom: 1px solid color(gray, 100);
+}
+
+
+// ==============================================
+// Card.Body
+// ==============================================
+
+.brew-CardBody {
+    padding: size(normal);
+}

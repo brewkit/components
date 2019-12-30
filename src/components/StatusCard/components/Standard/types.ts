@@ -30,11 +30,11 @@ export interface Props {
     /**
      * Optional disabled attribute to disable component
      */
-    disabled?: boolean,
+    isDisabled?: boolean,
 
     /**
      * Optional fill attribute to fill background color
      */
-    fill?: boolean,
+    isFilled?: boolean,
 
 }
