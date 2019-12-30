@@ -1,22 +1,30 @@
 import React, { ReactElement } from 'react';
-import Checkbox from './index';
+import Radio from './index';
 import Label from '../../../Label';
 import { boolean, text } from '@storybook/addon-knobs';
 
 
 export default {
-    component: Checkbox,
+    component: Radio,
     parameters: {
         componentSubtitle: <Label color="warning">In Development</Label>,
     },
-    title: 'Components|User Input/Input/Checkbox',
+    title: 'Components|User Input/Input/Radio',
 };
 
 
 export const Default = (): ReactElement => {
     const checked = boolean('checked', false);
     const disabled = boolean('disabled', false);
-    const inputLabel = text('inputLabel', 'some label');
-    const error = boolean('error', false);
-    return <Checkbox checked={checked} disabled={disabled} error={error} inputLabel={inputLabel} />;
+    const fullWidth = boolean('fullWidth', false);
+    const inputLabel = text('inputLabel', '');
+    return (
+        <Radio
+            checked={checked}
+            disabled={disabled}
+            fullWidth={fullWidth}
+            inputLabel={inputLabel}
+            readOnly
+        />
+    );
 };
