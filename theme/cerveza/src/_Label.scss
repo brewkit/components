@@ -1,11 +1,11 @@
-@import "../../styles/utilities";
+@import "utilities";
 
 
 // ==============================================
 // General
 // ==============================================
 
-.wrapper {
+.brew-Label {
     display: inline-flex;
     border-width: 2px;
     border-style: solid;
@@ -22,9 +22,7 @@
         display: inline-flex;
         padding: 0 0.5em;
     }
-
 }
-
 
 // ==============================================
 // Colors
@@ -34,7 +32,7 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
 
 @each $color in $colors {
 
-    .wrapper.color--#{$color} {
+    .brew-Label__color--#{$color} {
 
         $button_color: map_get(map_get($button, colors), $color);
         background-color: rgba($button_color, 0.1);
@@ -57,7 +55,5 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
         .content span {
             font-weight: bold;
         }
-
     }
-
 }
