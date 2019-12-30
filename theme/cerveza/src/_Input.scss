@@ -167,7 +167,8 @@
 
         .brew-Input {
             
-            &__customControl {
+            &__customControl,
+            &__element:checked + .brew-Input__customControl {
                 border-color: color(accent, danger);
             }
         }
@@ -177,12 +178,10 @@
 
         .brew-Input {
 
-            &__element {
-
-                &:checked + .brew-Input__customControl {
-                    border-color: color(grey, 100);
-                    background: color(grey, 100);
-                }
+            &__customControl,
+            &__element:checked + .brew-Input__customControl {
+                border-color: color(grey, 100);
+                background: color(grey, 100);
             }
 
             &__label {
@@ -296,3 +295,71 @@
     }
     
 }
+
+// ==============================================
+// Radio
+// ==============================================
+// .brew-Input__element:checked + .brew-Input__customControl {
+//     border-width: 10px;
+//     border-color: color(brand, primary);
+// }
+
+.brew-Input--radio {
+    display: inline-flex;
+    overflow: hidden;
+    align-items: center;
+
+    .brew-Input {
+        &__element {
+            position: absolute;
+            left: -9999px;
+
+            &:checked {
+                + .brew-Input__customControl {
+                    border-width: 10px;
+                    border-color: color(brand, primary);
+                }
+            }
+        }
+    
+        &__customControl {
+            height: size(xx-large);
+            width: size(xx-large);
+            display: inline-flex;
+            border-radius: 100%;
+            border: 1px solid color(grey, 100);
+            box-sizing: border-box;
+    
+            .brew-Input__element:checked + & {
+                border-width: 10px;
+                border-color: color(brand, primary);
+            }
+        }
+    
+        &__label {
+            font-weight: map-get(map-get($typography, font-weights), body2);
+            color: color(grey, 800);
+            margin-left: size(small);
+        }
+    }
+
+    &.brew-Input--isFullWidth {
+        width: 100%;
+    }
+
+    &.brew-Input--isDisabled {
+
+        .brew-Input__element {
+
+            + .brew-Input__customControl {
+                background-color: color(grey, 100);
+            }
+
+            &:checked + .brew-Input__customControl {
+                background-color: white;
+                border-color: color(grey, 100);
+            }
+        }
+    }
+}
+

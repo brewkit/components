@@ -17,7 +17,7 @@ export const Default = (): ReactElement => {
     const checked = boolean('checked', false);
     const disabled = boolean('disabled', false);
     const fullWidth = boolean('fullWidth', false);
-    const inputLabel = text('inputLabel', '');
+    const inputLabel = text('inputLabel', 'Radio label');
     return (
         <Radio
             checked={checked}

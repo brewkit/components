@@ -1,8 +1,9 @@
 import React, { ReactElement } from 'react';
 import Checkbox from './components/Checkbox';
-import Radio from './components/RadioGroup/components/Radio';
+import Radio from './components/Radio';
 import TextInput from './components/TextInput';
 import Textarea from './components/Textarea';
+import Select from './components/Select';
 import InputIcon from './components/InputIcon';
 import { Props } from './types';
 
@@ -15,21 +16,18 @@ function Input({
     ...otherProps
 }: Props): ReactElement {
 
-
     /* Map our input components for easier access */
     const components = {
         checkbox: Checkbox,
         radio: Radio,
+        select: Select,
         text: TextInput,
         textarea: Textarea,
     };
 
     const Element = components[variant] || TextInput;
 
-
     return <Element {...otherProps} />;
-
-
 }
 
 
