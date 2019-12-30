@@ -27,4 +27,10 @@ describe('Textarea', () => {
         const After = () => <div>after</div>;
         expect(mount(<Textarea after={<After />} />).find(After).length).toEqual(1);
     });
+
+    it('correctly accepts the value prop', () => {
+        const value = Math.floor(Math.random() * 1000).toString();
+        const textarea = mount(<Textarea value={value} readOnly />);
+        expect(textarea.html().search(value) !== -1).toBe(true);
+    });
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import InputBase from './index';
 
 describe('InputBase', function() {
@@ -31,5 +31,11 @@ describe('InputBase', function() {
 
     it('adds the "brew-Input--hasAfter" class when the after prop exists', () => {
         expect(shallow(<InputBase after={<div>after</div>} />).hasClass('brew-Input--hasAfter')).toBe(true);
+    });
+
+    it('renders with the checked attribute when the checked prop is added', () => {
+        const inputWrapper = mount(<InputBase checked readOnly />);
+        const input = inputWrapper.find('input');
+        expect(input.prop('checked')).toBe(true);
     });
 });
