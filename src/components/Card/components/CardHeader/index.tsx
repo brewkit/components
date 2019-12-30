@@ -14,7 +14,7 @@ function CardHeader({
 
 
     const classes = clsx(
-        styles.wrapper,
+        'brew-CardHeader',
         className,
     );
 
