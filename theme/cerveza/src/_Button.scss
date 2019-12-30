@@ -5,7 +5,7 @@
 // General
 // ==============================================
 
-.Button__wrapper {
+.Button {
     box-sizing: border-box;
     position: relative;
     display: block;
@@ -20,31 +20,31 @@
     line-height: 1em;
     cursor: pointer;
     transition: all 0.3s;
-}
 
-.Button__content {
-    position: relative;
-    height: 1em;
-    opacity: 1;
-}
-
-.Button__icon {
-    display: block;
-    position: relative;
-    font-size: 1.5em;
-}
-
-.Button__text {
-    display: block;
-}
-
-.Button__loadingIndicator {
-    pointer-events: none;
-    opacity: 0;
-    position: absolute;
-    top: calc(50% + 1rem);
-    left: 50%;
-    transform: translate(-50%, -50%);
+    &__content {
+        position: relative;
+        height: 1em;
+        opacity: 1;
+    }
+    
+    &__icon {
+        display: block;
+        position: relative;
+        font-size: 1.5em;
+    }
+    
+    &__text {
+        display: block;
+    }
+    
+    &__loadingIndicator {
+        pointer-events: none;
+        opacity: 0;
+        position: absolute;
+        top: calc(50% + 1rem);
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .Button--isDisabled {

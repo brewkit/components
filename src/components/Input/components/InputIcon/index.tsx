@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react';
+import clsx from 'clsx';
 import Icon from '../../../Icon';
 import { Props } from './types';
 
@@ -11,7 +12,7 @@ function InputIcon({
 }: Props): ReactElement {
 
     return (
-        <Icon className={className} color={color} size="medium" {...otherProps}>
+        <Icon className={clsx('brew-Input__icon', className)} color={color} size="medium" {...otherProps}>
             {variant}
         </Icon>
     );

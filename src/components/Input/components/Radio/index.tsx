@@ -2,42 +2,33 @@ import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import InputBase from '../InputBase';
 import { Props } from './types';
-import styles from './styles.scss';
 
+function radioCustomControl(): ReactElement {
+    return (
+        <div className="brew-Input__customControl" />
+    );
+}
 
 function Radio({
     className,
-    customControl,
     disabled = false,
     fullWidth = false,
     inputLabelClassName,
     ...otherProps
 }: Props): ReactElement {
 
-
-    const defaultCustomControl = (): ReactElement => <div className={styles.radio} />;
-
-
     const classes = clsx(
-        styles.wrapper,
-        { [styles.isDisabled]: Boolean(disabled) },
-        { [styles.isFullWidth]: Boolean(fullWidth) },
+        'brew-Input--radio',
         className,
     );
-
-    const inputLabelClasses = clsx(
-        styles.inputLabel,
-        inputLabelClassName,
-    );
-
 
     return (
         <InputBase
             className={classes}
-            customControl={customControl || defaultCustomControl}
+            customControl={radioCustomControl}
             disabled={disabled}
             fullWidth={fullWidth}
-            inputLabelClassName={inputLabelClasses}
+            inputLabelClassName={inputLabelClassName}
             type="checkbox"
             {...otherProps}
         />
