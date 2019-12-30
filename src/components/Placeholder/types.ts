@@ -27,4 +27,5 @@ export interface Props {
      * Any custom content to fill the placeholder that is different than default
      */
     children?: ReactNode,
+
 }
