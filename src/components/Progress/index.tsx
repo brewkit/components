@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import { Props } from './types';
-import styles from './styles.scss';
 
 
 /**
@@ -17,9 +16,9 @@ function Progress({
 
 
     const classes = clsx(
-        styles[`variant--${variant}`],
-        styles[`color--${color}`],
-        styles[`size--${size}`],
+        `brew-Progress--${variant}`,
+        `brew-Progress__color--${color}`,
+        `brew-Progress__size--${size}`,
         className,
     );
 
