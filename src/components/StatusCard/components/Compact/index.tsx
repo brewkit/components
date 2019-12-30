@@ -9,8 +9,8 @@ const CompactStatusCard = ({
     color,
     header,
     body,
-    disabled,
-    fill,
+    isDisabled,
+    isFilled,
     ...otherProps
 }: Props): ReactElement => {
 
@@ -19,8 +19,8 @@ const CompactStatusCard = ({
         'brew-StatusCard',
         'brew-StatusCard--compact',
         `brew-StatusCard__color--${color}`,
-        { 'brew-StatusCard--isDisabled': disabled },
-        { 'brew-StatusCard--isFilled': fill },
+        { 'brew-StatusCard--isDisabled': isDisabled },
+        { 'brew-StatusCard--isFilled': isFilled },
         className,
     );
 

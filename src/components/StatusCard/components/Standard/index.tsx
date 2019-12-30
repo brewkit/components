@@ -11,8 +11,8 @@ const StandardStatusCard = ({
     icon,
     header,
     body,
-    disabled,
-    fill,
+    isDisabled,
+    isFilled,
     ...otherProps
 }: Props): ReactElement => {
 
@@ -21,8 +21,8 @@ const StandardStatusCard = ({
         'brew-StatusCard',
         'brew-StatusCard--standard',
         `brew-StatusCard__color--${color}`,
-        { 'brew-StatusCard--isDisabled': disabled },
-        { 'brew-StatusCard--isFilled': fill },
+        { 'brew-StatusCard--isDisabled': isDisabled },
+        { 'brew-StatusCard--isFilled': isFilled },
         className,
     );
 
