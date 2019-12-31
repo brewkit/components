@@ -1,6 +1,5 @@
 import React, { ReactElement } from 'react';
-import clsx from 'clsx';
-import styles from './styles.scss';
+// import clsx from 'clsx';
 import { Props } from './types';
 
 
@@ -11,16 +10,16 @@ function RadioGroup({
     children,
 }: Props): ReactElement {
 
-    const classes = clsx(
-        styles.wrapper,
-        className,
-    );
-
 
     return (
-        <div className={classes}>
+        <div className={className}>
             <label className={inputLabelClassName}>{inputLabel}</label>
-            {children}
+            <div>
+                {React.Children
+                    .toArray(children)
+                    .map(child => child)
+                }
+            </div>
         </div>
     );
 

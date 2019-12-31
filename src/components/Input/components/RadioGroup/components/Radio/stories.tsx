@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
-import RadioGroup from '../../../RadioGroup';
 import Radio from './index';
+import RadioGroup from '../../../RadioGroup';
 import Label from '../../../../../Label';
 import { boolean, text } from '@storybook/addon-knobs';
 
@@ -18,30 +18,44 @@ export const Default = (): ReactElement => {
     const checked = boolean('checked', false);
     const disabled = boolean('disabled', false);
     const fullWidth = boolean('fullWidth', false);
-    const inputLabel = text('inputLabel', 'Pick an option:');
-    const radioSetName = text('radioSetName', 'testing');
-    const optionName1 = text('optionName1', 'testing1');
-    const optionName2 = text('optionName2', 'testing2');
-
+    const inputLabel = text('inputLabel', 'Radio label');
     return (
-        <RadioGroup inputLabel={inputLabel}>
+        <Radio
+            checked={checked}
+            disabled={disabled}
+            fullWidth={fullWidth}
+            inputLabel={inputLabel}
+            readOnly
+        />
+    );
+};
+
+
+export const RadioGrouping = (): ReactElement => {
+    const checked = boolean('checked', false);
+    const disabled = boolean('disabled', false);
+    const fullWidth = boolean('fullWidth', false);
+    const groupInputLabel = text('groupInputLabel', 'This is a group:');
+    const radioInputLabel = text('radioInputLabel', 'Radio label');
+    const radioName = text('radioName', 'testing');
+    return (
+        <RadioGroup inputLabel={groupInputLabel}>
             <Radio
-                name={radioSetName}
-                inputLabel={optionName1}
+                name={radioName}
                 checked={checked}
                 disabled={disabled}
                 fullWidth={fullWidth}
+                inputLabel={radioInputLabel}
                 readOnly
             />
             <Radio
-                name={radioSetName}
-                inputLabel={optionName2}
+                name={radioName}
                 checked={checked}
                 disabled={disabled}
                 fullWidth={fullWidth}
+                inputLabel={radioInputLabel}
                 readOnly
             />
         </RadioGroup>
-
     );
 };
