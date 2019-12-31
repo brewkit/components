@@ -1,0 +1,20 @@
+@import "variables";
+
+// Usage: color: color(brand, primary);
+@function color($palette, $color) {
+    @return map-get(map-get($colors, $palette), $color);
+}
+
+// Usage: font-size: size(big);
+@function size($size: 'base') {
+  @return map-get(map-get($general, sizes), $size);
+}
+
+// Usage: color: set-text-color(blue);
+@function set-text-color($color) {
+    @if (lightness($color) > 60) {
+        @return #000000; // Lighter background, return dark color
+    } @else {
+        @return #ffffff; // Darker background, return light color
+    }
+}

@@ -5,7 +5,6 @@ import Typography from '../Typography';
 import Icon from '../Icon';
 import Progress from '../Progress';
 import { Props } from './types';
-import styles from './styles.scss';
 
 
 /**
@@ -20,7 +19,7 @@ function Button({
     isCompact = false,
     isCircular = false,
     isFluid = false,
-    disabled = false,
+    isDisabled = false,
     children,
     className,
     ...otherProps
@@ -28,15 +27,15 @@ function Button({
 
 
     const buttonClasses = clsx(
-        styles.wrapper,
-        styles[`variant--${variant}`],
-        styles[`color--${color}`],
-        styles[`size--${size}`],
-        { [styles.isLoading]: isLoading },
-        { [styles.disabled]: disabled || isLoading },
-        { [styles.isCompact]: isCompact },
-        { [styles.isCircular]: isCircular && !isFluid },
-        { [styles.isFluid]: isFluid },
+        'Button',
+        `Button__variant--${variant}`,
+        `Button__color--${color}`,
+        `Button__size--${size}`,
+        { 'Button--isLoading': isLoading },
+        { 'Button--isDisabled': isDisabled || isLoading },
+        { 'Button--isCompact': isCompact },
+        { 'Button--isCircular': isCircular && !isFluid },
+        { 'Button--isFluid': isFluid },
         className,
     );
 
@@ -47,19 +46,19 @@ function Button({
                 <button
                     aria-label={(variant === 'icon' && typeof children === 'string') ? children : undefined}
                     className={buttonClasses}
-                    disabled={disabled || isLoading}
+                    disabled={isDisabled || isLoading}
                     type="button"
                     {...otherProps}
                 >
                     <Flipped flipId="content">
-                        <div className={styles.content}>
-                            <span className={styles.buttonText}>
+                        <div className="Button__content">
+                            <span className="Button__text">
                                 <Typography>
                                     {children}
                                 </Typography>
                             </span>
                             {variant === 'icon' && typeof children === 'string' &&
-                                <span className={styles.icon}>
+                                <span className="Button__icon">
                                     <Icon color="inherit">
                                         {children}
                                     </Icon>
@@ -68,7 +67,7 @@ function Button({
                         </div>
                     </Flipped>
                     <Flipped flipId="loader">
-                        <div className={styles.loadingIndicator}>
+                        <div className="Button__loadingIndicator">
                             <Progress color={color} variant="circular" />
                         </div>
                     </Flipped>

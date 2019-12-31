@@ -1,0 +1,151 @@
+@import "../utilities";
+
+
+// ==============================================
+// Colors
+// ==============================================
+
+$colors: primary, secondary, success, info, warning, danger, light, dark;
+
+@mixin color-styles($colorName) {
+    $progress_color: map_get(map_get($progress, colors), $colorName);
+
+    &.brew-Progress--circular {
+        border: 2px solid $progress_color;
+        border-top: 2px solid rgba($progress_color, 0.25);
+    }
+
+    &.brew-Progress--horizontal {
+        background: rgba($progress_color, 0.25);
+        &:before,
+        &:after { background: $progress_color; }
+    }
+
+}
+
+// ==============================================
+// General
+// ==============================================
+
+.brew-Progress {
+    @each $color in $colors {
+        &__color--#{$color} {
+            @include color-styles($color);
+        }
+    }
+
+    // ==============================================
+    // Variants
+    // ==============================================
+
+    &--circular {
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    &--horizontal {
+        position: relative;
+        overflow: hidden;
+        &:before,
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: -25%;
+            top: 0;
+            width: 25%;
+            height: 100%;
+            z-index: 2;
+            animation: line2 2s ease-in-out infinite;
+        }
+        &:after {
+            left: -150%;
+            animation: line 2s ease-in-out 0.75s infinite;
+        }
+    }
+
+    // ==============================================
+    // Sizes
+    // ==============================================
+
+    &__size--inherit {
+
+        &.brew-Progress--circular {
+            width: 1em;
+            height: 1em;
+        }
+
+        &.brew-Progress--horizontal {
+            height: 1em;
+        }
+
+    }
+
+    &__size--small {
+
+        &.brew-Progress--circular {
+            width: size(normal);
+            height: size(normal);
+        }
+
+        &.brew-Progress--horizontal {
+            height: 2px;
+        }
+
+    }
+
+    &__size--medium {
+
+        &.brew-Progress--circular {
+            width: size(normal) * 2;
+            height: size(normal) * 2;
+        }
+
+        &.brew-Progress--horizontal {
+            height: 4px;
+        }
+    }
+
+    &__size--large {
+
+        &.brew-Progress--circular {
+            width: size(normal) * 3;
+            height: size(normal) * 3;
+        }
+
+        &.brew-Progress--horizontal {
+            height: 8px;
+        }
+    }
+}
+
+// ==============================================
+// Keyframes
+// ==============================================
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes line {
+    0% {
+        width: 5%;
+        left: -25%;
+    }
+    75%, 100% {
+        width: 150%;
+        left: 100%;
+    }
+}
+
+@keyframes line2 {
+    0% {
+        width: 150%;
+        left: -150%;
+    }
+    75%, 100% {
+        width: 5%;
+        left: 100%;
+    }
+}

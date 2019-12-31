@@ -4,7 +4,6 @@ import FormGroup from '../FormGroup';
 import FormLabel from '../FormLabel';
 import FormHelperText from '../FormHelperText';
 import Input from '../../../Input';
-import styles from './styles.scss';
 import { Props } from './types';
 
 
@@ -17,8 +16,11 @@ function FormField({
     variant,
     ...otherProps
 }: Props): ReactElement {
+
+
     const classes = clsx(
-        { [styles.hasError]: Boolean(error) },
+        'brew-FormField',
+        { 'brew-FormField--hasError': Boolean(error) },
         className,
     );
 

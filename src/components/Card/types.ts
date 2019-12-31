@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 
 export interface Props {
-    noBorder?: boolean,
+    hasBorder?: boolean,
     children?: ReactNode,
     className?: string,
 }

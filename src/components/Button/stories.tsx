@@ -34,13 +34,13 @@ export const General = (): ReactElement => {
     const isCompact: boolean = boolean('isCompact', false);
     const isFluid: boolean = boolean('isFluid', false);
     const isCircular: boolean = boolean('isCircular', false);
-    const disabled: boolean = boolean('disabled', false);
+    const isDisabled: boolean = boolean('isDisabled', false);
     return (
         <Button
             color={color}
-            disabled={disabled}
             isCircular={isCircular}
             isCompact={isCompact}
+            isDisabled={isDisabled}
             isFluid={isFluid}
             isLoading={isLoading}
             onClick={action('button-click')}
@@ -60,4 +60,4 @@ export const Circular = (): ReactElement => <Button isCircular variant="icon">ad
 export const Loading = (): ReactElement => <Button isLoading variant="standard">Click me!</Button>;
 export const Fluid = (): ReactElement => <Button isFluid variant="standard">Click me!</Button>;
 export const Compact = (): ReactElement => <Button isCompact variant="standard">Click me!</Button>;
-export const Disabled = (): ReactElement => <Button disabled variant="standard">Click me!</Button>;
+export const Disabled = (): ReactElement => <Button isDisabled variant="standard">Click me!</Button>;

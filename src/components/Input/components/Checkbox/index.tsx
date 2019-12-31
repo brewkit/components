@@ -3,59 +3,30 @@ import clsx from 'clsx';
 import Icon from '../../../Icon';
 import InputBase from '../InputBase';
 import { Props } from './types';
-import styles from './styles.scss';
 
+function CheckboxCustomControl(): ReactElement {
+    return (
+        <div className="brew-Input__customControl">
+            <Icon className="brew-Input__customControlIcon" size="large">check</Icon>
+        </div>
+    );
+}
 
 function Checkbox({
     className = undefined,
-    customControl = undefined,
-    disabled = false,
-    error = false,
-    fullWidth = false,
-    inputLabelClassName = undefined,
-    onChange,
-    checked,
     ...otherProps
 }: Props): ReactElement {
 
-
-    const defaultCustomControl = (): ReactElement => (
-        <div className={styles.checkbox}>
-            <Icon className={styles.check} size="large">check</Icon>
-        </div>
-    );
-
-
     const classes = clsx(
-        styles.wrapper,
-        { [styles.isDisabled]: Boolean(disabled) },
-        { [styles.hasError]: Boolean(error) },
-        { [styles.isFullWidth]: Boolean(fullWidth) },
+        'brew-Input--checkbox',
         className,
     );
-
-
-    const inputLabelClasses = clsx(
-        styles.inputLabel,
-        inputLabelClassName,
-    );
-
-
-    function handleOnChange() {
-        checked = !checked;
-    }
-
 
     return (
         <InputBase
             className={classes}
-            customControl={customControl || defaultCustomControl}
-            disabled={disabled}
-            error={error}
-            fullWidth={fullWidth}
-            inputLabelClassName={inputLabelClasses}
+            customControl={<CheckboxCustomControl />}
             type="checkbox"
-            onChange={handleOnChange}
             {...otherProps}
         />
     );

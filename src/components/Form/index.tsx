@@ -1,24 +1,22 @@
-import React, { ReactElement } from 'react';
-import { Props } from './types';
+import React from 'react';
+import { Props, FormComponent } from './types';
 import FormGroup from './components/FormGroup';
 import FormLabel from './components/FormLabel';
 import FormField from './components/FormField';
 
 
-function Form({
+const Form: FormComponent = ({
     children,
     ...otherProps
-}: Props): ReactElement {
+}: Props) => (
 
 
-    return (
-        <form {...otherProps}>
-            {children}
-        </form>
-    );
+    <form {...otherProps}>
+        {children}
+    </form>
 
 
-}
+);
 
 
 Form.Group = FormGroup;

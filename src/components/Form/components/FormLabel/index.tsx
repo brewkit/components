@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import Typography from '../../../Typography';
 import { Props } from './types';
-import styles from './styles.scss';
 
 
 function FormLabel({
@@ -14,7 +13,7 @@ function FormLabel({
 
 
     const classes = clsx(
-        styles.formLabel,
+        'brew-FormLabel',
         className,
     );
 

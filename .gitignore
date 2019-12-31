@@ -25,3 +25,6 @@ coverage
 
 # Mac files
 .DS_Store
+
+# storybook theme files
+.build/storybook/assets/css/theme.css
