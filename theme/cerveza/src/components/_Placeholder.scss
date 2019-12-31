@@ -1,0 +1,23 @@
+@import "../utilities";
+
+
+// ==============================================
+// General
+// ==============================================
+
+.brew-Placeholder, .brew-Placeholder--content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: size(normal);
+}
+
+.brew-Placeholder--content {
+  text-align: center;
+}
+
+.brew-Placeholder--graphic {
+  font-size: size(xx-large) * 2;
+}
