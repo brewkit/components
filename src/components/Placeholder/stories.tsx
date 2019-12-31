@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 import { text } from '@storybook/addon-knobs';
 import Label from '../Label';
 import Card from '../Card';
-import Button from '../Button';
 import Placeholder from './index';
 
 
@@ -21,11 +20,11 @@ export const General = (): ReactElement => {
     const description: string = text('description', 'Action needs to be taken in order to see content here.');
 
     return (
-        <Placeholder
-            graphic={errorGraphic}
-            title={title}
-            description={description}
-        />
+        <Placeholder>
+            <Placeholder.Graphic graphic={errorGraphic} />
+            <Placeholder.Title title={title} />
+            <Placeholder.Content>{description}</Placeholder.Content>
+        </Placeholder>
     );
 };
 
@@ -36,12 +35,16 @@ export const WithAction = (): ReactElement => {
     const description: string = text('description', 'Please add new content to continue');
 
     return (
-        <Placeholder
-            graphic={childGraphic}
-            title={title}
-            description={description}
-        >
-            <Button isFluid onClick={() => console.log('clicked')}>Add Content</Button>
+        <Placeholder>
+            <Placeholder.Graphic graphic={childGraphic} />
+            <Placeholder.Title title={title} />
+            <Placeholder.Content>{description}</Placeholder.Content>
+            <Placeholder.PrimaryAction onClick={() => console.log('clicked')}>
+                Primary Action
+            </Placeholder.PrimaryAction>
+            <Placeholder.SecondaryAction onClick={() => console.log('clicked')}>
+                Secondary Action
+            </Placeholder.SecondaryAction>
         </Placeholder>
     );
 };
