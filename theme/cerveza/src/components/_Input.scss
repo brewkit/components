@@ -363,3 +363,63 @@
     }
 }
 
+// ==============================================
+// Switch
+// ==============================================
+
+$switchSize: size(xx-large);
+
+.brew-Input--Switch {
+    display: inline-block;
+    height: $switchSize;
+    position: relative;
+    cursor: pointer;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        height: 0;
+        width: 0;
+
+        &:checked ~ .brew-Input--Switch__knob {
+            left: $switchSize;
+            background-color: color(brand,primary);
+        }
+
+        &:checked ~ .brew-Input--Switch__track {
+            background-color: rgba(color(brand,primary), .2);
+        }
+    }
+
+    &__track {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        width: $switchSize * 2;
+        height: $switchSize * .75;
+        background-color: rgba(color(base,grey), .2);
+        border-radius: $border-radius;
+    }
+
+    &__spacer {
+        position: absolute;
+        height: $switchSize;
+        width: $switchSize;
+        display: block;
+    }
+
+    &__knob {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        left: 0;
+        height: $switchSize;
+        width: $switchSize;
+        z-index: 1;
+        background-color: color(base, grey);
+        transition: .3s;
+        border-radius: $border-radius;
+    }
+}
