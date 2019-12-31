@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react';
 import { Props } from './types';
 import clsx from 'clsx';
-import styles from './styles.scss';
 
 
 function FormGroup({
@@ -12,7 +11,7 @@ function FormGroup({
 
 
     const classes = clsx(
-        styles.formGroup,
+        'brew-FormGroup',
         className,
     );
 
