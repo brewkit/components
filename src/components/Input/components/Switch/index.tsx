@@ -8,10 +8,13 @@ function Switch({
     className,
     ...otherProps
 }: Props): ReactElement {
+
+
     const switchClasses = clsx(
         'brew-Switch',
         className,
     );
+
 
     const customControl = (
         <div className="brew-Switch__custom">
@@ -20,9 +23,12 @@ function Switch({
         </div>
     );
 
+
     return (
         <InputBase className={switchClasses} customControl={customControl} type="checkbox" {...otherProps} />
     );
+
+
 }
 
 
