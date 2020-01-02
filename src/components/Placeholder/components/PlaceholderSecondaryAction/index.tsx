@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react';
+import clsx from 'clsx';
 import Button from '../../../Button';
 import { Props } from './types';
 
@@ -10,10 +11,14 @@ function PlaceholderPrimaryAction({
 }: Props): ReactElement {
 
 
+    const placeholderClasses = clsx(
+        'brew-Placeholder__SecondaryAction',
+        className,
+    );
+
+
     return (
-        <div className={className}>
-            <Button onClick={onClick}>{children}</Button>
-        </div>
+        <Button className={placeholderClasses} onClick={onClick}>{children}</Button>
     );
 
 

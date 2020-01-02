@@ -10,6 +10,6 @@ export interface Props {
     /**
      * The icon or graphic to be displayed on top.
      */
-    graphic?: string,
+    graphic: string,
 
 }

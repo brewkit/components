@@ -11,19 +11,15 @@ function PlaceholderContent({
 
 
     const placeholderClasses = clsx(
-        'brew-Placeholder--content',
+        'brew-Placeholder__content',
         className,
     );
 
 
     return (
-        <div className={placeholderClasses}>
-            {children &&
-                <Typography as="p" hasBottomMargin variant="body1">
-                    {children}
-                </Typography>
-            }
-        </div>
+        <Typography className={placeholderClasses} as="p" hasBottomMargin variant="body1">
+            {children}
+        </Typography>
     );
 
 

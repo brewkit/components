@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 
 
 export interface Props {
@@ -8,8 +9,8 @@ export interface Props {
     className?: string,
 
     /**
-     * The title text of the placeholder.
+     * The title content of the placeholder.
      */
-    title?: string,
+    children: ReactNode,
 
 }

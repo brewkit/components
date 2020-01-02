@@ -5,7 +5,7 @@
 // General
 // ==============================================
 
-.brew-Placeholder, .brew-Placeholder--content {
+.brew-Placeholder, .brew-Placeholder__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,10 +14,10 @@
   padding: size(normal);
 }
 
-.brew-Placeholder--content {
+.brew-Placeholder__content {
   text-align: center;
 }
 
-.brew-Placeholder--graphic {
+.brew-Placeholder__graphic {
   font-size: size(xx-large) * 2;
 }
