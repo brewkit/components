@@ -9,16 +9,15 @@ function Switch({ className, ...otherProps }: Props): ReactElement {
         'brew-Input--Switch',
         className,
     );
-    const reactFrag = (
-        <React.Fragment>
-            <span className="brew-Input--Switch__track" />
-            <span className="brew-Input--Switch__knob" />
-            <span className="brew-Input--Switch__spacer" />
-        </React.Fragment>
+    const customControl = (
+        <div className="brew-Input__customControl">
+            <span className="brew-Input__customControlTrack" />
+            <span className="brew-Input__customControlKnob" />
+        </div>
     );
 
     return (
-        <InputBase className={switchClasses} type="checkbox" {...otherProps} after={reactFrag} />
+        <InputBase className={switchClasses} customControl={customControl} type="checkbox" {...otherProps} />
     );
 }
 

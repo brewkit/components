@@ -370,10 +370,15 @@
 $switchSize: size(xx-large);
 
 .brew-Input--Switch {
-    display: inline-block;
+    display: inline-flex;
     height: $switchSize;
     position: relative;
     cursor: pointer;
+
+    div {
+        height: $switchSize;
+        width: $switchSize * 2;
+    }
 
     input {
         position: absolute;
@@ -381,45 +386,83 @@ $switchSize: size(xx-large);
         height: 0;
         width: 0;
 
-        &:checked ~ .brew-Input--Switch__knob {
+        &:checked ~ div .brew-Input__customControlKnob {
             left: $switchSize;
             background-color: color(brand,primary);
         }
 
-        &:checked ~ .brew-Input--Switch__track {
+        &:checked ~ div .brew-Input__customControlTrack {
             background-color: rgba(color(brand,primary), .2);
         }
     }
 
-    &__track {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        display: block;
-        width: $switchSize * 2;
-        height: $switchSize * .75;
-        background-color: rgba(color(base,grey), .2);
-        border-radius: $border-radius;
+    .brew-Input__customControl {
+        &Track {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            width: $switchSize * 2;
+            height: $switchSize * .75;
+            background-color: rgba(color(base,grey), .2);
+            border-radius: $border-radius;
+        }
+
+        &Knob {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            left: 0;
+            height: $switchSize;
+            width: $switchSize;
+            z-index: 1;
+            background-color: color(base, grey);
+            transition: .3s;
+            border-radius: $border-radius;
+        }
     }
 
-    &__spacer {
-        position: absolute;
-        height: $switchSize;
-        width: $switchSize;
-        display: block;
+    .brew-Input__label {
+        align-self: center;
+        margin-left: size(small);
     }
 
-    &__knob {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        display: block;
-        left: 0;
-        height: $switchSize;
-        width: $switchSize;
-        z-index: 1;
-        background-color: color(base, grey);
-        transition: .3s;
-        border-radius: $border-radius;
+    &.brew-Input--hasError {
+        .brew-Input__customControl {
+            &Track,
+            &Knob {
+                border: 1px solid color(accent, danger);
+            }
+        }
+
+        .brew-Input__label {
+            color: color(accent, danger);
+        }
+    }
+
+    &.brew-Input--isDisabled {
+        pointer-events: none;
+        cursor: not-allowed;
+
+        input {
+            &:checked ~ div .brew-Input__customControlKnob {
+                background-color: color(grey,100);
+            }
+
+            &:checked ~ div .brew-Input__customControlTrack {
+                background-color: rgba(color(grey,100), .2);
+            }
+        }
+
+        div {
+            .brew-Input__customControlKnob {
+                background-color: color(grey,100);
+            }
+
+            .brew-Input__customControlTrack {
+                background-color: rgba(color(grey,100), .2);
+            }
+        }
     }
 }
