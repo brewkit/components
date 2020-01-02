@@ -10,26 +10,26 @@ describe('RadioGroup', () => {
         expect(radioGroup.hasClass('brew-RadioGroup')).toBe(true);
     });
 
-    it('renders children when passed in', () => {
-        const name = "Testing";
-        const wrapper = mount(
-            <RadioGroup name={name}>
-                <Radio />
-            </RadioGroup>
-        );
-        expect(wrapper.contains(<Radio />)).toEqual(true);
+    it('correctly accepts and passes through a className prop', () => {
+        const className = `class-${Math.floor(Math.random() * 1000)}`;
+        const radioGroup = shallow(<RadioGroup name="test" className={className}><Radio /></RadioGroup>);
+        expect(radioGroup.hasClass(className)).toBe(true);
     });
 
-    it('correctly accepts the name prop', () => {
-        // const name = "Testing";
+    it('passes the name prop to each child Radio component', () => {
+        const radioGroup = mount(<RadioGroup name="test"><Radio /></RadioGroup>);
+        expect(radioGroup.contains(<Radio name="test" />)).toBe(true);
     });
 
-    it('correctly accepts the defaultValue prop', () => {
-
+    it('passes the defaultValue prop to each child Radio component', () => {
+        const radioGroup = mount(<RadioGroup name="test" defaultValue="theRightOne"><Radio value="theWrongOne" /><Radio value="theRightOne" /></RadioGroup>);
+        expect(radioGroup.contains(<Radio name="test" value="theRightOne" defaultChecked />)).toBe(true);
+        expect(radioGroup.find('[value="theWrongOne"]').first().prop('defaultChecked')).toBe(undefined);
     });
 
-    it('correctly accepts the onChange prop', () => {
-
+    it('correctly applies an onchange handler to all children', () => {
+        const radioGroupWithOnchange = mount(<RadioGroup name="test" onChange={() => {}}><Radio value={"test"} /></RadioGroup>);
+        expect(radioGroupWithOnchange.find('[value="test"]').first().props().onChange).toBeTruthy();
     });
 
 });

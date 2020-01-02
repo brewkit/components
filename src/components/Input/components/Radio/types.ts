@@ -11,5 +11,4 @@ export type Props = Omit<InputBaseProps,
     | 'placeholder'
     | 'rows'
     | 'type'
-    | 'value'
 >;

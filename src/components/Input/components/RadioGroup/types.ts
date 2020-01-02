@@ -1,22 +1,26 @@
-import { ReactNode } from 'react';
 
 
 export interface Props {
 
     /**
-     * Groups of Radio components
+     * Name of the radio group.
      */
     name: string,
 
     /**
-     * Groups of Radio components
+     * The default value for the radio inputs.  Use when the input is not controlled.
      */
     defaultValue?: any,
 
     /**
-     * Groups of Radio components
+     * An action to perform on change of radio selection.
      */
     onChange?: any,
+
+    /**
+     * The className for the component
+     */
+    className?: string,
 
     /**
      * Groups of Radio components
