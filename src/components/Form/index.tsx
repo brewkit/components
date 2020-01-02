@@ -1,10 +1,11 @@
 import React from 'react';
 import { Props, FormComponent } from './types';
+import { withFormContext } from './context';
 import FormGroup from './components/FormGroup';
 import FormLabel from './components/FormLabel';
 import FormField from './components/FormField';
 
-const Form: FormComponent = ({
+const FormContent: FormComponent = ({
     children,
     ...otherProps
 }: Props) => (
@@ -13,6 +14,7 @@ const Form: FormComponent = ({
     </form>
 );
 
+const Form = withFormContext(FormContent);
 
 Form.Group = FormGroup;
 Form.Label = FormLabel;

@@ -1,16 +1,18 @@
-import * as React from 'react';
+import React, { ReactElement, FormEvent } from 'react';
 import uuid from 'uuid/v1';
 
-// The form context is in this file, but cannot be accessed directly.  
-// It can only be accessed through the custom hook or the custom provider
+/*
+ * The form context is in this file, but cannot be accessed directly.
+ * It can only be accessed through the custom hook or the custom provider
+ */
 const FormContext = React.createContext(null);
 
 // Custom hook that gives you access to the form context
-const useForm = () => React.useContext(FormContext);
+export const useForm = () => React.useContext(FormContext);
 
-const useFormProps = (props: any) => {
-    const { values, setTouched, errors } = useForm();
-    const { onSubmit: onSubmitProp } = props;
+export const useFormProps = (props: any) => {
+    const { values, setTouched, errors, validate, validateOnBlur = true, validateOnChange = true, validateOnMount = false } = useForm();
+    const { onSubmit: onSubmitProp, onReset: onResetProp } = props;
 
     // replace the onSubmit prop with our custom version
     const onSubmit = (e) => {
@@ -18,18 +20,29 @@ const useFormProps = (props: any) => {
         e.preventDefault();
 
         // touch all fields
-        setTouched(current => Object.keys(current).reduce((acc, curr) => ({ ...acc, [curr]: true }), {});
+        setTouched((current) => Object.keys(current).reduce((acc, curr) => ({ ...acc, [curr]: true }), {}));
 
         // Stop form submission if there are any errors
         if (Object.keys(errors).length > 0) return;
 
-        onSubmitProp && onSubmitProp(e, { values });
+        if (onSubmitProp) onSubmitProp(e, { values });
+    };
+
+    const onReset = (e) => {
+
+        /*
+         * reset all values
+         * reset all touched
+         * reset all errors
+         */
+        if (onResetProp) onResetProp(e);
     };
 
     return {
         ...props,
+        onReset,
         onSubmit,
-    }
+    };
 };
 
 const useFormFieldProps = (props: any) => {
@@ -40,63 +53,81 @@ const useFormFieldProps = (props: any) => {
     // set the initial value, errors and touched based on type
     React.useEffect(() => {
         // If there isn't a name, make up a name
-        if (!name.current) {
-            name.current = uuid();
-        }
+        if (!name.current) name.current = uuid();
+
 
         // Set the value based on the type
-        switch(type) {
-            default:
-                const currentValue = value || defaultValue || '';
-                setValues(currentValues => ({ ...currentValues, [name.current]: currentValue }));
+        switch (type) {
+        default:
+            const currentValue = value || defaultValue || '';
+            setValues((currentValues) => ({ ...currentValues, [name.current]: currentValue }));
         }
 
         // Set the original touched to false
-        setTouched(currentTouched => ({ ...currentTouched, [name.current]: false }));
+        setTouched((currentTouched) => ({ ...currentTouched, [name.current]: false }));
     }, []);
 
     const onChange = (e) => {
         // Update the value for the form
         const updatedValue = e.target.value;
-        setValues(current => ({ ...current, [name.current]: updatedValue }));
+        setValues((current) => ({ ...current, [name.current]: updatedValue }));
 
         // Run the onChange prop
-        onChangeProp && onChangeProp(e);
+        if (onChangeProp) onChangeProp(e);
     };
 
-    const onBlur = (e) => {
+    const onBlur = (event: { event?: FormEvent, }): void => {
         // Set the form field to touched to show the validation errors
-        setTouched(current => ({ ...current, [name.current]: true }));
+        setTouched((current) => ({ ...current, [name.current]: true }));
 
-        onBlurProp && onBlurProp(e);
+        if (onBlurProp) onBlurProp(event);
     };
 
     return {
         ...props,
-        onChange,
         onBlur,
+        onChange,
     };
 };
 
-const FormProvider = ({ children }) => {
-    // All the form values by name
-    const [values, setValues] = React.useState({});
+const useMutableState = (defaultValue: any): [any, (any) => any] => {
+    const value = React.useRef(defaultValue);
+    const setValue = (updatedVal: any): any => {
+        value.current = typeof updatedVal === 'function' ? updatedVal(value.current) : updatedVal;
+        return updatedVal;
+    };
+
+
+    return [
+        value.current,
+        setValue,
+    ];
+};
+
+const FormProvider = ({ children }: { children?: ReactNode, }): ReactElement => {
+
+    // All of the form values
+    const [values, setValues] = useMutableState({});
     // All the form errors
-    const [errors, setErrors] = React.useState({});
+    const [errors, setErrors] = useMutableState({});
     // The form fields and whether they've been touched or not
-    const [touched, setTouched] = React.useState({});
+    const [touched, setTouched] = useMutableState({});
+    // Whether or not the form is submitting
+    const [isSubmitting, setIsSubmitting] = useMutableState({});
     // Add a helper for validity
     const isValid = Object.keys(errors).length === 0;
 
     const value = React.useMemo(() => ({
-        isValid,
-        values,
-        setValues,
         errors,
+        isSubmitting,
+        isValid,
         setErrors,
-        touched,
+        setIsSubmitting,
         setTouched,
-    }), [values, errors, touched, isValid]);
+        setValues,
+        touched,
+        values,
+    }), [values, errors, touched, isValid, isSubmitting]);
 
     return (
         <FormContext.Provider value={value}>
@@ -105,7 +136,7 @@ const FormProvider = ({ children }) => {
     );
 };
 
-const withFormContext = Component => props => (
+export const withFormContext = (Component) => (props) => (
     <FormProvider>
         <Component {...props} />
     </FormProvider>
