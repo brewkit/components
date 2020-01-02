@@ -18,9 +18,11 @@
 </p>
 
 
-## Usage
+## Description
 
-> Brewkit components are raw and contain no additional styling. Instead, they provide prebuilt functionality, built-in support
-> for FLIP animations, and an abundance of classes that you can style however you see fit.
->
+Brewkit components are raw and contain no additional styling. Instead, they provide prebuilt functionality, built-in support
+for FLIP animations, and an abundance of classes that you can style however you see fit.
+
+Brewkit is designed to be themed and support separately distributed CSS files that can be used in your project or as the basis for your own theme.
+
 > If starting your project from scratch, we highly recommend you use [@brewkit/create](https://github.com/brewkit/create).
