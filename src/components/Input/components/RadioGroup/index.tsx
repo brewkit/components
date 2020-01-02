@@ -3,23 +3,24 @@ import { Props } from './types';
 
 
 function RadioGroup({
-    className,
-    inputLabel,
-    inputLabelClassName,
+    name,
+    defaultValue,
+    onChange,
     children,
 }: Props): ReactElement {
 
 
     return (
-        <div className={className}>
-            <label className={inputLabelClassName}>{inputLabel}</label>
-            <div>
-                {React.Children
-                    .toArray(children)
-                    .map(child => child)
-                }
+            <div className="brew-RadioGroup">
+                {React.Children.map(children, (child) => {
+                    return React.cloneElement(child, {
+                        name: name,
+                        defaultValue: defaultValue,
+                        onChange: onChange,
+                        ...child.props,
+                    });
+                })}
             </div>
-        </div>
     );
 
 }

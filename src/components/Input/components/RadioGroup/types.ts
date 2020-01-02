@@ -4,23 +4,23 @@ import { ReactNode } from 'react';
 export interface Props {
 
     /**
-     * Classes to be passed through to the component.
+     * Groups of Radio components
      */
-    className?: string,
-
-    /**
-     * Text that describes a radio grouping
-     */
-    inputLabel?: string,
-
-    /**
-     * Custom style for input label
-     */
-    inputLabelClassName?: string,
+    name: string,
 
     /**
      * Groups of Radio components
      */
-    children?: ReactNode,
+    defaultValue?: any,
+
+    /**
+     * Groups of Radio components
+     */
+    onChange?: any,
+
+    /**
+     * Groups of Radio components
+     */
+    children: any,
 
 }
