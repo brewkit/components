@@ -369,7 +369,7 @@
 
 $switchSize: size(xx-large);
 
-.brew-Input--Switch {
+.brew-Switch {
     display: inline-flex;
     height: $switchSize;
     position: relative;
@@ -386,18 +386,18 @@ $switchSize: size(xx-large);
         height: 0;
         width: 0;
 
-        &:checked ~ div .brew-Input__customControlKnob {
+        &:checked ~ div .brew-Switch__knob {
             left: $switchSize;
             background-color: color(brand,primary);
         }
 
-        &:checked ~ div .brew-Input__customControlTrack {
+        &:checked ~ div .brew-Switch__track {
             background-color: rgba(color(brand,primary), .2);
         }
     }
 
-    .brew-Input__customControl {
-        &Track {
+    .brew-Switch {
+        &__track {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -408,7 +408,7 @@ $switchSize: size(xx-large);
             border-radius: $border-radius;
         }
 
-        &Knob {
+        &__knob {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -429,9 +429,9 @@ $switchSize: size(xx-large);
     }
 
     &.brew-Input--hasError {
-        .brew-Input__customControl {
-            &Track,
-            &Knob {
+        .brew-Switch {
+            &__track,
+            &__knob {
                 border: 1px solid color(accent, danger);
             }
         }
@@ -446,21 +446,21 @@ $switchSize: size(xx-large);
         cursor: not-allowed;
 
         input {
-            &:checked ~ div .brew-Input__customControlKnob {
+            &:checked ~ div .brew-Switch__knob {
                 background-color: color(grey,100);
             }
 
-            &:checked ~ div .brew-Input__customControlTrack {
+            &:checked ~ div .brew-Switch__track {
                 background-color: rgba(color(grey,100), .2);
             }
         }
 
         div {
-            .brew-Input__customControlKnob {
+            .brew-Switch__knob {
                 background-color: color(grey,100);
             }
 
-            .brew-Input__customControlTrack {
+            .brew-Switch__track {
                 background-color: rgba(color(grey,100), .2);
             }
         }

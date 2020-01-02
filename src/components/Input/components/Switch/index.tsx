@@ -4,15 +4,19 @@ import InputBase from '../InputBase';
 import { Props } from './types';
 
 
-function Switch({ className, ...otherProps }: Props): ReactElement {
+function Switch({
+    className,
+    ...otherProps
+}: Props): ReactElement {
     const switchClasses = clsx(
-        'brew-Input--Switch',
+        'brew-Switch',
         className,
     );
+
     const customControl = (
-        <div className="brew-Input__customControl">
-            <span className="brew-Input__customControlTrack" />
-            <span className="brew-Input__customControlKnob" />
+        <div className="brew-Switch__custom">
+            <span className="brew-Switch__track" />
+            <span className="brew-Switch__knob" />
         </div>
     );
 

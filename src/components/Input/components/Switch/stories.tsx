@@ -2,10 +2,12 @@ import React, { ReactElement } from 'react';
 import Switch from './index';
 import { boolean, text } from '@storybook/addon-knobs';
 
+
 export default {
     component: Switch,
     title: 'Components|User Input/Input/Switch',
 };
+
 
 export const Default = (): ReactElement => {
     const disabled = boolean('disabled', false);
