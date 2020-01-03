@@ -11,7 +11,6 @@ function Typography({
     color = 'initial',
     align = 'inherit',
     display = 'initial',
-    hasBottomMargin = false,
     shouldTruncate = false,
     as = null,
     children,
@@ -26,7 +25,6 @@ function Typography({
         [`brew-Typography--color-${color}`],
         [`brew-Typography--align-${align}`],
         [`brew-Typography--display-${display}`],
-        { 'brew-Typography--hasBottomMargin': hasBottomMargin },
         { 'brew-Typography--shouldTruncate': shouldTruncate },
         className,
     );
