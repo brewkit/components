@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import StatusCard from './index';
 import StandardStatusCard from './components/Standard';
 import CompactStatusCard from './components/Compact';
 import Icon from '../Icon';
 import Typography from '../Typography';
-import renderer from "react-test-renderer";
 
 
 describe('Status Card', () => {
