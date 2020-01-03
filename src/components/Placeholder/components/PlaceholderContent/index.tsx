@@ -17,7 +17,7 @@ function PlaceholderContent({
 
 
     return (
-        <Typography className={placeholderClasses} as="p" hasBottomMargin variant="body1">
+        <Typography className={placeholderClasses} as="p" variant="body1">
             {children}
         </Typography>
     );
