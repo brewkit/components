@@ -1,5 +1,5 @@
 export type Colors = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'inherit';
-export type Sizes = 'small' | 'medium' | 'large' | 'inherit';
+export type Sizes = 'small' | 'medium' | 'large' | 'x-large' | 'xx-large' | 'inherit';
 
 
 export interface Props {

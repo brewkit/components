@@ -1,19 +1,9 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 
 const ModalContext = React.createContext(null);
 
-export const ModalProvider = (props: any): ReactElement => {
-    const { children } = props;
-    const onClose = React.useRef(null);
-
-    const setOnClose = (newOnClose: (any) => any): void => {
-        onClose.current = newOnClose;
-    };
-
-    const value = React.useMemo(() => ({
-        onClose,
-        setOnClose,
-    }), [onClose]);
+export const ModalProvider = (props: { value: object, children: ReactNode, }): ReactElement => {
+    const { value, children } = props;
 
     return (
         <ModalContext.Provider value={value}>

@@ -5,14 +5,14 @@ import { Props } from './types';
 
 
 function ModalTitle(props: Props): ReactElement {
-    const { className, ...otherProps } = props;
+    const { className, children, ...otherProps } = props;
     const classes = clsx(
         'brew-Modal__title',
         className,
     );
 
     return (
-        <Typography className={classes} {...otherProps} />
+        <Typography as="h2" className={classes} {...otherProps}>{children}</Typography>
     );
 }
 

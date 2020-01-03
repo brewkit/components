@@ -10,6 +10,8 @@
     font-family: Roboto, serif;
     color: color(grey, 800);
     margin: 0;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -52,11 +54,6 @@ $variants: h1, h2, h3, body1, body2, label;
 .variant--label {
     text-transform: uppercase;
 }
-
-.variant--inherit {
-    font-size: inherit;
-}
-
 
 // ==============================================
 // Alignments

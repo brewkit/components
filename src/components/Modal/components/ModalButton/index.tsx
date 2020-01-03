@@ -5,9 +5,10 @@ import { Props } from './types';
 
 
 function ModalButton(props: Props): ReactElement {
-    const { className, ...otherProps } = props;
+    const { className, variant, ...otherProps } = props;
     const classes = clsx(
         'brew-Modal__button',
+        { [`brew-Modal__button--${variant}`]: Boolean(variant) },
         className,
     );
 

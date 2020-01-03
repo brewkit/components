@@ -1,0 +1,106 @@
+.brew-Modal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+
+    .brew-Modal {
+
+        &__background {
+            background-color:  rgba(0, 33, 48, 0.9);
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        &__content {
+            z-index: 1;
+            width: 100%;
+            max-width: 530px;
+            padding: size(xx-large) size(normal);
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        &__icon {
+            height: size(xx-large) * 1.5;
+        }
+
+        &__title {
+            font-size: size(xx-large);
+        }
+
+        &__icon + .brew-Modal__title {
+            margin-top: size(normal);
+        }
+
+        &__button {
+            display: block;
+            width: 100%;
+        }
+
+        &__body {
+            color: white;
+            font-weight: map-get(map-get($typography, font-weights), body1);
+            margin-top: size(normal);
+        }
+
+        &__footer {
+            margin-top: size(xx-large);
+
+            > * + * {
+                margin-top: size(xx-large);
+            }
+        }
+
+        &__button {
+
+            + * {
+                margin-top: size(xx-large);
+            }
+        }
+
+        &__button--secondary {
+            background-color: transparent !important;
+            border-color: transparent !important;
+
+            .Button__text > *,
+            .brew-Button__text > * {
+                color: color(brand, primary) !important;
+            }
+        }
+    }
+}
+
+.brew-Modal--isOpen {
+    display: flex;
+}
+
+$variants: (
+    'info',
+    'success',
+    'warning',
+    'danger',
+);
+
+@each $variant in $variants {
+    .brew-Modal--#{$variant} {
+        
+        .brew-Modal {
+
+            &__title,
+            &__icon {
+                color: color(accent, $variant);
+            }
+        }
+    }
+}
+
