@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlaceholderPrimaryAction renders correctly 1`] = `
+<div>
+  <button
+    className="Button Button__variant--standard Button__color--primary Button__size--medium Button--isFluid brew-Placeholder__PrimaryAction"
+    data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+    data-flip-id="wrapper"
+    data-portal-key="portal"
+    disabled={false}
+    type="button"
+  >
+    <div
+      className="Button__content"
+      data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+      data-flip-id="content"
+      data-portal-key="portal"
+    >
+      <span
+        className="Button__text"
+      >
+        <span
+          className="wrapper variant--inherit color--initial align--inherit display--initial"
+        />
+      </span>
+    </div>
+    <div
+      className="Button__loadingIndicator"
+      data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
+      data-flip-id="loader"
+      data-portal-key="portal"
+    >
+      <div
+        className="brew-Progress--circular brew-Progress__color--primary brew-Progress__size--inherit"
+      />
+    </div>
+  </button>
+</div>
+`;
