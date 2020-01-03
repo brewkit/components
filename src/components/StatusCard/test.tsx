@@ -5,10 +5,18 @@ import StandardStatusCard from './components/Standard';
 import CompactStatusCard from './components/Compact';
 import Icon from '../Icon';
 import Typography from '../Typography';
+import renderer from "react-test-renderer";
 
 
 describe('Status Card', () => {
 
+
+    it('Renders correctly', () => {
+        const tree = renderer
+            .create(<StatusCard body="bye" color="success" header="hi" icon="business" variant="standard" />)
+            .toJSON();
+        expect(tree).toMatchSnapshot();
+    });
 
     it('Renders Standard Variant', () => {
         const card = shallow(<StatusCard body="bye" color="success" header="hi" icon="business" variant="standard" />);
