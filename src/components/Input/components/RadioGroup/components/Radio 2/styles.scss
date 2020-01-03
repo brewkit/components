@@ -1,0 +1,37 @@
+@import '../../../../../../styles/utilities';
+
+.wrapper {
+    display: inline-flex;
+    overflow: hidden;
+    align-items: center;
+}
+
+.radio {
+    height: size(xx-large);
+    width: size(xx-large);
+    display: inline-flex;
+    border-radius: 100%;
+    border: 1px solid color(grey, 100);
+    box-sizing: border-box;
+
+    input:checked + & {
+        border-width: 10px;
+        border-color: color(brand, primary);
+    }
+}
+
+.isFullWidth {
+    width: 100%;
+}
+
+.isDisabled {
+
+    input + .radio {
+        background-color: color(grey, 100);
+    }
+
+    input:checked + .radio {
+        background-color: white;
+        border-color: color(grey, 100);
+    }
+}

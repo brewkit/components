@@ -17,7 +17,7 @@ function PlaceholderTitle({
 
 
     return (
-        <Typography className={placeholderClasses} hasBottomMargin shouldTruncate variant="h1" color="tertiary">
+        <Typography className={placeholderClasses} shouldTruncate variant="h1" color="tertiary">
             {children}
         </Typography>
     );
