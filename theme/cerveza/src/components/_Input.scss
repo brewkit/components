@@ -375,28 +375,28 @@ $switchSize: size(xx-large);
     position: relative;
     cursor: pointer;
 
-    div {
-        height: $switchSize;
-        width: $switchSize * 2;
-    }
-
-    input {
-        position: absolute;
-        opacity: 0;
-        height: 0;
-        width: 0;
-
-        &:checked ~ div .brew-Switch__knob {
-            left: $switchSize;
-            background-color: color(brand,primary);
+    .brew-Input {
+        &__custom {
+            height: $switchSize;
+            width: $switchSize * 2;
         }
 
-        &:checked ~ div .brew-Switch__track {
-            background-color: rgba(color(brand,primary), .2);
-        }
-    }
+        &__element {
+            position: absolute;
+            opacity: 0;
+            height: 0;
+            width: 0;
 
-    .brew-Switch {
+            &:checked ~ .brew-Input__custom .brew-Input__knob {
+                left: $switchSize;
+                background-color: color(brand,primary);
+            }
+
+            &:checked ~ .brew-Input__custom .brew-Input__track {
+                background-color: rgba(color(brand,primary), .2);
+            }
+        }
+
         &__track {
             position: absolute;
             top: 50%;
@@ -421,23 +421,24 @@ $switchSize: size(xx-large);
             transition: .3s;
             border-radius: $border-radius;
         }
+
+        &__label {
+            align-self: center;
+            margin-left: size(small);
+        }
     }
 
-    .brew-Input__label {
-        align-self: center;
-        margin-left: size(small);
-    }
 
     &.brew-Input--hasError {
-        .brew-Switch {
+        .brew-Input {
             &__track,
             &__knob {
                 border: 1px solid color(accent, danger);
             }
-        }
 
-        .brew-Input__label {
-            color: color(accent, danger);
+            &__label {
+                color: color(accent, danger);
+            }
         }
     }
 
@@ -445,23 +446,27 @@ $switchSize: size(xx-large);
         pointer-events: none;
         cursor: not-allowed;
 
-        input {
-            &:checked ~ div .brew-Switch__knob {
-                background-color: color(grey,100);
+        .brew-Input {
+            &__element {
+                &:checked ~ .brew-Input__custom .brew-Input__knob {
+                    background-color: color(grey, 100);
+                }
+
+                &:checked ~ .brew-Input__custom .brew-Input__track {
+                    background-color: rgba(color(grey, 100), .2);
+                }
             }
 
-            &:checked ~ div .brew-Switch__track {
-                background-color: rgba(color(grey,100), .2);
-            }
-        }
+            &__custom {
+                .brew-Input {
+                    &__knob {
+                        background-color: color(grey, 100);
+                    }
 
-        div {
-            .brew-Switch__knob {
-                background-color: color(grey,100);
-            }
-
-            .brew-Switch__track {
-                background-color: rgba(color(grey,100), .2);
+                    &__track {
+                        background-color: rgba(color(grey, 100), .2);
+                    }
+                }
             }
         }
     }

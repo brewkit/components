@@ -14,9 +14,9 @@ function Switch({
     );
 
     const customControl = (
-        <div className="brew-Switch__custom">
-            <span className="brew-Switch__track" />
-            <span className="brew-Switch__knob" />
+        <div className="brew-Input__custom">
+            <span className="brew-Input__track" />
+            <span className="brew-Input__knob" />
         </div>
     );
 
