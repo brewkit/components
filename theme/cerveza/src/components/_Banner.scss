@@ -1,0 +1,43 @@
+@import "../utilities";
+
+
+.brew-Banner {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    background-color: color(grey, 800);
+    border-left: 8px solid;
+    border-bottom: 1px solid color(grey, 800);
+
+
+    .brew-Banner {
+        &__icon {
+            height: 2.5rem;
+            margin: .5rem;
+        }
+
+        &__infoText {
+            font-size: 0.75rem;
+            color: color(grey, 50);
+        }
+    }
+}
+
+
+$bannerColors: 'danger', 'warning', 'info', 'success';
+
+@each $bannerColor in $bannerColors {
+    .brew-Banner--color-#{$bannerColor} {
+        border-left-color: color(accent, $bannerColor);
+
+        .brew-Banner__text {
+            font-size: 1rem;
+            color: color(accent, $bannerColor);
+        }
+
+        .brew-Banner__icon {
+            color: color(accent, $bannerColor);
+        }
+    }
+}
