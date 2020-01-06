@@ -16,24 +16,28 @@
         &--minor {
             padding-right: 2rem;
 
-            &.brew-Banner--hasInfoText {
+            .brew-Banner__body {
                 .brew-Banner {
-                    &__text {
+                    &__bodyTitle {
                         font-size: 0.75rem;
                     }
     
-                    &__infoText {
+                    &__bodyInfo {
                         font-size: 1rem;
                         color: color(grey,50);
                     }
                 }
             }
         }
+
+        &--alert {
+            padding-right: 1rem;
+        }
     }
 
 
     .brew-Banner {
-        &__buttonSection {
+        &__children {
             display: flex;
             align-items: center;
             margin-left: auto;
@@ -44,7 +48,7 @@
             margin: .5rem;
         }
 
-        &__infoText {
+        &__bodyInfo {
             font-size: 0.75rem;
             color: color(grey, 50);
         }
@@ -58,17 +62,22 @@ $bannerColors: 'danger', 'warning', 'info', 'success';
     .brew-Banner--color-#{$bannerColor} {
         border-left-color: color(accent, $bannerColor);
 
-        .brew-Banner__text {
+        .brew-Banner__bodyTitle {
             font-size: 1rem;
             color: color(accent, $bannerColor);
-
-            &.brew-Banner--major {
-                font-size: 0.75rem;
-            }
         }
 
         .brew-Banner__icon {
             color: color(accent, $bannerColor);
+        }
+
+        &.brew-Banner--alert {
+            background-color: rgba(color(accent, $bannerColor), 0.2);
+            border-bottom: initial;
+
+            .brew-Banner__bodyInfo {
+                color: color(grey, 800);
+            }
         }
     }
 }
