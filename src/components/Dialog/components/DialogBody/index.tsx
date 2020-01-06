@@ -4,16 +4,16 @@ import Typography from '../../../Typography';
 import { Props } from './types';
 
 
-function ModalTitle(props: Props): ReactElement {
+function DialogBody(props: Props): ReactElement {
     const { className, children, ...otherProps } = props;
     const classes = clsx(
-        'brew-Modal__title',
+        'brew-Dialog__body',
         className,
     );
 
     return (
-        <Typography as="h2" className={classes} {...otherProps}>{children}</Typography>
+        <Typography as="div" className={classes} {...otherProps}>{children}</Typography>
     );
 }
 
-export default ModalTitle;
+export default DialogBody;

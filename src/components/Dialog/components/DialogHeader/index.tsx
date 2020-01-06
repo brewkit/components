@@ -3,10 +3,10 @@ import clsx from 'clsx';
 import { Props } from './types';
 
 
-function ModalHeader(props: Props): ReactElement {
+function DialogHeader(props: Props): ReactElement {
     const { className, ...otherProps } = props;
     const classes = clsx(
-        'brew-Modal__header',
+        'brew-Dialog__header',
         className,
     );
 
@@ -15,4 +15,4 @@ function ModalHeader(props: Props): ReactElement {
     );
 }
 
-export default ModalHeader;
+export default DialogHeader;

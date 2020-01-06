@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DialogIcon matches the current snapshot 1`] = `
+<span
+  className="wrapper color--inherit size--inherit brew-Dialog__icon"
+>
+  <svg
+    height="100%"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    ☐
+  </svg>
+</span>
+`;

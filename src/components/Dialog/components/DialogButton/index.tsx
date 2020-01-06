@@ -4,11 +4,10 @@ import Button from '../../../Button';
 import { Props } from './types';
 
 
-function ModalButton(props: Props): ReactElement {
-    const { className, variant, ...otherProps } = props;
+function DialogButton(props: Props): ReactElement {
+    const { className, ...otherProps } = props;
     const classes = clsx(
-        'brew-Modal__button',
-        { [`brew-Modal__button--${variant}`]: Boolean(variant) },
+        'brew-Dialog__button',
         className,
     );
 
@@ -17,4 +16,4 @@ function ModalButton(props: Props): ReactElement {
     );
 }
 
-export default ModalButton;
+export default DialogButton;

@@ -1,18 +1,19 @@
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
+import Icon from '../../../Icon';
 import { Props } from './types';
 
 
-function ModalDialog(props: Props): ReactElement {
+function DialogIcon(props: Props): ReactElement {
     const { className, ...otherProps } = props;
     const classes = clsx(
-        'brew-Modal__dialog',
+        'brew-Dialog__icon',
         className,
     );
 
     return (
-        <div className={classes} {...otherProps} />
+        <Icon className={classes} {...otherProps} />
     );
 }
 
-export default ModalDialog;
+export default DialogIcon;

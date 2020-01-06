@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DialogBody matches the current snapshot 1`] = `
+<div
+  className="brew-Typography brew-Typography--variant-inherit brew-Typography--color-initial brew-Typography--align-inherit brew-Typography--display-initial brew-Dialog__body"
+/>
+`;

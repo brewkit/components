@@ -132,6 +132,8 @@ $typography: (
 $button: (
 
     border_radius: map_get($general, border-radius),
+    
+    font_weight: bold,
 
     colors: (
         primary: color(brand, primary),
