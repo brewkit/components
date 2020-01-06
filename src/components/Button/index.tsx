@@ -27,15 +27,15 @@ function Button({
 
 
     const buttonClasses = clsx(
-        'Button',
-        `Button__variant--${variant}`,
-        `Button__color--${color}`,
-        `Button__size--${size}`,
-        { 'Button--isLoading': isLoading },
-        { 'Button--isDisabled': isDisabled || isLoading },
-        { 'Button--isCompact': isCompact },
-        { 'Button--isCircular': isCircular && !isFluid },
-        { 'Button--isFluid': isFluid },
+        'brew-Button',
+        `brew-Button--variant-${variant}`,
+        `brew-Button--color-${color}`,
+        `brew-Button--size-${size}`,
+        { 'brew-Button--isLoading': isLoading },
+        { 'brew-Button--isDisabled': isDisabled || isLoading },
+        { 'brew-Button--isCompact': isCompact },
+        { 'brew-Button--isCircular': isCircular && !isFluid },
+        { 'brew-Button--isFluid': isFluid },
         className,
     );
 
@@ -51,23 +51,19 @@ function Button({
                     {...otherProps}
                 >
                     <Flipped flipId="content">
-                        <div className="Button__content">
-                            <span className="Button__text">
-                                <Typography>
-                                    {children}
-                                </Typography>
-                            </span>
+                        <div className="brew-Button__content">
+                            <Typography className="brew-Button__text">
+                                {children}
+                            </Typography>
                             {variant === 'icon' && typeof children === 'string' &&
-                                <span className="Button__icon">
-                                    <Icon color="inherit">
-                                        {children}
-                                    </Icon>
-                                </span>
+                                <Icon className="brew-Button__icon" color="inherit">
+                                    {children}
+                                </Icon>
                             }
                         </div>
                     </Flipped>
                     <Flipped flipId="loader">
-                        <div className="Button__loadingIndicator">
+                        <div className="brew-Button__loadingIndicator">
                             <Progress color={color} variant="circular" />
                         </div>
                     </Flipped>
