@@ -1,4 +1,4 @@
-.brew-Modal {
+.brew-Dialog {
     display: none;
     align-items: center;
     justify-content: center;
@@ -10,7 +10,7 @@
     right: 0;
     z-index: 40;
 
-    .brew-Modal {
+    .brew-Dialog {
 
         &__background {
             background-color:  rgba(0, 33, 48, 0.9);
@@ -38,7 +38,7 @@
             font-size: size(xx-large);
         }
 
-        &__icon + .brew-Modal__title {
+        &__icon + .brew-Dialog__title {
             margin-top: size(normal);
         }
 
@@ -80,7 +80,7 @@
     }
 }
 
-.brew-Modal--isOpen {
+.brew-Dialog--isOpen {
     display: flex;
 }
 
@@ -92,9 +92,9 @@ $variants: (
 );
 
 @each $variant in $variants {
-    .brew-Modal--#{$variant} {
+    .brew-Dialog--#{$variant} {
         
-        .brew-Modal {
+        .brew-Dialog {
 
             &__title,
             &__icon {
