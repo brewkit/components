@@ -51,11 +51,6 @@ export interface Props {
     display?: Displays,
 
     /**
-     * Adds a bottom margin to the wrapping element.
-     */
-    hasBottomMargin?: boolean,
-
-    /**
      * Adds text truncation (ellipsis) to the wrapping element.
      */
     shouldTruncate?: boolean,
