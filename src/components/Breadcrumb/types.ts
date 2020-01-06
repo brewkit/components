@@ -1,20 +1,7 @@
 import { ReactNode } from 'react';
 
 
-export type Colors = 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
-
-
 export interface Props {
-
-    /**
-     * The optional content inside the divider.
-     */
-    children?: ReactNode,
-
-    /**
-     * Optional content to render as a title of the label.
-     */
-    title?: ReactNode,
 
     /**
      * Classes to be passed through to the component.
@@ -22,8 +9,13 @@ export interface Props {
     className?: string,
 
     /**
-     * The color of the label.
+     * Custom divider applied between crumbs.
      */
-    color?: Colors,
+    divider?: ReactNode
+
+    /**
+     * Array of crumb content to display
+     */
+    crumbs: Array<{ title: ReactNode, url?: string }>,
 
 }

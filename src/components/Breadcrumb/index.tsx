@@ -1,38 +1,40 @@
 import React, { ReactElement } from 'react';
+import { Link } from 'react-router-dom';
 import clsx from 'clsx';
-import Typography from '../Typography';
 import { Props } from './types';
 
 
-/**
- * The `<Label />` is used to display content classification.
- */
-function Label({
-    title,
-    color = 'info',
-    children,
+function Breadcrumb({
     className,
-    ...otherProps
+    divider,
+    crumbs,
 }: Props): ReactElement {
 
+    const crumbCount = crumbs.length - 1;
 
     const classes = clsx(
-        'brew-Label',
-        `brew-Label__color--${color}`,
+        'brew-Breadcrumb',
         className,
     );
 
 
     return (
-        <div className={classes} {...otherProps}>
-            {title && (
-                <div className="title">
-                    <Typography className="titleContent" variant="label">{title}</Typography>
-                </div>
-            )}
-            <div className="content">
-                <Typography color={color} variant="label">{children}</Typography>
-            </div>
+        <div className={classes}>
+            {crumbs.map((crumb, index) => {
+                return (
+                    <>
+                        {crumbCount !== index ?
+                            <>
+                                <a href={crumb.url}>{crumb.title}</a>
+                                <span className="brew-Breadcrumb--separator">
+                                    {divider ? divider : '/'}
+                                </span>
+                            </> :
+                            <>{crumb.title}</>
+                        }
+                    </>
+                );
+            })}
         </div>
     );
 
@@ -40,4 +42,4 @@ function Label({
 }
 
 
-export default Label;
+export default Breadcrumb;

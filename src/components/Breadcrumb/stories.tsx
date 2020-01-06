@@ -1,28 +1,39 @@
 import React, { ReactElement, ReactNode } from 'react';
-import { select, text } from '@storybook/addon-knobs';
-import Label from './index';
-import { Colors } from './types';
+// import { text } from '@storybook/addon-knobs';
+import Breadcrumb from './index';
+import Label from '../Label';
 
 
 export default {
-    component: Label,
+    component: Breadcrumb,
     parameters: {
         componentSubtitle: <Label color="warning">In Development</Label>,
     },
-    title: 'Components|Display/Label',
+    title: 'Components|Display/Breadcrumb',
 };
 
 
 export const General = (): ReactElement => {
-    const color: Colors = select('color', ['success', 'danger', 'warning', 'info', 'light', 'dark'], 'info');
-    const children: ReactNode = text('children', 'Label');
-    const title: ReactNode = text('title', '');
+    // const breadcrumbs: ReactNode = text('children', 'Breadcrumb');
 
     return (
-        <Label color={color} title={title}>{children}</Label>
+        <Breadcrumb
+            crumbs={[
+                {
+                    title: "Location 1",
+                    url: "#",
+                },
+                {
+                    title: "Location 2",
+                    url: "#",
+                },
+                {
+                    title: "Location 3",
+                    url: "#",
+                },
+            ]}
+            divider={<span> > </span>}
+        />
     );
 };
 
-
-export const Default = (): ReactElement => <Label>Default</Label>;
-export const WithTitle = (): ReactElement => <Label color="success" title="Status">complete</Label>;
