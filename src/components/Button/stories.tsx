@@ -17,7 +17,7 @@ export default {
 
 export const General = (): ReactElement => {
     const children: ReactNode = text('children', 'Click me!');
-    const variant: Variants = select('variant', ['standard', 'text', 'icon'], 'standard');
+    const variant: Variants = select('variant', ['standard', 'icon'], 'standard');
     const color: Colors = select('color', [
         'primary',
         'secondary',
@@ -55,7 +55,6 @@ export const General = (): ReactElement => {
 
 export const Default = (): ReactElement => <Button>Default</Button>;
 export const Standard = (): ReactElement => <Button variant="standard">Click me!</Button>;
-export const Text = (): ReactElement => <Button variant="text">Click me!</Button>;
 export const Icon = (): ReactElement => <Button variant="icon">360</Button>;
 export const Circular = (): ReactElement => <Button isCircular variant="icon">add</Button>;
 export const Loading = (): ReactElement => <Button isLoading variant="standard">Click me!</Button>;

@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 
 
-export type Variants = 'standard' | 'text' | 'icon';
+export type Variants = 'standard' | 'icon';
 export type Colors = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link';
 export type Sizes = 'small' | 'medium' | 'large';
 
