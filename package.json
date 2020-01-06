@@ -16,9 +16,11 @@
     "scripts": {
         "test:generate-output": "jest --watchAll --json --outputFile=.build/jest/test-results.json || true",
         "test": "jest --watchAll --json --outputFile=.build/jest/test-results.json",
-        "sass": "./node_modules/.bin/node-sass-chokidar --watch --output-style=compressed ./theme/cerveza/src/index.scss ./.build/storybook/assets/css/theme.css",
+        "sass": "./node_modules/.bin/node-sass-chokidar --output-style=compressed ./theme/cerveza/src/index.scss ./.build/storybook/assets/css/theme.css",
+        "sass-watch": "npm run sass -- --watch",
         "commit": "npx git-cz",
-        "start": "start-storybook -p 9001 -c .build/storybook"
+        "start": "npm run sass && npm run storybook",
+        "storybook": "start-storybook -p 9001 -c .build/storybook"
     },
     "jest": {
         "transform": {
@@ -98,6 +100,7 @@
         "react-router-dom": "^5.1.2"
     },
     "dependencies": {
+        "@testing-library/react": "^9.4.0",
         "clsx": "^1.0.4",
         "lodash": "^4.17.15"
     },
