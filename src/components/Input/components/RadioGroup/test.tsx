@@ -29,8 +29,8 @@ describe('RadioGroup', () => {
 
     it('passes the value prop to each child Radio component', () => {
         const radioGroup = mount(<RadioGroup name="test" value="theRightOne"><Radio value="theWrongOne" /><Radio value="theRightOne" /></RadioGroup>);
-        expect(radioGroup.contains(<Radio name="test" value="theRightOne" defaultChecked />)).toBe(true);
-        expect(radioGroup.find('[value="theWrongOne"]').first().prop('defaultChecked')).toBe(undefined);
+        expect(radioGroup.contains(<Radio name="test" value="theRightOne" checked />)).toBe(true);
+        expect(radioGroup.find('[value="theWrongOne"]').first().prop('checked')).toBe(undefined);
     });
 
     it('correctly applies an onchange handler to all children', () => {

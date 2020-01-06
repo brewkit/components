@@ -25,8 +25,8 @@ function RadioGroup({
                 {React.Children.map(children, (child) => {
                     return React.cloneElement(child, {
                         name: name,
-                        defaultChecked: ((Boolean(defaultValue) && child.props.value === defaultValue) ||
-                                        (Boolean(value) && child.props.value === value)) ? true : undefined,
+                        defaultChecked: Boolean(defaultValue) && child.props.value === defaultValue ? true : undefined,
+                        checked: Boolean(value) && child.props.value === value ? true : undefined,
                         onChange: onChange ? (e) => { onChange(e) } : undefined,
                         ...child.props,
                     });
