@@ -19,19 +19,6 @@ function Select(props: Props): ReactElement {
 
     const childArray = React.Children.toArray(children);
 
-    console.log(childArray);
-
-    const defaultCustomControl = (
-        <div className="brew-Input__customControl">
-            <div className="brew-Input__customControlSelect">
-
-            </div>
-            <ul className="brew-Input__customControlList">
-                <li></li>
-            </ul>
-        </div>
-    );
-
     return (
         <InputBase as="select" className={classes} customControl={customControl || defaultCustomControl} {...otherProps}>
             {children}
