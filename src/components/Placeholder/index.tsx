@@ -32,12 +32,12 @@ function Placeholder({
                             </Typography>
                         }
                         {title &&
-                            <Typography hasBottomMargin shouldTruncate variant="h1" color="tertiary">
+                            <Typography shouldTruncate variant="h1" color="tertiary">
                                 {title}
                             </Typography>
                         }
                         {description &&
-                            <Typography as="p" hasBottomMargin variant="body1">
+                            <Typography as="p" variant="body1">
                                 {description}
                             </Typography>
                         }
