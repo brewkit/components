@@ -5,13 +5,40 @@
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    height: 4rem;
+    min-height: 4rem;
     background-color: color(grey, 800);
     border-left: 8px solid;
     border-bottom: 1px solid color(grey, 800);
+    
+
+    &.brew-Banner {
+        &--major,
+        &--minor {
+            padding-right: 2rem;
+
+            &.brew-Banner--hasInfoText {
+                .brew-Banner {
+                    &__text {
+                        font-size: 0.75rem;
+                    }
+    
+                    &__infoText {
+                        font-size: 1rem;
+                        color: color(grey,50);
+                    }
+                }
+            }
+        }
+    }
 
 
     .brew-Banner {
+        &__buttonSection {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
         &__icon {
             height: 2.5rem;
             margin: .5rem;
@@ -34,6 +61,10 @@ $bannerColors: 'danger', 'warning', 'info', 'success';
         .brew-Banner__text {
             font-size: 1rem;
             color: color(accent, $bannerColor);
+
+            &.brew-Banner--major {
+                font-size: 0.75rem;
+            }
         }
 
         .brew-Banner__icon {

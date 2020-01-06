@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { text } from '@storybook/addon-knobs';
+import { boolean, text, select } from '@storybook/addon-knobs';
 import Banner from './index';
 
 
@@ -10,10 +10,22 @@ export default {
 
 
 export const Default = (): ReactElement => {
-    const bannerText = text('bannerText', 'Hi, Hello, Good Day');
+    const bannerText = text('bannerText', 'Check it');
+    const color = select('color', ['success', 'warning', 'danger', 'info'], 'info');
     const icon = text('icon', 'info');
     const infoText = text('infoText', '');
+    const variant = select('variant', ['major', 'minor', 'alert'], 'major');
+    const isLoading = boolean('isLoading', false);
+
+
     return (
-        <Banner bannerText={bannerText} color="info" icon={icon} infoText={infoText} />
+        <Banner
+            bannerText={bannerText}
+            color={color}
+            icon={icon}
+            infoText={infoText}
+            isLoading={isLoading}
+            variant={variant}
+        />
     );
 };
