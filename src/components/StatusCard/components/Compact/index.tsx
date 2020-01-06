@@ -18,7 +18,7 @@ const CompactStatusCard = ({
     const compactClasses = clsx(
         'brew-StatusCard',
         'brew-StatusCard--compact',
-        `brew-StatusCard__color--${color}`,
+        `brew-StatusCard--color-${color}`,
         { 'brew-StatusCard--isDisabled': isDisabled },
         { 'brew-StatusCard--isFilled': isFilled },
         className,
