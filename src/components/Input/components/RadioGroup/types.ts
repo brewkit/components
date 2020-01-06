@@ -8,6 +8,11 @@ export interface Props {
     name: string,
 
     /**
+    *  Value for the radio inputs.  Use when the input is controlled.
+    */
+    value?: any,
+
+    /**
      * The default value for the radio inputs.  Use when the input is not controlled.
      */
     defaultValue?: any,

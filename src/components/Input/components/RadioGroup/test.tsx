@@ -7,7 +7,7 @@ describe('RadioGroup', () => {
 
     it('mounts correctly', () => {
         const radioGroup = shallow(<RadioGroup name="test"><Radio /></RadioGroup>);
-        expect(radioGroup.hasClass('brew-RadioGroup')).toBe(true);
+        expect(radioGroup.hasClass('brew-Input--radioGroup')).toBe(true);
     });
 
     it('correctly accepts and passes through a className prop', () => {
@@ -23,6 +23,12 @@ describe('RadioGroup', () => {
 
     it('passes the defaultValue prop to each child Radio component', () => {
         const radioGroup = mount(<RadioGroup name="test" defaultValue="theRightOne"><Radio value="theWrongOne" /><Radio value="theRightOne" /></RadioGroup>);
+        expect(radioGroup.contains(<Radio name="test" value="theRightOne" defaultChecked />)).toBe(true);
+        expect(radioGroup.find('[value="theWrongOne"]').first().prop('defaultChecked')).toBe(undefined);
+    });
+
+    it('passes the value prop to each child Radio component', () => {
+        const radioGroup = mount(<RadioGroup name="test" value="theRightOne"><Radio value="theWrongOne" /><Radio value="theRightOne" /></RadioGroup>);
         expect(radioGroup.contains(<Radio name="test" value="theRightOne" defaultChecked />)).toBe(true);
         expect(radioGroup.find('[value="theWrongOne"]').first().prop('defaultChecked')).toBe(undefined);
     });
