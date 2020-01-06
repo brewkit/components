@@ -5,7 +5,7 @@
 // General
 // ==============================================
 
-.Button {
+.brew-Button {
     box-sizing: border-box;
     position: relative;
     display: block;
@@ -20,34 +20,41 @@
     line-height: 1em;
     cursor: pointer;
     transition: all 0.3s;
+    color: white;
 
-    &__content {
-        position: relative;
-        height: 1em;
-        opacity: 1;
-    }
+    .brew-Button {
 
-    &__icon {
-        display: block;
-        position: relative;
-        font-size: 1.5em;
-    }
+        &__content {
+            position: relative;
+            height: 1em;
+            opacity: 1;
+        }
 
-    &__text {
-        display: block;
-    }
+        &__icon {
+            display: block;
+            position: relative;
+            font-size: 1.5em;
+        }
 
-    &__loadingIndicator {
-        pointer-events: none;
-        opacity: 0;
-        position: absolute;
-        top: calc(50% + 1rem);
-        left: 50%;
-        transform: translate(-50%, -50%);
+        &__text {
+            display: block;
+            color: white;
+            font-weight: map-get($button, font_weight);
+        }
+
+        &__loadingIndicator {
+            pointer-events: none;
+            opacity: 0;
+            position: absolute;
+            top: calc(50% + 1rem);
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
     }
 }
 
-.Button--isDisabled {
+.brew-Button--isDisabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
@@ -57,7 +64,7 @@
 
 @include for-tablet-portrait-up {
 
-    .Button {
+    .brew-Button {
         width: auto;
         min-width: 1em * 10;
     }
@@ -73,21 +80,38 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
 
 @each $color in $colors {
 
-    .Button.Button__color--#{$color} {
+    .brew-Button.brew-Button--color-#{$color} {
 
         $button_color: map_get(map_get($button, colors), $color);
 
-        &.Button__variant--standard,
-        &.Button__variant--icon,
-        &.Button__variant--labeled-icon {
+        &.brew-Button--variant-text {
+            background-color: transparent;
+            border-color: transparent;
+
+            &:hover {
+                background-color: rgba($button_color, .1);
+            }
+
+            .brew-Button {
+
+                &__content, 
+                &__text {
+                    color: $button_color;
+                }
+            }
+        }
+
+        &.brew-Button--variant-standard,
+        &.brew-Button--variant-icon,
+        &.brew-Button--variant-labeled-icon {
             background-color: $button_color;
             border-color: $button_color;
 
-            .Button__content {
+            .brew-Button__content {
                 color: set-text-color($button_color);
             }
 
-            .Button__icon {
+            .brew-Button__icon {
                 fill: set-text-color($button_color);
             }
 
@@ -96,11 +120,12 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
                 border-color: darken($button_color, 10%);
             }
 
-            &.Button--isDisabled {
+            &.brew-Button--isDisabled {
                 background-color: transparent;
                 border-color: $button_color;
 
-                .Button__content {
+                .brew-Button__content, 
+                .brew-Button__text {
                     color: $button_color;
                 }
 
@@ -112,7 +137,7 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
 
 }
 
-.Button__color--link {
+.brew-Button--color-link {
     background-color: transparent;
     border-color: transparent;
     color: map_get(map_get($button, colors), link);
@@ -131,9 +156,9 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
 // ----------------------------------------------
 // icon
 
-.Button__variant--icon {
+.brew-Button--variant-icon {
 
-    .Button__text {
+    .brew-Button__text {
         display: none;
     }
 
@@ -144,11 +169,11 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
 // Sizes
 // ==============================================
 
-.Button__size--small { font-size: size(small); }
+.brew-Button--size-small { font-size: size(small); }
 
-.Button__size--medium { font-size: size(normal); }
+.brew-Button--size-medium { font-size: size(normal); }
 
-.Button__size--large { font-size: size(large); }
+.brew-Button--size-large { font-size: size(large); }
 
 
 // ==============================================
@@ -158,14 +183,14 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
 // ----------------------------------------------
 // isLoading
 
-.Button--isLoading {
+.brew-Button--isLoading {
 
-    .Button__content {
+    .brew-Button__content {
         top: -1rem;
         opacity: 0;
     }
 
-    .Button__loadingIndicator {
+    .brew-Button__loadingIndicator {
         top: 50%;
         opacity: 1;
     }
@@ -175,14 +200,14 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
 // ----------------------------------------------
 // isFluid
 
-.Button--isFluid {
+.brew-Button--isFluid {
     width: 100%;
 }
 
 // ----------------------------------------------
 // isCompact
 
-.Button--isCompact {
+.brew-Button--isCompact {
     min-width: 0;
     padding: size(small);
 }
@@ -190,15 +215,15 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
 // ----------------------------------------------
 // isCircular
 
-.Button--isCircular.Button__variant--icon {
+.brew-Button--isCircular.brew-Button--variant-icon {
     min-width: 0;
     border-radius: 50%;
 
-    .Button__content {
+    .brew-Button__content {
         width: 1em;
     }
 
-    .Button__icon {
+    .brew-Button__icon {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);

@@ -37,7 +37,7 @@ $accentColors: (info, success, danger);
     }
 
     @each $color in $accentColors {
-        &__color--#{$color} {
+        &--color-#{$color} {
             border-left-color: color(accent, $color);
 
             &.brew-StatusCard--isFilled {

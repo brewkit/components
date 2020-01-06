@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
-@import "../../styles/utilities";
+@import "../utilities";
 
 
 // ==============================================
 // General
 // ==============================================
 
-.wrapper {
+.brew-Typography {
     font-family: Roboto, serif;
     color: color(grey, 800);
     margin: 0;
@@ -24,7 +24,7 @@ $colors: primary, secondary, tertiary, success, info, warning, danger;
 }
 
 @each $color in $colors {
-    .wrapper.color--#{$color} {
+    .brew-Typography.brew-Typography--color-#{$color} {
         @include color-styles($color);
     }
 }
@@ -44,16 +44,16 @@ $variants: h1, h2, h3, body1, body2, label;
 }
 
 @each $variant in $variants {
-    .variant--#{$variant} {
+    .brew-Typography--variant-#{$variant} {
         @include variant-styles($variant);
     }
 }
 
-.variant--label {
+.brew-Typography--variant-label {
     text-transform: uppercase;
 }
 
-.variant--inherit {
+.brew-Typography--variant-inherit {
     font-size: inherit;
 }
 
@@ -65,7 +65,7 @@ $variants: h1, h2, h3, body1, body2, label;
 $alignments: inherit, left, right, center, justify;
 
 @each $alignment in $alignments {
-    .align--#{$alignment} {
+    .brew-Typography--align-#{$alignment} {
         text-align: $alignment;
     }
 }
@@ -78,7 +78,7 @@ $alignments: inherit, left, right, center, justify;
 $displays: block, inline, inline-block;
 
 @each $display in $displays {
-    .display--#{$display} {
+    .brew-Typography--display-#{$display} {
         display: $display;
     }
 }
@@ -88,11 +88,11 @@ $displays: block, inline, inline-block;
 // States
 // ==============================================
 
-.hasBottomMargin {
+.brew-Typography--hasBottomMargin {
     margin-bottom: 1rem;
 }
 
-.shouldTruncate {
+.brew-Typography--shouldTruncate {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;

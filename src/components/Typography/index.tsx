@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import { Props } from './types';
-import styles from './styles.scss';
 
 
 /**
@@ -12,7 +11,6 @@ function Typography({
     color = 'initial',
     align = 'inherit',
     display = 'initial',
-    hasBottomMargin = false,
     shouldTruncate = false,
     as = null,
     children,
@@ -22,13 +20,12 @@ function Typography({
 
 
     const classes = clsx(
-        styles.wrapper,
-        styles[`variant--${variant}`],
-        styles[`color--${color}`],
-        styles[`align--${align}`],
-        styles[`display--${display}`],
-        { [styles.hasBottomMargin]: hasBottomMargin },
-        { [styles.shouldTruncate]: shouldTruncate },
+        'brew-Typography',
+        [`brew-Typography--variant-${variant}`],
+        [`brew-Typography--color-${color}`],
+        [`brew-Typography--align-${align}`],
+        [`brew-Typography--display-${display}`],
+        { 'brew-Typography--shouldTruncate': shouldTruncate },
         className,
     );
 
