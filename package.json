@@ -100,7 +100,6 @@
         "react-router-dom": "^5.1.2"
     },
     "dependencies": {
-        "@testing-library/react": "^9.4.0",
         "clsx": "^1.0.4",
         "lodash": "^4.17.15"
     },
