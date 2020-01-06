@@ -3,8 +3,7 @@ import clsx from 'clsx';
 import PlaceholderGraphic from './components/PlaceholderGraphic';
 import PlaceholderTitle from './components/PlaceholderTitle';
 import PlaceholderContent from './components/PlaceholderContent';
-import PlaceholderPrimaryAction from './components/PlaceholderPrimaryAction';
-import PlaceholderSecondaryAction from './components/PlaceholderSecondaryAction';
+import PlaceholderAction from './components/PlaceholderAction';
 import { Props } from './types';
 
 
@@ -33,8 +32,7 @@ function Placeholder({
 Placeholder.Graphic = PlaceholderGraphic;
 Placeholder.Title = PlaceholderTitle;
 Placeholder.Content = PlaceholderContent;
-Placeholder.PrimaryAction = PlaceholderPrimaryAction;
-Placeholder.SecondaryAction = PlaceholderSecondaryAction;
+Placeholder.Action = PlaceholderAction;
 
 
 export default Placeholder;

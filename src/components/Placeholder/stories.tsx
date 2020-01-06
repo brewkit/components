@@ -1,8 +1,9 @@
 import React, { ReactElement } from 'react';
-import { text } from '@storybook/addon-knobs';
+import {select, text} from '@storybook/addon-knobs';
 import Label from '../Label';
 import Card from '../Card';
 import Placeholder from './index';
+import { Variants } from './components/PlaceholderAction/types';
 
 
 export default {
@@ -22,7 +23,7 @@ export const General = (): ReactElement => {
     return (
         <Placeholder>
             <Placeholder.Graphic graphic={errorGraphic} />
-            <Placeholder.Title title={title} />
+            <Placeholder.Title>{title}</Placeholder.Title>
             <Placeholder.Content>{description}</Placeholder.Content>
         </Placeholder>
     );
@@ -33,18 +34,19 @@ export const WithAction = (): ReactElement => {
     const childGraphic: string = text('graphic', 'business');
     const title: string = text('title', 'No content to display');
     const description: string = text('description', 'Please add new content to continue');
+    const variant: Variants = select('variant', ['primary', 'secondary'], 'secondary');
 
     return (
         <Placeholder>
             <Placeholder.Graphic graphic={childGraphic} />
-            <Placeholder.Title title={title} />
+            <Placeholder.Title>{title}</Placeholder.Title>
             <Placeholder.Content>{description}</Placeholder.Content>
-            <Placeholder.PrimaryAction onClick={() => console.log('clicked')}>
+            <Placeholder.Action onClick={() => console.log('clicked')}>
                 Primary Action
-            </Placeholder.PrimaryAction>
-            <Placeholder.SecondaryAction onClick={() => console.log('clicked')}>
+            </Placeholder.Action>
+            <Placeholder.Action variant={variant} onClick={() => console.log('clicked')}>
                 Secondary Action
-            </Placeholder.SecondaryAction>
+            </Placeholder.Action>
         </Placeholder>
     );
 };
