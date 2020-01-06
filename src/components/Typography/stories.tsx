@@ -29,7 +29,6 @@ export const General = (): ReactElement => {
         'danger',
     ], 'initial');
     const display: Displays = select('display', ['initial', 'block', 'inline', 'inline-block'], 'initial');
-    const hasBottomMargin = boolean('hasBottomMargin', true);
     const shouldTruncate = boolean('shouldTruncate', false);
     const variant: Variants = select('variant', ['h1', 'h2', 'h3', 'body1', 'body2', 'label', 'inherit'], 'h1');
 
@@ -38,7 +37,6 @@ export const General = (): ReactElement => {
             align={align}
             color={color}
             display={display}
-            hasBottomMargin={hasBottomMargin}
             shouldTruncate={shouldTruncate}
             variant={variant}
         >
@@ -58,13 +56,13 @@ export const Default = (): ReactElement => (
 
 export const Headers = (): ReactElement => (
     <div style={{ maxWidth: '100%' }}>
-        <Typography hasBottomMargin shouldTruncate variant="h1">
+        <Typography shouldTruncate variant="h1">
                 H1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </Typography>
-        <Typography hasBottomMargin shouldTruncate variant="h2">
+        <Typography shouldTruncate variant="h2">
                 H2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </Typography>
-        <Typography hasBottomMargin shouldTruncate variant="h3">
+        <Typography shouldTruncate variant="h3">
                 H3 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </Typography>
     </div>
@@ -73,12 +71,12 @@ export const Headers = (): ReactElement => (
 
 export const Paragraphs = (): ReactElement => (
     <React.Fragment>
-        <Typography as="p" hasBottomMargin variant="body1">
+        <Typography as="p" variant="body1">
             body1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in,
             egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id
             feugiat risus dapibus. Ut auctor imperdiet turpis, vel mollis dolor sollicitudin in.
         </Typography>
-        <Typography as="p" hasBottomMargin variant="body2">
+        <Typography as="p" variant="body2">
             body1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in,
             egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id
             feugiat risus dapibus. Ut auctor imperdiet turpis, vel mollis dolor sollicitudin in.
@@ -97,7 +95,7 @@ export const Truncated = (): ReactElement => (
 
 
 export const Labels = (): ReactElement => (
-    <Typography as="p" hasBottomMargin shouldTruncate variant="label">
+    <Typography as="p" shouldTruncate variant="label">
             label - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </Typography>
 );
