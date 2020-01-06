@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Status Card Renders correctly 1`] = `
+<div
+  className="brew-StatusCard brew-StatusCard--standard brew-StatusCard--color-success"
+>
+  <section
+    className="icon"
+  >
+    <span
+      className="wrapper color--success size--inherit"
+    >
+      <svg
+        height="100%"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        ☐
+      </svg>
+    </span>
+  </section>
+  <section>
+    <h1
+      className="wrapper variant--h1 color--success align--inherit display--initial"
+    >
+      hi
+    </h1>
+    <span
+      className="wrapper variant--body1 color--success align--inherit display--initial"
+    >
+      bye
+    </span>
+  </section>
+</div>
+`;

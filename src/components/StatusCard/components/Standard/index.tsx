@@ -20,7 +20,7 @@ const StandardStatusCard = ({
     const standardClasses = clsx(
         'brew-StatusCard',
         'brew-StatusCard--standard',
-        `brew-StatusCard__color--${color}`,
+        `brew-StatusCard--color-${color}`,
         { 'brew-StatusCard--isDisabled': isDisabled },
         { 'brew-StatusCard--isFilled': isFilled },
         className,
