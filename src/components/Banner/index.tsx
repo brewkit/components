@@ -31,6 +31,8 @@ function Banner({
             {children}
         </div>
     );
+
+
 }
 
 

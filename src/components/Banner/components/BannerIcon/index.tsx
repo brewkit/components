@@ -18,8 +18,21 @@ function BannerIcon({
         className,
     );
 
-    const loading = (<Progress className="brew-Banner__iconLoading" size="medium" variant="circular" />);
-    const icon = (<Icon className="brew-Banner__iconImage" size="large">{iconName}</Icon>);
+
+    const loading = (
+        <Progress
+            className="brew-Banner__iconLoading"
+            size="medium"
+            variant="circular"
+        />
+    );
+
+
+    const icon = (
+        <Icon className="brew-Banner__iconImage" size="large">
+            {iconName}
+        </Icon>
+    );
 
 
     return (

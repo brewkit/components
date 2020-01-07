@@ -7,4 +7,3 @@ export type Props = Omit<BannerProps,
     | 'color'
     | 'iconName'
 >;
-

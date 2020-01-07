@@ -18,7 +18,13 @@ function BannerTitle({
 
 
     return (
-        <Typography className={headerClasses} variant="h3" {...otherProps}>{children}</Typography>
+        <Typography
+            className={headerClasses}
+            variant="h3"
+            {...otherProps}
+        >
+            {children}
+        </Typography>
     );
 
 

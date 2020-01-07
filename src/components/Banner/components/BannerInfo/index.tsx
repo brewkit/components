@@ -18,7 +18,13 @@ function BannerInfo({
 
 
     return (
-        <Typography className={subtextClasses} variant="body1" {...otherProps}>{children}</Typography>
+        <Typography
+            className={subtextClasses}
+            variant="body1"
+            {...otherProps}
+        >
+            {children}
+        </Typography>
     );
 
 

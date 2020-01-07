@@ -30,6 +30,7 @@ export const Default = (): ReactElement => {
     );
 };
 
+
 export const withInfoText = (): ReactElement => {
     const color = select('color', ['success', 'warning', 'danger', 'info'], 'info');
     const iconName = text('icon', 'info');
@@ -53,6 +54,7 @@ export const withInfoText = (): ReactElement => {
     );
 };
 
+
 export const alert = (): ReactElement => {
     const color = select('color', ['success', 'warning', 'danger', 'info'], 'warning');
     const iconName = text('icon', 'warning');
@@ -75,6 +77,7 @@ export const alert = (): ReactElement => {
         </Banner>
     );
 };
+
 
 export const withButton = (): ReactElement => {
     const color = select('color', ['success', 'warning', 'danger', 'info'], 'danger');
@@ -101,6 +104,7 @@ export const withButton = (): ReactElement => {
         </Banner>
     );
 };
+
 
 export const withTwoButtons = (): ReactElement => {
     const color = select('color', ['success', 'warning', 'danger', 'info'], 'info');
