@@ -8,12 +8,12 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 40;
+    z-index: map-get($dialog, z-index);
 
     .brew-Dialog {
 
         &__background {
-            background-color:  rgba(0, 33, 48, 0.9);
+            background-color:  map-get($dialog, 'backdrop-color');
             position: absolute;
             left: 0;
             top: 0;
@@ -24,7 +24,7 @@
         &__content {
             z-index: 1;
             width: 100%;
-            max-width: 530px;
+            max-width: map-get($dialog, 'max-width');
             padding: size(xx-large) size(normal);
             text-align: center;
             box-sizing: border-box;
