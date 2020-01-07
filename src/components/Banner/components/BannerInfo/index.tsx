@@ -10,10 +10,12 @@ function BannerInfo({
     ...otherProps
 }: Props): ReactElement {
 
+
     const subtextClasses = clsx(
         'brew-Banner__bodyInfo',
         className,
     );
+
 
     return (
         <Typography className={subtextClasses} variant="body1" {...otherProps}>{children}</Typography>

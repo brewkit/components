@@ -26,6 +26,3 @@ function BannerTitle({
 
 
 export default BannerTitle;
-
-
-

@@ -5,4 +5,3 @@ export type Props = Pick<BannerProps,
     'children'
     | 'className'
 >;
-
