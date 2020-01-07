@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
-import { Link } from 'react-router-dom';
+import { BrowserRouter, Link } from 'react-router-dom';
 import clsx from 'clsx';
+import Typography from '../Typography';
 import { Props } from './types';
 
 
@@ -10,8 +11,8 @@ function Breadcrumb({
     crumbs,
 }: Props): ReactElement {
 
-    const crumbCount = crumbs.length - 1;
 
+    const crumbCount = crumbs.length - 1;
     const classes = clsx(
         'brew-Breadcrumb',
         className,
@@ -21,18 +22,22 @@ function Breadcrumb({
     return (
         <div className={classes}>
             {crumbs.map((crumb, index) => {
+                const notLast = crumbCount !== index;
                 return (
-                    <>
-                        {crumbCount !== index ?
-                            <>
-                                <a href={crumb.url}>{crumb.title}</a>
-                                <span className="brew-Breadcrumb--separator">
-                                    {divider ? divider : '/'}
-                                </span>
-                            </> :
-                            <>{crumb.title}</>
-                        }
-                    </>
+                    <BrowserRouter key={index}>
+                        <Typography variant="body2">
+                            {crumb.url && notLast ?
+                                <Link className="brew-Breadcrumb--link" to={crumb.url}>{crumb.title}</Link> :
+                                <Typography variant="body2">{crumb.title}</Typography>
+                            }
+                            <span className="brew-Breadcrumb--separator">
+                                {divider ?
+                                    notLast && divider :
+                                    notLast && '/'
+                                }
+                            </span>
+                        </Typography>
+                    </BrowserRouter>
                 );
             })}
         </div>
