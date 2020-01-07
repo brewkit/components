@@ -11,10 +11,10 @@ export default {
 
 export const Default = (): ReactElement => {
     const color = select('color', ['success', 'warning', 'danger', 'info'], 'danger');
-    const iconName = text('icon', 'info');
+    const iconName = text('icon', 'block');
     const variant = select('variant', ['major', 'minor', 'alert'], 'major');
     const isLoading = boolean('isLoading', false);
-    const title = text('Banner.Title', 'Hello');
+    const title = text('Banner.Title', 'INTERNET DOWN');
 
 
     return (
@@ -128,4 +128,3 @@ export const withTwoButtons = (): ReactElement => {
         </Banner>
     );
 };
-

@@ -13,7 +13,6 @@ function Banner({
     children,
     className,
     color,
-    hasBodyInfo,
     variant,
     ...otherProps
 }: Props): ReactElement {
@@ -23,7 +22,6 @@ function Banner({
         'brew-Banner',
         `brew-Banner--color-${color}`,
         `brew-Banner--${variant}`,
-        { 'brew-Banner--hasBodyInfo': hasBodyInfo },
         className,
     );
 
