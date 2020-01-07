@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react';
 import { boolean, text, select } from '@storybook/addon-knobs';
 import Banner from './index';
-import Button from '../Button';
 
 
 export default {
