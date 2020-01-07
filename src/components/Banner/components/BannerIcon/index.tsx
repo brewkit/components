@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react';
+import clsx from 'clsx';
 import Icon from '../../../Icon';
 import Progress from '../../../Progress';
 import { Props } from './types';
@@ -11,12 +12,18 @@ function BannerIcon({
     ...otherProps
 }: Props): ReactElement {
 
-    const loading = (<Progress className="brew-Banner__icon" size="medium" variant="circular" />);
-    const icon = (<Icon className="brew-Banner__icon" size="large">{iconName}</Icon>);
+
+    const iconClasses = clsx(
+        'brew-Banner__icon',
+        className,
+    );
+
+    const loading = (<Progress className="brew-Banner__iconLoading" size="medium" variant="circular" />);
+    const icon = (<Icon className="brew-Banner__iconImage" size="large">{iconName}</Icon>);
 
 
     return (
-        <div className={className} {...otherProps}>
+        <div className={iconClasses} {...otherProps}>
             {isLoading ? loading : icon}
         </div>
     );

@@ -9,8 +9,8 @@ export interface Props {
     children?: ReactNode,
     className?: string,
     color: Colors,
-    iconName: string,
     hasBodyInfo?: string,
+    iconName?: string,
     isLoading?: boolean,
     variant: Variants,
 }

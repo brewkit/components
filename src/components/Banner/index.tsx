@@ -2,6 +2,8 @@ import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import BannerIcon from './components/BannerIcon';
 import BannerBody from './components/BannerBody';
+import BannerButton from './components/BannerButton';
+import BannerFooter from './components/BannerFooter';
 import BannerInfo from './components/BannerInfo';
 import BannerTitle from './components/BannerTitle';
 import { Props } from './types';
@@ -38,6 +40,8 @@ Banner.Icon = BannerIcon;
 Banner.Body = BannerBody;
 Banner.Title = BannerTitle;
 Banner.Info = BannerInfo;
+Banner.Button = BannerButton;
+Banner.Footer = BannerFooter;
 
 
 export default Banner;

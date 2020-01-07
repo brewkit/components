@@ -26,6 +26,10 @@
                         font-size: 1rem;
                         color: color(grey,50);
                     }
+
+                    &__bodyTitle:only-child {
+                        font-size: 1rem;
+                    }
                 }
             }
         }
@@ -37,15 +41,20 @@
 
 
     .brew-Banner {
-        &__children {
+        &__footer {
             display: flex;
             align-items: center;
             margin-left: auto;
+
+            :nth-last-child(2) {
+                margin-right: size(x-small);
+            }
         }
 
-        &__icon {
+        &__iconImage,
+        &__iconLoading {
             height: 2.5rem;
-            margin: .5rem;
+            margin: 0.5rem;
         }
 
         &__bodyInfo {
@@ -68,7 +77,14 @@ $bannerColors: 'danger', 'warning', 'info', 'success';
         }
 
         .brew-Banner__icon {
-            color: color(accent, $bannerColor);
+            .brew-Banner__iconLoading {
+                border-color: color(accent, $bannerColor);
+                border-top-color: rgba(color(accent, $bannerColor), 0.2);
+            }
+
+            .brew-Banner__iconImage {
+                color: color(accent, $bannerColor);
+            }
         }
 
         &.brew-Banner--alert {
