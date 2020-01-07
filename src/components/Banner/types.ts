@@ -31,7 +31,7 @@ export interface Props {
     /**
      * Helper/Subtext for Title
      */
-    info?: string,
+    description?: string,
 
     /**
      * Attribute to render loading status

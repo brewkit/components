@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import BannerIcon from './components/BannerIcon';
 import BannerBody from './components/BannerBody';
 import BannerButton from './components/BannerButton';
-import BannerFooter from './components/BannerFooter';
 import BannerInfo from './components/BannerInfo';
 import BannerTitle from './components/BannerTitle';
 import { Props } from './types';
@@ -14,7 +13,7 @@ function Banner({
     className,
     color,
     iconName,
-    info,
+    description,
     isLoading,
     title,
     variant,
@@ -32,12 +31,22 @@ function Banner({
 
     return (
         <div className={bannerClasses} {...otherProps}>
-            {iconName && (<BannerIcon iconName={iconName} isLoading={isLoading} />)}
-            <BannerBody>
-                <BannerTitle>{title}</BannerTitle>
-                {info && (<BannerInfo>{info}</BannerInfo>)}
-            </BannerBody>
-            {children}
+            {iconName && (
+                <BannerIcon iconName={iconName} isLoading={isLoading} />
+            )}
+            {(title || description) && (
+                <BannerBody>
+                    {title && (
+                        <BannerTitle>{title}</BannerTitle>
+                    )}
+                    {description && (
+                        <BannerInfo>{description}</BannerInfo>
+                    )}
+                </BannerBody>
+            )}
+            {children && (
+                <div className="brew-Banner__content">{children}</div>
+            )}
         </div>
     );
 
@@ -46,7 +55,6 @@ function Banner({
 
 
 Banner.Button = BannerButton;
-Banner.Footer = BannerFooter;
 
 
 export default Banner;

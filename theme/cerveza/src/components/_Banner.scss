@@ -3,7 +3,8 @@
 
 .brew-Banner {
     box-sizing: border-box;
-    display: flex;
+    display: grid;
+    grid-template-columns: min-content 1fr min-content;
     align-items: center;
     min-height: 4rem;
     background-color: color(grey, 800);
@@ -41,14 +42,11 @@
 
 
     .brew-Banner {
-        &__footer {
-            display: flex;
-            align-items: center;
-            margin-left: auto;
-
-            :nth-last-child(2) {
-                margin-right: size(x-small);
-            }
+        &__content {
+            display: grid;
+            grid-auto-flow: column;
+            grid-column-gap: size(xx-small);
+            justify-self: center;
         }
 
         &__iconImage,
