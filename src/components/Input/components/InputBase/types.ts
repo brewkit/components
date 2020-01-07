@@ -84,6 +84,11 @@ export interface Props {
     inputLabelClassName?: string,
 
     /**
+     * Whether or not the `select` input accepts multiple values
+     */
+    multiple?: boolean,
+
+    /**
      * The `input` element name
      */
     name?: string,

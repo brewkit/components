@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <span
-  className="wrapper variant--inherit color--initial align--inherit display--initial"
+  className="brew-Typography brew-Typography--variant-inherit brew-Typography--color-initial brew-Typography--align-inherit brew-Typography--display-initial"
 >
   Foo
 </span>
