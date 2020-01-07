@@ -1,5 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react';
-// import { text } from '@storybook/addon-knobs';
+import React, { ReactElement } from 'react';
 import Breadcrumb from './index';
 import Label from '../Label';
 
@@ -33,11 +32,7 @@ export const CustomDivider = (): ReactElement => {
     return (
         <Breadcrumb
             crumbs={[
-                {
-                    title: (
-                        <span className="brew-Breadcrumb--custom">Location 1</span>
-                    ),
-                },
+                { title: ( <span className="brew-Breadcrumb--custom">Location 1</span> ) },
                 {
                     title: "Location 2",
                     url: "/location2",
