@@ -1,0 +1,51 @@
+.brew-Select {
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .brew-CustomControl {
+        position: relative;
+
+        &__input {
+            border: 1px solid color(gray, 100);
+            border-radius: size(xx-small);
+            padding: size(normal);
+            box-sizing: border-box;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__icon {
+           height: 24px;
+        }
+
+        &__dropdown {
+            border: 1px solid color(brand, primary);
+            box-shadow: 0 3px 6px rgba(0,0,0,.16);
+            padding: size(normal);
+            max-height: 320px;
+            position: absolute;
+            width: 100%;
+            top: 100%;
+            margin-top: size(x-small);
+        }
+
+        &__optionList {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        &__optionItem {
+            padding: size(normal)*1.375 size(normal);
+
+            &:hover,
+            &--selected {
+                background-color: materialColor(lightBlue, 50);
+            }
+        }
+    }
+}

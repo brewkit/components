@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import InputBase from '../InputBase';
 import { Props } from '../InputBase/types';
+import CustomControl from './components/SelectCustomControl';
 
 
 function Select(props: Props): ReactElement {
@@ -17,10 +18,8 @@ function Select(props: Props): ReactElement {
         className,
     );
 
-    const childArray = React.Children.toArray(children);
-
     return (
-        <InputBase as="select" className={classes} customControl={customControl || defaultCustomControl} {...otherProps}>
+        <InputBase as="select" className={classes} customControl={customControl || <CustomControl {...props} />} {...otherProps}>
             {children}
         </InputBase>
     );

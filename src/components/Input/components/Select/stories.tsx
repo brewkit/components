@@ -12,9 +12,13 @@ export default {
 export const Default = (): ReactElement => {
 
     return (
-        <Select>
+        <Select value="option 2">
             <option>option 1</option>
             <option>option 2</option>
+            <option>option 3</option>
+            <option>option 4</option>
+            <option>option 5</option>
+            <option>option 6</option>
         </Select>
     );
 };
