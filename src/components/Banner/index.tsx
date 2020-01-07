@@ -13,6 +13,10 @@ function Banner({
     children,
     className,
     color,
+    iconName,
+    info,
+    isLoading,
+    title,
     variant,
     ...otherProps
 }: Props): ReactElement {
@@ -28,6 +32,11 @@ function Banner({
 
     return (
         <div className={bannerClasses} {...otherProps}>
+            {iconName && (<BannerIcon iconName={iconName} isLoading={isLoading} />)}
+            <BannerBody>
+                <BannerTitle>{title}</BannerTitle>
+                {info && (<BannerInfo>{info}</BannerInfo>)}
+            </BannerBody>
             {children}
         </div>
     );
@@ -36,10 +45,6 @@ function Banner({
 }
 
 
-Banner.Icon = BannerIcon;
-Banner.Body = BannerBody;
-Banner.Title = BannerTitle;
-Banner.Info = BannerInfo;
 Banner.Button = BannerButton;
 Banner.Footer = BannerFooter;
 

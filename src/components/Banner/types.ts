@@ -29,9 +29,19 @@ export interface Props {
     iconName?: string,
 
     /**
+     * Helper/Subtext for Title
+     */
+    info?: string,
+
+    /**
      * Attribute to render loading status
      */
     isLoading?: boolean,
+
+    /**
+     * Main text
+     */
+    title?: string,
 
     /**
      * Type of Banner to render
