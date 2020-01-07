@@ -3,9 +3,13 @@ import clsx from 'clsx';
 import Button from '../../../Button';
 import { Props } from './types';
 
-
-function DialogButton(props: Props): ReactElement {
-    const { className, ...otherProps } = props;
+/**
+ * The `DialogButton` component applies a class to the `Button` component for consistent dialog styling.
+ */
+function DialogButton({ 
+    className, 
+    ...otherProps 
+}: Props): ReactElement {
     const classes = clsx(
         'brew-Dialog__button',
         className,
@@ -15,5 +19,6 @@ function DialogButton(props: Props): ReactElement {
         <Button className={classes} {...otherProps} />
     );
 }
+
 
 export default DialogButton;

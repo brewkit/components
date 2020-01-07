@@ -10,8 +10,15 @@ import DialogTitle from './components/DialogTitle';
 import { Props } from './types';
 
 
-function Dialog(props: Props): ReactElement {
-    const { className, children, variant = 'info', open = false, onBackgroundClick, ...otherProps } = props;
+function Dialog({ 
+    className, 
+    children, 
+    variant = 'info', 
+    open = false, 
+    onBackgroundClick, 
+    ...otherProps 
+}: Props): ReactElement {
+
     const classes = clsx(
         'brew-Dialog',
         { 'brew-Dialog--isOpen': Boolean(open) },

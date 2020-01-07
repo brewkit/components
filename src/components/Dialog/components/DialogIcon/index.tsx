@@ -3,9 +3,14 @@ import clsx from 'clsx';
 import Icon from '../../../Icon';
 import { Props } from './types';
 
-
-function DialogIcon(props: Props): ReactElement {
-    const { className, ...otherProps } = props;
+/**
+ * The `DialogIcon` component is used to apply a custom dialog icon to a dialog
+ * component.
+ */
+function DialogIcon({ 
+    className, 
+    ...otherProps 
+}: Props): ReactElement {
     const classes = clsx(
         'brew-Dialog__icon',
         className,
@@ -15,5 +20,6 @@ function DialogIcon(props: Props): ReactElement {
         <Icon className={classes} {...otherProps} />
     );
 }
+
 
 export default DialogIcon;

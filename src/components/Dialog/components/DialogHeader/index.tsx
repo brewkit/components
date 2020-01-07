@@ -2,9 +2,14 @@ import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import { Props } from './types';
 
-
-function DialogHeader(props: Props): ReactElement {
-    const { className, ...otherProps } = props;
+/**
+ * The `DialogHeader` component can be used to wrap the header content of a 
+ * dialog component.
+ */
+function DialogHeader({ 
+    className, 
+    ...otherProps 
+}: Props): ReactElement {
     const classes = clsx(
         'brew-Dialog__header',
         className,
@@ -14,5 +19,6 @@ function DialogHeader(props: Props): ReactElement {
         <div className={classes} {...otherProps} />
     );
 }
+
 
 export default DialogHeader;
