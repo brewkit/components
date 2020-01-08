@@ -11,21 +11,11 @@
     &--content {
         opacity: 0;
         transform: translateY(0);
-        transition:
-                all 0s linear 0.5s,
-                opacity .5s,
-                transform .5s
-        ;
     }
 
     &--open {
         opacity: 1;
         transform: translateY(1rem);
-        transition:
-                all 0s linear 0s,
-                opacity .5s,
-                transform .5s
-        ;
     }
 
 }

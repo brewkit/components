@@ -14,12 +14,10 @@ function Collapsible({
 
 
     const [collapsed, setCollapsed] = React.useState(isCollapsed);
-
     const wrapperClasses = clsx(
         'brew-Collapsible',
         className,
     );
-
     const contentClasses = clsx(
         {['brew-Collapsible--content']: collapsed},
         {['brew-Collapsible--open']: !collapsed},
