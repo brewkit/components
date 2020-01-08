@@ -9,8 +9,18 @@ export interface Props {
     className?: string,
 
     /**
-     * Any custom content to fill the collapsible component
+     * Static JSX, controls open/close functionality.
      */
-    children?: ReactNode,
+    anchor?: ReactNode,
+
+    /**
+     * Boolean to determine if collapse action should occur.
+     */
+    isCollapsed?: boolean,
+
+    /**
+     * Any custom content to fill the collapsible component.
+     */
+    children: ReactNode,
 
 }
