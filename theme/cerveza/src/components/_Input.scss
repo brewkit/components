@@ -166,7 +166,7 @@
     &.brew-Input--hasError {
 
         .brew-Input {
-            
+
             &__customControl,
             &__element:checked + .brew-Input__customControl {
                 border-color: color(accent, danger);
@@ -321,7 +321,7 @@
                 }
             }
         }
-    
+
         &__customControl {
             height: size(xx-large);
             width: size(xx-large);
@@ -329,13 +329,13 @@
             border-radius: 100%;
             border: 1px solid color(grey, 100);
             box-sizing: border-box;
-    
+
             .brew-Input__element:checked + & {
                 border-width: 10px;
                 border-color: color(brand, primary);
             }
         }
-    
+
         &__label {
             font-weight: map-get(map-get($typography, font-weights), body2);
             color: color(grey, 800);
@@ -362,6 +362,20 @@
         }
     }
 }
+
+
+// ==============================================
+// Radio Group
+// ==============================================
+
+.brew-Input--radioGroup {
+
+    label:not(:last-child) {
+        margin-right: size(normal);
+    }
+
+}
+
 
 // ==============================================
 // Switch
