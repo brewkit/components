@@ -20,11 +20,7 @@ function BannerIcon({
 
 
     const loading = (
-        <Progress
-            className="brew-Banner__iconLoading"
-            size="medium"
-            variant="circular"
-        />
+        <Progress className="brew-Banner__iconLoading" size="medium" variant="circular" />
     );
 
 
