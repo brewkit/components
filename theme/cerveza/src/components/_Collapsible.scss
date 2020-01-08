@@ -6,20 +6,26 @@
 // ==============================================
 
 .brew-Collapsible {
-    width: 50%;
+    position: relative;
 
     &--content {
-        min-width: 0;
-        max-height: 0;
         opacity: 0;
-        padding: 0;
+        transform: translateY(0);
+        transition:
+                all 0s linear 0.5s,
+                opacity .5s,
+                transform .5s
+        ;
     }
 
     &--open {
-        min-width: 1rem;
-        max-height: 1rem;
         opacity: 1;
-        padding: size(normal) 0;
+        transform: translateY(1rem);
+        transition:
+                all 0s linear 0s,
+                opacity .5s,
+                transform .5s
+        ;
     }
 
 }

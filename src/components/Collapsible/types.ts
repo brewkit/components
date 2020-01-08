@@ -11,7 +11,7 @@ export interface Props {
     /**
      * Static JSX, controls open/close functionality.
      */
-    anchor?: ReactNode,
+    anchor: ReactNode,
 
     /**
      * Boolean to determine if collapse action should occur.
