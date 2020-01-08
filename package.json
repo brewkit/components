@@ -2,7 +2,7 @@
     "name": "@brewkit/components",
     "version": "1.0.0",
     "description": "Brewkit components",
-    "main": "src/index.ts",
+    "main": "dist/index.js",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Snap-AV/brewkit.git"
