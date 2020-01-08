@@ -21,9 +21,9 @@ function Breadcrumb({
 
     return (
         <div className={classes}>
+
             {crumbs.map((crumb, index) => {
                 const notLast = crumbCount !== index;
-
                 return (
                     <BrowserRouter key={index}>
                         <Typography variant="body2">
@@ -41,6 +41,7 @@ function Breadcrumb({
                     </BrowserRouter>
                 );
             })}
+
         </div>
     );
 
