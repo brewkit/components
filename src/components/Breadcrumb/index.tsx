@@ -23,12 +23,13 @@ function Breadcrumb({
         <div className={classes}>
             {crumbs.map((crumb, index) => {
                 const notLast = crumbCount !== index;
+
                 return (
                     <BrowserRouter key={index}>
                         <Typography variant="body2">
-                            {crumb.url && notLast ?
-                                <Link className="brew-Breadcrumb--link" to={crumb.url}>{crumb.title}</Link> :
-                                <Typography variant="body2">{crumb.title}</Typography>
+                            {crumb.url && notLast
+                                ? <Link className="brew-Breadcrumb--link" to={crumb.url}>{crumb.title}</Link>
+                                : <Typography variant="body2">{crumb.title}</Typography>
                             }
                             <span className="brew-Breadcrumb--separator">
                                 {divider ?

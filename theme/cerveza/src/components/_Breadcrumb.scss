@@ -8,12 +8,13 @@
 .brew-Breadcrumb--link {
     text-decoration: none;
     color: color(accent, info);
-}
 
-.brew-Breadcrumb--separator {
-    margin: 0 size(x-small);
-}
+    &--separator {
+        margin: 0 size(x-small);
+    }
 
-.brew-Breadcrumb--custom {
-    color: color(base, purple);
+    &--custom {
+        color: color(base, purple);
+    }
+
 }
