@@ -5,9 +5,12 @@
 // General
 // ==============================================
 
-.brew-Breadcrumb--link {
-    text-decoration: none;
-    color: color(accent, info);
+.brew-Breadcrumb {
+
+    &--link {
+        text-decoration: none;
+        color: color(accent, info);
+    }
 
     &--separator {
         margin: 0 size(x-small);

@@ -28,13 +28,20 @@ function Breadcrumb({
                     <BrowserRouter key={index}>
                         <Typography variant="body2">
                             {crumb.url && notLast
-                                ? <Link className="brew-Breadcrumb--link" to={crumb.url}>{crumb.title}</Link>
-                                : <Typography variant="body2">{crumb.title}</Typography>
+                                ? (
+                                    <Link
+                                        className="brew-Breadcrumb--link"
+                                        to={crumb.url}
+                                    >
+                                        {crumb.title}
+                                    </Link>
+                                )
+                                : ( <Typography variant="body2">{crumb.title}</Typography> )
                             }
                             <span className="brew-Breadcrumb--separator">
-                                {divider ?
-                                    notLast && divider :
-                                    notLast && '/'
+                                {divider
+                                    ? ( notLast && divider )
+                                    : ( notLast && '/' )
                                 }
                             </span>
                         </Typography>
