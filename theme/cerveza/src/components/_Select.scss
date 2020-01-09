@@ -1,7 +1,14 @@
 .brew-Select {
+    width: 100%;
+    max-width: 350px;
+    display: block;
 
     * {
         box-sizing: border-box;
+    }
+
+    .brew-Input__element {
+        display: none;
     }
 
     .brew-CustomControl {
@@ -31,15 +38,16 @@
             width: 100%;
             top: 100%;
             margin-top: size(x-small);
+            overflow-y: auto;
         }
 
-        &__optionList {
+        &__options {
             margin: 0;
             padding: 0;
             list-style-type: none;
         }
 
-        &__optionItem {
+        &__option {
             padding: size(normal)*1.375 size(normal);
 
             &:hover,
