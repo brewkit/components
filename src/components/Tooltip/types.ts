@@ -1,11 +1,14 @@
 import {ReactNode} from 'react';
 
 
+export type Variants = 'click' | 'hover' | 'timeout';
 export type Anchors = 'top' | 'right' | 'bottom' | 'left';
 export type Colors = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'shared' | 'light' | 'dark';
 
 
 export interface Props {
+
+    // TODO Arrow, width customization, delayed timeouts props?
 
     /**
      * Classes to be passed through to the component.
@@ -13,9 +16,19 @@ export interface Props {
     className?: string,
 
     /**
+     * Type of tooltip behavior.
+     */
+    variant?: Variants,
+
+    /**
      * Content to be displayed inside the tooltip.
      */
     content: ReactNode,
+
+    /**
+     * Determines if tooltip defaults to open.
+     */
+    isOpen?: boolean,
 
     /**
      * Direction the tooltip will open from, default is top.

@@ -1,9 +1,9 @@
 import React, { ReactElement } from 'react';
-import {select, text} from '@storybook/addon-knobs';
+import {select, text, boolean} from '@storybook/addon-knobs';
 import Tooltip from './index';
 import Label from '../Label';
 import Icon from '../Icon';
-import { Colors, Anchors } from './types';
+import { Variants, Colors, Anchors } from './types';
 
 
 export default {
@@ -17,6 +17,7 @@ export default {
 
 export const General = (): ReactElement => {
     const content = text('content', 'Beware of dangerous waters');
+    const variant: Variants = select('variant', ['click', 'hover', 'timeout'], 'click');
     const color: Colors = select('color', [
         'primary',
         'secondary',
@@ -28,12 +29,15 @@ export const General = (): ReactElement => {
         'dark',
     ], 'danger');
     const anchor: Anchors = select('anchor', ['top', 'right', 'bottom', 'left'], 'right');
+    const isOpen = boolean('isOpen', false);
 
     return (
         <Tooltip
+            variant={variant}
             content={content}
             color={color}
             anchor={anchor}
+            isOpen={isOpen}
         >
             <Icon color="danger" size="large">error</Icon>
         </Tooltip>
