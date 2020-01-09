@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlaceholderTitle renders correctly 1`] = `
+<h1
+  className="wrapper variant--h1 color--tertiary align--inherit display--initial hasBottomMargin shouldTruncate brew-Placeholder__title"
+>
+  Foo
+</h1>
+`;
