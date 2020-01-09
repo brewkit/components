@@ -1,7 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Collapsible from './index';
-import {shallow} from 'enzyme';
+import {mount, shallow} from 'enzyme';
+import Typography from "../Typography";
 
 
 describe('Collapsible', () => {
@@ -15,13 +16,18 @@ describe('Collapsible', () => {
 
     it('mounts correctly', () => {
         const collapsible = shallow(<Collapsible anchor={(<div>Testing</div>)}>Test</Collapsible>);
-        expect(collapsible.hasClass('brew-Collapsible')).toEqual(true);
+        expect(collapsible.hasClass('brew-Collapsible')).toBe(true);
     });
 
     it('correctly adds a className', () => {
         const className = `class-${Math.floor(Math.random() * 1000)}`;
         const collapsible = shallow(<Collapsible anchor={(<div>Testing</div>)} className={className}>Test</Collapsible>);
-        expect(collapsible.hasClass(className)).toEqual(true);
+        expect(collapsible.hasClass(className)).toBe(true);
+    });
+
+    it('correctly adds open class when isCollapsed is false', () => {
+        const collapsible = mount(<Collapsible anchor={(<div>Testing</div>)} isCollapsed={false}>Test</Collapsible>);
+        expect(collapsible.prop('isCollapsed')).toBe(false);
     });
 
 });

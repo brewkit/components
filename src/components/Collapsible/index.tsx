@@ -19,7 +19,7 @@ function Collapsible({
         className,
     );
     const contentClasses = clsx(
-        {['brew-Collapsible--content']: collapsed},
+        {['brew-Collapsible__content']: collapsed},
         {['brew-Collapsible--open']: !collapsed},
     );
 
@@ -30,9 +30,9 @@ function Collapsible({
 
 
     return (
-        <Flipper flipKey={collapsed}>
-            <div className={wrapperClasses} {...otherProps}>
-                <div className="brew-Collapsible--controller" onClick={toggleContent}>
+        <div className={wrapperClasses} {...otherProps}>
+            <Flipper flipKey={collapsed}>
+                <div className="brew-Collapsible__controller" onClick={toggleContent}>
                     {anchor}
                 </div>
                 <Flipped flipId="children">
@@ -40,8 +40,8 @@ function Collapsible({
                         {children}
                     </div>
                 </Flipped>
-            </div>
-        </Flipper>
+            </Flipper>
+        </div>
     );
 
 }

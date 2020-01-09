@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Collapsible renders correctly 1`] = `
-<div>
-  <div
-    className="brew-Collapsible"
-  >
+<div
+  className="brew-Collapsible"
+>
+  <div>
     <div
-      className="brew-Collapsible--controller"
+      className="brew-Collapsible__controller"
       onClick={[Function]}
     >
       <div>
@@ -14,7 +14,7 @@ exports[`Collapsible renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="brew-Collapsible--content"
+      className="brew-Collapsible__content"
       data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
       data-flip-id="children"
       data-portal-key="portal"
