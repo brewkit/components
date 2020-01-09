@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlaceholderContent renders correctly 1`] = `
+<p
+  className="wrapper variant--body1 color--initial align--inherit display--initial hasBottomMargin brew-Placeholder__content"
+>
+  Foo
+</p>
+`;

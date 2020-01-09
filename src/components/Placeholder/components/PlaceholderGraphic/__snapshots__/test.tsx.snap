@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlaceholderGraphic renders correctly 1`] = `
+<p
+  className="wrapper variant--body1 color--initial align--inherit display--initial brew-Placeholder__graphic"
+>
+  <span
+    className="wrapper color--inherit size--inherit"
+  >
+    <svg
+      height="100%"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      ☐
+    </svg>
+  </span>
+</p>
+`;
