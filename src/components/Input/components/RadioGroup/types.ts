@@ -1,26 +1,35 @@
-import { ReactNode } from 'react';
 
 
 export interface Props {
 
     /**
-     * Classes to be passed through to the component.
+     * Name of the radio group.
+     */
+    name: string,
+
+    /**
+    *  Value for the radio inputs.  Use when the input is controlled.
+    */
+    value?: any,
+
+    /**
+     * The default value for the radio inputs.  Use when the input is not controlled.
+     */
+    defaultValue?: any,
+
+    /**
+     * An action to perform on change of radio selection.
+     */
+    onChange?: any,
+
+    /**
+     * The className for the component
      */
     className?: string,
 
     /**
-     * Text that describes a radio grouping
-     */
-    inputLabel?: string,
-
-    /**
-     * Custom style for input label
-     */
-    inputLabelClassName?: string,
-
-    /**
      * Groups of Radio components
      */
-    children?: ReactNode,
+    children: any,
 
 }
