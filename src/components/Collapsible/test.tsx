@@ -2,7 +2,6 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Collapsible from './index';
 import {mount, shallow} from 'enzyme';
-import Typography from "../Typography";
 
 
 describe('Collapsible', () => {
