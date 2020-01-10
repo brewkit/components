@@ -7,17 +7,11 @@ exports[`Status Card Renders correctly 1`] = `
   <section
     className="icon"
   >
-    <span
-      className="wrapper color--success size--inherit"
+    <i
+      className="brew-Icon material-icons brew-Icon--color-success brew-Icon--size-inherit"
     >
-      <svg
-        height="100%"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        ☐
-      </svg>
-    </span>
+      business
+    </i>
   </section>
   <section>
     <h1
