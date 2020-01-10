@@ -19,15 +19,15 @@ describe('Breadcrumb', () => {
     });
 
     it('correctly adds a className', () => {
-        const className = `class-${Math.floor(Math.random() * 1000)}`;
-        const breadcrumb = shallow(<Breadcrumb crumbs={[{ title: 'Test' }]} className={className} />);
+        const className = `class-${String(Math.floor(Math.random() * 1000))}`;
+        const breadcrumb = shallow(<Breadcrumb className={className} crumbs={[{ title: 'Test' }]} />);
         expect(breadcrumb.hasClass(className)).toBe(true);
     });
 
     it('correctly passes divider prop to display', () => {
-        const divider = (<>*</>);
+        const divider = (<React.Fragment>*</React.Fragment>);
         const breadcrumb = shallow(<Breadcrumb crumbs={[{ title: 'Test' }]} divider={divider} />);
-        expect(breadcrumb.hasClass('brew-Breadcrumb--separator')).toBe(true);
+        expect(breadcrumb.find('.brew-Breadcrumb__separator').length).toEqual(1);
     });
 
 });

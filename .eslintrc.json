@@ -439,7 +439,7 @@
         "react/jsx-key": "error",
         "react/jsx-max-depth": ["warn", { "max":  10 }],
         "react/jsx-max-props-per-line": ["error", { "when":  "multiline" }],
-        "react/jsx-no-bind": "error",
+        "react/jsx-no-bind": "off",
         "react/jsx-no-comment-textnodes": "error",
         "react/jsx-no-duplicate-props": "error",
         "react/jsx-no-literals": "off",
