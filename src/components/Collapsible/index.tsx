@@ -4,9 +4,12 @@ import { Flipped, Flipper } from 'react-flip-toolkit';
 import { Props } from './types';
 
 
+/*
+** Collapsible component uses CSS transitions to smoothly hide and show a block of content.
+*/
 function Collapsible({
     className,
-    anchor,
+    anchorContent,
     isCollapsed = true,
     children,
     ...otherProps
@@ -33,7 +36,7 @@ function Collapsible({
         <div className={wrapperClasses} {...otherProps}>
             <Flipper flipKey={collapsed}>
                 <div className="brew-Collapsible__controller" onClick={toggleContent}>
-                    {anchor}
+                    {anchorContent}
                 </div>
                 <Flipped flipId="children">
                     <div className={contentClasses}>
