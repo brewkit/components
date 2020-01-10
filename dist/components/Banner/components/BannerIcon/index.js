@@ -27,9 +27,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 var react_1 = __importDefault(require("react"));
 var clsx_1 = __importDefault(require("clsx"));
-function RadioGroup(_a) {
-    var name = _a.name, value = _a.value, defaultValue = _a.defaultValue, _b = _a.onChange, onChange = _b === void 0 ? function () { return true; } : _b, className = _a.className, children = _a.children, otherProps = __rest(_a, ["name", "value", "defaultValue", "onChange", "className", "children"]);
-    var classes = clsx_1["default"]('brew-Input--radioGroup', className);
-    return (react_1["default"].createElement("div", __assign({ className: classes }, otherProps), react_1["default"].Children.map(children, function (child) { return react_1["default"].cloneElement(child, __assign({ checked: Boolean(value) && child.props.value === value ? true : undefined, defaultChecked: Boolean(defaultValue) && child.props.value === defaultValue ? true : undefined, name: name, onChange: function (event) { return onChange(event); } }, child.props)); })));
+var Icon_1 = __importDefault(require("../../../Icon"));
+var Progress_1 = __importDefault(require("../../../Progress"));
+function BannerIcon(_a) {
+    var className = _a.className, iconName = _a.iconName, isLoading = _a.isLoading, otherProps = __rest(_a, ["className", "iconName", "isLoading"]);
+    var iconClasses = clsx_1["default"]('brew-Banner__icon', className);
+    var loading = (react_1["default"].createElement(Progress_1["default"], { className: "brew-Banner__iconLoading", size: "medium", variant: "circular" }));
+    var icon = (react_1["default"].createElement(Icon_1["default"], { className: "brew-Banner__iconImage", size: "large" }, iconName));
+    return (react_1["default"].createElement("div", __assign({ className: iconClasses }, otherProps), isLoading ? loading : icon));
 }
-exports["default"] = RadioGroup;
+exports["default"] = BannerIcon;
