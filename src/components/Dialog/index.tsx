@@ -1,4 +1,5 @@
-import React, { ReactElement } from 'react';
+/* eslint-disable max-lines-per-function */
+import React, { ReactElement, MouseEvent } from 'react';
 import ReactDOM from 'react-dom';
 import clsx from 'clsx';
 import Button from '../Button';
@@ -8,18 +9,21 @@ import { Props } from './types';
 
 
 function Dialog({
-    className,
+    cancelText = 'Cancel',
     children,
+    className,
     closeIcon,
+    color = 'info',
+    confirmText = 'Confirm',
+    footer,
+    hasIcon = true,
+    icon,
+    onBackgroundClick,
     onConfirm,
     onCancel,
-    footer,
-    confirmText,
-    cancelText,
+    isOpen = false,
     title,
-    variant = 'info',
-    open = false,
-    onBackgroundClick,
+    variant = 'confirm',
     ...otherProps
 }: Props): ReactElement {
 
@@ -27,25 +31,50 @@ function Dialog({
     const classes = clsx(
         'brew-Dialog',
         { 'brew-Dialog--isOpen': Boolean(open) },
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
         { [`brew-Dialog--${variant}`]: Boolean(variant) },
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        { [`brew-Dialog--color-${color}`]: Boolean(color) },
         className,
     );
 
-    const handleConfirmClick = (event: Event): void => {
+    const handleConfirmClick = (event: MouseEvent): void => {
         if (onConfirm) onConfirm(event);
     };
 
-    const handleCancelClick = (event: Event): void => {
+    const handleCancelClick = (event: MouseEvent): void => {
         if (onCancel) onCancel(event);
     };
 
-    if (!open) return null;
+    const handleBackgroundClick = (event: MouseEvent): void => {
+        if (onBackgroundClick) onBackgroundClick(event);
+    };
+
+    const getIconVariant = (): string => {
+        switch (color) {
+        case 'success':
+            return 'check_circle';
+        case 'warning':
+            return 'error_outline';
+        case 'danger':
+            return 'highlight_off';
+        default:
+            return 'info';
+        }
+    };
+
+    if (!isOpen) return null;
 
     return ReactDOM.createPortal(
         <div className={classes} {...otherProps}>
-            <div className="brew-Dialog__background" onClick={onBackgroundClick} />
+            <div className="brew-Dialog__background" onClick={handleBackgroundClick} />
             <div className="brew-Dialog__content">
                 <div className="brew-Dialog__header">
+                    {hasIcon && (
+                        icon ? icon : (
+                            <Icon className="brew-Dialog__icon">{getIconVariant()}</Icon>
+                        )
+                    )}
                     {title && (
                         <Typography as="h2" className="brew-Dialog__title">{title}</Typography>
                     )}
@@ -60,8 +89,20 @@ function Dialog({
                     <div className="brew-Dialog__footer">
                         {footer ? footer : (
                             <React.Fragment>
-                                <Button className="brew-Dialog__actionButton brew-Dialog__actionButton--cancel" onClick={handleCancelClick}>{cancelText || 'Cancel'}</Button>
-                                <Button className="brew-Dialog__actionButton brew-Dialog__actionButton--confirm" onClick={handleConfirmClick}>{confirmText || 'Confirm'}</Button>
+                                {variant !== 'alert' && (
+                                    <div className="brew-Dialog__actionButton brew-Dialog__actionButton--cancel">
+                                        <Button
+                                            onClick={handleCancelClick}
+                                        >{cancelText}
+                                        </Button>
+                                    </div>
+                                )}
+                                <div className="brew-Dialog__actionButton brew-Dialog__actionButton--confirm">
+                                    <Button
+                                        onClick={handleConfirmClick}
+                                    >{confirmText}
+                                    </Button>
+                                </div>
                             </React.Fragment>
                         )}
                     </div>
