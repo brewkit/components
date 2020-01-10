@@ -1,0 +1,74 @@
+@import "../utilities";
+
+
+// ==============================================
+// Variables
+// ==============================================
+
+$icon: (
+
+        colors: (
+                primary: color(brand, primary),
+                secondary: color(brand, secondary),
+                success: color(accent, success),
+                danger: color(accent, danger),
+                warning: color(accent, warning),
+                info: color(accent, info),
+                dark: color(accent, dark),
+                light: color(accent, light),
+        )
+
+);
+
+
+// ==============================================
+// General
+// ==============================================
+
+.brew-Icon {
+    display: inline-block;
+    margin: -0.25em 0;
+}
+
+
+// ==============================================
+// Colors
+// ==============================================
+
+@mixin color-styles($colorName) {
+    $svg_color: map_get(map_get($icon, colors), $colorName);
+    color: $svg_color;
+}
+
+.brew-Icon--color-primary { @include color-styles(primary); }
+
+.brew-Icon--color-secondary { @include color-styles(secondary); }
+
+.brew-Icon--color-success { @include color-styles(success); }
+
+.brew-Icon--color-danger { @include color-styles(danger); }
+
+.brew-Icon--color-warning { @include color-styles(warning); }
+
+.brew-Icon--color-info { @include color-styles(info); }
+
+.brew-Icon--color-light { @include color-styles(light); }
+
+.brew-Icon--color-dark { @include color-styles(dark); }
+
+.brew-Icon--color-inherit {
+    color: inherit;
+}
+
+
+// ==============================================
+// Sizes
+// ==============================================
+
+.brew-Icon--size-small { height: size(small) * 1.5; }
+
+.brew-Icon--size-medium { height: size(normal) * 1.5; }
+
+.brew-Icon--size-large { height: size(large) * 1.5; }
+
+.brew-Icon--size-inherit { height: 1em; }

@@ -4,7 +4,7 @@ import Icon from './index';
 import Typography from '../Typography';
 import { Colors, Sizes } from './types';
 import Label from '../Label';
-import icons from './material-icons/dist/_list';
+import icons from './iconList';
 
 
 export default {
