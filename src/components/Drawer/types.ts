@@ -9,7 +9,7 @@ export interface Props {
     /**
      * Where to position the drawer
      */
-    anchor: Anchors,
+    anchorFrom: Anchors,
 
     /**
      * Children passed to the component (JSX, String)

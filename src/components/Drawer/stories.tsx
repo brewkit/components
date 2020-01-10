@@ -10,11 +10,11 @@ export default {
 
 
 export const general = (): ReactElement => {
-    const anchor = select('anchorConten', ['top', 'right', 'bottom', 'left'], 'left');
+    const anchorFrom = select('anchorConten', ['top', 'right', 'bottom', 'left'], 'left');
     const isOpen = boolean('isOpen', false);
 
     return (
-        <Drawer anchor={anchor} isOpen={isOpen}>
+        <Drawer anchorFrom={anchorFrom} isOpen={isOpen}>
             <Drawer.Item>Hello</Drawer.Item>
         </Drawer>
     );

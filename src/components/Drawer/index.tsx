@@ -6,7 +6,7 @@ import { Props } from './types';
 
 
 function Drawer({
-    anchor,
+    anchorFrom,
     children,
     className,
     isOpen = false,
@@ -16,14 +16,14 @@ function Drawer({
 
     const drawerClasses = clsx(
         'brew-Drawer',
-        `brew-Drawer--anchor-${anchor}`,
+        `brew-Drawer--anchorFrom-${anchorFrom}`,
         { 'brew-Drawer--isOpen': isOpen },
         className,
     );
 
 
     return (
-        <Flipper flipKey={JSON.stringify([anchor, isOpen, className])}>
+        <Flipper flipKey={JSON.stringify([anchorFrom, isOpen, className])}>
             <Flipped flipId="wrapper" spring="wobbly">
                 <div className={drawerClasses} {...otherProps}>
                     {children}
