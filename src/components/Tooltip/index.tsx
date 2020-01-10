@@ -6,7 +6,7 @@ import { Props } from './types';
 
 function Tooltip({
     className,
-    variant = 'click',
+    triggerEvent = 'click',
     content,
     isOpen = false,
     anchor = 'top',

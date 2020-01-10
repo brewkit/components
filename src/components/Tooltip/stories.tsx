@@ -3,7 +3,7 @@ import {select, text, boolean} from '@storybook/addon-knobs';
 import Tooltip from './index';
 import Label from '../Label';
 import Icon from '../Icon';
-import { Variants, Colors, Anchors } from './types';
+import { TriggerEvents, Colors, Anchors } from './types';
 
 
 export default {
@@ -17,7 +17,7 @@ export default {
 
 export const General = (): ReactElement => {
     const content = text('content', 'Beware of dangerous waters');
-    const variant: Variants = select('variant', ['click', 'hover', 'timeout'], 'click');
+    const triggerEvent: TriggerEvents = select('variant', ['click', 'hover'], 'click');
     const color: Colors = select('color', [
         'primary',
         'secondary',
@@ -33,7 +33,7 @@ export const General = (): ReactElement => {
 
     return (
         <Tooltip
-            variant={variant}
+            triggerEvent={triggerEvent}
             content={content}
             color={color}
             anchor={anchor}
