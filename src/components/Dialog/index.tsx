@@ -8,6 +8,9 @@ import Typography from '../Typography';
 import { Props } from './types';
 
 
+/**
+ * The Dialog component is used when you want to show a modal.
+ */
 function Dialog({
     cancelText = 'Cancel',
     children,

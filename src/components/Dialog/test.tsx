@@ -5,6 +5,7 @@ import Dialog from './index';
 
 describe('Dialog', () => {
 
+
     it('renders correctly', () => {
         const tree = renderer
             .create(<Dialog />)
@@ -91,5 +92,6 @@ describe('Dialog', () => {
         const dialog = shallow(<Dialog variant="alert" isOpen />);
         expect(dialog.exists('.brew-Dialog__actionButton--cancel')).toBe(false);
     });
+    
 
 });

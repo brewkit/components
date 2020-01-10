@@ -13,7 +13,10 @@ export default {
     title: 'Components|Display/Dialog',
 };
 
+
 export const Default = (): ReactElement => {
+
+
     const isOpen = boolean('isOpen', true);
     const variant = select('variant', ['alert', 'confirm'], 'confirm');
     const color = select('color', ['info', 'success', 'warning', 'danger'], 'info');
@@ -28,4 +31,6 @@ export const Default = (): ReactElement => {
         >{children}
         </Dialog>
     );
+
+    
 };
