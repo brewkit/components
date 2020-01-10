@@ -20,7 +20,8 @@
         "sass-watch": "npm run sass -- --watch",
         "commit": "npx git-cz",
         "start": "npm run sass && npm run storybook",
-        "storybook": "start-storybook -p 9001 -c .build/storybook"
+        "storybook": "start-storybook -p 9001 -c .build/storybook",
+        "build": "tsc --declaration"
     },
     "jest": {
         "transform": {
