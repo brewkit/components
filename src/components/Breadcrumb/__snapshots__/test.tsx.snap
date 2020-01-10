@@ -7,7 +7,14 @@ exports[`Breadcrumb renders correctly 1`] = `
   <span
     className="brew-Typography brew-Typography--variant-body2 brew-Typography--color-initial brew-Typography--align-inherit brew-Typography--display-initial"
   >
-    Test
+    <span
+      className="brew-Typography brew-Typography--variant-body2 brew-Typography--color-initial brew-Typography--align-inherit brew-Typography--display-initial"
+    >
+      Test
+    </span>
+    <span
+      className="brew-Breadcrumb__separator"
+    />
   </span>
 </div>
 `;

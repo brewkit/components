@@ -21,12 +21,12 @@ exports[`Status Card Renders correctly 1`] = `
   </section>
   <section>
     <h1
-      className="wrapper variant--h1 color--success align--inherit display--initial"
+      className="brew-Typography brew-Typography--variant-h1 brew-Typography--color-success brew-Typography--align-inherit brew-Typography--display-initial"
     >
       hi
     </h1>
     <span
-      className="wrapper variant--body1 color--success align--inherit display--initial"
+      className="brew-Typography brew-Typography--variant-body1 brew-Typography--color-success brew-Typography--align-inherit brew-Typography--display-initial"
     >
       bye
     </span>

@@ -2,7 +2,7 @@
 
 exports[`PlaceholderGraphic renders correctly 1`] = `
 <p
-  className="wrapper variant--body1 color--initial align--inherit display--initial brew-Placeholder__graphic"
+  className="brew-Typography brew-Typography--variant-body1 brew-Typography--color-initial brew-Typography--align-inherit brew-Typography--display-initial brew-Placeholder__graphic"
 >
   <span
     className="wrapper color--inherit size--inherit"

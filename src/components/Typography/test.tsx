@@ -27,7 +27,7 @@ it('accepts custom classes', () => {
         <Typography className="customClass">Lorem ipsum dolor sit amet.</Typography>
     ));
     expect(wrapper.hasClass('customClass')).toEqual(true);
-    expect(wrapper.hasClass('wrapper')).toEqual(true);
+    expect(wrapper.hasClass('brew-Typography')).toEqual(true);
 });
 
 
@@ -35,7 +35,7 @@ it('"variant" defaults to "inherit" and applies appropriate class', () => {
     const wrapper = shallow((
         <Typography>Lorem ipsum dolor sit amet.</Typography>
     ));
-    expect(wrapper.hasClass('variant--inherit')).toEqual(true);
+    expect(wrapper.hasClass('brew-Typography--variant-inherit')).toEqual(true);
 });
 
 
@@ -43,7 +43,7 @@ it('"color" defaults to "initial" and applies appropriate class', () => {
     const wrapper = shallow((
         <Typography>Lorem ipsum dolor sit amet.</Typography>
     ));
-    expect(wrapper.hasClass('color--initial')).toEqual(true);
+    expect(wrapper.hasClass('brew-Typography--color-initial')).toEqual(true);
 });
 
 
@@ -51,7 +51,7 @@ it('"display" defaults to "initial" and applies appropriate class', () => {
     const wrapper = shallow((
         <Typography>Lorem ipsum dolor sit amet.</Typography>
     ));
-    expect(wrapper.hasClass('display--initial')).toEqual(true);
+    expect(wrapper.hasClass('brew-Typography--display-initial')).toEqual(true);
 });
 
 
@@ -59,5 +59,5 @@ it('"align" defaults to "inherit" and applies appropriate class', () => {
     const wrapper = shallow((
         <Typography>Lorem ipsum dolor sit amet.</Typography>
     ));
-    expect(wrapper.hasClass('align--inherit')).toEqual(true);
+    expect(wrapper.hasClass('brew-Typography--align-inherit')).toEqual(true);
 });
