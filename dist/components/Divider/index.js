@@ -28,11 +28,9 @@ exports.__esModule = true;
 var react_1 = __importDefault(require("react"));
 var clsx_1 = __importDefault(require("clsx"));
 var Typography_1 = __importDefault(require("../Typography"));
-var styles_scss_1 = __importDefault(require("./styles.scss"));
 function Divider(_a) {
-    var _b;
-    var _c = _a.align, align = _c === void 0 ? 'center' : _c, children = _a.children, className = _a.className, otherProps = __rest(_a, ["align", "children", "className"]);
-    var classes = clsx_1["default"](styles_scss_1["default"].wrapper, styles_scss_1["default"]["align--" + align], (_b = {}, _b[styles_scss_1["default"].noChildren] = !children, _b), className);
+    var _b = _a.align, align = _b === void 0 ? 'center' : _b, children = _a.children, className = _a.className, otherProps = __rest(_a, ["align", "children", "className"]);
+    var classes = clsx_1["default"]('brew-Divider', "brew-Divider--align-" + align, { 'brew-Divider--isChildless': Boolean(!children) }, className);
     return (react_1["default"].createElement("div", __assign({ className: classes }, otherProps), children ? (react_1["default"].createElement(react_1["default"].Fragment, null,
         react_1["default"].createElement("hr", null),
         react_1["default"].createElement(Typography_1["default"], { variant: "label" }, children),
