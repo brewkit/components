@@ -36,7 +36,7 @@ export interface Props {
     /**
      * A custom footer for the dialog
      */
-    footer?: ReactNode,
+    customFooter?: ReactNode,
 
     /**
      * Whether or not the dialog has an icon
@@ -44,9 +44,19 @@ export interface Props {
     hasIcon?: boolean,
 
     /**
+     * Whether or not to show the dialog footer
+     */
+    hideFooter?: boolean,
+
+    /**
      * A custom icon to display
      */
     icon?: ReactNode,
+
+    /**
+     * Whether or not to show the dialog
+     */
+    isOpen?: boolean,
 
     /**
      * An event that fires when the background of the modal is clicked
@@ -62,11 +72,6 @@ export interface Props {
      * An event that fires when the cancel button is clicked
      */
     onCancel?: (event: MouseEvent) => any,
-
-    /**
-     * Whether or not to show the dialog
-     */
-    isOpen?: boolean,
 
     /**
      * The title of the dialog component

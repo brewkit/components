@@ -76,10 +76,15 @@ describe('Dialog', () => {
         expect(dialog.find('.brew-Dialog__title').render().text()).toEqual(title);
     });
 
-    it('adds a custom footer when JSX is passed to the footer prop', () => {
+    it('adds a custom footer when the customFooter prop is present', () => {
         const CustomFooter = () => <span>custom footer</span>;
-        const dialog = shallow(<Dialog footer={<CustomFooter />} isOpen />);
+        const dialog = shallow(<Dialog customFooter={<CustomFooter />} isOpen />);
         expect(dialog.find('.brew-Dialog__footer').contains(<CustomFooter />)).toBe(true);
+    });
+
+    it('removes the footer when the hideFooter prop is true', () => {
+        const dialog = shallow(<Dialog isOpen hideFooter />);
+        expect(dialog.exists('.brew-Dialog__footer')).toBe(false);
     });
 
     it('removes the cancel button for an "alert" variant', () => {

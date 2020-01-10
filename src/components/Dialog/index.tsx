@@ -15,13 +15,14 @@ function Dialog({
     closeIcon,
     color = 'info',
     confirmText = 'Confirm',
-    footer,
+    customFooter,
     hasIcon = true,
+    hideFooter,
     icon,
+    isOpen = false,
     onBackgroundClick,
     onConfirm,
     onCancel,
-    isOpen = false,
     title,
     variant = 'confirm',
     ...otherProps
@@ -85,9 +86,9 @@ function Dialog({
                 <div className="brew-Dialog__body">
                     {children}
                 </div>
-                {footer !== null && (
+                {!hideFooter && (
                     <div className="brew-Dialog__footer">
-                        {footer ? footer : (
+                        {customFooter ? customFooter : (
                             <React.Fragment>
                                 {variant !== 'alert' && (
                                     <div className="brew-Dialog__actionButton brew-Dialog__actionButton--cancel">
