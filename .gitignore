@@ -29,3 +29,6 @@ coverage
 
 # storybook theme files
 .build/storybook/assets/css/theme.css
+
+# jest temp test results
+.build/jest/test-results.json

@@ -7,26 +7,20 @@ exports[`Status Card Renders correctly 1`] = `
   <section
     className="icon"
   >
-    <span
-      className="wrapper color--success size--inherit"
+    <i
+      className="brew-Icon material-icons brew-Icon--color-success brew-Icon--size-inherit"
     >
-      <svg
-        height="100%"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        ☐
-      </svg>
-    </span>
+      business
+    </i>
   </section>
   <section>
     <h1
-      className="wrapper variant--h1 color--success align--inherit display--initial"
+      className="brew-Typography brew-Typography--variant-h1 brew-Typography--color-success brew-Typography--align-inherit brew-Typography--display-initial"
     >
       hi
     </h1>
     <span
-      className="wrapper variant--body1 color--success align--inherit display--initial"
+      className="brew-Typography brew-Typography--variant-body1 brew-Typography--color-success brew-Typography--align-inherit brew-Typography--display-initial"
     >
       bye
     </span>

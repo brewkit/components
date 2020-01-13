@@ -1,6 +1,5 @@
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
-import styles from './styles.scss';
 import { Props } from './types';
 
 
