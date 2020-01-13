@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
-import { Flipped, Flipper } from 'react-flip-toolkit';
+import { Flipper } from 'react-flip-toolkit';
 import clsx from 'clsx';
+import TooltipContent from './components/TooltipContent';
 import { Props } from './types';
 
 
@@ -16,28 +17,45 @@ function Tooltip({
 }: Props): ReactElement {
 
 
-    const [isTooltipOpen] = React.useState(isOpen);
+    const [isTooltipOpen, setIsTooltipOpen] = React.useState(isOpen);
     const wrapperClasses = clsx(
         'brew-Tooltip',
         className,
     );
-    const tooltipClasses = clsx(
-        [`brew-Tooltip__color--${color}`],
-        [`brew-Tooltip__anchor--${anchor}`],
+    const contentClasses = clsx(
+        'brew-Tooltip__content',
+        { 'brew-Tooltip--open': isTooltipOpen },
     );
+
+
+    function handleRef(node: ReactElement): ReactElement {
+        return node;
+    }
+
+
+    function handleTooltip(): void {
+        setIsTooltipOpen(!isTooltipOpen);
+    }
 
 
     return (
         <div className={wrapperClasses} {...otherProps}>
-            <Flipper flipKey={isOpen}>
-                {children}
-                {isTooltipOpen && (
-                    <Flipped flipId="tooltip">
-                        <div className={tooltipClasses}>
-                            {content}
-                        </div>
-                    </Flipped>
-                )}
+            <Flipper flipKey={isTooltipOpen}>
+                <div>
+                    {React.Children.map(children, (child: ReactElement) => React.cloneElement(child, {
+                        onClick: (triggerEvent === 'click') ? handleTooltip : undefined,
+                        onMouseOut: (triggerEvent === 'hover') ? handleTooltip : undefined,
+                        onMouseOver: (triggerEvent === 'hover') ? handleTooltip : undefined,
+                        ref: handleRef,
+                    }))}
+                </div>
+                <TooltipContent
+                    anchor={anchor}
+                    className={contentClasses}
+                    color={color}
+                >
+                    {content}
+                </TooltipContent>
             </Flipper>
         </div>
     );

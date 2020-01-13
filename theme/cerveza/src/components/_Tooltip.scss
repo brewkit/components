@@ -1,6 +1,39 @@
 @import "../utilities";
 
 
+// ==============================================
+// General
+// ==============================================
+
 .brew-Tooltip {
+    position: relative;
+}
+
+.brew-Tooltip__content {
+    opacity: 0;
+}
+
+.brew-Tooltip--open {
+    position: absolute;
+    margin-top: size(small);
+    opacity: 1;
+    padding: size(small);
+    border-radius: size(x-small);
+}
+
+
+// ==============================================
+// Colors
+// ==============================================
+
+$colors: primary, secondary, success, info, warning, danger, light, dark;
+
+@each $color in $colors {
+
+    .brew-Tooltip--color-#{$color} {
+        $button_color: map_get(map_get($button, colors), $color);
+        background-color:  $button_color;
+        color: white !important;
+    }
 
 }
