@@ -5,8 +5,8 @@ import { Props } from './types';
 
 
 /*
-** Collapsible component uses CSS transitions to smoothly hide and show a block of content.
-*/
+ ** Collapsible component uses CSS transitions to smoothly hide and show a block of content.
+ */
 function Collapsible({
     className,
     anchorContent,
@@ -22,13 +22,13 @@ function Collapsible({
         className,
     );
     const contentClasses = clsx(
-        {['brew-Collapsible__content']: collapsed},
-        {['brew-Collapsible--open']: !collapsed},
+        { 'brew-Collapsible__content': collapsed },
+        { 'brew-Collapsible--open': !collapsed },
     );
 
 
-    function toggleContent() {
-        setCollapsed(collapsed => !collapsed);
+    function toggleContent(): void {
+        setCollapsed(!collapsed);
     }
 
 
