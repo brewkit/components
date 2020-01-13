@@ -34,7 +34,7 @@ describe('RadioGroup', () => {
                 <Radio />
             </RadioGroup>
         ));
-        expect(radioGroup.contains(<Radio name="test" />)).toBeTruthy();
+        expect(radioGroup.containsMatchingElement(<Radio name="test" />)).toBeTruthy();
     });
 
     it('passes the defaultValue prop to each child Radio component', () => {
@@ -44,7 +44,7 @@ describe('RadioGroup', () => {
                 <Radio value="theRightOne" />
             </RadioGroup>
         ));
-        expect(radioGroup.contains(<Radio defaultChecked name="test" value="theRightOne" />)).toBe(true);
+        expect(radioGroup.containsMatchingElement(<Radio defaultChecked name="test" value="theRightOne" />)).toBe(true);
         expect(radioGroup.find('[value="theWrongOne"]').first()
             .prop('defaultChecked')).toBeUndefined();
     });
@@ -56,9 +56,9 @@ describe('RadioGroup', () => {
                 <Radio value="theRightOne" />
             </RadioGroup>
         ));
-        expect(radioGroup.find('[value="theRightOne"]').first()
+        expect(radioGroup.children().find('[value="theRightOne"]').first()
             .prop('checked')).toBeTruthy();
-        expect(radioGroup.find('[value="theWrongOne"]').first()
+        expect(radioGroup.children().find('[value="theWrongOne"]').first()
             .prop('checked')).toBeUndefined();
     });
 
