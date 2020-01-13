@@ -23,11 +23,15 @@ exports[`PlaceholderAction renders correctly 1`] = `
       </span>
     </div>
     <div
-      className="brew-Progress--circular brew-Progress__color--primary brew-Progress__size--inherit brew-Button__loadingIndicator"
+      className="brew-Button__loadingIndicator"
       data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
       data-flip-id="loader"
       data-portal-key="portal"
-    />
+    >
+      <div
+        className="brew-Progress--circular brew-Progress__color--primary brew-Progress__size--inherit"
+      />
+    </div>
   </button>
 </div>
 `;

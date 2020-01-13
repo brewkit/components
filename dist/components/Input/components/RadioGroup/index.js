@@ -28,10 +28,8 @@ exports.__esModule = true;
 var react_1 = __importDefault(require("react"));
 var clsx_1 = __importDefault(require("clsx"));
 function RadioGroup(_a) {
-    var name = _a.name, value = _a.value, defaultValue = _a.defaultValue, onChange = _a.onChange, className = _a.className, children = _a.children, otherProps = __rest(_a, ["name", "value", "defaultValue", "onChange", "className", "children"]);
+    var name = _a.name, value = _a.value, defaultValue = _a.defaultValue, _b = _a.onChange, onChange = _b === void 0 ? function () { return true; } : _b, className = _a.className, children = _a.children, otherProps = __rest(_a, ["name", "value", "defaultValue", "onChange", "className", "children"]);
     var classes = clsx_1["default"]('brew-Input--radioGroup', className);
-    return (react_1["default"].createElement("div", __assign({ className: classes }, otherProps), react_1["default"].Children.map(children, function (child) {
-        return react_1["default"].cloneElement(child, __assign({ name: name, defaultChecked: Boolean(defaultValue) && child.props.value === defaultValue ? true : undefined, checked: Boolean(value) && child.props.value === value ? true : undefined, onChange: onChange ? function (e) { onChange(e); } : undefined }, child.props));
-    })));
+    return (react_1["default"].createElement("div", __assign({ className: classes }, otherProps), react_1["default"].Children.map(children, function (child) { return react_1["default"].cloneElement(child, __assign({ checked: Boolean(value) && child.props.value === value ? true : undefined, defaultChecked: Boolean(defaultValue) && child.props.value === defaultValue ? true : undefined, name: name, onChange: function (event) { return onChange(event); } }, child.props)); })));
 }
 exports["default"] = RadioGroup;

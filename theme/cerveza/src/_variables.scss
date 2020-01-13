@@ -82,6 +82,8 @@ $general: (
 // Typography
 // ==============================================
 
+$font-primary: Roboto, sans-serif;
+
 $typography: (
 
     colors: (
@@ -126,6 +128,8 @@ $typography: (
         body2:  1.25,
         label:  1rem,
     ),
+
+    font-family: $font-primary,
 
 );
 
@@ -200,6 +204,17 @@ $inputs: (
     border-radius: .25em,
     width: 350px,
 );
+
+
+// ==============================================
+// Dialog
+// ==============================================
+$dialog: (
+    z-index: 40,
+    backdrop-color: rgba(0, 33, 48, 0.9),
+    max-width: 530px,
+);
+
 
 
 // ==============================================

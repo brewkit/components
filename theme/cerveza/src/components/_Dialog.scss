@@ -1,0 +1,121 @@
+.brew-Dialog {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: map-get($dialog, z-index);
+    font-family: map-get($typography, 'font-family');
+
+    .brew-Dialog {
+
+        &__background {
+            background-color:  map-get($dialog, 'backdrop-color');
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        &__content {
+            z-index: 1;
+            width: 100%;
+            max-width: map-get($dialog, 'max-width');
+            padding: size(xx-large) size(normal);
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        &__icon {
+            height: size(xx-large) * 1.5;
+        }
+
+        &__closeIcon {
+            display: none;
+        }
+
+        &__title {
+            font-size: size(xx-large);
+        }
+
+        &__icon + .brew-Dialog__title {
+            margin-top: size(normal);
+        }
+
+        &__actionButton {
+
+            .brew-Button {   
+                display: block;
+                width: 100%;
+            }
+        }
+
+        &__body {
+            color: white;
+            font-weight: map-get(map-get($typography, font-weights), body1);
+            margin-top: size(normal);
+        }
+
+        &__footer {
+            margin-top: size(xx-large);
+            display: flex;
+            flex-direction: column;
+
+            .brew-Dialog__actionButton--confirm {
+                order: 1;
+            }
+
+            .brew-Dialog__actionButton--cancel {
+                order: 2;
+                margin-top: size(xx-large);
+            }
+        }
+
+        &__actionButton--cancel {
+
+            .brew-Button {
+                background-color: transparent !important;
+                border-color: transparent !important;
+
+                .Button__text,
+                .brew-Button__text {
+                    color: color(brand, primary) !important;
+                }
+
+                &:hover {
+                    background-color: rgba(color(brand, primary), .1) !important;
+                }
+            }
+        }
+    }
+}
+
+.brew-Dialog--isOpen {
+    display: flex;
+}
+
+$variants: (
+    info,
+    success,
+    warning,
+    danger,
+);
+
+@each $variant in $variants {
+    .brew-Dialog--color-#{$variant} {
+        
+        .brew-Dialog {
+
+            &__title,
+            &__icon {
+                color: color(accent, $variant);
+            }
+        }
+    }
+}
+
