@@ -1,12 +1,12 @@
 /* eslint-disable max-statements */
 
-import React, { ReactElement, Ref } from 'react';
+import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import InputBase from '../InputBase';
 import { Props } from '../InputBase/types';
 import DefaultCustomControl from './components/DefaultCustomControl';
 
-const Select = (props: Props, ref?: Ref<HTMLElement>): ReactElement => {
+const Select = (props: Props): ReactElement => {
     const {
         className,
         customControl,
@@ -75,7 +75,6 @@ const Select = (props: Props, ref?: Ref<HTMLElement>): ReactElement => {
             className={classes}
             customControl={customControl || <DefaultCustomControl inputChildren={children} onSelectOption={handleOptionClick} text={text} />}
             onChange={onChange}
-            ref={ref}
             value={value}
             {...otherProps}
         >

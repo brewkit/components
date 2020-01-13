@@ -3,37 +3,6 @@ import clsx from 'clsx';
 import Icon from '../../../../../Icon';
 
 /*
- * This is the code I reduced by one eslint-disable-line rule
- * const CustomControlOption = ({
- *     value: optionValue,
- *     text,
- *     onClick,
- * }: {
- *     value: string,
- *     text: string,
- *     onClick: (string) => any,
- * }): ReactElement => {
- */
-
-/*
- *     const handleClick = (): void => {
- *         if (onClick) onClick(optionValue);
- *     };
- */
-
-/*
- *     return (
- *         <li
- *             className="brew-CustomControl__option"
- *             onClick={handleClick}
- *         >
- *             {text}
- *         </li>
- *     );
- * };
- */
-
-/*
  * our default custom control is a bit of a doozy here.  But that's what
  * we get for recreating select2 for react™©®
  */
@@ -47,6 +16,10 @@ const DefaultCustomControl = ({
     onSelectOption: (string) => any,
 }): ReactElement => {
     const [isDropDownVisible, setIsDropdownVisible] = React.useState(false);
+    const classes = clsx(
+        'brew-CustomControl',
+        { 'brew-CustomControl--isOpen': Boolean(isDropDownVisible) },
+    );
 
     const handleClickCustomSelection = (): void => {
         setIsDropdownVisible((current: boolean) => !current);
@@ -58,7 +31,7 @@ const DefaultCustomControl = ({
     };
 
     return (
-        <div className="brew-CustomControl">
+        <div className={classes}>
             <div className="brew-CustomControl__input" onClick={handleClickCustomSelection}>
                 <div className="brew-CustomControl__renderedSelection">{text}</div>
                 <Icon className="brew-CustomControl__icon">keyboard_arrow_down</Icon>
@@ -70,11 +43,13 @@ const DefaultCustomControl = ({
                             <li
                                 className={clsx(
                                     'brew-CustomControl__option',
-                                    { 'brew-CustomControl__option--selected': text === child.props.children },
+                                    { 'brew-CustomControl__option--isSelected': text === child.props.children },
+                                    { 'brew-CustomControl__option--isDisabled': Boolean(child.props.disabled) },
                                     child.props.className,
                                 )}
                                 onClick={(): void => { // eslint-disable-line react/jsx-no-bind
-                                    handleCustomOptionClick(child.props.value || child.props.children);
+                                    if (!child.props.disabled) handleCustomOptionClick(child.props.value || child.props.children);
+
                                 }}
                             >{child.props.children}
                             </li>

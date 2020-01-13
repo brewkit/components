@@ -1,4 +1,5 @@
 .brew-Select {
+    $open-shadow: 0 3px 6px rgba(0,0,0,.16);
     width: 100%;
     max-width: 350px;
     display: block;
@@ -31,7 +32,7 @@
 
         &__dropdown {
             border: 1px solid color(brand, primary);
-            box-shadow: 0 3px 6px rgba(0,0,0,.16);
+            box-shadow: $open-shadow;
             padding: size(normal);
             max-height: 320px;
             position: absolute;
@@ -51,8 +52,27 @@
             padding: size(normal)*1.375 size(normal);
 
             &:hover,
-            &--selected {
+            &--isSelected {
                 background-color: materialColor(lightBlue, 50);
+            }
+
+            &--isDisabled,
+            &--isDisabled:hover {
+                background-color: color(gray, 50);
+                color: color(gray, 500);
+            }
+        }
+    }
+
+    .brew-CustomControl--isOpen {
+
+        .brew-CustomControl {
+
+            &__input {
+                box-shadow: $open-shadow;
+                background-color: color(brand, primary);
+                border-color: color(brand, primary);
+                color: white;
             }
         }
     }

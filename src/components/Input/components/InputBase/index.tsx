@@ -1,4 +1,4 @@
-import React, { ReactElement, Ref } from 'react';
+import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import Typography from '../../../Typography';
 import { Props } from './types';
@@ -33,7 +33,7 @@ const InputBase = ({
     type = 'text',
     value,
     ...otherProps
-}: Props, ref?: Ref<HTMLElement>): ReactElement => {
+}: Props): ReactElement => {
     const classes = clsx(
         'brew-Input',
         { 'brew-Input--isDisabled': Boolean(disabled) },
@@ -47,7 +47,7 @@ const InputBase = ({
     const Element = as;
 
     return (
-        <Typography as="label" className={classes} ref={ref} {...otherProps}>
+        <Typography as="label" className={classes} {...otherProps}>
             {before}
 
             <Element

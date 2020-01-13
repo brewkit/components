@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, Ref } from 'react';
+import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import { Props } from './types';
 
@@ -16,7 +16,7 @@ function Typography({
     children,
     className,
     ...otherProps
-}: Props, ref: Ref<HTMLElement>): ReactElement {
+}: Props): ReactElement {
 
 
     const classes = clsx(
@@ -30,22 +30,13 @@ function Typography({
     );
 
 
-    const TextElement = (props: any): ReactElement => {
-        const getElement = (): ReactNode => {
-            if (variant === 'h1') return 'h1';
-
-            return 'span';
-        };
-        const Variant = getElement();
-
-        return (
-            <Variant {...props} />
-        );
-    };
+    let TextElement: keyof JSX.IntrinsicElements = 'span';
+    if (as) TextElement = as;
+    else if (variant === 'h1' || variant === 'h2' || variant === 'h3') TextElement = variant as 'div';
 
 
     return (
-        <TextElement className={classes} ref={ref} {...otherProps}>
+        <TextElement className={classes} {...otherProps}>
             {children}
         </TextElement>
     );
@@ -54,4 +45,4 @@ function Typography({
 }
 
 
-export default React.forwardRef(Typography);
+export default Typography;
