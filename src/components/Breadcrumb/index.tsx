@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { BrowserRouter, Link } from 'react-router-dom';
 import clsx from 'clsx';
 import Typography from '../Typography';
-import { Props } from './types';
+import { Props, Crumb } from './types';
 
 
 function Breadcrumb({
@@ -22,26 +22,27 @@ function Breadcrumb({
     return (
         <div className={classes}>
 
-            {crumbs.map((crumb, index) => {
+            {crumbs.map((crumb: Crumb, index: number) => {
                 const notLast = crumbCount !== index;
                 return (
                     <BrowserRouter key={index}>
                         <Typography variant="body2">
                             {crumb.url && notLast
                                 ? (
-                                    <Link
-                                        className="brew-Breadcrumb--link"
-                                        to={crumb.url}
-                                    >
+                                    <Link className="brew-Breadcrumb__link" to={crumb.url}>
                                         {crumb.title}
                                     </Link>
                                 )
-                                : ( <Typography variant="body2">{crumb.title}</Typography> )
+                                : (
+                                    <Typography variant="body2">
+                                        {crumb.title}
+                                    </Typography>
+                                )
                             }
-                            <span className="brew-Breadcrumb--separator">
+                            <span className="brew-Breadcrumb__separator">
                                 {divider
-                                    ? ( notLast && divider )
-                                    : ( notLast && '/' )
+                                    ? notLast && divider
+                                    : notLast && '/'
                                 }
                             </span>
                         </Typography>

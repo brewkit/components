@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import { Props } from './types';
-import styles from './styles.scss';
 
 
 /**
@@ -20,28 +19,18 @@ function Icon({
 
     /** Combine our classes based on props */
     const classes = clsx(
-        styles.wrapper,
-        styles[`color--${color}`],
-        styles[`size--${size}`],
+        'brew-Icon',
+        'material-icons',
+        `brew-Icon--color-${color}`,
+        `brew-Icon--size-${size}`,
         className,
     );
 
 
-    /** Lazy load our icon */
-    const Image = React.lazy(() => import(`./material-icons/dist/${children}.js`));
-
-
     return (
-        <span
-            className={classes}
-            {...otherProps}
-        >
-            <svg height="100%" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <React.Suspense fallback="&#9744;">
-                    <Image />
-                </React.Suspense>
-            </svg>
-        </span>
+        <i className={classes} {...otherProps}>
+            {children}
+        </i>
     );
 
 }
