@@ -1,4 +1,20 @@
-import { Props as Drawer } from '../../types';
+import { ReactNode } from 'react';
 
 
-export type Props = Omit<Drawer, 'anchorFrom' | 'isOpen'>;
+export interface Props {
+
+    /**
+     * Children passed to the component (JSX, String)
+     */
+    children?: ReactNode,
+
+    /**
+     * Custom class to provide component
+     */
+    className?: string,
+
+    /**
+     * onClick event to close Drawer
+     */
+    onClick?: any,
+}

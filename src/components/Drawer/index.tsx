@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import { Flipped, Flipper } from 'react-flip-toolkit';
-import DrawerItem from './components/DrawerItem';
+import { useDrawerContext } from './context';
 import { Props } from './types';
 
 
@@ -9,10 +9,11 @@ function Drawer({
     anchorFrom,
     children,
     className,
-    isOpen = false,
     ...otherProps
 }: Props): ReactElement {
 
+
+    const { isOpen, setIsOpen } = useDrawerContext();
 
     const drawerClasses = clsx(
         'brew-Drawer',
@@ -22,21 +23,25 @@ function Drawer({
     );
 
 
+    function closeDrawer(): void {
+        setIsOpen(false);
+    }
+
+
     return (
         <Flipper flipKey={JSON.stringify([anchorFrom, isOpen, className])}>
-            <Flipped flipId="wrapper" spring="wobbly">
+            <Flipped flipId="wrapper">
                 <div className={drawerClasses} {...otherProps}>
-                    {children}
+                    <span className="brew-Drawer__exit" onClick={closeDrawer}>&times;</span>
+                    <div className="brew-Drawer__content">{children}</div>
                 </div>
             </Flipped>
+            <div className="brew-Drawer__mask" />
         </Flipper>
     );
 
 
 }
-
-
-Drawer.Item = DrawerItem;
 
 
 export default Drawer;

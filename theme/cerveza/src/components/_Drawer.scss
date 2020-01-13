@@ -1,41 +1,73 @@
 @import "../utilities";
 
+
 .brew-Drawer {
-    position: absolute;
-    background-color: rebeccapurple;
-    width: 100%;
-    height: 100%;
+    position: fixed;
+    background-color: color(grey, 900);
+    color: color(grey, 100);
+    z-index: 1;
+
+    &__exit {
+        position: absolute;
+        right: size(x-small);
+        top: size(xx-small);
+        font-size: size(xx-large);
+        cursor: pointer;
+    }
+
+    &__mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: color(grey, 900);
+        opacity: 0.7;
+    }
+
+    &__content {
+        display: grid;
+    }
 
     &--anchorFrom {
+
         &-top {
+            grid-auto-flow: column;
+            grid-auto-columns: min-content;
             top: 0;
             right: 0;
             left: 0;
-            max-height: size(normal) * 18.75;
+            height: size(normal) * 18.75;
             transform: translateY(-100%);
         }
 
         &-right {
+            grid-auto-flow: row;
+            grid-auto-rows: min-content;
             top: 0;
             right: 0;
             bottom: 0;
-            max-width: size(normal) * 18.75;
+            width: size(normal) * 18.75;
             transform: translateX(100%);
         }
 
         &-bottom {
+            grid-auto-flow: column;
+            grid-auto-columns: min-content;
             bottom: 0;
             right: 0;
             left: 0;
-            max-height: size(normal) * 18.75;
+            height: size(normal) * 18.75;
             transform: translateY(100%);
         }
 
         &-left {
+            grid-auto-flow: row;
+            grid-auto-rows: min-content;
             top: 0;
             bottom: 0;
             left: 0;
-            max-width: size(normal) * 18.75;
+            width: size(normal) * 18.75;
             transform: translateX(-100%);
         }
     }
