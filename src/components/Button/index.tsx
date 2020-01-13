@@ -63,7 +63,9 @@ function Button({
                         </div>
                     </Flipped>
                     <Flipped flipId="loader">
-                        <Progress className="brew-Button__loadingIndicator" color={color} variant="circular" />
+                        <div className="brew-Button__loadingIndicator">
+                            <Progress color={color} variant="circular" />
+                        </div>
                     </Flipped>
                 </button>
             </Flipped>

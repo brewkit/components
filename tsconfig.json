@@ -1,12 +1,22 @@
 {
     "compilerOptions": {
-        "outDir": "build/lib",
+        "outDir": "dist",
         "module": "commonjs",
         "lib": ["dom", "esnext"],
         "jsx": "react",
         "esModuleInterop": true,
         "allowJs": true,
-        "plugins": [{ "name": "typescript-plugin-css-modules" }]
+        "plugins": [{ "name": "typescript-plugin-css-modules" }],
+        "removeComments": true
     },
-    "exclude": ["node_modules", "build", "scripts", "**/material-icons/**"]
+    "include": ["src"],
+    "exclude": [
+        "node_modules",
+        "build",
+        "scripts",
+        "**/material-icons/**",
+        "src/**/stories.*",
+        "src/**/types.*",
+        "src/**/test.*"
+    ]
 }

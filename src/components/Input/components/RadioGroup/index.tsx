@@ -1,26 +1,34 @@
-import React, { ReactElement } from 'react';
+import React, { FormEvent, ReactElement } from 'react';
 import clsx from 'clsx';
-import styles from './styles.scss';
 import { Props } from './types';
 
 
 function RadioGroup({
+    name,
+    value,
+    defaultValue,
+    onChange = (): true => true,
     className,
-    inputLabel,
-    inputLabelClassName,
     children,
+    ...otherProps
 }: Props): ReactElement {
 
+
     const classes = clsx(
-        styles.wrapper,
+        'brew-Input--radioGroup',
         className,
     );
 
 
     return (
-        <div className={classes}>
-            <label className={inputLabelClassName}>{inputLabel}</label>
-            {children}
+        <div className={classes} {...otherProps}>
+            {React.Children.map(children, (child: ReactElement) => React.cloneElement(child, {
+                checked: Boolean(value) && child.props.value === value ? true : undefined,
+                defaultChecked: Boolean(defaultValue) && child.props.value === defaultValue ? true : undefined,
+                name,
+                onChange: (event: FormEvent): void => onChange(event),
+                ...child.props,
+            }))}
         </div>
     );
 
