@@ -1,56 +1,38 @@
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
-import Icon from '../Icon';
-import Typography from '../Typography';
-import styles from './styles.scss';
+import PlaceholderGraphic from './components/PlaceholderGraphic';
+import PlaceholderTitle from './components/PlaceholderTitle';
+import PlaceholderContent from './components/PlaceholderContent';
+import PlaceholderAction from './components/PlaceholderAction';
 import { Props } from './types';
 
 
 function Placeholder({
     className,
-    graphic,
-    title,
-    description,
     children,
 }: Props): ReactElement {
 
 
     const placeholderClasses = clsx(
-        styles.wrapper,
+        'brew-Placeholder',
         className,
     );
 
 
     return (
         <div className={placeholderClasses}>
-            {
-                (
-                    <div className={styles.content}>
-                        {graphic &&
-                            <Typography className={styles.graphic} as="p" variant="body1">
-                                <Icon children={graphic} />
-                            </Typography>
-                        }
-                        {title &&
-                            <Typography shouldTruncate variant="h1" color="tertiary">
-                                {title}
-                            </Typography>
-                        }
-                        {description &&
-                            <Typography as="p" variant="body1">
-                                {description}
-                            </Typography>
-                        }
-                        {children}
-                    </div>
-                ) ||
-                children
-            }
+            {children}
         </div>
     );
 
 
 }
+
+
+Placeholder.Graphic = PlaceholderGraphic;
+Placeholder.Title = PlaceholderTitle;
+Placeholder.Content = PlaceholderContent;
+Placeholder.Action = PlaceholderAction;
 
 
 export default Placeholder;

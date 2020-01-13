@@ -1,6 +1,12 @@
 import { ReactNode } from 'react';
 
 
+export interface Crumb {
+    title: ReactNode,
+    url?: string,
+}
+
+
 export interface Props {
 
     /**
@@ -16,6 +22,6 @@ export interface Props {
     /**
      * Array of crumb content to display
      */
-    crumbs: Array<{ title: ReactNode, url?: string }>,
+    crumbs: Array<Crumb>,
 
 }

@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import Typography from '../Typography';
 import { Props } from './types';
-import styles from './styles.scss';
 
 
 /**
@@ -18,9 +17,9 @@ function Divider({
 
 
     const classes = clsx(
-        styles.wrapper,
-        styles[`align--${align}`],
-        { [styles.noChildren]: !children },
+        'brew-Divider',
+        `brew-Divider--align-${align}`,
+        { 'brew-Divider--isChildless': Boolean(!children) },
         className,
     );
 
