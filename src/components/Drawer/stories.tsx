@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import { select } from '@storybook/addon-knobs';
+import NavItem from '../NavItem';
 import { DrawerProvider } from './context';
 import Drawer from './index';
 
@@ -17,7 +18,13 @@ export const general = (): ReactElement => {
     return (
         <DrawerProvider>
             <Drawer anchorFrom={anchorFrom}>
-                hi
+                <div>
+                    <div>Example Title</div>
+                    <div>Example SubTitle</div>
+                </div>
+                <NavItem>
+                    This is a NavItem that will close the drawer when clicked
+                </NavItem>
             </Drawer>
         </DrawerProvider>
     );
