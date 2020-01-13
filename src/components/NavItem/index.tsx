@@ -19,7 +19,7 @@ function NavItem({
     );
 
 
-    function closeDrawer() {
+    function closeDrawer(): void {
         setIsOpen(false);
     }
 
