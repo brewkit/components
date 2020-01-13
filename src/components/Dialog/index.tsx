@@ -35,9 +35,7 @@ function Dialog({
     const classes = clsx(
         'brew-Dialog',
         { 'brew-Dialog--isOpen': Boolean(open) },
-        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
         { [`brew-Dialog--${variant}`]: Boolean(variant) },
-        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
         { [`brew-Dialog--color-${color}`]: Boolean(color) },
         className,
     );
@@ -94,18 +92,12 @@ function Dialog({
                         {customFooter ? customFooter : (
                             <React.Fragment>
                                 {variant !== 'alert' && (
-                                    <div className="brew-Dialog__actionButton brew-Dialog__actionButton--cancel">
-                                        <Button
-                                            onClick={handleCancelClick}
-                                        >{cancelText}
-                                        </Button>
+                                    <div className="bregit staw-Dialog__actionButton brew-Dialog__actionButton--cancel">
+                                        <Button onClick={handleCancelClick}>{cancelText}</Button>
                                     </div>
                                 )}
                                 <div className="brew-Dialog__actionButton brew-Dialog__actionButton--confirm">
-                                    <Button
-                                        onClick={handleConfirmClick}
-                                    >{confirmText}
-                                    </Button>
+                                    <Button onClick={handleConfirmClick}>{confirmText}</Button>
                                 </div>
                             </React.Fragment>
                         )}
