@@ -21,8 +21,4 @@ export interface Props {
      */
     className?: string,
 
-    /**
-     * Prop that determines if the drawer is open or closed
-     */
-    isOpen?: boolean,
 }
