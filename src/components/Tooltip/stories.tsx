@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import {select, text, boolean} from '@storybook/addon-knobs';
+import { select, text, boolean } from '@storybook/addon-knobs';
 import Tooltip from './index';
 import Label from '../Label';
 import Icon from '../Icon';
@@ -33,11 +33,11 @@ export const General = (): ReactElement => {
 
     return (
         <Tooltip
-            triggerEvent={triggerEvent}
-            content={content}
-            color={color}
             anchor={anchor}
+            color={color}
+            content={content}
             isOpen={isOpen}
+            triggerEvent={triggerEvent}
         >
             <Icon color="danger" size="large">error</Icon>
         </Tooltip>

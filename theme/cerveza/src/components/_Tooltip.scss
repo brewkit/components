@@ -31,8 +31,8 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
 @each $color in $colors {
 
     .brew-Tooltip--color-#{$color} {
-        $button_color: map_get(map_get($button, colors), $color);
-        background-color:  $button_color;
+        $tooltip_color: map_get(map_get($progress, colors), $color);
+        background-color: $tooltip_color;
         color: white !important;
     }
 
