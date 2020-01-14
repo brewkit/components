@@ -24,8 +24,14 @@ exports[`Drawer Renders correctly 1`] = `
       </div>
     </div>
     <div
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    />
+    <div
       className="brew-Drawer__mask"
-      onClick={[Function]}
     />
   </div>
 </div>
