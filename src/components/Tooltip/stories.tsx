@@ -16,7 +16,7 @@ export default {
 
 
 export const General = (): ReactElement => {
-    const content = text('content', 'Beware of dangerous waters');
+    const content = text('content', 'This is a tooltip example');
     const triggerEvent: TriggerEvents = select('variant', ['click', 'hover'], 'click');
     const color: Colors = select('color', [
         'primary',
@@ -27,7 +27,7 @@ export const General = (): ReactElement => {
         'info',
         'light',
         'dark',
-    ], 'danger');
+    ], 'info');
     const anchor: Anchors = select('anchor', ['top', 'right', 'bottom', 'left'], 'right');
     const isOpen = boolean('isOpen', false);
 
@@ -39,7 +39,7 @@ export const General = (): ReactElement => {
             isOpen={isOpen}
             triggerEvent={triggerEvent}
         >
-            <Icon color="danger" size="large">error</Icon>
+            <Icon color="info" size="large">error</Icon>
         </Tooltip>
     );
 };

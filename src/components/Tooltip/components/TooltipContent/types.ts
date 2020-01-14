@@ -13,6 +13,11 @@ export interface Props {
     className?: string,
 
     /**
+     * Forwarded reference to the control anchor
+     */
+    controllerRef?: any,
+
+    /**
      *
      */
     isVisible?: boolean,

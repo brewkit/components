@@ -7,18 +7,25 @@
 
 .brew-Tooltip {
     position: relative;
-}
+    display: inline;
 
-.brew-Tooltip__content {
-    opacity: 0;
-}
+    &__wrapper {
+        max-width: 0;
+        position: fixed;
+        opacity: 0;
+    }
 
-.brew-Tooltip--open {
-    position: absolute;
-    margin-top: size(small);
-    opacity: 1;
-    padding: size(small);
-    border-radius: size(x-small);
+    &__content {
+        @extend %height-2;
+        border-radius: size(xx-small);
+        padding: size(small);
+    }
+
+    &--open {
+        display: inline-flex;
+        max-width: size(normal) * 15;
+        opacity: 1;
+    }
 }
 
 
@@ -26,12 +33,12 @@
 // Colors
 // ==============================================
 
-$colors: primary, secondary, success, info, warning, danger, light, dark;
+$tooltipColors: primary, secondary, success, info, warning, danger, light, dark;
 
-@each $color in $colors {
+@each $tooltipColor in $tooltipColors {
 
-    .brew-Tooltip--color-#{$color} {
-        $tooltip_color: map_get(map_get($progress, colors), $color);
+    .brew-Tooltip--color-#{$tooltipColor} {
+        $tooltip_color: map_get(map_get($tooltip, colors), $tooltipColor);
         background-color: $tooltip_color;
         color: white !important;
     }

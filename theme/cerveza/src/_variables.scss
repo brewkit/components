@@ -180,6 +180,26 @@ $progress: (
 
 
 // ==============================================
+// Tooltip
+// ==============================================
+
+$tooltip: (
+
+        colors: (
+                primary: color(brand, primary),
+                secondary: color(brand, secondary),
+                success: color(accent, success),
+                danger: color(accent, danger),
+                warning: color(accent, warning),
+                info: color(accent, info),
+                dark: color(accent, dark),
+                light: color(accent, light),
+        )
+
+);
+
+
+// ==============================================
 // Breakpoints (min device width)
 // ==============================================
 

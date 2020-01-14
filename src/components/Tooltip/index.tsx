@@ -10,25 +10,27 @@ function Tooltip({
     triggerEvent = 'click',
     content,
     isOpen = false,
-    anchor = 'top',
-    color = 'primary',
     children,
     ...otherProps
 }: Props): ReactElement {
 
 
+    const { ...otherChildProps } = children || {};
     const [isTooltipOpen, setIsTooltipOpen] = React.useState(isOpen);
+    const [tooltipRef, setTooltipRef] = React.useState(null);
     const wrapperClasses = clsx(
         'brew-Tooltip',
         className,
     );
     const contentClasses = clsx(
-        'brew-Tooltip__content',
+        'brew-Tooltip__wrapper',
         { 'brew-Tooltip--open': isTooltipOpen },
     );
 
 
-    function handleRef(node: ReactElement): ReactElement {
+    function handleRef(node) {
+        console.log('handleRef', node);
+        setTooltipRef(node?.node);
         return node;
     }
 
@@ -42,17 +44,18 @@ function Tooltip({
         <div className={wrapperClasses} {...otherProps}>
             <Flipper flipKey={isTooltipOpen}>
                 <div>
-                    {React.Children.map(children, (child: ReactElement) => React.cloneElement(child, {
+                    {React.cloneElement(React.Children.only(children), {
                         onClick: (triggerEvent === 'click') ? handleTooltip : undefined,
                         onMouseOut: (triggerEvent === 'hover') ? handleTooltip : undefined,
                         onMouseOver: (triggerEvent === 'hover') ? handleTooltip : undefined,
                         ref: handleRef,
-                    }))}
+                        ...otherChildProps,
+                    })}
                 </div>
                 <TooltipContent
-                    anchor={anchor}
                     className={contentClasses}
-                    color={color}
+                    controllerRef={tooltipRef}
+                    {...otherProps}
                 >
                     {content}
                 </TooltipContent>

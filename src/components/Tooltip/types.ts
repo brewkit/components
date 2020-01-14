@@ -41,6 +41,6 @@ export interface Props {
     /**
      * The static JSX clickable item to open/close tooltip.
      */
-    children?: ReactNode,
+    children?: any,
 
 }
