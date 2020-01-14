@@ -102,7 +102,7 @@
     &--isOpen {
         transform: translate(0, 0);
 
-        + .brew-Drawer__mask {
+        ~ .brew-Drawer__mask {
             display: block;
         }
     }
