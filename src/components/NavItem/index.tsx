@@ -4,6 +4,9 @@ import DrawerContext from '../Drawer/context';
 import { Props } from './types';
 
 
+/**
+ * NavItem has access to DrawerContext, which has built in functionality to close the Drawer when clicked.
+ */
 function NavItem({
     children,
     className,
@@ -12,6 +15,7 @@ function NavItem({
 
 
     const { setOpen } = React.useContext(DrawerContext);
+
 
     const drawerItemClasses = clsx(
         'brew-NavItem',

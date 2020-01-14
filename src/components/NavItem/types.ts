@@ -13,8 +13,4 @@ export interface Props {
      */
     className?: string,
 
-    /**
-     * onClick event to close Drawer
-     */
-    onClick?: any,
 }
