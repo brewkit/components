@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import { Flipped, Flipper } from 'react-flip-toolkit';
 import ClickAwayListener from '../../utilities/ClickAwayListener';
-import DrawerContext from './context';
 import { Props } from './types';
 
 
@@ -45,21 +44,19 @@ function Drawer({
 
 
     return (
-        <DrawerContext.Provider value={{ setOpen }}>
-            <div className={wrapperClasses} {...otherProps}>
-                <Flipper flipKey={JSON.stringify([anchorFrom, open, className])}>
-                    <ClickAwayListener onClickAway={closeDrawer}>
-                        <Flipped flipId="wrapper">
-                            <div className={drawerClasses}>
-                                <span className="brew-Drawer__exit" onClick={closeDrawer}>&times;</span>
-                                <div className="brew-Drawer__content">{children}</div>
-                            </div>
-                        </Flipped>
-                    </ClickAwayListener>
-                    <div className="brew-Drawer__mask" />
-                </Flipper>
-            </div>
-        </DrawerContext.Provider>
+        <div className={wrapperClasses} {...otherProps}>
+            <Flipper flipKey={JSON.stringify([anchorFrom, open, className])}>
+                <ClickAwayListener onClickAway={closeDrawer}>
+                    <Flipped flipId="wrapper">
+                        <div className={drawerClasses}>
+                            <span className="brew-Drawer__exit" onClick={closeDrawer}>&times;</span>
+                            <div className="brew-Drawer__content">{children}</div>
+                        </div>
+                    </Flipped>
+                </ClickAwayListener>
+                <div className="brew-Drawer__mask" />
+            </Flipper>
+        </div>
     );
 
 
