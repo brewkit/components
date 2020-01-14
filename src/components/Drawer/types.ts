@@ -20,5 +20,5 @@ export interface Props {
      * Custom class to provide component
      */
     className?: string,
-
+    isOpen?: boolean,
 }

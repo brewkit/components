@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { select } from '@storybook/addon-knobs';
+import { boolean, select } from '@storybook/addon-knobs';
 import NavItem from '../NavItem';
 import Drawer from './index';
 import DrawerContext from "./context";
@@ -13,10 +13,11 @@ export default {
 
 export const general = (): ReactElement => {
     const anchorFrom = select('anchorFrom', ['top', 'right', 'bottom', 'left'], 'left');
+    const isOpen = boolean('isOpen', false);
 
 
     return (
-        <Drawer anchorFrom={anchorFrom}>
+        <Drawer anchorFrom={anchorFrom} isOpen={isOpen}>
             <div>
                 <div>Example Title</div>
                 <div>Example SubTitle</div>

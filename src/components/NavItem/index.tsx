@@ -11,7 +11,7 @@ function NavItem({
 }: Props): ReactElement {
 
 
-    const { setIsOpen } = React.useContext(DrawerContext);
+    const { setOpen } = React.useContext(DrawerContext);
 
     const drawerItemClasses = clsx(
         'brew-NavItem',
@@ -20,7 +20,7 @@ function NavItem({
 
 
     function closeDrawer(): void {
-        setIsOpen(false);
+        setOpen(false);
     }
 
 

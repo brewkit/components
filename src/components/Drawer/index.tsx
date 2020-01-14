@@ -12,37 +12,50 @@ function Drawer({
     anchorFrom,
     children,
     className,
+    isOpen = false,
     ...otherProps
 }: Props): ReactElement {
 
 
-    const [isOpen, setIsOpen] = React.useState(true);
+    const [open, setOpen] = React.useState(isOpen);
 
 
-    const drawerClasses = clsx(
+    React.useEffect(() => {
+        setOpen(isOpen);
+    }, [isOpen]);
+
+
+    const wrapperClasses = clsx(
         'brew-Drawer',
-        `brew-Drawer--anchorFrom-${anchorFrom}`,
-        { 'brew-Drawer--isOpen': isOpen },
         className,
     );
 
 
+    const drawerClasses = clsx(
+        'brew-Drawer__element',
+        `brew-Drawer--anchorFrom-${anchorFrom}`,
+        { 'brew-Drawer--isOpen': open },
+    );
+
+
     function closeDrawer(): void {
-        setIsOpen(false);
+        setOpen(false);
     }
 
 
     return (
-        <DrawerContext.Provider value={{ setIsOpen }}>
-            <Flipper flipKey={JSON.stringify([anchorFrom, isOpen, className])}>
-                <Flipped flipId="wrapper">
-                    <div className={drawerClasses} {...otherProps}>
-                        <span className="brew-Drawer__exit" onClick={closeDrawer}>&times;</span>
-                        <div className="brew-Drawer__content">{children}</div>
-                    </div>
-                </Flipped>
-                <div className="brew-Drawer__mask" />
-            </Flipper>
+        <DrawerContext.Provider value={{ setOpen }}>
+            <div className={wrapperClasses} {...otherProps}>
+                <Flipper flipKey={JSON.stringify([anchorFrom, open, className])}>
+                    <Flipped flipId="wrapper">
+                        <div className={drawerClasses}>
+                            <span className="brew-Drawer__exit" onClick={closeDrawer}>&times;</span>
+                            <div className="brew-Drawer__content">{children}</div>
+                        </div>
+                    </Flipped>
+                    <div className="brew-Drawer__mask" onClick={closeDrawer} />
+                </Flipper>
+            </div>
         </DrawerContext.Provider>
     );
 
