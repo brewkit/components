@@ -20,5 +20,10 @@ export interface Props {
      * Custom class to provide component
      */
     className?: string,
+
+    /**
+     * Whether or not the drawers default state is open or closed
+     */
     isOpen?: boolean,
+
 }

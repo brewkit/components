@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 import { boolean, select } from '@storybook/addon-knobs';
 import NavItem from '../NavItem';
 import Drawer from './index';
-import DrawerContext from "./context";
 
 
 export default {
