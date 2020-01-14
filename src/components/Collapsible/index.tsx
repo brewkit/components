@@ -19,11 +19,8 @@ function Collapsible({
     const [collapsed, setCollapsed] = React.useState(isCollapsed);
     const wrapperClasses = clsx(
         'brew-Collapsible',
-        className,
-    );
-    const contentClasses = clsx(
-        { 'brew-Collapsible__content': collapsed },
         { 'brew-Collapsible--open': !collapsed },
+        className,
     );
 
 
@@ -39,7 +36,7 @@ function Collapsible({
                     {anchorContent}
                 </div>
                 <Flipped flipId="children">
-                    <div className={contentClasses}>
+                    <div className="brew-Collapsible__content">
                         {children}
                     </div>
                 </Flipped>

@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Collapsible from './index';
-import {mount, shallow} from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 
 describe('Collapsible', () => {
@@ -14,12 +14,12 @@ describe('Collapsible', () => {
     });
 
     it('mounts correctly', () => {
-        const collapsible = shallow(
+        const collapsible = shallow((
             <Collapsible
                 anchorContent={(<div>Testing</div>)}
             >Test
             </Collapsible>
-        );
+        ));
         expect(collapsible.hasClass('brew-Collapsible')).toBe(true);
     });
 
@@ -36,13 +36,13 @@ describe('Collapsible', () => {
     });
 
     it('correctly adds open class when isCollapsed is false', () => {
-        const collapsible = mount(
+        const collapsible = mount((
             <Collapsible
                 anchorContent={(<div>Testing</div>)}
                 isCollapsed={false}
             >Test
             </Collapsible>
-        );
+        ));
         expect(collapsible.prop('isCollapsed')).toBe(false);
         expect(collapsible.exists('.brew-Collapsible--open')).toBe(true);
     });

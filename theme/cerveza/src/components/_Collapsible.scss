@@ -14,8 +14,12 @@
     }
 
     &--open {
-        opacity: 1;
-        transform: translateY(1rem);
+
+        .brew-Collapsible__content {
+            opacity: 1;
+            transform: translateY(1rem);
+        }
+
     }
 
 }
