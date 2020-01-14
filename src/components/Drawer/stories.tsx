@@ -1,6 +1,5 @@
 import React, { ReactElement } from 'react';
 import { boolean, select } from '@storybook/addon-knobs';
-import NavItem from '../NavItem';
 import Drawer from './index';
 
 
@@ -21,9 +20,7 @@ export const general = (): ReactElement => {
                 <div>Example Title</div>
                 <div>Example SubTitle</div>
             </div>
-            <NavItem>
-                This is a NavItem that will close the drawer when clicked
-            </NavItem>
+            <div>item</div>
         </Drawer>
     );
 };

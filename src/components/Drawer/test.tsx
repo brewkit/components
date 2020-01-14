@@ -25,7 +25,7 @@ describe('Drawer', () => {
             '.brew-Drawer__mask',
         ];
 
-        classes.forEach(className => expect(drawer.exists(className)).toBe(true));
+        classes.forEach((className: string) => expect(drawer.exists(className)).toBe(true));
 
         expect(drawer.exists('.brew-Drawer--isOpen')).toBe(false);
     });
@@ -33,7 +33,7 @@ describe('Drawer', () => {
     it('Attaches a custom class name to wrapper and modifies anchor class to right', () => {
         const drawer = shallow(<Drawer anchorFrom="right" className="brew-Drawer--custom">test</Drawer>);
 
-        expect(drawer.childAt(0).hasClass('brew-Drawer--custom')).toBe(true);
+        expect(drawer.hasClass('brew-Drawer--custom')).toBe(true);
         expect(drawer.find('.brew-Drawer__element').hasClass('brew-Drawer--anchorFrom-right')).toBe(true);
     });
 
@@ -41,7 +41,7 @@ describe('Drawer', () => {
         const drawer = shallow(<Drawer anchorFrom="right" isOpen>test</Drawer>);
 
         expect(drawer.find('.brew-Drawer__element').hasClass('brew-Drawer--isOpen')).toBe(true);
-    })
+    });
 
 
 });
