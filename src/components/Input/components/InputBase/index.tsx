@@ -81,4 +81,4 @@ const InputBase = ({
     );
 };
 
-export default React.forwardRef(InputBase);
+export default InputBase;

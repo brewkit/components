@@ -6,6 +6,7 @@ export type Props = Omit<InputBaseProps,
     | 'before'
     | 'checked'
     | 'cols'
+    | 'customControl'
     | 'defaultChecked'
     | 'inputLabel'
     | 'inputLabelClassName'

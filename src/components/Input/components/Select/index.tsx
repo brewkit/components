@@ -9,7 +9,6 @@ import DefaultCustomControl from './components/DefaultCustomControl';
 const Select = (props: Props): ReactElement => {
     const {
         className,
-        customControl,
         children,
         onChange: onChangeProp,
         value: valueProp,
@@ -73,7 +72,7 @@ const Select = (props: Props): ReactElement => {
         <InputBase
             as="select"
             className={classes}
-            customControl={customControl || <DefaultCustomControl inputChildren={children} onSelectOption={handleOptionClick} text={text} />}
+            customControl={<DefaultCustomControl inputChildren={children} onSelectOption={handleOptionClick} text={text} />}
             onChange={onChange}
             value={value}
             {...otherProps}
@@ -85,4 +84,4 @@ const Select = (props: Props): ReactElement => {
 };
 
 
-export default React.forwardRef(Select);
+export default Select;
