@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Header Props Renders "columns" prop correctly 1`] = `
+<tr
+  className="brew-TableRow"
+>
+  <td>
+    ColumnA
+  </td>
+  <td>
+    ColumnB
+  </td>
+  <td>
+    ColumnC
+  </td>
+</tr>
+`;
+
+exports[`Table Row Renders correctly 1`] = `
+<tr
+  className="brew-TableRow"
+>
+  <td>
+    Column1
+  </td>
+  <td>
+    Column2
+  </td>
+  <td>
+    Column3
+  </td>
+</tr>
+`;

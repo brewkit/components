@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Body Props Renders "rows" prop correctly 1`] = `
+<tbody
+  className="brew-TableBody"
+>
+  <tr
+    className="brew-TableRow"
+  >
+    <td>
+      row1-col1
+    </td>
+    <td>
+      row1-col2
+    </td>
+    <td>
+      row1-col3
+    </td>
+  </tr>
+  <tr
+    className="brew-TableRow"
+  >
+    <td>
+      row2-col1
+    </td>
+    <td>
+      row2-col2
+    </td>
+    <td>
+      row2-col3
+    </td>
+  </tr>
+  <tr
+    className="brew-TableRow"
+  >
+    <td>
+      row3-col1
+    </td>
+    <td>
+      row3-col2
+    </td>
+    <td>
+      row3-col3
+    </td>
+  </tr>
+</tbody>
+`;
+
+exports[`Table Body Renders correctly 1`] = `
+<tbody
+  className="brew-TableBody"
+>
+  <tr
+    className="brew-TableRow"
+  >
+    <td>
+      Row1-Col1
+    </td>
+    <td>
+      Row1-Col2
+    </td>
+    <td>
+      Row1-Col3
+    </td>
+  </tr>
+  <tr
+    className="brew-TableRow"
+  >
+    <td>
+      Row2-Col1
+    </td>
+    <td>
+      Row2-Col2
+    </td>
+    <td>
+      Row2-Col3
+    </td>
+  </tr>
+</tbody>
+`;

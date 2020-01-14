@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Props Renders "columns" and "rows" prop correctly simultaneously 1`] = `
+<table
+  className="brew-Table"
+>
+  <thead
+    className="brew-TableHeader"
+  >
+    <tr
+      className="brew-TableRow"
+    >
+      <th
+        className="brew-TableHeaderColumn"
+      >
+        ColumnX
+      </th>
+      <th
+        className="brew-TableHeaderColumn"
+      >
+        ColumnY
+      </th>
+      <th
+        className="brew-TableHeaderColumn"
+      >
+        ColumnZ
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    className="brew-TableBody"
+  >
+    <tr
+      className="brew-TableRow"
+    >
+      <td>
+        row1-colX
+      </td>
+      <td>
+        row1-colX
+      </td>
+      <td>
+        row1-colX
+      </td>
+    </tr>
+    <tr
+      className="brew-TableRow"
+    >
+      <td>
+        row2-colY
+      </td>
+      <td>
+        row2-colY
+      </td>
+      <td>
+        row2-colY
+      </td>
+    </tr>
+    <tr
+      className="brew-TableRow"
+    >
+      <td>
+        row3-colZ
+      </td>
+      <td>
+        row3-colZ
+      </td>
+      <td>
+        row3-colZ
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Table Props Renders "columns" prop correctly 1`] = `
+<table
+  className="brew-Table"
+>
+  <thead
+    className="brew-TableHeader"
+  >
+    <tr
+      className="brew-TableRow"
+    >
+      <th
+        className="brew-TableHeaderColumn"
+      >
+        ColumnA
+      </th>
+      <th
+        className="brew-TableHeaderColumn"
+      >
+        ColumnB
+      </th>
+      <th
+        className="brew-TableHeaderColumn"
+      >
+        ColumnC
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    className="brew-TableBody"
+  />
+</table>
+`;
+
+exports[`Table Props Renders "rows" prop correctly 1`] = `
+<table
+  className="brew-Table"
+>
+  <thead
+    className="brew-TableHeader"
+  >
+    <tr
+      className="brew-TableRow"
+    />
+  </thead>
+  <tbody
+    className="brew-TableBody"
+  >
+    <tr
+      className="brew-TableRow"
+    >
+      <td>
+        row1-col1
+      </td>
+      <td>
+        row1-col2
+      </td>
+      <td>
+        row1-col3
+      </td>
+    </tr>
+    <tr
+      className="brew-TableRow"
+    >
+      <td>
+        row2-col1
+      </td>
+      <td>
+        row2-col2
+      </td>
+      <td>
+        row2-col3
+      </td>
+    </tr>
+    <tr
+      className="brew-TableRow"
+    >
+      <td>
+        row3-col1
+      </td>
+      <td>
+        row3-col2
+      </td>
+      <td>
+        row3-col3
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Table Renders correctly 1`] = `
+<table
+  className="brew-Table"
+>
+  <thead
+    className="brew-TableHeader"
+  >
+    <tr
+      className="brew-TableRow"
+    >
+      <th
+        className="brew-TableHeaderColumn"
+      >
+        Column1
+      </th>
+      <th
+        className="brew-TableHeaderColumn"
+      >
+        Column2
+      </th>
+      <th
+        className="brew-TableHeaderColumn"
+      >
+        Column3
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    className="brew-TableBody"
+  >
+    <tr
+      className="brew-TableRow"
+    >
+      <td>
+        Row1-Col1
+      </td>
+      <td>
+        Row1-Col2
+      </td>
+      <td>
+        Row1-Col3
+      </td>
+    </tr>
+    <tr
+      className="brew-TableRow"
+    >
+      <td>
+        Row2-Col1
+      </td>
+      <td>
+        Row2-Col2
+      </td>
+      <td>
+        Row2-Col3
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
