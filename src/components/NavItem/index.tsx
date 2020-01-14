@@ -14,7 +14,7 @@ function NavItem({
 }: Props): ReactElement {
 
 
-    const { setOpen } = React.useContext(DrawerContext);
+    const context = React.useContext(DrawerContext);
 
 
     const drawerItemClasses = clsx(
@@ -24,7 +24,7 @@ function NavItem({
 
 
     function closeDrawer(): void {
-        setOpen(false);
+        if (context !== null) context.setOpen(false);
     }
 
 

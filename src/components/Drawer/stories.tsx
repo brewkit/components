@@ -16,14 +16,18 @@ export const general = (): ReactElement => {
 
 
     return (
-        <Drawer anchorFrom={anchorFrom} isOpen={isOpen}>
-            <div>
-                <div>Example Title</div>
-                <div>Example SubTitle</div>
-            </div>
-            <NavItem>
-                This is a NavItem that will close the drawer when clicked
-            </NavItem>
-        </Drawer>
+        <div>
+            <Drawer anchorFrom={anchorFrom} isOpen={isOpen}>
+                <div>
+                    <div>Example Title</div>
+                    <div>Example SubTitle</div>
+                </div>
+                <NavItem>
+                    This is a NavItem that will close the drawer when clicked
+                </NavItem>
+            </Drawer>
+            <NavItem>asdf</NavItem>
+        </div>
+
     );
 };
