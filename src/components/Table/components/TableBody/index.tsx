@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import clsx from 'clsx';
 import { Props } from './types';
 import TableRow from '../TableRow';
@@ -21,7 +21,7 @@ function TableBody({
     );
 
 
-    const content = children || (rows?.map((row: ReactElement[], index: number) => (
+    const content = children || (rows?.map((row: ReactNode[], index: number) => (
         <TableRow cells={row} key={index} />
     )));
 
