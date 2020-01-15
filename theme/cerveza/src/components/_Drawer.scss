@@ -2,14 +2,11 @@
 
 
 .brew-Drawer {
-
-    &__element {
-        position: fixed;
-        background-color: color(grey, 900);
-        color: color(grey, 50);
-        padding: 2rem 1rem;
-        z-index: 1;
-    }
+    position: fixed;
+    background-color: color(grey, 900);
+    color: color(grey, 50);
+    padding: 2rem 1rem;
+    z-index: 1;
 
     &__exit {
         position: absolute;

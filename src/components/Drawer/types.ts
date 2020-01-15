@@ -22,8 +22,20 @@ export interface Props {
     className?: string,
 
     /**
-     * Whether or not the drawers default state is open or closed
+     * Controlled prop to determine drawer open state
      */
     isOpen?: boolean,
+
+    /**
+     * Default open state drawer
+     */
+
+    isDefaultOpen?: boolean,
+
+    /**
+     * Function passed to handle closing the drawer in a controlled state
+     */
+
+    onCloseDrawer?: () => void,
 
 }

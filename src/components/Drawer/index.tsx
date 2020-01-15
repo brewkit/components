@@ -1,7 +1,10 @@
 import React, { ReactElement } from 'react';
+import { createPortal } from 'react-dom';
 import clsx from 'clsx';
 import { Flipped, Flipper } from 'react-flip-toolkit';
 import ClickAwayListener from '../../utilities/ClickAwayListener';
+import DrawerItem from './DrawerItem';
+import DrawerContext from './context';
 import { Props } from './types';
 
 
@@ -12,29 +15,25 @@ function Drawer({
     anchorFrom,
     children,
     className,
-    isOpen = false,
+    isOpen,
+    isDefaultOpen,
+    onCloseDrawer,
     ...otherProps
 }: Props): ReactElement {
 
 
-    const [open, setOpen] = React.useState(isOpen);
+    if (isDefaultOpen !== undefined &&
+        isOpen !== undefined) throw new Error('Do not use both isOpen and isDefaultOpen props');
 
 
-    React.useEffect(() => {
-        setOpen(isOpen);
-    }, [isOpen]);
-
-
-    const wrapperClasses = clsx(
-        'brew-Drawer',
-        className,
-    );
+    const [open, setOpen] = React.useState(isDefaultOpen);
 
 
     const drawerClasses = clsx(
-        'brew-Drawer__element',
+        'brew-Drawer',
         `brew-Drawer--anchorFrom-${anchorFrom}`,
-        { 'brew-Drawer--isOpen': open },
+        { 'brew-Drawer--isOpen': isOpen || open },
+        className,
     );
 
 
@@ -43,24 +42,28 @@ function Drawer({
     }
 
 
-    return (
-        <div className={wrapperClasses} {...otherProps}>
-            <Flipper flipKey={JSON.stringify([anchorFrom, open, className])}>
-                <ClickAwayListener onClickAway={closeDrawer}>
+    return createPortal(
+        (
+            <DrawerContext.Provider value={{ onCloseDrawer, setOpen }}>
+                <Flipper flipKey={JSON.stringify([anchorFrom, className, isOpen, open])}>
                     <Flipped flipId="wrapper">
-                        <div className={drawerClasses}>
-                            <span className="brew-Drawer__exit" onClick={closeDrawer}>&times;</span>
+                        <div className={drawerClasses} {...otherProps}>
+                            <span className="brew-Drawer__exit" onClick={onCloseDrawer || closeDrawer}>&times;</span>
                             <div className="brew-Drawer__content">{children}</div>
                         </div>
                     </Flipped>
-                </ClickAwayListener>
-                <div className="brew-Drawer__mask" />
-            </Flipper>
-        </div>
+                    <div className="brew-Drawer__mask" onClick={onCloseDrawer || closeDrawer} />
+                </Flipper>
+            </DrawerContext.Provider>
+        )
+        , document.body,
     );
 
 
 }
+
+
+Drawer.Item = DrawerItem;
 
 
 export default Drawer;
