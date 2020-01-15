@@ -27,3 +27,14 @@ export const General = (): ReactElement => {
 
 
 };
+
+
+export const MultipleChildren = (): ReactElement => (
+    // eslint-disable-next-line no-alert
+    <ClickAwayListener onClickAway={(): void => alert('clicked away!')}>
+        <React.Fragment>
+            <Button>Click away from me!</Button>
+            <Button>Click away from me!</Button>
+        </React.Fragment>
+    </ClickAwayListener>
+);
