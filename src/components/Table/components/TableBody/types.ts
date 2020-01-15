@@ -19,7 +19,7 @@ export interface Props {
     /**
      * The row data used to populate the TableBody
      */
-    rows?: ReactNode[],
+    rows?: ReactNode[][],
 
 
 }

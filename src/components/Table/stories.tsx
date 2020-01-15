@@ -1,10 +1,17 @@
 import React, { ReactElement, ReactNode } from 'react';
 import { object, text } from '@storybook/addon-knobs';
+import Label from '../Label';
 import { Props as ColumnProps } from './components/TableHeader/components/TableHeaderColumn/types';
 import Table from './index';
 
 
-export default { title: 'Components|Display/Table' };
+export default {
+    component: Table,
+    parameters: {
+        componentSubtitle: <Label color="warning">In Development</Label>,
+    },
+    title: 'Components|Display/Table',
+};
 
 
 export const General = (): ReactElement => {
@@ -25,7 +32,7 @@ export const General = (): ReactElement => {
     const className: string = text('className', 'churros');
     const children: ReactNode = text('children', '');
     const columns: ColumnProps[] = object('columns', colExample);
-    const rows: ReactNode[] = object('rows', rowExample);
+    const rows: ReactNode[][] = object('rows', rowExample);
 
 
     return (

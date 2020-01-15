@@ -38,6 +38,7 @@ function Table({
         </React.Fragment>
     );
 
+
     return (
         <TableElement className={classes} {...otherProps}>
             {content}
