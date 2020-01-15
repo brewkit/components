@@ -28,7 +28,7 @@
     }
 
     &__content {
-        .brew-NavItem {
+        .brew-Drawer__item {
             cursor: pointer;
         }
     }
@@ -69,7 +69,7 @@
             bottom: 0;
             right: 0;
             left: 0;
-            height: size(normal) * 18.75;
+            max-height: size(normal) * 18.75;
             transform: translateY(100%);
 
             .brew-Drawer__content {

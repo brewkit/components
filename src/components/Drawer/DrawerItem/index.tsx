@@ -18,7 +18,7 @@ function DrawerItem({
 
 
     const drawerItemClasses = clsx(
-        'brew-DrawerItem',
+        'brew-Drawer__item',
         className,
     );
 

@@ -29,13 +29,11 @@ export interface Props {
     /**
      * Default open state drawer
      */
-
     isDefaultOpen?: boolean,
 
     /**
      * Function passed to handle closing the drawer in a controlled state
      */
-
     onCloseDrawer?: () => void,
 
 }

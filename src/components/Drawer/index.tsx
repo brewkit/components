@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 import { createPortal } from 'react-dom';
 import clsx from 'clsx';
 import { Flipped, Flipper } from 'react-flip-toolkit';
-import ClickAwayListener from '../../utilities/ClickAwayListener';
 import DrawerItem from './DrawerItem';
 import DrawerContext from './context';
 import { Props } from './types';
@@ -38,6 +37,7 @@ function Drawer({
 
 
     function closeDrawer(): void {
+        if (onCloseDrawer !== undefined) onCloseDrawer();
         setOpen(false);
     }
 
@@ -48,11 +48,11 @@ function Drawer({
                 <Flipper flipKey={JSON.stringify([anchorFrom, className, isOpen, open])}>
                     <Flipped flipId="wrapper">
                         <div className={drawerClasses} {...otherProps}>
-                            <span className="brew-Drawer__exit" onClick={onCloseDrawer || closeDrawer}>&times;</span>
+                            <span className="brew-Drawer__exit" onClick={closeDrawer}>&times;</span>
                             <div className="brew-Drawer__content">{children}</div>
                         </div>
                     </Flipped>
-                    <div className="brew-Drawer__mask" onClick={onCloseDrawer || closeDrawer} />
+                    <div className="brew-Drawer__mask" onClick={closeDrawer} />
                 </Flipper>
             </DrawerContext.Provider>
         )
