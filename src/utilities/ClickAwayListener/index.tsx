@@ -11,16 +11,16 @@ function ClickAwayListener({
 }: Props): ReactElement {
 
 
-    const ref: RefObject<HTMLInputElement> = React.useRef(null);
+    const ref: RefObject<HTMLDivElement> = React.useRef(null);
 
 
     /**
      * Check to see if the click originated from a descendent of the wrapped content.
      */
     function handleClick(event: Event): void {
-        const target = ref?.current?.parentNode?.firstChild;
-        const isContained = target.contains(event.target as Node);
-        if (!isContained) onClickAway();
+        const targets = Array.from(ref?.current?.parentNode?.children);
+        const isContained = targets.some((target: Node) => target.contains(event.target as Node));
+        if (!isContained && onClickAway) onClickAway(event);
     }
 
 
