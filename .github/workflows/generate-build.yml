@@ -23,8 +23,6 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm ci
-        git checkout origin/build
-        git pull origin master
         npm run build
       env:
         CI: true
