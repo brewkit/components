@@ -28,7 +28,12 @@ jobs:
         npm run build
       env:
         CI: true
-    - name: Commit build files
+    - name: Clean build branch
+      uses: dawidd6/action-delete-branch@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branches: build
+    - name: Update build branch
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
