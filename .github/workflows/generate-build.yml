@@ -20,20 +20,21 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
+    - name: npm install and build
       run: |
         npm ci
         npm run build
       env:
         CI: true
-    - name: Update build branch
+    - name: Generate dist files
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add dist -f
-        git commit -m "Generated build files."
+        git commit -m "Generated dist files"
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: 'master'
         force: true
