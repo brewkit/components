@@ -1,0 +1,26 @@
+@import "../utilities";
+
+
+// ==============================================
+// General
+// ==============================================
+
+.brew-Collapsible {
+    position: relative;
+
+    &__content {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    &--open {
+
+        .brew-Collapsible__content {
+            opacity: 1;
+            transform: translateY(1rem);
+        }
+
+    }
+
+}
+

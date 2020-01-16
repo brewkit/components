@@ -7,7 +7,7 @@ import { Props } from './types';
 function InputIcon({
     className,
     color,
-    variant,
+    variant = 'text',
     ...otherProps
 }: Props): ReactElement {
 

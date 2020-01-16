@@ -29,7 +29,7 @@ function Dialog({
     title,
     variant = 'confirm',
     ...otherProps
-}: Props): ReactElement {
+}: Props): ReactElement | null {
 
 
     const classes = clsx(
