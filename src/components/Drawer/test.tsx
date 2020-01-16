@@ -43,14 +43,10 @@ describe('Drawer', () => {
         expect(drawer.find('.brew-Drawer').hasClass('brew-Drawer--anchorFrom-right')).toBe(true);
     });
 
-    it('Has \'brew-Drawer--isOpen\' class, when isOpen or isDefaultOpen prop is true', () => {
+    it('Has \'brew-Drawer--isOpen\' class, when isOpen prop is true', () => {
         const drawer = shallow(<Drawer anchorFrom="right" isOpen onCloseDrawer={(): true => true}>test</Drawer>);
-        const drawerDefault = shallow((
-            <Drawer anchorFrom="right" onCloseDrawer={(): true => true}>test</Drawer>
-        ));
 
         expect(drawer.find('.brew-Drawer').hasClass('brew-Drawer--isOpen')).toBe(true);
-        expect(drawerDefault.find('.brew-Drawer').hasClass('brew-Drawer--isOpen')).toBe(true);
     });
 
     it('Contains \'brew-Drawer__item\' class when Drawer.Item component is used', () => {
@@ -64,10 +60,5 @@ describe('Drawer', () => {
             .hasClass('brew-Drawer__item')).toBe(true);
     });
 
-    /*
-     * it('Throws error when both isOpen and isDefaultOpen are defined', () => {
-     *     const drawer = shallow()
-     * });
-     */
 
 });
