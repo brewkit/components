@@ -7,7 +7,7 @@ import { Props } from './types';
 
 function BannerIcon({
     className,
-    iconName,
+    iconName = '',
     isLoading,
     ...otherProps
 }: Props): ReactElement {
