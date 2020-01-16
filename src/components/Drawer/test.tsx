@@ -56,5 +56,10 @@ describe('Drawer', () => {
             .hasClass('brew-Drawer__item')).toBe(true);
     });
 
+    /*
+     * it('Throws error when both isOpen and isDefaultOpen are defined', () => {
+     *     const drawer = shallow()
+     * });
+     */
 
 });

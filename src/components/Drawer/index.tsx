@@ -20,12 +20,14 @@ function Drawer({
     ...otherProps
 }: Props): ReactElement {
 
+    console.log(typeof isOpen);
+
 
     if (isDefaultOpen !== undefined &&
         isOpen !== undefined) throw new Error('Do not use both isOpen and isDefaultOpen props');
 
 
-    const [open, setOpen] = React.useState(isDefaultOpen);
+    const [open, setOpen] = React.useState(isDefaultOpen || false);
 
 
     const drawerClasses = clsx(
@@ -38,13 +40,13 @@ function Drawer({
 
     function closeDrawer(): void {
         if (onCloseDrawer !== undefined) onCloseDrawer();
-        setOpen(false);
+        if (typeof isOpen === 'undefined') setOpen(false);
     }
 
 
     return createPortal(
         (
-            <DrawerContext.Provider value={{ onCloseDrawer, setOpen }}>
+            <DrawerContext.Provider value={{ setOpen }}>
                 <Flipper flipKey={JSON.stringify([anchorFrom, className, isOpen, open])}>
                     <Flipped flipId="wrapper">
                         <div className={drawerClasses} {...otherProps}>

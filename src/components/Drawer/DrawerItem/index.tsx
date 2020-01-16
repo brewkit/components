@@ -14,7 +14,7 @@ function DrawerItem({
 }: Props): ReactElement {
 
 
-    const { onCloseDrawer, setOpen } = React.useContext(DrawerContext);
+    const { setOpen } = React.useContext(DrawerContext);
 
 
     const drawerItemClasses = clsx(
@@ -24,7 +24,6 @@ function DrawerItem({
 
 
     function closeDrawer(): void {
-        if (onCloseDrawer !== undefined) onCloseDrawer(false);
         setOpen(false);
     }
 

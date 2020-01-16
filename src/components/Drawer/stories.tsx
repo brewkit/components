@@ -1,6 +1,5 @@
 import React, { ReactElement } from 'react';
-import { boolean, button, select } from '@storybook/addon-knobs';
-import Button from '../Button';
+import { button, select } from '@storybook/addon-knobs';
 import Drawer from './index';
 
 
