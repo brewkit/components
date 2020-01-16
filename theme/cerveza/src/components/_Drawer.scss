@@ -1,6 +1,23 @@
 @import "../utilities";
 
 
+// ==============================================
+// Helpers
+// ==============================================
+
+$size: size(normal) * 18.75;
+
+@mixin grid($flow, $template, $templateSetting) {
+    display: grid;
+    grid-auto-flow: $flow;
+    grid-auto-#{$template}: $templateSetting;
+    grid-gap: size(normal);
+}
+
+// ==============================================
+// General
+// ==============================================
+
 .brew-Drawer {
     position: fixed;
     background-color: color(grey, 900);
@@ -24,10 +41,11 @@
         right: 0;
         bottom: 0;
         background-color: color(grey, 900);
-        opacity: 0.75;
+        opacity: 0.7;
     }
 
     &__content {
+
         .brew-Drawer__item {
             cursor: pointer;
         }
@@ -39,14 +57,11 @@
             top: 0;
             right: 0;
             left: 0;
-            max-height: size(normal) * 18.75;
+            max-height: $size;
             transform: translateY(-100%);
 
             .brew-Drawer__content {
-                display: grid;
-                grid-auto-flow: column;
-                grid-auto-columns: max-content;
-                grid-gap: size(normal);
+                @include grid(column, columns, max-content);
             }
         }
 
@@ -54,14 +69,11 @@
             top: 0;
             right: 0;
             bottom: 0;
-            width: size(normal) * 18.75;
+            width: $size;
             transform: translateX(100%);
 
             .brew-Drawer__content {
-                display: grid;
-                grid-auto-flow: row;
-                grid-auto-rows: min-content;
-                grid-gap: size(normal);
+                @include grid(row, rows, min-content);
             }
         }
 
@@ -69,14 +81,11 @@
             bottom: 0;
             right: 0;
             left: 0;
-            max-height: size(normal) * 18.75;
+            max-height: $size;
             transform: translateY(100%);
 
             .brew-Drawer__content {
-                display: grid;
-                grid-auto-flow: column;
-                grid-auto-columns: max-content;
-                grid-gap: size(normal);
+                @include grid(column, columns, max-content);
             }
         }
 
@@ -84,14 +93,11 @@
             top: 0;
             bottom: 0;
             left: 0;
-            width: size(normal) * 18.75;
+            width: $size;
             transform: translateX(-100%);
 
             .brew-Drawer__content {
-                display: grid;
-                grid-auto-flow: row;
-                grid-auto-rows: min-content;
-                grid-gap: size(normal);
+                @include grid(row, rows, min-content);
             }
         }
     }

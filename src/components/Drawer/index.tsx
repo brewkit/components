@@ -20,8 +20,6 @@ function Drawer({
     ...otherProps
 }: Props): ReactElement {
 
-    console.log(typeof isOpen);
-
 
     if (isDefaultOpen !== undefined &&
         isOpen !== undefined) throw new Error('Do not use both isOpen and isDefaultOpen props');
