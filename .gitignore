@@ -34,4 +34,4 @@ coverage
 .build/jest/test-results.json
 
 # dist files (automatically handled in Github)
-./dist
+dist
