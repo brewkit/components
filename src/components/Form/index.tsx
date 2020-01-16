@@ -3,6 +3,7 @@ import { Props, FormComponent } from './types';
 import FormGroup from './components/FormGroup';
 import FormLabel from './components/FormLabel';
 import FormField from './components/FormField';
+import FormHelperText from './components/FormHelperText';
 
 
 const Form: FormComponent = ({
@@ -19,9 +20,10 @@ const Form: FormComponent = ({
 );
 
 
-Form.Group = FormGroup;
-Form.Label = FormLabel;
 Form.Field = FormField;
+Form.Group = FormGroup;
+Form.HelperText = FormHelperText;
+Form.Label = FormLabel;
 
 
 export default Form;

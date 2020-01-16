@@ -42,5 +42,9 @@ function Banner(_a) {
             description && (react_1["default"].createElement(BannerInfo_1["default"], null, description)))),
         children && (react_1["default"].createElement("div", { className: "brew-Banner__content" }, children))));
 }
+Banner.Body = BannerBody_1["default"];
 Banner.Button = BannerButton_1["default"];
+Banner.Icon = BannerIcon_1["default"];
+Banner.Info = BannerInfo_1["default"];
+Banner.Title = BannerTitle_1["default"];
 exports["default"] = Banner;

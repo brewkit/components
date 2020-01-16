@@ -54,7 +54,11 @@ function Banner({
 }
 
 
+Banner.Body = BannerBody;
 Banner.Button = BannerButton;
+Banner.Icon = BannerIcon;
+Banner.Info = BannerInfo;
+Banner.Title = BannerTitle;
 
 
 export default Banner;

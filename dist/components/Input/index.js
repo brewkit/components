@@ -28,9 +28,11 @@ exports.__esModule = true;
 var react_1 = __importDefault(require("react"));
 var Checkbox_1 = __importDefault(require("./components/Checkbox"));
 var Radio_1 = __importDefault(require("./components/Radio"));
+var RadioGroup_1 = __importDefault(require("./components/RadioGroup"));
 var TextInput_1 = __importDefault(require("./components/TextInput"));
 var Textarea_1 = __importDefault(require("./components/Textarea"));
 var Select_1 = __importDefault(require("./components/Select"));
+var Switch_1 = __importDefault(require("./components/Switch"));
 var InputIcon_1 = __importDefault(require("./components/InputIcon"));
 function Input(_a) {
     var _b = _a.variant, variant = _b === void 0 ? 'text' : _b, otherProps = __rest(_a, ["variant"]);
@@ -44,5 +46,12 @@ function Input(_a) {
     var Element = components[variant] || TextInput_1["default"];
     return react_1["default"].createElement(Element, __assign({}, otherProps));
 }
+Input.Checkbox = Checkbox_1["default"];
 Input.Icon = InputIcon_1["default"];
+Input.Radio = Radio_1["default"];
+Input.RadioGroup = RadioGroup_1["default"];
+Input.Select = Select_1["default"];
+Input.Switch = Switch_1["default"];
+Input.Textarea = Textarea_1["default"];
+Input.TextInput = TextInput_1["default"];
 exports["default"] = Input;
