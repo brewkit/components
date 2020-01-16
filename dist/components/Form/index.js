@@ -29,11 +29,13 @@ var react_1 = __importDefault(require("react"));
 var FormGroup_1 = __importDefault(require("./components/FormGroup"));
 var FormLabel_1 = __importDefault(require("./components/FormLabel"));
 var FormField_1 = __importDefault(require("./components/FormField"));
+var FormHelperText_1 = __importDefault(require("./components/FormHelperText"));
 var Form = function (_a) {
     var children = _a.children, otherProps = __rest(_a, ["children"]);
     return (react_1["default"].createElement("form", __assign({}, otherProps), children));
 };
-Form.Group = FormGroup_1["default"];
-Form.Label = FormLabel_1["default"];
 Form.Field = FormField_1["default"];
+Form.Group = FormGroup_1["default"];
+Form.HelperText = FormHelperText_1["default"];
+Form.Label = FormLabel_1["default"];
 exports["default"] = Form;

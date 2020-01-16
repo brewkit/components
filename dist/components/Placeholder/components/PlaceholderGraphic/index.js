@@ -10,7 +10,7 @@ var clsx_1 = __importDefault(require("clsx"));
 function PlaceholderGraphic(_a) {
     var className = _a.className, graphic = _a.graphic;
     var placeholderClasses = clsx_1["default"]('brew-Placeholder__graphic', className);
-    return (react_1["default"].createElement(Typography_1["default"], { className: placeholderClasses, as: "p", variant: "body1" },
+    return (react_1["default"].createElement(Typography_1["default"], { as: "p", className: placeholderClasses, variant: "body1" },
         react_1["default"].createElement(Icon_1["default"], { children: graphic })));
 }
 exports["default"] = PlaceholderGraphic;

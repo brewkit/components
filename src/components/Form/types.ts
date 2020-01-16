@@ -10,5 +10,6 @@ export interface FormComponent {
     Group?: any,
     Label?: any,
     Field?: any,
+    HelperText?: any,
     (props: Props): ReactElement,
 }
