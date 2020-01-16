@@ -14,7 +14,7 @@ function DrawerItem({
 }: Props): ReactElement {
 
 
-    const { setOpen } = React.useContext(DrawerContext);
+    const { onCloseDrawer } = React.useContext(DrawerContext);
 
 
     const drawerItemClasses = clsx(
@@ -23,13 +23,8 @@ function DrawerItem({
     );
 
 
-    function closeDrawer(): void {
-        setOpen(false);
-    }
-
-
     return (
-        <div className={drawerItemClasses} onClick={closeDrawer} {...otherProps}>
+        <div className={drawerItemClasses} onClick={onCloseDrawer} {...otherProps}>
             {children}
         </div>
     );
