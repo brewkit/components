@@ -34,6 +34,6 @@ export interface Props {
     /**
      * Function passed to handle closing the drawer in a controlled state
      */
-    onCloseDrawer?: () => void,
+    onCloseDrawer: () => void,
 
 }

@@ -14,51 +14,34 @@ function Drawer({
     anchorFrom,
     children,
     className,
-    isOpen,
-    isDefaultOpen,
+    isOpen = false,
     onCloseDrawer,
     ...otherProps
 }: Props): ReactElement {
-
-    console.log(typeof isOpen);
-
-
-    if (isDefaultOpen !== undefined &&
-        isOpen !== undefined) throw new Error('Do not use both isOpen and isDefaultOpen props');
-
-
-    const [open, setOpen] = React.useState(isDefaultOpen || false);
 
 
     const drawerClasses = clsx(
         'brew-Drawer',
         `brew-Drawer--anchorFrom-${anchorFrom}`,
-        { 'brew-Drawer--isOpen': isOpen || open },
+        { 'brew-Drawer--isOpen': isOpen },
         className,
     );
 
 
-    function closeDrawer(): void {
-        if (onCloseDrawer !== undefined) onCloseDrawer();
-        if (typeof isOpen === 'undefined') setOpen(false);
-    }
-
-
     return createPortal(
         (
-            <DrawerContext.Provider value={{ setOpen }}>
+            <DrawerContext.Provider value={{ onCloseDrawer }}>
                 <Flipper flipKey={JSON.stringify([anchorFrom, className, isOpen, open])}>
                     <Flipped flipId="wrapper">
                         <div className={drawerClasses} {...otherProps}>
-                            <span className="brew-Drawer__exit" onClick={closeDrawer}>&times;</span>
+                            <span className="brew-Drawer__exit" onClick={onCloseDrawer}>&times;</span>
                             <div className="brew-Drawer__content">{children}</div>
                         </div>
                     </Flipped>
-                    <div className="brew-Drawer__mask" onClick={closeDrawer} />
+                    <div className="brew-Drawer__mask" onClick={onCloseDrawer} />
                 </Flipper>
             </DrawerContext.Provider>
-        )
-        , document.body,
+        ), document.body,
     );
 
 
