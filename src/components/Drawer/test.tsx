@@ -41,10 +41,19 @@ describe('Drawer', () => {
         expect(drawer.find('.brew-Drawer').hasClass('brew-Drawer--anchorFrom-right')).toBe(true);
     });
 
-    it('Has \'brew-Drawer--isOpen\' class, when isOpen prop is true', () => {
+    it('Has \'brew-Drawer--isOpen\' class, when isOpen or isDefaultOpen prop is true', () => {
         const drawer = shallow(<Drawer anchorFrom="right" isOpen>test</Drawer>);
+        const drawerDefault = shallow(<Drawer anchorFrom="right" isDefaultOpen>test</Drawer>);
 
         expect(drawer.find('.brew-Drawer').hasClass('brew-Drawer--isOpen')).toBe(true);
+        expect(drawerDefault.find('.brew-Drawer').hasClass('brew-Drawer--isOpen')).toBe(true);
+    });
+
+    it('Contains \'brew-Drawer__item\' class when Drawer.Item component is used', () => {
+        const drawer = mount(<Drawer anchorFrom="right" isOpen><Drawer.Item>Clickable</Drawer.Item></Drawer>);
+
+        expect(drawer.find(Drawer.Item).childAt(0)
+            .hasClass('brew-Drawer__item')).toBe(true);
     });
 
 
