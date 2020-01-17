@@ -1,9 +1,11 @@
 import React, { ReactElement } from 'react';
 import Checkbox from './components/Checkbox';
 import Radio from './components/Radio';
+import RadioGroup from './components/RadioGroup';
 import TextInput from './components/TextInput';
 import Textarea from './components/Textarea';
 import Select from './components/Select';
+import Switch from './components/Switch';
 import InputIcon from './components/InputIcon';
 import { Props } from './types';
 
@@ -31,7 +33,14 @@ function Input({
 }
 
 
+Input.Checkbox = Checkbox;
 Input.Icon = InputIcon;
+Input.Radio = Radio;
+Input.RadioGroup = RadioGroup;
+Input.Select = Select;
+Input.Switch = Switch;
+Input.Textarea = Textarea;
+Input.TextInput = TextInput;
 
 
 export default Input;

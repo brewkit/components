@@ -32,3 +32,6 @@ coverage
 
 # jest temp test results
 .build/jest/test-results.json
+
+# dist files (automatically handled in Github)
+dist
