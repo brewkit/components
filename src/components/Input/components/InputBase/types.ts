@@ -86,7 +86,7 @@ export interface Props {
     /**
      * Whether or not the `select` input accepts multiple values
      */
-    multiple?: boolean,
+    isMultiple?: boolean,
 
     /**
      * The `input` element name
