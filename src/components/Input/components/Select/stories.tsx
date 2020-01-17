@@ -1,6 +1,5 @@
 import React, { ReactElement } from 'react';
 import Select from './index';
-// import { boolean, text } from '@storybook/addon-knobs';
 
 
 export default {
@@ -24,7 +23,7 @@ export const Default = (): ReactElement => (
 
 export const Overflow = (): ReactElement => (
 
-    
+
     <Select value="option 2">
         <option value="1">option 1</option>
         <option value="2">option 2</option>
