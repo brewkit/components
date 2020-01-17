@@ -2,6 +2,7 @@ import React, { ReactElement, ReactNode } from 'react';
 import clsx from 'clsx';
 import Icon from '../../../../../Icon';
 
+
 /*
  * our default custom control is a bit of a doozy here.  But that's what
  * we get for recreating select2 for react™©®
@@ -12,9 +13,11 @@ const DefaultCustomControl = ({
     onSelectOption,
 }: {
     text: string,
-    inputChildren: ReactNode,
-    onSelectOption: (string) => any,
+    inputChildren: any,
+    onSelectOption: (value: string) => any,
 }): ReactElement => {
+
+
     const [isDropDownVisible, setIsDropdownVisible] = React.useState(false);
     const classes = clsx(
         'brew-CustomControl',
@@ -60,6 +63,8 @@ const DefaultCustomControl = ({
         </div>
     );
 
+
 };
+
 
 export default DefaultCustomControl;

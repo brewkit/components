@@ -4,7 +4,9 @@ import Select from './index';
 import InputBase from '../InputBase';
 import { shallow, mount } from 'enzyme';
 
+
 describe('Select', () => {
+
     
     it('renders correctly', () => {
         const tree = renderer
@@ -45,4 +47,7 @@ describe('Select', () => {
         select.find('select').simulate('change');
         expect(onChangeMock).toHaveBeenCalled();
     });
+
+
 });
+

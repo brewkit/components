@@ -1,12 +1,19 @@
 /* eslint-disable max-statements */
 
-import React, { ReactElement } from 'react';
+import React, { ReactElement, ReactNode, ReactChild } from 'react';
 import clsx from 'clsx';
 import InputBase from '../InputBase';
 import { Props } from '../InputBase/types';
 import DefaultCustomControl from './components/DefaultCustomControl';
 
+
+/**
+ * The select component is the brewkit implementation of the HTML select, with a few
+ * extra features.
+ */
 const Select = (props: Props): ReactElement => {
+
+
     const {
         className,
         children,
@@ -17,7 +24,7 @@ const Select = (props: Props): ReactElement => {
     } = props;
 
     if (
-        !React.Children.toArray(children).every((child: ReactElement) => child.type === 'option')
+        !React.Children.toArray(children).every((child: any) => child?.type === 'option')
     ) throw new Error('All children of a select element must be options');
 
     // Since we need to set the value of the select input, we can't allow it to be uncontrolled
@@ -37,11 +44,12 @@ const Select = (props: Props): ReactElement => {
             .toArray(children)
             .reduce((
                 curr: string,
-                option: ReactElement,
+                option: any,
                 index: number,
-                arr: ReactElement[],
+                arr: any[],
             ) => { // eslint-disable-line max-params
-                const { value: optionValue, children: optionChildren } = option.props;
+
+                const { value: optionValue, children: optionChildren } = option?.props || {};
                 if (optionValue === value ||
                 (!optionValue && optionValue !== '' && optionChildren === value)) return optionChildren;
                 if (!curr && index === arr.length - 1) return arr[0].props.children;
@@ -72,7 +80,12 @@ const Select = (props: Props): ReactElement => {
         <InputBase
             as="select"
             className={classes}
-            customControl={<DefaultCustomControl inputChildren={children} onSelectOption={handleOptionClick} text={text} />}
+            customControl={(
+                <DefaultCustomControl
+                    inputChildren={children}
+                    onSelectOption={handleOptionClick}
+                    text={text}
+                />)}
             onChange={onChange}
             value={value}
             {...otherProps}
@@ -80,6 +93,7 @@ const Select = (props: Props): ReactElement => {
             {children}
         </InputBase>
     );
+
 
 };
 
