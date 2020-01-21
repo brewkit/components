@@ -3,13 +3,17 @@ import clsx from 'clsx';
 import { Props } from './types';
 
 
+import TableCell from '../TableCell';
+
+
 /**
  * The `<TableRow />` component
  */
 function TableRow({
     className,
     children,
-    cells,
+    columnConfig,
+    rowData,
     ...otherProps
 }: Props): ReactElement {
 
@@ -20,16 +24,20 @@ function TableRow({
     );
 
 
-    const data = children || (cells?.map((cell: ReactNode, index: number) => (
-        <td key={index}>
-            {cell}
-        </td>
-    )));
+    const content = children || (columnConfig?.map((col, index) => {
+        if (rowData && col.name && rowData[col.name]) {
+            return (
+                <TableCell className={`brew-TableCell--column-${col.name}`} key={index}>
+                    {rowData[col.name]}
+                </TableCell>
+            );
+        }
+    }));
 
-
+    
     return (
         <tr className={classes} {...otherProps}>
-            {data}
+            {content}
         </tr>
     );
 

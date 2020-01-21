@@ -8,7 +8,7 @@ import Typography from '../../../Typography';
 describe('Table Row', () => {
 
 
-    it('Renders correctly', () => {
+    it('Renders correctly with children', () => {
         const content = renderer
             .create((
                 <TableRow>
@@ -40,14 +40,23 @@ describe('Table Row', () => {
 
 });
 
-describe('Table Header Props', () => {
+describe('Table Row Props', () => {
 
 
-    it('Renders "columns" prop correctly', () => {
+    it('Renders `columnConfig` and `rowData` props correctly', () => {
         const content = renderer
             .create((
                 <TableRow
-                    cells={['ColumnA', 'ColumnB', 'ColumnC']}
+                    columnConfig={[
+                        { name: 'ColA' },
+                        { name: 'ColB' },
+                        { name: 'ColC' },
+                    ]}
+                    rowData={{
+                        ColA: 'ColumnA',
+                        ColB: 'ColumnB',
+                        ColC: 'ColumnC',
+                    }}
                 />
             ))
             .toJSON();
@@ -56,17 +65,22 @@ describe('Table Header Props', () => {
 
         expect(shallow((
             <TableRow
-                cells={[
-                    <Typography key="colA" variant="body1">ColumnA</Typography>,
-                    <Typography key="colB" variant="body1">ColumnB</Typography>,
-                    <Typography key="colC" variant="body1">ColumnC</Typography>,
+                columnConfig={[
+                    { name: 'ColD' },
+                    { name: 'ColE' },
+                    { name: 'ColF' },
                 ]}
+                rowData={{
+                    ColD: <Typography variant="body1">ColumnD</Typography>,
+                    ColE: <Typography variant="body1">ColumnE</Typography>,
+                    ColF: <Typography variant="body1">ColumnF</Typography>,                    
+                }}
             />
         ))
             .find(Typography)
             .find('[variant="body1"]')
             .children()
-            .contains('ColumnB')).toBe(true);
+            .contains('ColumnE')).toBe(true);
     });
 
 

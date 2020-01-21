@@ -1,22 +1,20 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
-import Table from '../../index';
 import TableHeader from './index';
-import TableHeaderColumn from './components/TableHeaderColumn';
 import Typography from '../../../Typography';
 
 
 describe('Table Header', () => {
 
 
-    it('Renders correctly', () => {
+    it('Renders correctly with children', () => {
         const header = renderer
             .create((
                 <TableHeader>
-                    <TableHeaderColumn>Column1</TableHeaderColumn>
-                    <TableHeaderColumn>Column2</TableHeaderColumn>
-                    <TableHeaderColumn>Column3</TableHeaderColumn>
+                    <th>Column1</th>
+                    <th>Column2</th>
+                    <th>Column3</th>
                 </TableHeader>
             )).toJSON();
 
@@ -27,19 +25,13 @@ describe('Table Header', () => {
     it('Includes custom className', () => {
         const className = `class-${String(Math.floor(Math.random() * 1000))}`;
         const content = shallow((
-            <Table>
+            <table>
                 <TableHeader className={className}>
-                    <TableHeaderColumn>
-                        Column4
-                    </TableHeaderColumn>
-                    <TableHeaderColumn>
-                        Column5
-                    </TableHeaderColumn>
-                    <TableHeaderColumn>
-                        Column6
-                    </TableHeaderColumn>
+                    <th>Column4</th>
+                    <th>Column5</th>
+                    <th>Column6</th>
                 </TableHeader>
-            </Table>
+            </table>
         ));
 
         expect(content.children().first()
@@ -58,14 +50,14 @@ describe('Table Header', () => {
 describe('Table Header Props', () => {
 
 
-    it('Renders "columns" prop correctly', () => {
+    it('Renders `columnConfig`  prop correctly', () => {
         const header = renderer
             .create((
                 <TableHeader
-                    columns={[
-                        { label: 'ColumnA' },
-                        { label: 'ColumnB' },
-                        { label: 'ColumnC' },
+                    columnConfig={[
+                        { label: 'ColumnA', name: 'ColA' },
+                        { label: 'ColumnB', name: 'ColB' },
+                        { label: 'ColumnC', name: 'ColC' },
                     ]}
                 />
             ))
@@ -74,20 +66,20 @@ describe('Table Header Props', () => {
         expect(header).toMatchSnapshot();
 
         expect(mount((
-            <Table>
+            <table>
                 <TableHeader
-                    columns={[
-                        { label: <Typography variant="h3">ColumnA</Typography> },
-                        { label: <Typography variant="h3">ColumnB</Typography> },
-                        { label: <Typography variant="h3">ColumnC</Typography> },
+                    columnConfig={[
+                        { label: <Typography variant="h3">ColumnD</Typography>, name: 'ColD' },
+                        { label: <Typography variant="h3">ColumnE</Typography>, name: 'ColE' },
+                        { label: <Typography variant="h3">ColumnF</Typography>, name: 'ColF' },
                     ]}
                 />
-            </Table>
+            </table>
         ))
             .find(Typography)
             .find('[variant="h3"]')
             .children()
-            .contains('ColumnB')).toBe(true);
+            .contains('ColumnF')).toBe(true);
     });
 
 });

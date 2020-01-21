@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Table Header Props Renders "columns" prop correctly 1`] = `
+exports[`Table Header Props Renders \`columnConfig\`  prop correctly 1`] = `
 <thead
   className="brew-TableHeader"
 >
@@ -8,17 +8,17 @@ exports[`Table Header Props Renders "columns" prop correctly 1`] = `
     className="brew-TableRow"
   >
     <th
-      className="brew-TableHeaderColumn"
+      className="brew-TableCell brew-TableHeaderColumn brew-TableHeaderColumn--ColA"
     >
       ColumnA
     </th>
     <th
-      className="brew-TableHeaderColumn"
+      className="brew-TableCell brew-TableHeaderColumn brew-TableHeaderColumn--ColB"
     >
       ColumnB
     </th>
     <th
-      className="brew-TableHeaderColumn"
+      className="brew-TableCell brew-TableHeaderColumn brew-TableHeaderColumn--ColC"
     >
       ColumnC
     </th>
@@ -26,26 +26,20 @@ exports[`Table Header Props Renders "columns" prop correctly 1`] = `
 </thead>
 `;
 
-exports[`Table Header Renders correctly 1`] = `
+exports[`Table Header Renders correctly with children 1`] = `
 <thead
   className="brew-TableHeader"
 >
   <tr
     className="brew-TableRow"
   >
-    <th
-      className="brew-TableHeaderColumn"
-    >
+    <th>
       Column1
     </th>
-    <th
-      className="brew-TableHeaderColumn"
-    >
+    <th>
       Column2
     </th>
-    <th
-      className="brew-TableHeaderColumn"
-    >
+    <th>
       Column3
     </th>
   </tr>

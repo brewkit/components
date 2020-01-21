@@ -1,9 +1,11 @@
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import TableHeaderColumn from './components/TableHeaderColumn';
-import { Props as ColumnProps } from './components/TableHeaderColumn/types';
-import TableRow from '../TableRow';
+import { Props as ColProps } from './components/TableHeaderColumn/types';
 import { Props } from './types';
+
+
+import TableRow from '../TableRow';
 
 
 /**
@@ -12,7 +14,7 @@ import { Props } from './types';
 function TableHeader({
     children,
     className,
-    columns,
+    columnConfig,
     ...otherProps
 }: Props): ReactElement {
 
@@ -23,7 +25,7 @@ function TableHeader({
     );
 
 
-    const content = children || (columns?.map((colData: ColumnProps, index: number) => (
+    const content = children || (columnConfig?.map((colData: ColProps, index: number) => (
         <TableHeaderColumn key={index} {...colData} />
     )));
 

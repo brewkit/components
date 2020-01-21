@@ -1,46 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Table Body Props Renders "rows" prop correctly 1`] = `
+exports[`Table Body Props Renders \`columnConfig\` and \`rowData\` props correctly 1`] = `
 <tbody
   className="brew-TableBody"
 >
   <tr
     className="brew-TableRow"
   >
-    <td>
-      row1-col1
+    <td
+      className="brew-TableCell brew-TableCell--column-ColA"
+    >
+      Row1-ColA
     </td>
-    <td>
-      row1-col2
+    <td
+      className="brew-TableCell brew-TableCell--column-ColB"
+    >
+      Row1-ColB
     </td>
-    <td>
-      row1-col3
-    </td>
-  </tr>
-  <tr
-    className="brew-TableRow"
-  >
-    <td>
-      row2-col1
-    </td>
-    <td>
-      row2-col2
-    </td>
-    <td>
-      row2-col3
+    <td
+      className="brew-TableCell brew-TableCell--column-ColC"
+    >
+      Row1-ColC
     </td>
   </tr>
   <tr
     className="brew-TableRow"
   >
-    <td>
-      row3-col1
+    <td
+      className="brew-TableCell brew-TableCell--column-ColA"
+    >
+      Row2-ColA
     </td>
-    <td>
-      row3-col2
+    <td
+      className="brew-TableCell brew-TableCell--column-ColB"
+    >
+      Row2-ColB
     </td>
-    <td>
-      row3-col3
+    <td
+      className="brew-TableCell brew-TableCell--column-ColC"
+    >
+      Row2-ColC
+    </td>
+  </tr>
+  <tr
+    className="brew-TableRow"
+  >
+    <td
+      className="brew-TableCell brew-TableCell--column-ColA"
+    >
+      Row3-ColA
+    </td>
+    <td
+      className="brew-TableCell brew-TableCell--column-ColB"
+    >
+      Row3-ColB
+    </td>
+    <td
+      className="brew-TableCell brew-TableCell--column-ColC"
+    >
+      Row3-ColC
     </td>
   </tr>
 </tbody>
@@ -50,9 +68,7 @@ exports[`Table Body Renders correctly 1`] = `
 <tbody
   className="brew-TableBody"
 >
-  <tr
-    className="brew-TableRow"
-  >
+  <tr>
     <td>
       Row1-Col1
     </td>
@@ -63,9 +79,7 @@ exports[`Table Body Renders correctly 1`] = `
       Row1-Col3
     </td>
   </tr>
-  <tr
-    className="brew-TableRow"
-  >
+  <tr>
     <td>
       Row2-Col1
     </td>

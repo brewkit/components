@@ -22,4 +22,10 @@ export interface Props {
     label?: ReactNode,
 
 
+    /**
+     * The name of the TableHeaderColumn
+     */
+    name?: string,
+
+
 }

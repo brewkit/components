@@ -1,4 +1,6 @@
 import { ReactNode } from 'react';
+import { Props as ColumnProps } from '../TableHeader/components/TableHeaderColumn/types';
+import { RowData } from '../TableRow/types';
 
 
 export interface Props {
@@ -17,9 +19,15 @@ export interface Props {
 
 
     /**
+     * The configuration that defines the columns in the TableBody
+     */
+    columnConfig?: ColumnProps[],
+
+
+    /**
      * The row data used to populate the TableBody
      */
-    rows?: ReactNode[][],
+    rows?: RowData[],
 
 
 }

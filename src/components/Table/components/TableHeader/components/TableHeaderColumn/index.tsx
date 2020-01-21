@@ -3,6 +3,9 @@ import clsx from 'clsx';
 import { Props } from './types';
 
 
+import TableCell from '../../../TableCell';
+
+
 /**
  * The `<TableHeaderColumn />` component represents a single column in the `<TableHeader />`.
  */
@@ -10,12 +13,14 @@ function TableHeaderColumn({
     children,
     className,
     label,
+    name,
     ...otherProps
 }: Props): ReactElement {
 
 
     const classes = clsx(
         'brew-TableHeaderColumn',
+        { [`brew-TableHeaderColumn--${name}`]: Boolean(name) },
         className,
     );
 
@@ -24,9 +29,9 @@ function TableHeaderColumn({
 
 
     return (
-        <th className={classes} {...otherProps}>
+        <TableCell as="th" className={classes} {...otherProps}>
             {content}
-        </th>
+        </TableCell>
     );
 
 

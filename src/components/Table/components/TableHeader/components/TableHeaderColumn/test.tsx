@@ -8,9 +8,16 @@ import Typography from '../../../../../Typography';
 describe('Table Header Column', () => {
 
 
-    it('Renders correctly', () => {
+    it('Renders correctly with text children', () => {
         const header = renderer
             .create(<TableHeaderColumn>Label</TableHeaderColumn>)
+            .toJSON();
+        expect(header).toMatchSnapshot();
+    });
+
+    it('Renders correctly with component children', () => {
+        const header = renderer
+            .create(<TableHeaderColumn><Typography variant="h3">Label</Typography></TableHeaderColumn>)
             .toJSON();
         expect(header).toMatchSnapshot();
     });
@@ -26,10 +33,11 @@ describe('Table Header Column', () => {
 
 });
 
+
 describe('Table Header Column Props', () => {
 
 
-    it('Renders correctly with text in "label" prop', () => {
+    it('Renders correctly with text in `label` prop', () => {
         const header = renderer
             .create(<TableHeaderColumn label="Label1" />)
             .toJSON();
@@ -37,7 +45,7 @@ describe('Table Header Column Props', () => {
     });
 
 
-    it('Renders correctly with ReactNode in "label" prop', () => {
+    it('Renders correctly with ReactNode in `label` prop', () => {
         const header = renderer
             .create(<TableHeaderColumn label={<Typography variant="h3">Label2</Typography>} />)
             .toJSON();
@@ -49,6 +57,16 @@ describe('Table Header Column Props', () => {
             .find('[variant="h3"]')
             .children()
             .contains('Label2')).toBe(true);
+    });
+
+
+    it('Renders correctly with class derived from  `name` prop', () => {
+        const header = renderer
+            .create(<TableHeaderColumn label="Label3" name="Col3" />)
+            .toJSON();
+
+        expect(shallow(<TableHeaderColumn label="Label3" name="Col3" />)
+            .hasClass('brew-TableHeaderColumn--Col3')).toBe(true);
     });
 
 

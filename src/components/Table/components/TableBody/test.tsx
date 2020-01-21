@@ -1,9 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
-import Table from '../../index';
 import TableBody from './index';
-import TableRow from '../TableRow';
 import Typography from '../../../Typography';
 
 
@@ -14,12 +12,12 @@ describe('Table Body', () => {
         const content = renderer
             .create((
                 <TableBody>
-                    <TableRow>
+                    <tr>
                         <td>Row1-Col1</td><td>Row1-Col2</td><td>Row1-Col3</td>
-                    </TableRow>
-                    <TableRow>
+                    </tr>
+                    <tr>
                         <td>Row2-Col1</td><td>Row2-Col2</td><td>Row2-Col3</td>
-                    </TableRow>
+                    </tr>
                 </TableBody>
             ))
             .toJSON();
@@ -31,17 +29,17 @@ describe('Table Body', () => {
     it('Includes custom className', () => {
         const className = `class-${String(Math.floor(Math.random() * 1000))}`;
         const content = shallow((
-            <Table>
+            <table>
                 <TableBody className={className}>
-                    <TableRow>
+                    <tr>
                         <td>Row1-Col1</td><td>Row1-Col2</td><td>Row1-Col3</td>
 
-                    </TableRow>
-                    <TableRow>
+                    </tr>
+                    <tr>
                         <td>Row2-Col1</td><td>Row2-Col2</td><td>Row2-Col3</td>
-                    </TableRow>
+                    </tr>
                 </TableBody>
-            </Table>
+            </table>
         ));
 
         expect(content.children().first()
@@ -61,48 +59,70 @@ describe('Table Body', () => {
 describe('Table Body Props', () => {
 
 
-    it('Renders "rows" prop correctly', () => {
+    it('Renders `columnConfig` and `rowData` props correctly', () => {
         const content = renderer
             .create((
                 <TableBody
+                    columnConfig={[
+                        { name: 'ColA' },
+                        { name: 'ColB' },
+                        { name: 'ColC' },
+                    ]}
                     rows={[
-                        ['row1-col1', 'row1-col2', 'row1-col3'],
-                        ['row2-col1', 'row2-col2', 'row2-col3'],
-                        ['row3-col1', 'row3-col2', 'row3-col3'],
+                        {
+                            ColA: 'Row1-ColA',
+                            ColB: 'Row1-ColB',
+                            ColC: 'Row1-ColC',
+                        },
+                        {
+                            ColA: 'Row2-ColA',
+                            ColB: 'Row2-ColB',
+                            ColC: 'Row2-ColC',
+                        },
+                        {
+                            ColA: 'Row3-ColA',
+                            ColB: 'Row3-ColB',
+                            ColC: 'Row3-ColC',
+                        }
                     ]}
                 />
             ))
             .toJSON();
 
-        expect(content).toMatchSnapshot();
+        expect(content).toMatchSnapshot()
 
         expect(mount((
-            <Table>
+            <table>
                 <TableBody
+                    columnConfig={[
+                        { name: 'ColD' },
+                        { name: 'ColE' },
+                        { name: 'ColF' },
+                    ]}
                     rows={[
-                        [
-                            <Typography key="row1-col1" variant="body2">Row1-Col1</Typography>,
-                            <Typography key="row1-col2" variant="body2">Row1-Col2</Typography>,
-                            <Typography key="row1-col3" variant="body2">Row1-Col3</Typography>,
-                        ],
-                        [
-                            <Typography key="row2-col1" variant="body2">Row2-Col1</Typography>,
-                            <Typography key="row2-col2" variant="body2">Row2-Col2</Typography>,
-                            <Typography key="row2-col3" variant="body2">Row2-Col3</Typography>,
-                        ],
-                        [
-                            <Typography key="row3-col1" variant="body2">Row3-Col1</Typography>,
-                            <Typography key="row3-col2" variant="body2">Row3-Col2</Typography>,
-                            <Typography key="row3-col3" variant="body2">Row3-Col3</Typography>,
-                        ],
+                        {
+                            ColD: <Typography variant="body1">Row1-ColD</Typography>,
+                            ColE: <Typography variant="body1">Row1-ColE</Typography>,
+                            ColF: <Typography variant="body1">Row1-ColF</Typography>,                    
+                        },
+                        {
+                            ColD: <Typography variant="body1">Row2-ColD</Typography>,
+                            ColE: <Typography variant="body1">Row2-ColE</Typography>,
+                            ColF: <Typography variant="body1">Row2-ColF</Typography>,                    
+                        },
+                        {
+                            ColD: <Typography variant="body1">Row3-ColD</Typography>,
+                            ColE: <Typography variant="body1">Row3-ColE</Typography>,
+                            ColF: <Typography variant="body1">Row3-ColF</Typography>,                    
+                        }
                     ]}
                 />
-            </Table>
+            </table>
         ))
             .find(Typography)
-            .find('[variant="body2"]')
+            .find('[variant="body1"]')
             .children()
-            .contains('Row1-Col3')).toBe(true);
+            .contains('Row2-ColE')).toBe(true);
     });
 
 

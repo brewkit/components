@@ -1,22 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Table Header Props Renders "columns" prop correctly 1`] = `
+exports[`Table Row Props Renders \`columnConfig\` and \`rowData\` props correctly 1`] = `
 <tr
   className="brew-TableRow"
 >
-  <td>
+  <td
+    className="brew-TableCell brew-TableCell--column-ColA"
+  >
     ColumnA
   </td>
-  <td>
+  <td
+    className="brew-TableCell brew-TableCell--column-ColB"
+  >
     ColumnB
   </td>
-  <td>
+  <td
+    className="brew-TableCell brew-TableCell--column-ColC"
+  >
     ColumnC
   </td>
 </tr>
 `;
 
-exports[`Table Row Renders correctly 1`] = `
+exports[`Table Row Renders correctly with children 1`] = `
 <tr
   className="brew-TableRow"
 >

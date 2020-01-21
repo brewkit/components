@@ -1,6 +1,9 @@
 import React, { ReactElement, ReactNode } from 'react';
 import clsx from 'clsx';
+import { RowData } from '../TableRow/types';
 import { Props } from './types';
+
+
 import TableRow from '../TableRow';
 
 
@@ -10,6 +13,7 @@ import TableRow from '../TableRow';
 function TableBody({
     className,
     children,
+    columnConfig,
     rows,
     ...otherProps
 }: Props): ReactElement {
@@ -21,8 +25,8 @@ function TableBody({
     );
 
 
-    const content = children || (rows?.map((row: ReactNode[], index: number) => (
-        <TableRow cells={row} key={index} />
+    const content = children || (rows?.map((rowData: RowData, index: number) => (
+        <TableRow columnConfig={columnConfig} key={index} rowData={rowData} />
     )));
 
 

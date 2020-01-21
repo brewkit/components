@@ -1,0 +1,71 @@
+@import "../utilities";
+
+
+// ==============================================
+// Table
+// ==============================================
+
+.brew-Table {
+    border-collapse: collapse;
+    overflow: hidden;
+    width: 100%;
+}
+
+
+// ==============================================
+// Table.Body
+// ==============================================
+
+// .brew-TableBody {}
+
+// ==============================================
+// Table.Cell
+// ==============================================
+
+.brew-TableCell {
+    color: color(gray, mid);
+    font-size: size(small);
+    font-weight: weight(normal);
+    padding: size(normal);
+}
+
+// ==============================================
+// Table.Header
+// ==============================================
+
+.brew-TableHeader {
+    @extend %height-1;
+    background-color: color(gray, lighter);
+}
+
+
+// ==============================================
+// Table.Header.Column
+// ==============================================
+
+.brew-TableHeaderColumn {
+    color: color(gray, mid);
+    font-size: size(small);
+    font-weight: weight(normal);
+    line-height: size(small);
+    padding: size(small) size(normal);
+    pointer-events: none;
+    position: relative;
+    text-transform: uppercase;
+    user-select: none;
+    white-space: nowrap;
+    width: auto;
+}
+
+
+// ==============================================
+// Table.Row
+// ==============================================
+
+.brew-TableRow {
+    border-bottom: 1px solid color(gray, light);
+
+    &:nth-of-type(even) {
+        background-color: rgba(color(gray, darkest), 0.02);
+    }
+}

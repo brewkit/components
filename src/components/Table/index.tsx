@@ -6,6 +6,7 @@ import { Props } from './types';
 import TableBody from './components/TableBody';
 import TableHeader from './components/TableHeader';
 import TableRow from './components/TableRow';
+import TableCell from './components/TableCell';
 
 
 /**
@@ -15,7 +16,7 @@ function Table({
     as,
     className,
     children,
-    columns,
+    columnConfig,
     rows,
     ...otherProps
 }: Props): ReactElement {
@@ -33,8 +34,8 @@ function Table({
 
     const content = children || (
         <React.Fragment>
-            <TableHeader columns={columns} />
-            <TableBody rows={rows} />
+            <TableHeader columnConfig={columnConfig} />
+            <TableBody columnConfig={columnConfig} rows={rows} />
         </React.Fragment>
     );
 
@@ -52,6 +53,7 @@ function Table({
 Table.Body = TableBody;
 Table.Header = TableHeader;
 Table.Row = TableRow;
+Table.Cell = TableCell;
 
 
 export default Table;

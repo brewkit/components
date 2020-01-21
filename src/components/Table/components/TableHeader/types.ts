@@ -20,7 +20,7 @@ export interface Props {
     /**
      * The column data used to populate the TableHeader
      */
-    columns?: ColumnProps[],
+    columnConfig?: ColumnProps[],
 
 
 }
