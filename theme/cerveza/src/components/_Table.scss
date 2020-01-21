@@ -23,7 +23,7 @@
 // ==============================================
 
 .brew-TableCell {
-    color: color(gray, mid);
+    color: color(grey, 500);
     font-size: size(small);
     font-weight: weight(normal);
     padding: size(normal);
@@ -35,7 +35,7 @@
 
 .brew-TableHeader {
     @extend %height-1;
-    background-color: color(gray, lighter);
+    background-color: color(grey, lighter);
 }
 
 
@@ -44,7 +44,7 @@
 // ==============================================
 
 .brew-TableHeaderColumn {
-    color: color(gray, mid);
+    color: color(grey, 500);
     font-size: size(small);
     font-weight: weight(normal);
     line-height: size(small);
@@ -63,9 +63,9 @@
 // ==============================================
 
 .brew-TableRow {
-    border-bottom: 1px solid color(gray, light);
+    border-bottom: 1px solid color(grey, 300);
 
     &:nth-of-type(even) {
-        background-color: rgba(color(gray, darkest), 0.02);
+        background-color: rgba(color(grey, 900), 0.02);
     }
 }
