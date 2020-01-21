@@ -1,10 +1,8 @@
 import React, { ReactElement, ReactNode } from 'react';
 import clsx from 'clsx';
 import { RowData } from '../TableRow/types';
-import { Props } from './types';
-
-
 import TableRow from '../TableRow';
+import { Props } from './types';
 
 
 /**

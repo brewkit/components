@@ -4,7 +4,7 @@ import { Props } from './types';
 
 
 /**
- * The `<TableCell />` component
+ * The `<TableCell />` component represents a single cell in a `<TableRow />`
  */
 function TableCell({
     as,

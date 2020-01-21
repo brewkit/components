@@ -1,12 +1,10 @@
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
-import { Props } from './types';
-
-
 import TableBody from './components/TableBody';
 import TableHeader from './components/TableHeader';
 import TableRow from './components/TableRow';
 import TableCell from './components/TableCell';
+import { Props } from './types';
 
 
 /**
