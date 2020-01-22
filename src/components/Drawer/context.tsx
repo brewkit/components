@@ -1,7 +1,12 @@
 import React from 'react';
 
 
-const DrawerContext = React.createContext(null);
+interface ContextType {
+    onCloseDrawer: () => void,
+}
+
+
+const DrawerContext = React.createContext<Partial<ContextType>>({});
 
 
 export default DrawerContext;
