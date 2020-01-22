@@ -7,27 +7,23 @@
 
 .brew-Table {
     border-collapse: collapse;
+    font-family: map-get($typography, 'font-family');
     overflow: hidden;
     width: 100%;
 }
 
 
 // ==============================================
-// Table.Body
-// ==============================================
-
-// .brew-TableBody {}
-
-// ==============================================
 // Table.Cell
 // ==============================================
 
 .brew-TableCell {
-    color: color(grey, 500);
+    color: color(grey, 300);
     font-size: size(small);
-    font-weight: weight(normal);
+    font-weight: map-get(map-get($typography, 'font-weights'), body1);
     padding: size(normal);
 }
+
 
 // ==============================================
 // Table.Header
@@ -35,7 +31,9 @@
 
 .brew-TableHeader {
     @extend %height-1;
-    background-color: color(grey, lighter);
+    background-color: color(grey, 50);
+    font-size: size(normal);
+    text-align: left;
 }
 
 
@@ -44,9 +42,6 @@
 // ==============================================
 
 .brew-TableHeaderColumn {
-    color: color(grey, 500);
-    font-size: size(small);
-    font-weight: weight(normal);
     line-height: size(small);
     padding: size(small) size(normal);
     pointer-events: none;
@@ -63,7 +58,7 @@
 // ==============================================
 
 .brew-TableRow {
-    border-bottom: 1px solid color(grey, 300);
+    border-bottom: 1px solid color(grey, 100);
 
     &:nth-of-type(even) {
         background-color: rgba(color(grey, 900), 0.02);
