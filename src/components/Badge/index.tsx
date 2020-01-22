@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 
@@ -6,22 +5,22 @@ import clsx from 'clsx';
 function Badge({
     children,
     className,
+    content,
     ...otherProps
 }: any): ReactElement {
 
-    const ref = React.useRef(null);
+
     const badgeClasses = clsx(
         'brew-Badge',
+        { 'brew-Badge--what': !children },
         className,
     );
-
-    console.log(ref);
 
 
     return (
         <div className={badgeClasses}>
             {children}
-            <span className="brew-Badge__element" {...otherProps} />
+            <span className="brew-Badge__element" {...otherProps}>{content}</span>
         </div>
     );
 

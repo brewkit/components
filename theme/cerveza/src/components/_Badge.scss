@@ -1,0 +1,27 @@
+@import "../utilities";
+
+
+.brew-Badge {
+    position: relative;
+    display: inline-grid;
+
+
+    &__element {
+        position: absolute;
+        border-radius: $border-radius;
+        padding: size(xx-small);
+        font-size: size(x-small);
+        background-color: rebeccapurple;
+        color: white;
+     //   transform: translate(50%, -50%);
+    }
+
+    &--what {
+
+
+        .brew-Badge__element {
+            position: static;
+        }
+
+    }
+}
