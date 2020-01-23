@@ -3,6 +3,9 @@ import clsx from 'clsx';
 import { Props } from './types';
 
 
+/**
+ * The Badge component is used to attach content to it's child or can be used inline with no children
+ */
 function Badge({
     anchorFrom = 'top-right',
     children,
