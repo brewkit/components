@@ -5,17 +5,17 @@ exports[`Table Row Props Renders \`columnConfig\` and \`rowData\` props correctl
   className="brew-TableRow"
 >
   <td
-    className="brew-TableCell brew-TableCell--column-ColA"
+    className="brew-TableCell"
   >
     ColumnA
   </td>
   <td
-    className="brew-TableCell brew-TableCell--column-ColB"
+    className="brew-TableCell"
   >
     ColumnB
   </td>
   <td
-    className="brew-TableCell brew-TableCell--column-ColC"
+    className="brew-TableCell"
   >
     ColumnC
   </td>

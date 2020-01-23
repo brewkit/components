@@ -235,11 +235,11 @@ export const TableCell = (): ReactElement => {
         <Table>
             <Table.Body>
                 <Table.Row>
-                    <Table.Cell
+                    <Table.Row.Cell
                         className={className}
                     >
                         {children}
-                    </Table.Cell>
+                    </Table.Row.Cell>
                 </Table.Row>
             </Table.Body>
         </Table>

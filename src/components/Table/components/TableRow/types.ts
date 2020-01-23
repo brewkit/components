@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import { HTMLProps, ReactNode } from 'react';
 import { Props as ColumnProps } from '../TableHeader/components/TableHeaderColumn/types';
-
+import { Props as CellProps } from './components/TableCell/types';
 
 export interface RowData {
-    [key: string]: ReactNode
+    [key: string]: CellProps & HTMLProps<HTMLTableCellElement> | ReactNode
 }
 
 

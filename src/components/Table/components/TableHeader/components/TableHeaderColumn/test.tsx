@@ -60,15 +60,6 @@ describe('Table Header Column Props', () => {
     });
 
 
-    it('Renders correctly with class derived from  `name` prop', () => {
-        const header = renderer
-            .create(<TableHeaderColumn label="Label3" name="Col3" />)
-            .toJSON();
-
-        expect(shallow(<TableHeaderColumn label="Label3" name="Col3" />)
-            .hasClass('brew-TableHeaderColumn--Col3')).toBe(true);
-    });
-
 
 });
 

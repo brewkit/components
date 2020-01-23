@@ -11,6 +11,7 @@ import Typography from '../Typography';
 
 describe('Table', () => {
 
+
     it('Renders correctly', () => {
         const content = renderer
             .create((
@@ -53,6 +54,39 @@ describe('Table', () => {
                     </tr>
                 </tbody>
             </Table>
+        ));
+
+        expect(content.hasClass(className)).toBe(true);
+        expect(content.hasClass('brew-Table')).toBe(true);
+    });
+
+
+});
+
+describe('Table Props - `as`', () => {
+
+
+    it('Renders `as` prop', () => {
+        const content = renderer
+            .create((
+                <Table
+                    as="div"
+                    children="Hello"
+                />
+            ))
+            .toJSON();
+        expect(content).toMatchSnapshot();
+    });
+
+
+    it('Includes custom className', () => {
+        const className = `class-${String(Math.floor(Math.random() * 1000))}`;
+        const content = shallow((
+            <Table
+                as="p"
+                children={<span>Hello</span>}
+                className={className}
+            />
         ));
 
         expect(content.hasClass(className)).toBe(true);
@@ -141,9 +175,6 @@ describe('Table Props - `columnConfig` only', () => {
             />
         );
 
-        expect(mounted
-            .exists('.brew-TableHeaderColumn--ColA')).toBe(true);
-            
         expect(mounted
             .find(Typography)
             .find('[variant="body1"]')

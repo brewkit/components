@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
-import TableCell from '../../../TableCell';
+import TableCell from '../../../TableRow/components/TableCell';
 import { Props } from './types';
 
 
@@ -18,7 +18,6 @@ function TableHeaderColumn({
 
     const classes = clsx(
         'brew-TableHeaderColumn',
-        { [`brew-TableHeaderColumn--${name}`]: Boolean(name) },
         className,
     );
 

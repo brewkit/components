@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
 import TableCell from './index';
-import Typography from '../../../Typography';
+import Typography from '../../../../../Typography';
 
 
 describe('Table Cell', () => {
@@ -41,17 +41,12 @@ describe('Table Cell Props', () => {
 
 
     it('Renders `as` prop correctly', () => {
-        const contentAsTh = renderer
+        const content = renderer
             .create(<TableCell as="th">Column1</TableCell>)
             .toJSON();
 
-        expect(contentAsTh).toMatchSnapshot();
+        expect(content).toMatchSnapshot();
 
-        const contentAsDiv = renderer
-            .create(<TableCell as="div">Column2</TableCell>)
-            .toJSON();
-
-        expect(contentAsDiv).toMatchSnapshot();
     });
 
 

@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode } from 'react';
 import clsx from 'clsx';
-import TableCell from '../TableCell';
+import TableCell from './components/TableCell';
 import { Props } from './types';
 
 
@@ -23,10 +23,14 @@ function TableRow({
 
 
     const content = children || (columnConfig?.map((col, index) => {
-        if (rowData && col.name && rowData[col.name]) {
+        if (rowData && col?.name && rowData[col.name]) {
+            const cellData = rowData[col.name];
+            if (cellData && typeof cellData === 'object' && 'label' in cellData) {
+                return <TableCell key={index} {...cellData} />;
+            }
             return (
-                <TableCell className={`brew-TableCell--column-${col.name}`} key={index}>
-                    {rowData[col.name]}
+                <TableCell key={index}>
+                    {cellData}
                 </TableCell>
             );
         }
@@ -42,5 +46,7 @@ function TableRow({
 
 }
 
+
+TableRow.Cell = TableCell;
 
 export default TableRow;

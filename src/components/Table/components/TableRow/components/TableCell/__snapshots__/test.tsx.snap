@@ -8,14 +8,6 @@ exports[`Table Cell Props Renders \`as\` prop correctly 1`] = `
 </th>
 `;
 
-exports[`Table Cell Props Renders \`as\` prop correctly 2`] = `
-<div
-  className="brew-TableCell"
->
-  Column2
-</div>
-`;
-
 exports[`Table Cell Renders correctly with component children 1`] = `
 <td
   className="brew-TableCell"

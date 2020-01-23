@@ -8,17 +8,17 @@ exports[`Table Body Props Renders \`columnConfig\` and \`rowData\` props correct
     className="brew-TableRow"
   >
     <td
-      className="brew-TableCell brew-TableCell--column-ColA"
+      className="brew-TableCell"
     >
       Row1-ColA
     </td>
     <td
-      className="brew-TableCell brew-TableCell--column-ColB"
+      className="brew-TableCell"
     >
       Row1-ColB
     </td>
     <td
-      className="brew-TableCell brew-TableCell--column-ColC"
+      className="brew-TableCell"
     >
       Row1-ColC
     </td>
@@ -27,17 +27,17 @@ exports[`Table Body Props Renders \`columnConfig\` and \`rowData\` props correct
     className="brew-TableRow"
   >
     <td
-      className="brew-TableCell brew-TableCell--column-ColA"
+      className="brew-TableCell"
     >
       Row2-ColA
     </td>
     <td
-      className="brew-TableCell brew-TableCell--column-ColB"
+      className="brew-TableCell"
     >
       Row2-ColB
     </td>
     <td
-      className="brew-TableCell brew-TableCell--column-ColC"
+      className="brew-TableCell"
     >
       Row2-ColC
     </td>
@@ -46,17 +46,17 @@ exports[`Table Body Props Renders \`columnConfig\` and \`rowData\` props correct
     className="brew-TableRow"
   >
     <td
-      className="brew-TableCell brew-TableCell--column-ColA"
+      className="brew-TableCell"
     >
       Row3-ColA
     </td>
     <td
-      className="brew-TableCell brew-TableCell--column-ColB"
+      className="brew-TableCell"
     >
       Row3-ColB
     </td>
     <td
-      className="brew-TableCell brew-TableCell--column-ColC"
+      className="brew-TableCell"
     >
       Row3-ColC
     </td>

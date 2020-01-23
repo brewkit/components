@@ -1,9 +1,8 @@
-import React, { ReactElement } from 'react';
+import React, { ElementType, ReactElement } from 'react';
 import clsx from 'clsx';
 import TableBody from './components/TableBody';
 import TableHeader from './components/TableHeader';
 import TableRow from './components/TableRow';
-import TableCell from './components/TableCell';
 import { Props } from './types';
 
 
@@ -26,7 +25,7 @@ function Table({
     );
 
 
-    let TableElement: keyof JSX.IntrinsicElements = 'table';
+    let TableElement: ElementType<any> = 'table';
     if (as) TableElement = as;
 
 
@@ -51,7 +50,6 @@ function Table({
 Table.Body = TableBody;
 Table.Header = TableHeader;
 Table.Row = TableRow;
-Table.Cell = TableCell;
 
 
 export default Table;

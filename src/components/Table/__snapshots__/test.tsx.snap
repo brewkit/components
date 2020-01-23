@@ -60,6 +60,14 @@ exports[`Full Table Suite Renders correctly 1`] = `
 </table>
 `;
 
+exports[`Table Props - \`as\` Renders \`as\` prop 1`] = `
+<div
+  className="brew-Table"
+>
+  Hello
+</div>
+`;
+
 exports[`Table Props - \`columnConfig\` and \`rows\` Renders \`columnConfig\` and \`rows\` prop correctly simultaneously 1`] = `
 <table
   className="brew-Table"
@@ -71,13 +79,13 @@ exports[`Table Props - \`columnConfig\` and \`rows\` Renders \`columnConfig\` an
       className="brew-TableRow"
     >
       <th
-        className="brew-TableCell brew-TableHeaderColumn brew-TableHeaderColumn--ColA"
+        className="brew-TableCell brew-TableHeaderColumn"
       />
       <th
-        className="brew-TableCell brew-TableHeaderColumn brew-TableHeaderColumn--ColB"
+        className="brew-TableCell brew-TableHeaderColumn"
       />
       <th
-        className="brew-TableCell brew-TableHeaderColumn brew-TableHeaderColumn--ColC"
+        className="brew-TableCell brew-TableHeaderColumn"
       />
     </tr>
   </thead>
@@ -88,17 +96,17 @@ exports[`Table Props - \`columnConfig\` and \`rows\` Renders \`columnConfig\` an
       className="brew-TableRow"
     >
       <td
-        className="brew-TableCell brew-TableCell--column-ColA"
+        className="brew-TableCell"
       >
         Row1-ColA
       </td>
       <td
-        className="brew-TableCell brew-TableCell--column-ColB"
+        className="brew-TableCell"
       >
         Row1-ColB
       </td>
       <td
-        className="brew-TableCell brew-TableCell--column-ColC"
+        className="brew-TableCell"
       >
         Row1-ColC
       </td>
@@ -107,17 +115,17 @@ exports[`Table Props - \`columnConfig\` and \`rows\` Renders \`columnConfig\` an
       className="brew-TableRow"
     >
       <td
-        className="brew-TableCell brew-TableCell--column-ColA"
+        className="brew-TableCell"
       >
         Row2-ColA
       </td>
       <td
-        className="brew-TableCell brew-TableCell--column-ColB"
+        className="brew-TableCell"
       >
         Row2-ColB
       </td>
       <td
-        className="brew-TableCell brew-TableCell--column-ColC"
+        className="brew-TableCell"
       >
         Row2-ColC
       </td>
@@ -126,17 +134,17 @@ exports[`Table Props - \`columnConfig\` and \`rows\` Renders \`columnConfig\` an
       className="brew-TableRow"
     >
       <td
-        className="brew-TableCell brew-TableCell--column-ColA"
+        className="brew-TableCell"
       >
         Row3-ColA
       </td>
       <td
-        className="brew-TableCell brew-TableCell--column-ColB"
+        className="brew-TableCell"
       >
         Row3-ColB
       </td>
       <td
-        className="brew-TableCell brew-TableCell--column-ColC"
+        className="brew-TableCell"
       >
         Row3-ColC
       </td>
@@ -156,17 +164,17 @@ exports[`Table Props - \`columnConfig\` only Renders \`columnConfig\` prop corre
       className="brew-TableRow"
     >
       <th
-        className="brew-TableCell brew-TableHeaderColumn brew-TableHeaderColumn--ColA"
+        className="brew-TableCell brew-TableHeaderColumn"
       >
         ColumnA
       </th>
       <th
-        className="brew-TableCell brew-TableHeaderColumn brew-TableHeaderColumn--ColB"
+        className="brew-TableCell brew-TableHeaderColumn"
       >
         ColumnB
       </th>
       <th
-        className="brew-TableCell brew-TableHeaderColumn brew-TableHeaderColumn--ColC"
+        className="brew-TableCell brew-TableHeaderColumn"
       >
         ColumnC
       </th>

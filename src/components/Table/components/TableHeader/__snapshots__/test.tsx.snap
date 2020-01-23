@@ -8,17 +8,17 @@ exports[`Table Header Props Renders \`columnConfig\`  prop correctly 1`] = `
     className="brew-TableRow"
   >
     <th
-      className="brew-TableCell brew-TableHeaderColumn brew-TableHeaderColumn--ColA"
+      className="brew-TableCell brew-TableHeaderColumn"
     >
       ColumnA
     </th>
     <th
-      className="brew-TableCell brew-TableHeaderColumn brew-TableHeaderColumn--ColB"
+      className="brew-TableCell brew-TableHeaderColumn"
     >
       ColumnB
     </th>
     <th
-      className="brew-TableCell brew-TableHeaderColumn brew-TableHeaderColumn--ColC"
+      className="brew-TableCell brew-TableHeaderColumn"
     >
       ColumnC
     </th>

@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React, { HTMLProps, ReactElement } from 'react';
 import clsx from 'clsx';
 import { Props } from './types';
 
@@ -10,8 +10,9 @@ function TableCell({
     as,
     className,
     children,
+    label,
     ...otherProps
-}: Props): ReactElement {
+}: Props & HTMLProps<HTMLTableCellElement>): ReactElement {
 
 
     const classes = clsx(
@@ -20,13 +21,16 @@ function TableCell({
     );
 
 
-    let CellElement: keyof JSX.IntrinsicElements = 'td';
+    let CellElement: 'td' | 'th' = 'td';
     if (as) CellElement = as;
+
+
+    const content = children || label;
 
 
     return (
         <CellElement className={classes} {...otherProps}>
-            {children}
+            {content}
         </CellElement>
     );
 
