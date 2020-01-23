@@ -1,27 +1,95 @@
 @import "../utilities";
 
 
+// ==============================================
+// Variables
+// ==============================================
+
+$badgeColors: success, warning, danger, info;
+
+// ==============================================
+// General
+// ==============================================
+
 .brew-Badge {
     position: relative;
-    display: inline-grid;
+    display: inline-block;
 
+    // ------------------------------------------
+    // Actual Badge
 
     &__element {
         position: absolute;
         border-radius: $border-radius;
         padding: size(xx-small);
         font-size: size(x-small);
-        background-color: rebeccapurple;
-        color: white;
-     //   transform: translate(50%, -50%);
+        color: #fff;
     }
 
-    &--what {
+    // ------------------------------------------
+    // Modifiers
 
+    &--isCircular {
+
+        .brew-Badge__element {
+            border-radius: 50%;
+        }
+    }
+
+    &--inline {
 
         .brew-Badge__element {
             position: static;
+            font-size: inherit;
+            margin-left: size(xx-small);
+        }
+    }
+
+    &--anchorFrom {
+
+        &-top-right {
+
+            .brew-Badge__element {
+                top: 0;
+                right: 0;
+                transform: translate(50%, -50%);
+            }
         }
 
+        &-top-left {
+
+            .brew-Badge__element {
+                top: 0;
+                left: 0;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &-bottom-left {
+
+            .brew-Badge__element {
+                bottom: 0;
+                left: 0;
+                transform: translate(-50%, 50%);
+            }
+        }
+
+        &-bottom-right {
+
+            .brew-Badge__element {
+                bottom: 0;
+                right: 0;
+                transform: translate(50%, 50%);
+            }
+        }
+    }
+
+    @each $color in $badgeColors {
+        &--color-#{$color} {
+
+            .brew-Badge__element {
+                background-color: color(accent, $color);
+            }
+        }
     }
 }
