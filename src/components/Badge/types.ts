@@ -10,17 +10,17 @@ export interface Props {
     /**
      * Where the badge is positioned
      */
-    anchorFrom: Anchors,
+    anchorFrom?: Anchors,
 
     /**
      * The child element you want to apply the badge to
      */
-    children: ReactNode,
+    children?: ReactNode,
 
     /**
      * Changes badge style to circular
      */
-    isCircular: boolean,
+    isCircular?: boolean,
 
     /**
      * Additional custom class to attach
@@ -30,11 +30,11 @@ export interface Props {
     /**
      *
      */
-    content: any,
+    content?: string,
 
     /**
      * Color of the badge
      */
-    color: Colors,
+    color?: Colors,
 
 }
