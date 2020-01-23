@@ -1,9 +1,7 @@
 import { ReactNode } from 'react';
 
 
-export type Anchors = 'top-right'
-    | 'top-middle' | 'top-left' | 'bottom-right' | 'bottom-middle' | 'bottom-left' | 'right' | 'left';
-
+export type Anchors = 'top-right' | 'top-left' | 'bottom-left' | 'bottom-right';
 export type Colors = 'success' | 'warning' | 'danger' | 'info';
 
 

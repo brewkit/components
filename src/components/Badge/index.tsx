@@ -1,16 +1,17 @@
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
+import { Props } from './types';
 
 
 function Badge({
-    anchorFrom = 'right',
+    anchorFrom = 'top-right',
     children,
     className,
-    color,
+    color = 'info',
     content,
     isCircular = false,
     ...otherProps
-}: any): ReactElement {
+}: Props): ReactElement {
 
 
     const badgeClasses = clsx(
