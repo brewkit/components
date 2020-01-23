@@ -22,7 +22,7 @@ function Badge({
         `brew-Badge--anchorFrom-${anchorFrom}`,
         `brew-Badge--color-${color}`,
         { 'brew-Badge--isCircular': isCircular },
-        { 'brew-Badge--inline': Boolean(!children) },
+        { 'brew-Badge--inline': !children },
         className,
     );
 
