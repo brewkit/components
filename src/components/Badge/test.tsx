@@ -42,5 +42,14 @@ describe('Badge', () => {
         });
     });
 
+    it('Changes default classes to prop modifiers', () => {
+        const badge = shallow(<div>child <Badge anchorFrom="bottom-right" color="danger" /></div>);
+        const classes = ['brew-Badge--anchorFrom-bottom-right', 'brew-Badge--color-danger'];
+
+        classes.forEach(className => {
+            expect(badge.hasClass(className));
+        });
+    })
+
 
 });
