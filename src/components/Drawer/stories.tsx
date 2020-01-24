@@ -9,7 +9,7 @@ export default {
 };
 
 
-export const controlled = (): ReactElement => {
+export const Default = (): ReactElement => {
     const anchorFrom = select('anchorFrom', ['top', 'right', 'bottom', 'left'], 'left');
     const [isOpen, setIsOpen] = React.useState(true);
     const handler = (): void => setIsOpen(!isOpen);
