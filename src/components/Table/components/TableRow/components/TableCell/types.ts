@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
+import { HTMLProps, ReactNode } from 'react';
 
 
-export interface Props {
+export interface Props extends Omit<HTMLProps<HTMLTableCellElement>, 'label'> {
 
 
     /**

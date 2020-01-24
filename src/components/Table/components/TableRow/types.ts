@@ -2,8 +2,14 @@ import { HTMLProps, ReactNode } from 'react';
 import { Props as ColumnProps } from '../TableHeader/components/TableHeaderColumn/types';
 import { Props as CellProps } from './components/TableCell/types';
 
+
+export interface ColumnPropsWithName extends ColumnProps {
+    name: string
+}
+
+
 export interface RowData {
-    [key: string]: CellProps & HTMLProps<HTMLTableCellElement> | ReactNode
+    [key: string]: CellProps | ReactNode
 }
 
 
@@ -25,7 +31,7 @@ export interface Props {
     /**
      * The configuration that defines the columns in the TableRow
      */
-    columnConfig?: ColumnProps[],
+    columnConfig?: ColumnPropsWithName[],
 
 
     /**

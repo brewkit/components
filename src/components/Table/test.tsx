@@ -100,39 +100,6 @@ describe('Table Props - `as`', () => {
 describe('Table Props - `columnConfig` only', () => {
 
 
-    it('Renders `columnConfig` prop correctly (`label` only)', () => {
-        const content = renderer
-            .create((
-                <Table
-                    columnConfig={[
-                        { label: 'ColumnA' },
-                        { label: 'ColumnB' },
-                        { label: 'ColumnC' },
-                    ]}
-                />
-            ))
-            .toJSON();
-        expect(content).toMatchSnapshot();
-
-
-        const mounted = mount(
-            <Table
-                columnConfig={[
-                    { label: <Typography variant="body1">ColumnA</Typography> },
-                    { label: <Typography variant="body1">ColumnB</Typography> },
-                    { label: <Typography variant="body1">ColumnC</Typography> },
-                ]}
-            />
-        );
-
-        expect(mounted
-            .find(Typography)
-            .find('[variant="body1"]')
-            .children()
-            .contains('ColumnA')).toBe(true);
-    });
-
-
     it('Renders `columnConfig` prop correctly (`label` and `name`)', () => {
         const content = renderer
             .create((
@@ -186,11 +153,10 @@ describe('Table Props - `columnConfig` only', () => {
 });
 
 
-
 describe('Table Props - `columnConfig` and `rows`', () => {
 
 
-    it('Renders `columnConfig` and `rows` prop correctly simultaneously', () => {
+    it('Renders `rows` prop (without objects) correctly', () => {
         const content = renderer
             .create((
                 <Table
@@ -214,7 +180,7 @@ describe('Table Props - `columnConfig` and `rows`', () => {
                             ColA: 'Row3-ColA',
                             ColB: 'Row3-ColB',
                             ColC: 'Row3-ColC',
-                        }
+                        },
                     ]}
                 />
             ))
@@ -260,6 +226,78 @@ describe('Table Props - `columnConfig` and `rows`', () => {
             .find('[variant="body2"]')
             .children()
             .contains('Row2-ColY')).toBe(true);
+    });
+
+
+    it('Renders `rows` prop (with objects) correctly', () => {
+        const content = renderer
+            .create((
+                <Table
+                    columnConfig={[
+                        { name: 'ColA' },
+                        { name: 'ColB' },
+                        { name: 'ColC' },
+                    ]}
+                    rows={[
+                        {
+                            ColA: 'Row1-ColA',
+                            ColB: {
+                                colspan: 2,
+                                label: 'Row1-ColB&ColC',
+                            },
+                        },
+                        {
+                            ColA: 'Row2-ColA',
+                            ColB: 'Row2-ColB',
+                            ColC: 'Row2-ColC',
+                        },
+                    ]}
+                />
+            ))
+            .toJSON();
+        expect(content).toMatchSnapshot();
+
+        const className = `class-${String(Math.floor(Math.random() * 1000))}`;
+        const mounted = mount(
+            <Table
+                columnConfig={[
+                    {
+                        label: <Typography variant="h3">ColumnY</Typography>,
+                        name: 'ColY',
+                    },
+                    {
+                        label: <Typography variant="h3">ColumnZ</Typography>,
+                        name: 'ColZ',
+                    },
+                ]}
+                rows={[
+                    {
+                        ColX: <Typography key="row2-colx" variant="body2">Row1-ColX</Typography>,
+                        ColY: {
+                            className: className,
+                            label: <Typography key="row2-coly" variant="body2">Row1-ColY</Typography>,
+                        },
+                        ColZ: <Typography key="row2-colz" variant="body2">Row1-ColZ</Typography>,
+                    },
+                    {
+                        ColX: <Typography key="row3-colx" variant="body2">Row2-ColX</Typography>,
+                        ColY: <Typography key="row3-coly" variant="body2">Row2-ColY</Typography>,
+                        ColZ: <Typography key="row3-colz" variant="body2">Row2-ColZ</Typography>,
+                    },
+                ]}
+            />
+        );
+
+        expect(mounted
+            .find(Typography)
+            .find('[variant="body2"]')
+            .children()
+            .contains('Row2-ColZ')).toBe(true);
+
+        expect(mounted
+            .find(`.${className}`)
+            .children()
+            .contains('Row1-ColY')).toBe(true);
     });
 
 

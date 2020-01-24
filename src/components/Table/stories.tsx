@@ -1,8 +1,7 @@
 import React, { ReactElement, ReactNode } from 'react';
 import { object, text } from '@storybook/addon-knobs';
 import Label from '../Label';
-import { Props as ColumnProps } from './components/TableHeader/components/TableHeaderColumn/types';
-import { RowData } from './components/TableRow/types';
+import { ColumnPropsWithName, RowData } from './components/TableRow/types';
 import Table from './index';
 
 
@@ -53,7 +52,7 @@ export const General = (): ReactElement => {
 
     const className: string = text('className', 'churros');
     const children: ReactNode = text('children', '');
-    const columnConfig: ColumnProps[] = object('columnConfig', colExample);
+    const columnConfig: ColumnPropsWithName[] = object('columnConfig', colExample);
     const rows: RowData[] = object('rows', rowExample);
 
 
@@ -100,7 +99,7 @@ export const TableBody = (): ReactElement => {
 
     const className: string = text('className', 'churros');
     const children: ReactNode = text('children', '');
-    const columnConfig: ColumnProps[] = object('columnConfig', colExample);
+    const columnConfig: ColumnPropsWithName[] = object('columnConfig', colExample);
     const rows: RowData[] = object('rows', rowExample);
 
 
@@ -140,7 +139,7 @@ export const TableHeader = (): ReactElement => {
 
     const className: string = text('className', 'churros');
     const children: ReactNode = text('children', '');
-    const columnConfig: ColumnProps[] = object('columns', colExample);
+    const columnConfig: ColumnPropsWithName[] = object('columns', colExample);
 
 
     return (
@@ -202,7 +201,7 @@ export const TableRow = (): ReactElement => {
 
     const className: string = text('className', 'churros');
     const children: ReactNode = text('children', '');
-    const columnConfig: ColumnProps[] = object('columnConfig', colExample);
+    const columnConfig: ColumnPropsWithName[] = object('columnConfig', colExample);
     const rowData: RowData = object('rowData', rowExample);
 
 

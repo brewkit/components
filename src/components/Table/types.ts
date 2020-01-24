@@ -1,6 +1,5 @@
 import { ElementType, ReactNode } from 'react';
-import { Props as ColumnProps } from './components/TableHeader/components/TableHeaderColumn/types';
-import { RowData } from './components/TableRow/types';
+import { ColumnPropsWithName, RowData } from './components/TableRow/types';
 
 
 export interface Props {
@@ -30,7 +29,7 @@ export interface Props {
     /**
      * The column data used to populate the Table's header
      */
-    columnConfig?: ColumnProps[],
+    columnConfig?: ColumnPropsWithName[],
 
 
     /**

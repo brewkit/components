@@ -12,7 +12,7 @@ function TableCell({
     children,
     label,
     ...otherProps
-}: Props & HTMLProps<HTMLTableCellElement>): ReactElement {
+}: Props): ReactElement {
 
 
     const classes = clsx(
@@ -21,11 +21,10 @@ function TableCell({
     );
 
 
-    let CellElement: 'td' | 'th' = 'td';
-    if (as) CellElement = as;
+    const CellElement: 'td' | 'th' = as || 'td';
 
 
-    const content = children || label;
+    const content = children || label || '';
 
 
     return (

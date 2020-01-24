@@ -68,7 +68,7 @@ exports[`Table Props - \`as\` Renders \`as\` prop 1`] = `
 </div>
 `;
 
-exports[`Table Props - \`columnConfig\` and \`rows\` Renders \`columnConfig\` and \`rows\` prop correctly simultaneously 1`] = `
+exports[`Table Props - \`columnConfig\` and \`rows\` Renders \`rows\` prop (with objects) correctly 1`] = `
 <table
   className="brew-Table"
 >
@@ -80,13 +80,87 @@ exports[`Table Props - \`columnConfig\` and \`rows\` Renders \`columnConfig\` an
     >
       <th
         className="brew-TableCell brew-TableHeaderColumn"
-      />
+      >
+        
+      </th>
       <th
         className="brew-TableCell brew-TableHeaderColumn"
-      />
+      >
+        
+      </th>
       <th
         className="brew-TableCell brew-TableHeaderColumn"
-      />
+      >
+        
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    className="brew-TableBody"
+  >
+    <tr
+      className="brew-TableRow"
+    >
+      <td
+        className="brew-TableCell"
+      >
+        Row1-ColA
+      </td>
+      <td
+        className="brew-TableCell"
+        colspan={2}
+      >
+        Row1-ColB&ColC
+      </td>
+    </tr>
+    <tr
+      className="brew-TableRow"
+    >
+      <td
+        className="brew-TableCell"
+      >
+        Row2-ColA
+      </td>
+      <td
+        className="brew-TableCell"
+      >
+        Row2-ColB
+      </td>
+      <td
+        className="brew-TableCell"
+      >
+        Row2-ColC
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Table Props - \`columnConfig\` and \`rows\` Renders \`rows\` prop (without objects) correctly 1`] = `
+<table
+  className="brew-Table"
+>
+  <thead
+    className="brew-TableHeader"
+  >
+    <tr
+      className="brew-TableRow"
+    >
+      <th
+        className="brew-TableCell brew-TableHeaderColumn"
+      >
+        
+      </th>
+      <th
+        className="brew-TableCell brew-TableHeaderColumn"
+      >
+        
+      </th>
+      <th
+        className="brew-TableCell brew-TableHeaderColumn"
+      >
+        
+      </th>
     </tr>
   </thead>
   <tbody
@@ -154,39 +228,6 @@ exports[`Table Props - \`columnConfig\` and \`rows\` Renders \`columnConfig\` an
 `;
 
 exports[`Table Props - \`columnConfig\` only Renders \`columnConfig\` prop correctly (\`label\` and \`name\`) 1`] = `
-<table
-  className="brew-Table"
->
-  <thead
-    className="brew-TableHeader"
-  >
-    <tr
-      className="brew-TableRow"
-    >
-      <th
-        className="brew-TableCell brew-TableHeaderColumn"
-      >
-        ColumnA
-      </th>
-      <th
-        className="brew-TableCell brew-TableHeaderColumn"
-      >
-        ColumnB
-      </th>
-      <th
-        className="brew-TableCell brew-TableHeaderColumn"
-      >
-        ColumnC
-      </th>
-    </tr>
-  </thead>
-  <tbody
-    className="brew-TableBody"
-  />
-</table>
-`;
-
-exports[`Table Props - \`columnConfig\` only Renders \`columnConfig\` prop correctly (\`label\` only) 1`] = `
 <table
   className="brew-Table"
 >
