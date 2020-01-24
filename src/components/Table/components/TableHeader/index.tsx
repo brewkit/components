@@ -39,6 +39,8 @@ function TableHeader({
 
 }
 
+
 TableHeader.Column = TableHeaderColumn;
+
 
 export default TableHeader;

@@ -25,8 +25,7 @@ function Table({
     );
 
 
-    let TableElement: ElementType<any> = 'table';
-    if (as) TableElement = as;
+    const TableElement: ElementType<any> = as || 'table';
 
 
     const content = children || (
