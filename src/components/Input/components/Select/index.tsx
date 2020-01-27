@@ -1,6 +1,6 @@
 /* eslint-disable max-statements */
 
-import React, { ReactElement, ReactNode, ReactChild } from 'react';
+import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import InputBase from '../InputBase';
 import { Props } from '../InputBase/types';
@@ -11,17 +11,14 @@ import DefaultCustomControl from './components/DefaultCustomControl';
  * The select component is the brewkit implementation of the HTML select, with a few
  * extra features.
  */
-const Select = (props: Props): ReactElement => {
-
-
-    const {
-        className,
-        children,
-        onChange: onChangeProp,
-        value: valueProp,
-        defaultValue: defaultValueProp,
-        ...otherProps
-    } = props;
+const Select = ({
+    className,
+    children,
+    onChange: onChangeProp,
+    value: valueProp,
+    defaultValue: defaultValueProp,
+    ...otherProps
+}: Props): ReactElement => {
 
     if (
         !React.Children.toArray(children).every((child: any) => child?.type === 'option')
