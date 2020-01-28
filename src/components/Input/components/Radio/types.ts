@@ -8,6 +8,7 @@ export type Props = Omit<InputBaseProps,
     | 'cols'
     | 'defaultValue'
     | 'error'
+    | 'multiple'
     | 'placeholder'
     | 'rows'
     | 'type'

@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
 import { Flipper } from 'react-flip-toolkit';
 import clsx from 'clsx';
+import ClickAwayListener from '../../utilities/ClickAwayListener';
 import TooltipContent from './components/TooltipContent';
 import { Props } from './types';
 
@@ -17,7 +18,7 @@ function Tooltip({
 
     const { ...otherChildProps } = children || {};
     const [isTooltipOpen, setIsTooltipOpen] = React.useState(isOpen);
-    const [tooltipRef, setTooltipRef] = React.useState(null);
+    const [tooltipRef] = React.useState(null);
     const wrapperClasses = clsx(
         'brew-Tooltip',
         className,
@@ -28,13 +29,6 @@ function Tooltip({
     );
 
 
-    function handleRef(node) {
-        console.log('handleRef', node);
-        setTooltipRef(node?.node);
-        return node;
-    }
-
-
     function handleTooltip(): void {
         setIsTooltipOpen(!isTooltipOpen);
     }
@@ -43,15 +37,14 @@ function Tooltip({
     return (
         <div className={wrapperClasses} {...otherProps}>
             <Flipper flipKey={isTooltipOpen}>
-                <div>
+                <ClickAwayListener onClickAway={(): void => setIsTooltipOpen(false)}>
                     {React.cloneElement(React.Children.only(children), {
                         onClick: (triggerEvent === 'click') ? handleTooltip : undefined,
                         onMouseOut: (triggerEvent === 'hover') ? handleTooltip : undefined,
                         onMouseOver: (triggerEvent === 'hover') ? handleTooltip : undefined,
-                        ref: handleRef,
                         ...otherChildProps,
                     })}
-                </div>
+                </ClickAwayListener>
                 <TooltipContent
                     className={contentClasses}
                     controllerRef={tooltipRef}

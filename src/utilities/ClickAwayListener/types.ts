@@ -11,6 +11,6 @@ export interface Props {
     /**
      * The callback function to fire when the user clicks on an element not within the wrapped content.
      */
-    onClickAway: () => void,
+    onClickAway: (event: Event) => void,
 
 }

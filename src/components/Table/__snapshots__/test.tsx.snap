@@ -1,0 +1,303 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Full Table Suite Renders correctly 1`] = `
+<table
+  className="brew-Table"
+>
+  <thead
+    className="brew-TableHeader"
+  >
+    <tr
+      className="brew-TableRow"
+    >
+      <th
+        className="brew-TableCell brew-TableHeaderColumn"
+      >
+        Column1
+      </th>
+      <th
+        className="brew-TableCell brew-TableHeaderColumn"
+      >
+        Column2
+      </th>
+      <th
+        className="brew-TableCell brew-TableHeaderColumn"
+      >
+        Column3
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    className="brew-TableBody"
+  >
+    <tr
+      className="brew-TableRow"
+    >
+      <td>
+        Row1-Col1
+      </td>
+      <td>
+        Row1-Col2
+      </td>
+      <td>
+        Row1-Col3
+      </td>
+    </tr>
+    <tr
+      className="brew-TableRow"
+    >
+      <td>
+        Row2-Col1
+      </td>
+      <td>
+        Row2-Col2
+      </td>
+      <td>
+        Row2-Col3
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Table Props - \`as\` Renders \`as\` prop 1`] = `
+<div
+  className="brew-Table"
+>
+  Hello
+</div>
+`;
+
+exports[`Table Props - \`columnConfig\` and \`rows\` Renders \`rows\` prop (with objects) correctly 1`] = `
+<table
+  className="brew-Table"
+>
+  <thead
+    className="brew-TableHeader"
+  >
+    <tr
+      className="brew-TableRow"
+    >
+      <th
+        className="brew-TableCell brew-TableHeaderColumn"
+      >
+        
+      </th>
+      <th
+        className="brew-TableCell brew-TableHeaderColumn"
+      >
+        
+      </th>
+      <th
+        className="brew-TableCell brew-TableHeaderColumn"
+      >
+        
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    className="brew-TableBody"
+  >
+    <tr
+      className="brew-TableRow"
+    >
+      <td
+        className="brew-TableCell"
+      >
+        Row1-ColA
+      </td>
+      <td
+        className="brew-TableCell"
+        colspan={2}
+      >
+        Row1-ColB&ColC
+      </td>
+    </tr>
+    <tr
+      className="brew-TableRow"
+    >
+      <td
+        className="brew-TableCell"
+      >
+        Row2-ColA
+      </td>
+      <td
+        className="brew-TableCell"
+      >
+        Row2-ColB
+      </td>
+      <td
+        className="brew-TableCell"
+      >
+        Row2-ColC
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Table Props - \`columnConfig\` and \`rows\` Renders \`rows\` prop (without objects) correctly 1`] = `
+<table
+  className="brew-Table"
+>
+  <thead
+    className="brew-TableHeader"
+  >
+    <tr
+      className="brew-TableRow"
+    >
+      <th
+        className="brew-TableCell brew-TableHeaderColumn"
+      >
+        
+      </th>
+      <th
+        className="brew-TableCell brew-TableHeaderColumn"
+      >
+        
+      </th>
+      <th
+        className="brew-TableCell brew-TableHeaderColumn"
+      >
+        
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    className="brew-TableBody"
+  >
+    <tr
+      className="brew-TableRow"
+    >
+      <td
+        className="brew-TableCell"
+      >
+        Row1-ColA
+      </td>
+      <td
+        className="brew-TableCell"
+      >
+        Row1-ColB
+      </td>
+      <td
+        className="brew-TableCell"
+      >
+        Row1-ColC
+      </td>
+    </tr>
+    <tr
+      className="brew-TableRow"
+    >
+      <td
+        className="brew-TableCell"
+      >
+        Row2-ColA
+      </td>
+      <td
+        className="brew-TableCell"
+      >
+        Row2-ColB
+      </td>
+      <td
+        className="brew-TableCell"
+      >
+        Row2-ColC
+      </td>
+    </tr>
+    <tr
+      className="brew-TableRow"
+    >
+      <td
+        className="brew-TableCell"
+      >
+        Row3-ColA
+      </td>
+      <td
+        className="brew-TableCell"
+      >
+        Row3-ColB
+      </td>
+      <td
+        className="brew-TableCell"
+      >
+        Row3-ColC
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Table Props - \`columnConfig\` only Renders \`columnConfig\` prop correctly (\`label\` and \`name\`) 1`] = `
+<table
+  className="brew-Table"
+>
+  <thead
+    className="brew-TableHeader"
+  >
+    <tr
+      className="brew-TableRow"
+    >
+      <th
+        className="brew-TableCell brew-TableHeaderColumn"
+      >
+        ColumnA
+      </th>
+      <th
+        className="brew-TableCell brew-TableHeaderColumn"
+      >
+        ColumnB
+      </th>
+      <th
+        className="brew-TableCell brew-TableHeaderColumn"
+      >
+        ColumnC
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    className="brew-TableBody"
+  />
+</table>
+`;
+
+exports[`Table Renders correctly 1`] = `
+<table
+  className="brew-Table"
+>
+  <thead>
+    <th>
+      Column1
+    </th>
+    <th>
+      Column2
+    </th>
+    <th>
+      Column3
+    </th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Row1-Col1
+      </td>
+      <td>
+        Row1-Col2
+      </td>
+      <td>
+        Row1-Col3
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Row2-Col1
+      </td>
+      <td>
+        Row2-Col2
+      </td>
+      <td>
+        Row2-Col3
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

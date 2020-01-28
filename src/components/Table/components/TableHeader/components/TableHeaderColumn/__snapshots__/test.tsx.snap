@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Header Column Props Renders correctly with ReactNode in \`label\` prop 1`] = `
+<th
+  className="brew-TableCell brew-TableHeaderColumn"
+>
+  <h3
+    className="brew-Typography brew-Typography--variant-h3 brew-Typography--color-initial brew-Typography--align-inherit brew-Typography--display-initial"
+  >
+    Label2
+  </h3>
+</th>
+`;
+
+exports[`Table Header Column Props Renders correctly with text in \`label\` prop 1`] = `
+<th
+  className="brew-TableCell brew-TableHeaderColumn"
+>
+  Label1
+</th>
+`;
+
+exports[`Table Header Column Renders correctly with component children 1`] = `
+<th
+  className="brew-TableCell brew-TableHeaderColumn"
+>
+  <h3
+    className="brew-Typography brew-Typography--variant-h3 brew-Typography--color-initial brew-Typography--align-inherit brew-Typography--display-initial"
+  >
+    Label
+  </h3>
+</th>
+`;
+
+exports[`Table Header Column Renders correctly with text children 1`] = `
+<th
+  className="brew-TableCell brew-TableHeaderColumn"
+>
+  Label
+</th>
+`;
