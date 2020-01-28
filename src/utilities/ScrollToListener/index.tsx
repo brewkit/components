@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { ReactElement, RefObject } from 'react';
 import { Props } from './types';
 
