@@ -1,46 +1,48 @@
-import React, { ReactElement, RefObject } from 'react';
+import React, { ReactElement } from 'react';
 import { Props } from './types';
+import {Flipped} from "react-flip-toolkit";
 
 
 /**
  * The `ClickAwayListener` component.
  */
-function ClickAwayListener({
-    onClickAway,
+function FadeAnimator({
+    flipId,
     children,
 }: Props): ReactElement {
 
 
-    const ref: RefObject<HTMLDivElement> = React.useRef(null);
-
-
-    /**
-     * Check to see if the click originated from a descendent of the wrapped content.
-     */
-    function handleClick(event: Event): void {
-        const targets = Array.from(ref?.current?.parentNode?.children || []);
-        const isContained = targets.some((target: Node) => target.contains(event.target as Node));
-        if (!isContained && onClickAway) onClickAway(event);
+    function onAppear(el: any, index: any): void {
+        setTimeout(() => {
+            el.classList.add('brew-FadeAnimator--fadeIn');
+            setTimeout(() => {
+                el.style.opacity = 1;
+                el.classList.remove('brew-FadeAnimator--fadeIn');
+            }, 500);
+        }, index * 50);
     }
 
 
-    React.useEffect(() => {
-        document.addEventListener('click', handleClick);
-        return ((): void => {
-            document.removeEventListener('click', handleClick);
-        });
-    }, []);
+    function onExit(el: any, index: any, removeElement: any): void {
+        setTimeout(() => {
+            el.classList.add('brew-FadeAnimator--fadeOut');
+            setTimeout(removeElement, 500);
+        }, index * 50);
+    }
 
 
     return (
-        <React.Fragment>
+        <Flipped
+            flipId={flipId}
+            onAppear={onAppear}
+            onExit={onExit}
+        >
             {children}
-            <div ref={ref} style={{ display: 'none' }} />
-        </React.Fragment>
+        </Flipped>
     );
 
 
 }
 
 
-export default ClickAwayListener;
+export default FadeAnimator;
