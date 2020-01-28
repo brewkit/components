@@ -11,5 +11,7 @@ it('renders correctly', () => {
             </ScrollToListener>
         ))
         .toJSON();
+
+
     expect(tree).toMatchSnapshot();
 });
