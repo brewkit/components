@@ -96,10 +96,9 @@ export const Threshold = (): ReactElement => {
 
 
 export const RootElement = (): ReactElement => {
-    const fire = (): void => console.log('scrolled to');
+    const fire = (): void => console.log('I\'m visible!');
     const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const threshold = [0, 0.25, 0.50, 0.75];
-    const el = document.querySelector('#root-element');
 
 
     const parentStyles = {
