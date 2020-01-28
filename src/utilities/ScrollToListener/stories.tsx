@@ -93,3 +93,50 @@ export const Threshold = (): ReactElement => {
 
 
 };
+
+
+export const RootElement = (): ReactElement => {
+    const fire = (): void => console.log('scrolled to');
+    const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const threshold = [0, 0.25, 0.50, 0.75];
+    const el = document.querySelector('#root-element');
+
+
+    const parentStyles = {
+        backgroundColor: 'rebeccapurple',
+        display: 'flex',
+        height: '200px',
+        justifyContent: 'center',
+        overflow: 'scroll',
+        width: '200px',
+    };
+
+
+    const childStyles = {
+        backgroundColor: 'pink',
+        height: '50px',
+        width: '100px',
+    };
+
+
+    const listenerStyles = {
+        backgroundColor: 'red',
+        height: '200px',
+        width: '100px',
+    };
+
+
+    return (
+        <div id="root-element" style={parentStyles}>
+            <div>
+                {list.map((child: number) => <div key={child} style={childStyles}>child</div>)}
+                <ScrollToListener onScrollTo={fire} rootElement="#root-element" rootThreshold={threshold}>
+                    <div style={listenerStyles}>HELLO WORLD</div>
+                </ScrollToListener>
+                {list.map((child: number) => <div key={child} style={childStyles}>child</div>)}
+            </div>
+        </div>
+    );
+
+
+};

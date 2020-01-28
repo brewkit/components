@@ -17,11 +17,11 @@ export interface Props {
 
 
     /**
-     * The element that is used as the viewport for checking visibility of the target.
-     * Must be ancestor of target
+     * css selector that is used as the viewport for checking visibility of the target.
+     * Must be ancestor of target.
      * Defaults to browser viewport if not specified/null
      */
-    rootElement?: Element | null,
+    rootElement?: string | null,
 
 
     /**
