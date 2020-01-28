@@ -12,7 +12,7 @@ export type Colors = (
     | 'info'
     | 'light'
     | 'dark'
-    | 'initial'
+    | 'inherit'
 );
 export type Alignments = 'inherit' | 'left' | 'center' | 'right' | 'justify';
 export type Displays = 'initial' | 'block' | 'inline' | 'inline-block';

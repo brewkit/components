@@ -65,4 +65,9 @@ export interface Props {
      */
     isCircular?: boolean,
 
+    /**
+     * The type of the button.
+     */
+    type?: 'button' | 'submit' | 'reset',
+
 }

@@ -17,7 +17,8 @@ export const Default = (): ReactElement => {
     const variant = select('variant', ['text', 'textarea', 'checkbox', 'radio'], 'text');
     const label = text('label', 'Input Label');
     return (
-        <Form>
+        // eslint-disable-next-line no-alert
+        <Form onSubmit={(values: object): void => alert(values)}>
             <Form.Field label={label} variant={variant} />
         </Form>
     );

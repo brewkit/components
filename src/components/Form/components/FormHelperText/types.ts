@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export interface Props {
-    color?: 'danger',
+    color?: 'danger' | 'info',
     className?: string,
     children?: ReactNode,
 }

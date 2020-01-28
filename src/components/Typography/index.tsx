@@ -8,7 +8,7 @@ import { Props } from './types';
  */
 function Typography({
     variant = 'inherit',
-    color = 'initial',
+    color = 'inherit',
     align = 'inherit',
     display = 'initial',
     shouldTruncate = false,

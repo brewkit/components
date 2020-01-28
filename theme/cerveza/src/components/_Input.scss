@@ -33,7 +33,6 @@
 
     display: inline-flex;
 	align-items: center;
-	height: 52px;
 	width: 100%;
 	max-width: map-get($inputs, width);
 	box-sizing: border-box;
@@ -55,7 +54,7 @@
         &__element {
             font-size: size(normal);
             font-weight: map-get(map-get($typography, font-weights), body2);
-            padding: size(normal);
+            padding: size(small);
             border-radius: $radius;
             border: 1px solid color(grey, 100);
             box-sizing: border-box;

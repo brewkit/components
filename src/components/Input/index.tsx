@@ -15,8 +15,10 @@ import { Props } from './types';
  */
 function Input({
     variant = 'text',
+    formRef,
     ...otherProps
 }: Props): ReactElement {
+
 
     /* Map our input components for easier access */
     const components = {
@@ -27,9 +29,13 @@ function Input({
         textarea: Textarea,
     };
 
+
     const Element = components[variant] || TextInput;
 
-    return <Element {...otherProps} />;
+
+    return <Element formRef={formRef} {...otherProps} />;
+
+
 }
 
 

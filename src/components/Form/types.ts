@@ -1,15 +1,18 @@
-import { ReactNode, ReactElement } from 'react';
+import React from 'react';
+import { Props as FormButtonProps } from './components/FormButton/types';
 
 
 export interface Props {
-    children?: ReactNode,
+    children?: React.ReactNode,
+    onSubmit: (formValues: object) => void,
 }
 
 
 export interface FormComponent {
+    Button?: any,
     Group?: any,
     Label?: any,
     Field?: any,
     HelperText?: any,
-    (props: Props): ReactElement,
+    (props: Props): React.ReactElement,
 }

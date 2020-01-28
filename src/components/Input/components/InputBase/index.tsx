@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Typography from '../../../Typography';
 import { Props } from './types';
 
+
 /**
  * This component is made to be extended, not to be used directly
  */
@@ -32,8 +33,11 @@ const InputBase = ({
     rows,
     type = 'text',
     value,
+    formRef,
     ...otherProps
 }: Props): ReactElement => {
+
+
     const classes = clsx(
         'brew-Input',
         { 'brew-Input--isDisabled': Boolean(disabled) },
@@ -44,7 +48,9 @@ const InputBase = ({
         className,
     );
 
+
     const Element = as;
+
 
     return (
         <Typography as="label" className={classes} {...otherProps}>
@@ -62,6 +68,7 @@ const InputBase = ({
                 onChange={onChange}
                 placeholder={placeholder}
                 readOnly={readOnly}
+                ref={formRef}
                 required={required}
                 rows={rows}
                 type={type}
@@ -77,8 +84,12 @@ const InputBase = ({
             {inputLabel && (type === 'checkbox' || type === 'radio') && (
                 <span className={clsx('brew-Input__label', inputLabelClassName)}>{inputLabel}</span>
             )}
+
         </Typography>
     );
+
+
 };
+
 
 export default InputBase;

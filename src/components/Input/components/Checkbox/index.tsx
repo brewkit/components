@@ -1,8 +1,10 @@
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
-import Icon from '../../../Icon';
+import { Flipper, Flipped } from 'react-flip-toolkit';
+import Icon from '@components/Icon';
 import InputBase from '../InputBase';
 import { Props } from './types';
+
 
 function CheckboxCustomControl(): ReactElement {
     return (
@@ -12,15 +14,18 @@ function CheckboxCustomControl(): ReactElement {
     );
 }
 
+
 function Checkbox({
-    className = undefined,
+    className,
     ...otherProps
 }: Props): ReactElement {
+
 
     const classes = clsx(
         'brew-Input--checkbox',
         className,
     );
+
 
     return (
         <InputBase

@@ -16,5 +16,31 @@
 
 .brew-FormLabel {
     display: block;
-    margin-bottom: size(x-small);
+}
+
+
+// ==============================================
+// Form.Field
+// ==============================================
+
+.brew-FormField {
+    display: grid;
+    grid-row-gap: size(x-small);
+}
+
+.brew-FormField--hasError .brew-Input--textInput .brew-Input__element {
+    border: 1px solid color(accent, danger);
+}
+
+.brew-FormField--hasError .brew-FormHelperText {
+    color: color(accent, danger);
+}
+
+
+// ==============================================
+// Form.HelperText
+// ==============================================
+
+.brew-FormHelperText {
+    font-size: size(small);
 }

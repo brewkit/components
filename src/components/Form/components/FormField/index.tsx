@@ -1,26 +1,32 @@
 import React, { ReactElement } from 'react';
+import { useFormContext } from 'react-hook-form';
 import clsx from 'clsx';
+import Input from '@components/Input';
 import FormGroup from '../FormGroup';
 import FormLabel from '../FormLabel';
 import FormHelperText from '../FormHelperText';
-import Input from '../../../Input';
 import { Props } from './types';
 
 
 function FormField({
     className,
     inputClassName,
-    error,
     helperText,
     label,
     variant,
+    validation,
+    name,
     ...otherProps
 }: Props): ReactElement {
 
 
+    const { register, errors } = useFormContext<Record<string, unknown>>();
+    const hasError = Boolean(name && errors && errors[name]?.message);
+
+
     const classes = clsx(
         'brew-FormField',
-        { 'brew-FormField--hasError': Boolean(error) },
+        { 'brew-FormField--hasError': hasError },
         className,
     );
 
@@ -32,10 +38,16 @@ function FormField({
                 <FormLabel>{label}</FormLabel>
             )}
 
-            <Input className={inputClassName} variant={variant} {...otherProps} />
+            <Input
+                className={inputClassName}
+                formRef={validation ? register(validation) : register}
+                name={name}
+                variant={variant}
+                {...otherProps}
+            />
 
-            {helperText && (
-                <FormHelperText>{helperText}</FormHelperText>
+            {(helperText ?? hasError) && (
+                <FormHelperText>{(name && errors[name]?.message) || helperText}</FormHelperText>
             )}
 
         </FormGroup>

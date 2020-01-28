@@ -1,72 +1,41 @@
 import React, { ReactElement } from 'react';
-import { useFormContext, ErrorMessage } from 'react-hook-form';
 import clsx from 'clsx';
-import Input from '@components/Input';
-import FormGroup from '../FormGroup';
-import FormLabel from '../FormLabel';
-import FormHelperText from '../FormHelperText';
+import { useFormContext } from 'react-hook-form';
+import Button from '@components/Button';
 import { Props } from './types';
 
 
-function FormField({
+function FormButton({
     className,
-    inputClassName,
-    error,
-    helperText,
-    label,
-    variant,
-    validation,
-    name,
-    onBlur,
     ...otherProps
 }: Props): ReactElement {
 
 
-    const { register, triggerValidation } = useFormContext();
+    const { formState } = useFormContext();
+    const [isValid, setIsValid] = React.useState(formState.isValid);
+    const [isSubmitting, setIsSubmitting] = React.useState(formState.isValid);
+
+
+    React.useEffect(() => {
+        setIsValid(formState.isValid);
+        setIsSubmitting(formState.isSubmitting);
+    }, [formState]);
 
 
     const classes = clsx(
         'brew-FormField',
-        { 'brew-FormField--hasError': Boolean(error) },
         className,
     );
 
 
-    function handleOnBlur(): void {
-        if (name) triggerValidation(name).catch((err: PromiseRejectionEvent) => err);
-        if (onBlur) onBlur();
-    }
-
-
     return (
-        <FormGroup className={classes}>
-
-            {label && (
-                <FormLabel>{label}</FormLabel>
-            )}
-
-            <Input
-                className={inputClassName}
-                formRef={validation ? register(validation) : register}
-                name={name}
-                onBlur={handleOnBlur}
-                variant={variant}
-                {...otherProps}
-            />
-
-            {name &&
-                <ErrorMessage name={name} />
-            }
-
-            {helperText && (
-                <FormHelperText>{helperText}</FormHelperText>
-            )}
-
-        </FormGroup>
+        <Button className={classes} isDisabled={!isValid} isLoading={isSubmitting} type="submit" {...otherProps}>
+            Submit
+        </Button>
     );
 
 
 }
 
 
-export default FormField;
+export default FormButton;

@@ -1,10 +1,11 @@
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
+import Typography from '@components/Typography';
 import { Props } from './types';
 
 
 function FormHelperText({
-    color,
+    color = 'info',
     className,
     children,
 }: Props): ReactElement {
@@ -12,14 +13,14 @@ function FormHelperText({
 
     const classes = clsx(
         'brew-FormHelperText',
-        { [`brew-FormHelperText--color-${color}`]: Boolean(color) },
+        `brew-FormHelperText--color-${color}`,
         className,
     );
 
 
     return (
         <div className={classes}>
-            {children}
+            <Typography color="inherit">{children}</Typography>
         </div>
     );
 

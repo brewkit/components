@@ -154,4 +154,9 @@ export interface Props {
      */
     before?: ReactNode,
 
+    /**
+     * A ref passed to the input from <Form />. Should not be set explicitly.
+     */
+    formRef?: any,
+
 }
