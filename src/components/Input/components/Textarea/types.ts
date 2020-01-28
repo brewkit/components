@@ -9,5 +9,6 @@ export type Props = Omit<InputBaseProps,
     | 'defaultChecked'
     | 'inputLabel'
     | 'inputLabelClassName'
+    | 'multiple'
     | 'type'
 >;

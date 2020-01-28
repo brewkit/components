@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select renders correctly 1`] = `
+<label
+  className="brew-Typography brew-Typography--variant-inherit brew-Typography--color-initial brew-Typography--align-inherit brew-Typography--display-initial brew-Input brew-Select"
+>
+  <select
+    className="brew-Input__element"
+    name="name"
+    onChange={[Function]}
+    type="text"
+    value=""
+  >
+    <option>
+      Option 1
+    </option>
+    <option>
+      Option 2
+    </option>
+  </select>
+  <div
+    className="brew-CustomControl"
+  >
+    <div
+      className="brew-CustomControl__input"
+      onClick={[Function]}
+    >
+      <div
+        className="brew-CustomControl__renderedSelection"
+      >
+        
+      </div>
+      <i
+        className="brew-Icon material-icons brew-Icon--color-inherit brew-Icon--size-inherit brew-CustomControl__icon"
+      >
+        keyboard_arrow_down
+      </i>
+    </div>
+  </div>
+</label>
+`;

@@ -24,6 +24,7 @@ const InputBase = ({
     inputClassName,
     inputLabel,
     inputLabelClassName,
+    isMultiple,
     name,
     onChange,
     placeholder,
@@ -58,6 +59,7 @@ const InputBase = ({
                 defaultValue={defaultValue}
                 disabled={disabled}
                 id={id}
+                multiple={isMultiple}
                 name={name}
                 onChange={onChange}
                 placeholder={placeholder}
