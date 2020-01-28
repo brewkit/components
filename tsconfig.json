@@ -1,5 +1,10 @@
 {
     "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {
+            "@components/*": ["components/*"],
+            "@utilities/*": ["utilities/*"]
+        },
         "outDir": "dist",
         "module": "commonjs",
         "lib": ["dom", "esnext"],
