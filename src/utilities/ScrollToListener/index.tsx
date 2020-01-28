@@ -1,44 +1,55 @@
 /* eslint-disable no-console */
 import React, { ReactElement, RefObject } from 'react';
-import { Bounding, Props } from './types';
+import { Props } from './types';
 
 
 /**
- * Fires an event when the child element is scrolled to
+ * Fires an function passed through onScrollTo when the child element is scrolled to
  */
 function ScrollToListener({
-    onScrollTo,
     children,
+    onScrollTo,
+    rootElement = null,
+    rootMargin = '0px 0px 0px 0px',
+    rootThreshold = 0.01,
+    willListen = false,
 }: Props): ReactElement {
 
 
     const ref: RefObject<HTMLDivElement> = React.useRef(null);
 
 
-    function checkPosition(position?: Bounding): boolean {
-        console.log('hi');
-        if (position?.top) return position.top - window.innerHeight <= 0;
-        return false;
-    }
+    function handleScroll(entries: any, observer: any): void {
 
 
-    function handleScroll(event: Event): void {
-        const target = ref.current?.parentNode?.firstElementChild;
-        const targetPosition = target?.getBoundingClientRect();
-        const isScrolledTo = checkPosition(targetPosition);
-        console.log('target', target);
-        console.log('target position', targetPosition);
-        console.log('asdf', isScrolledTo);
-        if (isScrolledTo && onScrollTo) onScrollTo(event);
+        const [entry] = entries;
+        const lastThreshold = observer.thresholds[observer.thresholds.length - 1];
+
+
+        if (entry.intersectionRatio > 0) onScrollTo();
+        if (!willListen && entry.intersectionRatio >= lastThreshold) observer.disconnect();
+
+
     }
 
 
     React.useEffect(() => {
-        window.addEventListener('scroll', handleScroll, { passive: true });
+
+
+        const target = ref.current?.previousElementSibling;
+        const observer = new IntersectionObserver(handleScroll, { root: rootElement,
+            rootMargin,
+            threshold: rootThreshold });
+
+
+        if (target) observer.observe(target);
+
 
         return ((): void => {
-            window.removeEventListener('scroll', handleScroll);
+            if (target) observer.unobserve(target);
         });
+
+
     }, []);
 
 
