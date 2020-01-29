@@ -37,7 +37,7 @@ function ScrollToListener({
 
         const findRootElement = rootElement ? document.querySelector(rootElement) : null;
 
-        const target = ref.current?.previousElementSibling;
+        const target = ref.current?.nextElementSibling;
 
         const observer = new IntersectionObserver(handleScroll, { root: findRootElement,
             rootMargin,
@@ -57,8 +57,8 @@ function ScrollToListener({
 
     return (
         <React.Fragment>
+            <span ref={ref} style={{ display: 'none' }} />
             {children}
-            <div ref={ref} style={{ display: 'none' }} />
         </React.Fragment>
     );
 

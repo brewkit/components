@@ -2,15 +2,15 @@
 
 exports[`renders correctly 1`] = `
 Array [
-  <div>
-    foo
-  </div>,
-  <div
+  <span
     style={
       Object {
         "display": "none",
       }
     }
   />,
+  <div>
+    foo
+  </div>,
 ]
 `;
