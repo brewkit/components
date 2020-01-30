@@ -28,7 +28,7 @@ export interface Props {
      * Must be ancestor of target.
      * Defaults to browser viewport if not specified/null
      */
-    rootElement?: string | null,
+    rootElement?: Element | null,
 
 
     /**
