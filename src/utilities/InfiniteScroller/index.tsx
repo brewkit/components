@@ -29,7 +29,7 @@ function InfiniteScroller({
 
     return (
         <div>
-            <ScrollToListener applyToLastChild onScrollTo={dOiT} willListen>
+            <ScrollToListener applyToLastChild onScrollTo={dOiT} rootMargin="500px 0px 500px 0px" willListen>
                 {children}
             </ScrollToListener>
             {isLoading && loadingIndicator}

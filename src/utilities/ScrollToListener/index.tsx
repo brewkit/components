@@ -25,7 +25,7 @@ function ScrollToListener({
         const [entry] = entries;
         const lastThreshold = observer.thresholds[observer.thresholds.length - 1];
 
-
+        console.log('entry', entry.intersectionRatio);
         if (entry.intersectionRatio > 0) onScrollTo();
         if (!willListen && entry.intersectionRatio >= lastThreshold) observer.disconnect();
 
@@ -53,7 +53,7 @@ function ScrollToListener({
         });
 
 
-    }, [children]);
+    }, [React.Children.toArray(children).length]);
 
 
     const componentStructure = (): ReactElement => {

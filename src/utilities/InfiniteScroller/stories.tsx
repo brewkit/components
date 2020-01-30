@@ -10,11 +10,11 @@ export default {
 
 
 export const Default = (): ReactElement => {
-    const [state, setState] = React.useState(Array.from({ length: 50 }));
+    const [state, setState] = React.useState(Array.from({ length: 100 }));
     const next = (): any => {
         setTimeout(() => {
-            setState((prevState: any): [] => prevState.concat(Array.from({ length: 10 })));
-        }, 100);
+            setState((prevState: any): [] => prevState.concat(Array.from({ length: 20 })));
+        }, 1000);
     };
 
 
