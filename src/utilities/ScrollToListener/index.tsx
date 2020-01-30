@@ -36,11 +36,9 @@ function ScrollToListener({
     React.useEffect(() => {
 
 
-        const findRootElement = rootElement ? document.querySelector(rootElement) : null;
-
         const target = applyToLastChild ? ref.current?.previousElementSibling : ref.current?.nextElementSibling;
 
-        const observer = new IntersectionObserver(handleScroll, { root: findRootElement,
+        const observer = new IntersectionObserver(handleScroll, { root: rootElement,
             rootMargin,
             threshold: rootThreshold });
 
