@@ -1,22 +1,28 @@
-/* eslint-disable no-console */
 import React, { ReactElement } from 'react';
+import clsx from 'clsx';
 import ScrollToListener from '../ScrollToListener';
 import { Props } from './types';
 
 
 function InfiniteScroller({
     children,
+    className,
     dataLength,
     endMessage,
     hasMore,
-    loadingIndicator,
+    loadingMessage,
     getMoreData,
-    rootElement = null,
+    ...otherProps
 }: Props): ReactElement {
 
 
     const [isLoading, setIsLoading] = React.useState(false);
-    const ref = React.useRef(null);
+
+
+    const scrollerClasses = clsx(
+        'brew-InfiniteScroller',
+        className,
+    );
 
 
     React.useEffect(() => {
@@ -25,22 +31,27 @@ function InfiniteScroller({
 
 
     const loadMoreData = (): void => {
+        if (!hasMore) return;
         setIsLoading(true);
         getMoreData();
     };
 
 
     return (
-        <div className="brew-InfiniteScroller" ref={ref}>
-            <ScrollToListener
-                applyToLastChild
-                onScrollTo={loadMoreData}
-                rootElement={ref?.current ?? rootElement}
-            >
+        <div className={scrollerClasses} {...otherProps}>
+            <ScrollToListener applyToLastChild onScrollTo={loadMoreData}>
                 {children}
             </ScrollToListener>
-            {isLoading && loadingIndicator}
-            {!hasMore && endMessage}
+            {isLoading && (
+                <div className="brew-InfiniteScroller__loadingMessage">
+                    {loadingMessage}
+                </div>
+            )}
+            {!hasMore && (
+                <div className="brew-InfiniteScroller__endMessage">
+                    {endMessage}
+                </div>
+            )}
         </div>
     );
 

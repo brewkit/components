@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions,@typescript-eslint/no-unused-vars-experimental */
 import React, { ReactElement } from 'react';
+import { boolean, text } from '@storybook/addon-knobs';
+import Progress from '../../components/Progress';
 import InfiniteScroller from './index';
 
 
@@ -10,6 +12,16 @@ export default {
 
 
 export const Default = (): ReactElement => {
+    const hasMore = boolean('hasMore', true);
+    const endMessage = text('endMessage', 'dunzo');
+    const loadingMessage = (
+        <React.Fragment>
+            <h1>Loading <Progress /></h1>
+            <h3>Be Patient</h3>
+            <p>please..</p>
+        </React.Fragment>
+    );
+
     const [state, setState] = React.useState(Array.from({ length: 100 }));
     const next = (): any => {
         setTimeout(() => {
@@ -19,7 +31,13 @@ export const Default = (): ReactElement => {
 
 
     return (
-        <InfiniteScroller dataLength={state.length} loadingIndicator={<h1>LOADING BRUH...</h1>} next={next}>
+        <InfiniteScroller
+            dataLength={state.length}
+            endMessage={endMessage}
+            getMoreData={next}
+            hasMore={hasMore}
+            loadingMessage={loadingMessage}
+        >
             {state.map((item: any, index: number) => <div key={index}>{`hello - ${index}`}</div>)}
         </InfiniteScroller>
     );
