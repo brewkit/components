@@ -5,6 +5,13 @@ export interface Props {
 
 
     /**
+     * Tells the scroll listener to apply it's dom ref to the last child instead of first child
+     * Useful for infinite scrolling; Default is useful for React Fragment Components
+     */
+    applyToLastChild?: boolean,
+
+
+    /**
      * Child element that the scroll to listener will be applied to
      */
     children: ReactNode,
