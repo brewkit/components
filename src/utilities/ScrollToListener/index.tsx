@@ -53,7 +53,7 @@ function ScrollToListener({
         });
 
 
-    }, [children]);
+    }, [React.Children.toArray(children).length]);
 
 
     const componentStructure = (): ReactElement => {
