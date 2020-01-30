@@ -6,6 +6,7 @@ import { Props } from './types';
  * Fires an function passed through onScrollTo when the child element is scrolled to
  */
 function ScrollToListener({
+    applyToLastChild = false,
     children,
     onScrollTo,
     rootElement = null,
@@ -37,7 +38,7 @@ function ScrollToListener({
 
         const findRootElement = rootElement ? document.querySelector(rootElement) : null;
 
-        const target = ref.current?.nextElementSibling;
+        const target = applyToLastChild ? ref.current?.previousElementSibling : ref.current?.nextElementSibling;
 
         const observer = new IntersectionObserver(handleScroll, { root: findRootElement,
             rootMargin,
@@ -55,12 +56,27 @@ function ScrollToListener({
     }, []);
 
 
-    return (
-        <React.Fragment>
-            <span ref={ref} style={{ display: 'none' }} />
-            {children}
-        </React.Fragment>
-    );
+    const componentStructure = (): ReactElement => {
+
+
+        if (applyToLastChild) return (
+            <React.Fragment>
+                {children}
+                <span ref={ref} style={{ display: 'none' }} />
+            </React.Fragment>
+        );
+
+
+        return (
+            <React.Fragment>
+                <span ref={ref} style={{ display: 'none' }} />
+                {children}
+            </React.Fragment>
+        );
+    };
+
+
+    return componentStructure();
 
 
 }
