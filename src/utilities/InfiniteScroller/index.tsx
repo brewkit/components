@@ -7,32 +7,40 @@ import { Props } from './types';
 function InfiniteScroller({
     children,
     dataLength,
+    endMessage,
+    hasMore,
     loadingIndicator,
-    next,
+    getMoreData,
+    rootElement = null,
 }: Props): ReactElement {
 
 
     const [isLoading, setIsLoading] = React.useState(false);
+    const ref = React.useRef(null);
 
 
     React.useEffect(() => {
-        console.log('got sum new DATAZ');
         setIsLoading(false);
     }, [dataLength]);
 
 
-    const dOiT = (): any => {
+    const loadMoreData = (): void => {
         setIsLoading(true);
-        next();
+        getMoreData();
     };
 
 
     return (
-        <div>
-            <ScrollToListener applyToLastChild onScrollTo={dOiT} rootMargin="500px 0px 500px 0px" willListen>
+        <div className="brew-InfiniteScroller" ref={ref}>
+            <ScrollToListener
+                applyToLastChild
+                onScrollTo={loadMoreData}
+                rootElement={ref?.current ?? rootElement}
+            >
                 {children}
             </ScrollToListener>
             {isLoading && loadingIndicator}
+            {!hasMore && endMessage}
         </div>
     );
 
