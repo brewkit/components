@@ -24,7 +24,7 @@ function ScrollToListener({
 
         const [entry] = entries;
         const lastThreshold = observer.thresholds[observer.thresholds.length - 1];
-
+        console.log('entry', entry);
         if (entry.intersectionRatio > 0) onScrollTo();
         if (!willListen && entry.intersectionRatio >= lastThreshold) observer.disconnect();
 
@@ -34,16 +34,16 @@ function ScrollToListener({
 
     React.useEffect(() => {
 
-        console.log('This is the rootElement being passed to in <ScrollToListener>', forwardedRef);
-        console.log('This is the scrollToRef', scrollToRef.current);
+        console.log('This is the rootElement being passed to in <ScrollToListener>', forwardedRef?.current);
+
 
         const target = applyToLastChild
             ? scrollToRef.current?.previousElementSibling
             : scrollToRef.current?.nextElementSibling;
 
-
+        console.log('This is the scrollToRef target', target);
         const observer = new IntersectionObserver(handleScroll, {
-            root: forwardedRef,
+            root: forwardedRef?.current,
             rootMargin,
             threshold: rootThreshold,
         });

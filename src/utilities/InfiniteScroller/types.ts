@@ -67,6 +67,8 @@ export interface Props {
      * 0 or [0] or [0, 0.25, 0.50, 0.75, 1]
      */
     rootThreshold?: number[] | number,
+    wrapperHeight: string,
+    wrapperWidth: string,
 
 
 }

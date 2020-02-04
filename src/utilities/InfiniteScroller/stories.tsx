@@ -37,6 +37,8 @@ export const Default = (): ReactElement => {
             getMoreData={next}
             hasMore={hasMore}
             loadingMessage={loadingMessage}
+            wrapperHeight="10rem"
+            wrapperWidth="auto"
         >
             {state.map((item: any, index: number) => <div key={index}>{`hello - ${index}`}</div>)}
         </InfiniteScroller>
@@ -66,6 +68,8 @@ export const RootElement = (): ReactElement => {
                 getMoreData={next}
                 hasMore={hasMore}
                 loadingMessage={loadingMessage}
+                wrapperHeight="100%"
+                wrapperWidth="auto"
             >
                 {state.map((item: any, index: number) => <div key={index}>{`hello - ${index}`}</div>)}
             </InfiniteScroller>

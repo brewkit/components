@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, RefObject } from 'react';
 
 
 export interface Props {
@@ -20,7 +20,7 @@ export interface Props {
     /**
      * Forwarded Ref
      */
-    forwardedRef?: HTMLElement | null,
+    forwardedRef?: RefObject<HTMLDivElement>,
 
 
     /**
