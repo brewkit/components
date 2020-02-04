@@ -18,12 +18,6 @@ export interface Props {
 
 
     /**
-     * Forwarded Ref
-     */
-    forwardedRef?: RefObject<HTMLDivElement>,
-
-
-    /**
      * Function to call when the element comes into the viewport
      */
     onScrollTo: () => void,
