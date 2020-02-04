@@ -11,12 +11,6 @@ export interface Props {
 
 
     /**
-     * Custom class
-     */
-    className?: string,
-
-
-    /**
      * Used to track number of children/loading state of scroll
      */
     dataLength: number,
