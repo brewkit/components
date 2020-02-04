@@ -44,3 +44,36 @@ export const Default = (): ReactElement => {
 
 
 };
+
+
+export const RootElement = (): ReactElement => {
+    const hasMore = boolean('hasMore', true);
+    const endMessage = text('endMessage', 'dunzo');
+    const loadingMessage = <h1>Loading <Progress /></h1>;
+    const [state, setState] = React.useState(Array.from({ length: 30 }));
+    const next = (): any => {
+        setTimeout(() => {
+            setState((prevState: any): [] => prevState.concat(Array.from({ length: 20 })));
+        }, 1000);
+    };
+    const ref = React.useRef(null);
+
+
+    return (
+        <div ref={ref} style={{ height: '100px', overflow: 'scroll' }}>
+            <InfiniteScroller
+                dataLength={state.length}
+                endMessage={endMessage}
+                getMoreData={next}
+                hasMore={hasMore}
+                loadingMessage={loadingMessage}
+                rootElement={ref.current ?? null}
+            >
+                {state.map((item: any, index: number) => <div key={index}>{`hello - ${index}`}</div>)}
+            </InfiniteScroller>
+        </div>
+
+    );
+
+
+};

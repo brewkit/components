@@ -34,7 +34,7 @@ function ScrollToListener({
 
     React.useEffect(() => {
 
-
+        console.log('This is the rootElement being passed to in <ScrollToListener>', rootElement);
         const target = applyToLastChild ? ref.current?.previousElementSibling : ref.current?.nextElementSibling;
 
         const observer = new IntersectionObserver(handleScroll, { root: rootElement,

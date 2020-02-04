@@ -12,11 +12,15 @@ function InfiniteScroller({
     hasMore,
     loadingMessage,
     getMoreData,
+    rootElement,
+    rootMargin,
+    rootThreshold,
     ...otherProps
 }: Props): ReactElement {
 
 
     const [isLoading, setIsLoading] = React.useState(false);
+    const scrollerRef = React.useRef(null);
 
 
     const scrollerClasses = clsx(
@@ -38,8 +42,14 @@ function InfiniteScroller({
 
 
     return (
-        <div className={scrollerClasses} {...otherProps}>
-            <ScrollToListener applyToLastChild onScrollTo={loadMoreData}>
+        <div className={scrollerClasses} ref={scrollerRef} {...otherProps}>
+            <ScrollToListener
+                applyToLastChild
+                onScrollTo={loadMoreData}
+                rootElement={scrollerRef?.current ?? rootElement}
+                rootMargin={rootMargin}
+                rootThreshold={rootThreshold}
+            >
                 {children}
             </ScrollToListener>
             {isLoading && (
