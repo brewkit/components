@@ -8,8 +8,8 @@ import { Props } from './types';
 function ScrollToListener({
     applyToLastChild = false,
     children,
-    forwardedRef,
     onScrollTo,
+    rootElement,
     rootMargin = '0px 0px 0px 0px',
     rootThreshold = 0.01,
     willListen = false,
@@ -24,7 +24,7 @@ function ScrollToListener({
 
         const [entry] = entries;
         const lastThreshold = observer.thresholds[observer.thresholds.length - 1];
-        console.log('entry', entry);
+
         if (entry.intersectionRatio > 0) onScrollTo();
         if (!willListen && entry.intersectionRatio >= lastThreshold) observer.disconnect();
 
@@ -34,16 +34,14 @@ function ScrollToListener({
 
     React.useEffect(() => {
 
-        console.log('This is the rootElement being passed to in <ScrollToListener>', forwardedRef?.current);
-
 
         const target = applyToLastChild
             ? scrollToRef.current?.previousElementSibling
             : scrollToRef.current?.nextElementSibling;
 
-        console.log('This is the scrollToRef target', target);
+
         const observer = new IntersectionObserver(handleScroll, {
-            root: forwardedRef?.current,
+            root: rootElement,
             rootMargin,
             threshold: rootThreshold,
         });
