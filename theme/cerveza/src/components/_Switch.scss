@@ -47,3 +47,41 @@
     }
 
 }
+
+
+// -------------------------------------
+// On Hover & On Focus
+
+.brew-Switch:hover,
+.brew-Switch:focus {
+    outline: none;
+}
+
+
+// -------------------------------------
+// Checked
+
+.brew-Switch input:checked {
+
+    & ~ .brew-Switch__control {
+
+        .brew-Switch__track {
+            background-color: rgba(utilities.color(brand, primary), 0.2);
+        }
+
+        .brew-Switch__knob {
+            left: 75%;
+            background-color: utilities.color(brand, primary);
+        }
+
+    }
+
+}
+
+
+// -------------------------------------
+// Disabled
+
+.brew-Input--isDisabled.brew-Switch {
+    cursor: not-allowed;
+}
