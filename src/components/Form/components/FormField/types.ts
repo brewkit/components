@@ -1,13 +1,12 @@
-import { ReactElement } from 'react';
+import React from 'react';
 import { Props as InputProps } from '../../../Input/types';
 
 
 export interface Props extends InputProps {
-    error?: boolean,
+    hasError?: boolean,
     helperText?: string,
-    label?: ReactElement,
+    label?: React.ReactNode,
     className?: string,
-    children?: ReactElement,
     validation?: any,
     name?: string,
     onBlur?: (event?: Event) => void,

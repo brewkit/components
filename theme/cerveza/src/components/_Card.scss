@@ -1,4 +1,5 @@
-@import "../utilities";
+@use 'sass:map';
+@use '../utilities';
 
 
 // ==============================================
@@ -6,7 +7,7 @@
 // ==============================================
 
 .brew-Card--hasBorder {
-    box-shadow: map-get($general, box-shadow);
+    box-shadow: map.get(utilities.$general, box-shadow);
 }
 
 
@@ -15,9 +16,9 @@
 // ==============================================
 
 .brew-CardHeader {
-    padding: size('base');
-    background-color: color(grey, 50);
-    border-bottom: 1px solid color(gray, 100);
+    padding: utilities.size('base');
+    background-color: utilities.color(grey, 50);
+    border-bottom: 1px solid utilities.color(gray, 100);
 }
 
 
@@ -26,5 +27,5 @@
 // ==============================================
 
 .brew-CardBody {
-    padding: size(normal);
+    padding: utilities.size(normal);
 }

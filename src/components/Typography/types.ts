@@ -60,4 +60,9 @@ export interface Props {
      */
     as?: keyof JSX.IntrinsicElements | null,
 
+    /**
+     * A tab index to be passed to the underlying element
+     */
+    tabIndex?: number,
+
 }

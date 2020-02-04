@@ -1,0 +1,79 @@
+@use '../utilities';
+
+
+// ==============================================
+// RadioGroup
+// ==============================================
+
+// -------------------------------------
+// General
+
+.brew-RadioGroup {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-auto-columns: min-content;
+    grid-gap: utilities.size(normal) * 2;
+}
+
+
+
+// -------------------------------------
+// Pill Variant
+
+
+$pill-active-color: #ffffff;
+
+
+%background-shade {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.3s;
+}
+
+
+.brew-RadioGroup--variant-pill {
+    grid-gap: utilities.size(small);
+
+    .brew-Radio {
+        text-align: center;
+        grid-template-columns: 1fr;
+        position: relative;
+
+        .brew-Input__label {
+            border-radius: utilities.$border-radius;
+            padding: utilities.size(small);
+            font-size: utilities.size(small);
+            font-weight: bold;
+            color: utilities.color(brand, primary);
+            transition: all 0.3s;
+        }
+
+        .brew-Input__label:before {
+            &:before { @extend %background-shade; }
+        }
+
+        &:hover .brew-Input__label:before,
+        &:focus .brew-Input__label:before {
+            background-color: rgba(utilities.color(brand, primary), 0.2);
+            transform: translate(-50%, -50%) scale(100);
+        }
+
+        .brew-Radio__control {
+            display: none;
+        }
+
+        input:checked ~ .brew-Input__label {
+            background-color: utilities.color(brand, primary);
+            color: $pill-active-color;
+        }
+
+    }
+
+}

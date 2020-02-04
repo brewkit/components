@@ -1,14 +1,22 @@
-@import "../utilities";
+@use 'sass:map';
+@use '../utilities';
 
 // ==============================================
 // General Input styles
 // ==============================================
 
+// -------------------------------------
+// Labels
+
+.brew-Input__label {
+    color: utilities.color(grey, 500);
+}
+
 // ==============================================
 // Text Input
 // ==============================================
 .brew-Input--textInput {
-    $radius: map-get($inputs, border-radius);
+    $radius: map.get(utilities.$inputs, border-radius);
 
     @mixin modifyBefore($direction) {
         border-#{$direction}: none;
@@ -23,9 +31,9 @@
         display: flex;
         height: 100%;
         align-items: center;
-        border: 1px solid color(grey, 100);
+        border: 1px solid utilities.color(grey, 100);
         border-#{$insideDirection}: none;
-        padding: size(normal);
+        padding: utilities.size(normal);
         padding-#{$insideDirection}: 0;
         border-top-#{$outsideDirection}-radius: $radius;
         border-bottom-#{$outsideDirection}-radius: $radius;
@@ -34,7 +42,7 @@
     display: inline-flex;
 	align-items: center;
 	width: 100%;
-	max-width: map-get($inputs, width);
+	max-width: map.get(utilities.$inputs, width);
 	box-sizing: border-box;
 
 	&, * {
@@ -52,17 +60,17 @@
         }
 
         &__element {
-            font-size: size(normal);
-            font-weight: map-get(map-get($typography, font-weights), body2);
-            padding: size(small);
+            font-size: utilities.size(normal);
+            font-weight: map.get(map.get(utilities.$typography, font-weights), body2);
+            padding: utilities.size(small);
             border-radius: $radius;
-            border: 1px solid color(grey, 100);
+            border: 1px solid utilities.color(grey, 100);
             box-sizing: border-box;
             flex-grow: 1;
 
             &:active,
             &:focus {
-                border-color: color(brand, primary);
+                border-color: utilities.color(brand, primary);
                 outline: none;
             }
         }
@@ -86,7 +94,7 @@
             &__element,
             &__before,
             &__after {
-                border-color: color(accent, danger);
+                border-color: utilities.color(accent, danger);
             }
         }
     }
@@ -101,93 +109,12 @@
             &__element,
             &__before,
             &__after {
-                background-color: color(grey, 100);
-                border-color: color(grey, 100);
+                background-color: utilities.color(grey, 100);
+                border-color: utilities.color(grey, 100);
             }
         }
     }
 
-}
-
-// ==============================================
-// Checkbox
-// ==============================================
-.brew-Input--checkbox {
-    overflow: hidden;
-    display: inline-flex;
-    align-items: center;
-
-    .brew-Input {
-
-        &__element {
-            position: absolute;
-            left: -9999px;
-            top: 0;
-
-            &:checked + .brew-Input__customControl {
-                background: color(brand, primary);
-                border-color: color(brand, primary);
-
-                .brew-Input__customControlIcon {
-                    display: initial;
-                }
-            }
-        }
-
-        &__customControl {
-            height: size(xx-large);
-            width: size(xx-large);
-            border: 1px solid color(grey, 100);
-            border-radius: map-get($inputs, border-radius);
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-
-            &Icon {
-                display: none;
-
-                > svg {
-                    fill: white;
-                }
-            }
-
-        }
-
-        &__label {
-            font-weight: map-get(map-get($typography, font-weights), body2);
-            color: color(grey, 800);
-            margin-left: size(small);
-        }
-    }
-
-    &.brew-Input--hasError {
-
-        .brew-Input {
-
-            &__customControl,
-            &__element:checked + .brew-Input__customControl {
-                border-color: color(accent, danger);
-            }
-        }
-    }
-
-    &.brew-Input--isDisabled {
-
-        .brew-Input {
-
-            &__customControl,
-            &__element:checked + .brew-Input__customControl {
-                border-color: color(grey, 100);
-                background: color(grey, 100);
-            }
-
-            &__label {
-                color: color(grey, 300);
-            }
-        }
-    }
 }
 
 
@@ -197,7 +124,7 @@
 .brew-Input--textarea {
     display: inline-flex;
     width: 100%;
-    max-width: map-get($inputs, width);
+    max-width: map.get(utilities.$inputs, width);
 
     @mixin appendStyles($type) {
         $direction: if($type == 'before', 'left', 'right');
@@ -210,14 +137,14 @@
         $direction: if($type == 'before', 'left', 'right');
         $oppositeDirection: if($direction == 'left', 'right', 'left');
 
-        padding: size(normal);
-        border: 1px solid color(grey, 100);
+        padding: utilities.size(normal);
+        border: 1px solid utilities.color(grey, 100);
         display: flex;
         align-items: center;
         padding-#{$oppositeDirection}: 0;
         border-#{$oppositeDirection}: none;
-        border-top-#{$direction}-radius: $border-radius;
-        border-bottom-#{$direction}-radius: $border-radius;
+        border-top-#{$direction}-radius: utilities.$border-radius;
+        border-bottom-#{$direction}-radius: utilities.$border-radius;
     }
 
     .brew-Input {
@@ -233,19 +160,19 @@
         &__element {
             flex-grow: 1;
             font-size: 1rem;
-            color: color(grey, 800);
-            padding: size(normal);
-            border: 1px solid color(grey, 100);
-            border-radius: $border-radius;
+            color: utilities.color(grey, 800);
+            padding: utilities.size(normal);
+            border: 1px solid utilities.color(grey, 100);
+            border-radius: utilities.$border-radius;
             box-sizing: border-box;
 
             &:active,
             &:focus {
                 outline: none;
-                border-color: color(brand, primary);
+                border-color: utilities.color(brand, primary);
 
                 &.isDisabled {
-                    border-color: color(grey, 100);
+                    border-color: utilities.color(grey, 100);
                 }
             }
         }
@@ -271,7 +198,7 @@
             &__element,
             &__before,
             &__after {
-                border-color: color(accent, danger);
+                border-color: utilities.color(accent, danger);
             }
         }
     }
@@ -282,8 +209,8 @@
             &__element,
             &__before,
             &__after {
-                border-color: color(grey, 100);
-                background-color: color(grey, 100);
+                border-color: utilities.color(grey, 100);
+                background-color: utilities.color(grey, 100);
             }
         }
 
@@ -293,194 +220,4 @@
         max-width: initial;
     }
 
-}
-
-// ==============================================
-// Radio
-// ==============================================
-// .brew-Input__element:checked + .brew-Input__customControl {
-//     border-width: 10px;
-//     border-color: color(brand, primary);
-// }
-
-.brew-Input--radio {
-    display: inline-flex;
-    overflow: hidden;
-    align-items: center;
-
-    .brew-Input {
-        &__element {
-            position: absolute;
-            left: -9999px;
-
-            &:checked {
-                + .brew-Input__customControl {
-                    border-width: 10px;
-                    border-color: color(brand, primary);
-                }
-            }
-        }
-
-        &__customControl {
-            height: size(xx-large);
-            width: size(xx-large);
-            display: inline-flex;
-            border-radius: 100%;
-            border: 1px solid color(grey, 100);
-            box-sizing: border-box;
-
-            .brew-Input__element:checked + & {
-                border-width: 10px;
-                border-color: color(brand, primary);
-            }
-        }
-
-        &__label {
-            font-weight: map-get(map-get($typography, font-weights), body2);
-            color: color(grey, 800);
-            margin-left: size(small);
-        }
-    }
-
-    &.brew-Input--isFullWidth {
-        width: 100%;
-    }
-
-    &.brew-Input--isDisabled {
-
-        .brew-Input__element {
-
-            + .brew-Input__customControl {
-                background-color: color(grey, 100);
-            }
-
-            &:checked + .brew-Input__customControl {
-                background-color: white;
-                border-color: color(grey, 100);
-            }
-        }
-    }
-}
-
-
-// ==============================================
-// Radio Group
-// ==============================================
-
-.brew-Input--radioGroup {
-
-    label:not(:last-child) {
-        margin-right: size(normal);
-    }
-
-}
-
-
-// ==============================================
-// Switch
-// ==============================================
-
-$switchSize: size(xx-large);
-
-.brew-Switch {
-    display: inline-flex;
-    height: $switchSize;
-    position: relative;
-    cursor: pointer;
-
-    .brew-Input {
-        &__custom {
-            height: $switchSize;
-            width: $switchSize * 2;
-        }
-
-        &__element {
-            position: absolute;
-            opacity: 0;
-            height: 0;
-            width: 0;
-
-            &:checked ~ .brew-Input__custom .brew-Input__knob {
-                left: $switchSize;
-                background-color: color(brand,primary);
-            }
-
-            &:checked ~ .brew-Input__custom .brew-Input__track {
-                background-color: rgba(color(brand,primary), .2);
-            }
-        }
-
-        &__track {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            display: block;
-            width: $switchSize * 2;
-            height: $switchSize * .75;
-            background-color: rgba(color(base,grey), .2);
-            border-radius: $border-radius;
-        }
-
-        &__knob {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            display: block;
-            left: 0;
-            height: $switchSize;
-            width: $switchSize;
-            z-index: 1;
-            background-color: color(base, grey);
-            transition: .3s;
-            border-radius: $border-radius;
-        }
-
-        &__label {
-            align-self: center;
-            margin-left: size(small);
-        }
-    }
-
-
-    &.brew-Input--hasError {
-        .brew-Input {
-            &__track,
-            &__knob {
-                border: 1px solid color(accent, danger);
-            }
-
-            &__label {
-                color: color(accent, danger);
-            }
-        }
-    }
-
-    &.brew-Input--isDisabled {
-        pointer-events: none;
-        cursor: not-allowed;
-
-        .brew-Input {
-            &__element {
-                &:checked ~ .brew-Input__custom .brew-Input__knob {
-                    background-color: color(grey, 100);
-                }
-
-                &:checked ~ .brew-Input__custom .brew-Input__track {
-                    background-color: rgba(color(grey, 100), .2);
-                }
-            }
-
-            &__custom {
-                .brew-Input {
-                    &__knob {
-                        background-color: color(grey, 100);
-                    }
-
-                    &__track {
-                        background-color: rgba(color(grey, 100), .2);
-                    }
-                }
-            }
-        }
-    }
 }

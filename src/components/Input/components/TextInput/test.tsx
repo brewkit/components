@@ -4,7 +4,7 @@ import InputBase from '../InputBase';
 import { shallow, mount } from 'enzyme';
 
 describe('TextInput', () => {
-    it('renders without error', () => {
+    it('renders without hasError', () => {
         expect(shallow(<TextInput />).dive().find('input').length).toBe(1);
     });
 

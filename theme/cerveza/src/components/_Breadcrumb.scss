@@ -1,4 +1,4 @@
-@import "../utilities";
+@use '../utilities';
 
 
 // ==============================================
@@ -9,15 +9,15 @@
 
     &--link {
         text-decoration: none;
-        color: color(accent, info);
+        color: utilities.color(accent, info);
     }
 
     &--separator {
-        margin: 0 size(x-small);
+        margin: 0 utilities.size(x-small);
     }
 
     &--custom {
-        color: color(base, purple);
+        color: utilities.color(base, purple);
     }
 
 }

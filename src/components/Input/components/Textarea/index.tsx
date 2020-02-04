@@ -9,7 +9,7 @@ function Textarea({
     before = undefined,
     className = undefined,
     disabled = false,
-    error = false,
+    hasError = false,
     rows = 4,
     ...otherProps
 }: Props): ReactElement {
@@ -27,7 +27,7 @@ function Textarea({
 
     const After = (): ReactElement => (
         <div className="brew-Input__after">
-            {!disabled && error ? (
+            {!disabled && hasError ? (
                 <InputIcon className="brew-Input__afterIcon" color="danger" variant="error_outline" />
             ) : after}
         </div>
@@ -35,12 +35,12 @@ function Textarea({
 
     return (
         <InputBase
-            after={((!disabled && error) || Boolean(after)) && <After />}
+            after={((!disabled && hasError) || Boolean(after)) && <After />}
             as="textarea"
             before={Boolean(before) && <Before />}
             className={classes}
             disabled={disabled}
-            error={error}
+            hasError={hasError}
             rows={rows}
             {...otherProps}
         />

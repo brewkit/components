@@ -1,5 +1,7 @@
+@use 'sass:map';
+@use '../utilities';
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
-@import "../utilities";
 
 
 // ==============================================
@@ -8,7 +10,7 @@
 
 .brew-Typography {
     font-family: Roboto, serif;
-    color: color(grey, 800);
+    color: utilities.color(grey, 800);
     margin: 0;
 }
 
@@ -20,7 +22,7 @@
 $colors: primary, secondary, tertiary, success, info, warning, danger;
 
 @mixin color-styles($color) {
-    color: map_get(map_get($typography, colors), $color);
+    color: map_get(map_get(utilities.$typography, colors), $color);
 }
 
 @each $color in $colors {
@@ -41,10 +43,10 @@ $colors: primary, secondary, tertiary, success, info, warning, danger;
 $variants: h1, h2, h3, body1, body2, label;
 
 @mixin variant-styles($variant) {
-    font-size: map_get(map_get($typography, font-sizes), $variant);
-    font-weight: map_get(map_get($typography, font-weights), $variant);
-    line-height: map_get(map_get($typography, line-heights), $variant);
-    color: map_get(map_get($typography, colors), $variant);
+    font-size: map_get(map_get(utilities.$typography, font-sizes), $variant);
+    font-weight: map_get(map_get(utilities.$typography, font-weights), $variant);
+    line-height: map_get(map_get(utilities.$typography, line-heights), $variant);
+    color: map_get(map_get(utilities.$typography, colors), $variant);
 }
 
 @each $variant in $variants {

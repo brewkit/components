@@ -1,5 +1,4 @@
 import React from 'react';
-import { Props as FormButtonProps } from './components/FormButton/types';
 
 
 export interface Props {

@@ -1,9 +1,5 @@
-@import "material-colors";
-
-
-@function color($palette, $color) {
-    @return map-get(map-get($colors, $palette), $color);
-}
+@use "sass:map";
+@use "material-colors";
 
 
 // ==============================================
@@ -13,43 +9,43 @@
 $colors: (
 
     brand: (
-        primary:        materialColor(lightBlue),
-        secondary:      materialColor(deepOrange),
-        tertiary:       materialColor(blueGrey, 100),
+        primary:        material-colors.get(lightBlue),
+        secondary:      material-colors.get(deepOrange),
+        tertiary:       material-colors.get(blueGrey, 100),
     ),
 
     accent: (
-        success:        materialColor(green),
-        warning:        materialColor(amber, 300),
-        danger:         materialColor(deepOrange),
-        info:           materialColor(lightBlue),
-        light:          materialColor(blueGrey, 300),
-        dark:           materialColor(blueGrey, 800),
+        success:        material-colors.get(green),
+        warning:        material-colors.get(amber, 300),
+        danger:         material-colors.get(deepOrange),
+        info:           material-colors.get(lightBlue),
+        light:          material-colors.get(blueGrey, 300),
+        dark:           material-colors.get(blueGrey, 800),
     ),
 
     base: (
-        red:            materialColor(red),
-        pink:           materialColor(pink),
-        purple:         materialColor(purple),
-        deepPurple:     materialColor(deepPurple),
-        indigo:         materialColor(indigo),
-        blue:           materialColor(blue),
-        lightBlue:      materialColor(lightBlue),
-        cyan:           materialColor(cyan),
-        teal:           materialColor(teal),
-        green:          materialColor(green),
-        lightGreen:     materialColor(lightGreen),
-        lime:           materialColor(lime),
-        yellow:         materialColor(yellow),
-        amber:          materialColor(amber),
-        orange:         materialColor(orange),
-        deepOrange:     materialColor(deepOrange),
-        brown:          materialColor(brown),
-        grey:           materialColor(grey),
-        blueGrey:       materialColor(blueGrey),
+        red:            material-colors.get(red),
+        pink:           material-colors.get(pink),
+        purple:         material-colors.get(purple),
+        deepPurple:     material-colors.get(deepPurple),
+        indigo:         material-colors.get(indigo),
+        blue:           material-colors.get(blue),
+        lightBlue:      material-colors.get(lightBlue),
+        cyan:           material-colors.get(cyan),
+        teal:           material-colors.get(teal),
+        green:          material-colors.get(green),
+        lightGreen:     material-colors.get(lightGreen),
+        lime:           material-colors.get(lime),
+        yellow:         material-colors.get(yellow),
+        amber:          material-colors.get(amber),
+        orange:         material-colors.get(orange),
+        deepOrange:     material-colors.get(deepOrange),
+        brown:          material-colors.get(brown),
+        grey:           material-colors.get(grey),
+        blueGrey:       material-colors.get(blueGrey),
     ),
 
-    grey: map-get($material_colors, blueGrey),
+    grey: map.get(material-colors.$material_colors, blueGrey),
 
 );
 
@@ -95,8 +91,8 @@ $typography: (
         warning:    color(accent, warning),
         danger:     color(accent, danger),
         h1:         color(brand, primary),
-        h2:         materialColor(lightBlue, 900),
-        h3:         materialColor(lightBlue, 900),
+        h2:         material-colors.get(lightBlue, 900),
+        h3:         material-colors.get(lightBlue, 900),
         body1:      color(grey, 500),
         body2:      color(grey, 500),
         label:      color(grey, 500),
@@ -130,51 +126,6 @@ $typography: (
     ),
 
     font-family: $font-primary,
-
-);
-
-
-// ==============================================
-// Button
-// ==============================================
-
-$button: (
-
-    border_radius: map_get($general, border-radius),
-
-    font_weight: bold,
-
-    colors: (
-        primary: color(brand, primary),
-        secondary: color(brand, secondary),
-        success: color(accent, success),
-        danger: color(accent, danger),
-        warning: color(accent, warning),
-        info: color(accent, info),
-        dark: color(accent, dark),
-        light: color(accent, light),
-        link: color(accent, info),
-    )
-
-);
-
-
-// ==============================================
-// Progress
-// ==============================================
-
-$progress: (
-
-    colors: (
-        primary: color(brand, primary),
-        secondary: color(brand, secondary),
-        success: color(accent, success),
-        danger: color(accent, danger),
-        warning: color(accent, warning),
-        info: color(accent, info),
-        dark: color(accent, dark),
-        light: color(accent, light),
-    )
 
 );
 
@@ -221,27 +172,22 @@ $dialog: (
 // Box Shadows
 // ==============================================
 
-%height-1 {
-    position: relative;
+@mixin height-1 {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-%height-2 {
-    position: relative;
+@mixin height-2 {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
-%height-3 {
-    position: relative;
+@mixin height-3 {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-%height-4 {
-    position: relative;
+@mixin height-4 {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-%height-5 {
-    position: relative;
+@mixin height-5 {
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }

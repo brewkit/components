@@ -1,4 +1,4 @@
-@import "variables";
+@use "variables";
 
 
 // ==============================================
@@ -6,15 +6,15 @@
 // ==============================================
 
 @mixin for-tablet-portrait-up {
-  @media (min-width: map_get($breakpoints, tablet-portrait)) { @content; }
+  @media (min-width: map_get(variables.$breakpoints, tablet-portrait)) { @content; }
 }
 
 @mixin for-tablet-landscape-up {
-    @media (min-width: map_get($breakpoints, tablet-landscape)) { @content; }
+    @media (min-width: map_get(variables.$breakpoints, tablet-landscape)) { @content; }
 }
 
 @mixin for-desktop-only {
-    @media (min-width: map_get($breakpoints, desktop)) { @content; }
+    @media (min-width: map_get(variables.$breakpoints, desktop)) { @content; }
 }
 
 

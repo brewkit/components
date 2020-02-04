@@ -1,4 +1,21 @@
-@import "../utilities";
+@use '../utilities';
+
+
+// ==============================================
+// Variables
+// ==============================================
+
+$colors: (
+    primary: utilities.color(brand, primary),
+    secondary: utilities.color(brand, secondary),
+    success: utilities.color(accent, success),
+    danger: utilities.color(accent, danger),
+    warning: utilities.color(accent, warning),
+    info: utilities.color(accent, info),
+    dark: utilities.color(accent, dark),
+    light: utilities.color(accent, light),
+    link: utilities.color(accent, info),
+);
 
 
 // ==============================================
@@ -9,7 +26,7 @@
     display: inline-flex;
     border-width: 2px;
     border-style: solid;
-    border-radius: $border-radius * 2;
+    border-radius: utilities.$border-radius * 2;
 
     .title {
         display: inline-flex;
@@ -28,13 +45,13 @@
 // Colors
 // ==============================================
 
-$colors: primary, secondary, success, info, warning, danger, light, dark;
+$color-variants: primary, secondary, success, info, warning, danger, light, dark;
 
-@each $color in $colors {
+@each $color in $color-variants {
 
     .brew-Label__color--#{$color} {
 
-        $button_color: map_get(map_get($button, colors), $color);
+        $button_color: map_get($colors, $color);
         background-color: rgba($button_color, 0.1);
         border-color: $button_color;
 
@@ -45,7 +62,7 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
 
         .title span {
             font-weight: bold;
-            color: set-text-color($button_color);
+            color: utilities.set-text-color($button_color);
         }
 
         .content {

@@ -5,19 +5,17 @@ import { boolean, text } from '@storybook/addon-knobs';
 
 export default {
     component: Switch,
-    title: 'Components|User Input/Input/Switch',
+    title: 'Components|User Input/Switch',
 };
 
 
 export const Default = (): ReactElement => {
     const disabled = boolean('disabled', false);
-    const error = boolean('error', false);
-    const inputLabel = text('inputLabel', 'hihello');
+    const hasError = boolean('hasError', false);
+    const children = text('children', 'hihello');
     return (
-        <Switch
-            disabled={disabled}
-            error={error}
-            inputLabel={inputLabel}
-        />
+        <Switch disabled={disabled} hasError={hasError}>
+            {children}
+        </Switch>
     );
 };

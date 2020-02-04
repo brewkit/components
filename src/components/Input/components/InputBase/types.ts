@@ -1,4 +1,5 @@
-import { ReactNode } from 'react';
+import React from 'react';
+
 
 export interface Props {
 
@@ -17,7 +18,7 @@ export interface Props {
     /**
      * The `children` prop can be used for certain inputs like `select` and `textarea`
      */
-    children?: ReactNode,
+    children?: React.ReactNode,
 
     /**
      * The wrapper class
@@ -34,7 +35,7 @@ export interface Props {
      * but is intended mostly for inputs that don't accept styling well like select boxes, radio buttons and
      * checkboxes.
      */
-    customControl?: ReactNode,
+    customControl?: React.ReactNode,
 
     /**
      * Whether the `input` is checked by default.  Used for checkboxes.
@@ -54,9 +55,9 @@ export interface Props {
     disabled?: boolean,
 
     /**
-     * If `true`, the input will apply error styling
+     * If `true`, the input will apply hasError styling
      */
-    error?: boolean,
+    hasError?: boolean,
 
     /**
      * If `true`, the input will be 100% of it's container width
@@ -74,9 +75,9 @@ export interface Props {
     inputClassName?: string,
 
     /**
-     * The `input` label for radio buttons and checkboxes
+     * The label for inputs
      */
-    inputLabel?: string,
+    label?: React.ReactNode,
 
     /**
      * The className for the input label
@@ -147,16 +148,21 @@ export interface Props {
     /**
      * Content that can be injected after the Input
      */
-    after?: ReactNode,
+    after?: React.ReactNode,
 
     /**
      * Content that can be injected before the Input
      */
-    before?: ReactNode,
+    before?: React.ReactNode,
 
     /**
      * A ref passed to the input from <Form />. Should not be set explicitly.
      */
     formRef?: any,
+
+    /**
+     * The tab index of the underlying element
+     */
+    tabIndex?: number,
 
 }

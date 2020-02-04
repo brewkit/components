@@ -9,7 +9,7 @@ function TextInput({
     after = undefined,
     before = undefined,
     className = undefined,
-    error = false,
+    hasError = false,
     disabled = false,
     type = 'text',
     ...otherProps
@@ -21,7 +21,7 @@ function TextInput({
 
     const After = (): ReactElement => (
         <div className="brew-Input__after">
-            {error ? (
+            {hasError ? (
                 <InputIcon className="brew-Input__afterIcon" color="danger" variant="error_outline" />
             ) : after}
         </div>
@@ -34,11 +34,11 @@ function TextInput({
 
     return (
         <InputBase
-            after={after || ((!disabled && error) && <After />)}
+            after={after || ((!disabled && hasError) && <After />)}
             before={before && <Before />}
             className={classes}
             disabled={disabled}
-            error={error}
+            hasError={hasError}
             type={type}
             {...otherProps}
         />

@@ -1,3 +1,7 @@
+@use 'sass:map';
+@use '../utilities';
+
+
 .brew-Dialog {
     display: none;
     align-items: center;
@@ -8,13 +12,13 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: map-get($dialog, z-index);
-    font-family: map-get($typography, 'font-family');
+    z-index: map.get(utilities.$dialog, z-index);
+    font-family: map.get(utilities.$typography, 'font-family');
 
     .brew-Dialog {
 
         &__background {
-            background-color:  map-get($dialog, 'backdrop-color');
+            background-color:  map.get(utilities.$dialog, 'backdrop-color');
             position: absolute;
             left: 0;
             top: 0;
@@ -25,14 +29,14 @@
         &__content {
             z-index: 1;
             width: 100%;
-            max-width: map-get($dialog, 'max-width');
-            padding: size(xx-large) size(normal);
+            max-width: map.get(utilities.$dialog, 'max-width');
+            padding: utilities.size(xx-large) utilities.size(normal);
             text-align: center;
             box-sizing: border-box;
         }
 
         &__icon {
-            height: size(xx-large) * 1.5;
+            height: utilities.size(xx-large) * 1.5;
         }
 
         &__closeIcon {
@@ -40,16 +44,16 @@
         }
 
         &__title {
-            font-size: size(xx-large);
+            font-size: utilities.size(xx-large);
         }
 
         &__icon + .brew-Dialog__title {
-            margin-top: size(normal);
+            margin-top: utilities.size(normal);
         }
 
         &__actionButton {
 
-            .brew-Button {   
+            .brew-Button {
                 display: block;
                 width: 100%;
             }
@@ -57,12 +61,12 @@
 
         &__body {
             color: white;
-            font-weight: map-get(map-get($typography, font-weights), body1);
-            margin-top: size(normal);
+            font-weight: map.get(map.get(utilities.$typography, font-weights), body1);
+            margin-top: utilities.size(normal);
         }
 
         &__footer {
-            margin-top: size(xx-large);
+            margin-top: utilities.size(xx-large);
             display: flex;
             flex-direction: column;
 
@@ -72,7 +76,7 @@
 
             .brew-Dialog__actionButton--cancel {
                 order: 2;
-                margin-top: size(xx-large);
+                margin-top: utilities.size(xx-large);
             }
         }
 
@@ -84,11 +88,11 @@
 
                 .Button__text,
                 .brew-Button__text {
-                    color: color(brand, primary) !important;
+                    color: utilities.color(brand, primary) !important;
                 }
 
                 &:hover {
-                    background-color: rgba(color(brand, primary), .1) !important;
+                    background-color: rgba(utilities.color(brand, primary), .1) !important;
                 }
             }
         }
@@ -108,12 +112,12 @@ $variants: (
 
 @each $variant in $variants {
     .brew-Dialog--color-#{$variant} {
-        
+
         .brew-Dialog {
 
             &__title,
             &__icon {
-                color: color(accent, $variant);
+                color: utilities.color(accent, $variant);
             }
         }
     }

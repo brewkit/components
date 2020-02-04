@@ -15,7 +15,7 @@ function RadioGroup({
 
 
     const classes = clsx(
-        'brew-Input--radioGroup',
+        'brew-RadioGroup',
         className,
     );
 

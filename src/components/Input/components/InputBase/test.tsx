@@ -5,7 +5,7 @@ import InputBase from './index';
 
 describe('InputBase', function() {
 
-    it('renders without throwing an error', () => {
+    it('renders without throwing an hasError', () => {
         expect(shallow(<InputBase />).find('input').length).toBe(1);
     });
 
@@ -17,8 +17,8 @@ describe('InputBase', function() {
         expect(shallow(<InputBase disabled />).hasClass('brew-Input--isDisabled')).toBe(true);
     });
 
-    it('adds the "brew-Input--hasError" class when the error prop exists', () => {
-        expect(shallow(<InputBase error />).hasClass('brew-Input--hasError')).toBe(true);
+    it('adds the "brew-Input--hasError" class when the hasError prop exists', () => {
+        expect(shallow(<InputBase hasError />).hasClass('brew-Input--hasError')).toBe(true);
     });
 
     it('adds the "brew-Input--isFullWidth" class when the `fullWidth` prop exists', () => {

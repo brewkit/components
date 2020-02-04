@@ -1,5 +1,25 @@
-@import "../utilities";
+@use 'sass:color';
+@use 'sass:map';
+@use '../utilities';
 
+
+// ==============================================
+// Variables
+// ==============================================
+
+
+$font_weight: bold;
+$colors: (
+    primary: utilities.color(brand, primary),
+    secondary: utilities.color(brand, secondary),
+    success: utilities.color(accent, success),
+    danger: utilities.color(accent, danger),
+    warning: utilities.color(accent, warning),
+    info: utilities.color(accent, info),
+    dark: utilities.color(accent, dark),
+    light: utilities.color(accent, light),
+    link: utilities.color(accent, info),
+);
 
 // ==============================================
 // General
@@ -13,7 +33,7 @@
     overflow: hidden;
     border-width: 2px;
     border-style: solid;
-    border-radius: map_get($button, border_radius);
+    border-radius: utilities.$border-radius;
     padding: 1em;
     font-family: inherit;
     text-transform: uppercase;
@@ -39,7 +59,7 @@
         &__text {
             display: block;
             color: white;
-            font-weight: map-get($button, font_weight);
+            font-weight: $font_weight;
         }
 
         &__loadingIndicator {
@@ -62,7 +82,7 @@
 // ----------------------------------------------
 // responsive
 
-@include for-tablet-portrait-up {
+@include utilities.for-tablet-portrait-up {
 
     .brew-Button {
         width: auto;
@@ -76,13 +96,13 @@
 // Colors
 // ==============================================
 
-$colors: primary, secondary, success, info, warning, danger, light, dark;
+$color-variants: primary, secondary, success, info, warning, danger, light, dark;
 
-@each $color in $colors {
+@each $color in $color-variants {
 
     .brew-Button.brew-Button--color-#{$color} {
 
-        $button_color: map_get(map_get($button, colors), $color);
+        $button_color: map_get($colors, $color);
 
         &.brew-Button--variant-text {
             background-color: transparent;
@@ -94,7 +114,7 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
 
             .brew-Button {
 
-                &__content, 
+                &__content,
                 &__text {
                     color: $button_color;
                 }
@@ -108,23 +128,23 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
             border-color: $button_color;
 
             .brew-Button__content {
-                color: set-text-color($button_color);
+                color: utilities.set-text-color($button_color);
             }
 
             .brew-Button__icon {
-                fill: set-text-color($button_color);
+                fill: utilities.set-text-color($button_color);
             }
 
             &:hover {
-                background-color: darken($button_color, 10%);
-                border-color: darken($button_color, 10%);
+                background-color: color.adjust($button_color, $lightness: -10%);
+                border-color: color.adjust($button_color, $lightness: -10%);
             }
 
             &.brew-Button--isDisabled {
                 background-color: transparent;
                 border-color: $button_color;
 
-                .brew-Button__content, 
+                .brew-Button__content,
                 .brew-Button__text {
                     color: $button_color;
                 }
@@ -140,10 +160,10 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
 .brew-Button--color-link {
     background-color: transparent;
     border-color: transparent;
-    color: map_get(map_get($button, colors), link);
+    color: map_get($colors, link);
 
     &:hover {
-        background-color: rgba(map_get(map_get($button, colors), link), 0.1);
+        background-color: rgba(map_get($colors, link), 0.1);
     }
 
 }
@@ -169,11 +189,11 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
 // Sizes
 // ==============================================
 
-.brew-Button--size-small { font-size: size(small); }
+.brew-Button--size-small { font-size: utilities.size(small); }
 
-.brew-Button--size-medium { font-size: size(normal); }
+.brew-Button--size-medium { font-size: utilities.size(normal); }
 
-.brew-Button--size-large { font-size: size(large); }
+.brew-Button--size-large { font-size: utilities.size(large); }
 
 
 // ==============================================
@@ -209,7 +229,7 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
 
 .brew-Button--isCompact {
     min-width: 0;
-    padding: size(small);
+    padding: utilities.size(small);
 }
 
 // ----------------------------------------------

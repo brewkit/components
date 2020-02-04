@@ -8,8 +8,8 @@ export interface Props {
     name: string,
 
     /**
-    *  Value for the radio inputs.  Use when the input is controlled.
-    */
+     *  Value for the radio inputs.  Use when the input is controlled.
+     */
     value?: any,
 
     /**

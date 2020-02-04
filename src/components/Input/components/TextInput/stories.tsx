@@ -15,14 +15,12 @@ export default {
 
 export const Default = (): ReactElement => {
     const disabled = boolean('disabled', false);
-    const error = boolean('error', false);
-    const fullWidth = boolean('fullWidth', false);
+    const hasError = boolean('hasError', false);
     const placeholder = text('placeholder', '');
     return (
         <TextInput
             disabled={disabled}
-            error={error}
-            fullWidth={fullWidth}
+            hasError={hasError}
             placeholder={placeholder}
         />
     );

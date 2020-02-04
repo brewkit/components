@@ -10,19 +10,33 @@ export default {
     parameters: {
         componentSubtitle: <Label color="warning">In Development</Label>,
     },
-    title: 'Components|User Input/Input/RadioGroup',
+    title: 'Components|User Input/RadioGroup',
 };
 
 
-export const Default = (): ReactElement => {
-    const inputName = text('inputName', 'testing');
-    const defaultValue = text('defaultValue', 'choice2');
-    return (
-        <RadioGroup defaultValue={defaultValue} name={inputName}>
-            <Radio inputLabel="Choice 1" value="choice1" />
-            <Radio inputLabel="Choice 2" value="choice2" />
-            <Radio inputLabel="Choice 3" value="choice3" />
-            <Radio inputLabel="Choice 4" value="choice4" />
-        </RadioGroup>
-    );
-};
+export const Default = (): ReactElement => (
+    <RadioGroup defaultValue="choice1" name="test">
+        <Radio value="choice1">This is a choice</Radio>
+        <Radio value="choice2">Yet Another</Radio>
+        <Radio value="choice3">More Choices!</Radio>
+        <Radio value="choice4">Okay, moving on...</Radio>
+        <Radio value="choice1">Choice 5</Radio>
+        <Radio value="choice2">Choice 6</Radio>
+        <Radio value="choice3">Choice 7</Radio>
+        <Radio value="choice4">Choice 8</Radio>
+    </RadioGroup>
+);
+
+
+export const Custom = (): ReactElement => (
+    <RadioGroup className="brew-RadioGroup--variant-pill" defaultValue="choice1" name="test">
+        <Radio value="choice1">This is a choice</Radio>
+        <Radio value="choice2">Yet Another</Radio>
+        <Radio value="choice3">More Choices!</Radio>
+        <Radio value="choice4">Okay, moving on...</Radio>
+        <Radio value="choice1">Choice 5</Radio>
+        <Radio value="choice2">Choice 6</Radio>
+        <Radio value="choice3">Choice 7</Radio>
+        <Radio value="choice4">Choice 8</Radio>
+    </RadioGroup>
+);

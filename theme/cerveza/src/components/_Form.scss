@@ -1,4 +1,4 @@
-@import "../utilities";
+@use '../utilities';
 
 
 // ==============================================
@@ -6,7 +6,7 @@
 // ==============================================
 
 .brew-FormGroup {
-    margin-bottom: size(normal);
+    margin-bottom: utilities.size(normal);
 }
 
 
@@ -25,15 +25,15 @@
 
 .brew-FormField {
     display: grid;
-    grid-row-gap: size(x-small);
+    grid-row-gap: utilities.size(x-small);
 }
 
 .brew-FormField--hasError .brew-Input--textInput .brew-Input__element {
-    border: 1px solid color(accent, danger);
+    border: 1px solid utilities.color(accent, danger);
 }
 
 .brew-FormField--hasError .brew-FormHelperText {
-    color: color(accent, danger);
+    color: utilities.color(accent, danger);
 }
 
 
@@ -42,5 +42,5 @@
 // ==============================================
 
 .brew-FormHelperText {
-    font-size: size(small);
+    font-size: utilities.size(small);
 }

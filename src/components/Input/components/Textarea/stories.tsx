@@ -15,16 +15,14 @@ export default {
 
 export const Default = (): ReactElement => {
     const disabled = boolean('disabled', false);
-    const error = boolean('error', false);
-    const fullWidth = boolean('fullWidth', false);
+    const hasError = boolean('hasError', false);
     const placeholder = text('placeholder', '');
     const rows = number('rows', 4);
 
     return (
         <Textarea
             disabled={disabled}
-            error={error}
-            fullWidth={fullWidth}
+            hasError={hasError}
             placeholder={placeholder}
             rows={rows}
         />

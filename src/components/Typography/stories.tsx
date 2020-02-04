@@ -19,7 +19,7 @@ export const General = (): ReactElement => {
     const children: ReactNode = text('children', 'Lorem ipsum dolor sit amet.');
 
     const color: Colors = select('color', [
-        'initial',
+        'inherit',
         'primary',
         'secondary',
         'tertiary',
@@ -27,7 +27,7 @@ export const General = (): ReactElement => {
         'warning',
         'info',
         'danger',
-    ], 'initial');
+    ], 'inherit');
     const display: Displays = select('display', ['initial', 'block', 'inline', 'inline-block'], 'initial');
     const shouldTruncate = boolean('shouldTruncate', false);
     const variant: Variants = select('variant', ['h1', 'h2', 'h3', 'body1', 'body2', 'label', 'inherit'], 'h1');

@@ -1,4 +1,4 @@
-@import "../utilities";
+@use "../utilities";
 
 
 // ==============================================
@@ -21,7 +21,7 @@
         height: 1px;
         border: none;
         overflow: hidden;
-        background-color: color(brand, tertiary);
+        background-color: utilities.color(brand, tertiary);
     }
 
 }

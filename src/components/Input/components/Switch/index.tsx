@@ -7,6 +7,7 @@ import { Props } from './types';
 function Switch({
     className,
     customControl,
+    children,
     ...otherProps
 }: Props): ReactElement {
 
@@ -18,15 +19,21 @@ function Switch({
 
 
     const defaultCustomControl = (
-        <div className="brew-Input__custom">
-            <span className="brew-Input__track" />
-            <span className="brew-Input__knob" />
+        <div className="brew-Switch__control">
+            <span className="brew-Switch__track" />
+            <span className="brew-Switch__knob" />
         </div>
     );
 
 
     return (
-        <InputBase className={switchClasses} customControl={customControl || defaultCustomControl} type="checkbox" {...otherProps} />
+        <InputBase
+            className={switchClasses}
+            customControl={customControl ?? defaultCustomControl}
+            label={children}
+            type="checkbox"
+            {...otherProps}
+        />
     );
 
 

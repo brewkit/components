@@ -1,0 +1,111 @@
+@use '../utilities';
+
+
+// ==============================================
+// Checkbox
+// ==============================================
+
+$checkmark-color: #ffffff;
+$checkbox-grey: utilities.color(grey, 100);
+
+
+// -------------------------------------
+// General
+
+.brew-Checkbox {
+    overflow: hidden;
+    display: inline-grid;
+    grid-template-columns: min-content 1fr;
+    grid-column-gap: utilities.size(small);
+    align-items: center;
+    cursor: pointer;
+
+    input {
+        display: none;
+    }
+
+    .brew-Checkbox__control {
+        height: 2rem;
+        width: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $checkbox-grey;
+        border-radius: utilities.$border-radius;
+        transition: all 0.3s;
+    }
+
+
+    .brew-Checkbox__controlIcon {
+        opacity: 0;
+        font-size: 1.25rem;
+        color: $checkmark-color;
+    }
+
+
+}
+
+
+// -------------------------------------
+// On Hover & On Focus
+
+.brew-Checkbox:hover,
+.brew-Checkbox:focus {
+    outline: none;
+
+    .brew-Checkbox__control {
+        border: 1px solid rgba(utilities.color(brand, primary), 0.2);
+        background-color: rgba(utilities.color(brand, primary), 0.2);
+    }
+
+}
+
+
+// -------------------------------------
+// Checked
+
+.brew-Checkbox input:checked {
+
+    & ~ .brew-Checkbox__control {
+        border: 1px solid utilities.color(brand, primary);
+        background-color: utilities.color(brand, primary);
+
+        .brew-Checkbox__controlIcon {
+            opacity: 1;
+        }
+
+    }
+
+}
+
+
+// -------------------------------------
+// Disabled
+
+.brew-Input--isDisabled.brew-Checkbox {
+    cursor: not-allowed;
+
+    input ~ .brew-Checkbox__control {
+        border: 1px solid $checkbox-grey;
+        background-color: $checkbox-grey;
+    }
+
+}
+
+
+// -------------------------------------
+// hasError
+
+.brew-Input--hasError.brew-Checkbox {
+
+    input ~ .brew-Checkbox__control {
+        border: 1px solid utilities.color(accent, danger);
+        background-color: transparent;
+
+        .brew-Checkbox__controlIcon {
+            color: utilities.color(accent, danger);
+        }
+
+    }
+
+}

@@ -1,14 +1,30 @@
-@import "../utilities";
+@use '../utilities';
+
+
+// ==============================================
+// Variables
+// ==============================================
+
+$colors: (
+    primary: utilities.color(brand, primary),
+    secondary: utilities.color(brand, secondary),
+    success: utilities.color(accent, success),
+    danger: utilities.color(accent, danger),
+    warning: utilities.color(accent, warning),
+    info: utilities.color(accent, info),
+    dark: utilities.color(accent, dark),
+    light: utilities.color(accent, light),
+);
 
 
 // ==============================================
 // Colors
 // ==============================================
 
-$colors: primary, secondary, success, info, warning, danger, light, dark;
+$color-variants: primary, secondary, success, info, warning, danger, light, dark;
 
 @mixin color-styles($colorName) {
-    $progress_color: map_get(map_get($progress, colors), $colorName);
+    $progress_color: map_get($colors, $colorName);
 
     &.brew-Progress--circular {
         border: 2px solid $progress_color;
@@ -28,7 +44,7 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
 // ==============================================
 
 .brew-Progress {
-    @each $color in $colors {
+    @each $color in $color-variants {
         &__color--#{$color} {
             @include color-styles($color);
         }
@@ -84,8 +100,8 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
     &__size--small {
 
         &.brew-Progress--circular {
-            width: size(normal);
-            height: size(normal);
+            width: utilities.size(normal);
+            height: utilities.size(normal);
         }
 
         &.brew-Progress--horizontal {
@@ -97,8 +113,8 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
     &__size--medium {
 
         &.brew-Progress--circular {
-            width: size(normal) * 2;
-            height: size(normal) * 2;
+            width: utilities.size(normal) * 2;
+            height: utilities.size(normal) * 2;
         }
 
         &.brew-Progress--horizontal {
@@ -109,8 +125,8 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
     &__size--large {
 
         &.brew-Progress--circular {
-            width: size(normal) * 3;
-            height: size(normal) * 3;
+            width: utilities.size(normal) * 3;
+            height: utilities.size(normal) * 3;
         }
 
         &.brew-Progress--horizontal {

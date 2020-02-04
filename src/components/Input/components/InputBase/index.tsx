@@ -19,11 +19,11 @@ const InputBase = ({
     defaultChecked,
     defaultValue,
     disabled,
-    error,
+    hasError,
     fullWidth,
     id,
     inputClassName,
-    inputLabel,
+    label,
     inputLabelClassName,
     name,
     onChange,
@@ -34,6 +34,7 @@ const InputBase = ({
     type = 'text',
     value,
     formRef,
+    tabIndex = 1,
     ...otherProps
 }: Props): ReactElement => {
 
@@ -41,10 +42,10 @@ const InputBase = ({
     const classes = clsx(
         'brew-Input',
         { 'brew-Input--isDisabled': Boolean(disabled) },
-        { 'brew-Input--hasError': Boolean(error) },
+        { 'brew-Input--hasError': Boolean(hasError) },
         { 'brew-Input--isFullWidth': Boolean(fullWidth) },
         { 'brew-Input--hasBefore': Boolean(before) },
-        { 'brew-Input--hasAfter': Boolean(after) || (!disabled && error) },
+        { 'brew-Input--hasAfter': Boolean(after) || (!disabled && hasError) },
         className,
     );
 
@@ -53,7 +54,7 @@ const InputBase = ({
 
 
     return (
-        <Typography as="label" className={classes} {...otherProps}>
+        <Typography as="label" className={classes} tabIndex={tabIndex} {...otherProps}>
             {before}
 
             <Element
@@ -81,8 +82,8 @@ const InputBase = ({
 
             {Boolean(customControl) && customControl}
 
-            {inputLabel && (type === 'checkbox' || type === 'radio') && (
-                <span className={clsx('brew-Input__label', inputLabelClassName)}>{inputLabel}</span>
+            {label && (type === 'checkbox' || type === 'radio') && (
+                <span className={clsx('brew-Input__label', inputLabelClassName)}>{label}</span>
             )}
 
         </Typography>
