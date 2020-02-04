@@ -23,7 +23,7 @@ export const Default = (): ReactElement => {
         </React.Fragment>
     );
 
-    const [state, setState] = React.useState(Array.from({ length: 8 }));
+    const [state, setState] = React.useState(Array.from({ length: 30 }));
     const next = (): any => {
         setTimeout(() => {
             setState((prevState: any): [] => prevState.concat(Array.from({ length: 20 })));
@@ -41,6 +41,43 @@ export const Default = (): ReactElement => {
         >
             {state.map((item: any, index: number) => <div key={index}>{`hello - ${index}`}</div>)}
         </InfiniteScroller>
+    );
+
+
+};
+
+
+export const HeightRestriction = (): ReactElement => {
+    const hasMore = boolean('hasMore', true);
+    const endMessage = text('endMessage', 'dunzo');
+    const loadingMessage = (
+        <React.Fragment>
+            <h1>Loading <Progress /></h1>
+            <h3>Be Patient</h3>
+            <p>please..</p>
+        </React.Fragment>
+    );
+
+    const [state, setState] = React.useState(Array.from({ length: 15 }));
+    const next = (): any => {
+        setTimeout(() => {
+            setState((prevState: any): [] => prevState.concat(Array.from({ length: 20 })));
+        }, 1000);
+    };
+
+
+    return (
+        <div style={{ border: 'solid rebeccapurple 10px', height: '250px', overflow: 'scroll '}}>
+            <InfiniteScroller
+                dataLength={state.length}
+                endMessage={endMessage}
+                getMoreData={next}
+                hasMore={hasMore}
+                loadingMessage={loadingMessage}
+            >
+                {state.map((item: any, index: number) => <div key={index}>{`hello - ${index}`}</div>)}
+            </InfiniteScroller>
+        </div>
     );
 
 
