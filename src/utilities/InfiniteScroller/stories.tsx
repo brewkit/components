@@ -56,18 +56,16 @@ export const RootElement = (): ReactElement => {
             setState((prevState: any): [] => prevState.concat(Array.from({ length: 20 })));
         }, 1000);
     };
-    const ref = React.useRef(null);
 
 
     return (
-        <div ref={ref} style={{ height: '100px', overflow: 'scroll' }}>
+        <div style={{ height: '100px', overflow: 'scroll' }}>
             <InfiniteScroller
                 dataLength={state.length}
                 endMessage={endMessage}
                 getMoreData={next}
                 hasMore={hasMore}
                 loadingMessage={loadingMessage}
-                rootElement={ref.current ?? null}
             >
                 {state.map((item: any, index: number) => <div key={index}>{`hello - ${index}`}</div>)}
             </InfiniteScroller>

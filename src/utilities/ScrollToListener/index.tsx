@@ -1,20 +1,23 @@
-import React, { ReactElement, Ref, RefObject, RefForwardingComponent } from 'react';
+import React, { ReactElement, RefObject } from 'react';
 import { Props } from './types';
 
 
 /**
  * Fires an function passed through onScrollTo when the child element is scrolled to
  */
-const ScrollToListener = React.forwardRef(({
+function ScrollToListener({
     applyToLastChild = false,
     children,
+    forwardedRef,
     onScrollTo,
     rootMargin = '0px 0px 0px 0px',
     rootThreshold = 0.01,
     willListen = false,
-}: Props, ref: Ref<HTMLElement>) => {
+}: Props): ReactElement {
 
-    const scrollToRef = React.createRef<RefObject<HTMLElement>>();
+
+    const scrollToRef: RefObject<HTMLElement> = React.useRef(null);
+
 
     function handleScroll(entries: any, observer: any): void {
 
@@ -31,11 +34,16 @@ const ScrollToListener = React.forwardRef(({
 
     React.useEffect(() => {
 
-        console.log('This is the rootElement being passed to in <ScrollToListener>', scrollToRef.current ?? null);
-        const target = applyToLastChild ? scrollToRef.current?.previousElementSibling : scrollToRef.current?.nextElementSibling;
+        console.log('This is the rootElement being passed to in <ScrollToListener>', forwardedRef);
+        console.log('This is the scrollToRef', scrollToRef.current);
+
+        const target = applyToLastChild
+            ? scrollToRef.current?.previousElementSibling
+            : scrollToRef.current?.nextElementSibling;
+
 
         const observer = new IntersectionObserver(handleScroll, {
-            root: ref.current ?? null,
+            root: forwardedRef,
             rootMargin,
             threshold: rootThreshold,
         });
@@ -73,7 +81,7 @@ const ScrollToListener = React.forwardRef(({
     return componentStructure();
 
 
-});
+}
 
 
 export default ScrollToListener;

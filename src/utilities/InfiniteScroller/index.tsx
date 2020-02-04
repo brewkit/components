@@ -42,8 +42,8 @@ function InfiniteScroller({
         <div className={scrollerClasses} ref={scrollerRef} {...otherProps}>
             <ScrollToListener
                 applyToLastChild
+                forwardedRef={scrollerRef?.current}
                 onScrollTo={loadMoreData}
-                ref={scrollerRef}
             >
                 {children}
             </ScrollToListener>

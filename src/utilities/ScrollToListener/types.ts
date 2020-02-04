@@ -18,6 +18,12 @@ export interface Props {
 
 
     /**
+     * Forwarded Ref
+     */
+    forwardedRef?: HTMLElement | null,
+
+
+    /**
      * Function to call when the element comes into the viewport
      */
     onScrollTo: () => void,
