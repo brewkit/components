@@ -12,9 +12,6 @@ function InfiniteScroller({
     hasMore,
     loadingMessage,
     getMoreData,
-    rootElement,
-    rootMargin,
-    rootThreshold,
     ...otherProps
 }: Props): ReactElement {
 
@@ -46,9 +43,7 @@ function InfiniteScroller({
             <ScrollToListener
                 applyToLastChild
                 onScrollTo={loadMoreData}
-                rootElement={scrollerRef?.current ?? rootElement}
-                rootMargin={rootMargin}
-                rootThreshold={rootThreshold}
+                ref={scrollerRef}
             >
                 {children}
             </ScrollToListener>

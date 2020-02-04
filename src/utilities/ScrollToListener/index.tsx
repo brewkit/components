@@ -1,23 +1,20 @@
-import React, { ReactElement, RefObject } from 'react';
+import React, { ReactElement, Ref, RefObject, RefForwardingComponent } from 'react';
 import { Props } from './types';
 
 
 /**
  * Fires an function passed through onScrollTo when the child element is scrolled to
  */
-function ScrollToListener({
+const ScrollToListener = React.forwardRef(({
     applyToLastChild = false,
     children,
     onScrollTo,
-    rootElement = null,
     rootMargin = '0px 0px 0px 0px',
     rootThreshold = 0.01,
     willListen = false,
-}: Props): ReactElement {
+}: Props, ref: Ref<HTMLElement>) => {
 
-
-    const ref: RefObject<HTMLDivElement> = React.useRef(null);
-
+    const scrollToRef = React.createRef<RefObject<HTMLElement>>();
 
     function handleScroll(entries: any, observer: any): void {
 
@@ -34,16 +31,16 @@ function ScrollToListener({
 
     React.useEffect(() => {
 
-        console.log('This is the rootElement being passed to in <ScrollToListener>', rootElement);
-        const target = applyToLastChild ? ref.current?.previousElementSibling : ref.current?.nextElementSibling;
+        console.log('This is the rootElement being passed to in <ScrollToListener>', scrollToRef.current ?? null);
+        const target = applyToLastChild ? scrollToRef.current?.previousElementSibling : scrollToRef.current?.nextElementSibling;
 
-        const observer = new IntersectionObserver(handleScroll, { root: rootElement,
+        const observer = new IntersectionObserver(handleScroll, {
+            root: ref.current ?? null,
             rootMargin,
-            threshold: rootThreshold });
-
+            threshold: rootThreshold,
+        });
 
         if (target) observer.observe(target);
-
 
         return ((): void => {
             if (target) observer.unobserve(target);
@@ -59,14 +56,14 @@ function ScrollToListener({
         if (applyToLastChild) return (
             <React.Fragment>
                 {children}
-                <span ref={ref} style={{ display: 'none' }} />
+                <span ref={scrollToRef} style={{ display: 'none' }} />
             </React.Fragment>
         );
 
 
         return (
             <React.Fragment>
-                <span ref={ref} style={{ display: 'none' }} />
+                <span ref={scrollToRef} style={{ display: 'none' }} />
                 {children}
             </React.Fragment>
         );
@@ -76,7 +73,7 @@ function ScrollToListener({
     return componentStructure();
 
 
-}
+});
 
 
 export default ScrollToListener;
