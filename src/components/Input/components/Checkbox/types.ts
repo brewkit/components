@@ -2,13 +2,14 @@ import { Props as InputBaseProps } from '../InputBase/types';
 
 
 export type Props = Omit<InputBaseProps,
-    'after'
+    'as'
+    | 'after'
     | 'before'
     | 'cols'
-    | 'type'
-    | 'as'
     | 'defaultValue'
+    | 'multiple'
     | 'placeholder'
     | 'rows'
+    | 'type'
     | 'value'
 >;

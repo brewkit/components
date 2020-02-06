@@ -1,15 +1,15 @@
 import { Props as InputBaseProps } from '../InputBase/types';
 
-
 export type Props = Omit<InputBaseProps,
     'as'
+    | 'after'
+    | 'before'
     | 'checked'
-    | 'children'
     | 'cols'
     | 'customControl'
     | 'defaultChecked'
     | 'inputLabel'
     | 'inputLabelClassName'
-    | 'multiple'
     | 'rows'
+    | 'type'
 >;

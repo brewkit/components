@@ -1,7 +1,6 @@
 @use 'utilities';
 @use 'normalize';
 
-
 @use 'components/Typography';
 @use 'components/Icon';
 @use 'components/Divider';
@@ -15,6 +14,7 @@
 @use 'components/Radio';
 @use 'components/RadioGroup';
 @use 'components/Switch';
+@use 'components/Select';
 @use 'components/Progress';
 @use 'components/Form';
 @use 'components/Collapsible';
