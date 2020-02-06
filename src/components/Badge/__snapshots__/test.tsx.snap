@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge Renders correctly 1`] = `
+<div
+  className="brew-Badge brew-Badge--anchorFrom-top-right brew-Badge--color-info"
+>
+  <div>
+    child
+  </div>
+  <span
+    className="brew-Badge__element"
+  />
+</div>
+`;
