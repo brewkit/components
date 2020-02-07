@@ -1,4 +1,4 @@
-import {ReactNode} from 'react';
+import { ReactNode } from 'react';
 
 
 export type Anchors = 'top' | 'right' | 'bottom' | 'left';
@@ -13,11 +13,6 @@ export interface Props {
     className?: string,
 
     /**
-     * Forwarded reference to the control anchor
-     */
-    controllerRef?: any,
-
-    /**
      *
      */
     isVisible?: boolean,
@@ -26,6 +21,21 @@ export interface Props {
      * Direction the tooltip will open from, default is top.
      */
     anchor?: Anchors,
+
+    /**
+     *
+     */
+    boundingRect: any,
+
+    /**
+     *
+     */
+    anchorWidth: number,
+
+    /**
+     *
+     */
+    anchorHeight: number,
 
     /**
      * Color of the tooltip, default is primary.

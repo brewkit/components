@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 @import "../utilities";
 
 
@@ -19,6 +20,8 @@
         @extend %height-2;
         border-radius: size(xx-small);
         padding: size(small);
+        font-family: Roboto, serif;
+        color: color(grey, 100);
     }
 
     &--open {
