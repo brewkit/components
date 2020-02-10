@@ -1,6 +1,6 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, RefObject } from 'react';
 import ReactDOM from 'react-dom';
-import { Flipped } from 'react-flip-toolkit';
+import { Flipped, Flipper } from 'react-flip-toolkit';
 import clsx from 'clsx';
 import { Props } from './types';
 
@@ -12,12 +12,14 @@ function TooltipContent({
     anchorWidth,
     anchor = 'top',
     color = 'primary',
+    isVisible,
     children,
+    style,
     ...otherProps
 }: Props): ReactElement {
 
 
-    const tooltipRef = React.useRef();
+    const tooltipRef: RefObject<HTMLDivElement> = React.useRef(null);
     const [tooltipPosition, setTooltipPosition] = React.useState();
     const OVERFLOW_PRIORITY = ['left', 'right', 'bottom', 'top'];
     const { top: tooltipTop, left: tooltipLeft } = tooltipPosition || {};
@@ -29,44 +31,38 @@ function TooltipContent({
     );
 
 
-    function getHeight(node: any): any {
-        return node?.node.offsetHeight;
-    }
-
-    function getWidth(node: any): any {
-        return node?.node.offsetWidth;
-    }
-
-
     // Set top and left values
     React.useEffect(() => {
         if (!tooltipRef.current || !boundingRect) return;
-        const tooltipEl = tooltipRef.current;
-        const tooltipHeight = getHeight(tooltipEl);
-        const tooltipWidth = getWidth(tooltipEl);
+        const tooltipEl = Array.from(tooltipRef?.current?.parentNode?.children ?? []);
+        const tooltipHeight: number = tooltipEl[0].clientHeight;
+        const tooltipWidth: number = tooltipEl[0].clientWidth;
+        const topValue: number = nodeTop;
+        const leftValue: number = nodeLeft;
 
         function positionTooltip(): void {
 
-            function fitsInWindow(x: any, y: any): boolean {
-                return x > 0 &&
-                    x < window.innerWidth &&
-                    y > 0 &&
-                    y < window.innerHeight &&
-                    x + tooltipWidth < window.innerWidth &&
-                    y + tooltipHeight < window.innerHeight;
+            function fitsInWindow(left: number, top: number): boolean {
+                return left > 0 &&
+                    left < window.innerWidth &&
+                    top > 0 &&
+                    top < window.innerHeight &&
+                    left + tooltipWidth < window.innerWidth &&
+                    top + tooltipHeight < window.innerHeight;
             }
+
             // Go through options, defaulting to the original position if none of them work
-            [anchor, ...OVERFLOW_PRIORITY, anchor].every((positionVal: string, i, arr) => {
-                let top;
-                let left;
+            [anchor, ...OVERFLOW_PRIORITY, anchor].every((positionVal: string, i: number, arr) => {
+                let top = 0;
+                let left = 0;
 
                 if (positionVal === 'top') top = nodeTop - tooltipHeight;
                 else if (positionVal === 'bottom') top = nodeBottom;
-                else top = (nodeTop + anchorHeight) / (2 - tooltipHeight) / 2;
+                else top = (topValue + anchorHeight) / (2 - tooltipHeight) / 2;
 
                 if (positionVal === 'left') left = nodeLeft - tooltipWidth;
                 else if (positionVal === 'right') left = nodeRight;
-                else left = (nodeLeft + anchorWidth) / (2 - tooltipWidth) / 2;
+                else left = (leftValue + anchorWidth) / (2 - tooltipWidth) / 2;
 
                 if (fitsInWindow(left, top) || i === arr.length - 1) {
                     setTooltipPosition({ left, top });
@@ -76,20 +72,23 @@ function TooltipContent({
             });
         }
         positionTooltip();
-    }, [tooltipRef.current, boundingRect]);
+    }, [tooltipRef.current, anchorHeight]);
 
 
     // if (!document.body) return null;
 
 
     return ReactDOM.createPortal(
-        <Flipped flipId="tooltip">
-            <span className={className} style={{ left: tooltipLeft, top: tooltipTop }} {...otherProps}>
-                <span className={tooltipClasses}>
-                    {children}
+        <Flipper flipKey={isVisible}>
+            <Flipped flipId="tooltip">
+                <span className={className} style={{ ...style, left: tooltipLeft, top: tooltipTop }} {...otherProps}>
+                    <span className={tooltipClasses}>
+                        {children}
+                        <div ref={tooltipRef} style={{ display: 'none' }} />
+                    </span>
                 </span>
-            </span>
-        </Flipped>,
+            </Flipped>
+        </Flipper>,
         document.body,
     );
 

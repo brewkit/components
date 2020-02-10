@@ -13,7 +13,7 @@ export interface Props {
     className?: string,
 
     /**
-     *
+     * Default to open tooltip content
      */
     isVisible?: boolean,
 
@@ -23,17 +23,17 @@ export interface Props {
     anchor?: Anchors,
 
     /**
-     *
+     * Position data for the anchor used to reposition children
      */
     boundingRect: any,
 
     /**
-     *
+     * Width of anchor content
      */
     anchorWidth: number,
 
     /**
-     *
+     * Height of anchor content
      */
     anchorHeight: number,
 
@@ -46,5 +46,7 @@ export interface Props {
      * Content to be displayed inside the tooltip.
      */
     children: ReactNode,
+
+    style?: any,
 
 }

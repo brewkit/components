@@ -1,5 +1,4 @@
-import React, {ReactElement, RefObject} from 'react';
-import { Flipper } from 'react-flip-toolkit';
+import React, { ReactElement, RefObject } from 'react';
 import clsx from 'clsx';
 import ClickAwayListener from '../../utilities/ClickAwayListener';
 import TooltipContent from './components/TooltipContent';
@@ -20,8 +19,8 @@ function Tooltip({
     const ref: RefObject<HTMLDivElement> = React.useRef(null);
     const [isTooltipOpen, setIsTooltipOpen] = React.useState(isOpen);
     const [boundingRect, setBoundingRect] = React.useState();
-    const [anchorHeight, setAnchorHeight] = React.useState();
-    const [anchorWidth, setAnchorWidth] = React.useState();
+    const [anchorHeight, setAnchorHeight] = React.useState(0);
+    const [anchorWidth, setAnchorWidth] = React.useState(0);
     const wrapperClasses = clsx(
         'brew-Tooltip',
         className,
@@ -88,17 +87,16 @@ function Tooltip({
                 })}
                 <div ref={ref} style={{ display: 'none' }} />
             </ClickAwayListener>
-            <Flipper flipKey={isTooltipOpen}>
-                <TooltipContent
-                    anchorHeight={anchorHeight}
-                    anchorWidth={anchorWidth}
-                    boundingRect={boundingRect}
-                    className={contentClasses}
-                    {...otherProps}
-                >
-                    {content}
-                </TooltipContent>
-            </Flipper>
+            <TooltipContent
+                anchorHeight={anchorHeight}
+                anchorWidth={anchorWidth}
+                boundingRect={boundingRect}
+                className={contentClasses}
+                isVisible={isTooltipOpen}
+                {...otherProps}
+            >
+                {content}
+            </TooltipContent>
         </div>
     );
 

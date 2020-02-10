@@ -7,12 +7,14 @@
 // ==============================================
 
 .brew-Tooltip {
-    position: relative;
     display: inline;
 
     &__wrapper {
-        max-width: 0;
+        display: inline-flex;
+        max-width: size(normal) * 15;
+        padding: size(x-small);
         position: fixed;
+        z-index: -1;
         opacity: 0;
     }
 
@@ -25,8 +27,7 @@
     }
 
     &--open {
-        display: inline-flex;
-        max-width: size(normal) * 15;
+        z-index: 25;
         opacity: 1;
     }
 }
