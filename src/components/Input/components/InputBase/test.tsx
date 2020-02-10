@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { shallow, mount } from 'enzyme';
 import InputBase from './index';
 
-describe('InputBase', function() {
+describe('InputBase', () => {
 
     it('renders without throwing an hasError', () => {
         expect(shallow(<InputBase />).find('input').length).toBe(1);

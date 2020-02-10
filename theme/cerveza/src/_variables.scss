@@ -56,9 +56,9 @@ $colors: (
 
 $general: (
 
-    border-radius: 3px,
+    border-radius: 4px,
 
-    box-shadow: 0 1px 3px color(grey, 300),
+    box-shadow: 0 1px 3px map.get(map.get($colors, grey), 300),
 
     sizes: (
         xx-large:   2rem,

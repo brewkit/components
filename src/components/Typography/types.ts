@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 
-export type Variants = 'h1' | 'h2' | 'h3' | 'body1' | 'body2' | 'label' | 'inherit';
+export type Variants = 'h1' | 'h2' | 'h3' | 'body1' | 'body2' | 'label';
 export type Colors = (
     'primary'
     | 'secondary'

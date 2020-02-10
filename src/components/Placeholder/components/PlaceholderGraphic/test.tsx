@@ -20,7 +20,7 @@ describe('PlaceholderGraphic', () => {
 
     it('correctly adds a className', () => {
         const className = `class-${Math.floor(Math.random() * 1000)}`;
-        const placeholderGraphic = shallow(<PlaceholderGraphic graphic="foo" className={className} />);
+        const placeholderGraphic = shallow(<PlaceholderGraphic className={className} graphic="foo" />);
         expect(placeholderGraphic.hasClass(className)).toBe(true);
     });
 

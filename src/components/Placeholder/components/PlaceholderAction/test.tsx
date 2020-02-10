@@ -15,7 +15,7 @@ describe('PlaceholderAction', () => {
 
     it('mounts correctly', () => {
         const primaryAction = shallow(<PlaceholderAction>Test</PlaceholderAction>);
-        expect(primaryAction.hasClass(`brew-Placeholder__primaryAction`)).toBe(true);
+        expect(primaryAction.hasClass('brew-Placeholder__primaryAction')).toBe(true);
     });
 
     it('correctly adds a className', () => {

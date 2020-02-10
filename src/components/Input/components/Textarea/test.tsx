@@ -14,7 +14,7 @@ describe('Textarea', () => {
     });
 
     it('properly passes through the className', () => {
-        const testClass = 'class-' + Math.floor(Math.random() * 1000);
+        const testClass = `class-${Math.floor(Math.random() * 1000)}`;
         expect(shallow(<Textarea className={testClass} />).hasClass(testClass)).toBe(true);
     });
 
@@ -30,7 +30,7 @@ describe('Textarea', () => {
 
     it('correctly accepts the value prop', () => {
         const value = Math.floor(Math.random() * 1000).toString();
-        const textarea = mount(<Textarea value={value} readOnly />);
+        const textarea = mount(<Textarea readOnly value={value} />);
         expect(textarea.html().search(value) !== -1).toBe(true);
     });
 });

@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import TableCell from './components/TableCell';
 import { Props } from './types';
@@ -22,12 +22,11 @@ function TableRow({
     );
 
 
-    const content = children || (columnConfig?.map((col, index) => {
+    const content = children ?? (columnConfig?.map((col, index) => {
         if (rowData && col?.name && rowData[col.name]) {
             const cellData = rowData[col.name];
-            if (cellData && typeof cellData === 'object' && 'label' in cellData) {
-                return <TableCell key={index} {...cellData} />;
-            }
+            if (cellData && typeof cellData === 'object' && 'label' in cellData) return <TableCell key={index} {...cellData} />;
+
             return (
                 <TableCell key={index}>
                     {cellData}
@@ -36,7 +35,7 @@ function TableRow({
         }
     }));
 
-    
+
     return (
         <tr className={classes} {...otherProps}>
             {content}

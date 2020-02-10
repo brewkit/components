@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import {select, text} from '@storybook/addon-knobs';
+import { select, text } from '@storybook/addon-knobs';
 import Label from '../Label';
 import Card from '../Card';
 import Placeholder from './index';
@@ -44,7 +44,7 @@ export const WithAction = (): ReactElement => {
             <Placeholder.Action onClick={() => console.log('clicked')}>
                 Primary Action
             </Placeholder.Action>
-            <Placeholder.Action variant={variant} onClick={() => console.log('clicked')}>
+            <Placeholder.Action onClick={() => console.log('clicked')} variant={variant}>
                 Secondary Action
             </Placeholder.Action>
         </Placeholder>

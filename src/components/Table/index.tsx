@@ -25,10 +25,10 @@ function Table({
     );
 
 
-    const TableElement: ElementType<any> = as || 'table';
+    const TableElement: ElementType = as ?? 'table';
 
 
-    const content = children || (
+    const content = children ?? (
         <React.Fragment>
             <TableHeader columnConfig={columnConfig} />
             <TableBody columnConfig={columnConfig} rows={rows} />

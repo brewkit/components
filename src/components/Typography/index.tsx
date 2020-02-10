@@ -7,11 +7,11 @@ import { Props } from './types';
  * The `<Typography />` component renders text using the 'Roboto' font in various styles.
  */
 function Typography({
-    variant = 'inherit',
-    color = 'inherit',
-    align = 'inherit',
-    display = 'initial',
+    variant,
+    align,
+    display = 'block',
     shouldTruncate = false,
+    color,
     as = null,
     children,
     className,
@@ -21,10 +21,10 @@ function Typography({
 
     const classes = clsx(
         'brew-Typography',
-        [`brew-Typography--variant-${variant}`],
-        [`brew-Typography--color-${color}`],
-        [`brew-Typography--align-${align}`],
         [`brew-Typography--display-${display}`],
+        { [`brew-Typography--variant-${String(variant)}`]: variant },
+        { [`brew-Typography--align-${String(align)}`]: align },
+        { [`brew-Typography--color-${String(color)}`]: color },
         { 'brew-Typography--shouldTruncate': shouldTruncate },
         className,
     );

@@ -12,36 +12,32 @@ export default {
 };
 
 
-export const General = (): ReactElement => {
-    return (
-        <Breadcrumb
-            crumbs={[
-                { title: "Location 1" },
-                {
-                    title: "Location 2",
-                    url: "/location2",
-                },
-                { title: "Location 3" },
-            ]}
-        />
-    );
-};
+export const General = (): ReactElement => (
+    <Breadcrumb
+        crumbs={[
+            { title: 'Location 1' },
+            {
+                title: 'Location 2',
+                url: '/location2',
+            },
+            { title: 'Location 3' },
+        ]}
+    />
+);
 
 
-export const CustomDivider = (): ReactElement => {
-    return (
-        <Breadcrumb
-            crumbs={[
-                { title: ( <span className="brew-Breadcrumb--custom">Location 1</span> ) },
-                {
-                    title: "Location 2",
-                    url: "/location2",
-                },
-                { title: "Location 3" },
-            ]}
-            divider={<span>></span>}
-        />
-    );
-};
+export const CustomDivider = (): ReactElement => (
+    <Breadcrumb
+        crumbs={[
+            { title: (<span className="brew-Breadcrumb--custom">Location 1</span>) },
+            {
+                title: 'Location 2',
+                url: '/location2',
+            },
+            { title: 'Location 3' },
+        ]}
+        divider={<span>></span>}
+    />
+);
 
 

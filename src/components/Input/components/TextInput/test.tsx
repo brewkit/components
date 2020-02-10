@@ -5,7 +5,8 @@ import { shallow, mount } from 'enzyme';
 
 describe('TextInput', () => {
     it('renders without hasError', () => {
-        expect(shallow(<TextInput />).dive().find('input').length).toBe(1);
+        expect(shallow(<TextInput />).dive()
+            .find('input').length).toBe(1);
     });
 
     it('uses InputBase', () => {
@@ -13,8 +14,12 @@ describe('TextInput', () => {
     });
 
     it('properly passes through an input type', () => {
-        expect(shallow(<TextInput type="text" />).dive().find('input').prop('type')).toEqual('text');
-        expect(shallow(<TextInput type="email" />).dive().find('input').prop('type')).toEqual('email');
+        expect(shallow(<TextInput type="text" />).dive()
+            .find('input')
+            .prop('type')).toEqual('text');
+        expect(shallow(<TextInput type="email" />).dive()
+            .find('input')
+            .prop('type')).toEqual('email');
     });
 
     it('has the correct class names', () => {
@@ -22,7 +27,7 @@ describe('TextInput', () => {
     });
 
     it('properly passes through a className', () => {
-        const testClassName = 'testClass' + Math.floor(Math.random() * 100000);
+        const testClassName = `testClass${Math.floor(Math.random() * 100000)}`;
         expect(shallow(<TextInput className={testClassName} />).hasClass(testClassName)).toBe(true);
     });
 

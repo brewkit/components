@@ -10,7 +10,7 @@ import { Props } from './types';
  */
 function Icon({
     color = 'inherit',
-    size = 'inherit',
+    size,
     children,
     className,
     ...otherProps
@@ -22,7 +22,7 @@ function Icon({
         'brew-Icon',
         'material-icons',
         `brew-Icon--color-${color}`,
-        `brew-Icon--size-${size}`,
+        { [`brew-Icon--size-${String(size)}`]: size },
         className,
     );
 

@@ -2,7 +2,7 @@
 
 exports[`PlaceholderContent renders correctly 1`] = `
 <p
-  className="brew-Typography brew-Typography--variant-body1 brew-Typography--color-initial brew-Typography--align-inherit brew-Typography--display-initial brew-Placeholder__content"
+  className="brew-Typography brew-Typography--display-block brew-Typography--variant-body1 brew-Placeholder__content"
 >
   Foo
 </p>

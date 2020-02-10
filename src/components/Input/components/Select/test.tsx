@@ -7,7 +7,6 @@ import { shallow, mount } from 'enzyme';
 
 describe('Select', () => {
 
-    
     it('renders correctly', () => {
         const tree = renderer
             .create(<Select name="name"><option>Option 1</option><option>Option 2</option></Select>)
@@ -43,7 +42,7 @@ describe('Select', () => {
 
     it('passes through an onchange handler', () => {
         const onChangeMock = jest.fn();
-        const select = mount(<Select onChange={onChangeMock}/>);
+        const select = mount(<Select onChange={onChangeMock} />);
         select.find('select').simulate('change');
         expect(onChangeMock).toHaveBeenCalled();
     });

@@ -2,10 +2,10 @@
 
 exports[`PlaceholderGraphic renders correctly 1`] = `
 <p
-  className="brew-Typography brew-Typography--variant-body1 brew-Typography--color-initial brew-Typography--align-inherit brew-Typography--display-initial brew-Placeholder__graphic"
+  className="brew-Typography brew-Typography--display-block brew-Typography--variant-body1 brew-Placeholder__graphic"
 >
   <i
-    className="brew-Icon material-icons brew-Icon--color-inherit brew-Icon--size-inherit"
+    className="brew-Icon material-icons brew-Icon--color-inherit"
   >
     foo
   </i>

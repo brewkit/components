@@ -23,7 +23,7 @@ function TableHeader({
     );
 
 
-    const content = children || (columnConfig?.map((colData: ColProps, index: number) => (
+    const content = children ?? (columnConfig?.map((colData: ColProps, index: number) => (
         <TableHeaderColumn key={index} {...colData} />
     )));
 

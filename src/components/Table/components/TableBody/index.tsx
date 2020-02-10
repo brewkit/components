@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import { RowData } from '../TableRow/types';
 import TableRow from '../TableRow';
@@ -23,7 +23,7 @@ function TableBody({
     );
 
 
-    const content = children || (rows?.map((rowData: RowData, index: number) => (
+    const content = children ?? (rows?.map((rowData: RowData, index: number) => (
         <TableRow columnConfig={columnConfig} key={index} rowData={rowData} />
     )));
 

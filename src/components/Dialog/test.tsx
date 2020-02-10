@@ -17,14 +17,14 @@ describe('Dialog', () => {
         const dialog = shallow(<Dialog isOpen />);
         expect(dialog.exists('.brew-Dialog')).toBe(true);
         const elements = [
-            'content', 
-            'background', 
-            'header', 
-            'closeIcon', 
-            'body', 
-            'footer', 
-            'actionButton', 
-            'actionButton--confirm', 
+            'content',
+            'background',
+            'header',
+            'closeIcon',
+            'body',
+            'footer',
+            'actionButton',
+            'actionButton--confirm',
             'actionButton--cancel',
         ];
         elements.forEach((elementName) => {
@@ -45,24 +45,27 @@ describe('Dialog', () => {
     it('changes the confirm button text when the confirmText prop is passed in', () => {
         const confirmText = 'definitely';
         const dialog = shallow(<Dialog confirmText={confirmText} isOpen />);
-        expect(dialog.find('.brew-Dialog__actionButton--confirm').render().text()).toEqual(confirmText);
+        expect(dialog.find('.brew-Dialog__actionButton--confirm').render()
+            .text()).toEqual(confirmText);
     });
 
     it('changes the cancel text when the cancelText prop is passed in', () => {
         const cancelText = 'absolutely not';
         const dialog = shallow(<Dialog cancelText={cancelText} isOpen />);
-        expect(dialog.find('.brew-Dialog__actionButton--cancel').render().text()).toEqual(cancelText);
+        expect(dialog.find('.brew-Dialog__actionButton--cancel').render()
+            .text()).toEqual(cancelText);
     });
 
     it('passes children into the body', () => {
-        const Children = () => <span>body</span>
+        const Children = () => <span>body</span>;
         const dialog = shallow(<Dialog isOpen><Children /></Dialog>);
-        expect(dialog.find('.brew-Dialog__body').render().text()).toEqual('body');
+        expect(dialog.find('.brew-Dialog__body').render()
+            .text()).toEqual('body');
     });
 
     it('passes through a custom close icon through the closeIcon prop', () => {
         const CloseIcon = () => <span>close icon</span>;
-        const dialog = shallow(<Dialog isOpen closeIcon={<CloseIcon />} />);
+        const dialog = shallow(<Dialog closeIcon={<CloseIcon />} isOpen />);
         expect(dialog.find('.brew-Dialog__header').contains(<CloseIcon />)).toBe(true);
     });
 
@@ -73,8 +76,9 @@ describe('Dialog', () => {
 
     it('adds a title when the title prop is passed through', () => {
         const title = 'modal title';
-        const dialog = shallow(<Dialog title={title} isOpen />)
-        expect(dialog.find('.brew-Dialog__title').render().text()).toEqual(title);
+        const dialog = shallow(<Dialog isOpen title={title} />);
+        expect(dialog.find('.brew-Dialog__title').render()
+            .text()).toEqual(title);
     });
 
     it('adds a custom footer when the customFooter prop is present', () => {
@@ -84,14 +88,14 @@ describe('Dialog', () => {
     });
 
     it('removes the footer when the hideFooter prop is true', () => {
-        const dialog = shallow(<Dialog isOpen hideFooter />);
+        const dialog = shallow(<Dialog hideFooter isOpen />);
         expect(dialog.exists('.brew-Dialog__footer')).toBe(false);
     });
 
     it('removes the cancel button for an "alert" variant', () => {
-        const dialog = shallow(<Dialog variant="alert" isOpen />);
+        const dialog = shallow(<Dialog isOpen variant="alert" />);
         expect(dialog.exists('.brew-Dialog__actionButton--cancel')).toBe(false);
     });
-    
+
 
 });

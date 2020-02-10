@@ -60,6 +60,5 @@ describe('Table Header Column Props', () => {
     });
 
 
-
 });
 

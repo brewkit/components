@@ -56,9 +56,11 @@ describe('RadioGroup', () => {
                 <Radio value="theRightOne" />
             </RadioGroup>
         ));
-        expect(radioGroup.children().find('[value="theRightOne"]').first()
+        expect(radioGroup.children().find('[value="theRightOne"]')
+            .first()
             .prop('checked')).toBeTruthy();
-        expect(radioGroup.children().find('[value="theWrongOne"]').first()
+        expect(radioGroup.children().find('[value="theWrongOne"]')
+            .first()
             .prop('checked')).toBeUndefined();
     });
 

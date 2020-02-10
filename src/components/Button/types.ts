@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 
-export type Variants = 'standard' | 'text' | 'icon';
+export type Variants = 'standard' | 'text';
 export type Colors = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link';
 export type Sizes = 'small' | 'medium' | 'large';
 
@@ -12,7 +12,7 @@ export interface Props {
      * The content inside the button to be rendered or the icon to render if `variant="icon"`. Usually just a string,
      * but can be any valid JSX.
      */
-    children?: ReactNode,
+    children?: React.ReactNode,
 
     /**
      * Fires when button is clicked.
@@ -69,5 +69,15 @@ export interface Props {
      * The type of the button.
      */
     type?: 'button' | 'submit' | 'reset',
+
+    /**
+     * JSX (preferably an Icon) to be injected before the children.
+     */
+    startIcon?: React.ReactNode,
+
+    /**
+     * JSX (preferably an Icon) to be injected after the children.
+     */
+    endIcon?: React.ReactNode,
 
 }

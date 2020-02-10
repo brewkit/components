@@ -2,7 +2,8 @@
 
 exports[`Select renders correctly 1`] = `
 <label
-  className="brew-Typography brew-Typography--variant-inherit brew-Typography--color-initial brew-Typography--align-inherit brew-Typography--display-initial brew-Input brew-Select"
+  className="brew-Typography brew-Typography--display-block brew-Input brew-Select"
+  tabIndex={1}
 >
   <select
     className="brew-Input__element"
@@ -31,7 +32,7 @@ exports[`Select renders correctly 1`] = `
         
       </div>
       <i
-        className="brew-Icon material-icons brew-Icon--color-inherit brew-Icon--size-inherit brew-CustomControl__icon"
+        className="brew-Icon material-icons brew-Icon--color-inherit brew-CustomControl__icon"
       >
         keyboard_arrow_down
       </i>

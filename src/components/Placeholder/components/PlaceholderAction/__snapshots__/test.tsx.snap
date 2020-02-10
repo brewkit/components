@@ -17,7 +17,7 @@ exports[`PlaceholderAction renders correctly 1`] = `
       data-portal-key="portal"
     >
       <span
-        className="brew-Typography brew-Typography--variant-inherit brew-Typography--color-initial brew-Typography--align-inherit brew-Typography--display-initial brew-Button__text"
+        className="brew-Typography brew-Typography--display-block brew-Button__text"
       >
         Test
       </span>

@@ -1,0 +1,23 @@
+@use '../utilities';
+
+
+// ==============================================
+// General
+// ==============================================
+
+.brew-IconButton {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: utilities.size(xx-small);
+    font-size: 2rem;
+
+    .brew-Button__content {
+        height: auto;
+    }
+
+}
+
+.brew-IconButton__label {
+    font-size: 0.75rem;
+}

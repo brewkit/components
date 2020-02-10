@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
-import clsx from 'clsx';
 import { useFormContext } from 'react-hook-form';
+import clsx from 'clsx';
 import Button from '@components/Button';
 import { Props } from './types';
 

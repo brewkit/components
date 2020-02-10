@@ -6,7 +6,7 @@ export interface Props extends Omit<HTMLProps<HTMLTableCellElement>, 'label'> {
 
     /**
      * The custom HTML element to use for the TableCell
-     * 
+     *
      * @default td
      */
     as?: 'td' | 'th',

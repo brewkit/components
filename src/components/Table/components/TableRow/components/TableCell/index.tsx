@@ -1,4 +1,4 @@
-import React, { HTMLProps, ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import { Props } from './types';
 
@@ -21,10 +21,10 @@ function TableCell({
     );
 
 
-    const CellElement: 'td' | 'th' = as || 'td';
+    const CellElement: 'td' | 'th' = as ?? 'td';
 
 
-    const content = children || label || '';
+    const content = (children ?? label) ?? '';
 
 
     return (

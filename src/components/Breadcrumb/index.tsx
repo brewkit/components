@@ -23,21 +23,15 @@ function Breadcrumb({
         <div className={classes}>
 
             {crumbs.map((crumb: Crumb, index: number) => {
+
                 const notLast = crumbCount !== index;
+
                 return (
                     <BrowserRouter key={index}>
                         <Typography variant="body2">
                             {crumb.url && notLast
-                                ? (
-                                    <Link className="brew-Breadcrumb__link" to={crumb.url}>
-                                        {crumb.title}
-                                    </Link>
-                                )
-                                : (
-                                    <Typography variant="body2">
-                                        {crumb.title}
-                                    </Typography>
-                                )
+                                ? <Link className="brew-Breadcrumb__link" to={crumb.url}>{crumb.title}</Link>
+                                : <Typography variant="body2">{crumb.title}</Typography>
                             }
                             <span className="brew-Breadcrumb__separator">
                                 {divider
@@ -48,6 +42,7 @@ function Breadcrumb({
                         </Typography>
                     </BrowserRouter>
                 );
+
             })}
 
         </div>

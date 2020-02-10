@@ -11,7 +11,6 @@ function TableHeaderColumn({
     children,
     className,
     label,
-    name,
     ...otherProps
 }: Props): ReactElement {
 
@@ -22,7 +21,7 @@ function TableHeaderColumn({
     );
 
 
-    const content = children || label;
+    const content = children ?? label;
 
 
     return (

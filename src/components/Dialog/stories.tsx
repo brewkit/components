@@ -23,14 +23,14 @@ export const Default = (): ReactElement => {
     const title = text('title', 'Dialog Title');
     const children = text('children', 'This is the text of the dialog');
     return (
-        <Dialog 
-            isOpen={isOpen} 
-            variant={variant} 
-            title={title}
+        <Dialog
             color={color}
+            isOpen={isOpen}
+            title={title}
+            variant={variant}
         >{children}
         </Dialog>
     );
 
-    
+
 };

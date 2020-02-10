@@ -83,13 +83,13 @@ describe('Table Body Props', () => {
                             ColA: 'Row3-ColA',
                             ColB: 'Row3-ColB',
                             ColC: 'Row3-ColC',
-                        }
+                        },
                     ]}
                 />
             ))
             .toJSON();
 
-        expect(content).toMatchSnapshot()
+        expect(content).toMatchSnapshot();
 
         expect(mount((
             <table>
@@ -103,18 +103,18 @@ describe('Table Body Props', () => {
                         {
                             ColD: <Typography variant="body1">Row1-ColD</Typography>,
                             ColE: <Typography variant="body1">Row1-ColE</Typography>,
-                            ColF: <Typography variant="body1">Row1-ColF</Typography>,                    
+                            ColF: <Typography variant="body1">Row1-ColF</Typography>,
                         },
                         {
                             ColD: <Typography variant="body1">Row2-ColD</Typography>,
                             ColE: <Typography variant="body1">Row2-ColE</Typography>,
-                            ColF: <Typography variant="body1">Row2-ColF</Typography>,                    
+                            ColF: <Typography variant="body1">Row2-ColF</Typography>,
                         },
                         {
                             ColD: <Typography variant="body1">Row3-ColD</Typography>,
                             ColE: <Typography variant="body1">Row3-ColE</Typography>,
-                            ColF: <Typography variant="body1">Row3-ColF</Typography>,                    
-                        }
+                            ColF: <Typography variant="body1">Row3-ColF</Typography>,
+                        },
                     ]}
                 />
             </table>

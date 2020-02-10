@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
-import Icon from '../../../Icon';
-import Typography from '../../../Typography';
+import Icon from '@components/Icon';
+import Typography from '@components/Typography';
 import { Props } from './types';
 import clsx from 'clsx';
 
@@ -19,7 +19,7 @@ function PlaceholderGraphic({
 
     return (
         <Typography as="p" className={placeholderClasses} variant="body1">
-            <Icon children={graphic} />
+            <Icon>{graphic}</Icon>
         </Typography>
     );
 

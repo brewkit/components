@@ -20,15 +20,15 @@ export const General = (): ReactElement => {
     const colExample = [
         {
             label: 'Column A',
-            name: 'ColA'
+            name: 'ColA',
         },
         {
             label: 'Column B',
-            name: 'ColB'
+            name: 'ColB',
         },
         {
             label: 'Column C',
-            name: 'ColC'
+            name: 'ColC',
         },
     ];
 
@@ -36,17 +36,17 @@ export const General = (): ReactElement => {
         {
             ColA: 'row1-colA',
             ColB: 'row1-colB',
-            ColC: 'row1-colC'
+            ColC: 'row1-colC',
         },
         {
             ColA: 'row2-colA',
             ColB: 'row2-colB',
-            ColC: 'row2-colC'
+            ColC: 'row2-colC',
         },
         {
             ColA: 'row3-colA',
             ColB: 'row3-colB',
-            ColC: 'row3-colC'
+            ColC: 'row3-colC',
         },
     ];
 
@@ -83,17 +83,17 @@ export const TableBody = (): ReactElement => {
         {
             ColD: 'row1-colD',
             ColE: 'row1-colE',
-            ColF: 'row1-colF'
+            ColF: 'row1-colF',
         },
         {
             ColD: 'row2-colD',
             ColE: 'row2-colE',
-            ColF: 'row2-colF'
+            ColF: 'row2-colF',
         },
         {
             ColD: 'row3-colD',
             ColE: 'row3-colE',
-            ColF: 'row3-colF'
+            ColF: 'row3-colF',
         },
     ];
 
@@ -125,15 +125,15 @@ export const TableHeader = (): ReactElement => {
     const colExample = [
         {
             label: 'Column G',
-            name: 'ColG'
+            name: 'ColG',
         },
         {
             label: 'Column H',
-            name: 'ColH'
+            name: 'ColH',
         },
         {
             label: 'Column I',
-            name: 'ColI'
+            name: 'ColI',
         },
     ];
 
@@ -196,7 +196,7 @@ export const TableRow = (): ReactElement => {
     const rowExample = {
         ColJ: 'row1-colJ',
         ColK: 'row1-colK',
-        ColL: 'row1-colL'
+        ColL: 'row1-colL',
     };
 
     const className: string = text('className', 'churros');

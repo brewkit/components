@@ -73,7 +73,7 @@ describe('Table Row Props', () => {
                 rowData={{
                     ColD: <Typography variant="body1">ColumnD</Typography>,
                     ColE: <Typography variant="body1">ColumnE</Typography>,
-                    ColF: <Typography variant="body1">ColumnF</Typography>,                    
+                    ColF: <Typography variant="body1">ColumnF</Typography>,
                 }}
             />
         ))

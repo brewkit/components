@@ -5,7 +5,7 @@ exports[`Table Header Column Props Renders correctly with ReactNode in \`label\`
   className="brew-TableCell brew-TableHeaderColumn"
 >
   <h3
-    className="brew-Typography brew-Typography--variant-h3 brew-Typography--color-initial brew-Typography--align-inherit brew-Typography--display-initial"
+    className="brew-Typography brew-Typography--display-block brew-Typography--variant-h3"
   >
     Label2
   </h3>
@@ -25,7 +25,7 @@ exports[`Table Header Column Renders correctly with component children 1`] = `
   className="brew-TableCell brew-TableHeaderColumn"
 >
   <h3
-    className="brew-Typography brew-Typography--variant-h3 brew-Typography--color-initial brew-Typography--align-inherit brew-Typography--display-initial"
+    className="brew-Typography brew-Typography--display-block brew-Typography--variant-h3"
   >
     Label
   </h3>

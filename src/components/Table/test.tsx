@@ -123,24 +123,22 @@ describe('Table Props - `columnConfig` only', () => {
             .toJSON();
         expect(content).toMatchSnapshot();
 
-        const mounted = mount(
-            <Table
-                columnConfig={[
-                    {
-                        label: <Typography variant="body1">ColumnA</Typography>,
-                        name: 'ColA',
-                    },
-                    {
-                        label: <Typography variant="body1">ColumnB</Typography>,
-                        name: 'ColB',
-                    },
-                    {
-                        label: <Typography variant="body1">ColumnC</Typography>,
-                        name: 'ColC',
-                    },
-                ]}
-            />
-        );
+        const mounted = mount(<Table
+            columnConfig={[
+                {
+                    label: <Typography variant="body1">ColumnA</Typography>,
+                    name: 'ColA',
+                },
+                {
+                    label: <Typography variant="body1">ColumnB</Typography>,
+                    name: 'ColB',
+                },
+                {
+                    label: <Typography variant="body1">ColumnC</Typography>,
+                    name: 'ColC',
+                },
+            ]}
+        />);
 
         expect(mounted
             .find(Typography)
@@ -258,35 +256,33 @@ describe('Table Props - `columnConfig` and `rows`', () => {
         expect(content).toMatchSnapshot();
 
         const className = `class-${String(Math.floor(Math.random() * 1000))}`;
-        const mounted = mount(
-            <Table
-                columnConfig={[
-                    {
-                        label: <Typography variant="h3">ColumnY</Typography>,
-                        name: 'ColY',
+        const mounted = mount(<Table
+            columnConfig={[
+                {
+                    label: <Typography variant="h3">ColumnY</Typography>,
+                    name: 'ColY',
+                },
+                {
+                    label: <Typography variant="h3">ColumnZ</Typography>,
+                    name: 'ColZ',
+                },
+            ]}
+            rows={[
+                {
+                    ColX: <Typography key="row2-colx" variant="body2">Row1-ColX</Typography>,
+                    ColY: {
+                        className,
+                        label: <Typography key="row2-coly" variant="body2">Row1-ColY</Typography>,
                     },
-                    {
-                        label: <Typography variant="h3">ColumnZ</Typography>,
-                        name: 'ColZ',
-                    },
-                ]}
-                rows={[
-                    {
-                        ColX: <Typography key="row2-colx" variant="body2">Row1-ColX</Typography>,
-                        ColY: {
-                            className: className,
-                            label: <Typography key="row2-coly" variant="body2">Row1-ColY</Typography>,
-                        },
-                        ColZ: <Typography key="row2-colz" variant="body2">Row1-ColZ</Typography>,
-                    },
-                    {
-                        ColX: <Typography key="row3-colx" variant="body2">Row2-ColX</Typography>,
-                        ColY: <Typography key="row3-coly" variant="body2">Row2-ColY</Typography>,
-                        ColZ: <Typography key="row3-colz" variant="body2">Row2-ColZ</Typography>,
-                    },
-                ]}
-            />
-        );
+                    ColZ: <Typography key="row2-colz" variant="body2">Row1-ColZ</Typography>,
+                },
+                {
+                    ColX: <Typography key="row3-colx" variant="body2">Row2-ColX</Typography>,
+                    ColY: <Typography key="row3-coly" variant="body2">Row2-ColY</Typography>,
+                    ColZ: <Typography key="row3-colz" variant="body2">Row2-ColZ</Typography>,
+                },
+            ]}
+        />);
 
         expect(mounted
             .find(Typography)
@@ -312,9 +308,9 @@ describe('Full Table Suite', () => {
             .create((
                 <Table>
                     <TableHeader>
-                        <TableHeaderColumn label='Column1' />
-                        <TableHeaderColumn label='Column2' />
-                        <TableHeaderColumn label='Column3' />
+                        <TableHeaderColumn label="Column1" />
+                        <TableHeaderColumn label="Column2" />
+                        <TableHeaderColumn label="Column3" />
                     </TableHeader>
                     <TableBody>
                         <TableRow>

@@ -17,11 +17,11 @@ export interface Props {
     /**
      * Custom divider applied between crumbs.
      */
-    divider?: ReactNode
+    divider?: ReactNode,
 
     /**
      * Array of crumb content to display
      */
-    crumbs: Array<Crumb>,
+    crumbs: Crumb[],
 
 }

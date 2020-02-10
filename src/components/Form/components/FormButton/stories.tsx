@@ -12,12 +12,9 @@ export default {
 };
 
 
-export const Default = (): ReactElement => {
-    return (
-        // eslint-disable-next-line no-alert
-        <Form onSubmit={(values: object): void => alert(values)}>
-            <Form.Button />
-        </Form>
-    );
-
-};
+export const Default = (): ReactElement => (
+    // eslint-disable-next-line no-alert
+    <Form onSubmit={(values: object): void => alert(values)}>
+        <Form.Button />
+    </Form>
+);

@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import { Flipped, Flipper } from 'react-flip-toolkit';
 import Typography from '../Typography';
-import Icon from '../Icon';
 import Progress from '../Progress';
 import { Props } from './types';
 
@@ -20,6 +19,8 @@ function Button({
     isCircular = false,
     isFluid = false,
     isDisabled = false,
+    startIcon,
+    endIcon,
     children,
     className,
     ...otherProps
@@ -44,7 +45,6 @@ function Button({
         <Flipper flipKey={JSON.stringify([isLoading, variant, color, size])}>
             <Flipped flipId="wrapper">
                 <button
-                    aria-label={(variant === 'icon' && typeof children === 'string') ? children : undefined}
                     className={buttonClasses}
                     disabled={isDisabled || isLoading}
                     type="button"
@@ -52,14 +52,13 @@ function Button({
                 >
                     <Flipped flipId="content">
                         <div className="brew-Button__content">
-                            <Typography className="brew-Button__text">
-                                {children}
-                            </Typography>
-                            {variant === 'icon' && typeof children === 'string' &&
-                                <Icon className="brew-Button__icon" color="inherit">
+                            {startIcon}
+                            {children && (
+                                <Typography className="brew-Button__text">
                                     {children}
-                                </Icon>
-                            }
+                                </Typography>
+                            )}
+                            {endIcon}
                         </div>
                     </Flipped>
                     <Flipped flipId="loader">

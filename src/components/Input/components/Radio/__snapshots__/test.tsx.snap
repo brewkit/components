@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio renders correctly 1`] = `
+<label
+  className="brew-Typography brew-Typography--display-block brew-Input brew-Radio"
+  tabIndex={1}
+>
+  <input
+    className="brew-Input__element"
+    type="radio"
+  />
+  <div
+    className="brew-Radio__control"
+  />
+</label>
+`;

@@ -2,8 +2,28 @@
 
 exports[`renders correctly 1`] = `
 <span
-  className="brew-Typography brew-Typography--variant-inherit brew-Typography--color-initial brew-Typography--align-inherit brew-Typography--display-initial"
+  className="brew-Typography brew-Typography--display-block"
 >
   Foo
+</span>
+`;
+
+exports[`renders correctly 2`] = `
+<span
+  className="brew-Typography brew-Typography--display-block brew-Typography--align-left brew-Typography--color-secondary brew-Typography--shouldTruncate foo"
+>
+  <span>
+    some child elements
+  </span>
+</span>
+`;
+
+exports[`renders correctly with all props 1`] = `
+<span
+  className="brew-Typography brew-Typography--display-block brew-Typography--align-left brew-Typography--color-secondary brew-Typography--shouldTruncate foo"
+>
+  <span>
+    some child elements
+  </span>
 </span>
 `;

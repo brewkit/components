@@ -6,11 +6,11 @@ export interface Props {
 
 
     /**
-     * The JSX element to use for the Table 
-     * 
+     * The JSX element to use for the Table
+     *
      * @default table
      */
-    as?: ElementType<any>,
+    as?: ElementType,
 
 
     /**

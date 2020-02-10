@@ -13,7 +13,7 @@ exports[`Table Cell Renders correctly with component children 1`] = `
   className="brew-TableCell"
 >
   <h3
-    className="brew-Typography brew-Typography--variant-h3 brew-Typography--color-initial brew-Typography--align-inherit brew-Typography--display-initial"
+    className="brew-Typography brew-Typography--display-block brew-Typography--variant-h3"
   >
     Label
   </h3>

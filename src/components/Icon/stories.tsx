@@ -28,7 +28,7 @@ export const General = (): ReactElement => {
         'dark',
         'inherit',
     ], 'primary');
-    const size: Sizes = select('size', ['small', 'medium', 'large', 'inherit'], 'inherit');
+    const size: Sizes = select('size', ['small', 'medium', 'large'], 'small');
     const children: string = select(
         'children',
         icons,

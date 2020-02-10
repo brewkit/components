@@ -8,7 +8,7 @@ export interface ColumnPropsWithName extends ColumnProps {
     /**
      * The name of the column
      */
-    name: string
+    name: string,
 
 
 }
@@ -19,7 +19,7 @@ export interface RowData {
     /**
      * Each key is the name of a column and represents a cell in a row
      */
-    [key: string]: CellProps | ReactNode
+    [key: string]: CellProps | ReactNode,
 }
 
 

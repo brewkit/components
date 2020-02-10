@@ -21,10 +21,10 @@ export const General = (): ReactElement => {
         <StatusCard
             body={body}
             color={color}
-            isDisabled={disabled}
-            isFilled={fill}
             header={header}
             icon={icon}
+            isDisabled={disabled}
+            isFilled={fill}
             variant={variant}
         />
     );
@@ -42,10 +42,10 @@ export const Standard = (): ReactElement => {
         <StandardStatusCard
             body={body}
             color={color}
-            isDisabled={disabled}
-            isFilled={fill}
             header={header}
             icon={icon}
+            isDisabled={disabled}
+            isFilled={fill}
         />
     );
 };
@@ -61,9 +61,9 @@ export const Compact = (): ReactElement => {
         <CompactStatusCard
             body={body}
             color={color}
+            header={header}
             isDisabled={disabled}
             isFilled={fill}
-            header={header}
         />
     );
 };

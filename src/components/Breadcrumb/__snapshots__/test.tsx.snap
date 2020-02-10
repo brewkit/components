@@ -5,10 +5,10 @@ exports[`Breadcrumb renders correctly 1`] = `
   className="brew-Breadcrumb"
 >
   <span
-    className="brew-Typography brew-Typography--variant-body2 brew-Typography--color-initial brew-Typography--align-inherit brew-Typography--display-initial"
+    className="brew-Typography brew-Typography--display-block brew-Typography--variant-body2"
   >
     <span
-      className="brew-Typography brew-Typography--variant-body2 brew-Typography--color-initial brew-Typography--align-inherit brew-Typography--display-initial"
+      className="brew-Typography brew-Typography--display-block brew-Typography--variant-body2"
     >
       Test
     </span>

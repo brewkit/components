@@ -1,6 +1,6 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React, { ReactElement } from 'react';
 import clsx from 'clsx';
-import Icon from '../../../../../Icon';
+import Icon from '@components/Icon';
 
 
 /*

@@ -20,10 +20,10 @@ function PlaceholderAction({
 
     return (
         <Button
-            variant={variant === 'secondary' ? 'text' : undefined}
             className={placeholderClasses}
-            onClick={onClick}
             isFluid={variant === 'primary' ? true : undefined}
+            onClick={onClick}
+            variant={variant === 'secondary' ? 'text' : undefined}
         >
             {children}
         </Button>
