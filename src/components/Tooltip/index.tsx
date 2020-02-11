@@ -74,7 +74,6 @@ function Tooltip({
     }
 
 
-    console.log('children', children);
     return (
         <div className={wrapperClasses} {...otherProps}>
             <ClickAwayListener onClickAway={(): void => setIsTooltipOpen(false)}>
