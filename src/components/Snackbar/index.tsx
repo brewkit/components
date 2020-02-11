@@ -84,11 +84,11 @@ function SnackbarProvider({
 
     React.useEffect(() => {
         if (liveSnackbars.length < 3 && snackbarQueue.length > 0) {
-            const { id, lifespan = 3000 } = snackbarQueue.slice().shift();
+            const { id, lifespan = 5 } = snackbarQueue.slice().shift();
             dispatch({ id, type: 'enqueue' });
             if (lifespan) setTimeout(() => {
                 dispatch({ id, type: 'clear' });
-            }, lifespan);
+            }, lifespan * 1000);
 
         }
     }, [snackbarQueue.length, liveSnackbars.length]);

@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
+import Icon from '../../../Icon';
 import { Props } from './types';
 
 
@@ -20,6 +21,7 @@ function SnackbarItem({
 
     return (
         <div className={snackbarClasses} {...otherProps}>
+            {itemConfig.iconName && <Icon>{itemConfig.iconName}</Icon>}
             {itemConfig.content}
         </div>
     );

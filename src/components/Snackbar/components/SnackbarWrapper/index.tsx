@@ -31,7 +31,7 @@ function SnackbarWrapper({
 
                     // Assign snackbars to correct position
                     if (position === snack.position) return (
-                        <Flipped flipId={snack.id} key={snack.id}>
+                        <Flipped flipId={snack.id} key={snack.id} spring="wobbly">
                             <div>
                                 <SnackbarItem itemConfig={snack} />
                             </div>

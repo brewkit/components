@@ -8,8 +8,6 @@ $snackColors: primary, secondary, success, warning, danger, info, dark, light;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
     z-index: 1;
     pointer-events: none;
 
@@ -63,7 +61,6 @@ $snackColors: primary, secondary, success, warning, danger, info, dark, light;
         position: absolute;
         padding: size(xx-large);
         pointer-events: none;
-        width: 100%;
         max-width: 568px;
         z-index: 2;
     }

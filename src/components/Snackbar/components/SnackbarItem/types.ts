@@ -13,6 +13,7 @@ export interface Snackbar {
     buttonContent?: ReactNode,
     color: Colors,
     content: ReactNode,
+    iconName?: string,
     id?: number,
     position: Positions,
 }

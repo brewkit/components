@@ -10,30 +10,28 @@ export default {
 };
 
 
+// eslint-disable-next-line max-statements
 const Test = (): ReactElement => {
     const snackbar = React.useContext(SnackbarContext);
-    const topLeft = (): any => snackbar.enqueue({ color: 'primary', content: 'topLeft', position: 'topLeft' });
-    const topCenter = (): any => snackbar.enqueue({ color: 'secondary', content: 'topCenter', position: 'topCenter' });
-    const topRight = (): any => snackbar.enqueue({ color: 'success', content: 'topRight', position: 'topRight' });
-    const centerLeft = (): any => snackbar.enqueue({ color: 'warning', content: 'centerLeft', position: 'centerLeft' });
-    const centerRight = (): any => snackbar.enqueue({ color: 'danger', content: 'centerRight', position: 'centerRight' });
-    const bottomLeft = (): any => snackbar.enqueue({ color: 'info', content: 'bottomLeft', position: 'bottomLeft' });
-    const bottomCenter = (): any => snackbar.enqueue({ color: 'dark', content: 'bottomCenter', position: 'bottomCenter' });
-    const bottomRight = (): any => snackbar.enqueue({ color: 'primary', content: 'bottomRight', position: 'bottomRight' });
+    const handler = (
+        iconName: string,
+        position: string,
+        color: string,
+        content: string,
+    ): any => snackbar.enqueue({ color, content, iconName, position });
 
-    button('topLeft', topLeft);
-    button('topCenter', topCenter);
-    button('topCenter', topCenter);
-    button('topRight', topRight);
-    button('centerLeft', centerLeft);
-    button('centerRight', centerRight);
-    button('bottomLeft', bottomLeft);
-    button('bottomCenter', bottomCenter);
-    button('bottomRight', bottomRight);
+    button('topLeft', () => handler('build', 'topLeft', 'primary', 'Hello Top Left'));
+    button('topCenter', () => handler('build', 'topCenter', 'secondary', 'Hello Top center'));
+    button('topRight', () => handler('build', 'topRight', 'success', 'Hello top right'));
+    button('centerLeft', () => handler('build', 'centerLeft', 'warning', 'Hello center left'));
+    button('centerRight', () => handler('build', 'centerRight', 'danger', 'Hello center right'));
+    button('bottomLeft', () => handler('build', 'bottomLeft', 'light', 'Hello bottom left'));
+    button('bottomCenter', () => handler('build', 'bottomCenter', 'dark', 'Hello bottom center'));
+    button('bottomRight', () => handler('build', 'bottomRight', 'info', 'Hello bottomRight'));
 
     return (
-        <div>
-            stuff
+        <div style={{ backgroundColor: 'black', height: '100%', position: 'fixed', width: '100%' }}>
+            child
         </div>
     );
 };
