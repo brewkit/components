@@ -28,7 +28,7 @@ export const General = (): ReactElement => {
         'light',
         'dark',
     ], 'info');
-    const anchor: Anchors = select('anchor', ['top', 'right', 'bottom', 'left'], 'right');
+    const anchor: Anchors = select('anchor', ['top', 'right', 'bottom', 'left'], 'top');
     const isOpen = boolean('isOpen', false);
 
     return (

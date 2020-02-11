@@ -39,22 +39,22 @@ function TooltipContent({
         const tooltipWidth: number = tooltipEl[0].clientWidth;
         const topValue: number = nodeTop;
         const leftValue: number = nodeLeft;
+        let top = 0;
+        let left = 0;
 
         function positionTooltip(): void {
 
-            function fitsInWindow(left: number, top: number): boolean {
-                return left > 0 &&
-                    left < window.innerWidth &&
-                    top > 0 &&
-                    top < window.innerHeight &&
-                    left + tooltipWidth < window.innerWidth &&
-                    top + tooltipHeight < window.innerHeight;
+            function fitsInWindow(leftVal: number, topVal: number): boolean {
+                return leftVal > 0 &&
+                    leftVal < window.innerWidth &&
+                    topVal > 0 &&
+                    topVal < window.innerHeight &&
+                    leftVal + tooltipWidth < window.innerWidth &&
+                    topVal + tooltipHeight < window.innerHeight;
             }
 
             // Go through options, defaulting to the original position if none of them work
             [anchor, ...OVERFLOW_PRIORITY, anchor].every((positionVal: string, i: number, arr) => {
-                let top = 0;
-                let left = 0;
 
                 if (positionVal === 'top') top = nodeTop - tooltipHeight;
                 else if (positionVal === 'bottom') top = nodeBottom;
@@ -72,7 +72,7 @@ function TooltipContent({
             });
         }
         positionTooltip();
-    }, [tooltipRef.current, anchorHeight]);
+    }, [tooltipRef.current, boundingRect, anchorHeight]);
 
 
     // if (!document.body) return null;
@@ -81,7 +81,12 @@ function TooltipContent({
     return ReactDOM.createPortal(
         <Flipper flipKey={isVisible}>
             <Flipped flipId="tooltip">
-                <span className={className} style={{ ...style, left: tooltipLeft, top: tooltipTop }} {...otherProps}>
+                <span
+                    className={className}
+                    ref={tooltipRef}
+                    style={{ ...style, left: tooltipLeft, top: tooltipTop }}
+                    {...otherProps}
+                >
                     <span className={tooltipClasses}>
                         {children}
                         <div ref={tooltipRef} style={{ display: 'none' }} />
