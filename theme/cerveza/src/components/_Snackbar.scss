@@ -1,0 +1,120 @@
+@use "../utilities";
+
+
+$snackColors: primary, secondary, success, warning, danger, info, dark, light;
+
+
+.brew-Snackbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+
+
+    // ======================================
+    // Snackbar Content
+    // ======================================
+
+    &__item {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        min-width: 288px;
+        max-width: 568px;
+        padding: size(normal);
+        pointer-events: auto;
+        border-radius: $border-radius;
+
+        // ======================================
+        // Colors
+        // ======================================
+
+        @each $color in $snackColors {
+            &--#{$color} {
+
+                @if $color == 'primary' or $color == 'secondary' {
+                    background-color: color(brand, $color);
+                    color: set-text-color(color(brand, $color));
+                } @else {
+                    background-color: color(accent, $color);
+                    color: set-text-color(color(accent, $color));
+                }
+            }
+        }
+    }
+
+    // ======================================
+    // Snackbar Wrapper Positioning
+    // ======================================
+
+    &--topLeft,
+    &--topCenter,
+    &--topRight,
+    &--centerLeft,
+    &--centerRight,
+    &--bottomLeft,
+    &--bottomCenter,
+    &--bottomRight {
+        display: grid;
+        grid-gap: size(normal);
+        position: absolute;
+        padding: size(xx-large);
+        pointer-events: none;
+        width: 100%;
+        max-width: 568px;
+        z-index: 2;
+    }
+
+    &--topLeft {
+        top: 0;
+        left: 0;
+        align-items: flex-start;
+    }
+
+    &--topCenter {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &--topRight {
+        top: 0;
+        right: 0;
+        align-items: flex-end;
+    }
+
+    &--centerLeft {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    &--centerRight {
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+
+    &--bottomLeft {
+        bottom: 0;
+        left: 0;
+    }
+
+    &--bottomCenter {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &--bottomRight {
+        bottom: 0;
+        right: 0;
+    }
+
+
+
+
+}
