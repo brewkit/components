@@ -47,6 +47,4 @@ export interface Props {
      */
     children: ReactNode,
 
-    style?: any,
-
 }

@@ -17,7 +17,7 @@ export default {
 
 export const General = (): ReactElement => {
     const content = text('content', 'This is a tooltip example');
-    const triggerEvent: TriggerEvents = select('variant', ['click', 'hover'], 'click');
+    const triggerEvent: TriggerEvents = select('variant', ['click', 'hover'], 'hover');
     const color: Colors = select('color', [
         'primary',
         'secondary',
@@ -28,8 +28,8 @@ export const General = (): ReactElement => {
         'light',
         'dark',
     ], 'info');
-    const anchor: Anchors = select('anchor', ['top', 'right', 'bottom', 'left'], 'top');
-    const isOpen = boolean('isOpen', false);
+    const anchor: Anchors = select('anchor', ['top', 'right', 'bottom', 'left'], 'right');
+    const isOpen = boolean('isOpen', true);
 
     return (
         <Tooltip

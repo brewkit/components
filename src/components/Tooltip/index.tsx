@@ -7,7 +7,7 @@ import { Props } from './types';
 
 function Tooltip({
     className,
-    triggerEvent = 'click',
+    triggerEvent = 'hover',
     content,
     isOpen = false,
     children,
@@ -74,6 +74,7 @@ function Tooltip({
     }
 
 
+    console.log('children', children);
     return (
         <div className={wrapperClasses} {...otherProps}>
             <ClickAwayListener onClickAway={(): void => setIsTooltipOpen(false)}>

@@ -14,7 +14,6 @@ function TooltipContent({
     color = 'primary',
     isVisible,
     children,
-    style,
     ...otherProps
 }: Props): ReactElement {
 
@@ -54,7 +53,7 @@ function TooltipContent({
             }
 
             // Go through options, defaulting to the original position if none of them work
-            [anchor, ...OVERFLOW_PRIORITY, anchor].every((positionVal: string, i: number, arr) => {
+            [anchor, ...OVERFLOW_PRIORITY, anchor].every((positionVal: string, i: number, array: string[]) => {
 
                 if (positionVal === 'top') top = nodeTop - tooltipHeight;
                 else if (positionVal === 'bottom') top = nodeBottom;
@@ -64,7 +63,7 @@ function TooltipContent({
                 else if (positionVal === 'right') left = nodeRight;
                 else left = (leftValue + anchorWidth) / (2 - tooltipWidth) / 2;
 
-                if (fitsInWindow(left, top) || i === arr.length - 1) {
+                if (fitsInWindow(left, top) || i === array.length - 1) {
                     setTooltipPosition({ left, top });
                     return false;
                 }
@@ -75,16 +74,13 @@ function TooltipContent({
     }, [tooltipRef.current, boundingRect, anchorHeight]);
 
 
-    // if (!document.body) return null;
-
-
     return ReactDOM.createPortal(
         <Flipper flipKey={isVisible}>
             <Flipped flipId="tooltip">
                 <span
                     className={className}
                     ref={tooltipRef}
-                    style={{ ...style, left: tooltipLeft, top: tooltipTop }}
+                    style={{ left: tooltipLeft, top: tooltipTop }}
                     {...otherProps}
                 >
                     <span className={tooltipClasses}>
