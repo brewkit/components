@@ -7,7 +7,7 @@ export { default as Divider } from './Divider';
 export { default as Form } from './Form';
 export { default as Icon } from './Icon';
 export { default as Input } from './Input';
-export { default as Label } from './Label';
+export { default as Flag } from './Flag';
 export { default as Placeholder } from './Placeholder';
 export { default as Progress } from './Progress';
 export { default as StatusCard } from './StatusCard';

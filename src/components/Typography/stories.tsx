@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode } from 'react';
 import { text, select, boolean } from '@storybook/addon-knobs';
-import Label from '../Label';
+import Flag from '@components/Flag';
 import Typography from './index';
 import { Variants, Colors, Alignments, Displays } from './types';
 
@@ -8,7 +8,7 @@ import { Variants, Colors, Alignments, Displays } from './types';
 export default {
     component: Typography,
     parameters: {
-        componentSubtitle: <Label color="success">Stable</Label>,
+        componentSubtitle: <Flag color="success">Stable</Flag>,
     },
     title: 'Components|Display/Typography',
 };
@@ -30,7 +30,7 @@ export const General = (): ReactElement => {
     ], 'inherit');
     const display: Displays = select('display', ['initial', 'block', 'inline', 'inline-block'], 'initial');
     const shouldTruncate = boolean('shouldTruncate', false);
-    const variant: Variants = select('variant', ['h1', 'h2', 'h3', 'body1', 'body2', 'label', 'inherit'], 'h1');
+    const variant: Variants = select('variant', ['h1', 'h2', 'h3', 'body1', 'body2', 'label'], 'h1');
 
     return (
         <Typography

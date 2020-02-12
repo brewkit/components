@@ -1,7 +1,58 @@
 @use 'sass:map';
+@use '../material-colors';
 @use '../utilities';
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+
+// ==============================================
+// Variables
+// ==============================================
+
+$font-primary: Roboto, sans-serif;
+
+$colors: (
+    primary:    utilities.color(grey, 500),
+    secondary:  utilities.color(grey, 300),
+    tertiary:   utilities.color(grey, 700),
+    success:    utilities.color(accent, success),
+    info:       utilities.color(accent, info),
+    warning:    utilities.color(accent, warning),
+    danger:     utilities.color(accent, danger),
+    h1:         utilities.color(brand, primary),
+    h2:         material-colors.get(lightBlue, 900),
+    h3:         material-colors.get(lightBlue, 900),
+    body1:      utilities.color(grey, 500),
+    body2:      utilities.color(grey, 500),
+    label:      utilities.color(grey, 500),
+);
+
+$font-sizes: (
+    h1:     2rem,
+    h2:     1.5rem,
+    h3:     1.25rem,
+    body1:  1rem,
+    body2:  1rem,
+    label:  0.75rem,
+);
+
+$font-weights: (
+    h1:     bolder,
+    h2:     bold,
+    h3:     bold,
+    body1:  lighter,
+    body2:  normal,
+    label:  normal,
+);
+
+$line-heights: (
+    h1:     3rem,
+    h2:     2rem,
+    h3:     1.5rem,
+    body1:  1.25,
+    body2:  1.25,
+    label:  1rem,
+);
 
 
 // ==============================================
@@ -19,13 +70,13 @@
 // Colors
 // ==============================================
 
-$colors: primary, secondary, tertiary, success, info, warning, danger;
+$type-colors: primary, secondary, tertiary, success, info, warning, danger;
 
 @mixin color-styles($color) {
-    color: map_get(map_get(utilities.$typography, colors), $color);
+    color: map_get($colors, $color);
 }
 
-@each $color in $colors {
+@each $color in $type-colors {
     .brew-Typography.brew-Typography--color-#{$color} {
         @include color-styles($color);
     }
@@ -43,10 +94,10 @@ $colors: primary, secondary, tertiary, success, info, warning, danger;
 $variants: h1, h2, h3, body1, body2, label;
 
 @mixin variant-styles($variant) {
-    font-size: map_get(map_get(utilities.$typography, font-sizes), $variant);
-    font-weight: map_get(map_get(utilities.$typography, font-weights), $variant);
-    line-height: map_get(map_get(utilities.$typography, line-heights), $variant);
-    color: map_get(map_get(utilities.$typography, colors), $variant);
+    font-size: map_get($font-sizes, $variant);
+    font-weight: map_get($font-weights, $variant);
+    line-height: map_get($line-heights, $variant);
+    color: map_get($colors, $variant);
 }
 
 @each $variant in $variants {

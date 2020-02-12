@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import { select, text } from '@storybook/addon-knobs';
-import Label from '../Label';
+import Flag from '@components/Flag';
 import Card from '../Card';
 import Placeholder from './index';
 import { Variants } from './components/PlaceholderAction/types';
@@ -9,7 +9,7 @@ import { Variants } from './components/PlaceholderAction/types';
 export default {
     component: Placeholder,
     parameters: {
-        componentSubtitle: <Label color="warning">In Development</Label>,
+        componentSubtitle: <Flag color="warning">In Development</Flag>,
     },
     title: 'Components|Display/Placeholder',
 };

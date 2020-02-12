@@ -1,13 +1,13 @@
 import React, { ReactElement } from 'react';
 import Input from './index';
-import Label from '../Label';
+import Flag from '@components/Flag';
 import { select } from '@storybook/addon-knobs';
 
 
 export default {
     component: Input,
     parameters: {
-        componentSubtitle: <Label color="warning">In Development</Label>,
+        componentSubtitle: <Flag color="warning">In Development</Flag>,
     },
     title: 'Components|User Input/Input',
 };

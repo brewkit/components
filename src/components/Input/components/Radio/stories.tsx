@@ -1,13 +1,13 @@
 import React, { ReactElement } from 'react';
 import Radio from './index';
-import Label from '../../../Label';
+import Flag from '@components/Flag';
 import { boolean, text } from '@storybook/addon-knobs';
 
 
 export default {
     component: Radio,
     parameters: {
-        componentSubtitle: <Label color="success">Stable</Label>,
+        componentSubtitle: <Flag color="success">Stable</Flag>,
     },
     title: 'Components|User Input/Radio',
 };

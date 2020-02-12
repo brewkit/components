@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode } from 'react';
 import { select, text, boolean } from '@storybook/addon-knobs';
-import Label from '../Label';
+import Flag from '@components/Flag';
 import Dialog from './index';
 import Button from '../Button';
 
@@ -8,7 +8,7 @@ import Button from '../Button';
 export default {
     component: Dialog,
     parameters: {
-        componentSubtitle: <Label color="warning">In Progress</Label>,
+        componentSubtitle: <Flag color="warning">In Progress</Flag>,
     },
     title: 'Components|Display/Dialog',
 };

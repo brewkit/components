@@ -13,7 +13,6 @@
     left: 0;
     right: 0;
     z-index: map.get(utilities.$dialog, z-index);
-    font-family: map.get(utilities.$typography, 'font-family');
 
     .brew-Dialog {
 
@@ -61,7 +60,7 @@
 
         &__body {
             color: white;
-            font-weight: map.get(map.get(utilities.$typography, font-weights), body1);
+            font-weight: normal;
             margin-top: utilities.size(normal);
         }
 

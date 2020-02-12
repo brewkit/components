@@ -4,13 +4,13 @@ import { action } from '@storybook/addon-actions';
 import Icon from '@components/Icon';
 import Button from './index';
 import { Variants, Colors, Sizes } from './types';
-import Label from '../Label';
+import Flag from '@components/Flag';
 
 
 export default {
     component: Button,
     parameters: {
-        componentSubtitle: <Label color="success">Stable</Label>,
+        componentSubtitle: <Flag color="success">Stable</Flag>,
     },
     title: 'Components|User Input/Button',
 };

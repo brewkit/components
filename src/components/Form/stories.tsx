@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import Label from '@components/Label';
+import Flag from '@components/Flag';
 import Button from '@components/Button';
 import Form from './index';
 
@@ -7,7 +7,7 @@ import Form from './index';
 export default {
     component: Form,
     parameters: {
-        componentSubtitle: <Label color="warning">In Development</Label>,
+        componentSubtitle: <Flag color="warning">In Development</Flag>,
     },
     title: 'Components|User Input/Form',
 };

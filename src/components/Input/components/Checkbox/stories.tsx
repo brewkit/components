@@ -1,13 +1,13 @@
 import React, { ReactElement } from 'react';
 import Checkbox from './index';
-import Label from '../../../Label';
+import Flag from '@components/Flag';
 import { boolean, text } from '@storybook/addon-knobs';
 
 
 export default {
     component: Checkbox,
     parameters: {
-        componentSubtitle: <Label color="warning">In Development</Label>,
+        componentSubtitle: <Flag color="warning">In Development</Flag>,
     },
     title: 'Components|User Input/Checkbox',
 };

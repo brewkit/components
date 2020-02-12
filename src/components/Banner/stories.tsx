@@ -1,10 +1,14 @@
 import React, { ReactElement } from 'react';
 import { boolean, text, select } from '@storybook/addon-knobs';
+import Flag from '@components/Flag';
 import Banner from './index';
 
 
 export default {
     component: Banner,
+    parameters: {
+        componentSubtitle: <Flag color="warning">In Development</Flag>,
+    },
     title: 'Components|Display/Banner',
 };
 

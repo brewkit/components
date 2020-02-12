@@ -1,13 +1,13 @@
 import React, { ReactElement } from 'react';
-import Label from '../../components/Label';
+import Flag from '@components/Flag';
+import Button from '@components/Button';
 import ClickAwayListener from './index';
-import Button from '../../components/Button';
 
 
 export default {
     component: ClickAwayListener,
     parameters: {
-        componentSubtitle: <Label color="success">Stable</Label>,
+        componentSubtitle: <Flag color="success">Stable</Flag>,
     },
     title: 'Utilities|ClickAwayListener',
 };

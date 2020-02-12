@@ -1,13 +1,13 @@
 import React, { ReactElement } from 'react';
 import TextInput from './index';
-import Label from '../../../Label';
+import Flag from '@components/Flag';
 import { boolean, text } from '@storybook/addon-knobs';
 
 
 export default {
     component: TextInput,
     parameters: {
-        componentSubtitle: <Label color="warning">In Development</Label>,
+        componentSubtitle: <Flag color="warning">In Development</Flag>,
     },
     title: 'Components|User Input/Input/TextInput',
 };

@@ -1,14 +1,14 @@
 import React, { ReactElement } from 'react';
 import Radio from '../Radio';
 import RadioGroup from './index';
-import Label from '../../../Label';
+import Flag from '@components/Flag';
 import { text } from '@storybook/addon-knobs';
 
 
 export default {
     component: Radio,
     parameters: {
-        componentSubtitle: <Label color="warning">In Development</Label>,
+        componentSubtitle: <Flag color="warning">In Development</Flag>,
     },
     title: 'Components|User Input/RadioGroup',
 };

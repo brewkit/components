@@ -22,7 +22,7 @@ $colors: (
 // General
 // ==============================================
 
-.brew-Label {
+.brew-Flag {
     display: inline-flex;
     border-width: 2px;
     border-style: solid;
@@ -49,7 +49,7 @@ $color-variants: primary, secondary, success, info, warning, danger, light, dark
 
 @each $color in $color-variants {
 
-    .brew-Label__color--#{$color} {
+    .brew-Flag--color-#{$color} {
 
         $button_color: map_get($colors, $color);
         background-color: rgba($button_color, 0.1);
@@ -58,11 +58,8 @@ $color-variants: primary, secondary, success, info, warning, danger, light, dark
         .title {
             background-color: $button_color;
             border-right-color: $button_color;
-        }
-
-        .title span {
             font-weight: bold;
-            color: utilities.set-text-color($button_color);
+            color: $button_color;
         }
 
         .content {

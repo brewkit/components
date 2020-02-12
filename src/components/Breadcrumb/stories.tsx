@@ -1,12 +1,12 @@
 import React, { ReactElement } from 'react';
 import Breadcrumb from './index';
-import Label from '../Label';
+import Flag from '@components/Flag';
 
 
 export default {
     component: Breadcrumb,
     parameters: {
-        componentSubtitle: <Label color="warning">In Development</Label>,
+        componentSubtitle: <Flag color="warning">In Development</Flag>,
     },
     title: 'Components|Display/Breadcrumb',
 };

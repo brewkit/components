@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio renders correctly 1`] = `
-<label
+<Flag
   className="brew-Typography brew-Typography--display-block brew-Input brew-Radio"
   tabIndex={1}
 >
@@ -12,5 +12,5 @@ exports[`Radio renders correctly 1`] = `
   <div
     className="brew-Radio__control"
   />
-</label>
+</Flag>
 `;

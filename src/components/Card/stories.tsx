@@ -1,13 +1,13 @@
 import React, { ReactElement, ReactNode } from 'react';
 import { text } from '@storybook/addon-knobs';
-import Label from '../Label';
+import Flag from '@components/Flag';
 import Card from './index';
 
 
 export default {
     component: Card,
     parameters: {
-        componentSubtitle: <Label color="warning">In Progress</Label>,
+        componentSubtitle: <Flag color="warning">In Progress</Flag>,
     },
     title: 'Components|Display/Card',
 };

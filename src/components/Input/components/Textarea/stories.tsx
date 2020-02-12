@@ -1,13 +1,13 @@
 import React, { ReactElement } from 'react';
 import Textarea from './index';
-import Label from '../../../Label';
+import Flag from '@components/Flag';
 import { boolean, text, number } from '@storybook/addon-knobs';
 
 
 export default {
     component: Textarea,
     parameters: {
-        componentSubtitle: <Label color="warning">In Development</Label>,
+        componentSubtitle: <Flag color="warning">In Development</Flag>,
     },
     title: 'Components|User Input/Input/Textarea',
 };

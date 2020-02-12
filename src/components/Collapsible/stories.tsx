@@ -1,14 +1,14 @@
 import React, { ReactElement } from 'react';
 import Collapsible from './index';
 import Typography from '../Typography';
-import Label from '../Label';
+import Flag from '@components/Flag';
 import { boolean } from '@storybook/addon-knobs';
 
 
 export default {
     component: Collapsible,
     parameters: {
-        componentSubtitle: <Label color="success">Stable</Label>,
+        componentSubtitle: <Flag color="success">Stable</Flag>,
     },
     title: 'Components|Display/Collapsible',
 };

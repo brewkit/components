@@ -1,14 +1,14 @@
 import React, { ReactElement, ReactNode } from 'react';
 import { select, text } from '@storybook/addon-knobs';
 import Divider from './index';
-import Label from '../Label';
+import Flag from '@components/Flag';
 import { Alignments } from './types';
 
 
 export default {
     component: Divider,
     parameters: {
-        componentSubtitle: <Label color="success">stable</Label>,
+        componentSubtitle: <Flag color="success">stable</Flag>,
     },
     title: 'Components|Display/Divider',
 };

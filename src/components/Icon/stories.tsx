@@ -3,14 +3,14 @@ import { select } from '@storybook/addon-knobs';
 import Icon from './index';
 import Typography from '../Typography';
 import { Colors, Sizes } from './types';
-import Label from '../Label';
+import Flag from '@components/Flag';
 import icons from './iconList';
 
 
 export default {
     component: Icon,
     parameters: {
-        componentSubtitle: <Label color="success">Stable</Label>,
+        componentSubtitle: <Flag color="success">Stable</Flag>,
     },
     title: 'Components|Display/Icon',
 };

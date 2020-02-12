@@ -1,12 +1,12 @@
 import React, { ReactElement } from 'react';
 import Form from '@components/Form';
-import Label from '@components/Label';
+import Flag from '@components/Flag';
 
 
 export default {
     component: Form.Button,
     parameters: {
-        componentSubtitle: <Label color="warning">In Development</Label>,
+        componentSubtitle: <Flag color="warning">In Development</Flag>,
     },
     title: 'Components|User Input/Form/FormButton',
 };

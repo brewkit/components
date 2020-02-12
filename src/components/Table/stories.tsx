@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode } from 'react';
 import { object, text } from '@storybook/addon-knobs';
-import Label from '../Label';
+import Flag from '@components/Flag';
 import { ColumnPropsWithName, RowData } from './components/TableRow/types';
 import Table from './index';
 
@@ -8,7 +8,7 @@ import Table from './index';
 export default {
     component: Table,
     parameters: {
-        componentSubtitle: <Label color="warning">In Development</Label>,
+        componentSubtitle: <Flag color="warning">In Development</Flag>,
     },
     title: 'Components|Display/Table',
 };

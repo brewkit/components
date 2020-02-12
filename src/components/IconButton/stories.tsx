@@ -2,13 +2,13 @@ import React, { ReactElement } from 'react';
 import { text, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import IconButton from './index';
-import Label from '../Label';
+import Flag from '@components/Flag';
 
 
 export default {
     component: IconButton,
     parameters: {
-        componentSubtitle: <Label color="success">Stable</Label>,
+        componentSubtitle: <Flag color="success">Stable</Flag>,
     },
     title: 'Components|User Input/IconButton',
 };

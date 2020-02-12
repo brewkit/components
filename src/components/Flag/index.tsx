@@ -5,9 +5,9 @@ import { Props } from './types';
 
 
 /**
- * The `<Label />` is used to display content classification.
+ * The `<Flag />` is used to display content classification.
  */
-function Label({
+function Flag({
     title,
     color = 'info',
     children,
@@ -17,8 +17,8 @@ function Label({
 
 
     const classes = clsx(
-        'brew-Label',
-        `brew-Label__color--${color}`,
+        'brew-Flag',
+        `brew-Flag--color-${color}`,
         className,
     );
 
@@ -27,7 +27,7 @@ function Label({
         <div className={classes} {...otherProps}>
             {title && (
                 <div className="title">
-                    <Typography className="titleContent" variant="label">{title}</Typography>
+                    <Typography className="titleContent" color="inherit" variant="label">{title}</Typography>
                 </div>
             )}
             <div className="content">
@@ -40,4 +40,4 @@ function Label({
 }
 
 
-export default Label;
+export default Flag;

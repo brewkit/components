@@ -61,7 +61,7 @@
 
         &__element {
             font-size: utilities.size(normal);
-            font-weight: map.get(map.get(utilities.$typography, font-weights), body2);
+            font-weight: normal;
             padding: utilities.size(small);
             border-radius: $radius;
             border: 1px solid utilities.color(grey, 100);
