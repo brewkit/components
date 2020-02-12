@@ -3,6 +3,9 @@
 
 $snackColors: primary, secondary, success, warning, danger, info, dark, light;
 
+// ======================================
+// Snackbar Wrapper Positioning
+// ======================================
 
 .brew-Snackbar {
     position: fixed;
@@ -10,43 +13,6 @@ $snackColors: primary, secondary, success, warning, danger, info, dark, light;
     left: 0;
     z-index: 1;
     pointer-events: none;
-
-
-    // ======================================
-    // Snackbar Content
-    // ======================================
-
-    &__item {
-        display: inline-flex;
-        flex-direction: row;
-        align-items: center;
-        min-width: 288px;
-        max-width: 568px;
-        padding: size(normal);
-        pointer-events: auto;
-        border-radius: $border-radius;
-
-        // ======================================
-        // Colors
-        // ======================================
-
-        @each $color in $snackColors {
-            &--#{$color} {
-
-                @if $color == 'primary' or $color == 'secondary' {
-                    background-color: color(brand, $color);
-                    color: set-text-color(color(brand, $color));
-                } @else {
-                    background-color: color(accent, $color);
-                    color: set-text-color(color(accent, $color));
-                }
-            }
-        }
-    }
-
-    // ======================================
-    // Snackbar Wrapper Positioning
-    // ======================================
 
     &--topLeft,
     &--topCenter,
@@ -111,7 +77,64 @@ $snackColors: primary, secondary, success, warning, danger, info, dark, light;
         right: 0;
     }
 
+}
+
+// ======================================
+// Snackbar Content
+// ======================================
+
+.brew-SnackbarItem {
+    display: inline-flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    min-width: 288px;
+    max-width: 568px;
+    padding: size(normal);
+    pointer-events: auto;
+    border-radius: $border-radius;
+
+    &--topLeft,
+    &--topCenter,
+    &--topRight {
+        animation: slide .35s;
+    }
+
+    &__button {
+
+    }
+
+    &__close {
+        position: absolute;
+        top: size(xx-small);
+        right: size(x-small);
+        cursor: pointer;
+    }
+
+    &__icon {
+        margin-right: size(normal);
+    }
+
+    // ======================================
+    // Colors
+    // ======================================
+
+    @each $color in $snackColors {
+        &--#{$color} {
+
+            @if $color == 'primary' or $color == 'secondary' {
+                background-color: color(brand, $color);
+                color: set-text-color(color(brand, $color));
+            } @else {
+                background-color: color(accent, $color);
+                color: set-text-color(color(accent, $color));
+            }
+        }
+    }
+}
 
 
-
+@keyframes slide {
+    0% { transform: translateY(-100%)}
+    100% { transform: translateY(0);}
 }

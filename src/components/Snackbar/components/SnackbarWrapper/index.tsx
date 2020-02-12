@@ -1,4 +1,4 @@
-import React, {ReactElement, ReactNode} from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import { Flipper, Flipped } from 'react-flip-toolkit';
 import SnackbarItem from '../SnackbarItem';
 import { Snackbar } from '../SnackbarItem/types';
@@ -27,14 +27,12 @@ function SnackbarWrapper({
         return positions.map((position: string) => (
             <div className={`brew-Snackbar--${position}`} key={position}>
 
-                {snackbars.map((snack: Snackbar): ReactElement | null => {
+                {snackbars.map((snack: Snackbar): ReactNode | null => {
 
                     // Assign snackbars to correct position
                     if (position === snack.position) return (
-                        <Flipped flipId={snack.id} key={snack.id} spring="wobbly">
-                            <div>
-                                <SnackbarItem itemConfig={snack} />
-                            </div>
+                        <Flipped flipId={snack.id} key={snack.id}>
+                            <SnackbarItem itemConfig={snack} />
                         </Flipped>
                     );
 
@@ -42,8 +40,6 @@ function SnackbarWrapper({
                 })}
 
             </div>));
-
-
     }
 
 
