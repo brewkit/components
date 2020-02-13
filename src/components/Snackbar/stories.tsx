@@ -1,6 +1,6 @@
+/* eslint-disable no-console,sort-keys,max-params,max-len */
 import React, { ReactElement, ReactNode } from 'react';
 import { button } from '@storybook/addon-knobs';
-import Button from '../Button';
 import SnackbarProvider from './index';
 import { SnackbarContext } from './context';
 
@@ -23,20 +23,26 @@ const Test = (): ReactElement => {
         lifespan?: number,
         buttonContent?: ReactNode,
         handleAction?: () => void,
-        // eslint-disable-next-line max-params
     ): any => {
-        // eslint-disable-next-line sort-keys
-        if (snackbar?.enqueue) return snackbar.enqueue({ color, content, iconName, position, isCloseable, lifespan, buttonContent, handleAction });
+        if (snackbar?.enqueue) return snackbar.enqueue({
+            color,
+            content,
+            iconName,
+            position,
+            isCloseable,
+            lifespan,
+            buttonContent,
+            handleAction });
         return null;
     };
 
 
-    button('topLeft', () => handler('build', 'topLeft', 'primary', 'Hello Top Left', true, 10));
-    button('topCenter', () => handler('build', 'topCenter', 'secondary', 'Hello Top center'));
-    button('topRight', () => handler('', 'topRight', 'success', 'Hello top right', true, undefined, 'Button String', () => console.log('clicked')));
-    button('centerLeft', () => handler('build', 'centerLeft', 'warning', 'Hello center left'));
-    button('centerRight', () => handler('', 'centerRight', 'danger', 'Hello center right'));
-    button('bottomLeft', () => handler('build', 'bottomLeft', 'light', 'Hello bottom left', true, 10, 'button', () => console.log('hello')));
+    button('Closeable longer duration', () => handler('build', 'topLeft', 'primary', 'Hello Top Left', true, 10));
+    button('default text only', () => handler('build', 'topCenter', 'secondary', 'Hello Top center'));
+    button('closeable with button', () => handler('', 'topRight', 'success', 'Hello top right', true, undefined, 'Button String', () => console.log('clicked')));
+    button('text icon', () => handler('build', 'centerLeft', 'warning', 'Hello center left'));
+    button('text', () => handler('', 'centerRight', 'danger', 'Hello center right'));
+    button('closeable button longer duration', () => handler('build', 'bottomLeft', 'light', 'Hello bottom left', true, 10, 'button', () => console.log('hello')));
     button('bottomCenter', () => handler('build', 'bottomCenter', 'dark', 'Hello bottom center'));
     button('bottomRight', () => handler('build', 'bottomRight', 'info', 'Hello bottomRight'));
 
