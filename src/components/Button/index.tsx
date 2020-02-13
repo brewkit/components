@@ -1,8 +1,8 @@
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import { Flipped, Flipper } from 'react-flip-toolkit';
-import Typography from '../Typography';
-import Progress from '../Progress';
+import Typography from '@components/Typography';
+import Progress from '@components/Progress';
 import { Props } from './types';
 
 

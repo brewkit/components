@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paper renders correctly with defaults 1`] = `
+<div
+  className="brew-Paper brew-Paper--elevation-1 brew-Paper--variant-elevation brew-Paper--isRounded"
+>
+  Foo
+</div>
+`;
+
+exports[`Paper renders correctly with properties 1`] = `
+<span
+  className="brew-Paper brew-Paper--elevation-2 brew-Paper--variant-outlined foo-bar"
+  style={
+    Object {
+      "width": "100px",
+    }
+  }
+>
+  Foo
+</span>
+`;
