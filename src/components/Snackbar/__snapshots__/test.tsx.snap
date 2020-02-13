@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snackbar renders correctly 1`] = `
+Array [
+  <div>
+    foo
+  </div>,
+  <div>
+    <div
+      className="brew-Snackbar--topRight"
+    />
+    <div
+      className="brew-Snackbar--topLeft"
+    />
+    <div
+      className="brew-Snackbar--topCenter"
+    />
+    <div
+      className="brew-Snackbar--bottomRight"
+    />
+    <div
+      className="brew-Snackbar--bottomCenter"
+    />
+    <div
+      className="brew-Snackbar--bottomLeft"
+    />
+    <div
+      className="brew-Snackbar--centerLeft"
+    />
+    <div
+      className="brew-Snackbar--centerRight"
+    />
+  </div>,
+]
+`;
