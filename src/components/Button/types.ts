@@ -9,6 +9,12 @@ export type Sizes = 'small' | 'medium' | 'large';
 export interface Props {
 
     /**
+     * Prevents unwanted animations when wrapped in another Flipped component
+     */
+
+    cancelAnimation?: boolean,
+
+    /**
      * The content inside the button to be rendered or the icon to render if `variant="icon"`. Usually just a string,
      * but can be any valid JSX.
      */

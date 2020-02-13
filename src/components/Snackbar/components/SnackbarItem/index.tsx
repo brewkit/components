@@ -41,7 +41,9 @@ function SnackbarItem({
             </div>
             {itemConfig.buttonContent && (
                 <div className="brew-SnackbarItem__button">
-                    <button onClick={itemConfig.handleAction} type="button">{itemConfig.buttonContent}</button>
+                    <Button cancelAnimation color={itemConfig.color} onClick={itemConfig.handleAction} size="small">
+                        {itemConfig.buttonContent}
+                    </Button>
                 </div>
             )}
             {itemConfig.isCloseable && (

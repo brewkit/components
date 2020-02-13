@@ -84,9 +84,10 @@ $snackColors: primary, secondary, success, warning, danger, info, dark, light;
 // ======================================
 
 .brew-SnackbarItem {
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: min-content 1fr max-content;
+    grid-template-areas: "icon content button";
     position: relative;
-    flex-direction: row;
     align-items: center;
     min-width: 288px;
     max-width: 568px;
@@ -101,7 +102,7 @@ $snackColors: primary, secondary, success, warning, danger, info, dark, light;
     }
 
     &__button {
-
+        grid-area: button;
     }
 
     &__close {
@@ -111,8 +112,13 @@ $snackColors: primary, secondary, success, warning, danger, info, dark, light;
         cursor: pointer;
     }
 
+    &__content {
+        grid-area: content;
+    }
+
     &__icon {
         margin-right: size(normal);
+        grid-area: icon;
     }
 
     // ======================================

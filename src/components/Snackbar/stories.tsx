@@ -36,7 +36,7 @@ const Test = (): ReactElement => {
     button('topRight', () => handler('', 'topRight', 'success', 'Hello top right', true, undefined, 'Button String', () => console.log('clicked')));
     button('centerLeft', () => handler('build', 'centerLeft', 'warning', 'Hello center left'));
     button('centerRight', () => handler('', 'centerRight', 'danger', 'Hello center right'));
-    button('bottomLeft', () => handler('build', 'bottomLeft', 'light', 'Hello bottom left'));
+    button('bottomLeft', () => handler('build', 'bottomLeft', 'light', 'Hello bottom left', true, 10, 'button', () => console.log('hello')));
     button('bottomCenter', () => handler('build', 'bottomCenter', 'dark', 'Hello bottom center'));
     button('bottomRight', () => handler('build', 'bottomRight', 'info', 'Hello bottomRight'));
 

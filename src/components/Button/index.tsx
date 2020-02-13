@@ -22,6 +22,7 @@ function Button({
     isDisabled = false,
     children,
     className,
+    cancelAnimation,
     ...otherProps
 }: Props): ReactElement {
 
@@ -42,7 +43,7 @@ function Button({
 
     return (
         <Flipper flipKey={JSON.stringify([isLoading, variant, color, size])}>
-            <Flipped flipId="wrapper">
+            <Flipped flipId="wrapper" inverseFlipId={cancelAnimation ? 'wrapper' : ''}>
                 <button
                     aria-label={(variant === 'icon' && typeof children === 'string') ? children : undefined}
                     className={buttonClasses}
@@ -50,7 +51,7 @@ function Button({
                     type="button"
                     {...otherProps}
                 >
-                    <Flipped flipId="content">
+                    <Flipped flipId="content" inverseFlipId={cancelAnimation ? 'content' : ''}>
                         <div className="brew-Button__content">
                             <Typography className="brew-Button__text">
                                 {children}
