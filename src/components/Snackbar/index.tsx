@@ -1,7 +1,8 @@
-/* eslint-disable @typescript-eslint/restrict-plus-operands */
 import React, { ReactElement } from 'react';
 import SnackbarWrapper from './components/SnackbarWrapper';
 import { SnackbarContext } from './context';
+import { Snackbar } from './components/SnackbarItem/types';
+import { Action, Props, State } from './types';
 
 
 /**
@@ -11,10 +12,10 @@ import { SnackbarContext } from './context';
  */
 function SnackbarProvider({
     children,
-}: any): ReactElement {
+}: Props): ReactElement {
 
 
-    const [state, dispatch] = React.useReducer((currentState: any, action: any) => {
+    const [state, dispatch] = React.useReducer((currentState: State, action: Action) => {
 
 
         switch (action.type) {
@@ -44,7 +45,7 @@ function SnackbarProvider({
 
             return {
                 ...currentState,
-                snackbars: currentState.snackbars.map((snackbar: any) => (
+                snackbars: currentState.snackbars.map((snackbar: Snackbar) => (
                     snackbar.id === action.id ? { ...snackbar, isLive: true } : snackbar)),
             };
 
@@ -55,7 +56,7 @@ function SnackbarProvider({
 
             return {
                 ...currentState,
-                snackbars: currentState.snackbars.filter((snackbar: any) => snackbar.id !== action.id),
+                snackbars: currentState.snackbars.filter((snackbar: Snackbar) => snackbar.id !== action.id),
             };
 
 
@@ -71,10 +72,10 @@ function SnackbarProvider({
 
 
     const { snackbars } = state;
-    const liveSnackbars = snackbars.filter((snackbar: any) => snackbar.isLive);
-    const snackbarQueue = snackbars.filter((snackbar: any) => !snackbar.isLive);
+    const liveSnackbars: any = snackbars.filter((snackbar: Snackbar) => snackbar.isLive);
+    const snackbarQueue: any = snackbars.filter((snackbar: Snackbar) => !snackbar.isLive);
 
-    const enqueueSnackbar = React.useCallback((snackbarConfig: any) => {
+    const enqueueSnackbar = React.useCallback((snackbarConfig: Snackbar) => {
         if (snackbarConfig) dispatch({ snackbarConfig, type: 'add' });
     }, []);
 

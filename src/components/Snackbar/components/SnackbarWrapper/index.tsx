@@ -2,11 +2,12 @@ import React, { ReactElement, ReactNode } from 'react';
 import { Flipper, Flipped } from 'react-flip-toolkit';
 import SnackbarItem from '../SnackbarItem';
 import { Snackbar } from '../SnackbarItem/types';
+import { Props } from './types';
 
 
 function SnackbarWrapper({
     snackbars,
-}: any): ReactElement {
+}: Props): ReactElement {
 
 
     const positions = [
@@ -51,5 +52,6 @@ function SnackbarWrapper({
 
 
 }
+
 
 export default SnackbarWrapper;

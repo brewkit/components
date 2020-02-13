@@ -52,6 +52,12 @@ export interface Snackbar {
 
 
     /**
+     * Used in queueing system to determine which snackbars are shown
+     */
+    isLive?: boolean,
+
+
+    /**
      * Number of seconds for Snackbar to appear
      * 1 = 1s, 10 = 10s
      */
@@ -62,6 +68,8 @@ export interface Snackbar {
      * Position of Snackbar
      */
     position: Positions,
+
+
 }
 
 
@@ -78,4 +86,6 @@ export interface Props {
      * Snackbar config
      */
     itemConfig: Snackbar,
+
+
 }
