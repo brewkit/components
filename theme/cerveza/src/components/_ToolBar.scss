@@ -1,0 +1,40 @@
+@use 'sass:map';
+@use '../utilities';
+
+
+// ==============================================
+// Variables
+// ==============================================
+
+$padding: utilities.size(normal);
+
+
+// ==============================================
+// General
+// ==============================================
+
+.brew-ToolBar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: $padding;
+
+    &.brew-ToolBar {
+
+        // --------------------------------------
+        // disabled gutters
+
+        &--disableGutters {
+            padding: 0;
+        }
+
+        // --------------------------------------
+        // Variants
+
+        &--variant-dense:not(.brew-ToolBar--disableGutters) {
+            padding: $padding / 2;
+        }
+
+    }
+
+}

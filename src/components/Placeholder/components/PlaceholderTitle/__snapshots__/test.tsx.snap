@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`PlaceholderTitle renders correctly 1`] = `
-<h1
-  className="brew-Typography brew-Typography--display-block brew-Typography--variant-h1 brew-Typography--color-tertiary brew-Typography--shouldTruncate brew-Placeholder__title"
->
-  Foo
-</h1>
-`;

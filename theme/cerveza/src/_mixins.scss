@@ -1,4 +1,6 @@
+@use "sass:map";
 @use "variables";
+@use "functions";
 
 
 // ==============================================
@@ -44,5 +46,32 @@
     @if $direction == right{
         border-width: $size 0 $size $size;
         border-color: transparent transparent transparent $color;
+    }
+}
+
+
+// ==============================================
+// Background Color
+// ==============================================
+
+@mixin background-color($class-prefix) {
+    $color-variants: primary, secondary, tertiary, success, info, warning, danger, light, dark;
+
+    $background-colors: (
+        primary:    functions.color(brand, primary),
+        secondary:  functions.color(brand, secondary),
+        tertiary:   functions.color(brand, tertiary),
+        success:    functions.color(accent, success),
+        info:       functions.color(accent, info),
+        warning:    functions.color(accent, warning),
+        danger:     functions.color(accent, danger),
+        light:      functions.color(accent, light),
+        dark:       functions.color(accent, dark),
+    );
+
+    @each $color in $color-variants {
+        #{$class-prefix}#{$color} {
+            background-color: map.get($background-colors, $color);
+        }
     }
 }
