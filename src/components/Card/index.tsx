@@ -1,42 +1,34 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
+import Paper from '@components/Paper';
 import clsx from 'clsx';
 import { Props } from './types';
-import CardBody from './components/CardBody';
-import CardHeader from './components/CardHeader';
-import CardTitle from './components/CardTitle';
 
 
 /**
- * The `<Card />` component is a flexible and extensible content container.
+ * Cards are surfaces that display content and actions on a single topic.
+ * They should be easy to scan for relevant and actionable information.
+ * Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.
  */
-function Card({
-    hasBorder = true,
+export const Card = React.forwardRef(({
     className,
-    children,
-    ...otherProps
-}: Props): ReactElement {
+    isRaised = false,
+    ...other
+}: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
     const classes = clsx(
         'brew-Card',
-        { 'brew-Card--hasBorder': hasBorder },
         className,
     );
 
 
-    return (
-        <div className={classes} {...otherProps}>
-            {children}
-        </div>
-    );
+    return <Paper className={classes} elevation={isRaised ? 3 : 1} ref={ref} {...other} />;
 
 
-}
+});
 
 
-Card.Body = CardBody;
-Card.Header = CardHeader;
-Card.Title = CardTitle;
+Card.displayName = 'Card';
 
 
 export default Card;

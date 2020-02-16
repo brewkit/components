@@ -1,32 +1,30 @@
-import React, { ReactElement, ReactNode } from 'react';
-import { text } from '@storybook/addon-knobs';
-import Flag from '@components/Flag';
+import React from 'react';
+import { text, boolean } from '@storybook/addon-knobs';
 import Card from './index';
+import Flag from '@components/Flag';
 
 
 export default {
     component: Card,
     parameters: {
-        componentSubtitle: <Flag color="warning">In Progress</Flag>,
+        componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'Components|Display/Card',
+    title: 'Components|Surfaces/Card',
 };
 
 
-export const BaseExample = (): ReactElement => {
-    const children: ReactNode = text('children', 'Click me!');
+export const General = (): React.ReactElement => {
+
+    const children: React.ReactNode = text('children', 'foo');
+    const isRaised: boolean = boolean('isRaised', false);
+
     return (
-        <Card>
-            <Card.Header>
-                <Card.Title>Card Header</Card.Title>
-            </Card.Header>
-            <Card.Body>{children}</Card.Body>
+        <Card isRaised={isRaised}>
+            {children}
         </Card>
     );
+
 };
 
 
-export const CardExample = (): ReactElement => <Card>Lorem Ipsum</Card>;
-export const CardBodyExample = (): ReactElement => <Card.Body>Lorem Ipsum</Card.Body>;
-export const CardHeaderExample = (): ReactElement => <Card.Header>Lorem Ipsum</Card.Header>;
-export const CardTitleExample = (): ReactElement => <Card.Title>Lorem Ipsum</Card.Title>;
+export const Default = (): React.ReactElement => <Card>Default</Card>;

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { select, boolean, number } from '@storybook/addon-knobs';
 import Paper from './index';
 import Flag from '@components/Flag';
@@ -17,7 +17,7 @@ export default {
 const styles = { height: '100px', margin: '8px', width: '100px' };
 
 
-export const General = (): ReactElement => {
+export const General = (): React.ReactElement => {
 
     const elevation: number = number('elevation', 1);
     const isRounded: boolean = boolean('isRounded', true);
@@ -34,8 +34,8 @@ export const General = (): ReactElement => {
 };
 
 
-export const Default = (): ReactElement => <Paper>Default</Paper>;
-export const Elevations = (): ReactElement => (
+export const Default = (): React.ReactElement => <Paper>Default</Paper>;
+export const Elevations = (): React.ReactElement => (
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         <Paper elevation={0} style={styles}>0</Paper>
         <Paper elevation={1} style={styles}>1</Paper>
@@ -45,7 +45,7 @@ export const Elevations = (): ReactElement => (
         <Paper elevation={5} style={styles}>5</Paper>
     </div>
 );
-export const Outlined = (): ReactElement => (
+export const Outlined = (): React.ReactElement => (
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         <Paper elevation={0} style={styles} variant="outlined">0</Paper>
         <Paper elevation={1} style={styles} variant="outlined">1</Paper>
@@ -55,7 +55,7 @@ export const Outlined = (): ReactElement => (
         <Paper elevation={5} style={styles} variant="outlined">5</Paper>
     </div>
 );
-export const Boxed = (): ReactElement => (
+export const Boxed = (): React.ReactElement => (
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         <Paper elevation={0} isRounded={false} style={styles}>0</Paper>
         <Paper elevation={1} isRounded={false} style={styles}>1</Paper>
