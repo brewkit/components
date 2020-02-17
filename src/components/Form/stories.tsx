@@ -9,7 +9,7 @@ export default {
     parameters: {
         componentSubtitle: <Flag color="warning">In Development</Flag>,
     },
-    title: 'Components|User Input/Form',
+    title: 'In Development|User Input/Form',
 };
 
 

@@ -10,7 +10,7 @@ export default {
     parameters: {
         componentSubtitle: <Flag color="success">stable</Flag>,
     },
-    title: 'Components|Display/Divider',
+    title: 'In Development|Display/Divider',
 };
 
 

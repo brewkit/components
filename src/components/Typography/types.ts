@@ -1,4 +1,5 @@
-import { ReactNode } from 'react';
+import React from 'react';
+import { StyledParentComponent } from '@components/types';
 
 
 export type Variants = 'h1' | 'h2' | 'h3' | 'body1' | 'body2' | 'label';
@@ -18,17 +19,7 @@ export type Alignments = 'inherit' | 'left' | 'center' | 'right' | 'justify';
 export type Displays = 'initial' | 'block' | 'inline' | 'inline-block';
 
 
-export interface Props {
-
-    /**
-     * The content or text to be rendered. Usually just a string, but can be any valid JSX.
-     */
-    children: ReactNode,
-
-    /**
-     * Classes to be passed through to the component.
-     */
-    className?: string,
+export interface Props extends StyledParentComponent {
 
     /**
      * The overall style to be applied to the typography.
@@ -58,7 +49,7 @@ export interface Props {
     /**
      * Can be used to override the element used to wrap the content.
      */
-    as?: keyof JSX.IntrinsicElements | null,
+    component?: React.ElementType,
 
     /**
      * A tab index to be passed to the underlying element

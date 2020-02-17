@@ -9,7 +9,7 @@ export default {
     parameters: {
         componentSubtitle: <Flag color="warning">In Development</Flag>,
     },
-    title: 'Components|Display/Banner',
+    title: 'In Development|Display/Banner',
 };
 
 

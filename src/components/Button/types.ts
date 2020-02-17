@@ -1,18 +1,27 @@
 import React from 'react';
+import { Colors as GenericColors, StyledParentComponent } from '@components/types';
 
 
-export type Variants = 'standard' | 'text';
-export type Colors = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link';
-export type Sizes = 'small' | 'medium' | 'large';
+export type Variants = (
+    | 'standard'
+    | 'text'
+);
 
 
-export interface Props {
+export type Colors = (
+    | GenericColors
+    | 'link'
+);
 
-    /**
-     * The content inside the button to be rendered or the icon to render if `variant="icon"`. Usually just a string,
-     * but can be any valid JSX.
-     */
-    children?: React.ReactNode,
+
+export type Sizes = (
+    | 'small'
+    | 'medium'
+    | 'large'
+);
+
+
+export interface Props extends StyledParentComponent {
 
     /**
      * Fires when button is clicked.
@@ -20,53 +29,56 @@ export interface Props {
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void,
 
     /**
-     * Classes to be passed through to the component.
-     */
-    className?: string,
-
-    /**
-     * If set to "standard", the content of the button will be rendered as is. If set to "icon", the content is expected
-     * to be a string and will determine what icon to render.
+     * Determines the display style of the button
+     * @default 'standard'
      */
     variant?: Variants,
 
     /**
      * The color of the button.
+     * @default 'primary'
      */
     color?: Colors,
 
     /**
      * The size of the button.
+     * @default 'medium'
      */
     size?: Sizes,
 
     /**
      * If `true`, will disable the button.
+     * @default false
      */
     isDisabled?: boolean,
 
     /**
      * If `true`, the button will be disabled and show a spinner.
+     * @default false
      */
     isLoading?: boolean,
 
     /**
      * Reduces the padding of the button.
+     * @default false
      */
     isCompact?: boolean,
 
     /**
      * Makes the button a full-width block element.
+     * @default false
      */
     isFluid?: boolean,
 
     /**
      * Rounds the corners of the button to make a circle.
+     * @default false
      */
     isCircular?: boolean,
 
     /**
      * The type of the button.
+     * @default 'button'
      */
     type?: 'button' | 'submit' | 'reset',
 

@@ -5,7 +5,7 @@ import Drawer from './index';
 
 export default {
     Component: Drawer,
-    title: 'Components|Display/Drawer',
+    title: 'In Development|Display/Drawer',
 };
 
 

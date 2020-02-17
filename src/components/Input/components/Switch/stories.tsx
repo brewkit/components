@@ -5,7 +5,7 @@ import { boolean, text } from '@storybook/addon-knobs';
 
 export default {
     component: Switch,
-    title: 'Components|User Input/Switch',
+    title: 'In Development|User Input/Switch',
 };
 
 

@@ -10,7 +10,7 @@ export default {
     parameters: {
         componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'Components|Display/Typography',
+    title: 'Stable|Display/Typography',
 };
 
 
@@ -57,13 +57,13 @@ export const Default = (): ReactElement => (
 export const Headers = (): ReactElement => (
     <div style={{ maxWidth: '100%' }}>
         <Typography shouldTruncate variant="h1">
-                H1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            H1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </Typography>
         <Typography shouldTruncate variant="h2">
-                H2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            H2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </Typography>
         <Typography shouldTruncate variant="h3">
-                H3 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            H3 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </Typography>
     </div>
 );
@@ -71,12 +71,12 @@ export const Headers = (): ReactElement => (
 
 export const Paragraphs = (): ReactElement => (
     <React.Fragment>
-        <Typography as="p" variant="body1">
+        <Typography variant="body1">
             body1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in,
             egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id
             feugiat risus dapibus. Ut auctor imperdiet turpis, vel mollis dolor sollicitudin in.
         </Typography>
-        <Typography as="p" variant="body2">
+        <Typography variant="body2">
             body1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in,
             egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id
             feugiat risus dapibus. Ut auctor imperdiet turpis, vel mollis dolor sollicitudin in.
@@ -86,17 +86,17 @@ export const Paragraphs = (): ReactElement => (
 
 
 export const Truncated = (): ReactElement => (
-    <Typography as="p" shouldTruncate variant="body1">
-            body1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in,
-            egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id
-            feugiat risus dapibus. Ut auctor imperdiet turpis, vel mollis dolor sollicitudin in.
+    <Typography shouldTruncate variant="body1">
+        body1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in,
+        egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id
+        feugiat risus dapibus. Ut auctor imperdiet turpis, vel mollis dolor sollicitudin in.
     </Typography>
 );
 
 
 export const Labels = (): ReactElement => (
-    <Typography as="p" shouldTruncate variant="label">
-            label - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <Typography shouldTruncate variant="label">
+        label - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </Typography>
 );
 

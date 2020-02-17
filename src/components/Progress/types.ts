@@ -1,14 +1,12 @@
+import { Colors as GenericColors, StyledParentComponent } from '@components/types';
+
+
 export type Variants = 'circular' | 'horizontal';
-export type Colors = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link';
+export type Colors = GenericColors;
 export type Sizes = 'small' | 'medium' | 'large' | 'inherit';
 
 
-export interface Props {
-
-    /**
-     * Classes to be passed through to the component.
-     */
-    className?: string,
+export interface Props extends StyledParentComponent {
 
     /**
      * The overall display of the Progress indicator.

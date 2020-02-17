@@ -10,7 +10,7 @@ export default {
     parameters: {
         componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'Components|User Input/IconButton',
+    title: 'In Development|User Input/IconButton',
 };
 
 

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import { Flipped, Flipper } from 'react-flip-toolkit';
 import Typography from '@components/Typography';
@@ -10,7 +10,7 @@ import { Props } from './types';
  * The `Button` component represents a clickable button, which can be used in forms or anywhere in the application
  * that needs simple, standard button functionality.
  */
-function Button({
+export const Button = React.forwardRef(({
     variant = 'standard',
     color = 'primary',
     size = 'medium',
@@ -24,7 +24,7 @@ function Button({
     children,
     className,
     ...otherProps
-}: Props): ReactElement {
+}: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
     const buttonClasses = clsx(
@@ -47,6 +47,7 @@ function Button({
                 <button
                     className={buttonClasses}
                     disabled={isDisabled || isLoading}
+                    ref={ref}
                     type="button"
                     {...otherProps}
                 >
@@ -63,7 +64,7 @@ function Button({
                     </Flipped>
                     <Flipped flipId="loader">
                         <div className="brew-Button__loadingIndicator">
-                            <Progress color={color} variant="circular" />
+                            <Progress color={color === 'link' ? 'primary' : color} variant="circular" />
                         </div>
                     </Flipped>
                 </button>
@@ -72,7 +73,10 @@ function Button({
     );
 
 
-}
+});
+
+
+Button.displayName = 'Button';
 
 
 export default Button;

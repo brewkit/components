@@ -10,7 +10,7 @@ export default {
     parameters: {
         componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'Components|Surfaces/Paper',
+    title: 'Stable|Surfaces/Paper',
 };
 
 

@@ -1,8 +1,7 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React, { ReactElement } from 'react';
 import { select, text, boolean } from '@storybook/addon-knobs';
 import Flag from '@components/Flag';
 import Dialog from './index';
-import Button from '../Button';
 
 
 export default {
@@ -10,7 +9,7 @@ export default {
     parameters: {
         componentSubtitle: <Flag color="warning">In Progress</Flag>,
     },
-    title: 'Components|Display/Dialog',
+    title: 'In Development|Display/Dialog',
 };
 
 

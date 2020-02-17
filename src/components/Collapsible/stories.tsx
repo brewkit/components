@@ -10,7 +10,7 @@ export default {
     parameters: {
         componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'Components|Display/Collapsible',
+    title: 'In Development|Display/Collapsible',
 };
 
 

@@ -55,7 +55,7 @@ const InputBase = ({
 
 
     return (
-        <Typography as="label" className={classes} tabIndex={tabIndex} {...otherProps}>
+        <Typography className={classes} component="label" tabIndex={tabIndex} {...otherProps}>
             {before}
 
             <Element

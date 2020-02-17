@@ -1,18 +1,21 @@
-import { ElementType, Colors as GenericColors, StyledParentComponent } from '@components/types';
+import { Colors as GenericColors, StyledParentComponent } from '@components/types';
 
 
-/**
- * Export the consts for easier management of the available options within storybook
- */
-export const colors = ['transparent', ...GenericColors];
-export const positions = ['fixed', 'absolute', 'sticky', 'static', 'relative'];
+export type Colors = (
+    | GenericColors
+    | 'transparent'
+    | string
+);
 
 
-/**
- * Convert and export the consts to usable types
- */
-export type Colors = ElementType<typeof colors>;
-export type Positions = ElementType<typeof positions>;
+export type Positions = (
+    | 'fixed'
+    | 'absolute'
+    | 'sticky'
+    | 'static'
+    | 'relative'
+    | string
+);
 
 
 export interface Props extends StyledParentComponent {

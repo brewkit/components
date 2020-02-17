@@ -4,7 +4,7 @@ import Select from './index';
 
 export default {
     component: Select,
-    title: 'Components|User Input/Input/Select',
+    title: 'In Development|User Input/Input/Select',
 };
 
 

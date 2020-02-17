@@ -10,7 +10,7 @@ export default {
     parameters: {
         componentSubtitle: <Flag color="warning">In Development</Flag>,
     },
-    title: 'Components|User Input/RadioGroup',
+    title: 'In Development|User Input/RadioGroup',
 };
 
 

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import { Props } from './types';
 
@@ -6,13 +6,13 @@ import { Props } from './types';
 /**
  * The `<Progress />` component renders a loading indicator.
  */
-function Progress({
+export const Progress = React.forwardRef(({
     variant = 'horizontal',
     color = 'primary',
     size = 'inherit',
     className,
     ...otherProps
-}: Props): ReactElement {
+}: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
     const classes = clsx(
@@ -24,11 +24,14 @@ function Progress({
 
 
     return (
-        <div className={classes} {...otherProps} />
+        <div className={classes} ref={ref} {...otherProps} />
     );
 
 
-}
+});
+
+
+Progress.displayName = 'Progress';
 
 
 export default Progress;

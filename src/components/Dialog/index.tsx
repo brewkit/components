@@ -78,7 +78,7 @@ function Dialog({
                         )
                     )}
                     {title && (
-                        <Typography as="h2" className="brew-Dialog__title">{title}</Typography>
+                        <Typography className="brew-Dialog__title" variant="h2">{title}</Typography>
                     )}
                     {closeIcon ? closeIcon : (
                         <Icon className="brew-Dialog__closeIcon">close</Icon>

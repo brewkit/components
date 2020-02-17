@@ -2,7 +2,7 @@ import React from 'react';
 import { select } from '@storybook/addon-knobs';
 import AppBar from './index';
 import Flag from '@components/Flag';
-import { Colors, Positions, colors, positions } from './types';
+import { Colors, Positions } from './types';
 
 
 export default {
@@ -10,8 +10,12 @@ export default {
     parameters: {
         componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'Components|Surfaces/App Bar',
+    title: 'Stable|Surfaces/App Bar',
 };
+
+
+const colors = ['transparent', 'primary', 'secondary', 'tertiary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
+const positions = ['fixed', 'absolute', 'sticky', 'static', 'relative'];
 
 
 export const General = (): React.ReactElement => {

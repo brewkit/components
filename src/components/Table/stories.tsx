@@ -10,7 +10,7 @@ export default {
     parameters: {
         componentSubtitle: <Flag color="warning">In Development</Flag>,
     },
-    title: 'Components|Display/Table',
+    title: 'In Development|Display/Table',
 };
 
 

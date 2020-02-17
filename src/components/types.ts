@@ -11,17 +11,17 @@ export type ElementType<T extends readonly unknown[]> = T extends readonly (infe
 /**
  * Color options to be used throughout the component library
  */
-export const Colors = [
-    'primary',
-    'secondary',
-    'tertiary',
-    'success',
-    'danger',
-    'warning',
-    'info',
-    'light',
-    'dark',
-];
+export type Colors = (
+    | 'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'success'
+    | 'danger'
+    | 'warning'
+    | 'info'
+    | 'light'
+    | 'dark'
+);
 
 
 export interface StyledComponent {
@@ -34,7 +34,7 @@ export interface StyledComponent {
     /**
      * A ref to attach to the underlying element
      */
-    ref?: React.Ref<unknown>,
+    ref?: React.Ref<any>,
 
     /**
      * CSS properties to add to the underlying element

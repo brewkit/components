@@ -6,7 +6,7 @@ import StatusCard from './index';
 import { Colors, Variants } from './types';
 
 
-export default { title: 'Components|Display/Status Card' };
+export default { title: 'In Development|Display/Status Card' };
 
 
 export const General = (): ReactElement => {
