@@ -1,0 +1,23 @@
+.brew-Snackbar {
+    position: fixed;
+
+
+    &__item {
+        position: relative;
+        background-color: rebeccapurple;
+        color: white;
+        padding: 1rem;
+        margin: 1rem;
+        border-radius: 1rem;
+    }
+
+    &--topRight {
+        top: 0;
+        right: 0;
+    }
+
+    &--bottomRight {
+        bottom: 0;
+        right: 0;
+    }
+}
