@@ -12,7 +12,7 @@ const Snackaroo = (): ReactElement => {
 
     const snackbar = React.useContext(SnackbarContext);
     const remove = () => snackbar.remove('test');
-    const add = () => snackbar.add({ content: 'hello', position: 'bottomRight', key: 'test' });
+    const add = () => snackbar.enqueue({ content: Math.random(), position: 'bottomRight' });
 
 
     button('Remove', remove);
@@ -24,7 +24,7 @@ const Snackaroo = (): ReactElement => {
 
 
 export const General = (): ReactElement => (
-    <SnackbarProvider>
+    <SnackbarProvider maxSnackbars={3}>
         <Snackaroo />
     </SnackbarProvider>
 );

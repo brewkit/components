@@ -1,73 +1,101 @@
 import React, { ReactElement, ReactNode } from 'react';
-import ReactDOM from 'react-dom';
-import clsx from 'clsx';
+import SnackbarContainer from './components/SnackbarContainer';
+import SnackbarItem from './components/SnackbarItem';
 import SnackbarContext from './context';
 
 
 function SnackbarProvider({
     children,
+    maxSnackbars,
 }: any): ReactElement {
 
 
-    const [snackbars, setSnackbars] = React.useState([{ content: '1', key: '1', position: 'topRight' }]);
+    const [state, dispatch] = React.useReducer((currentState: any, action: any) => {
 
 
-    const containers = [
-        'topLeft',
-        'topCenter',
-        'topRight',
-        'centerRight',
-        'bottomRight',
-        'bottomCenter',
-        'bottomLeft',
-        'centerLeft',
-    ];
+        const { key, snack, type } = action;
+        if (snack) snack.key = snack.key ? snack.key : new Date().getTime();
+
+
+        switch (type) {
+
+
+        case 'add':
+
+            return {
+                ...currentState,
+                queue: [...currentState.queue, snack],
+            };
+
+        case 'remove':
+
+            return {
+                ...currentState,
+                snackbars: currentState.snackbars.filter((snackbar: any) => snackbar.key !== key),
+            };
+
+        case 'processQueue':
+
+            return {
+                ...currentState,
+                queue: currentState.queue.slice(1, currentState.queue.length),
+                snackbars: [...currentState.snackbars, currentState.queue[0]],
+            };
+
+        default:
+
+            throw new Error('No case provided');
+
+        }
+
+
+    }, { queue: [], snackbars: [] });
+
+
+
+    const positions = state.snackbars.reduce((acc: any, current: any) => {
+
+        const category = current.position;
+        const existingOfCategory = acc[category] || [];
+
+
+        return {
+            ...acc,
+            [category]: [...existingOfCategory, current],
+        };
+
+    }, {});
+
 
     function createContainers(): ReactNode {
 
+        return Object.entries(positions).map(([position, snacks]: any): ReactElement => (
 
-        return containers.map((container: string): ReactNode => {
+            <SnackbarContainer key={position} position={position}>
+                {snacks.map((snack: any) => <SnackbarItem key={snack.key} snack={snack} />)}
+            </SnackbarContainer>
 
-
-            const snackbarContainerClasses = clsx(
-                'brew-Snackbar',
-                `brew-Snackbar--${container}`,
-            );
-
-
-            return snackbars.map((snack: any): ReactNode => {
-
-                if (snack.position === container) return ReactDOM.createPortal(
-                    (
-                        <div className={snackbarContainerClasses} key={container}>
-                            <div className="brew-Snackbar__item" key={snack.key}>
-                                {snack.content}
-                            </div>
-                        </div>
-                    )
-                    , document.body,
-                );
-
-                return null;
-            });
-
-
-        });
-
+        ));
 
     }
 
 
-    function add(snack: any): void {
-        setSnackbars((previousState: any): any => [...previousState, snack]);
+    function enqueue(snack: any): void {
+        dispatch({ snack, type: 'add' });
     }
 
-    function remove(key: string): void {
-        setSnackbars((previousState: any): any => previousState.filter((snack: any) => snack.key !== key));
+
+    function remove(key: any): void {
+        dispatch({ key, type: 'remove' });
     }
+
+
+    React.useEffect(() => {
+        if (state.snackbars.length < maxSnackbars && state.queue.length > 0) dispatch({ type: 'processQueue' });
+    }, [state.snackbars.length, state.queue.length]);
 
     const context = {
-        add,
+        enqueue,
         remove,
     };
 
