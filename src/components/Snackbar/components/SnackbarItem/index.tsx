@@ -1,35 +1,37 @@
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import { Flipped } from 'react-flip-toolkit';
-import SnackbarContext from '../../context';
+import { useSnackbar } from '../../index';
+import { Props } from './types';
 
 
 function SnackbarItem({
     className,
     snack,
-}: any): ReactElement {
+}: Props): ReactElement {
 
 
+    const { remove } = useSnackbar();
     const timer = React.useRef<number>();
 
-
-    const snackbar: any = React.useContext(SnackbarContext);
+    if (!snack.duration) snack.duration = 5;
 
 
     const snackClasses = clsx(
-        'brew-Snackbar__item',
+        'brew-SnackbarItem',
+        `brew-SnackbarItem--${snack.color}`,
         className,
     );
 
 
     const handleClose = (key: any): void => {
-        if (snackbar) snackbar.remove(key);
+        remove(key);
     };
 
 
     React.useEffect(() => {
 
-        if (snack.duration) timer.current = window.setTimeout(() => snackbar.remove(snack.key), snack.duration * 1000);
+        if (snack.duration) timer.current = window.setTimeout(() => remove(snack.key), snack.duration * 1000);
 
 
         return (): void => {
@@ -42,8 +44,14 @@ function SnackbarItem({
     return (
         <Flipped flipId={snack.key}>
             <div className={snackClasses}>
-                {snack.content}
-                <span onClick={(): void => handleClose(snack.key)}>&times;</span>
+                <div className="brew-SnackbarItem__content">{snack.content}</div>
+                {snack.isCloseable && (
+                    <span
+                        className="brew-SnackbarItem__close"
+                        onClick={(): void => handleClose(snack.key)}>
+                        &times;
+                    </span>
+                )}
             </div>
         </Flipped>
     );

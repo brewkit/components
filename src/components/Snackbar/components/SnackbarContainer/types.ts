@@ -19,7 +19,7 @@ export interface Props {
     /**
      * Position of Container, defaults to topRight
      */
-    position?: 'topRight' |
+    position: 'topRight' |
         'topCenter' | 'topLeft' | 'centerRight' | 'centerLeft' | 'bottomRight' | 'bottomCenter' | 'bottomLeft';
 
 

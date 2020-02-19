@@ -11,6 +11,12 @@ export interface Snackbar {
 
 
     /**
+     * Color theme of an individual Snackbar
+     */
+    color: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'dark' | 'light',
+
+
+    /**
      * Number of seconds till auto dismiss
      * 5 = 5 seconds
      */

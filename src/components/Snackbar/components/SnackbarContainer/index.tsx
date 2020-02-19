@@ -5,7 +5,7 @@ import { Props } from './types';
 
 function SnackbarContainer({
     className,
-    position = 'topRight',
+    position,
     ...otherProps
 }: Props): ReactElement {
 

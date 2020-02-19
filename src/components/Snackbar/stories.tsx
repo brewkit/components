@@ -7,19 +7,57 @@ export default {
     title: 'Components|Display/Snackbar',
 };
 
+// eslint-disable-next-line max-statements
 const Snackaroo = (): ReactElement => {
 
     const { enqueue, remove } = useSnackbar();
 
+    const positions = [
+        'topRight',
+        'topLeft',
+        'topCenter',
+        'bottomRight',
+        'bottomLeft',
+        'bottomCenter',
+        'centerRight',
+        'centerLeft',
+    ];
+
+    const colors = [
+        'primary',
+        'secondary',
+        'success',
+        'warning',
+        'danger',
+        'info',
+        'light',
+        'dark',
+    ];
+
+    const rando: number = parseFloat(Math.random().toFixed(1));
+
     const addSnackbar = (): void => enqueue({
-        content: Math.random(),
-        duration: 5,
-        position: 'bottomRight',
+        color: colors[Math.floor(Math.random() * 8)],
+        content: rando,
+        isCloseable: rando > 0.5,
+        position: positions[Math.floor(Math.random() * 8)],
     });
 
+    const customContent = (
+        <div>
+            <h3>foo</h3>
+            <div>
+                <h1>bar</h1>
+            </div>
+        </div>
+    );
+
     const addCustomKey = (): void => enqueue({
-        content: 'custom key provided',
-        duration: 5, key: 'testKey',
+        color: 'danger',
+        content: customContent,
+        duration: 12,
+        isCloseable: true,
+        key: 'testKey',
         position: 'bottomRight',
     });
 
@@ -30,7 +68,7 @@ const Snackaroo = (): ReactElement => {
     button('Remove Custom Key', removeSnackbar);
 
 
-    return <div>This is a test</div>;
+    return <div />;
 };
 
 
