@@ -34,7 +34,7 @@ function SnackbarProvider({
 
             return {
                 ...currentState,
-                snackbars: currentState.snackbars.filter((snackbar: any) => snackbar.key !== key),
+                snackbars: currentState.snackbars.filter((snackbar: Snackbar) => snackbar.key !== key),
             };
 
         case 'processQueue':
@@ -77,7 +77,7 @@ function SnackbarProvider({
         return Object.entries(positions).map(([position, snacks]: any): ReactElement => (
 
             <SnackbarContainer key={position} position={position}>
-                {snacks.map((snack: any) => (
+                {snacks.map((snack: Snackbar) => (
                     <SnackbarItem key={snack.key} snack={snack} />
                 ))}
             </SnackbarContainer>
@@ -87,7 +87,7 @@ function SnackbarProvider({
     }
 
 
-    function enqueue(snack: any): void {
+    function enqueue(snack: Snackbar): void {
         dispatch({ snack, type: 'add' });
     }
 
