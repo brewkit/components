@@ -1,7 +1,10 @@
 import React, { ReactElement, ReactNode } from 'react';
+import { Flipper } from 'react-flip-toolkit';
 import SnackbarContainer from './components/SnackbarContainer';
 import SnackbarItem from './components/SnackbarItem';
+import useSnackbar from './hooks';
 import SnackbarContext from './context';
+import { Action, PositionsObject, State, Snackbar } from './types';
 
 
 function SnackbarProvider({
@@ -10,7 +13,7 @@ function SnackbarProvider({
 }: any): ReactElement {
 
 
-    const [state, dispatch] = React.useReducer((currentState: any, action: any) => {
+    const [state, dispatch] = React.useReducer((currentState: State, action: Action): State => {
 
 
         const { key, snack, type } = action;
@@ -25,7 +28,7 @@ function SnackbarProvider({
             return {
                 ...currentState,
                 queue: [...currentState.queue, snack],
-            };
+            } as State;
 
         case 'remove':
 
@@ -44,7 +47,7 @@ function SnackbarProvider({
 
         default:
 
-            throw new Error('No case provided');
+            throw new Error();
 
         }
 
@@ -52,11 +55,13 @@ function SnackbarProvider({
     }, { queue: [], snackbars: [] });
 
 
+    const positions = state.snackbars.reduce((acc: PositionsObject, current: Snackbar): PositionsObject => {
 
-    const positions = state.snackbars.reduce((acc: any, current: any) => {
+
+        if (!current.position) current.position = 'topRight';
 
         const category = current.position;
-        const existingOfCategory = acc[category] || [];
+        const existingOfCategory = acc[category] ?? [];
 
 
         return {
@@ -72,7 +77,9 @@ function SnackbarProvider({
         return Object.entries(positions).map(([position, snacks]: any): ReactElement => (
 
             <SnackbarContainer key={position} position={position}>
-                {snacks.map((snack: any) => <SnackbarItem key={snack.key} snack={snack} />)}
+                {snacks.map((snack: any) => (
+                    <SnackbarItem key={snack.key} snack={snack} />
+                ))}
             </SnackbarContainer>
 
         ));
@@ -85,14 +92,17 @@ function SnackbarProvider({
     }
 
 
-    function remove(key: any): void {
+    function remove(key: number | string): void {
         dispatch({ key, type: 'remove' });
     }
 
 
     React.useEffect(() => {
+
         if (state.snackbars.length < maxSnackbars && state.queue.length > 0) dispatch({ type: 'processQueue' });
+
     }, [state.snackbars.length, state.queue.length]);
+
 
     const context = {
         enqueue,
@@ -103,10 +113,13 @@ function SnackbarProvider({
     return (
         <SnackbarContext.Provider value={context}>
             {children}
-            {createContainers()}
+            <Flipper flipKey={state.snackbars.length}>
+                {createContainers()}
+            </Flipper>
         </SnackbarContext.Provider>
     );
 }
 
 
 export default SnackbarProvider;
+export { useSnackbar };

@@ -1,12 +1,13 @@
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
+import { Props } from './types';
 
 
 function SnackbarContainer({
     className,
-    position,
+    position = 'topRight',
     ...otherProps
-}: any): ReactElement {
+}: Props): ReactElement {
 
 
     const containerClasses = clsx(

@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react';
 import { button } from '@storybook/addon-knobs';
-import SnackbarProvider from './index';
-import SnackbarContext from './context';
+import SnackbarProvider, { useSnackbar } from './index';
 
 
 export default {
@@ -10,13 +9,25 @@ export default {
 
 const Snackaroo = (): ReactElement => {
 
-    const snackbar = React.useContext(SnackbarContext);
-    const remove = () => snackbar.remove('test');
-    const add = () => snackbar.enqueue({ content: Math.random(), position: 'bottomRight' });
+    const { enqueue, remove } = useSnackbar();
 
+    const addSnackbar = (): void => enqueue({
+        content: Math.random(),
+        duration: 5,
+        position: 'bottomRight',
+    });
 
-    button('Remove', remove);
-    button('Add', add);
+    const addCustomKey = (): void => enqueue({
+        content: 'custom key provided',
+        duration: 5, key: 'testKey',
+        position: 'bottomRight',
+    });
+
+    const removeSnackbar = (): void => remove('testKey');
+
+    button('Add', addSnackbar);
+    button('Add Custom Key', addCustomKey);
+    button('Remove Custom Key', removeSnackbar);
 
 
     return <div>This is a test</div>;
