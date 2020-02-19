@@ -7,6 +7,12 @@ import SnackbarContext from './context';
 import { Action, PositionsObject, State, Snackbar } from './types';
 
 
+/**
+ * Wrap application with SnackbarProvider - <SnackbarProvider> <App /> </SnackbarProvider>
+ * Enables use of adding snackbars via custom hook useSnackbar
+ * import { useSnackbar }
+ * const { enqueue, remove } = useSnackbar();
+ */
 function SnackbarProvider({
     children,
     maxSnackbars,
