@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import SnackbarProvider, { useSnackbar } from './index';
+import SnackbarProvider from './index';
 
 
 describe('Snackbar', () => {

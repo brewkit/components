@@ -13,6 +13,7 @@ import { Action, PositionsObject, State, Snackbar } from './types';
  * import { useSnackbar }
  * const { enqueue, remove } = useSnackbar();
  */
+// eslint-disable-next-line max-lines-per-function
 function SnackbarProvider({
     children,
     maxSnackbars,
