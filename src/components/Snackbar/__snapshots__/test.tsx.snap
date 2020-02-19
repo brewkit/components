@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snackbar renders correctly 1`] = `
+Array [
+  <div>
+    foo
+  </div>,
+  <div />,
+]
+`;
