@@ -11,12 +11,14 @@ it('renders correctly', () => {
 });
 
 
-it('renders correctly with all props', () => {
+it('renders correctly with various props', () => {
     const tree = renderer
         .create((
-            <Typography align="left" className="foo" color="secondary" shouldTruncate>
-                <span>some child elements</span>
-            </Typography>
+            <React.Fragment>
+                <Typography align="left" className="foo" color="primary" shouldTruncate>foo</Typography>
+                <Typography align="right" color="secondary">foo</Typography>
+                <Typography align="center" color="tertiary" variant="h4">foo</Typography>
+            </React.Fragment>
         ))
         .toJSON();
     expect(tree).toMatchSnapshot();

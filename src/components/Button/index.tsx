@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import { Button as MuiButton } from '@material-ui/core';
 import { Flipped, Flipper } from 'react-flip-toolkit';
 import Typography from '@components/Typography';
 import Progress from '@components/Progress';
@@ -42,34 +43,32 @@ export const Button = React.forwardRef(({
 
 
     return (
-        <Flipper flipKey={JSON.stringify([isLoading, variant, color, size])}>
-            <Flipped flipId="wrapper">
-                <button
-                    className={buttonClasses}
-                    disabled={isDisabled || isLoading}
-                    ref={ref}
-                    type="button"
-                    {...otherProps}
-                >
-                    <Flipped flipId="content">
-                        <div className="brew-Button__content">
-                            {startIcon}
-                            {children && (
-                                <Typography className="brew-Button__text">
-                                    {children}
-                                </Typography>
-                            )}
-                            {endIcon}
-                        </div>
-                    </Flipped>
-                    <Flipped flipId="loader">
-                        <div className="brew-Button__loadingIndicator">
-                            <Progress color={color === 'link' ? 'primary' : color} variant="circular" />
-                        </div>
-                    </Flipped>
-                </button>
-            </Flipped>
-        </Flipper>
+        <MuiButton
+            className={buttonClasses}
+            disabled={isDisabled || isLoading}
+            ref={ref}
+            type="button"
+            {...otherProps}
+        >
+            <Flipper flipKey={JSON.stringify([isLoading, variant, color, size])}>
+                <Flipped flipId="content">
+                    <div className="brew-Button__content">
+                        {startIcon}
+                        {children && (
+                            <Typography className="brew-Button__text">
+                                {children}
+                            </Typography>
+                        )}
+                        {endIcon}
+                    </div>
+                </Flipped>
+                <Flipped flipId="loader">
+                    <div className="brew-Button__loadingIndicator">
+                        <Progress.Circular color={color === 'link' ? 'primary' : color} />
+                    </div>
+                </Flipped>
+            </Flipper>
+        </MuiButton>
     );
 
 

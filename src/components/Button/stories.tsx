@@ -1,4 +1,5 @@
 import React, { ReactElement, ReactNode } from 'react';
+import { StylesProvider } from '@material-ui/core/styles';
 import { text, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import Icon from '@components/Icon';

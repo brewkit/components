@@ -1,0 +1,13 @@
+@use '../utilities';
+
+
+// ==============================================
+// General
+// ==============================================
+
+.brew-Tooltip {
+    @include utilities.height-3;
+    @include utilities.fetch-color('&.brew-Tooltip--color-', 'background-color', '.brew-Tooltip__arrow', 'color');
+    padding: 0.75rem;
+    color: #ffffff;
+}

@@ -29,7 +29,7 @@ function Divider({
             {children ? (
                 <React.Fragment>
                     <hr />
-                    <Typography variant="label">{children}</Typography>
+                    <Typography variant="subtitle1">{children}</Typography>
                     <hr />
                 </React.Fragment>
             ) : (

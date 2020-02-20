@@ -51,13 +51,14 @@
 
 
 // ==============================================
-// Background Color
+// Fetch Colors
 // ==============================================
 
-@mixin background-color($class-prefix) {
+@mixin fetch-color($class-prefix1, $attribute1, $class-prefix2: null, $attribute2: null) {
+
     $color-variants: primary, secondary, tertiary, success, info, warning, danger, light, dark;
 
-    $background-colors: (
+    $colors: (
         primary:    functions.color(brand, primary),
         secondary:  functions.color(brand, secondary),
         tertiary:   functions.color(brand, tertiary),
@@ -70,8 +71,22 @@
     );
 
     @each $color in $color-variants {
-        #{$class-prefix}#{$color} {
-            background-color: map.get($background-colors, $color);
+        // if $class-prefix was passed, inject styles underneath the generated class name
+        @if $class-prefix1 {
+            #{$class-prefix1}#{$color} {
+                #{$attribute1}: map.get($colors, $color);
+
+                @if $class-prefix2 {
+                    #{$class-prefix2} {
+                        #{$attribute2}: map.get($colors, $color);
+                    }
+                }
+            }
+        }
+        // otherwise, just inject the attribute and value
+        @else {
+            #{$attribute1}: map.get($colors, $color);
         }
     }
+
 }

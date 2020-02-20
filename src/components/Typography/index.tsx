@@ -1,21 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
+import { Typography as MuiTypography } from '@material-ui/core';
 import { Props } from './types';
 
-
-const variantMapping = {
-    body1: 'p',
-    body2: 'p',
-    h1: 'h1',
-    h2: 'h2',
-    h3: 'h3',
-    h4: 'h4',
-    h5: 'h5',
-    h6: 'h6',
-    label: 'span',
-    subtitle1: 'h6',
-    subtitle2: 'h6',
-};
 
 
 /**
@@ -23,35 +10,39 @@ const variantMapping = {
  */
 export const Typography = React.forwardRef(({
     variant = 'body1',
-    align,
-    display = 'block',
+    align = 'inherit',
+    display = 'initial',
     shouldTruncate = false,
     color,
-    component = 'div',
-    children,
+    hasGutter = false,
     className,
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    const classes = clsx(
+    const classNames = clsx(
         'brew-Typography',
         [`brew-Typography--display-${display}`],
         { [`brew-Typography--variant-${String(variant)}`]: variant },
         { [`brew-Typography--align-${String(align)}`]: align },
         { [`brew-Typography--color-${String(color)}`]: color },
         { 'brew-Typography--shouldTruncate': shouldTruncate },
+        { 'brew-Typography--hasGutter': hasGutter },
         className,
     );
 
 
-    const Component = component || variantMapping[variant] || 'span';
-
-
     return (
-        <Component className={classes} ref={ref} {...otherProps}>
-            {children}
-        </Component>
+        <MuiTypography
+            align={align}
+            className={classNames}
+            display={display}
+            gutterBottom={hasGutter}
+            noWrap={shouldTruncate}
+            ref={ref}
+            variant={variant}
+            {...otherProps}
+        />
     );
 
 

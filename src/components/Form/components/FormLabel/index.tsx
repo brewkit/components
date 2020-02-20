@@ -18,7 +18,7 @@ function FormLabel({
     );
 
     return (
-        <Typography className={classes} component={as} variant="label" {...otherProps}>
+        <Typography className={classes} component={as} variant="subtitle1" {...otherProps}>
             {children}
         </Typography>
     );

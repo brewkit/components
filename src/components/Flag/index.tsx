@@ -1,14 +1,19 @@
 import React, { ReactElement } from 'react';
 import clsx from 'clsx';
-import Typography from '../Typography';
+import { Chip } from '@material-ui/core';
+import Typography from '@components/Typography';
 import { Props } from './types';
 
 
+const classes = {
+    label: 'brew-Flag__label',
+};
+
+
 /**
- * The `<Flag />` is used to display content classification.
+ * The `<Flag />` can be used to indicate a specific note of data or status on data associations for a specific entity.
  */
 function Flag({
-    title,
     color = 'info',
     children,
     className,
@@ -16,24 +21,25 @@ function Flag({
 }: Props): ReactElement {
 
 
-    const classes = clsx(
+    const classNames = clsx(
         'brew-Flag',
         `brew-Flag--color-${color}`,
+        { 'brew-Flag--isEmpty': !children },
         className,
     );
 
 
     return (
-        <div className={classes} {...otherProps}>
-            {title && (
-                <div className="title">
-                    <Typography className="titleContent" color="inherit" variant="label">{title}</Typography>
-                </div>
+        <Chip
+            classes={classes}
+            className={classNames}
+            label={(
+                <Typography align="center" className="brew-Flag__content" variant="caption">
+                    {children}
+                </Typography>
             )}
-            <div className="content">
-                <Typography color={color} variant="label">{children}</Typography>
-            </div>
-        </div>
+            {...otherProps}
+        />
     );
 
 

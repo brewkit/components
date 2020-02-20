@@ -1,34 +1,25 @@
 import React from 'react';
-import clsx from 'clsx';
-import { Props } from './types';
+import ProgressCircular from './components/ProgressCircular';
+import ProgressLinear from './components/ProgressLinear';
+import { Props } from './components/ProgressLinear/types';
+import { ProgressComponent } from './types';
 
 
 /**
- * The `<Progress />` component renders a loading indicator.
+ * The `<Progress />` component primarily serves as an access point for the `<Progress.Circular />` and
+ * `<Progress.Linear />` components.
+ *
+ * It can also be used directly in place of `<Progress.Linear />`.
  */
-export const Progress = React.forwardRef(({
-    variant = 'horizontal',
-    color = 'primary',
-    size = 'inherit',
-    className,
+export const Progress: ProgressComponent = React.forwardRef(({
     ...otherProps
-}: Props, ref: React.Ref<any>): React.ReactElement => {
+}: Props, ref: React.Ref<any>): React.ReactElement => (
+    <ProgressLinear ref={ref} {...otherProps} />
+));
 
 
-    const classes = clsx(
-        `brew-Progress--${variant}`,
-        `brew-Progress__color--${color}`,
-        `brew-Progress__size--${size}`,
-        className,
-    );
-
-
-    return (
-        <div className={classes} ref={ref} {...otherProps} />
-    );
-
-
-});
+Progress.Linear = ProgressLinear;
+Progress.Circular = ProgressCircular;
 
 
 Progress.displayName = 'Progress';

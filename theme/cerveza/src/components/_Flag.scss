@@ -2,72 +2,38 @@
 
 
 // ==============================================
-// Variables
-// ==============================================
-
-$colors: (
-    primary: utilities.color(brand, primary),
-    secondary: utilities.color(brand, secondary),
-    success: utilities.color(accent, success),
-    danger: utilities.color(accent, danger),
-    warning: utilities.color(accent, warning),
-    info: utilities.color(accent, info),
-    dark: utilities.color(accent, dark),
-    light: utilities.color(accent, light),
-    link: utilities.color(accent, info),
-);
-
-
-// ==============================================
 // General
 // ==============================================
 
 .brew-Flag {
-    display: inline-flex;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: utilities.$border-radius * 2;
 
-    .title {
-        display: inline-flex;
-        border-right-width: 2px;
-        border-right-style: solid;
-        padding: 0 0.5em;
+    &.brew-Flag {
+        height: auto;
+        min-height: 0.75rem;
+        max-height: 1.5rem;
+        min-width: 0.75rem;
+        line-height: 1;
+        border-radius: 0.25rem;
     }
 
-    .content {
-        display: inline-flex;
-        padding: 0 0.5em;
+    &:not(:last-child) {
+        margin-right: 0.5rem;
     }
-}
 
-// ==============================================
-// Colors
-// ==============================================
-
-$color-variants: primary, secondary, success, info, warning, danger, light, dark;
-
-@each $color in $color-variants {
-
-    .brew-Flag--color-#{$color} {
-
-        $button_color: map_get($colors, $color);
-        background-color: rgba($button_color, 0.1);
-        border-color: $button_color;
-
-        .title {
-            background-color: $button_color;
-            border-right-color: $button_color;
-            font-weight: bold;
-            color: $button_color;
-        }
-
-        .content {
-            color: $button_color;
-        }
-
-        .content span {
-            font-weight: bold;
-        }
+    &.brew-Flag--isEmpty {
+        border-radius: 100%;
     }
+
+    .brew-Flag__label {
+        padding: 0.25rem;
+    }
+
+    .brew-Flag__content {
+        color: #ffffff;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    @include utilities.fetch-color('&.brew-Flag--color-', 'background-color');
+
 }

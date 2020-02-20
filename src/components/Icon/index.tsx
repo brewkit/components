@@ -4,7 +4,8 @@ import { Props } from './types';
 
 
 /**
- * The `<Icon />` component interfaces easily with an icon font and uses it's `children` prop to render an appropriate icon.
+ * The `<Icon />` component interfaces easily with an icon font and uses it's `children` prop to render an
+ * appropriate icon.
  */
 export const Icon = React.forwardRef(({
     color = 'inherit',
@@ -16,7 +17,6 @@ export const Icon = React.forwardRef(({
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    /** Combine our classes based on props */
     const classes = clsx(
         'brew-Icon',
         'material-icons',

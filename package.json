@@ -21,7 +21,8 @@
         "commit": "npx git-cz",
         "start": "npm run sass && npm run storybook",
         "storybook": "start-storybook -p 9001 -c .build/storybook",
-        "build": "tsc --project ./.build/tsconfig.json --declaration"
+        "build": "tsc --project ./.build/tsconfig.json --declaration",
+        "build-storybook": "build-storybook -c .build/storybook -o .out"
     },
     "jest": {
         "transform": {
@@ -105,6 +106,7 @@
         "react-router-dom": "^5.1.2"
     },
     "dependencies": {
+        "@material-ui/core": "^4.9.3",
         "@popperjs/core": "^2.0.6",
         "clsx": "^1.1.0",
         "lodash": "^4.17.15"
