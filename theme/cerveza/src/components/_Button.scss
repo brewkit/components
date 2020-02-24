@@ -28,7 +28,7 @@ $colors: (
 .brew-Button {
     box-sizing: border-box;
     position: relative;
-    display: inline-block;
+    display: inline-flex;
     width: 100%;
     overflow: hidden;
     border-width: 2px;
@@ -37,7 +37,7 @@ $colors: (
     padding: 1em 1.25em;
     font-family: inherit;
     text-transform: uppercase;
-    line-height: 1rem;
+    line-height: normal;
     cursor: pointer;
     transition: all 0.3s;
     color: white;
@@ -219,7 +219,7 @@ $color-variants: primary, secondary, success, info, warning, danger, light, dark
     }
 
     .brew-Button__loadingIndicator {
-        top: 50%;
+        top: calc(50% + 2px);
         opacity: 1;
     }
 

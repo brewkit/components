@@ -1,39 +1,46 @@
-import React, { ReactElement } from 'react';
-import clsx from 'clsx';
+import React from 'react';
+import { Checkbox as MuiCheckbox } from '@material-ui/core';
 import Icon from '@components/Icon';
-import InputBase from '../InputBase';
 import { Props } from './types';
 
 
-function Checkbox({
-    children,
-    className,
+export const Checkbox = React.forwardRef(({
     ...otherProps
-}: Props): ReactElement {
+}: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    const classes = clsx(
-        'brew-Checkbox',
-        className,
+    const classes = {
+        root: 'brew-Checkbox',
+    };
+
+
+    const UncheckedControl = (
+        <div className="brew-Checkbox__box" />
+    );
+
+
+    const CheckedControl = (
+        <div className="brew-Checkbox__box">
+            <Icon className="brew-Checkbox__icon" size="large">check</Icon>
+        </div>
     );
 
 
     return (
-        <InputBase
-            className={classes}
-            customControl={(
-                <div className="brew-Checkbox__control">
-                    <Icon className="brew-Checkbox__controlIcon">check</Icon>
-                </div>
-            )}
-            label={children}
-            type="checkbox"
+        <MuiCheckbox
+            checkedIcon={CheckedControl}
+            classes={classes}
+            icon={UncheckedControl}
+            ref={ref}
             {...otherProps}
         />
     );
 
 
-}
+});
+
+
+Checkbox.displayName = 'Checkbox';
 
 
 export default Checkbox;

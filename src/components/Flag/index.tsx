@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import { Chip } from '@material-ui/core';
 import Typography from '@components/Typography';
@@ -13,12 +13,12 @@ const classes = {
 /**
  * The `<Flag />` can be used to indicate a specific note of data or status on data associations for a specific entity.
  */
-function Flag({
+export const Flag = React.forwardRef(({
     color = 'info',
     children,
     className,
     ...otherProps
-}: Props): ReactElement {
+}: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
     const classNames = clsx(
@@ -38,12 +38,16 @@ function Flag({
                     {children}
                 </Typography>
             )}
+            ref={ref}
             {...otherProps}
         />
     );
 
 
-}
+});
+
+
+Flag.displayName = 'Flag';
 
 
 export default Flag;

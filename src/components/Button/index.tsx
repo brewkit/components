@@ -55,7 +55,7 @@ export const Button = React.forwardRef(({
                     <div className="brew-Button__content">
                         {startIcon}
                         {children && (
-                            <Typography className="brew-Button__text">
+                            <Typography className="brew-Button__text" variant="button">
                                 {children}
                             </Typography>
                         )}

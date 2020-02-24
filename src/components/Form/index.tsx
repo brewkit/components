@@ -8,11 +8,11 @@ import FormButton from './components/FormButton';
 import { Props, FormComponent } from './types';
 
 
-const Form: FormComponent = ({
+export const Form: FormComponent = React.forwardRef(({
     children,
     onSubmit,
     ...otherProps
-}: Props) => {
+}: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
     const methods = useForm({ mode: 'onChange' });
@@ -20,14 +20,14 @@ const Form: FormComponent = ({
 
     return (
         <FormContext {...methods}>
-            <form onSubmit={methods.handleSubmit(onSubmit)} {...otherProps}>
+            <form onSubmit={methods.handleSubmit(onSubmit)} ref={ref} {...otherProps}>
                 {children}
             </form>
         </FormContext>
     );
 
 
-};
+});
 
 
 Form.Field = FormField;
@@ -35,6 +35,9 @@ Form.Group = FormGroup;
 Form.HelperText = FormHelperText;
 Form.Label = FormLabel;
 Form.Button = FormButton;
+
+
+Form.displayName = 'Form';
 
 
 export default Form;

@@ -1,17 +1,16 @@
 import React from 'react';
+import { StyledParentComponent } from '@components/types';
 
 
-export interface Props {
-    children?: React.ReactNode,
+export interface Props extends StyledParentComponent {
     onSubmit: (formValues: object) => void,
 }
 
 
-export interface FormComponent {
+export interface FormComponent extends React.ForwardRefExoticComponent<any> {
     Button?: any,
     Group?: any,
     Label?: any,
     Field?: any,
     HelperText?: any,
-    (props: Props): React.ReactElement,
 }
