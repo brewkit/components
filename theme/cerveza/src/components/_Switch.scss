@@ -1,87 +1,18 @@
 @use '../utilities';
 
 // ==============================================
-// Switch
+// Variables
 // =============================================
 
-// -------------------------------------
+$border-radius: 0.25rem;
+$off-color: utilities.color(grey, 500);
+$on-color: utilities.color(brand, primary);
+
+
+// ==============================================
 // General
+// =============================================
 
 .brew-Switch {
-    overflow: hidden;
-    display: inline-grid;
-    grid-template-columns: min-content 1fr;
-    grid-column-gap: utilities.size(small);
-    align-items: center;
-    cursor: pointer;
 
-    input {
-        display: none;
-    }
-
-    .brew-Switch__control {
-        display: flex;
-        padding: utilities.size(normal) / 4;
-        position: relative;
-    }
-
-    .brew-Switch__track {
-        height: utilities.size(normal) * 1.5;
-        width: utilities.size(normal) * 4;
-        background: rgba(utilities.color(grey, 300), 0.2);
-        border-radius: utilities.$border-radius;
-        transition: all 0.3s;
-    }
-
-    .brew-Switch__knob {
-        @include utilities.height-1;
-        position: absolute;
-        top: 50%;
-        left: 25%;
-        transform: translate(-50%, -50%);
-        height: utilities.size(normal) * 2;
-        width: utilities.size(normal) * 2;
-        background: utilities.color(grey, 300);
-        border-radius: utilities.$border-radius;
-        transition: all 0.3s;
-    }
-
-}
-
-
-// -------------------------------------
-// On Hover & On Focus
-
-.brew-Switch:hover,
-.brew-Switch:focus {
-    outline: none;
-}
-
-
-// -------------------------------------
-// Checked
-
-.brew-Switch input:checked {
-
-    & ~ .brew-Switch__control {
-
-        .brew-Switch__track {
-            background-color: rgba(utilities.color(brand, primary), 0.2);
-        }
-
-        .brew-Switch__knob {
-            left: 75%;
-            background-color: utilities.color(brand, primary);
-        }
-
-    }
-
-}
-
-
-// -------------------------------------
-// Disabled
-
-.brew-Input--isDisabled.brew-Switch {
-    cursor: not-allowed;
 }

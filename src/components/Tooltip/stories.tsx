@@ -31,7 +31,7 @@ const placementOptions = [
 ];
 
 
-export const General = (): React.ReactElement => {
+export const Sandbox = (): React.ReactElement => {
 
     const title = text('title', 'Tooltips are used to provide more information about a feature. Typically tooltips are positioned with an info icon or an error icon in a form field or select item.');
     const placement = select('placement', placementOptions, 'bottom');

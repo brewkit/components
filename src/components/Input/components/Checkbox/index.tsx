@@ -5,6 +5,9 @@ import Typography from '@components/Typography';
 import { Props } from './types';
 
 
+/**
+ * Checkboxes allow the user to select one or more items from a set and can be used to turn an option on or off.
+ */
 export const Checkbox = React.forwardRef(({
     isChecked,
     isDisabled,
@@ -12,6 +15,7 @@ export const Checkbox = React.forwardRef(({
     isRequired,
     label,
     labelPlacement = 'end',
+    value,
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
@@ -45,16 +49,15 @@ export const Checkbox = React.forwardRef(({
 
     return (
         <FormControlLabel
+            checked={isChecked}
             control={(
                 <MuiCheckbox
-                    checked={isChecked}
                     checkedIcon={CheckedControl}
                     classes={classes}
                     icon={UncheckedControl}
                     indeterminate={isIndeterminate}
                     indeterminateIcon={IndeterminateControl}
                     required={isRequired}
-                    value="checkedC"
                     {...otherProps}
                 />
             )}
@@ -62,6 +65,7 @@ export const Checkbox = React.forwardRef(({
             label={<Typography variant="body1">{label}</Typography>}
             labelPlacement={labelPlacement}
             ref={ref}
+            value={value}
         />
     );
 

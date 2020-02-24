@@ -16,7 +16,7 @@ export default {
 };
 
 
-export const General = (): ReactElement => {
+export const Sandbox = (): ReactElement => {
     const color: Colors = select('color', [
         'primary',
         'secondary',

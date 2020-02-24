@@ -13,7 +13,7 @@ export default {
 };
 
 
-export const General = (): ReactElement => {
+export const Sandbox = (): ReactElement => {
     const color: Colors = select('color', ['success', 'danger', 'warning', 'info', 'light', 'dark'], 'info');
     const children: ReactNode = text('children', 'Flag');
 
@@ -23,7 +23,7 @@ export const General = (): ReactElement => {
 };
 
 
-export const Default = (): ReactElement => (
+export const General = (): ReactElement => (
     <React.Fragment>
         <Flag>Default</Flag>
         <Flag color="success">Default</Flag>

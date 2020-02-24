@@ -14,7 +14,7 @@ export default {
 };
 
 
-export const General = (): ReactElement => {
+export const Sandbox = (): ReactElement => {
     const align: Alignments = select('align', ['inherit', 'left', 'center', 'right', 'justify'], 'inherit');
     const children: ReactNode = text('children', 'Lorem ipsum dolor sit amet.');
     const color: Colors = select('color', [
@@ -60,7 +60,7 @@ export const General = (): ReactElement => {
 };
 
 
-export const Default = (): ReactElement => (
+export const General = (): ReactElement => (
     <div style={{ maxWidth: '100%' }}>
         <Typography>
             Default Settings - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
