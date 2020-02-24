@@ -1,16 +1,26 @@
 import React from 'react';
-import { Checkbox as MuiCheckbox } from '@material-ui/core';
+import { Checkbox as MuiCheckbox, FormControlLabel } from '@material-ui/core';
 import Icon from '@components/Icon';
+import Typography from '@components/Typography';
 import { Props } from './types';
 
 
 export const Checkbox = React.forwardRef(({
+    isChecked,
+    isDisabled,
+    isIndeterminate,
+    isRequired,
+    label,
+    labelPlacement = 'end',
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
     const classes = {
         root: 'brew-Checkbox',
+        disabled: 'brew-Checkbox--isDisabled',
+        checked: 'brew-Checkbox--isChecked',
+        indeterminate: 'brew-Checkbox--isIndeterminate',
     };
 
 
@@ -26,13 +36,32 @@ export const Checkbox = React.forwardRef(({
     );
 
 
+    const IndeterminateControl = (
+        <div className="brew-Checkbox__box">
+            <Icon className="brew-Checkbox__icon" size="large">remove</Icon>
+        </div>
+    );
+
+
     return (
-        <MuiCheckbox
-            checkedIcon={CheckedControl}
-            classes={classes}
-            icon={UncheckedControl}
+        <FormControlLabel
+            control={(
+                <MuiCheckbox
+                    checked={isChecked}
+                    checkedIcon={CheckedControl}
+                    classes={classes}
+                    icon={UncheckedControl}
+                    indeterminate={isIndeterminate}
+                    indeterminateIcon={IndeterminateControl}
+                    required={isRequired}
+                    value="checkedC"
+                    {...otherProps}
+                />
+            )}
+            disabled={isDisabled}
+            label={<Typography variant="body1">{label}</Typography>}
+            labelPlacement={labelPlacement}
             ref={ref}
-            {...otherProps}
         />
     );
 

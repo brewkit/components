@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm, FormContext } from 'react-hook-form';
 import FormGroup from './components/FormGroup';
 import FormLabel from './components/FormLabel';
-import FormField from './components/FormField';
+// import FormField from './components/FormField';
 import FormHelperText from './components/FormHelperText';
 import FormButton from './components/FormButton';
 import { Props, FormComponent } from './types';
@@ -30,7 +30,7 @@ export const Form: FormComponent = React.forwardRef(({
 });
 
 
-Form.Field = FormField;
+// Form.Field = FormField;
 Form.Group = FormGroup;
 Form.HelperText = FormHelperText;
 Form.Label = FormLabel;

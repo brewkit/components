@@ -15,7 +15,7 @@ export default {
 };
 
 
-export const General = (): React.ReactElement => {
+export const Sandbox = (): React.ReactElement => {
 
     const color: Colors = select('color', [
         'primary',
@@ -43,7 +43,7 @@ export const General = (): React.ReactElement => {
 };
 
 
-export const Default = (): React.ReactElement => <Progress.Linear />;
+export const General = (): React.ReactElement => <Progress.Linear />;
 export const Indeterminate = (): React.ReactElement => <Progress.Linear variant="indeterminate" />;
 export const Determinate = (): React.ReactElement => <Progress.Linear value={30} variant="determinate" />;
 export const Buffer = (): React.ReactElement => <Progress.Linear value={40} valueBuffer={60} variant="buffer" />;

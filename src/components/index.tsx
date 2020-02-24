@@ -5,7 +5,7 @@ export { default as Dialog } from './Dialog';
 export { default as Divider } from './Divider';
 export { default as Form } from './Form';
 export { default as Icon } from './Icon';
-export { default as Input } from './Input';
+// export { default as Input } from './Input';
 export { default as Flag } from './Flag';
 export { default as Progress } from './Progress';
 export { default as StatusCard } from './StatusCard';

@@ -15,7 +15,7 @@ export default {
 };
 
 
-export const General = (): React.ReactElement => {
+export const Sandbox = (): React.ReactElement => {
 
     const color: Colors = select('color', [
         'primary',
@@ -42,7 +42,7 @@ export const General = (): React.ReactElement => {
 };
 
 
-export const Default = (): React.ReactElement => <Progress.Circular />;
+export const General = (): React.ReactElement => <Progress.Circular />;
 export const Indeterminate = (): React.ReactElement => <Progress.Circular variant="indeterminate" />;
 export const Determinate = (): React.ReactElement => <Progress.Circular value={30} variant="determinate" />;
 export const Static = (): React.ReactElement => <Progress.Circular value={40} variant="static" />;
