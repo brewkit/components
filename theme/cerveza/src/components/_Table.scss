@@ -1,4 +1,4 @@
-@import "../utilities";
+@import '../utilities';
 
 
 // ==============================================
@@ -18,10 +18,10 @@
 // ==============================================
 
 .brew-TableCell {
-    color: color(grey, 300);
-    font-size: size(small);
+    color: utilities.color(grey, 300);
+    font-size: utilities.size(small);
     font-weight: map-get(map-get($typography, 'font-weights'), body1);
-    padding: size(normal);
+    padding: utilities.size(normal);
 }
 
 
@@ -42,8 +42,8 @@
 // ==============================================
 
 .brew-TableHeaderColumn {
-    line-height: size(small);
-    padding: size(small) size(normal);
+    line-height: utilities.size(small);
+    padding: utilities.size(small) utilities.size(normal);
     pointer-events: none;
     position: relative;
     text-transform: uppercase;
@@ -58,9 +58,9 @@
 // ==============================================
 
 .brew-TableRow {
-    border-bottom: 1px solid color(grey, 100);
+    border-bottom: 1px solid utilities.color(grey, 100);
 
     &:nth-of-type(even) {
-        background-color: rgba(color(grey, 900), 0.02);
+        background-color: rgba(utilities.color(grey, 900), 0.02);
     }
 }

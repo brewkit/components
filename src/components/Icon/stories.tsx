@@ -3,20 +3,20 @@ import { select } from '@storybook/addon-knobs';
 import Icon from './index';
 import Typography from '../Typography';
 import { Colors, Sizes } from './types';
-import Label from '../Label';
+import Flag from '@components/Flag';
 import icons from './iconList';
 
 
 export default {
     component: Icon,
     parameters: {
-        componentSubtitle: <Label color="success">Stable</Label>,
+        componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'Components|Display/Icon',
+    title: 'Stable|Display/Icon',
 };
 
 
-export const General = (): ReactElement => {
+export const Sandbox = (): ReactElement => {
     const color: Colors = select('color', [
         'primary',
         'secondary',
@@ -28,7 +28,7 @@ export const General = (): ReactElement => {
         'dark',
         'inherit',
     ], 'primary');
-    const size: Sizes = select('size', ['small', 'medium', 'large', 'inherit'], 'inherit');
+    const size: Sizes = select('size', ['small', 'medium', 'large'], 'small');
     const children: string = select(
         'children',
         icons,

@@ -1,9 +1,9 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import clsx from 'clsx';
+import { Button as MuiButton } from '@material-ui/core';
 import { Flipped, Flipper } from 'react-flip-toolkit';
-import Typography from '../Typography';
-import Icon from '../Icon';
-import Progress from '../Progress';
+import Typography from '@components/Typography';
+import Progress from '@components/Progress';
 import { Props } from './types';
 
 
@@ -11,7 +11,7 @@ import { Props } from './types';
  * The `Button` component represents a clickable button, which can be used in forms or anywhere in the application
  * that needs simple, standard button functionality.
  */
-function Button({
+export const Button = React.forwardRef(({
     variant = 'standard',
     color = 'primary',
     size = 'medium',
@@ -20,10 +20,12 @@ function Button({
     isCircular = false,
     isFluid = false,
     isDisabled = false,
+    startIcon,
+    endIcon,
     children,
     className,
     ...otherProps
-}: Props): ReactElement {
+}: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
     const buttonClasses = clsx(
@@ -41,39 +43,39 @@ function Button({
 
 
     return (
-        <Flipper flipKey={JSON.stringify([isLoading, variant, color, size])}>
-            <Flipped flipId="wrapper">
-                <button
-                    aria-label={(variant === 'icon' && typeof children === 'string') ? children : undefined}
-                    className={buttonClasses}
-                    disabled={isDisabled || isLoading}
-                    type="button"
-                    {...otherProps}
-                >
-                    <Flipped flipId="content">
-                        <div className="brew-Button__content">
-                            <Typography className="brew-Button__text">
+        <MuiButton
+            className={buttonClasses}
+            disabled={isDisabled || isLoading}
+            ref={ref}
+            type="button"
+            {...otherProps}
+        >
+            <Flipper flipKey={JSON.stringify([isLoading, variant, color, size])}>
+                <Flipped flipId="content">
+                    <div className="brew-Button__content">
+                        {startIcon}
+                        {children && (
+                            <Typography className="brew-Button__text" variant="button">
                                 {children}
                             </Typography>
-                            {variant === 'icon' && typeof children === 'string' &&
-                                <Icon className="brew-Button__icon" color="inherit">
-                                    {children}
-                                </Icon>
-                            }
-                        </div>
-                    </Flipped>
-                    <Flipped flipId="loader">
-                        <div className="brew-Button__loadingIndicator">
-                            <Progress color={color} variant="circular" />
-                        </div>
-                    </Flipped>
-                </button>
-            </Flipped>
-        </Flipper>
+                        )}
+                        {endIcon}
+                    </div>
+                </Flipped>
+                <Flipped flipId="loader">
+                    <div className="brew-Button__loadingIndicator">
+                        <Progress.Circular color={color === 'link' ? 'primary' : color} />
+                    </div>
+                </Flipped>
+            </Flipper>
+        </MuiButton>
     );
 
 
-}
+});
+
+
+Button.displayName = 'Button';
 
 
 export default Button;

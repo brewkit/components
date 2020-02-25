@@ -1,6 +1,5 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
 import Typography from './index';
 
 
@@ -12,52 +11,15 @@ it('renders correctly', () => {
 });
 
 
-it('renders children when passed in', () => {
-    const wrapper = shallow((
-        <Typography>
-            <span>foo</span>
-        </Typography>
-    ));
-    expect(wrapper.contains(<span>foo</span>)).toEqual(true);
-});
-
-
-it('accepts custom classes', () => {
-    const wrapper = shallow((
-        <Typography className="customClass">Lorem ipsum dolor sit amet.</Typography>
-    ));
-    expect(wrapper.hasClass('customClass')).toEqual(true);
-    expect(wrapper.hasClass('brew-Typography')).toEqual(true);
-});
-
-
-it('"variant" defaults to "inherit" and applies appropriate class', () => {
-    const wrapper = shallow((
-        <Typography>Lorem ipsum dolor sit amet.</Typography>
-    ));
-    expect(wrapper.hasClass('brew-Typography--variant-inherit')).toEqual(true);
-});
-
-
-it('"color" defaults to "initial" and applies appropriate class', () => {
-    const wrapper = shallow((
-        <Typography>Lorem ipsum dolor sit amet.</Typography>
-    ));
-    expect(wrapper.hasClass('brew-Typography--color-initial')).toEqual(true);
-});
-
-
-it('"display" defaults to "initial" and applies appropriate class', () => {
-    const wrapper = shallow((
-        <Typography>Lorem ipsum dolor sit amet.</Typography>
-    ));
-    expect(wrapper.hasClass('brew-Typography--display-initial')).toEqual(true);
-});
-
-
-it('"align" defaults to "inherit" and applies appropriate class', () => {
-    const wrapper = shallow((
-        <Typography>Lorem ipsum dolor sit amet.</Typography>
-    ));
-    expect(wrapper.hasClass('brew-Typography--align-inherit')).toEqual(true);
+it('renders correctly with various props', () => {
+    const tree = renderer
+        .create((
+            <React.Fragment>
+                <Typography align="left" className="foo" color="primary" shouldTruncate>foo</Typography>
+                <Typography align="right" color="secondary">foo</Typography>
+                <Typography align="center" color="tertiary" variant="h4">foo</Typography>
+            </React.Fragment>
+        ))
+        .toJSON();
+    expect(tree).toMatchSnapshot();
 });

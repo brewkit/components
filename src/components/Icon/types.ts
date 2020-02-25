@@ -1,27 +1,28 @@
-export type Colors = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'inherit';
-export type Sizes = 'small' | 'medium' | 'large' | 'inherit';
+import React from 'react';
+import { StyledParentComponent, Colors as GenericColors } from '@components/types';
 
 
-export interface Props {
+export type Colors = GenericColors | 'inherit';
+export type Sizes = 'small' | 'medium' | 'large';
 
-    /**
-     * Classes to be passed through to the component.
-     */
-    className?: string,
 
-    /**
-     * Determines the icon to render.
-     */
-    children: string,
+export interface Props extends StyledParentComponent {
 
     /**
      * Determines the color of the rendered Icon.
+     * @default 'inherit'
      */
     color?: Colors,
 
     /**
-     * Determines the size of the rendered Icon.
+     * If set, forces the `Icon` to render at the specified size.
      */
     size?: Sizes,
+
+    /**
+     * Component to render as.
+     * @default 'i'
+     */
+    component?: React.ElementType,
 
 }

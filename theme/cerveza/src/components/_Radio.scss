@@ -1,0 +1,114 @@
+@use '../utilities';
+
+
+// ==============================================
+// Radio
+// ==============================================
+
+$radio-color: #ffffff;
+$radio-grey: utilities.color(grey, 100);
+
+
+// -------------------------------------
+// General
+
+.brew-Radio {
+    overflow: hidden;
+    display: inline-grid;
+    grid-template-columns: min-content max-content;
+    grid-column-gap: utilities.size(small);
+    align-items: center;
+    cursor: pointer;
+    border-radius: utilities.$border-radius;
+
+    input {
+        display: none;
+    }
+
+    .brew-Radio__control {
+        height: 2rem;
+        width: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $radio-grey;
+        border-radius: 50%;
+        background-color: $radio-color;
+        transition: all 0.3s;
+    }
+
+    .brew-Radio__control:after {
+        content: '';
+        opacity: 0;
+        height: utilities.size(small);
+        width: utilities.size(small);
+        border-radius: 50%;
+        background-color: $radio-color;
+    }
+
+}
+
+
+// -------------------------------------
+// On Hover & On Focus
+
+.brew-Radio:hover,
+.brew-Radio:focus {
+    outline: none;
+
+    .brew-Radio__control {
+        border: 1px solid rgba(utilities.color(brand, primary), 0.2);
+        background-color: rgba(utilities.color(brand, primary), 0.2);
+    }
+
+}
+
+
+// -------------------------------------
+// Checked
+
+.brew-Radio input:checked {
+
+    & ~ .brew-Radio__control {
+        border: 1px solid utilities.color(brand, primary);
+        background-color: utilities.color(brand, primary);
+
+        &:after {
+            opacity: 1;
+        }
+
+    }
+
+}
+
+
+// -------------------------------------
+// Disabled
+
+.brew-Input--isDisabled.brew-Radio {
+    cursor: not-allowed;
+
+    input ~ .brew-Radio__control {
+        border: 1px solid $radio-grey;
+        background-color: $radio-grey;
+    }
+
+}
+
+
+// -------------------------------------
+// hasError
+
+.brew-Input--hasError.brew-Radio {
+
+    input ~ .brew-Radio__control {
+        border: 1px solid utilities.color(accent, danger);
+        background-color: transparent;
+
+        .brew-Radio__controlIcon {
+            color: utilities.color(accent, danger);
+        }
+
+    }
+
+}

@@ -1,0 +1,39 @@
+@use '../utilities';
+
+
+// ==============================================
+// General
+// ==============================================
+
+.brew-Flag {
+
+    &.brew-Flag {
+        height: auto;
+        min-height: 0.75rem;
+        max-height: 1.5rem;
+        min-width: 0.75rem;
+        border-radius: 0.25rem;
+    }
+
+    &:not(:last-child) {
+        margin-right: 0.5rem;
+    }
+
+    &.brew-Flag--isEmpty {
+        border-radius: 100%;
+    }
+
+    .brew-Flag__label {
+        padding: .25rem;
+        line-height: 0.75;
+    }
+
+    .brew-Flag__content {
+        color: #ffffff;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    @include utilities.fetch-color('&.brew-Flag--color-', 'background-color');
+
+}

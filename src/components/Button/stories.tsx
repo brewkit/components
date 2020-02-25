@@ -1,23 +1,24 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React from 'react';
 import { text, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import Icon from '@components/Icon';
 import Button from './index';
 import { Variants, Colors, Sizes } from './types';
-import Label from '../Label';
+import Flag from '@components/Flag';
 
 
 export default {
     component: Button,
     parameters: {
-        componentSubtitle: <Label color="success">Stable</Label>,
+        componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'Components|User Input/Button',
+    title: 'Stable|User Input/Button',
 };
 
 
-export const General = (): ReactElement => {
-    const children: ReactNode = text('children', 'Click me!');
-    const variant: Variants = select('variant', ['standard', 'text', 'icon'], 'standard');
+export const Sandbox = (): React.ReactElement => {
+    const children: React.ReactNode = text('children', 'Click me!');
+    const variant: Variants = select('variant', ['standard', 'text'], 'standard');
     const color: Colors = select('color', [
         'primary',
         'secondary',
@@ -53,12 +54,13 @@ export const General = (): ReactElement => {
 };
 
 
-export const Default = (): ReactElement => <Button>Default</Button>;
-export const Standard = (): ReactElement => <Button variant="standard">Click me!</Button>;
-export const Text = (): ReactElement => <Button variant="text">Click me!</Button>;
-export const Icon = (): ReactElement => <Button variant="icon">360</Button>;
-export const Circular = (): ReactElement => <Button isCircular variant="icon">add</Button>;
-export const Loading = (): ReactElement => <Button isLoading variant="standard">Click me!</Button>;
-export const Fluid = (): ReactElement => <Button isFluid variant="standard">Click me!</Button>;
-export const Compact = (): ReactElement => <Button isCompact variant="standard">Click me!</Button>;
-export const Disabled = (): ReactElement => <Button isDisabled variant="standard">Click me!</Button>;
+export const General = (): React.ReactElement => <Button>Default</Button>;
+export const Standard = (): React.ReactElement => <Button variant="standard">Click me!</Button>;
+export const Text = (): React.ReactElement => <Button variant="text">Click me!</Button>;
+export const WithStartIcon = (): React.ReactElement => <Button startIcon={<Icon>arrow_back</Icon>}>Go Back</Button>;
+export const WithEndIcon = (): React.ReactElement => <Button endIcon={<Icon>add_circle_outline</Icon>}>Add Account</Button>;
+export const OnlyIcon = (): React.ReactElement => <Button endIcon={<Icon>add_circle_outline</Icon>} />;
+export const Loading = (): React.ReactElement => <Button isLoading variant="standard">Click me!</Button>;
+export const Fluid = (): React.ReactElement => <Button isFluid variant="standard">Click me!</Button>;
+export const Compact = (): React.ReactElement => <Button isCompact variant="standard">Click me!</Button>;
+export const Disabled = (): React.ReactElement => <Button isDisabled variant="standard">Click me!</Button>;

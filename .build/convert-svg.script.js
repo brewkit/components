@@ -11,7 +11,7 @@ fs.readdir(SVGsDir, function (err, files) {
 
     let fileList = [];
 
-    /** exit if there's an error */
+    /** exit if there's an hasError */
     if (err) {
         console.error("Could not list the directory.", err);
         process.exit(1);

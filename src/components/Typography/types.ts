@@ -1,37 +1,49 @@
-import { ReactNode } from 'react';
+import React from 'react';
+import { Colors as GenericColors, StyledParentComponent } from '@components/types';
 
 
-export type Variants = 'h1' | 'h2' | 'h3' | 'body1' | 'body2' | 'label' | 'inherit';
-export type Colors = (
-    'primary'
-    | 'secondary'
-    | 'tertiary'
-    | 'success'
-    | 'danger'
-    | 'warning'
-    | 'info'
-    | 'light'
-    | 'dark'
-    | 'initial'
+export type Variants = (
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'h6'
+    | 'body1'
+    | 'body2'
+    | 'subtitle1'
+    | 'subtitle2'
+    | 'caption'
+    | 'button'
+    | 'srOnly'
+    | 'inherit'
 );
-export type Alignments = 'inherit' | 'left' | 'center' | 'right' | 'justify';
-export type Displays = 'initial' | 'block' | 'inline' | 'inline-block';
+
+export type Colors = (
+    | GenericColors
+    | 'inherit'
+);
+
+export type Alignments = (
+    | 'inherit'
+    | 'left'
+    | 'center'
+    | 'right'
+    | 'justify'
+);
+
+export type Displays = (
+    | 'initial'
+    | 'block'
+    | 'inline'
+);
 
 
-export interface Props {
-
-    /**
-     * The content or text to be rendered. Usually just a string, but can be any valid JSX.
-     */
-    children: ReactNode,
-
-    /**
-     * Classes to be passed through to the component.
-     */
-    className?: string,
+export interface Props extends StyledParentComponent {
 
     /**
      * The overall style to be applied to the typography.
+     * @default 'body1'
      */
     variant?: Variants,
 
@@ -42,22 +54,33 @@ export interface Props {
 
     /**
      * The text alignment of the content.
+     * @default 'inherit'
      */
     align?: Alignments,
 
     /**
      * Can be used to override the display type of the wrapping element.
+     * @default 'initial'
      */
     display?: Displays,
 
     /**
-     * Adds text truncation (ellipsis) to the wrapping element.
+     * If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.
+     * Note that text overflow can only happen with block or inline-block level elements
+     * (the element needs to have a width in order to overflow).
+     * @default false
      */
     shouldTruncate?: boolean,
 
     /**
+     * If `true`, the text will have bottom margin.
+     * @default false
+     */
+    hasGutter?: boolean,
+
+    /**
      * Can be used to override the element used to wrap the content.
      */
-    as?: keyof JSX.IntrinsicElements | null,
+    component?: React.ElementType,
 
 }

@@ -1,5 +1,90 @@
+@use 'sass:map';
+@use '../material-colors';
+@use '../utilities';
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
-@import "../utilities";
+
+
+// ==============================================
+// Variables
+// ==============================================
+
+$font-primary: Roboto, sans-serif;
+
+$colors: (
+    primary:    utilities.color(grey, 500),
+    secondary:  utilities.color(grey, 300),
+    tertiary:   utilities.color(grey, 700),
+    success:    utilities.color(accent, success),
+    info:       utilities.color(accent, info),
+    warning:    utilities.color(accent, warning),
+    danger:     utilities.color(accent, danger),
+    h1:         utilities.color(brand, primary),
+    h2:         material-colors.get(lightBlue, 900),
+    h3:         material-colors.get(lightBlue, 900),
+    h4:         utilities.color(grey, 500),
+    h5:         utilities.color(grey, 500),
+    h6:         utilities.color(grey, 500),
+    body1:      utilities.color(grey, 500),
+    body2:      utilities.color(grey, 500),
+    subtitle1:  material-colors.get(lightBlue, 900),
+    subtitle2:  material-colors.get(lightBlue, 900),
+    caption:    utilities.color(grey, 500),
+    button:     utilities.color(brand, primary),
+    srOnly:     utilities.color(grey, 500),
+    inherit:    inherit,
+);
+
+$font-sizes: (
+    h1:         3rem,
+    h2:         2rem,
+    h3:         1.5rem,
+    h4:         0.75rem,
+    h5:         0.75rem,
+    h6:         0.75rem,
+    body1:      1rem,
+    body2:      1rem,
+    subtitle1:  2rem,
+    subtitle2:  1.5rem,
+    caption:    0.75rem,
+    button:     1rem,
+    srOnly:     1rem,
+    inherit:    inherit,
+);
+
+$font-weights: (
+    h1:         bold,
+    h2:         bold,
+    h3:         bold,
+    h4:         normal,
+    h5:         normal,
+    h6:         normal,
+    body1:      normal,
+    body2:      normal,
+    subtitle1:  normal,
+    subtitle2:  normal,
+    caption:    normal,
+    button:     normal,
+    srOnly:     normal,
+    inherit:    inherit,
+);
+
+$line-heights: (
+    h1:         1.25,
+    h2:         1.25,
+    h3:         1.25,
+    h4:         1.25,
+    h5:         1.25,
+    h6:         1.25,
+    body1:      1.25,
+    body2:      1.25,
+    subtitle1:  1.25,
+    subtitle2:  1.25,
+    caption:    0.75,
+    button:     normal,
+    srOnly:     1.25,
+    inherit:    inherit,
+);
 
 
 // ==============================================
@@ -8,92 +93,55 @@
 
 .brew-Typography {
     font-family: Roboto, serif;
-    color: color(grey, 800);
-    margin: 0;
-}
+    color: utilities.color(grey, 800);
 
 
-// ==============================================
-// Colors
-// ==============================================
+    // ==========================================
+    // Colors
+    // ==========================================
 
-$colors: primary, secondary, tertiary, success, info, warning, danger;
+    @include utilities.fetch-color('&.brew-Typography.brew-Typography--color-', 'color');
 
-@mixin color-styles($color) {
-    color: map_get(map_get($typography, colors), $color);
-}
-
-@each $color in $colors {
-    .brew-Typography.brew-Typography--color-#{$color} {
-        @include color-styles($color);
+    &.brew-Typography.brew-Typography--color-inherit {
+        color: inherit;
     }
-}
 
 
-// ==============================================
-// Variants
-// ==============================================
+    // ==========================================
+    // Variants
+    // ==========================================
 
-$variants: h1, h2, h3, body1, body2, label;
+    $variants: h1, h2, h3, h4, h5, h6, body1, body2, subtitle1, subtitle2, caption, button, srOnly, inherit;
 
-@mixin variant-styles($variant) {
-    font-size: map_get(map_get($typography, font-sizes), $variant);
-    font-weight: map_get(map_get($typography, font-weights), $variant);
-    line-height: map_get(map_get($typography, line-heights), $variant);
-    color: map_get(map_get($typography, colors), $variant);
-}
-
-@each $variant in $variants {
-    .brew-Typography--variant-#{$variant} {
-        @include variant-styles($variant);
+    @mixin variant-styles($variant) {
+        font-size: map_get($font-sizes, $variant);
+        font-weight: map_get($font-weights, $variant);
+        line-height: map_get($line-heights, $variant);
+        color: map_get($colors, $variant);
     }
-}
 
-.brew-Typography--variant-label {
-    text-transform: uppercase;
-}
-
-.brew-Typography--variant-inherit {
-    font-size: inherit;
-}
-
-
-// ==============================================
-// Alignments
-// ==============================================
-
-$alignments: inherit, left, right, center, justify;
-
-@each $alignment in $alignments {
-    .brew-Typography--align-#{$alignment} {
-        text-align: $alignment;
+    @each $variant in $variants {
+        &.brew-Typography--variant-#{$variant} {
+            @include variant-styles($variant);
+        }
     }
-}
 
-
-// ==============================================
-// Display types
-// ==============================================
-
-$displays: block, inline, inline-block;
-
-@each $display in $displays {
-    .brew-Typography--display-#{$display} {
-        display: $display;
+    &.brew-Typography--variant-label {
+        text-transform: uppercase;
     }
-}
+
+    &.brew-Typography--variant-inherit {
+        font-size: inherit;
+    }
 
 
-// ==============================================
-// States
-// ==============================================
+    // ==========================================
+    // Bottom Gutter
+    // ==========================================
 
-.brew-Typography--hasBottomMargin {
-    margin-bottom: 1rem;
-}
+    &.brew-Typography--hasGutter {
+        margin-bottom: 0.5em;
+    }
 
-.brew-Typography--shouldTruncate {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+
 }

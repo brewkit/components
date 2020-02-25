@@ -1,6 +1,9 @@
+@use "sass:map";
+
 // ==============================================
 // Material color palettes
 // ==============================================
+
 $material_colors: (
     red: (
         50:     #ffebee,
@@ -304,6 +307,6 @@ $material_colors: (
 //      material(red, 500)
 //      or
 //      material(red)
-@function materialColor($palette, $tone: 500) {
-    @return map-get(map-get($material_colors, $palette), $tone);
+@function get($palette, $tone: 500) {
+    @return map.get(map.get($material_colors, $palette), $tone);
 }

@@ -1,23 +1,11 @@
-@import "utilities";
-@import "normalize";
+@use 'utilities';
+@use 'normalize';
 
-
-@import "components/Typography";
-@import "components/Icon";
-@import "components/Divider";
-@import "components/Banner";
-@import "components/Button";
-@import "components/Card";
-@import "components/StatusCard";
-@import "components/Label";
-@import "components/Input";
-@import "components/Progress";
-@import "components/Form";
-@import "components/Select";
-@import "components/Collapsible";
-@import "components/Placeholder";
-@import "components/Breadcrumb";
-@import "components/Drawer";
-@import "components/Dialog";
-@import "components/Badge";
-@import "components/Table";
+@use 'components/Typography';
+@use 'components/Tooltip';
+@use 'components/Icon';
+@use 'components/Button';
+@use 'components/Flag';
+@use 'components/Checkbox';
+@use 'components/Switch';
+@use 'components/Progress';

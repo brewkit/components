@@ -1,0 +1,106 @@
+@use '../utilities';
+
+
+// ==============================================
+// Variables
+// ==============================================
+
+$checkmark-color: #ffffff;
+$checkbox-grey: utilities.color(grey, 100);
+$border-width: 1px;
+
+
+// ==============================================
+// General
+// ==============================================
+
+.brew-Checkbox {
+    overflow: hidden;
+    align-items: center;
+    cursor: pointer;
+    color: utilities.color(brand, primary);
+
+    *:last-child {
+        color: utilities.color(brand, primary);
+    }
+
+    input {
+        display: none;
+    }
+
+    .brew-Checkbox__box {
+        height: 2rem;
+        width: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: $border-width solid $checkbox-grey;
+        border-radius: utilities.$border-radius;
+        transition: all 0.3s;
+    }
+
+
+    .brew-Checkbox__icon {
+        opacity: 0;
+        color: $checkmark-color;
+    }
+
+
+    // -------------------------------------
+    // Checked & Indeterminate
+
+    &.brew-Checkbox--isChecked,
+    &.brew-Checkbox--isIndeterminate {
+
+        & .brew-Checkbox__box {
+            border: $border-width solid utilities.color(brand, primary);
+            background-color: utilities.color(brand, primary);
+
+            .brew-Checkbox__icon {
+                opacity: 1;
+            }
+
+        }
+
+    }
+
+}
+
+
+// ==============================================
+// Higher Specificity
+// ==============================================
+
+.brew-Checkbox.brew-Checkbox {
+
+
+    &:hover {
+        color: utilities.color(brand, primary);
+        background-color: rgba(utilities.color(brand, primary), 0.1);
+    }
+
+    // -------------------------------------
+    // Disabled
+    &.brew-Checkbox--isDisabled {
+        cursor: not-allowed;
+
+        .brew-Checkbox__box {
+            border: $border-width solid $checkbox-grey;
+            background-color: $checkbox-grey;
+        }
+
+    }
+
+    // -------------------------------------
+    // On Hover & On Focus
+    .brew-Checkbox:hover {
+
+        .brew-Checkbox__box {
+            border: $border-width solid rgba(utilities.color(brand, primary), 0.2);
+            background-color: rgba(utilities.color(brand, primary), 0.2);
+        }
+
+    }
+
+
+}

@@ -1,4 +1,4 @@
-@import "../utilities";
+@use '../utilities';
 
 
 // ==============================================
@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  padding: size(normal);
+  padding: utilities.size(normal);
 }
 
 .brew-Placeholder__content {
@@ -19,5 +19,5 @@
 }
 
 .brew-Placeholder__graphic {
-  font-size: size(xx-large) * 2;
+  font-size: utilities.size(xx-large) * 2;
 }

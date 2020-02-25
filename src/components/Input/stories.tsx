@@ -1,21 +1,15 @@
 import React, { ReactElement } from 'react';
-import Input from './index';
-import Label from '../Label';
-import { select } from '@storybook/addon-knobs';
+import Flag from '@components/Flag';
+import Progress from './index';
 
 
 export default {
-    component: Input,
+    component: Progress,
     parameters: {
-        componentSubtitle: <Label color="warning">In Development</Label>,
+        componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'Components|User Input/Input',
+    title: 'Stable|Feedback/Progress',
 };
 
 
-export const Default = (): ReactElement => {
-    const variant = select('variant', ['text', 'checkbox', 'radio', 'textarea'], 'text');
-    return (
-        <Input variant={variant} />
-    );
-};
+export const General = (): ReactElement => <Progress />;

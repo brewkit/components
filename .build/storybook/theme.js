@@ -1,5 +1,5 @@
 import { create } from '@storybook/theming';
-import logo from './logo.png';
+import logo from '../storybook/assets/images/brewkit-logo.png';
 
 
 export default create({

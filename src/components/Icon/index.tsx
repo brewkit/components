@@ -1,39 +1,41 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import { Props } from './types';
 
 
 /**
- * The `<Icon />` component renders an SVG icon. By default, it can render any of the icons available in
- * [Material Design (Outline)](https://material.io/tools/icons/?style=outline). Built-in sizing options are in `em`
- * units as to be similar to any neighboring fonts.
+ * The `<Icon />` component interfaces easily with an icon font and uses it's `children` prop to render an
+ * appropriate icon.
  */
-function Icon({
+export const Icon = React.forwardRef(({
     color = 'inherit',
-    size = 'inherit',
+    size,
     children,
     className,
+    component: Component = 'i',
     ...otherProps
-}: Props): ReactElement {
+}: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    /** Combine our classes based on props */
     const classes = clsx(
         'brew-Icon',
         'material-icons',
         `brew-Icon--color-${color}`,
-        `brew-Icon--size-${size}`,
+        { [`brew-Icon--size-${String(size)}`]: size },
         className,
     );
 
 
     return (
-        <i className={classes} {...otherProps}>
+        <Component className={classes} ref={ref} {...otherProps}>
             {children}
-        </i>
+        </Component>
     );
 
-}
+});
+
+
+Icon.displayName = 'Icon';
 
 
 export default Icon;

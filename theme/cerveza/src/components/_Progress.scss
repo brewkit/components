@@ -1,24 +1,55 @@
-@import "../utilities";
+@use 'sass:color';
+@use '../utilities';
+
+
+// ==============================================
+// Variables
+// ==============================================
+
+$colors: (
+    primary: utilities.color(brand, primary),
+    secondary: utilities.color(brand, secondary),
+    success: utilities.color(accent, success),
+    danger: utilities.color(accent, danger),
+    warning: utilities.color(accent, warning),
+    info: utilities.color(accent, info),
+    dark: utilities.color(accent, dark),
+    light: utilities.color(accent, light),
+);
 
 
 // ==============================================
 // Colors
 // ==============================================
 
-$colors: primary, secondary, success, info, warning, danger, light, dark;
+$color-variants: primary, secondary, success, info, warning, danger, light, dark;
 
 @mixin color-styles($colorName) {
-    $progress_color: map_get(map_get($progress, colors), $colorName);
+    $progress-color: map_get($colors, $colorName);
+    $transparent-color: color.scale($progress-color, $lightness: 75%);
 
-    &.brew-Progress--circular {
-        border: 2px solid $progress_color;
-        border-top: 2px solid rgba($progress_color, 0.25);
+    .brew-ProgressCircular--color-#{$colorName} {
+        color: $progress-color;
     }
 
-    &.brew-Progress--horizontal {
-        background: rgba($progress_color, 0.25);
-        &:before,
-        &:after { background: $progress_color; }
+    .brew-ProgressLinear--color-#{$colorName} {
+
+        &:not(.brew-ProgressLinear--variant-buffer) {
+            background-color: $transparent-color;
+        }
+
+        .brew-ProgressLinear__bar {
+            background-color: $progress-color;
+        }
+
+        .brew-ProgressLinear__bufferBar {
+            background-color: $transparent-color;
+        }
+
+        .brew-ProgressLinear__dashedBar {
+            background-image: radial-gradient($transparent-color 0%, $transparent-color 16%, transparent 42%)
+        }
+
     }
 
 }
@@ -27,125 +58,56 @@ $colors: primary, secondary, success, info, warning, danger, light, dark;
 // General
 // ==============================================
 
-.brew-Progress {
-    @each $color in $colors {
-        &__color--#{$color} {
-            @include color-styles($color);
-        }
-    }
-
-    // ==============================================
-    // Variants
-    // ==============================================
-
-    &--circular {
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-    }
-
-    &--horizontal {
-        position: relative;
-        overflow: hidden;
-        &:before,
-        &:after {
-            content: '';
-            display: block;
-            position: absolute;
-            left: -25%;
-            top: 0;
-            width: 25%;
-            height: 100%;
-            z-index: 2;
-            animation: line2 2s ease-in-out infinite;
-        }
-        &:after {
-            left: -150%;
-            animation: line 2s ease-in-out 0.75s infinite;
-        }
-    }
-
-    // ==============================================
-    // Sizes
-    // ==============================================
-
-    &__size--inherit {
-
-        &.brew-Progress--circular {
-            width: 1em;
-            height: 1em;
-        }
-
-        &.brew-Progress--horizontal {
-            height: 1em;
-        }
-
-    }
-
-    &__size--small {
-
-        &.brew-Progress--circular {
-            width: size(normal);
-            height: size(normal);
-        }
-
-        &.brew-Progress--horizontal {
-            height: 2px;
-        }
-
-    }
-
-    &__size--medium {
-
-        &.brew-Progress--circular {
-            width: size(normal) * 2;
-            height: size(normal) * 2;
-        }
-
-        &.brew-Progress--horizontal {
-            height: 4px;
-        }
-    }
-
-    &__size--large {
-
-        &.brew-Progress--circular {
-            width: size(normal) * 3;
-            height: size(normal) * 3;
-        }
-
-        &.brew-Progress--horizontal {
-            height: 8px;
-        }
-    }
+@each $color in $color-variants {
+    @include color-styles($color);
 }
+
 
 // ==============================================
-// Keyframes
+// Sizes
 // ==============================================
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.brew-ProgressCircular {
+
+    &--size-inherit {
+        width: 1em !important;
+        height: 1em !important;
+    }
+
+    &--size-small {
+        width: utilities.size(small) * 1.5 !important;
+        height: utilities.size(small) * 1.5 !important;
+    }
+
+    &--size-medium {
+        width: utilities.size(normal) * 1.5 !important;
+        height: utilities.size(normal) * 1.5 !important;
+    }
+
+    &--size-large {
+        width: utilities.size(large) * 1.5 !important;
+        height: utilities.size(large) * 1.5 !important;
+    }
+
 }
 
-@keyframes line {
-    0% {
-        width: 5%;
-        left: -25%;
-    }
-    75%, 100% {
-        width: 150%;
-        left: 100%;
-    }
-}
 
-@keyframes line2 {
-    0% {
-        width: 150%;
-        left: -150%;
+.brew-ProgressLinear {
+
+    &--size-inherit {
+        height: 1em * 0.25;
     }
-    75%, 100% {
-        width: 5%;
-        left: 100%;
+
+    &--size-small {
+        height: utilities.size(small) * 0.25;
     }
+
+    &--size-medium {
+        height: utilities.size(normal) * 0.5;
+    }
+
+    &--size-large {
+        height: utilities.size(large) * 0.75;
+    }
+
 }

@@ -1,48 +1,55 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import clsx from 'clsx';
+import { Typography as MuiTypography } from '@material-ui/core';
 import { Props } from './types';
+
 
 
 /**
  * The `<Typography />` component renders text using the 'Roboto' font in various styles.
  */
-function Typography({
-    variant = 'inherit',
-    color = 'initial',
+export const Typography = React.forwardRef(({
+    variant = 'body1',
     align = 'inherit',
     display = 'initial',
     shouldTruncate = false,
-    as = null,
-    children,
+    color,
+    hasGutter = false,
     className,
     ...otherProps
-}: Props): ReactElement {
+}: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    const classes = clsx(
+    const classNames = clsx(
         'brew-Typography',
-        [`brew-Typography--variant-${variant}`],
-        [`brew-Typography--color-${color}`],
-        [`brew-Typography--align-${align}`],
         [`brew-Typography--display-${display}`],
+        { [`brew-Typography--variant-${String(variant)}`]: variant },
+        { [`brew-Typography--align-${String(align)}`]: align },
+        { [`brew-Typography--color-${String(color)}`]: color },
         { 'brew-Typography--shouldTruncate': shouldTruncate },
+        { 'brew-Typography--hasGutter': hasGutter },
         className,
     );
 
 
-    let TextElement: keyof JSX.IntrinsicElements = 'span';
-    if (as) TextElement = as;
-    else if (variant === 'h1' || variant === 'h2' || variant === 'h3') TextElement = variant as 'div';
-
-
     return (
-        <TextElement className={classes} {...otherProps}>
-            {children}
-        </TextElement>
+        <MuiTypography
+            align={align}
+            className={classNames}
+            display={display}
+            gutterBottom={hasGutter}
+            noWrap={shouldTruncate}
+            ref={ref}
+            variant={variant}
+            {...otherProps}
+        />
     );
 
 
-}
+});
+
+
+Typography.displayName = 'Typography';
 
 
 export default Typography;

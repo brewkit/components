@@ -1,3 +1,7 @@
+@use '../utilities';
+@use '../material-colors';
+
+
 .brew-Select {
     $open-shadow: 0 3px 6px rgba(0,0,0,.16);
     width: 100%;
@@ -16,9 +20,9 @@
         position: relative;
 
         &__input {
-            border: 1px solid color(gray, 100);
-            border-radius: size(xx-small);
-            padding: size(normal);
+            border: 1px solid utilities.color(gray, 100);
+            border-radius: utilities.size(xx-small);
+            padding: utilities.size(normal);
             box-sizing: border-box;
             position: relative;
             display: flex;
@@ -31,14 +35,14 @@
         }
 
         &__dropdown {
-            border: 1px solid color(brand, primary);
+            border: 1px solid utilities.color(brand, primary);
             box-shadow: $open-shadow;
-            padding: size(normal);
+            padding: utilities.size(normal);
             max-height: 320px;
             position: absolute;
             width: 100%;
             top: 100%;
-            margin-top: size(x-small);
+            margin-top: utilities.size(x-small);
             overflow-y: auto;
         }
 
@@ -49,7 +53,7 @@
         }
 
         &__option {
-            padding: size(normal)*1.375 size(normal);
+            padding: utilities.size(normal)*1.375 utilities.size(normal);
 
             &:hover,
             &--isSelected {
@@ -58,8 +62,8 @@
 
             &--isDisabled,
             &--isDisabled:hover {
-                background-color: color(gray, 50);
-                color: color(gray, 500);
+                background-color: utilities.color(gray, 50);
+                color: utilities.color(gray, 500);
             }
         }
     }
@@ -70,8 +74,8 @@
 
             &__input {
                 box-shadow: $open-shadow;
-                background-color: color(brand, primary);
-                border-color: color(brand, primary);
+                background-color: utilities.color(brand, primary);
+                border-color: utilities.color(brand, primary);
                 color: white;
             }
         }

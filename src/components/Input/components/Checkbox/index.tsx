@@ -1,38 +1,79 @@
-import React, { ReactElement } from 'react';
-import clsx from 'clsx';
-import Icon from '../../../Icon';
-import InputBase from '../InputBase';
+import React from 'react';
+import { Checkbox as MuiCheckbox, FormControlLabel } from '@material-ui/core';
+import Icon from '@components/Icon';
+import Typography from '@components/Typography';
 import { Props } from './types';
 
-function CheckboxCustomControl(): ReactElement {
-    return (
-        <div className="brew-Input__customControl">
-            <Icon className="brew-Input__customControlIcon" size="large">check</Icon>
+
+/**
+ * Checkboxes allow the user to select one or more items from a set and can be used to turn an option on or off.
+ */
+export const Checkbox = React.forwardRef(({
+    isChecked,
+    isDisabled,
+    isIndeterminate,
+    isRequired,
+    label,
+    labelPlacement = 'end',
+    value,
+    ...otherProps
+}: Props, ref: React.Ref<any>): React.ReactElement => {
+
+
+    const classes = {
+        root: 'brew-Checkbox',
+        disabled: 'brew-Checkbox--isDisabled',
+        checked: 'brew-Checkbox--isChecked',
+        indeterminate: 'brew-Checkbox--isIndeterminate',
+    };
+
+
+    const UncheckedControl = (
+        <div className="brew-Checkbox__box" />
+    );
+
+
+    const CheckedControl = (
+        <div className="brew-Checkbox__box">
+            <Icon className="brew-Checkbox__icon" size="large">check</Icon>
         </div>
     );
-}
 
-function Checkbox({
-    className = undefined,
-    ...otherProps
-}: Props): ReactElement {
 
-    const classes = clsx(
-        'brew-Input--checkbox',
-        className,
+    const IndeterminateControl = (
+        <div className="brew-Checkbox__box">
+            <Icon className="brew-Checkbox__icon" size="large">remove</Icon>
+        </div>
     );
 
+
     return (
-        <InputBase
-            className={classes}
-            customControl={<CheckboxCustomControl />}
-            type="checkbox"
-            {...otherProps}
+        <FormControlLabel
+            checked={isChecked}
+            control={(
+                <MuiCheckbox
+                    checkedIcon={CheckedControl}
+                    classes={classes}
+                    icon={UncheckedControl}
+                    indeterminate={isIndeterminate}
+                    indeterminateIcon={IndeterminateControl}
+                    required={isRequired}
+                    {...otherProps}
+                />
+            )}
+            disabled={isDisabled}
+            label={<Typography variant="body1">{label}</Typography>}
+            labelPlacement={labelPlacement}
+            ref={ref}
+            value={value}
         />
     );
 
 
-}
+});
+
+
+Checkbox.displayName = 'Checkbox';
 
 
 export default Checkbox;
