@@ -22,7 +22,8 @@
         "start": "npm run sass && npm run storybook",
         "storybook": "start-storybook -p 9001 -c .build/storybook",
         "build": "tsc --project ./.build/tsconfig.json --declaration",
-        "build-storybook": "build-storybook -c .build/storybook -o .out"
+        "build-storybook": "build-storybook -c .build/storybook -o .out",
+        "deploy-storybook": "storybook-to-ghpages"
     },
     "jest": {
         "transform": {
@@ -60,6 +61,7 @@
         "@storybook/addons": "^5.3.13",
         "@storybook/preset-typescript": "^1.2.0",
         "@storybook/react": "^5.3.13",
+        "@storybook/storybook-deployer": "^2.8.2",
         "@storybook/theming": "^5.3.13",
         "@types/enzyme": "^3.10.5",
         "@types/enzyme-adapter-react-16": "^1.0.6",

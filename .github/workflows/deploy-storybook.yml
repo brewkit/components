@@ -23,9 +23,8 @@ jobs:
     - name: npm install
       run: |
         npm ci
-        npm i @storybook/storybook-deployer
       env:
         CI: true
     - name: Deploy to Github Pages
       run: |
-        storybook-to-ghpages --ci --host-token-env-variable=GITHUB_TOKEN
+        npm run deploy-storybook -- --ci --host-token-env-variable=GITHUB_TOKEN
