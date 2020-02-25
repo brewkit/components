@@ -9,49 +9,47 @@ $snackColors: primary, secondary, success, warning, danger, info, dark, light;
     display: flex;
     flex-direction: column;
 
-    &--topLeft {
+    &--top-left {
         top: 0;
         left: 0;
         flex-direction: column-reverse;
     }
 
-    &--topCenter {
+    &--top-center {
         top: 0;
         left: 50%;
-        transform: translateX(-50%);
         flex-direction: column-reverse;
     }
 
-    &--topRight {
+    &--top-right {
         top: 0;
         right: 0;
         flex-direction: column-reverse;
     }
 
-    &--centerLeft {
+    &--center-left {
         top: 50%;
         left: 0;
         transform: translateY(-50%);
     }
 
-    &--centerRight {
+    &--center-right {
         top: 50%;
         right: 0;
         transform: translateY(-50%);
     }
 
-    &--bottomLeft {
+    &--bottom-left {
         bottom: 0;
         left: 0;
     }
 
-    &--bottomCenter {
+    &--bottom-center {
         bottom: 0;
         left: 50%;
-        transform: translateX(-50%);
     }
 
-    &--bottomRight {
+    &--bottom-right {
         bottom: 0;
         right: 0;
     }

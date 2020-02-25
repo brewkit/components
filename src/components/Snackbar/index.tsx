@@ -52,11 +52,11 @@ const SnackbarProvider = ({
 
     }, { queue: [], snackbars: [] });
 
-    console.log(state);
+
     const positions = state.snackbars.reduce((acc: any, current: any): any => {
 
 
-        if (!current.position) current.position = 'topRight';
+        if (!current.position) current.position = 'top-right';
 
         const category = current.position;
         const existingOfCategory = acc[category] ?? [];

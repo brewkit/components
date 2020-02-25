@@ -13,14 +13,12 @@ const Snackaroo = (): ReactElement => {
     const { enqueue, remove } = useSnackbar();
 
     const positions = [
-        'topRight',
-        'topLeft',
-        'topCenter',
-        'bottomRight',
-        'bottomLeft',
-        'bottomCenter',
-        'centerRight',
-        'centerLeft',
+        'top-right',
+        'top-center',
+        'top-left',
+        'bottom-right',
+        'bottom-center',
+        'bottom-left',
     ];
 
     const colors = [
@@ -40,6 +38,7 @@ const Snackaroo = (): ReactElement => {
         color: colors[Math.floor(Math.random() * 8)],
         message: rando,
         open: true,
+        duration: 5000,
         isCloseable: rando > 0.5,
         position: positions[Math.floor(Math.random() * 8)],
     });
@@ -67,7 +66,7 @@ const Snackaroo = (): ReactElement => {
         open: true,
         isCloseable: true,
         key: 'testKey',
-        position: 'bottomRight',
+        position: 'bottom-right',
     });
 
     const removeSnackbar = (): void => remove('testKey');
@@ -82,7 +81,7 @@ const Snackaroo = (): ReactElement => {
 
 
 export const General = (): ReactElement => (
-    <SnackbarProvider maxSnackbars={3}>
+    <SnackbarProvider maxSnackbars={10}>
         <Snackaroo />
     </SnackbarProvider>
 );
