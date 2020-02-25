@@ -1,7 +1,7 @@
 <div style={{ margin: '0 auto', maxWidth: '600px', color: 'white', textAlign: 'center' }}>
     <img
         style={{ width: '75%', margin: '0 auto 2em auto' }}
-        src={logo}
+        src={https://github.com/brewkit/components/blob/master/.build/storybook/assets/images/brewkit-logo.png}
     />
     <br />
     <a href="https://discord.gg/G9MrfN">
