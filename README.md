@@ -21,7 +21,7 @@
 </p>
 
 
-## Description
-
+<p align="center">
 Brewkit is a collection of React components and tools with a focus on UX and DX. It can be thought of as a superset of
 Material-UI – MUI at the foundation, but with additional components, abstractions, and tooling layered on top.
+</p>
