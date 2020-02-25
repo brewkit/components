@@ -11,3 +11,13 @@ export interface Snackbar {
     open: boolean,
     otherProps: any,
 }
+
+
+export interface PositionsObject {
+    'top-right'?: Snackbar[],
+    'top-left'?: Snackbar[],
+    'top-center'?: Snackbar[],
+    'bottom-right'?: Snackbar[],
+    'bottom-center'?: Snackbar[],
+    'bottom-left'?: Snackbar[],
+}

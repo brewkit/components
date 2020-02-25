@@ -3,6 +3,7 @@ import { Flipper } from 'react-flip-toolkit';
 import SnackbarContent from './components/SnackbarContent';
 import SnackbarContext from './context';
 import useSnackbar from './hooks/useSnackbar';
+import { PositionsObject, Snackbar } from './types';
 
 
 const SnackbarProvider = ({
@@ -53,7 +54,7 @@ const SnackbarProvider = ({
     }, { queue: [], snackbars: [] });
 
 
-    const positions = state.snackbars.reduce((acc: any, current: any): any => {
+    const positions = state.snackbars.reduce((acc: PositionsObject, current: Snackbar): PositionsObject => {
 
 
         if (!current.position) current.position = 'top-right';
@@ -73,6 +74,7 @@ const SnackbarProvider = ({
 
     const createContainers = (): React.ReactNode => (
         Object.entries(positions).map(([position, snacks]: any): React.ReactElement => (
+
             // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             <div className={`brew-Snackbar brew-Snackbar--${position}`} key={position}>
                 {snacks.map((snack: any) => (
@@ -82,7 +84,7 @@ const SnackbarProvider = ({
     );
 
 
-    const enqueue = (snack: any): void => {
+    const enqueue = (snack: Snackbar): void => {
         dispatch({ snack, type: 'add' });
     };
 
