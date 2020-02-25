@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="460" height="300" src=".build/storybook/assets/images/brewkit-logo.png">
+  <img width="460" src=".build/storybook/assets/images/brewkit-logo.png">
 </p>
 
 ---
