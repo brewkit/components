@@ -1,0 +1,82 @@
+@use '../utilities';
+
+
+$snackColors: primary, secondary, success, warning, danger, info, dark, light;
+
+
+.brew-Snackbar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+
+    &--topLeft {
+        top: 0;
+        left: 0;
+        flex-direction: column-reverse;
+    }
+
+    &--topCenter {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: column-reverse;
+    }
+
+    &--topRight {
+        top: 0;
+        right: 0;
+        flex-direction: column-reverse;
+    }
+
+    &--centerLeft {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    &--centerRight {
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+
+    &--bottomLeft {
+        bottom: 0;
+        left: 0;
+    }
+
+    &--bottomCenter {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &--bottomRight {
+        bottom: 0;
+        right: 0;
+    }
+
+    .brew-SnackbarContent {
+        position: relative;
+        padding: 1rem;
+        margin: .5rem;
+        border-radius: 1rem;
+
+        &__action {
+            cursor: pointer;
+        }
+
+        @each $color in $snackColors {
+            &--#{$color} {
+
+                @if $color == 'primary' or $color == 'secondary' {
+                    background-color: utilities.color(brand, $color);
+                    color: utilities.set-text-color(utilities.color(brand, $color));
+                } @else {
+                    background-color: utilities.color(accent, $color);
+                    color: utilities.set-text-color(utilities.color(accent, $color));
+                }
+            }
+        }
+    }
+}
