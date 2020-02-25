@@ -6,6 +6,7 @@ import useSnackbar from './hooks/useSnackbar';
 import { Action, PositionsObject, Snackbar, State } from './types';
 
 
+// eslint-disable-next-line max-lines-per-function
 const SnackbarProvider = ({
     children,
     maxSnackbars,

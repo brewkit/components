@@ -4,7 +4,7 @@ import SnackbarProvider, { useSnackbar } from './index';
 
 
 export default {
-    title: 'Components|Display/Snackbar',
+    title: 'Development|Display/Snackbar',
 };
 
 // eslint-disable-next-line max-statements
