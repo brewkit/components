@@ -9,6 +9,10 @@ const SnackbarContent = ({
     snack,
 }: Props): React.ReactElement => {
 
+    // default auto hide
+
+    // if no duration, show a node to close
+
 
     const [open, setOpen] = React.useState(snack.open);
     const { remove } = useSnackbar();
