@@ -21,3 +21,16 @@ export interface PositionsObject {
     'bottom-center'?: Snackbar[],
     'bottom-left'?: Snackbar[],
 }
+
+
+export interface State {
+    snackbars: Snackbar[],
+    queue: Snackbar[],
+}
+
+
+export interface Action {
+    type: 'add' | 'remove' | 'processQueue',
+    key?: React.Key,
+    snack?: Snackbar,
+}

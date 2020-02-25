@@ -3,7 +3,7 @@ import { Flipper } from 'react-flip-toolkit';
 import SnackbarContent from './components/SnackbarContent';
 import SnackbarContext from './context';
 import useSnackbar from './hooks/useSnackbar';
-import { PositionsObject, Snackbar } from './types';
+import { Action, PositionsObject, Snackbar, State } from './types';
 
 
 const SnackbarProvider = ({
@@ -12,7 +12,7 @@ const SnackbarProvider = ({
 }: any): React.ReactElement => {
 
 
-    const [state, dispatch] = React.useReducer((currentState: any, action: any): any => {
+    const [state, dispatch] = React.useReducer((currentState: State, action: Action): State => {
 
 
         const { key, snack, type } = action;
@@ -27,7 +27,7 @@ const SnackbarProvider = ({
             return {
                 ...currentState,
                 queue: [...currentState.queue, snack],
-            };
+            } as State;
 
         case 'remove':
 
@@ -122,4 +122,3 @@ const SnackbarProvider = ({
 
 export default SnackbarProvider;
 export { useSnackbar };
-
