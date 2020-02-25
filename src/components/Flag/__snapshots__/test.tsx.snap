@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  <div
+    className="MuiChip-root brew-Flag brew-Flag--color-info"
+    onKeyUp={[Function]}
+  >
+    <span
+      className="MuiChip-label brew-Flag__label"
+    >
+      <span
+        className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-caption brew-Typography--align-center brew-Flag__content MuiTypography-caption MuiTypography-alignCenter"
+      >
+        Default
+      </span>
+    </span>
+  </div>,
+  <div
+    className="MuiChip-root brew-Flag brew-Flag--color-info brew-Flag--isEmpty"
+    onKeyUp={[Function]}
+  >
+    <span
+      className="MuiChip-label brew-Flag__label"
+    >
+      <span
+        className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-caption brew-Typography--align-center brew-Flag__content MuiTypography-caption MuiTypography-alignCenter"
+      />
+    </span>
+  </div>,
+]
+`;
+
+exports[`renders correctly with various props 1`] = `
+Array [
+  <div
+    className="MuiChip-root brew-Flag brew-Flag--color-info"
+    onKeyUp={[Function]}
+  >
+    <span
+      className="MuiChip-label brew-Flag__label"
+    >
+      <span
+        className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-caption brew-Typography--align-center brew-Flag__content MuiTypography-caption MuiTypography-alignCenter"
+      >
+        Default
+      </span>
+    </span>
+  </div>,
+  <div
+    className="MuiChip-root brew-Flag brew-Flag--color-success"
+    onKeyUp={[Function]}
+  >
+    <span
+      className="MuiChip-label brew-Flag__label"
+    >
+      <span
+        className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-caption brew-Typography--align-center brew-Flag__content MuiTypography-caption MuiTypography-alignCenter"
+      >
+        Default
+      </span>
+    </span>
+  </div>,
+  <div
+    className="MuiChip-root brew-Flag brew-Flag--color-warning"
+    onKeyUp={[Function]}
+  >
+    <span
+      className="MuiChip-label brew-Flag__label"
+    >
+      <span
+        className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-caption brew-Typography--align-center brew-Flag__content MuiTypography-caption MuiTypography-alignCenter"
+      >
+        Default
+      </span>
+    </span>
+  </div>,
+  <div
+    className="MuiChip-root brew-Flag brew-Flag--color-danger"
+    onKeyUp={[Function]}
+  >
+    <span
+      className="MuiChip-label brew-Flag__label"
+    >
+      <span
+        className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-caption brew-Typography--align-center brew-Flag__content MuiTypography-caption MuiTypography-alignCenter"
+      >
+        Default
+      </span>
+    </span>
+  </div>,
+  <div
+    className="MuiChip-root brew-Flag brew-Flag--color-light"
+    onKeyUp={[Function]}
+  >
+    <span
+      className="MuiChip-label brew-Flag__label"
+    >
+      <span
+        className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-caption brew-Typography--align-center brew-Flag__content MuiTypography-caption MuiTypography-alignCenter"
+      >
+        Default
+      </span>
+    </span>
+  </div>,
+  <div
+    className="MuiChip-root brew-Flag brew-Flag--color-dark"
+    onKeyUp={[Function]}
+  >
+    <span
+      className="MuiChip-label brew-Flag__label"
+    >
+      <span
+        className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-caption brew-Typography--align-center brew-Flag__content MuiTypography-caption MuiTypography-alignCenter"
+      >
+        Default
+      </span>
+    </span>
+  </div>,
+]
+`;

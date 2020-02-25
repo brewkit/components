@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<p
+  className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-body1 brew-Typography--align-inherit MuiTypography-body1"
+>
+  Foo
+</p>
+`;
+
+exports[`renders correctly with various props 1`] = `
+Array [
+  <p
+    className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-body1 brew-Typography--align-left brew-Typography--color-primary brew-Typography--shouldTruncate foo MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignLeft"
+  >
+    foo
+  </p>,
+  <p
+    className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-body1 brew-Typography--align-right brew-Typography--color-secondary MuiTypography-body1 MuiTypography-alignRight"
+  >
+    foo
+  </p>,
+  <h4
+    className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-h4 brew-Typography--align-center brew-Typography--color-tertiary MuiTypography-h4 MuiTypography-alignCenter"
+  >
+    foo
+  </h4>,
+]
+`;
