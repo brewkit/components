@@ -23,7 +23,9 @@
         "storybook": "start-storybook -p 9001 -c .build/storybook",
         "build": "tsc --project ./.build/tsconfig.json --declaration",
         "build-storybook": "build-storybook -c .build/storybook -o .out",
-        "deploy-storybook": "storybook-to-ghpages"
+        "deploy-storybook": "storybook-to-ghpages",
+        "prepublishOnly": "jest && npm run build",
+        "postpublish": "npm run deploy-storybook"
     },
     "jest": {
         "transform": {
@@ -85,6 +87,7 @@
         "fork-ts-checker-webpack-plugin": "^4.0.4",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^24.9.0",
+        "module-alias": "^2.2.2",
         "react": "^16.12.0",
         "react-docgen-typescript-loader": "^3.6.0",
         "react-dom": "^16.12.0",
@@ -119,5 +122,8 @@
             "master",
             "next"
         ]
+    },
+    "_moduleAliases": {
+        "@components": "dist/components"
     }
 }
