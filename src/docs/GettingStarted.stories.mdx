@@ -1,0 +1,107 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+
+<Meta title="Documentation|Getting Started" />
+
+
+# Getting Started
+
+Brewkit components are built on top of Material-UI with a focus on improving developer experience without disrupting
+the things people may like about the underlying framework. By default, Brewkit provides no additional theming beyond
+what is provided by Material-UI. Instead, we use themes, comprised of basic BEM and static CSS files to provide specific
+styles to the components. This allows us to simplify the process of implementing themes and makes it easier for you to
+create your own in whatever way you like.
+
+<br />
+
+## Installing Brewkit
+
+To install and save in your package.json dependencies, in your terminal, run:
+
+```js
+// npm
+npm i @brewkit/components
+
+// with yarn
+yarn add @brewkit/components
+```
+
+<br />
+
+## Adding a Theme
+
+As mentioned above, themes are not directly a part of Brewkit. Instead, they are separately maintained and distributed.
+You can find some existing themes [here](https://github.com/brewkit/components/blob/master/theme/cerveza/dist/index.css).
+
+Most themes can be added to your project by simply pulling the CSS file into your `index.html`.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="my-brewkit-theme.css">
+</head>
+<body>
+
+    <div id="root"></div>
+
+</body>
+</html>
+```
+
+<br />
+
+## Brewkit Components
+
+Brewkit components can be imported and accessed from `@brewkit/components`.
+
+```tsx
+import React from 'react';
+import { Button } from '@brewkit/components';
+
+
+export const MyScene = (): React.ReactElement => {
+
+    // ...component stuff
+
+    return (
+        <div>
+            <Button />
+        </div>
+    );
+
+});
+
+
+export default MyScene;
+
+```
+
+<br />
+
+## Material-UI Components
+
+The entirety of `@material-ui/core` has been made available via the `Mui` component within Brewkit, however we recommend
+you only use these when Brewkit provides no other alternatives.
+
+```tsx
+import React from 'react';
+import { Mui } from '@brewkit/components';
+
+
+export const MyScene = (): React.ReactElement => {
+
+    // ...component stuff
+
+    return (
+        <div>
+            <Mui.Button />
+        </div>
+    );
+
+});
+
+
+export default MyScene;
+
+```
