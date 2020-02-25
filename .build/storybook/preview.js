@@ -12,7 +12,7 @@ configure(
     [
         // Ensure we load Intro First
         require.context('../../src/docs', true, /Intro.stories.mdx/),
-        require.context('../../src/docs', true, /Usage.stories.mdx/),
+        require.context('../../src/docs', true, /GettingStarted.stories.mdx/),
         require.context('../../src', true, /stories\.(ts|tsx|mdx)$/),
     ],
     module
