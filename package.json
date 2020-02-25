@@ -21,7 +21,7 @@
         "commit": "npx git-cz",
         "start": "npm run sass && npm run storybook",
         "storybook": "start-storybook -p 9001 -c .build/storybook",
-        "build": "tsc --project ./.build/tsconfig.json --declaration",
+        "build": "ttsc --project ./.build/tsconfig.json --declaration",
         "build-storybook": "build-storybook -c .build/storybook -o .out",
         "deploy-storybook": "storybook-to-ghpages",
         "prepublishOnly": "jest && npm run build",
@@ -87,7 +87,6 @@
         "fork-ts-checker-webpack-plugin": "^4.0.4",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^24.9.0",
-        "module-alias": "^2.2.2",
         "react": "^16.12.0",
         "react-docgen-typescript-loader": "^3.6.0",
         "react-dom": "^16.12.0",
@@ -99,7 +98,9 @@
         "sass-loader": "^8.0.2",
         "ts-jest": "^24.3.0",
         "ts-loader": "^6.2.1",
-        "typescript": "^3.8.2"
+        "ttypescript": "^1.5.10",
+        "typescript": "^3.8.2",
+        "typescript-transform-paths": "^1.1.14"
     },
     "peerDependencies": {
         "react": "^16.8.6",
@@ -122,8 +123,5 @@
             "master",
             "next"
         ]
-    },
-    "_moduleAliases": {
-        "@components": "dist/components"
     }
 }

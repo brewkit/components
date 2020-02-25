@@ -5,13 +5,13 @@
             "@components/*": ["components/*"],
             "@utilities/*": ["utilities/*"]
         },
-        "outDir": "dist",
+        "outDir": "./dist",
         "module": "commonjs",
         "lib": ["dom", "esnext"],
         "jsx": "react",
         "esModuleInterop": true,
         "allowJs": true,
-        "plugins": [{ "name": "typescript-plugin-css-modules" }],
+        "plugins": [{ "transform": "typescript-transform-paths" }],
         "removeComments": true,
         "strict": true
     },
