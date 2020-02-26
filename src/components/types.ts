@@ -44,7 +44,7 @@ export interface StyledComponent {
 }
 
 
-export interface StyledParentComponent extends StyledComponent{
+export interface StyledParentComponent extends StyledComponent {
 
     /**
      * The content of the component
