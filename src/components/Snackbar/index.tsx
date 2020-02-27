@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-import React, { SyntheticEvent } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import { Snackbar as MuiSnackbar, SnackbarContent as MuiSnackbarContent } from '@material-ui/core';
 
@@ -7,12 +6,14 @@ import { Snackbar as MuiSnackbar, SnackbarContent as MuiSnackbarContent } from '
 const Snackbar = React.forwardRef(({
     action,
     className,
+    children,
     color,
+    duration = 0,
     message,
-    onClose = () => console.log('here'),
+    onClose,
     open,
-    position,
-}: any, ref: React.Ref<any>): React.ReactElement | null => {
+    position = 'top-right',
+}: any, ref: React.Ref<any>): React.ReactElement => {
 
 
     const getAnchor = (): any => {
@@ -35,17 +36,32 @@ const Snackbar = React.forwardRef(({
     );
 
 
+    const contentClasses = {
+        message: 'brew-Snackbar__message',
+        action: 'brew-Snackbar__action',
+    };
+
+
     return (
         <MuiSnackbar
             action={action}
             anchorOrigin={getAnchor()}
-            autoHideDuration={null}
-            className={snackbarClasses}
+            autoHideDuration={duration * 1000 || null}
+            className={children ? snackbarClasses : ''}
             message={message}
             onClose={onClose}
             open={open}
             ref={ref}
-        />
+        >
+            {children || (
+                <MuiSnackbarContent
+                    action={action}
+                    classes={contentClasses}
+                    className={snackbarClasses}
+                    message={message}
+                />
+            )}
+        </MuiSnackbar>
     );
 });
 
