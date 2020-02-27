@@ -90,7 +90,6 @@
         "react": "^16.12.0",
         "react-docgen-typescript-loader": "^3.6.0",
         "react-dom": "^16.12.0",
-        "react-flip-toolkit": "^7.0.8",
         "react-hook-form": "^4.9.8",
         "react-hot-loader": "^4.12.19",
         "react-router-dom": "^5.1.2",
