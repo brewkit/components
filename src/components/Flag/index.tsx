@@ -47,7 +47,4 @@ export const Flag = React.forwardRef(({
 });
 
 
-Flag.displayName = 'Flag';
-
-
 export default Flag;

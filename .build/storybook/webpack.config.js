@@ -1,6 +1,6 @@
 const path = require('path');
 const projectRoot = process.cwd();
-const tsConfig = require('../../tsconfig');
+const tsConfig = require('../../tsconfig.json');
 
 
 module.exports = async ({ config }) => {
@@ -18,9 +18,6 @@ module.exports = async ({ config }) => {
                 },
                 {
                     loader: 'react-docgen-typescript-loader',
-                    options: {
-                        compilerOptions: tsConfig.compilerOptions,
-                    }
                 },
             ],
         },
