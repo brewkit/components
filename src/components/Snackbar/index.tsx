@@ -13,6 +13,7 @@ const Snackbar = React.forwardRef(({
     onClose,
     open,
     position = 'top-right',
+    ...otherProps
 }: any, ref: React.Ref<any>): React.ReactElement => {
 
 
@@ -52,6 +53,7 @@ const Snackbar = React.forwardRef(({
             onClose={onClose}
             open={open}
             ref={ref}
+            {...otherProps}
         >
             {children || (
                 <MuiSnackbarContent
@@ -63,6 +65,8 @@ const Snackbar = React.forwardRef(({
             )}
         </MuiSnackbar>
     );
+
+
 });
 
 

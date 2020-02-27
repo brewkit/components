@@ -65,6 +65,8 @@ export const General = (): React.ReactElement => {
 
 
 export const WithChildren = (): React.ReactElement => {
+
+
     const [open, setOpen] = React.useState(false);
 
 
@@ -120,5 +122,6 @@ export const WithChildren = (): React.ReactElement => {
             </Snackbar>
         </div>
     );
-};
 
+
+};
