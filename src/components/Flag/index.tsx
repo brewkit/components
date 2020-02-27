@@ -13,7 +13,7 @@ const classes = {
 /**
  * The `<Flag />` can be used to indicate a specific note of data or status on data associations for a specific entity.
  */
-export const Flag = React.forwardRef(({
+export const Flag = React.forwardRef<HTMLElement, Props>(({
     color = 'info',
     children,
     className,
@@ -45,6 +45,9 @@ export const Flag = React.forwardRef(({
 
 
 });
+
+
+Flag.displayName = 'Flag';
 
 
 export default Flag;
