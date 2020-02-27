@@ -1,66 +1,61 @@
-import React from 'react';
-import { Snackbar as MuiSnackbar } from '@material-ui/core';
-import { Flipped } from 'react-flip-toolkit';
-import useSnackbar from '../../hooks/useSnackbar';
-import { Props } from './types';
+/* eslint-disable no-undef */
+import React, { SyntheticEvent } from 'react';
+import clsx from 'clsx';
+import { Snackbar as MuiSnackbar, SnackbarContent as MuiSnackbarContent } from '@material-ui/core';
 
 
-const SnackbarContent = ({
-    snack,
-}: Props): React.ReactElement => {
+const SnackbarContent = React.forwardRef(({
+    className,
+    snacks,
+}: any, ref: React.Ref<any>): React.ReactElement => {
+    const snack = {};
+    const [open, setOpen] = React.useState(false);
 
-    // default auto hide
+    console.log(snacks);
 
-    // if no duration, show a node to close
-
-
-    const [open, setOpen] = React.useState(snack.open);
-    const { remove } = useSnackbar();
-
-
-    const handleClose = (event: Event, reason: string): void => {
+    const handleClose = (event: SyntheticEvent, reason: string): void => {
         if (event) event.stopPropagation();
-
         if (reason === 'clickaway') return;
 
         setOpen(false);
-        remove(snack.key);
     };
 
+    /*
+     *const getAnchor = (): any => {
+     *    // const anchorArray = snack.position.split('-');
+     *
+     *    // const [vertical, horizontal] = anchorArray;
+     *
+     *    return {
+     *        vertical,
+     *        horizontal,
+     *    };
+     *};
+     */
 
-    const getAnchor = (): any => {
-        const anchorArray = snack.position.split('-');
-        const [vertical, horizontal] = anchorArray;
-
-        return {
-            vertical,
-            horizontal,
-        };
-    };
-
-
-    const classes = {
-        root: `brew-SnackbarContent brew-SnackbarContent--${snack.color}`,
-    };
+    const snackbarClasses = clsx(
+        'brew-Snackbar',
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        // `brew-Snackbar--${snack.color}`,
+        className,
+    );
 
 
     return (
-        <Flipped flipId={snack.key}>
-            <MuiSnackbar
-                anchorOrigin={getAnchor()}
-                autoHideDuration={snack.duration ?? null}
-                classes={classes}
-                onClose={handleClose}
-                open={open}
-                {...snack.otherProps}
-            >
-                <div>{snack.message}
-                </div>
-            </MuiSnackbar>
-        </Flipped>
+        <MuiSnackbar
+            autoHideDuration={null}
+            className={snackbarClasses}
+            onClose={handleClose}
+            open={open}
+            {...snack}
+        >
+            <MuiSnackbarContent />
+        </MuiSnackbar>
     );
+});
 
-};
+
+SnackbarContent.displayName = 'Snackbar';
 
 
 export default SnackbarContent;

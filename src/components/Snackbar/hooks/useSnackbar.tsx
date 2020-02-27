@@ -8,9 +8,8 @@ function useSnackbar(): any {
     const snackbar = React.useContext(SnackbarContext);
 
 
-    if (snackbar.enqueue && snackbar.remove) return {
-        enqueue: snackbar.enqueue,
-        remove: snackbar.remove,
+    if (snackbar.add) return {
+        add: snackbar.add,
     };
 
 

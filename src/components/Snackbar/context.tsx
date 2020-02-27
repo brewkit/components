@@ -2,7 +2,7 @@ import React from 'react';
 
 
 interface ContextType {
-    enqueue: (enqueue: any) => void,
+    add: (snack: any) => void,
     remove: (key: React.Key) => void,
 }
 
