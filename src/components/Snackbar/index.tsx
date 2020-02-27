@@ -1,37 +1,56 @@
-import React from 'react';
-import SnackbarContext from './context';
-import useSnackbar from './hooks/useSnackbar';
-import SnackbarContent from './components/SnackbarContent';
-import { } from './types';
+/* eslint-disable no-undef */
+import React, { SyntheticEvent } from 'react';
+import clsx from 'clsx';
+import { Snackbar as MuiSnackbar, SnackbarContent as MuiSnackbarContent } from '@material-ui/core';
 
 
-const SnackbarProvider = ({
-    children,
-}: any): React.ReactElement => {
+const Snackbar = React.forwardRef(({
+    action,
+    className,
+    color,
+    message,
+    onClose = () => console.log('here'),
+    open,
+    position,
+}: any, ref: React.Ref<any>): React.ReactElement | null => {
 
 
-    const [snacks, setSnacks] = React.useState<any[]>([]);
+    const getAnchor = (): any => {
 
+        const anchorArray = position.split('-');
 
-    const add = (snack: any): void => {
-        setSnacks((prevSnacks: any) => [...prevSnacks, snack]);
+        const [vertical, horizontal] = anchorArray;
+
+        return {
+            vertical,
+            horizontal,
+        };
     };
 
 
-    const context = {
-        add,
-    };
-
-    return (
-        <SnackbarContext.Provider value={context}>
-            {children}
-            <SnackbarContent snacks={snacks} />
-        </SnackbarContext.Provider>
+    const snackbarClasses = clsx(
+        'brew-Snackbar',
+        `brew-Snackbar--${color}`,
+        className,
     );
 
 
-};
+    return (
+        <MuiSnackbar
+            action={action}
+            anchorOrigin={getAnchor()}
+            autoHideDuration={null}
+            className={snackbarClasses}
+            message={message}
+            onClose={onClose}
+            open={open}
+            ref={ref}
+        />
+    );
+});
 
 
-export default SnackbarProvider;
-export { useSnackbar };
+Snackbar.displayName = 'Snackbar';
+
+
+export default Snackbar;

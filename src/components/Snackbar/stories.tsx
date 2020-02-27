@@ -1,28 +1,36 @@
 import React from 'react';
-import { button } from '@storybook/addon-knobs';
-import SnackbarProvider, { useSnackbar } from './index';
+import { button, select } from '@storybook/addon-knobs';
+import Snackbar from './index';
 
 
 export default {
     title: 'Development|Snackbar',
 };
 
-const Test = (): React.ReactElement => {
-    const { add } = useSnackbar();
+export const General = (): React.ReactElement => {
 
-    button('add', () => add({ anchorOrigin: 'top-right' }));
-    button('add second', () => add({ anchorOrigin: 'top-right' }));
-    button('add third', () => add({ anchorOrigin: 'bottom-center' }));
+
+    const [open, setOpen] = React.useState(false);
+
+
+    const position = select(
+        'position',
+        ['top-right', 'top-center', 'top-left', 'bottom-right', 'bottom-center', 'bottom-left'],
+        'top-right',
+    );
+
+    button('toggle', () => setOpen((prev: any) => !prev));
 
     return (
-        <div>hello</div>
+        <div>
+            <h1>Lorem Ipsum</h1>
+            <Snackbar
+                action="done"
+                color="primary"
+                message="not done"
+                open={open}
+                position={position}
+            />
+        </div>
     );
 };
-
-
-export const General = (): React.ReactElement => (
-    <SnackbarProvider>
-        <Test />
-    </SnackbarProvider>
-);
-
