@@ -22,7 +22,7 @@
         "commit": "npx git-cz",
         "start": "npm run sass && npm run storybook",
         "storybook": "start-storybook -p 9001 -c .build/storybook",
-        "build": "ttsc --project ./.build/tsconfig.json --declaration && npm run sass-build",
+        "build": "ttsc --project ./.build/tsconfig.json && npm run sass-build",
         "build-storybook": "build-storybook -c .build/storybook -o .out",
         "deploy-storybook": "storybook-to-ghpages",
         "prepublishOnly": "jest && npm run build",
@@ -76,6 +76,7 @@
         "@types/react-test-renderer": "^16.9.2",
         "@typescript-eslint/eslint-plugin": "^2.21.0",
         "@typescript-eslint/parser": "^2.21.0",
+        "@zerollup/ts-transform-paths": "^1.7.11",
         "awesome-typescript-loader": "^5.2.1",
         "babel-loader": "^8.0.5",
         "cache-loader": "^4.1.0",
@@ -99,8 +100,7 @@
         "ts-jest": "^24.3.0",
         "ts-loader": "^6.2.1",
         "ttypescript": "^1.5.10",
-        "typescript": "^3.8.2",
-        "typescript-transform-paths": "^1.1.14"
+        "typescript": "^3.8.2"
     },
     "peerDependencies": {
         "react": "^16.8.6",
