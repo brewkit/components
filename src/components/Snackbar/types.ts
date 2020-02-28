@@ -12,9 +12,9 @@ export interface Props {
 
 
     /**
-     * Used to override default styling, any valid JSX
+     * Tells component to use custom b
      */
-    children?: React.ReactNode,
+    useCustom?: boolean,
 
 
     /**
@@ -26,7 +26,7 @@ export interface Props {
     /**
      * Color of snackbar
      */
-    color: Colors,
+    color?: Colors,
 
 
     /**
@@ -34,6 +34,12 @@ export interface Props {
      * 1 = 1 second, 5 = 5 seconds
      */
     duration?: number,
+
+
+    /**
+     * Icon to display
+     */
+    iconName?: string,
 
 
     /**
@@ -45,14 +51,20 @@ export interface Props {
     /**
      * Any valid JSX, main content of snackbar
      */
-    message?: React.ReactNode,
+    message: React.ReactNode,
+
+
+    /**
+     * Sub-text to elaborate on the main message, any valid JSX
+     */
+    messageInfo?: React.ReactNode,
 
 
     /**
      * Function to fire when snackbar is closed
      * Change isOpen prop to false and any other side effects
      */
-    onClose?: () => any,
+    onClose: (event: React.SyntheticEvent, reason: string) => any,
 
 
     /**

@@ -1,17 +1,37 @@
 @use '../utilities';
 
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 $snackColors: primary, secondary, success, warning, danger, info, dark, light;
 
 
 .brew-Snackbar {
+    border-radius: utilities.$border-radius;
+    box-sizing: border-box;
+    box-shadow:
+            0 2px 4px -1px rgba(0, 0, 0, 0.2),
+            0 4px 5px 0px rgba(0, 0, 0, 0.14),
+            0 1px 10px 0px rgba(0, 0, 0, 0.12);
+    font-family: Roboto, sans-serif;
+    width: utilities.size(normal) * 21;
+    height: utilities.size(normal) * 3;
+    padding: utilities.size(normal);
+
+    &__content {
+
+    }
+
+    &__icon {
+        font-size: utilities.size(x-large);
+    }
 
     &__message {
-        // stuff
+        padding: 0;
+        font-size: utilities.size(small);
     }
 
     &__action {
         cursor: pointer;
+        font-size: utilities.size(small);
     }
 
     @each $color in $snackColors {

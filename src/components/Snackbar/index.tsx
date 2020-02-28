@@ -1,22 +1,24 @@
 import React from 'react';
 import clsx from 'clsx';
 import { Snackbar as MuiSnackbar, SnackbarContent as MuiSnackbarContent } from '@material-ui/core';
+import Icon from '@components/Icon';
 import { Props } from './types';
 
 
 /**
- * Notification that pops up to alert the end user
- * <Snackbar {...props} />
+ * <Snackbar {...props} /> Notification that pops up to alert the end user
  * Visibility controlled by isOpen prop
  */
 const Snackbar = React.forwardRef(({
-    action,
+    action = '',
     className,
-    children,
-    color,
+    useCustom = false,
+    color = 'primary',
     duration = 0,
     message,
+    messageInfo,
     onClose,
+    iconName,
     isOpen,
     position = 'top-right',
     ...otherProps
@@ -52,24 +54,32 @@ const Snackbar = React.forwardRef(({
 
     return (
         <MuiSnackbar
-            action={action}
             anchorOrigin={getAnchor()}
             autoHideDuration={duration * 1000 || null}
-            className={children ? snackbarClasses : ''}
-            message={message}
+            className={useCustom ? snackbarClasses : ''}
             onClose={onClose}
             open={isOpen}
             ref={ref}
             {...otherProps}
         >
-            {children || (
-                <MuiSnackbarContent
-                    action={action}
-                    classes={contentClasses}
-                    className={snackbarClasses}
-                    message={message}
-                />
-            )}
+            {useCustom
+                ? (
+                    <div className="brew-Snackbar__content">
+                        {iconName && <Icon className="brew-Snackbar__icon">{iconName}</Icon>}
+                        <div className="brew-Snackbar__message">{message}</div>
+                        <div className="brew-Snackbar__messageInfo">{messageInfo}</div>
+                        {action && <span className="brew-Snackbar__action">{action}</span>}
+                    </div>
+                )
+                : (
+                    <MuiSnackbarContent
+                        action={action}
+                        classes={contentClasses}
+                        className={snackbarClasses}
+                        message={message}
+                    />
+                )
+            }
         </MuiSnackbar>
     );
 
