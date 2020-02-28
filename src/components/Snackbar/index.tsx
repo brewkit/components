@@ -64,12 +64,12 @@ const Snackbar = React.forwardRef(({
         >
             {useCustom
                 ? (
-                    <div className="brew-Snackbar__content">
+                    <React.Fragment>
                         {iconName && <Icon className="brew-Snackbar__icon">{iconName}</Icon>}
                         <div className="brew-Snackbar__message">{message}</div>
                         <div className="brew-Snackbar__messageInfo">{messageInfo}</div>
                         {action && <span className="brew-Snackbar__action">{action}</span>}
-                    </div>
+                    </React.Fragment>
                 )
                 : (
                     <MuiSnackbarContent

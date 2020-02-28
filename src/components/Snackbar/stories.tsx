@@ -42,6 +42,7 @@ export const Sandbox = (): React.ReactElement => {
 
     const message = text('message', 'Message Default');
     const duration = number('duration', 0);
+    const iconName = text('iconName', '');
     const useCustom = boolean('useCustom', false);
 
     button('toggle', () => setOpen((prev: any) => !prev));
@@ -52,6 +53,7 @@ export const Sandbox = (): React.ReactElement => {
             action={<div onClick={dismissSnackbar}>Close</div>}
             color={colors}
             duration={duration}
+            iconName={iconName}
             isOpen={open}
             message={message}
             onClose={onClose}
