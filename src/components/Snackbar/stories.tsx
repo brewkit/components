@@ -52,9 +52,9 @@ export const General = (): React.ReactElement => {
                 action={action}
                 color={colors}
                 duration={duration}
+                isOpen={open}
                 message={message}
                 onClose={onClose}
-                open={open}
                 position={position}
             />
         </div>
@@ -109,9 +109,9 @@ export const WithChildren = (): React.ReactElement => {
                 action={action}
                 color={colors}
                 duration={duration}
+                isOpen={open}
                 message={message}
                 onClose={onClose}
-                open={open}
                 position={position}
             >
                 <div>

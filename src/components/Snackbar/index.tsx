@@ -1,8 +1,14 @@
 import React from 'react';
 import clsx from 'clsx';
 import { Snackbar as MuiSnackbar, SnackbarContent as MuiSnackbarContent } from '@material-ui/core';
+import { Props } from './types';
 
 
+/**
+ * Notification that pops up to alert the end user
+ * <Snackbar {...props} />
+ * Visibility controlled by isOpen prop
+ */
 const Snackbar = React.forwardRef(({
     action,
     className,
@@ -11,12 +17,13 @@ const Snackbar = React.forwardRef(({
     duration = 0,
     message,
     onClose,
-    open,
+    isOpen,
     position = 'top-right',
     ...otherProps
-}: any, ref: React.Ref<any>): React.ReactElement => {
+}: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
+    /* Converts a string position 'top-right' to { vertical: 'top', horizontal: 'right' } */
     const getAnchor = (): any => {
 
         const anchorArray = position.split('-');
@@ -51,7 +58,7 @@ const Snackbar = React.forwardRef(({
             className={children ? snackbarClasses : ''}
             message={message}
             onClose={onClose}
-            open={open}
+            open={isOpen}
             ref={ref}
             {...otherProps}
         >

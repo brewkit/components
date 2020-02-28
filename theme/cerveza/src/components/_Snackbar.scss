@@ -6,6 +6,14 @@ $snackColors: primary, secondary, success, warning, danger, info, dark, light;
 
 .brew-Snackbar {
 
+    &__message {
+        // stuff
+    }
+
+    &__action {
+        cursor: pointer;
+    }
+
     @each $color in $snackColors {
         &--#{$color} {
 

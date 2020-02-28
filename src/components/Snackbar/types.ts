@@ -2,35 +2,63 @@ import React from 'react';
 import { Colors } from '@components/types';
 
 
-export interface Snackbar {
-    position: 'top-right' | 'top-center' | 'top-left' | 'bottom-right' | 'bottom-center' | 'bottom-left',
-    message: React.ReactNode,
-    key?: React.Key,
-    duration?: number,
+export interface Props {
+
+
+    /**
+     * Any valid JSX, normally used to fire a function when clicked and dismiss snackbar
+     */
+    action?: React.ReactNode,
+
+
+    /**
+     * Used to override default styling, any valid JSX
+     */
+    children?: React.ReactNode,
+
+
+    /**
+     * Custom class
+     */
+    className?: string,
+
+
+    /**
+     * Color of snackbar
+     */
     color: Colors,
-    open: boolean,
-    otherProps: any,
-}
 
 
-export interface PositionsObject {
-    'top-right'?: Snackbar[],
-    'top-left'?: Snackbar[],
-    'top-center'?: Snackbar[],
-    'bottom-right'?: Snackbar[],
-    'bottom-center'?: Snackbar[],
-    'bottom-left'?: Snackbar[],
-}
+    /**
+     * Defaults to 0, which will not automatically dismiss
+     * 1 = 1 second, 5 = 5 seconds
+     */
+    duration?: number,
 
 
-export interface State {
-    snackbars: Snackbar[],
-    queue: Snackbar[],
-}
+    /**
+     * Controlled prop to determine if snackbar is showing
+     */
+    isOpen: boolean,
 
 
-export interface Action {
-    type: 'add' | 'remove' | 'processQueue',
-    key?: React.Key,
-    snack?: Snackbar,
+    /**
+     * Any valid JSX, main content of snackbar
+     */
+    message?: React.ReactNode,
+
+
+    /**
+     * Function to fire when snackbar is closed
+     * Change isOpen prop to false and any other side effects
+     */
+    onClose?: () => any,
+
+
+    /**
+     * Anchor position of the snackbar
+     */
+    position?: 'top-right' | 'top-center' | 'top-left' | 'bottom-right' | 'bottom-center' | 'bottom-left',
+
+
 }
