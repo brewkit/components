@@ -46,11 +46,13 @@ $colors: (
 
         &__content {
             position: relative;
+            top: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             height: 1em;
             opacity: 1;
+            transition: all 0.3s;
 
             > *:not(:last-child) {
                 margin-right: utilities.size(x-small);
@@ -71,6 +73,7 @@ $colors: (
             top: calc(50% + 1rem);
             left: 50%;
             transform: translate(-50%, -50%);
+            transition: all 0.3s;
         }
 
     }

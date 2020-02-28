@@ -21,50 +21,42 @@ exports[`renders correctly 1`] = `
   <span
     className="MuiButton-label"
   >
-    <div>
-      <div
-        className="brew-Button__content"
-        data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-        data-flip-id="content"
-        data-portal-key="portal"
+    <div
+      className="brew-Button__content"
+    >
+      <span
+        className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
       >
-        <span
-          className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
-        >
-          Foo
-        </span>
-      </div>
+        Foo
+      </span>
+    </div>
+    <div
+      className="brew-Button__loadingIndicator"
+    >
       <div
-        className="brew-Button__loadingIndicator"
-        data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-        data-flip-id="loader"
-        data-portal-key="portal"
-      >
-        <div
-          className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-          role="progressbar"
-          style={
-            Object {
-              "height": 40,
-              "width": 40,
-            }
+        className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+        role="progressbar"
+        style={
+          Object {
+            "height": 40,
+            "width": 40,
           }
+        }
+      >
+        <svg
+          className="MuiCircularProgress-svg"
+          viewBox="22 22 44 44"
         >
-          <svg
-            className="MuiCircularProgress-svg"
-            viewBox="22 22 44 44"
-          >
-            <circle
-              className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-              cx={44}
-              cy={44}
-              fill="none"
-              r={20}
-              strokeWidth={4}
-              style={Object {}}
-            />
-          </svg>
-        </div>
+          <circle
+            className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+            cx={44}
+            cy={44}
+            fill="none"
+            r={20}
+            strokeWidth={4}
+            style={Object {}}
+          />
+        </svg>
       </div>
     </div>
   </span>
@@ -93,55 +85,47 @@ Array [
     <span
       className="MuiButton-label"
     >
-      <div>
-        <div
-          className="brew-Button__content"
-          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-          data-flip-id="content"
-          data-portal-key="portal"
+      <div
+        className="brew-Button__content"
+      >
+        <i
+          className="brew-Icon material-icons brew-Icon--color-inherit"
         >
-          <i
-            className="brew-Icon material-icons brew-Icon--color-inherit"
-          >
-            arrow_back
-          </i>
-          <span
-            className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
-          >
-            Go Back
-          </span>
-        </div>
-        <div
-          className="brew-Button__loadingIndicator"
-          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-          data-flip-id="loader"
-          data-portal-key="portal"
+          arrow_back
+        </i>
+        <span
+          className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
         >
-          <div
-            className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-            role="progressbar"
-            style={
-              Object {
-                "height": 40,
-                "width": 40,
-              }
+          Go Back
+        </span>
+      </div>
+      <div
+        className="brew-Button__loadingIndicator"
+      >
+        <div
+          className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+          role="progressbar"
+          style={
+            Object {
+              "height": 40,
+              "width": 40,
             }
+          }
+        >
+          <svg
+            className="MuiCircularProgress-svg"
+            viewBox="22 22 44 44"
           >
-            <svg
-              className="MuiCircularProgress-svg"
-              viewBox="22 22 44 44"
-            >
-              <circle
-                className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-                cx={44}
-                cy={44}
-                fill="none"
-                r={20}
-                strokeWidth={4}
-                style={Object {}}
-              />
-            </svg>
-          </div>
+            <circle
+              className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+              cx={44}
+              cy={44}
+              fill="none"
+              r={20}
+              strokeWidth={4}
+              style={Object {}}
+            />
+          </svg>
         </div>
       </div>
     </span>
@@ -169,50 +153,42 @@ Array [
     <span
       className="MuiButton-label"
     >
-      <div>
-        <div
-          className="brew-Button__content"
-          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-          data-flip-id="content"
-          data-portal-key="portal"
+      <div
+        className="brew-Button__content"
+      >
+        <span
+          className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
         >
-          <span
-            className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
-          >
-            Click me!
-          </span>
-        </div>
+          Click me!
+        </span>
+      </div>
+      <div
+        className="brew-Button__loadingIndicator"
+      >
         <div
-          className="brew-Button__loadingIndicator"
-          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-          data-flip-id="loader"
-          data-portal-key="portal"
-        >
-          <div
-            className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-            role="progressbar"
-            style={
-              Object {
-                "height": 40,
-                "width": 40,
-              }
+          className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+          role="progressbar"
+          style={
+            Object {
+              "height": 40,
+              "width": 40,
             }
+          }
+        >
+          <svg
+            className="MuiCircularProgress-svg"
+            viewBox="22 22 44 44"
           >
-            <svg
-              className="MuiCircularProgress-svg"
-              viewBox="22 22 44 44"
-            >
-              <circle
-                className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-                cx={44}
-                cy={44}
-                fill="none"
-                r={20}
-                strokeWidth={4}
-                style={Object {}}
-              />
-            </svg>
-          </div>
+            <circle
+              className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+              cx={44}
+              cy={44}
+              fill="none"
+              r={20}
+              strokeWidth={4}
+              style={Object {}}
+            />
+          </svg>
         </div>
       </div>
     </span>
@@ -240,50 +216,42 @@ Array [
     <span
       className="MuiButton-label"
     >
-      <div>
-        <div
-          className="brew-Button__content"
-          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-          data-flip-id="content"
-          data-portal-key="portal"
+      <div
+        className="brew-Button__content"
+      >
+        <span
+          className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
         >
-          <span
-            className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
-          >
-            Click me!
-          </span>
-        </div>
+          Click me!
+        </span>
+      </div>
+      <div
+        className="brew-Button__loadingIndicator"
+      >
         <div
-          className="brew-Button__loadingIndicator"
-          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-          data-flip-id="loader"
-          data-portal-key="portal"
-        >
-          <div
-            className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-            role="progressbar"
-            style={
-              Object {
-                "height": 40,
-                "width": 40,
-              }
+          className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+          role="progressbar"
+          style={
+            Object {
+              "height": 40,
+              "width": 40,
             }
+          }
+        >
+          <svg
+            className="MuiCircularProgress-svg"
+            viewBox="22 22 44 44"
           >
-            <svg
-              className="MuiCircularProgress-svg"
-              viewBox="22 22 44 44"
-            >
-              <circle
-                className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-                cx={44}
-                cy={44}
-                fill="none"
-                r={20}
-                strokeWidth={4}
-                style={Object {}}
-              />
-            </svg>
-          </div>
+            <circle
+              className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+              cx={44}
+              cy={44}
+              fill="none"
+              r={20}
+              strokeWidth={4}
+              style={Object {}}
+            />
+          </svg>
         </div>
       </div>
     </span>
@@ -311,55 +279,47 @@ Array [
     <span
       className="MuiButton-label"
     >
-      <div>
-        <div
-          className="brew-Button__content"
-          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-          data-flip-id="content"
-          data-portal-key="portal"
+      <div
+        className="brew-Button__content"
+      >
+        <span
+          className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
         >
-          <span
-            className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
-          >
-            Add Account
-          </span>
-          <i
-            className="brew-Icon material-icons brew-Icon--color-inherit"
-          >
-            add_circle_outline
-          </i>
-        </div>
-        <div
-          className="brew-Button__loadingIndicator"
-          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-          data-flip-id="loader"
-          data-portal-key="portal"
+          Add Account
+        </span>
+        <i
+          className="brew-Icon material-icons brew-Icon--color-inherit"
         >
-          <div
-            className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-            role="progressbar"
-            style={
-              Object {
-                "height": 40,
-                "width": 40,
-              }
+          add_circle_outline
+        </i>
+      </div>
+      <div
+        className="brew-Button__loadingIndicator"
+      >
+        <div
+          className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+          role="progressbar"
+          style={
+            Object {
+              "height": 40,
+              "width": 40,
             }
+          }
+        >
+          <svg
+            className="MuiCircularProgress-svg"
+            viewBox="22 22 44 44"
           >
-            <svg
-              className="MuiCircularProgress-svg"
-              viewBox="22 22 44 44"
-            >
-              <circle
-                className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-                cx={44}
-                cy={44}
-                fill="none"
-                r={20}
-                strokeWidth={4}
-                style={Object {}}
-              />
-            </svg>
-          </div>
+            <circle
+              className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+              cx={44}
+              cy={44}
+              fill="none"
+              r={20}
+              strokeWidth={4}
+              style={Object {}}
+            />
+          </svg>
         </div>
       </div>
     </span>
@@ -387,50 +347,42 @@ Array [
     <span
       className="MuiButton-label"
     >
-      <div>
-        <div
-          className="brew-Button__content"
-          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-          data-flip-id="content"
-          data-portal-key="portal"
+      <div
+        className="brew-Button__content"
+      >
+        <i
+          className="brew-Icon material-icons brew-Icon--color-inherit"
         >
-          <i
-            className="brew-Icon material-icons brew-Icon--color-inherit"
-          >
-            add_circle_outline
-          </i>
-        </div>
+          add_circle_outline
+        </i>
+      </div>
+      <div
+        className="brew-Button__loadingIndicator"
+      >
         <div
-          className="brew-Button__loadingIndicator"
-          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-          data-flip-id="loader"
-          data-portal-key="portal"
-        >
-          <div
-            className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-            role="progressbar"
-            style={
-              Object {
-                "height": 40,
-                "width": 40,
-              }
+          className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+          role="progressbar"
+          style={
+            Object {
+              "height": 40,
+              "width": 40,
             }
+          }
+        >
+          <svg
+            className="MuiCircularProgress-svg"
+            viewBox="22 22 44 44"
           >
-            <svg
-              className="MuiCircularProgress-svg"
-              viewBox="22 22 44 44"
-            >
-              <circle
-                className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-                cx={44}
-                cy={44}
-                fill="none"
-                r={20}
-                strokeWidth={4}
-                style={Object {}}
-              />
-            </svg>
-          </div>
+            <circle
+              className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+              cx={44}
+              cy={44}
+              fill="none"
+              r={20}
+              strokeWidth={4}
+              style={Object {}}
+            />
+          </svg>
         </div>
       </div>
     </span>
@@ -458,50 +410,42 @@ Array [
     <span
       className="MuiButton-label"
     >
-      <div>
-        <div
-          className="brew-Button__content"
-          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-          data-flip-id="content"
-          data-portal-key="portal"
+      <div
+        className="brew-Button__content"
+      >
+        <span
+          className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
         >
-          <span
-            className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
-          >
-            Click me!
-          </span>
-        </div>
+          Click me!
+        </span>
+      </div>
+      <div
+        className="brew-Button__loadingIndicator"
+      >
         <div
-          className="brew-Button__loadingIndicator"
-          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-          data-flip-id="loader"
-          data-portal-key="portal"
-        >
-          <div
-            className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-            role="progressbar"
-            style={
-              Object {
-                "height": 40,
-                "width": 40,
-              }
+          className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+          role="progressbar"
+          style={
+            Object {
+              "height": 40,
+              "width": 40,
             }
+          }
+        >
+          <svg
+            className="MuiCircularProgress-svg"
+            viewBox="22 22 44 44"
           >
-            <svg
-              className="MuiCircularProgress-svg"
-              viewBox="22 22 44 44"
-            >
-              <circle
-                className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-                cx={44}
-                cy={44}
-                fill="none"
-                r={20}
-                strokeWidth={4}
-                style={Object {}}
-              />
-            </svg>
-          </div>
+            <circle
+              className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+              cx={44}
+              cy={44}
+              fill="none"
+              r={20}
+              strokeWidth={4}
+              style={Object {}}
+            />
+          </svg>
         </div>
       </div>
     </span>
@@ -526,50 +470,42 @@ Array [
     <span
       className="MuiButton-label"
     >
-      <div>
-        <div
-          className="brew-Button__content"
-          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-          data-flip-id="content"
-          data-portal-key="portal"
+      <div
+        className="brew-Button__content"
+      >
+        <span
+          className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
         >
-          <span
-            className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
-          >
-            Click me!
-          </span>
-        </div>
+          Click me!
+        </span>
+      </div>
+      <div
+        className="brew-Button__loadingIndicator"
+      >
         <div
-          className="brew-Button__loadingIndicator"
-          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-          data-flip-id="loader"
-          data-portal-key="portal"
-        >
-          <div
-            className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-            role="progressbar"
-            style={
-              Object {
-                "height": 40,
-                "width": 40,
-              }
+          className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+          role="progressbar"
+          style={
+            Object {
+              "height": 40,
+              "width": 40,
             }
+          }
+        >
+          <svg
+            className="MuiCircularProgress-svg"
+            viewBox="22 22 44 44"
           >
-            <svg
-              className="MuiCircularProgress-svg"
-              viewBox="22 22 44 44"
-            >
-              <circle
-                className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-                cx={44}
-                cy={44}
-                fill="none"
-                r={20}
-                strokeWidth={4}
-                style={Object {}}
-              />
-            </svg>
-          </div>
+            <circle
+              className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+              cx={44}
+              cy={44}
+              fill="none"
+              r={20}
+              strokeWidth={4}
+              style={Object {}}
+            />
+          </svg>
         </div>
       </div>
     </span>
@@ -597,50 +533,42 @@ Array [
     <span
       className="MuiButton-label"
     >
-      <div>
-        <div
-          className="brew-Button__content"
-          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-          data-flip-id="content"
-          data-portal-key="portal"
+      <div
+        className="brew-Button__content"
+      >
+        <span
+          className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
         >
-          <span
-            className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
-          >
-            Click me!
-          </span>
-        </div>
+          Click me!
+        </span>
+      </div>
+      <div
+        className="brew-Button__loadingIndicator"
+      >
         <div
-          className="brew-Button__loadingIndicator"
-          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-          data-flip-id="loader"
-          data-portal-key="portal"
-        >
-          <div
-            className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-            role="progressbar"
-            style={
-              Object {
-                "height": 40,
-                "width": 40,
-              }
+          className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+          role="progressbar"
+          style={
+            Object {
+              "height": 40,
+              "width": 40,
             }
+          }
+        >
+          <svg
+            className="MuiCircularProgress-svg"
+            viewBox="22 22 44 44"
           >
-            <svg
-              className="MuiCircularProgress-svg"
-              viewBox="22 22 44 44"
-            >
-              <circle
-                className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-                cx={44}
-                cy={44}
-                fill="none"
-                r={20}
-                strokeWidth={4}
-                style={Object {}}
-              />
-            </svg>
-          </div>
+            <circle
+              className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+              cx={44}
+              cy={44}
+              fill="none"
+              r={20}
+              strokeWidth={4}
+              style={Object {}}
+            />
+          </svg>
         </div>
       </div>
     </span>
@@ -668,50 +596,42 @@ Array [
     <span
       className="MuiButton-label"
     >
-      <div>
-        <div
-          className="brew-Button__content"
-          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-          data-flip-id="content"
-          data-portal-key="portal"
+      <div
+        className="brew-Button__content"
+      >
+        <span
+          className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
         >
-          <span
-            className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
-          >
-            Click me!
-          </span>
-        </div>
+          Click me!
+        </span>
+      </div>
+      <div
+        className="brew-Button__loadingIndicator"
+      >
         <div
-          className="brew-Button__loadingIndicator"
-          data-flip-config="{\\"translate\\":true,\\"scale\\":true,\\"opacity\\":true}"
-          data-flip-id="loader"
-          data-portal-key="portal"
-        >
-          <div
-            className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-            role="progressbar"
-            style={
-              Object {
-                "height": 40,
-                "width": 40,
-              }
+          className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-primary brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+          role="progressbar"
+          style={
+            Object {
+              "height": 40,
+              "width": 40,
             }
+          }
+        >
+          <svg
+            className="MuiCircularProgress-svg"
+            viewBox="22 22 44 44"
           >
-            <svg
-              className="MuiCircularProgress-svg"
-              viewBox="22 22 44 44"
-            >
-              <circle
-                className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-                cx={44}
-                cy={44}
-                fill="none"
-                r={20}
-                strokeWidth={4}
-                style={Object {}}
-              />
-            </svg>
-          </div>
+            <circle
+              className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+              cx={44}
+              cy={44}
+              fill="none"
+              r={20}
+              strokeWidth={4}
+              style={Object {}}
+            />
+          </svg>
         </div>
       </div>
     </span>

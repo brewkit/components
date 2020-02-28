@@ -4,7 +4,6 @@ import { Typography as MuiTypography } from '@material-ui/core';
 import { Props } from './types';
 
 
-
 /**
  * The `<Typography />` component renders text using the 'Roboto' font in various styles.
  */
