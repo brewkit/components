@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Snackbar as MuiSnackbar, SnackbarContent as MuiSnackbarContent } from '@material-ui/core';
+import { Snackbar as MuiSnackbar, Slide, SlideProps } from '@material-ui/core';
 import Icon from '@components/Icon';
 import { Props } from './types';
 
@@ -9,10 +9,8 @@ import { Props } from './types';
  * <Snackbar {...props} /> Notification that pops up to alert the end user
  * Visibility controlled by isOpen prop
  */
-const Snackbar = React.forwardRef(({
+const Snackbar = ({
     action = '',
-    className,
-    useCustom = false,
     color = 'primary',
     duration = 0,
     message,
@@ -22,7 +20,7 @@ const Snackbar = React.forwardRef(({
     isOpen,
     position = 'top-right',
     ...otherProps
-}: Props, ref: React.Ref<any>): React.ReactElement => {
+}: Props): React.ReactElement => {
 
 
     /* Converts a string position 'top-right' to { vertical: 'top', horizontal: 'right' } */
@@ -39,52 +37,26 @@ const Snackbar = React.forwardRef(({
     };
 
 
-    const snackbarClasses = clsx(
-        'brew-Snackbar',
-        `brew-Snackbar--${color}`,
-        className,
-    );
-
-
-    const contentClasses = {
-        message: 'brew-Snackbar__message',
-        action: 'brew-Snackbar__action',
-    };
-
-
     return (
         <MuiSnackbar
             anchorOrigin={getAnchor()}
             autoHideDuration={duration * 1000 || null}
-            className={useCustom ? snackbarClasses : ''}
             onClose={onClose}
             open={isOpen}
-            ref={ref}
+            TransitionComponent={(props: any): React.ReactElement => <Slide {...props} direction="left" in={isOpen} />}
             {...otherProps}
         >
-            {useCustom
-                ? (
-                    <React.Fragment>
-                        {iconName && <Icon className="brew-Snackbar__icon">{iconName}</Icon>}
-                        <div className="brew-Snackbar__message">{message}</div>
-                        <div className="brew-Snackbar__messageInfo">{messageInfo}</div>
-                        {action && <span className="brew-Snackbar__action">{action}</span>}
-                    </React.Fragment>
-                )
-                : (
-                    <MuiSnackbarContent
-                        action={action}
-                        classes={contentClasses}
-                        className={snackbarClasses}
-                        message={message}
-                    />
-                )
-            }
+            <div className={`brew-Snackbar brew-Snackbar--${color}`}>
+                {iconName && <Icon className="brew-Snackbar__icon">{iconName}</Icon>}
+                <div className="brew-Snackbar__message">{message}</div>
+                <div className="brew-Snackbar__messageInfo">{messageInfo}</div>
+                {action && <span className="brew-Snackbar__action">{action}</span>}
+            </div>
         </MuiSnackbar>
     );
 
 
-});
+};
 
 
 Snackbar.displayName = 'Snackbar';

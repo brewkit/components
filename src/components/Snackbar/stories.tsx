@@ -1,6 +1,8 @@
 import React from 'react';
 import { boolean, button, number, select, text } from '@storybook/addon-knobs';
 import Snackbar from './index';
+import Icon from "@components/Icon";
+import {Snackbar as MuiSnackbar} from "@material-ui/core";
 
 
 export default {
@@ -43,7 +45,7 @@ export const Sandbox = (): React.ReactElement => {
     const message = text('message', 'Message Default');
     const duration = number('duration', 0);
     const iconName = text('iconName', '');
-    const useCustom = boolean('useCustom', false);
+
 
     button('toggle', () => setOpen((prev: any) => !prev));
 
@@ -58,7 +60,6 @@ export const Sandbox = (): React.ReactElement => {
             message={message}
             onClose={onClose}
             position={position}
-            useCustom={useCustom}
         />
     );
 

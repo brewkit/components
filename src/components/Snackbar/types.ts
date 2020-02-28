@@ -35,7 +35,7 @@ export interface Props {
      */
     duration?: number,
 
-
+    children?: any,
     /**
      * Icon to display
      */
