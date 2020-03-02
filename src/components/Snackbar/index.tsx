@@ -49,8 +49,10 @@ const Snackbar = ({
     }, []);
 
 
-    const closeUncontrolled = (): void => {
+    const closeUncontrolled = (event?: React.SyntheticEvent, reason?: string): void => {
 
+        if (event) event.stopPropagation();
+        if (reason === 'clickaway') return;
         if (typeof isOpen === 'undefined') setUncontrolledIsOpen(false);
 
     };
