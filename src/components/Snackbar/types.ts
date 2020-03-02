@@ -12,12 +12,6 @@ export interface Props {
 
 
     /**
-     * Tells component to use custom b
-     */
-    useCustom?: boolean,
-
-
-    /**
      * Custom class
      */
     className?: string,
@@ -35,7 +29,7 @@ export interface Props {
      */
     duration?: number,
 
-    children?: any,
+
     /**
      * Icon to display
      */
@@ -52,12 +46,6 @@ export interface Props {
      * Any valid JSX, main content of snackbar
      */
     message: React.ReactNode,
-
-
-    /**
-     * Sub-text to elaborate on the main message, any valid JSX
-     */
-    messageInfo?: React.ReactNode,
 
 
     /**

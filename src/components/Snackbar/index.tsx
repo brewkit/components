@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Snackbar as MuiSnackbar, Slide, SlideProps } from '@material-ui/core';
+import { Snackbar as MuiSnackbar, Slide } from '@material-ui/core';
 import Icon from '@components/Icon';
 import { Props } from './types';
 
@@ -15,7 +15,6 @@ const Snackbar = ({
     color = 'primary',
     duration = 0,
     message,
-    messageInfo,
     onClose,
     iconName,
     isOpen,
@@ -59,7 +58,6 @@ const Snackbar = ({
             <div className="brew-Snackbar__content">
                 {iconName && <Icon className="brew-Snackbar__icon">{iconName}</Icon>}
                 <div className="brew-Snackbar__message">{message}</div>
-                <div className="brew-Snackbar__messageInfo">{messageInfo}</div>
                 {action && <span className="brew-Snackbar__action">{action}</span>}
             </div>
         </MuiSnackbar>
