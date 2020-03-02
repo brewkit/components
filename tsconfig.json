@@ -9,13 +9,22 @@
         "module": "commonjs",
         "lib": ["dom", "esnext"],
         "jsx": "react",
+        "declaration": true,
         "esModuleInterop": true,
         "allowJs": true,
-        "plugins": [{ "transform": "typescript-transform-paths" }],
+        "plugins": [
+            {
+                "transform": "@zerollup/ts-transform-paths",
+                "exclude": ["*"]
+            }
+        ],
         "removeComments": true,
-        "strict": true
+        "strict": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true
     },
-    "include": ["src"],
+    "include": ["src/index.ts"],
     "exclude": [
         "node_modules",
         "build",
