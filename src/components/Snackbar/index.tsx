@@ -11,6 +11,7 @@ import { Props } from './types';
  */
 const Snackbar = ({
     action = '',
+    className,
     color = 'primary',
     duration = 0,
     message,
@@ -37,16 +38,25 @@ const Snackbar = ({
     };
 
 
+    const snackbarClasses = clsx(
+        'brew-Snackbar',
+        `brew-Snackbar--${color}`,
+        `brew-Snackbar--${position}`,
+        className,
+    );
+
+
     return (
         <MuiSnackbar
             anchorOrigin={getAnchor()}
             autoHideDuration={duration * 1000 || null}
+            className={snackbarClasses}
             onClose={onClose}
             open={isOpen}
             TransitionComponent={(props: any): React.ReactElement => <Slide {...props} direction="left" in={isOpen} />}
             {...otherProps}
         >
-            <div className={`brew-Snackbar brew-Snackbar--${color}`}>
+            <div className="brew-Snackbar__content">
                 {iconName && <Icon className="brew-Snackbar__icon">{iconName}</Icon>}
                 <div className="brew-Snackbar__message">{message}</div>
                 <div className="brew-Snackbar__messageInfo">{messageInfo}</div>
