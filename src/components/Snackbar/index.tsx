@@ -19,8 +19,13 @@ const Snackbar = ({
     iconName,
     isOpen,
     position = 'top-right',
+    slideDirection = 'left',
     ...otherProps
-}: Props): React.ReactElement => {
+}: Props): React.ReactElement | null => {
+
+
+    /* Allows the component to be uncontrolled by end user */
+    const [uncontrolledIsOpen, setUncontrolledIsOpen] = React.useState(false);
 
 
     /* Converts a string position 'top-right' to { vertical: 'top', horizontal: 'right' } */
@@ -37,6 +42,20 @@ const Snackbar = ({
     };
 
 
+    React.useEffect(() => {
+
+        if (typeof isOpen === 'undefined') setUncontrolledIsOpen(true);
+
+    }, []);
+
+
+    const closeUncontrolled = (): void => {
+
+        if (typeof isOpen === 'undefined') setUncontrolledIsOpen(false);
+
+    };
+
+
     const snackbarClasses = clsx(
         'brew-Snackbar',
         `brew-Snackbar--${color}`,
@@ -45,20 +64,26 @@ const Snackbar = ({
     );
 
 
+    /* Don't render anything if snackbar is hidden */
+    if (isOpen === false || (typeof isOpen === 'undefined' && uncontrolledIsOpen === false)) return null;
+
+
     return (
         <MuiSnackbar
             anchorOrigin={getAnchor()}
             autoHideDuration={duration * 1000 || null}
             className={snackbarClasses}
-            onClose={onClose}
-            open={isOpen}
-            TransitionComponent={(props: any): React.ReactElement => <Slide {...props} direction="left" in={isOpen} />}
+            onClose={onClose ?? closeUncontrolled}
+            open={isOpen ?? uncontrolledIsOpen}
+            TransitionComponent={(props: any): React.ReactElement => (
+                <Slide {...props} direction={slideDirection} in={isOpen ?? uncontrolledIsOpen} />
+            )}
             {...otherProps}
         >
             <div className="brew-Snackbar__content">
                 {iconName && <Icon className="brew-Snackbar__icon">{iconName}</Icon>}
                 <div className="brew-Snackbar__message">{message}</div>
-                {action && <span className="brew-Snackbar__action">{action}</span>}
+                {action && <span className="brew-Snackbar__action" onClick={closeUncontrolled}>{action}</span>}
             </div>
         </MuiSnackbar>
     );

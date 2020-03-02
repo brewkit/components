@@ -39,7 +39,7 @@ export interface Props {
     /**
      * Controlled prop to determine if snackbar is showing
      */
-    isOpen: boolean,
+    isOpen?: boolean,
 
 
     /**
@@ -52,13 +52,19 @@ export interface Props {
      * Function to fire when snackbar is closed
      * Change isOpen prop to false and any other side effects
      */
-    onClose: (event: React.SyntheticEvent, reason: string) => any,
+    onClose?: (event: React.SyntheticEvent, reason: string) => any,
 
 
     /**
      * Anchor position of the snackbar
      */
     position?: 'top-right' | 'top-center' | 'top-left' | 'bottom-right' | 'bottom-center' | 'bottom-left',
+
+
+    /**
+     * Slide animation direction
+     */
+    slideDirection?: 'up' | 'right' | 'down' | 'left',
 
 
 }
