@@ -1,8 +1,6 @@
 import React from 'react';
-import { boolean, button, number, select, text } from '@storybook/addon-knobs';
+import { button, number, select, text } from '@storybook/addon-knobs';
 import Snackbar from './index';
-import Icon from "@components/Icon";
-import {Snackbar as MuiSnackbar} from "@material-ui/core";
 
 
 export default {
