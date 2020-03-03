@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="MuiSnackbar-root MuiSnackbar-anchorOriginTopRight brew-Snackbar brew-Snackbar--primary brew-Snackbar--top-right"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <div
+    className="brew-Snackbar__content"
+    style={
+      Object {
+        "visibility": undefined,
+      }
+    }
+  >
+    <div
+      className="brew-Snackbar__message"
+    >
+      foo
+    </div>
+    <span
+      className="brew-Snackbar__action"
+      onClick={[Function]}
+    >
+      <div
+        onClick={[Function]}
+      >
+        Close
+      </div>
+    </span>
+  </div>
+</div>
+`;
