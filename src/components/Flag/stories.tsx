@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React from 'react';
 import { select, text } from '@storybook/addon-knobs';
 import Flag from './index';
 import { Colors } from './types';
@@ -13,9 +13,9 @@ export default {
 };
 
 
-export const Sandbox = (): ReactElement => {
+export const Sandbox = (): React.ReactElement => {
     const color: Colors = select('color', ['success', 'danger', 'warning', 'info', 'light', 'dark'], 'info');
-    const children: ReactNode = text('children', 'Flag');
+    const children: React.ReactNode = text('children', 'Flag');
 
     return (
         <Flag color={color}>{children}</Flag>
@@ -23,7 +23,7 @@ export const Sandbox = (): ReactElement => {
 };
 
 
-export const General = (): ReactElement => (
+export const General = (): React.ReactElement => (
     <React.Fragment>
         <Flag>Default</Flag>
         <Flag color="success">Default</Flag>
@@ -35,7 +35,7 @@ export const General = (): ReactElement => (
 );
 
 
-export const Empty = (): ReactElement => (
+export const Empty = (): React.ReactElement => (
     <React.Fragment>
         <Flag />
         <Flag color="success" />

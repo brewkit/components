@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { CircularProgress as MuiProgressCircular } from '@material-ui/core';
+import MuiProgressCircular from '@material-ui/core/CircularProgress';
 import { Props } from './types';
 
 

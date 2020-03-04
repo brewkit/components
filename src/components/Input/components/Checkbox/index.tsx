@@ -1,6 +1,7 @@
 import React from 'react';
-import { Checkbox as MuiCheckbox, FormControlLabel } from '@material-ui/core';
-import Icon from '@components/Icon';
+import MuiCheckbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { Check, Remove } from '@material-ui/icons';
 import Typography from '@components/Typography';
 import { Props } from './types';
 
@@ -35,14 +36,14 @@ export const Checkbox = React.forwardRef(({
 
     const CheckedControl = (
         <div className="brew-Checkbox__box">
-            <Icon className="brew-Checkbox__icon" size="large">check</Icon>
+            <Check className="brew-Checkbox__icon" color="inherit" />
         </div>
     );
 
 
     const IndeterminateControl = (
         <div className="brew-Checkbox__box">
-            <Icon className="brew-Checkbox__icon" size="large">remove</Icon>
+            <Remove className="brew-Checkbox__icon" color="inherit" />
         </div>
     );
 

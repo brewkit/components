@@ -13,6 +13,7 @@
         "url": "https://github.com/Snap-AV/brewkit/issues"
     },
     "homepage": "https://github.com/Snap-AV/brewkit#readme",
+    "sideEffects": false,
     "scripts": {
         "test:generate-output": "jest --watchAll --json --outputFile=.build/jest/test-results.json || true",
         "test": "jest --watchAll --json --outputFile=.build/jest/test-results.json",
@@ -109,6 +110,7 @@
     },
     "dependencies": {
         "@material-ui/core": "^4.9.4",
+        "@material-ui/icons": "^4.9.1",
         "@popperjs/core": "^2.0.6",
         "clsx": "^1.1.0",
         "lodash": "^4.17.15"

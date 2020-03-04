@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip as MuiTooltip } from '@material-ui/core';
+import MuiTooltip from '@material-ui/core/Tooltip';
 import Typography from '@components/Typography';
 import { Props } from './types';
 

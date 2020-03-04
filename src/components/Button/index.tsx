@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Button as MuiButton } from '@material-ui/core';
+import MuiButton from '@material-ui/core/Button';
 import Typography from '@components/Typography';
 import Progress from '@components/Progress';
 import { Props } from './types';
