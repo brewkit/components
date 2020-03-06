@@ -2,12 +2,12 @@
 @import "normalize";
 
 
-:global(.flex-spacer) {
+.flex-spacer {
     display: block;
     flex-grow: 1;
 }
 
-:global(html, body) {
+html, body {
     -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledParentComponent } from '@components/types';
+import { StyledParentComponent } from '../types';
 
 export type TableHeadBaseprops = React.HTMLAttributes<HTMLTableSectionElement>;
 

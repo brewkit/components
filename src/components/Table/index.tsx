@@ -13,12 +13,12 @@ const Table = React.forwardRef(({ className, ...props }: Props, ref: React.Ref<a
     );
 
     return (
-        <MuiTable {...props} className={classes} ref={ref} />
+        <MuiTable className={classes} ref={ref} {...props} />
     );
 
 });
 
 
-Table.displayName = 'Table';
+Table.displayName = 'BrewkitTable';
 
 export default Table;

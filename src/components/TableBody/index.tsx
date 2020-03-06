@@ -6,7 +6,7 @@ import { Props } from './types';
 const TableBody = React.forwardRef(({ className, ...props }: Props, ref: React.Ref<any>): React.ReactElement => {
 
     const classes = clsx(
-        'brew-TableBody',
+        'brew-Table__body',
         className,
     );
 
@@ -17,6 +17,6 @@ const TableBody = React.forwardRef(({ className, ...props }: Props, ref: React.R
 
 });
 
-TableBody.displayName = 'TableBody';
+TableBody.displayName = 'BrewkitTableBody';
 
 export default TableBody;

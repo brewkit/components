@@ -1,6 +1,8 @@
 @use 'utilities';
 @use 'normalize';
 
+@use 'base';
+
 @use 'components/Typography';
 @use 'components/Tooltip';
 @use 'components/Icon';
@@ -8,3 +10,4 @@
 @use 'components/Flag';
 @use 'components/Checkbox';
 @use 'components/Progress';
+@use 'components/Table';

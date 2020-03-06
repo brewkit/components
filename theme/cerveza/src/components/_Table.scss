@@ -1,0 +1,18 @@
+@use '../utilities';
+
+.brew-Table {
+
+    &__cell {
+        padding-top: utilities.size(x-small);
+        padding-bottom: utilities.size(x-small);
+
+        &--head {
+            text-transform: uppercase;
+            font-size: utilities.size(small);
+            line-height: 1.25;
+            font-weight: normal;
+            color: utilities.color(gray, 500);
+            background-color: utilities.color(gray, 50);
+        }
+    }
+}

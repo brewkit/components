@@ -1,5 +1,6 @@
 import React from 'react';
 import MuiTableHead from '@material-ui/core/TableHead';
+import { TableLevel2Context } from '../Table/context';
 import { Props } from './types';
 
 
@@ -7,11 +8,17 @@ const TableHead = React.forwardRef(({ ...props }: Props, ref: React.Ref<any>): R
 
 
     const classes = {
-        root: 'brew-TableHead',
+        root: 'brew-Table__head',
+    };
+
+    const value = {
+        variant: 'head',
     };
 
     return (
-        <MuiTableHead {...props} classes={classes} ref={ref} />
+        <TableLevel2Context.Provider value={value}>
+            <MuiTableHead classes={classes} ref={ref} {...props} />
+        </TableLevel2Context.Provider>
     );
 
 

@@ -7,12 +7,12 @@ const TableRow = React.forwardRef(({ className, ...props }: Props, ref: React.Re
 
 
     const classes = {
-        selected: 'brew-TableRow--isSelected',
-        hover: 'brew-TableRow--isHovered',
+        selected: 'brew-Table__row--isSelected',
+        hover: 'brew-Table__row--isHovered',
     };
 
     const classNames = clsx(
-        'brew-TableRow',
+        'brew-Table__row',
         className,
     );
 
@@ -23,6 +23,6 @@ const TableRow = React.forwardRef(({ className, ...props }: Props, ref: React.Re
 
 });
 
-TableRow.displayName = 'TableRow';
+TableRow.displayName = 'BrewTableRow';
 
 export default TableRow;

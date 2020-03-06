@@ -1,5 +1,5 @@
 import React from 'react';
-import { Colors as GenericColors, StyledParentComponent } from '@components/types';
+import { Colors as GenericColors, StyledParentComponent } from '../types';
 
 
 export type Variants = (

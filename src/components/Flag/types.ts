@@ -1,4 +1,4 @@
-import { StyledParentComponent, Colors as GenericColors } from '@components/types';
+import { StyledParentComponent, Colors as GenericColors } from '../types';
 
 
 export type Colors = GenericColors;
