@@ -1,39 +1,49 @@
 import React from 'react';
-import clsx from 'clsx';
-import { Props } from './types';
+import MuiIcon from '@material-ui/core/Icon';
+import SvgIcon from './components/SvgIcon';
+import { IconComponent, Props } from './types';
 
 
 /**
- * The `<Icon />` component interfaces easily with an icon font and uses it's `children` prop to render an
- * appropriate icon.
+ * The `Icon` component will display an icon from any icon font that supports ligatures. As a prerequisite, you must
+ * include one, such as the Material icon font in your project, for instance, via Google Web Fonts:
+ *
+ * ```
+ * <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+ * ```
+ *
+ * Icon will set the correct class name for the Material icon font. For other fonts, you must supply the class name
+ * using the Icon component's `className` property.
+ *
+ * To use an icon simply wrap the icon name (font ligature) with the `Icon` component, for example: `<Icon>star</Icon>`.
  */
-export const Icon = React.forwardRef(({
+export const Icon: IconComponent = React.forwardRef(({
     color = 'inherit',
-    size,
-    children,
-    className,
-    component: Component = 'i',
+    size = 'inherit',
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    const classes = clsx(
-        'brew-Icon',
-        'material-icons',
-        `brew-Icon--color-${color}`,
-        { [`brew-Icon--size-${String(size)}`]: size },
-        className,
-    );
+    const classes = {
+        root: `brew-Icon brew-Icon--color-${color} brew-Icon--size-${size}`,
+    };
 
 
     return (
-        <Component className={classes} ref={ref} {...otherProps}>
-            {children}
-        </Component>
+        <MuiIcon
+            classes={classes}
+            component="i"
+            fontSize={size}
+            ref={ref}
+            {...otherProps}
+        />
     );
 
 
 });
+
+
+Icon.Svg = SvgIcon;
 
 
 Icon.displayName = 'Icon';

@@ -4,7 +4,6 @@
         "node_modules",
         "build",
         "scripts",
-        "**/material-icons/**",
         "../src/**/stories.*",
         "../src/**/types.*",
         "../src/**/test.*"

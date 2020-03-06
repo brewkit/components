@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import Flag from '@components/Flag';
 import Progress from './index';
 
@@ -12,4 +12,4 @@ export default {
 };
 
 
-export const General = (): ReactElement => <Progress />;
+export const General = (): React.ReactElement => <Progress />;

@@ -1,8 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Typography as MuiTypography } from '@material-ui/core';
+import MuiTypography from '@material-ui/core/Typography';
 import { Props } from './types';
-
 
 
 /**

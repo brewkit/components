@@ -1,7 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Button as MuiButton } from '@material-ui/core';
-import { Flipped, Flipper } from 'react-flip-toolkit';
+import MuiButton from '@material-ui/core/Button';
 import Typography from '@components/Typography';
 import Progress from '@components/Progress';
 import { Props } from './types';
@@ -50,24 +49,18 @@ export const Button = React.forwardRef(({
             type="button"
             {...otherProps}
         >
-            <Flipper flipKey={JSON.stringify([isLoading, variant, color, size])}>
-                <Flipped flipId="content">
-                    <div className="brew-Button__content">
-                        {startIcon}
-                        {children && (
-                            <Typography className="brew-Button__text" variant="button">
-                                {children}
-                            </Typography>
-                        )}
-                        {endIcon}
-                    </div>
-                </Flipped>
-                <Flipped flipId="loader">
-                    <div className="brew-Button__loadingIndicator">
-                        <Progress.Circular color={color === 'link' ? 'primary' : color} />
-                    </div>
-                </Flipped>
-            </Flipper>
+            <div className="brew-Button__content">
+                {startIcon}
+                {children && (
+                    <Typography className="brew-Button__text" variant="button">
+                        {children}
+                    </Typography>
+                )}
+                {endIcon}
+            </div>
+            <div className="brew-Button__loadingIndicator">
+                <Progress.Circular color={color === 'link' ? 'primary' : color} />
+            </div>
         </MuiButton>
     );
 

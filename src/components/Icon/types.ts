@@ -3,7 +3,7 @@ import { StyledParentComponent, Colors as GenericColors } from '@components/type
 
 
 export type Colors = GenericColors | 'inherit';
-export type Sizes = 'small' | 'medium' | 'large';
+export type Sizes = 'inherit' | 'small' | 'large' | 'default';
 
 
 export interface Props extends StyledParentComponent {
@@ -16,13 +16,13 @@ export interface Props extends StyledParentComponent {
 
     /**
      * If set, forces the `Icon` to render at the specified size.
+     * @default 'inherit'
      */
     size?: Sizes,
 
-    /**
-     * Component to render as.
-     * @default 'i'
-     */
-    component?: React.ElementType,
+}
 
+
+export interface IconComponent extends React.ForwardRefExoticComponent<any> {
+    Svg?: any,
 }

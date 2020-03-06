@@ -1,6 +1,5 @@
 const path = require('path');
 const projectRoot = process.cwd();
-const tsConfig = require('../../tsconfig');
 
 
 module.exports = async ({ config }) => {
@@ -11,15 +10,12 @@ module.exports = async ({ config }) => {
             exclude: /node_modules/,
             use: [
                 {
-                    loader: 'cache-loader'
-                },
-                {
                     loader: 'awesome-typescript-loader',
                 },
                 {
-                    loader: 'react-docgen-typescript-loader',
+                    loader: require.resolve('react-docgen-typescript-loader'),
                     options: {
-                        compilerOptions: tsConfig.compilerOptions,
+                        tsconfigPath: path.resolve(__dirname, '../../tsconfig.json')
                     }
                 },
             ],
