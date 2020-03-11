@@ -27,10 +27,10 @@ jobs:
       env:
         CI: true
     - name: Build Storybook
-        run: |
-          npm run build-storybook
-        env:
-          CI: true
+      run: |
+        npm run build-storybook
+      env:
+        CI: true
     - name: Deploy Storybook
       uses: andstor/copycat-action@v3
       with:
