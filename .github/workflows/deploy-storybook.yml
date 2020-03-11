@@ -16,21 +16,37 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
+    - name: Cache node modules
+      uses: actions/cache@v1
+      env:
+        cache-name: cache-node-modules
+      with:
+        path: ~/.npm # npm cache files are stored in `~/.npm` on Linux/macOS
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+
     - name: npm install, build, and test
       run: |
         npm ci
         npm run build
       env:
         CI: true
+
     - name: Build Storybook
       run: |
         npm run build-storybook
       env:
         CI: true
+
     - name: Deploy Storybook
       uses: andstor/copycat-action@v3
       with:
