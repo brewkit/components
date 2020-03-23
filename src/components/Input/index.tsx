@@ -1,5 +1,6 @@
 import React from 'react';
 import Checkbox from './components/Checkbox';
+import Radio from './components/Radio';
 import { Props } from './components/Checkbox/types';
 import { InputComponent } from './types';
 
@@ -12,6 +13,7 @@ export const Input: InputComponent = React.forwardRef(({
 
 
 Input.Checkbox = Checkbox;
+Input.Radio = Radio;
 
 
 Input.displayName = 'Input';

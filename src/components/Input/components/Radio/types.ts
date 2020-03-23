@@ -28,10 +28,9 @@ export interface Props extends StyledComponent {
     isRequired?: boolean,
 
     /**
-     * If `true`, the component appears indeterminate. This does not set the native input element to indeterminate due
-     * to inconsistent behavior across browsers. However, we set a `data-indeterminate` attribute on the input.
+     * Name attribute of the input element.
      */
-    isIndeterminate?: boolean,
+    name?: string,
 
     /**
      * The value of the component. The DOM API casts this to a string.
@@ -48,10 +47,5 @@ export interface Props extends StyledComponent {
      * @default 'end'
      */
     labelPlacement?: LabelPlacements,
-
-    /**
-     * Name attribute of the input element.
-     */
-    name?: string,
 
 }

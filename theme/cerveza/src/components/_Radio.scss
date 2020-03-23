@@ -1,0 +1,83 @@
+@use '../utilities';
+
+
+// ==============================================
+// Variables
+// ==============================================
+
+$color: utilities.color(brand, primary);
+$outline-color: utilities.color(grey, 100);
+$border-width: 2px;
+
+
+// ==============================================
+// General
+// ==============================================
+
+.brew-Radio {
+    color: $color;
+
+
+    .brew-Radio__ring {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        border: $border-width solid $outline-color;
+        border-radius: 50%;
+        transition: all 0.3s;
+    }
+
+
+    .brew-Radio__pip {
+        width: utilities.size(small);
+        height: utilities.size(small);
+        background-color: #ffffff;
+        border-radius: 50%;
+        transition: all 0.3s;
+    }
+
+
+    &.brew-Radio--isChecked {
+        color: $color;
+
+        .brew-Radio__ring {
+            background-color: $color;
+            border: $border-width solid $color;
+        }
+
+    }
+
+
+    &.brew-Radio--isDisabled {
+        cursor: not-allowed;
+
+        .brew-Radio__ring {
+            background-color: $outline-color;
+            border: $border-width solid $outline-color;
+        }
+
+    }
+
+
+    &.brew-Radio:hover {
+        background-color: transparent;
+
+        .brew-Radio__ring {
+            border: $border-width solid $color;
+        }
+
+    }
+
+
+}
+
+
+// ==============================================
+// Higher Specificity
+// ==============================================
+
+.brew-Radio.brew-Radio {
+
+}

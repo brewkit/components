@@ -1,20 +1,17 @@
 import React from 'react';
-import MuiCheckbox from '@material-ui/core/Checkbox';
+import MuiRadio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import { Check, Remove } from '@material-ui/icons';
 import Typography from '@components/Typography';
 import { Props } from './types';
 
 
 /**
- * Checkboxes allow the user to select one or more items from a set and can be used to turn an option on or off.
+ * Radios allow the user to select one of multiple items from a set.
  */
-export const Checkbox = React.forwardRef(({
+export const Radio = React.forwardRef(({
     isChecked,
     isDisabled,
-    isIndeterminate,
     isRequired,
-    name,
     label,
     labelPlacement = 'end',
     value,
@@ -23,28 +20,20 @@ export const Checkbox = React.forwardRef(({
 
 
     const classes = {
-        root: 'brew-Checkbox',
-        disabled: 'brew-Checkbox--isDisabled',
-        checked: 'brew-Checkbox--isChecked',
-        indeterminate: 'brew-Checkbox--isIndeterminate',
+        root: 'brew-Radio',
+        disabled: 'brew-Radio--isDisabled',
+        checked: 'brew-Radio--isChecked',
     };
 
 
     const UncheckedControl = (
-        <div className="brew-Checkbox__box" />
+        <div className="brew-Radio__ring" />
     );
 
 
     const CheckedControl = (
-        <div className="brew-Checkbox__box">
-            <Check className="brew-Checkbox__icon" color="inherit" />
-        </div>
-    );
-
-
-    const IndeterminateControl = (
-        <div className="brew-Checkbox__box">
-            <Remove className="brew-Checkbox__icon" color="inherit" />
+        <div className="brew-Radio__ring">
+            <div className="brew-Radio__pip" />
         </div>
     );
 
@@ -53,12 +42,10 @@ export const Checkbox = React.forwardRef(({
         <FormControlLabel
             checked={isChecked}
             control={(
-                <MuiCheckbox
+                <MuiRadio
                     checkedIcon={CheckedControl}
                     classes={classes}
                     icon={UncheckedControl}
-                    indeterminate={isIndeterminate}
-                    indeterminateIcon={IndeterminateControl}
                     required={isRequired}
                     {...otherProps}
                 />
@@ -76,7 +63,7 @@ export const Checkbox = React.forwardRef(({
 });
 
 
-Checkbox.displayName = 'Checkbox';
+Radio.displayName = 'Radio';
 
 
-export default Checkbox;
+export default Radio;
