@@ -13,7 +13,7 @@ export type LabelPlacements = (
 export interface Props extends StyledComponent {
 
     /**
-     * If `true`, the component is checked.
+     * If `true`, the checkbox is checked.
      */
     isChecked?: boolean,
 
@@ -28,13 +28,13 @@ export interface Props extends StyledComponent {
     isRequired?: boolean,
 
     /**
-     * If `true`, the component appears indeterminate. This does not set the native input element to indeterminate due
+     * If `true`, the checkbox appears indeterminate. This does not set the native input element to indeterminate due
      * to inconsistent behavior across browsers. However, we set a `data-indeterminate` attribute on the input.
      */
     isIndeterminate?: boolean,
 
     /**
-     * The value of the component. The DOM API casts this to a string.
+     * The value of the checkbox. The DOM API casts this to a string.
      */
     value?: any,
 

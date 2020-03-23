@@ -13,17 +13,17 @@ export type LabelPlacements = (
 export interface Props extends StyledComponent {
 
     /**
-     * If `true`, the component is checked.
+     * If `true`, the radio is checked.
      */
     isChecked?: boolean,
 
     /**
-     * If `true`, the checkbox will be disabled.
+     * If `true`, the radio will be disabled.
      */
     isDisabled?: boolean,
 
     /**
-     * If `true`, the checkbox will be required.
+     * If `true`, the radio will be required.
      */
     isRequired?: boolean,
 
@@ -33,7 +33,7 @@ export interface Props extends StyledComponent {
     name?: string,
 
     /**
-     * The value of the component. The DOM API casts this to a string.
+     * The value of the radio. The DOM API casts this to a string.
      */
     value?: any,
 
