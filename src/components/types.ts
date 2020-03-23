@@ -44,7 +44,17 @@ export interface StyledComponent {
 }
 
 
-export interface StyledParentComponent extends StyledComponent{
+export interface ParentComponent {
+
+    /**
+     * The content of the component
+     */
+    children?: React.ReactNode,
+
+}
+
+
+export interface StyledParentComponent extends StyledComponent {
 
     /**
      * The content of the component
