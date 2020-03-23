@@ -4,6 +4,7 @@ exports[`renders correctly 1`] = `
 Array [
   <div
     className="MuiChip-root brew-Flag brew-Flag--color-info"
+    onKeyDown={[Function]}
     onKeyUp={[Function]}
   >
     <span
@@ -18,6 +19,7 @@ Array [
   </div>,
   <div
     className="MuiChip-root brew-Flag brew-Flag--color-info brew-Flag--isEmpty"
+    onKeyDown={[Function]}
     onKeyUp={[Function]}
   >
     <span
@@ -35,6 +37,7 @@ exports[`renders correctly with various props 1`] = `
 Array [
   <div
     className="MuiChip-root brew-Flag brew-Flag--color-info"
+    onKeyDown={[Function]}
     onKeyUp={[Function]}
   >
     <span
@@ -49,6 +52,7 @@ Array [
   </div>,
   <div
     className="MuiChip-root brew-Flag brew-Flag--color-success"
+    onKeyDown={[Function]}
     onKeyUp={[Function]}
   >
     <span
@@ -63,6 +67,7 @@ Array [
   </div>,
   <div
     className="MuiChip-root brew-Flag brew-Flag--color-warning"
+    onKeyDown={[Function]}
     onKeyUp={[Function]}
   >
     <span
@@ -77,6 +82,7 @@ Array [
   </div>,
   <div
     className="MuiChip-root brew-Flag brew-Flag--color-danger"
+    onKeyDown={[Function]}
     onKeyUp={[Function]}
   >
     <span
@@ -91,6 +97,7 @@ Array [
   </div>,
   <div
     className="MuiChip-root brew-Flag brew-Flag--color-light"
+    onKeyDown={[Function]}
     onKeyUp={[Function]}
   >
     <span
@@ -105,6 +112,7 @@ Array [
   </div>,
   <div
     className="MuiChip-root brew-Flag brew-Flag--color-dark"
+    onKeyDown={[Function]}
     onKeyUp={[Function]}
   >
     <span
