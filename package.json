@@ -19,7 +19,7 @@
         "test": "jest --watchAll --json --outputFile=.build/jest/test-results.json",
         "sass": "./node_modules/.bin/dart-sass --style=compressed ./theme/cerveza/src/index.scss ./.build/storybook/assets/css/theme.css",
         "sass-watch": "npm run sass -- --watch",
-        "sass-build": "./node_modules/.bin/dart-sass --style=compressed ./theme/cerveza/src/index.scss ./theme/cerveza/dist/theme.scss",
+        "sass-build": "./node_modules/.bin/dart-sass --style=compressed ./theme/cerveza/src/index.scss ./theme/cerveza/dist/theme.css",
         "commit": "npx git-cz",
         "start": "npm run sass && npm run storybook",
         "storybook": "start-storybook -p 9001 -c .build/storybook",

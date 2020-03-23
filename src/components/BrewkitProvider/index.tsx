@@ -10,7 +10,7 @@ const generateClassName = createGenerateClassName({
 
 
 /**
- * The `<BrewkitProvider />` component renders text using the 'Roboto' font in various styles.
+ * The `<BrewkitProvider />` component is intended to wrap your Brewkit application and helps to simplify configuration.
  */
 export const BrewkitProvider = ({
     children,
