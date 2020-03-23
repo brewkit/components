@@ -6,7 +6,8 @@
             "@utilities/*": ["utilities/*"]
         },
         "outDir": "./dist",
-        "module": "commonjs",
+        "module": "ES2015",
+        "moduleResolution": "node",
         "lib": ["dom", "esnext"],
         "jsx": "react",
         "declaration": true,

@@ -5,14 +5,14 @@
     "main": "dist/index.js",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Snap-AV/brewkit.git"
+        "url": "https://github.com/brewkit/components"
     },
     "author": "lawren",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/Snap-AV/brewkit/issues"
+        "url": "https://github.com/brewkit/components/issues"
     },
-    "homepage": "https://github.com/Snap-AV/brewkit#readme",
+    "homepage": "https://brewkit.github.io",
     "sideEffects": false,
     "scripts": {
         "test:generate-output": "jest --watchAll --json --outputFile=.build/jest/test-results.json || true",
