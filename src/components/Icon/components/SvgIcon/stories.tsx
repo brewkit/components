@@ -10,7 +10,7 @@ export default {
     parameters: {
         componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'Stable|Display/Icons/SvgIcon',
+    title: 'Stable|Data Display/Icons/SvgIcon',
 };
 
 
