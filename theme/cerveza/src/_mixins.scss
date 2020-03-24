@@ -56,7 +56,7 @@
 
 @mixin fetch-color($class-prefix1, $attribute1, $class-prefix2: null, $attribute2: null) {
 
-    $color-variants: primary, secondary, tertiary, success, info, warning, danger, light, dark;
+    $color-variants: primary, secondary, tertiary, success, info, warning, error, light, dark;
 
     $colors: (
         primary:    functions.color(brand, primary),
@@ -65,7 +65,7 @@
         success:    functions.color(accent, success),
         info:       functions.color(accent, info),
         warning:    functions.color(accent, warning),
-        danger:     functions.color(accent, danger),
+        error:      functions.color(accent, error),
         light:      functions.color(accent, light),
         dark:       functions.color(accent, dark),
     );

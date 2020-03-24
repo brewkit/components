@@ -16,7 +16,7 @@ export type Colors = (
     | 'secondary'
     | 'tertiary'
     | 'success'
-    | 'danger'
+    | 'error'
     | 'warning'
     | 'info'
     | 'light'

@@ -20,7 +20,7 @@ describe('ProgressCircular', () => {
                     <ProgressCircular color="secondary" size="medium" value={5} variant="determinate" />
                     <ProgressCircular color="tertiary" size="large" variant="static" />
                     <ProgressCircular color="success" />
-                    <ProgressCircular color="danger" />
+                    <ProgressCircular color="error" />
                     <ProgressCircular color="warning" />
                     <ProgressCircular color="info" />
                 </React.Fragment>

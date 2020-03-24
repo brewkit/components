@@ -18,7 +18,7 @@ $colors: (
     success:    utilities.color(accent, success),
     info:       utilities.color(accent, info),
     warning:    utilities.color(accent, warning),
-    danger:     utilities.color(accent, danger),
+    error:     utilities.color(accent, error),
     h1:         utilities.color(brand, primary),
     h2:         material-colors.get(lightBlue, 900),
     h3:         material-colors.get(lightBlue, 900),

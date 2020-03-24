@@ -20,7 +20,7 @@ export const Sandbox = (): React.ReactElement => {
         'primary',
         'secondary',
         'success',
-        'danger',
+        'error',
         'warning',
         'info',
         'light',

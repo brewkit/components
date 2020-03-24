@@ -1,5 +1,6 @@
 import React from 'react';
 import Checkbox from './components/Checkbox';
+import Switch from './components/Switch';
 import Radio from './components/Radio';
 import RadioGroup from './components/RadioGroup';
 import { Props } from './components/Checkbox/types';
@@ -14,6 +15,7 @@ export const Input: InputComponent = React.forwardRef(({
 
 
 Input.Checkbox = Checkbox;
+Input.Switch = Switch;
 Input.Radio = Radio;
 Input.RadioGroup = RadioGroup;
 

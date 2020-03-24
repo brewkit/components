@@ -81,7 +81,7 @@ Array [
     </span>
   </div>,
   <div
-    className="MuiChip-root brew-Flag brew-Flag--color-danger"
+    className="MuiChip-root brew-Flag brew-Flag--color-error"
     onKeyDown={[Function]}
     onKeyUp={[Function]}
   >

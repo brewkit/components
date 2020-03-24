@@ -20,7 +20,7 @@ export const Sandbox = (): React.ReactElement => {
         'primary',
         'secondary',
         'success',
-        'danger',
+        'error',
         'warning',
         'info',
         'light',
@@ -64,7 +64,7 @@ export const Colors = (): React.ReactElement => (
         <Icon color="secondary">add_circle</Icon>
         <Icon color="success">add_circle</Icon>
         <Icon color="warning">add_circle</Icon>
-        <Icon color="danger">add_circle</Icon>
+        <Icon color="error">add_circle</Icon>
         <Icon color="info">add_circle</Icon>
         <Icon color="dark">add_circle</Icon>
         <Icon color="light">add_circle</Icon>

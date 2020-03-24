@@ -10,7 +10,7 @@
 $font_weight: bold;
 $colors: (
     success: utilities.color(accent, success),
-    error: utilities.color(accent, danger),
+    error: utilities.color(accent, error),
     warning: utilities.color(accent, warning),
     info: utilities.color(accent, info),
 );

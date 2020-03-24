@@ -23,7 +23,7 @@ it('renders correctly with various props', () => {
                 <Flag>Default</Flag>
                 <Flag color="success">Default</Flag>
                 <Flag color="warning">Default</Flag>
-                <Flag color="danger">Default</Flag>
+                <Flag color="error">Default</Flag>
                 <Flag color="light">Default</Flag>
                 <Flag color="dark">Default</Flag>
             </React.Fragment>

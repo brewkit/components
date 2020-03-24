@@ -145,7 +145,7 @@ Array [
     </svg>
   </div>,
   <div
-    className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-danger brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+    className="MuiCircularProgress-root brew-ProgressCircular--variant-indeterminate brew-ProgressCircular--color-error brew-ProgressCircular--size-inherit MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
     role="progressbar"
     style={
       Object {

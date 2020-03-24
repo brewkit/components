@@ -25,7 +25,7 @@ export const Sandbox = (): React.ReactElement => {
         'success',
         'warning',
         'info',
-        'danger',
+        'error',
     ], 'inherit');
     const display: Displays = select('display', ['initial', 'block', 'inline'], 'initial');
     const shouldTruncate = boolean('shouldTruncate', false);
