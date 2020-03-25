@@ -15,10 +15,14 @@ $border-width: 1px;
 // ==============================================
 
 .brew-Checkbox {
-    overflow: hidden;
-    align-items: center;
-    cursor: pointer;
-    color: utilities.color(brand, primary);
+    margin-left: -9px;
+
+    .brew-Checkbox__base {
+        overflow: hidden;
+        align-items: center;
+        cursor: pointer;
+        color: utilities.color(brand, primary);
+    }
 
     input {
         display: none;
@@ -45,8 +49,8 @@ $border-width: 1px;
     // -------------------------------------
     // Checked & Indeterminate
 
-    &.brew-Checkbox--isChecked,
-    &.brew-Checkbox--isIndeterminate {
+    .brew-Checkbox--isChecked,
+    .brew-Checkbox--isIndeterminate {
 
         & .brew-Checkbox__box {
             border: $border-width solid utilities.color(brand, primary);
@@ -70,14 +74,14 @@ $border-width: 1px;
 .brew-Checkbox.brew-Checkbox {
 
 
-    &:hover {
+    .brew-Checkbox__base:hover {
         color: utilities.color(brand, primary);
-        background-color: rgba(utilities.color(brand, primary), 0.1);
+        background-color: transparent;
     }
 
     // -------------------------------------
     // Disabled
-    &.brew-Checkbox--isDisabled {
+    .brew-Checkbox--isDisabled {
         cursor: not-allowed;
 
         .brew-Checkbox__box {
@@ -88,12 +92,21 @@ $border-width: 1px;
     }
 
     // -------------------------------------
-    // On Hover & On Focus
-    .brew-Checkbox:hover {
+    // Errored
+    .brew-Checkbox--hasError {
 
         .brew-Checkbox__box {
-            border: $border-width solid rgba(utilities.color(brand, primary), 0.2);
-            background-color: rgba(utilities.color(brand, primary), 0.2);
+            border: $border-width solid utilities.color(accent, error);
+        }
+
+    }
+
+    // -------------------------------------
+    // On Hover & On Focus
+    .brew-Checkbox__base:hover {
+
+        .brew-Checkbox__box {
+            border: $border-width solid utilities.color(brand, primary);
         }
 
     }

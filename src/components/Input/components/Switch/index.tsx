@@ -12,6 +12,7 @@ export const Switch = React.forwardRef(({
     isChecked,
     isDisabled,
     isRequired,
+    hasError,
     name,
     label,
     labelPlacement = 'end',
@@ -21,7 +22,7 @@ export const Switch = React.forwardRef(({
 
 
     const classes = {
-        root: 'brew-Switch',
+        root: `brew-Switch ${hasError ? 'brew-Switch--hasError' : ''}`,
         disabled: 'brew-Switch--isDisabled',
         checked: 'brew-Switch--isChecked',
         switchBase: 'brew-Switch__switchBase',
@@ -36,6 +37,7 @@ export const Switch = React.forwardRef(({
             control={(
                 <MuiSwitch
                     classes={classes}
+                    inputRef={ref}
                     required={isRequired}
                     {...otherProps}
                 />
@@ -44,7 +46,6 @@ export const Switch = React.forwardRef(({
             label={<Typography variant="body1">{label}</Typography>}
             labelPlacement={labelPlacement}
             name={name}
-            ref={ref}
             value={value}
         />
     );

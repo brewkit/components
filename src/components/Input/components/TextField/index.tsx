@@ -23,6 +23,7 @@ export const TextField = React.forwardRef(({
     isFluid,
     shouldAutoFocus,
     isReadOnly,
+    helperText,
     type = 'text',
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
@@ -114,11 +115,16 @@ export const TextField = React.forwardRef(({
             error={hasError}
             FormHelperTextProps={FormHelperTextProps}
             fullWidth={isFluid}
+            helperText={(
+                <Grow in={Boolean(helperText)}>
+                    <span>{helperText}</span>
+                </Grow>
+            )}
             InputLabelProps={InputLabelProps}
+            inputProps={{ ref }}
             InputProps={InputProps}
-            label={<Typography>{label}</Typography>}
+            label={label && <Typography>{label}</Typography>}
             multiline={isMultiline}
-            ref={ref}
             required={isRequired}
             type={getType()}
             {...otherProps}

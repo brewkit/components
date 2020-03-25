@@ -12,6 +12,7 @@ export const Radio = React.forwardRef(({
     isChecked,
     isDisabled,
     isRequired,
+    hasError,
     label,
     labelPlacement = 'end',
     value,
@@ -20,7 +21,7 @@ export const Radio = React.forwardRef(({
 
 
     const classes = {
-        root: 'brew-Radio',
+        root: `brew-Radio__base ${hasError ? 'brew-Radio--hasError' : ''}`,
         disabled: 'brew-Radio--isDisabled',
         checked: 'brew-Radio--isChecked',
     };
@@ -41,11 +42,13 @@ export const Radio = React.forwardRef(({
     return (
         <FormControlLabel
             checked={isChecked}
+            classes={{ root: 'brew-Radio' }}
             control={(
                 <MuiRadio
                     checkedIcon={CheckedControl}
                     classes={classes}
                     icon={UncheckedControl}
+                    inputRef={ref}
                     required={isRequired}
                     {...otherProps}
                 />
@@ -54,7 +57,6 @@ export const Radio = React.forwardRef(({
             label={<Typography variant="body1">{label}</Typography>}
             labelPlacement={labelPlacement}
             name={name}
-            ref={ref}
             value={value}
         />
     );

@@ -28,6 +28,12 @@ export interface Props extends StyledComponent {
     isRequired?: boolean,
 
     /**
+     * If `true`, the input will indicate an error. This is normally obtained via context from FormControl.
+     * @default false
+     */
+    hasError?: boolean,
+
+    /**
      * If `true`, the checkbox appears indeterminate. This does not set the native input element to indeterminate due
      * to inconsistent behavior across browsers. However, we set a `data-indeterminate` attribute on the input.
      */

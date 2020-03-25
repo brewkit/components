@@ -33,6 +33,12 @@ export interface Props extends StyledComponent {
     value?: any,
 
     /**
+     * If `true`, the input will indicate an error. This is normally obtained via context from FormControl.
+     * @default false
+     */
+    hasError?: boolean,
+
+    /**
      * The label of the input
      */
     label?: React.ReactNode,

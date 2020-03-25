@@ -28,6 +28,12 @@ export interface Props extends StyledComponent {
     isRequired?: boolean,
 
     /**
+     * If `true`, the input will indicate an error. This is normally obtained via context from FormControl.
+     * @default false
+     */
+    hasError?: boolean,
+
+    /**
      * Name attribute of the input element.
      */
     name?: string,

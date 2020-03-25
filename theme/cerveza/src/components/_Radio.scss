@@ -7,7 +7,7 @@
 
 $color: utilities.color(brand, primary);
 $outline-color: utilities.color(grey, 100);
-$border-width: 2px;
+$border-width: 1px;
 
 
 // ==============================================
@@ -15,7 +15,12 @@ $border-width: 2px;
 // ==============================================
 
 .brew-Radio {
-    color: $color;
+    margin-left: -9px;
+
+
+    .brew-Radio__base {
+        color: $color;
+    }
 
 
     .brew-Radio__ring {
@@ -39,7 +44,7 @@ $border-width: 2px;
     }
 
 
-    &.brew-Radio--isChecked {
+    .brew-Radio--isChecked {
         color: $color;
 
         .brew-Radio__ring {
@@ -50,7 +55,7 @@ $border-width: 2px;
     }
 
 
-    &.brew-Radio--isDisabled {
+    .brew-Radio--isDisabled {
         cursor: not-allowed;
 
         .brew-Radio__ring {
@@ -61,7 +66,7 @@ $border-width: 2px;
     }
 
 
-    &.brew-Radio:hover {
+    .brew-Radio__base:hover {
         background-color: transparent;
 
         .brew-Radio__ring {
@@ -70,14 +75,5 @@ $border-width: 2px;
 
     }
 
-
-}
-
-
-// ==============================================
-// Higher Specificity
-// ==============================================
-
-.brew-Radio.brew-Radio {
 
 }
