@@ -26,7 +26,7 @@ export const Form: FormComponent = React.forwardRef(({
 
 
     function submitForm(data: object): void {
-        onSubmit(data);
+        if (onSubmit) onSubmit(data);
     }
 
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import TextField from './components/TextField';
+import Select from './components/Select';
 import Checkbox from './components/Checkbox';
 import Switch from './components/Switch';
 import Radio from './components/Radio';
@@ -16,6 +17,7 @@ export const Input: InputComponent = React.forwardRef(({
 
 
 Input.TextField = TextField;
+Input.Select = Select;
 Input.Checkbox = Checkbox;
 Input.Switch = Switch;
 Input.Radio = Radio;

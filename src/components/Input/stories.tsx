@@ -6,9 +6,9 @@ import Progress from './index';
 export default {
     component: Progress,
     parameters: {
-        componentSubtitle: <Flag color="success">Stable</Flag>,
+        componentSubtitle: <Flag color="warning">In Development</Flag>,
     },
-    title: 'Stable|Feedback/Progress',
+    title: 'In Development|User Input/Input',
 };
 
 
