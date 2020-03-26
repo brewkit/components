@@ -15,8 +15,8 @@ const components = {
 
 
 /**
- * FormField is an input of most inputs, and additionally binds the rendered input to a form so they can be tracked and
- * validated.
+ * `FormField` is an abstraction of most inputs, additionally binding the rendered input to a `Form` so they can be
+ * tracked and validated.
  */
 export const FormField = React.forwardRef(({
     type = 'text',
@@ -40,10 +40,11 @@ export const FormField = React.forwardRef(({
 
     return (
         <Component
-            name={name}
+            className={classNames}
             hasError={Boolean(errors[name])}
             helperText={supportsHelperText && Boolean(errors[name]) && errors[name].message}
-            ref={register(validation || {})}
+            name={name}
+            ref={register?.(validation ?? {})}
             {...otherProps}
         />
     );

@@ -7,6 +7,7 @@
 
 $off-track-color: utilities.color(grey, 300);
 $on-track-color: utilities.color(brand, primary);
+$spacing: utilities.size(x-small);
 
 
 // ==============================================
@@ -14,13 +15,17 @@ $on-track-color: utilities.color(brand, primary);
 // ==============================================
 
 .brew-Switch {
-    width: auto;
-    height: auto;
+    margin: 0;
 
-    .brew-Switch__switchBase {
+    .brew-Switch__base {
+        padding: 0.3rem 0;
+        width: auto;
+        height: auto;
+    }
+
+    .brew-Switch__thumbBase {
         position: absolute;
         top: 50%;
-        left: 12px;
         transform: translate(0%, -50%);
         padding: 0;
     }
@@ -77,6 +82,31 @@ $on-track-color: utilities.color(brand, primary);
     ~ .brew-Switch__track {
         opacity: 1;
         background-color: rgba($off-track-color, 0.2);
+    }
+
+}
+
+
+// ==============================================
+// Label Placements
+// ==============================================
+
+.brew-Switch .brew-Switch__label {
+    margin: 0 0 0 $spacing;
+}
+
+.brew-Switch.brew-Switch--labelPlacement {
+
+    &-start .brew-Switch__label {
+        margin: 0 $spacing 0 0;
+    }
+
+    &-top .brew-Switch__label {
+        margin: 0 0 $spacing 0;
+    }
+
+    &-bottom .brew-Switch__label {
+        margin: $spacing 0 0 0;
     }
 
 }

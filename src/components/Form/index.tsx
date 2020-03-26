@@ -7,24 +7,26 @@ import { FormComponent, Props } from './types';
 
 
 /**
- * Forms handle data, input validation, and submission.
+ * `Form` wraps around the actual body of the form and binds with any underlying `Form` based components. It also
+ * handles the form's submission and can use validation schema to validate the content.
  */
 export const Form: FormComponent = React.forwardRef(({
     children,
     className,
     onSubmit,
+    validationSchema,
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
     const formMethods = useForm({
-        mode: "onChange",
+        validationSchema,
+        mode: 'onChange',
     });
 
 
-    function submitForm(data: object) {
-        console.log(formMethods);
-        onSubmit && onSubmit(data);
+    function submitForm(data: object): void {
+        onSubmit(data);
     }
 
 

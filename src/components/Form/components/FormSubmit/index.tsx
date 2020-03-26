@@ -6,7 +6,7 @@ import { Props } from './types';
 
 
 /**
- * FormSubmit is a submit button with additional binding to Form to allow for better control and validation.
+ * `FormSubmit` is a submit button with additional binding to `Form` to allow for better control and validation.
  */
 export const FormSubmit = React.forwardRef(({
     children = 'Submit',

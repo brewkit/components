@@ -8,6 +8,7 @@
 $checkmark-color: #ffffff;
 $checkbox-grey: utilities.color(grey, 100);
 $border-width: 1px;
+$spacing: utilities.size(x-small);
 
 
 // ==============================================
@@ -15,9 +16,11 @@ $border-width: 1px;
 // ==============================================
 
 .brew-Checkbox {
-    margin-left: -9px;
+    margin: 0;
 
     .brew-Checkbox__base {
+        margin: -$spacing;
+        padding: $spacing;
         overflow: hidden;
         align-items: center;
         cursor: pointer;
@@ -66,7 +69,6 @@ $border-width: 1px;
 
 }
 
-
 // ==============================================
 // Higher Specificity
 // ==============================================
@@ -111,5 +113,30 @@ $border-width: 1px;
 
     }
 
+
+}
+
+
+// ==============================================
+// Label Placements
+// ==============================================
+
+.brew-Checkbox .brew-Checkbox__label {
+    margin: 0 0 0 $spacing;
+}
+
+.brew-Checkbox.brew-Checkbox--labelPlacement {
+
+    &-start .brew-Checkbox__label {
+        margin: 0 $spacing 0 0;
+    }
+
+    &-top .brew-Checkbox__label {
+        margin: 0 0 $spacing 0;
+    }
+
+    &-bottom .brew-Checkbox__label {
+        margin: $spacing 0 0 0;
+    }
 
 }

@@ -42,20 +42,20 @@ export const Sandbox = (): React.ReactElement => {
 
 
 export const General = (): React.ReactElement => (
-    <React.Fragment>
+    <div style={{ display: 'inline-grid', gridAutoFlow: 'column', gridGap: '1rem' }}>
         <Radio value="1" />
         <Radio isChecked value="2" />
         <Radio isDisabled value="4" />
         <Radio isChecked isDisabled value="5" />
-    </React.Fragment>
+    </div>
 );
 
 
 export const WithLabels = (): React.ReactElement => (
-    <React.Fragment>
+    <div style={{ display: 'inline-grid', gridAutoFlow: 'column', gridGap: '1rem' }}>
         <Radio label="Top" labelPlacement="top" value="1" />
         <Radio label="Start" labelPlacement="start" value="2" />
         <Radio label="Bottom" labelPlacement="bottom" value="3" />
         <Radio label="End" labelPlacement="end" value="4" />
-    </React.Fragment>
+    </div>
 );

@@ -47,6 +47,7 @@ $error-color: utilities.color(accent, error);
     }
 
     .brew-TextField__helperText {
+        line-height: 1;
         margin-top: 4px;
         transition: color 0.3s;
     }

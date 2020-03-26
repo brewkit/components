@@ -8,6 +8,7 @@
 $color: utilities.color(brand, primary);
 $outline-color: utilities.color(grey, 100);
 $border-width: 1px;
+$spacing: utilities.size(x-small);
 
 
 // ==============================================
@@ -15,10 +16,12 @@ $border-width: 1px;
 // ==============================================
 
 .brew-Radio {
-    margin-left: -9px;
+    margin: 0;
 
 
     .brew-Radio__base {
+        margin: -$spacing;
+        padding: $spacing;
         color: $color;
     }
 
@@ -75,5 +78,30 @@ $border-width: 1px;
 
     }
 
+
+}
+
+
+// ==============================================
+// Label Placements
+// ==============================================
+
+.brew-Radio .brew-Radio__label {
+    margin: 0 0 0 $spacing;
+}
+
+.brew-Radio.brew-Radio--labelPlacement {
+
+    &-start .brew-Radio__label {
+        margin: 0 $spacing 0 0;
+    }
+
+    &-top .brew-Radio__label {
+        margin: 0 0 $spacing 0;
+    }
+
+    &-bottom .brew-Radio__label {
+        margin: $spacing 0 0 0;
+    }
 
 }

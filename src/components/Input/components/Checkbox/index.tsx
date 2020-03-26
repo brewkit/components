@@ -23,7 +23,15 @@ export const Checkbox = React.forwardRef(({
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    const classes = {
+    const labelClasses = {
+        root: 'brew-Checkbox',
+        labelPlacementStart: 'brew-Checkbox--labelPlacement-start',
+        labelPlacementTop: 'brew-Checkbox--labelPlacement-top',
+        labelPlacementBottom: 'brew-Checkbox--labelPlacement-bottom',
+    };
+
+
+    const controlClasses = {
         root: `brew-Checkbox__base ${hasError ? 'brew-Checkbox--hasError' : ''}`,
         disabled: 'brew-Checkbox--isDisabled',
         checked: 'brew-Checkbox--isChecked',
@@ -53,11 +61,11 @@ export const Checkbox = React.forwardRef(({
     return (
         <FormControlLabel
             checked={isChecked}
-            classes={{ root: 'brew-Checkbox' }}
+            classes={labelClasses}
             control={(
                 <MuiCheckbox
                     checkedIcon={CheckedControl}
-                    classes={classes}
+                    classes={controlClasses}
                     icon={UncheckedControl}
                     indeterminate={isIndeterminate}
                     indeterminateIcon={IndeterminateControl}
@@ -67,7 +75,9 @@ export const Checkbox = React.forwardRef(({
                 />
             )}
             disabled={isDisabled}
-            label={<Typography variant="body1">{label}</Typography>}
+            label={label && (
+                <Typography className="brew-Checkbox__label" variant="body1">{label}</Typography>
+            )}
             labelPlacement={labelPlacement}
             name={name}
             value={value}

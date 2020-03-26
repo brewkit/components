@@ -21,11 +21,19 @@ export const Switch = React.forwardRef(({
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    const classes = {
-        root: `brew-Switch ${hasError ? 'brew-Switch--hasError' : ''}`,
+    const labelClasses = {
+        root: 'brew-Switch',
+        labelPlacementStart: 'brew-Switch--labelPlacement-start',
+        labelPlacementTop: 'brew-Switch--labelPlacement-top',
+        labelPlacementBottom: 'brew-Switch--labelPlacement-bottom',
+    };
+
+
+    const controlClasses = {
+        root: `brew-Switch__base ${hasError ? 'brew-Switch--hasError' : ''}`,
         disabled: 'brew-Switch--isDisabled',
         checked: 'brew-Switch--isChecked',
-        switchBase: 'brew-Switch__switchBase',
+        switchBase: 'brew-Switch__thumbBase',
         track: 'brew-Switch__track',
         thumb: 'brew-Switch__thumb',
     };
@@ -34,16 +42,19 @@ export const Switch = React.forwardRef(({
     return (
         <FormControlLabel
             checked={isChecked}
+            classes={labelClasses}
             control={(
                 <MuiSwitch
-                    classes={classes}
+                    classes={controlClasses}
                     inputRef={ref}
                     required={isRequired}
                     {...otherProps}
                 />
             )}
             disabled={isDisabled}
-            label={<Typography variant="body1">{label}</Typography>}
+            label={label && (
+                <Typography className="brew-Switch__label" variant="body1">{label}</Typography>
+            )}
             labelPlacement={labelPlacement}
             name={name}
             value={value}

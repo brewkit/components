@@ -115,7 +115,7 @@ export const TextField = React.forwardRef(({
             error={hasError}
             FormHelperTextProps={FormHelperTextProps}
             fullWidth={isFluid}
-            helperText={(
+            helperText={helperText && (
                 <Grow in={Boolean(helperText)}>
                     <span>{helperText}</span>
                 </Grow>
