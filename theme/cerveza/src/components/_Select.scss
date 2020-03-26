@@ -13,7 +13,6 @@ $error-color: utilities.color(accent, error);
 // ==============================================
 // General
 // ==============================================
-
 .brew-Select {
     height: 50px;
     min-width: 300px;
@@ -54,4 +53,31 @@ $error-color: utilities.color(accent, error);
     ~ .brew-Select__icon {
         color: #ffffff;
     }
+}
+
+
+// ==============================================
+// Menu
+// ==============================================
+.brew-Select__menu {
+    border-radius: utilities.$border-radius;
+
+    .brew-Select__list {
+        padding: utilities.size(x-small);
+    }
+
+    .brew-Select__menuItem {
+        color: utilities.color(grey, 700);
+        transition: all 0.3s;
+
+        &:hover {
+            background-color: rgba($border-focus-color, 0.2);
+        }
+
+        &--selected {
+            background-color: rgba($border-focus-color, 0.2);
+        }
+
+    }
+
 }

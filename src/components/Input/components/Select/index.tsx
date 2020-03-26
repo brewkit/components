@@ -28,6 +28,12 @@ export const Select = React.forwardRef(({
     };
 
 
+    const MenuItemClasses = {
+        root: 'brew-Select__menuItem',
+        selected: 'brew-Select__menuItem--selected',
+    };
+
+
     const MenuProps = {
         classes: {
             paper: 'brew-Select__menu',
@@ -38,7 +44,7 @@ export const Select = React.forwardRef(({
 
     function renderOptions(): React.ReactNode {
         return options.map((option: Option, index: number) => (
-            <MenuItem key={index} value={option.value}>
+            <MenuItem classes={MenuItemClasses} key={index} value={option.value}>
                 {option.label}
             </MenuItem>
         ));
