@@ -21,11 +21,13 @@ For better usage examples, check out the [documentation on Form](/?path=/docs/st
 The preferred way of validating a `Form` is using [yup](https://github.com/jquense/yup) validation schema. The validation schema
 is handed off to `Form` using the `validationSchema` prop.
 
-<Source code={(`
-    const validationSchema = yup.object({
-        myField: yup.string().required('This field is required.').min(10, 'A length of 10 or more is required.'),
-    });\n
+
+```jsx
+const validationSchema = yup.object({
+    myField: yup.string().required('This field is required.').min(10, 'A length of 10 or more is required.'),
+});
+
 <Form validationSchema={validationSchema}>
-        <Form.Field label="Required TextField" name="myField"/>
+    <Form.Field label="Required TextField" name="myField"/>
 </Form>
-`)} />
+```
