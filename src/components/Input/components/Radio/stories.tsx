@@ -9,9 +9,9 @@ import { LabelPlacements } from './types';
 export default {
     component: Radio,
     parameters: {
-        componentSubtitle: <Flag color="warning">In Development</Flag>,
+        componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'In Development|User Input/Radio',
+    title: 'Stable|User Input/Radio',
 };
 
 

@@ -6,9 +6,9 @@ import Flag from '@components/Flag';
 export default {
     component: Form.Submit,
     parameters: {
-        componentSubtitle: <Flag color="warning">In Development</Flag>,
+        componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'In Development|Forms/FormSubmit',
+    title: 'Stable|Forms/FormSubmit',
 };
 
 

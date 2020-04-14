@@ -8,9 +8,9 @@ import { LabelPlacements } from './types';
 export default {
     component: Switch,
     parameters: {
-        componentSubtitle: <Flag color="warning">In Development</Flag>,
+        componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'In Development|User Input/Switch',
+    title: 'Stable|User Input/Switch',
 };
 
 
