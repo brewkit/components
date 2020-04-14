@@ -24,9 +24,16 @@ export const Sandbox = (): React.ReactElement => {
         'dark'
     );
 
+    const anchorFrom = select(
+        'anchorFrom',
+        ['top', 'right', 'bottom', 'left'],
+        'left',
+    );
+
 
     return (
         <AppBar
+            anchorFrom={anchorFrom}
             className="custom-appbar-class"
             color={color}
         >

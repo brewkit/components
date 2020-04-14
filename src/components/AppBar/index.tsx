@@ -1,5 +1,4 @@
 import React from 'react';
-import clsx from 'clsx';
 import MuiAppBar from '@material-ui/core/AppBar';
 import MuiToolbar from '@material-ui/core/Toolbar';
 import { Props } from './types';
@@ -11,7 +10,7 @@ export const AppBar = React.forwardRef(({
     className,
     color = 'dark',
     ...otherProps
-}: Props): React.ReactElement => {
+}: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
     const classes = {
@@ -22,6 +21,7 @@ export const AppBar = React.forwardRef(({
     return (
         <MuiAppBar
             classes={classes}
+            ref={ref}
             {...otherProps}
         >
             <MuiToolbar className="brew-AppBar__content">
