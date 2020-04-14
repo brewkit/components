@@ -27,6 +27,8 @@ $colors: (
     padding: utilities.size(normal);
 
     .brew-Alert__content {
+        display: flex;
+        flex-direction: column;
         padding: 0;
     }
 
