@@ -37,12 +37,11 @@ export const Sandbox = (): React.ReactElement => {
             className="custom-appbar-class"
             color={color}
         >
-            <Icon color="primary">add_circle</Icon>
-            <Icon color="primary">contacts</Icon>
-            <Icon color="primary">business</Icon>
-            <Icon color="primary">add</Icon>
-            <div style={{flexGrow: 1}}/>
-            <Icon color="primary">more_vert</Icon>
+            <Icon color="primary" size="large">add_circle</Icon>
+            <Icon color="primary" size="large">contacts</Icon>
+            <Icon color="primary" size="large">business</Icon>
+            <Icon color="primary" size="large">add</Icon>
+            <Icon color="primary" size="large">more_vert</Icon>
         </AppBar>
     );
 

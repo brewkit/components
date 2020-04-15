@@ -4,6 +4,10 @@ import MuiToolbar from '@material-ui/core/Toolbar';
 import { Props } from './types';
 
 
+/**
+ * The `AppBar` component represents a content and actions related to the current screen.
+ * It can be used for navigation, actions, titles, or branding
+ */
 export const AppBar = React.forwardRef(({
     anchorFrom = 'left',
     children,

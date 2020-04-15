@@ -5,35 +5,19 @@ $barColors: primary, secondary, tertiary, dark, light;
 
 
 .brew-AppBar {
-
-    &--left {
-        left: 0;
-        bottom: 0;
-        width: 4rem;
-
-        .brew-AppBar__content {
-            flex-direction: column;
-            justify-content: center;
-            align-items: start;
-            height: 100%;
-        }
-    }
-
-    &--bottom {
+    &--left, &--right {
         bottom: 0;
         top: auto;
     }
 
     .brew-AppBar__content {
         padding: 0;
+        justify-content: space-between;
 
         i {
             padding: utilities.size(normal);
-            font-size: utilities.size(xx-large);
         }
     }
-
-
 
     @each $color in $barColors {
 
@@ -45,6 +29,52 @@ $barColors: primary, secondary, tertiary, dark, light;
                 background-color: utilities.color(accent, $color);
             }
 
+        }
+    }
+}
+
+
+@include utilities.for-tablet-landscape-up {
+
+    .brew-AppBar {
+
+        &--left {
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4rem;
+
+            .brew-AppBar__content {
+                flex-direction: column;
+                justify-content: flex-start;
+                height: 100%;
+
+                :last-child {
+                    margin-top: auto;
+                }
+            }
+        }
+
+        &--bottom {
+            bottom: 0;
+            top: auto;
+        }
+
+        &--right {
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 4rem;
+
+            .brew-AppBar__content {
+                flex-direction: column;
+                justify-content: flex-start;
+                height: 100%;
+
+                :last-child {
+                    margin-top: auto;
+                }
+            }
         }
     }
 }
