@@ -1,48 +1,62 @@
 import React from 'react';
-import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
-import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import MuiExpansionPanelActions from '@material-ui/core/ExpansionPanelActions';
+import { ExpansionPanel as MuiExpansionPanel } from '@material-ui/core';
+import { ExpansionPanelSummary as MuiExpansionPanelSummary } from '@material-ui/core';
+import { ExpansionPanelDetails as MuiExpansionPanelDetails } from '@material-ui/core';
+import { ExpansionPanelActions as MuiExpansionPanelActions } from '@material-ui/core';
 import { Props } from './types';
 
 
 export const ExpansionPanel = React.forwardRef(({
     actions,
-    children,
     details,
+    expandIcon,
     hasDefaultExpanded,
     isDisabled,
     isExpanded,
+    isSquare,
     onChange,
     summary,
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    const classes = {
-        root: `brew-ExpansionPanel brew-ExpansionPanel--${isExpanded}`
+    const wrapperClasses = {
+        root: 'brew-ExpansionPanel',
+        rounded: 'brew-ExpansionPanel--isRounded',
+        expanded: 'brew-ExpansionPanel--isExpanded',
+        disabled: 'brew-ExpansionPanel--isDisabled',
+    };
+
+
+    const summaryClasses = {
+        root: 'brew-ExpansionPanel__summary',
+        content: 'brew-ExpansionPanel__summaryContent',
+        expandIcon: 'brew-ExpansionPanel__expandIcon',
     };
 
 
     return (
         <MuiExpansionPanel
-            classes={classes}
+            classes={wrapperClasses}
             defaultExpanded={hasDefaultExpanded}
             disabled={isDisabled}
             expanded={isExpanded}
             onChange={onChange}
             ref={ref}
+            square={isSquare}
             {...otherProps}
         >
-            <MuiExpansionPanelSummary className="brew-ExpansionPanel__summary">
+            <MuiExpansionPanelSummary classes={summaryClasses} expandIcon={expandIcon}>
                 {summary}
             </MuiExpansionPanelSummary>
             <MuiExpansionPanelDetails className="brew-ExpansionPanel__details">
                 {details}
             </MuiExpansionPanelDetails>
-            <MuiExpansionPanelActions className="brew-ExpansionPanel__actions">
-                {actions}
-            </MuiExpansionPanelActions>
+            {actions && (
+                <MuiExpansionPanelActions className="brew-ExpansionPanel__actions">
+                    {actions}
+                </MuiExpansionPanelActions>
+            )}
         </MuiExpansionPanel>
     );
 
