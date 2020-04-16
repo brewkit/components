@@ -1,6 +1,6 @@
 import React from 'react';
-import MuiAppBar from '@material-ui/core/AppBar';
-import MuiToolbar from '@material-ui/core/Toolbar';
+import { AppBar as MuiAppBar } from '@material-ui/core';
+import { Toolbar as MuiToolbar } from '@material-ui/core';
 import { Props } from './types';
 
 
