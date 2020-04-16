@@ -6,6 +6,10 @@ import { ExpansionPanelActions as MuiExpansionPanelActions } from '@material-ui/
 import { Props } from './types';
 
 
+/**
+ * Expansion panels contain a summary of content that can be collapsible
+ * Can be used as a standalone component or combined with other components like cards
+ */
 export const ExpansionPanel = React.forwardRef(({
     actions,
     details,
