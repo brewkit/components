@@ -5,18 +5,19 @@ import {
     CardHeader as MuiCardHeader,
     CardActions as MuiCardActions,
 } from '@material-ui/core';
+import CardMedia from './components/CardMedia';
 import { Props } from './types';
 
 
 export const Card = React.forwardRef(({
     actions,
     children,
-    className,
     contentComponent = 'div',
+    customContentBefore,
+    customContentAfter,
     headerAction,
     headerAvatar,
     headerComponent = 'div',
-    headerContent,
     headerSubtitle,
     headerTitle,
     isRaised,
@@ -36,7 +37,7 @@ export const Card = React.forwardRef(({
 
     return (
         <MuiCard className="brew-Card" raised={isRaised} {...otherProps}>
-            {headerContent && (
+            {headerTitle && (
                 <MuiCardHeader
                     action={headerAction}
                     avatar={headerAvatar}
@@ -44,15 +45,17 @@ export const Card = React.forwardRef(({
                     component={headerComponent}
                     subheader={headerSubtitle}
                     title={headerTitle}
-                >
-                    {headerContent}
-                </MuiCardHeader>
+                />
             )}
-            <MuiCardContent className="brew-Card__content" component={contentComponent}>
-                {children}
-            </MuiCardContent>
+            {customContentBefore}
+            {children && (
+                <MuiCardContent className="brew-Card__content" component={contentComponent}>
+                    {children}
+                </MuiCardContent>
+            )}
+            {customContentAfter}
             {actions && (
-                <MuiCardActions>
+                <MuiCardActions className="brew-Card__actions">
                     {actions}
                 </MuiCardActions>
             )}
@@ -67,3 +70,4 @@ Card.displayName = 'Card';
 
 
 export default Card;
+export { CardMedia };
