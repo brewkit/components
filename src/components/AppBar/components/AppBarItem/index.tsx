@@ -19,7 +19,7 @@ export const AppBarItem = React.forwardRef(({
     const Element = linkTo ? NavLink : 'a';
 
 
-    let navLinkProps = {};
+    let navLinkProps: any = {};
 
     if (linkTo)
         navLinkProps = {
@@ -49,7 +49,7 @@ export const AppBarItem = React.forwardRef(({
             >
                 {iconName}
             </Icon>
-            <span>{label}</span>
+            <span className="brew-AppBarItem__label">{label}</span>
         </Element>
     );
 
