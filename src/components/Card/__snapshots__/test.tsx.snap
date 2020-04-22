@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="MuiPaper-root MuiCard-root brew-Card MuiPaper-elevation1 MuiPaper-rounded"
+>
+  <div
+    className="MuiCardHeader-root brew-Card__header"
+  >
+    <div
+      className="MuiCardHeader-content brew-Card__headerContent"
+    >
+      <span
+        className="MuiTypography-root MuiCardHeader-title brew-Card__headerTitle MuiTypography-h5 MuiTypography-displayBlock"
+      >
+        foo
+      </span>
+      <span
+        className="MuiTypography-root MuiCardHeader-subheader brew-Card__headerSubtitle MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+      >
+        bar
+      </span>
+    </div>
+  </div>
+  <div
+    className="MuiCardContent-root brew-Card__content"
+  >
+    Default
+  </div>
+</div>
+`;
