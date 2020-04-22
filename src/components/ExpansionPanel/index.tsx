@@ -1,8 +1,11 @@
 import React from 'react';
-import { ExpansionPanel as MuiExpansionPanel } from '@material-ui/core';
-import { ExpansionPanelSummary as MuiExpansionPanelSummary } from '@material-ui/core';
-import { ExpansionPanelDetails as MuiExpansionPanelDetails } from '@material-ui/core';
-import { ExpansionPanelActions as MuiExpansionPanelActions } from '@material-ui/core';
+import {
+    ExpansionPanel as MuiExpansionPanel,
+    ExpansionPanelSummary as MuiExpansionPanelSummary,
+    ExpansionPanelDetails as MuiExpansionPanelDetails,
+    ExpansionPanelActions as MuiExpansionPanelActions,
+} from '@material-ui/core';
+import Typography from '@components/Typography';
 import { Props } from './types';
 
 
@@ -51,14 +54,20 @@ export const ExpansionPanel = React.forwardRef(({
             {...otherProps}
         >
             <MuiExpansionPanelSummary classes={summaryClasses} expandIcon={expandIcon}>
-                {summary}
+                <Typography>
+                    {summary}
+                </Typography>
             </MuiExpansionPanelSummary>
             <MuiExpansionPanelDetails className="brew-ExpansionPanel__details">
-                {details}
+                <Typography>
+                    {details}
+                </Typography>
             </MuiExpansionPanelDetails>
             {actions && (
                 <MuiExpansionPanelActions className="brew-ExpansionPanel__actions">
-                    {actions}
+                    <Typography>
+                        {actions}
+                    </Typography>
                 </MuiExpansionPanelActions>
             )}
         </MuiExpansionPanel>
