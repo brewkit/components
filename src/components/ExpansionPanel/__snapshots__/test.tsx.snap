@@ -27,7 +27,11 @@ Array [
       <div
         className="MuiExpansionPanelSummary-content brew-ExpansionPanel__summaryContent"
       >
-        foo
+        <p
+          className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-body1 brew-Typography--align-inherit MuiTypography-body1"
+        >
+          foo
+        </p>
       </div>
     </div>
     <div
@@ -50,7 +54,11 @@ Array [
             <div
               className="MuiExpansionPanelDetails-root brew-ExpansionPanel__details"
             >
-              bar
+              <p
+                className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-body1 brew-Typography--align-inherit MuiTypography-body1"
+              >
+                bar
+              </p>
             </div>
           </div>
         </div>
@@ -82,7 +90,11 @@ Array [
       <div
         className="MuiExpansionPanelSummary-content brew-ExpansionPanel__summaryContent Mui-expanded"
       >
-        hello
+        <p
+          className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-body1 brew-Typography--align-inherit MuiTypography-body1"
+        >
+          hello
+        </p>
       </div>
     </div>
     <div
@@ -105,7 +117,11 @@ Array [
             <div
               className="MuiExpansionPanelDetails-root brew-ExpansionPanel__details"
             >
-              goodbye
+              <p
+                className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-body1 brew-Typography--align-inherit MuiTypography-body1"
+              >
+                goodbye
+              </p>
             </div>
           </div>
         </div>
