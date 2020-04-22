@@ -30,3 +30,8 @@ export interface Props {
 
 
 }
+
+
+export interface AppBarComponent extends React.ForwardRefExoticComponent<any> {
+    Item?: any,
+}
