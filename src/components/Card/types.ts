@@ -71,3 +71,8 @@ export interface Props {
 
 
 }
+
+
+export interface CardComponent extends React.ForwardRefExoticComponent<any> {
+    Media?: any,
+}

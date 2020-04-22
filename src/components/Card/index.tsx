@@ -6,10 +6,10 @@ import {
     CardActions as MuiCardActions,
 } from '@material-ui/core';
 import CardMedia from './components/CardMedia';
-import { Props } from './types';
+import { CardComponent, Props } from './types';
 
 
-export const Card = React.forwardRef(({
+export const Card: CardComponent = React.forwardRef(({
     actions,
     children,
     contentComponent = 'div',
@@ -67,7 +67,7 @@ export const Card = React.forwardRef(({
 
 
 Card.displayName = 'Card';
+Card.Media = CardMedia;
 
 
 export default Card;
-export { CardMedia };
