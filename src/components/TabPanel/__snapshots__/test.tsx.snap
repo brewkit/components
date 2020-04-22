@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabPanel Renders correctly with defaults 1`] = `
+<div
+  className="brew-TabPanel"
+  style={
+    Object {
+      "display": undefined,
+    }
+  }
+/>
+`;
+
+exports[`TabPanel Renders correctly with property variants 1`] = `
+Array [
+  <div
+    className="brew-TabPanel"
+    style={
+      Object {
+        "display": undefined,
+      }
+    }
+  >
+    children 1
+  </div>,
+  <div
+    className="brew-TabPanel"
+    style={
+      Object {
+        "display": undefined,
+      }
+    }
+  >
+    children 2
+  </div>,
+  <div />,
+]
+`;

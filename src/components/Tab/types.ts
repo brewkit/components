@@ -1,12 +1,7 @@
 import React from 'react';
-import { StyledComponent } from '../types';
+import { StyledParentComponent } from '../types';
 
-export interface Props extends StyledComponent {
-
-    /**
-     * Override or extend the styles applied to the component.
-     */
-    classes?: Object,
+export interface Props extends StyledParentComponent {
 
     /**
      * The component used for the root node.  Either a string to use a DOM element or a component.
@@ -21,12 +16,12 @@ export interface Props extends StyledComponent {
     /**
      * The icon element.
      */
-    icon?: React.ReactElement,
+    icon?: string,
 
     /**
-     * The label element.
+     * The label for the tab
      */
-    label?: React.ReactNode,
+    label?: string,
 
     /**
      * You can provide your own value.  Otherwise, we fall back to the child position index.
