@@ -1,6 +1,6 @@
 import React from 'react';
 import { boolean } from '@storybook/addon-knobs';
-import Card, { CardMedia } from '@components/Card';
+import Card from '@components/Card';
 import Icon from '@components/Icon';
 import Typography from '@components/Typography';
 
@@ -26,7 +26,7 @@ export const Sandbox = (): React.ReactElement => {
                 headerSubtitle="Subtitle"
                 headerAvatar={<Icon>business</Icon>}
                 customContentBefore={
-                    <CardMedia
+                    <Card.Media
                         component="img"
                         src="https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528__340.jpg"
                     />
