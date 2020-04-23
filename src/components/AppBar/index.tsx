@@ -40,6 +40,7 @@ export const AppBar: AppBarComponent = React.forwardRef(({
 
 });
 
+
 AppBar.Item = AppBarItem;
 AppBar.displayName = 'AppBar';
 
