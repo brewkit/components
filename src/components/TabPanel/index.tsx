@@ -3,6 +3,9 @@ import clsx from 'clsx';
 import { useTabs } from '../Tabs/context';
 import { Props } from './types';
 
+/**
+ * The `<TabPanel />` component is used to show the content of a particular tab.
+ */
 const TabPanel = React.forwardRef(({ className, value, style = {}, ...otherProps }: Props, ref: React.Ref<any>): React.ReactElement => {
     const classes = clsx(
         'brew-TabPanel',

@@ -5,11 +5,11 @@ import Icon from '../Icon';
 import { Props } from './types';
 
 /**
- * The `<Tab />` component shows a tab within the `<Tabs />` component.  
+ * The `<Tab />` component shows a tab within the `<TabList />` component.  
  * 
  * Tabs organize and allow navigation between groups of content or different URL's.
  */
-const Tab = React.forwardRef(( { label = '', icon, ...otherProps }: Props, ref: React.Ref<any>): React.ReactElement => {
+const Tab = React.forwardRef(({ label = '', icon, ...otherProps }: Props, ref: React.Ref<any>): React.ReactElement => {
     const classes = {
         root: 'brew-Tab',
         labelIcon: 'brew-Tab--labelIcon',

@@ -4,11 +4,6 @@ import { StyledParentComponent } from '../types';
 export interface Props extends StyledParentComponent {
 
     /**
-     * The component used for the root node.  Either a string to use a DOM element or a component.
-     */
-    component?: React.ElementType,
-
-    /**
      * If true, the tab will be disabled.
      */
     disabled?: boolean,
