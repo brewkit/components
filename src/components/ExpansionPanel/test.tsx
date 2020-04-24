@@ -14,7 +14,7 @@ it('renders correctly', () => {
                 />
                 <ExpansionPanel
                     details="goodbye"
-                    hasDefaultExpanded
+                    isDefaultExpanded
                     summary="hello"
                 />
             </React.Fragment>

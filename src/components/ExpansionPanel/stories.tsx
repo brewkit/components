@@ -14,29 +14,10 @@ export default {
 }
 
 
-export const Sandbox = (): React.ReactElement => {
-
-
-    const hasDefaultExpanded = boolean('isDefaultEnabled', false);
-    const details = text('details', 'Surprise!');
-    const isDisabled = boolean('isDisabled', false);
-    const summary = text('summary', 'A summary reveals a...');
-    const hasDefaultExpanded2 = boolean('isDefaultEnabled2', true);
-    const details2 = text('details2', 'Thats the broom I rode on in on');
-    const summary2 = text('summary2', 'What is that?');
-    const hasDefaultExpanded3 = boolean('isDefaultEnabled3', false);
-    const details3 = text('details3', 'Bar');
-    const summary3 = text('summary3', 'Foo');
-
-
-    return (
+export const Sandbox = (): React.ReactElement => (
         <div>
             <ExpansionPanel
                 details={details}
-                isDisabled={isDisabled}
-                expandIcon={<Icon>arrow_drop_up</Icon>}
-                hasDefaultExpanded={hasDefaultExpanded}
-                summary={summary}
             />
             <ExpansionPanel
                 details={details2}
@@ -52,7 +33,8 @@ export const Sandbox = (): React.ReactElement => {
                 summary={summary3}
             />
         </div>
-    );
+);
 
-
-};
+@default 'left'
+typescript docgen
+extend styledparent component

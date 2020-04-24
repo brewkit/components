@@ -1,10 +1,8 @@
 import React from 'react';
-import {
-    ExpansionPanel as MuiExpansionPanel,
-    ExpansionPanelSummary as MuiExpansionPanelSummary,
-    ExpansionPanelDetails as MuiExpansionPanelDetails,
-    ExpansionPanelActions as MuiExpansionPanelActions,
-} from '@material-ui/core';
+import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
+import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import MuiExpansionPanelActions from '@material-ui/core/ExpansionPanelActions';
 import Typography from '@components/Typography';
 import { Props } from './types';
 
@@ -17,10 +15,9 @@ export const ExpansionPanel = React.forwardRef(({
     actions,
     details,
     expandIcon,
-    hasDefaultExpanded,
+    isDefaultExpanded,
     isDisabled,
     isExpanded,
-    isSquare,
     onChange,
     summary,
     ...otherProps
@@ -29,7 +26,6 @@ export const ExpansionPanel = React.forwardRef(({
 
     const wrapperClasses = {
         root: 'brew-ExpansionPanel',
-        rounded: 'brew-ExpansionPanel--isRounded',
         expanded: 'brew-ExpansionPanel--isExpanded',
         disabled: 'brew-ExpansionPanel--isDisabled',
     };
@@ -45,12 +41,11 @@ export const ExpansionPanel = React.forwardRef(({
     return (
         <MuiExpansionPanel
             classes={wrapperClasses}
-            defaultExpanded={hasDefaultExpanded}
+            defaultExpanded={isDefaultExpanded}
             disabled={isDisabled}
             expanded={isExpanded}
             onChange={onChange}
             ref={ref}
-            square={isSquare}
             {...otherProps}
         >
             <MuiExpansionPanelSummary classes={summaryClasses} expandIcon={expandIcon}>

@@ -26,7 +26,7 @@ export interface Props {
     /**
      * Determines if the default state is open or closed
      */
-    hasDefaultExpanded?: boolean,
+    isDefaultExpanded?: boolean,
 
 
     /**
