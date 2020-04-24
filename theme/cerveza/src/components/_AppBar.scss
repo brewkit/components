@@ -1,34 +1,21 @@
 @use '../utilities';
 
 
-$barColors: primary, secondary, tertiary, dark, light;
-
-
 .brew-AppBar {
+    background-color: utilities.color(accent, dark);
+
     &--left, &--right {
         bottom: 0;
         top: auto;
     }
 
     .brew-AppBar__content {
-        padding: 0;
+        padding: utilities.size(normal);
         justify-content: space-between;
+        min-height: auto;
 
-        i {
-            padding: utilities.size(normal);
-        }
-    }
-
-    @each $color in $barColors {
-
-        &--#{$color} {
-
-            @if $color == 'primary' or $color == 'secondary' or $color == 'tertiary' {
-                background-color: utilities.color(brand, $color);
-            } @else {
-                background-color: utilities.color(accent, $color);
-            }
-
+        :last-child {
+            margin-left: auto;
         }
     }
 }

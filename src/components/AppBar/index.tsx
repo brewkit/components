@@ -18,7 +18,7 @@ export const AppBar = React.forwardRef(({
 
 
     const classes = {
-        root: `brew-AppBar brew-AppBar-anchorFrom--${anchorFrom}`,
+        root: `brew-AppBar brew-AppBar--${anchorFrom}`,
     };
 
 
@@ -26,6 +26,8 @@ export const AppBar = React.forwardRef(({
         <MuiAppBar
             classes={classes}
             className={className}
+            color="inherit"
+            position={position}
             ref={ref}
             {...otherProps}
         >
