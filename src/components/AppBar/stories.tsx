@@ -60,4 +60,42 @@ export const Sticky = (): React.ReactElement => (
         </div>
 
 
-    );
+);
+
+
+export const OutlinedStatic = (): React.ReactElement => (
+
+
+    <AppBar anchorFrom="top" position="static" variant="outlined">
+        <div style={{ display: 'grid', gridGap: '1rem', gridAutoFlow: 'column' }}>
+            <Icon color="primary" size="large">add_circle</Icon>
+            <Icon color="primary" size="large">contacts</Icon>
+            <Icon color="primary" size="large">business</Icon>
+        </div>
+        <div style={{ display: 'grid', gridGap: '1rem', gridAutoFlow: 'column' }}>
+            <Icon color="primary" size="large">add</Icon>
+            <Icon color="primary" size="large">more_vert</Icon>
+        </div>
+    </AppBar>
+
+
+);
+
+
+export const HighElevation = (): React.ReactElement => (
+
+
+    <AppBar anchorFrom="top" elevation={24}>
+        <div style={{ display: 'grid', gridGap: '1rem', gridAutoFlow: 'column' }}>
+            <Icon color="primary" size="large">add_circle</Icon>
+            <Icon color="primary" size="large">contacts</Icon>
+            <Icon color="primary" size="large">business</Icon>
+        </div>
+        <div style={{ display: 'grid', gridGap: '1rem', gridAutoFlow: 'column' }}>
+            <Icon color="primary" size="large">add</Icon>
+            <Icon color="primary" size="large">more_vert</Icon>
+        </div>
+    </AppBar>
+
+
+);
