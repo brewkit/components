@@ -17,7 +17,7 @@ $colors: (
     accent: (
         success:        material-colors.get(green),
         warning:        material-colors.get(amber, 300),
-        danger:         material-colors.get(deepOrange),
+        error:          material-colors.get(deepOrange),
         info:           material-colors.get(lightBlue),
         light:          material-colors.get(blueGrey, 300),
         dark:           material-colors.get(blueGrey, 800),

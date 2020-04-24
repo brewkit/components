@@ -12,7 +12,7 @@ $colors: (
     primary: utilities.color(brand, primary),
     secondary: utilities.color(brand, secondary),
     success: utilities.color(accent, success),
-    danger: utilities.color(accent, danger),
+    error: utilities.color(accent, error),
     warning: utilities.color(accent, warning),
     info: utilities.color(accent, info),
     dark: utilities.color(accent, dark),
@@ -101,7 +101,7 @@ $colors: (
 // Colors
 // ==============================================
 
-$color-variants: primary, secondary, success, info, warning, danger, light, dark;
+$color-variants: primary, secondary, success, info, warning, error, light, dark;
 
 @each $color in $color-variants {
 

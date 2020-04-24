@@ -1,0 +1,107 @@
+@use '../utilities';
+
+
+// ==============================================
+// Variables
+// ==============================================
+
+$color: utilities.color(brand, primary);
+$outline-color: utilities.color(grey, 100);
+$border-width: 1px;
+$spacing: utilities.size(x-small);
+
+
+// ==============================================
+// General
+// ==============================================
+
+.brew-Radio {
+    margin: 0;
+
+
+    .brew-Radio__base {
+        margin: -$spacing;
+        padding: $spacing;
+        color: $color;
+    }
+
+
+    .brew-Radio__ring {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        border: $border-width solid $outline-color;
+        border-radius: 50%;
+        transition: all 0.3s;
+    }
+
+
+    .brew-Radio__pip {
+        width: utilities.size(small);
+        height: utilities.size(small);
+        background-color: #ffffff;
+        border-radius: 50%;
+        transition: all 0.3s;
+    }
+
+
+    .brew-Radio--isChecked {
+        color: $color;
+
+        .brew-Radio__ring {
+            background-color: $color;
+            border: $border-width solid $color;
+        }
+
+    }
+
+
+    .brew-Radio--isDisabled {
+        cursor: not-allowed;
+
+        .brew-Radio__ring {
+            background-color: $outline-color;
+            border: $border-width solid $outline-color;
+        }
+
+    }
+
+
+    .brew-Radio__base:hover {
+        background-color: transparent;
+
+        .brew-Radio__ring {
+            border: $border-width solid $color;
+        }
+
+    }
+
+
+}
+
+
+// ==============================================
+// Label Placements
+// ==============================================
+
+.brew-Radio .brew-Radio__label {
+    margin: 0 0 0 $spacing;
+}
+
+.brew-Radio.brew-Radio--labelPlacement {
+
+    &-start .brew-Radio__label {
+        margin: 0 $spacing 0 0;
+    }
+
+    &-top .brew-Radio__label {
+        margin: 0 0 $spacing 0;
+    }
+
+    &-bottom .brew-Radio__label {
+        margin: $spacing 0 0 0;
+    }
+
+}

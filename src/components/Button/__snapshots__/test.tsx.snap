@@ -26,6 +26,11 @@ exports[`renders correctly 1`] = `
     >
       <span
         className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
+        style={
+          Object {
+            "fontSize": "inherit",
+          }
+        }
       >
         Foo
       </span>
@@ -89,12 +94,18 @@ Array [
         className="brew-Button__content"
       >
         <i
-          className="brew-Icon material-icons brew-Icon--color-inherit"
+          aria-hidden={true}
+          className="material-icons MuiIcon-root brew-Icon brew-Icon--color-inherit brew-Icon--size-inherit MuiIcon-fontSizeInherit"
         >
           arrow_back
         </i>
         <span
           className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
+          style={
+            Object {
+              "fontSize": "inherit",
+            }
+          }
         >
           Go Back
         </span>
@@ -158,6 +169,11 @@ Array [
       >
         <span
           className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
+          style={
+            Object {
+              "fontSize": "inherit",
+            }
+          }
         >
           Click me!
         </span>
@@ -221,6 +237,11 @@ Array [
       >
         <span
           className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
+          style={
+            Object {
+              "fontSize": "inherit",
+            }
+          }
         >
           Click me!
         </span>
@@ -284,11 +305,17 @@ Array [
       >
         <span
           className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
+          style={
+            Object {
+              "fontSize": "inherit",
+            }
+          }
         >
           Add Account
         </span>
         <i
-          className="brew-Icon material-icons brew-Icon--color-inherit"
+          aria-hidden={true}
+          className="material-icons MuiIcon-root brew-Icon brew-Icon--color-inherit brew-Icon--size-inherit MuiIcon-fontSizeInherit"
         >
           add_circle_outline
         </i>
@@ -351,7 +378,8 @@ Array [
         className="brew-Button__content"
       >
         <i
-          className="brew-Icon material-icons brew-Icon--color-inherit"
+          aria-hidden={true}
+          className="material-icons MuiIcon-root brew-Icon brew-Icon--color-inherit brew-Icon--size-inherit MuiIcon-fontSizeInherit"
         >
           add_circle_outline
         </i>
@@ -415,6 +443,11 @@ Array [
       >
         <span
           className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
+          style={
+            Object {
+              "fontSize": "inherit",
+            }
+          }
         >
           Click me!
         </span>
@@ -475,6 +508,11 @@ Array [
       >
         <span
           className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
+          style={
+            Object {
+              "fontSize": "inherit",
+            }
+          }
         >
           Click me!
         </span>
@@ -538,6 +576,11 @@ Array [
       >
         <span
           className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
+          style={
+            Object {
+              "fontSize": "inherit",
+            }
+          }
         >
           Click me!
         </span>
@@ -601,6 +644,11 @@ Array [
       >
         <span
           className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-button brew-Typography--align-inherit brew-Button__text MuiTypography-button"
+          style={
+            Object {
+              "fontSize": "inherit",
+            }
+          }
         >
           Click me!
         </span>

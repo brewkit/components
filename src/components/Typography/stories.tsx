@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React from 'react';
 import { text, select, boolean } from '@storybook/addon-knobs';
 import Flag from '@components/Flag';
 import Typography from '@components/Typography';
@@ -14,9 +14,9 @@ export default {
 };
 
 
-export const Sandbox = (): ReactElement => {
+export const Sandbox = (): React.ReactElement => {
     const align: Alignments = select('align', ['inherit', 'left', 'center', 'right', 'justify'], 'inherit');
-    const children: ReactNode = text('children', 'Lorem ipsum dolor sit amet.');
+    const children: React.ReactNode = text('children', 'Lorem ipsum dolor sit amet.');
     const color: Colors = select('color', [
         'inherit',
         'primary',
@@ -25,7 +25,7 @@ export const Sandbox = (): ReactElement => {
         'success',
         'warning',
         'info',
-        'danger',
+        'error',
     ], 'inherit');
     const display: Displays = select('display', ['initial', 'block', 'inline'], 'initial');
     const shouldTruncate = boolean('shouldTruncate', false);
@@ -60,7 +60,7 @@ export const Sandbox = (): ReactElement => {
 };
 
 
-export const General = (): ReactElement => (
+export const General = (): React.ReactElement => (
     <div style={{ maxWidth: '100%' }}>
         <Typography>
             Default Settings - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -68,7 +68,7 @@ export const General = (): ReactElement => (
     </div>
 );
 
-export const Headers = (): ReactElement => (
+export const Headers = (): React.ReactElement => (
     <div style={{ maxWidth: '100%' }}>
         <Typography hasGutter shouldTruncate variant="h1">
             H1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -92,7 +92,7 @@ export const Headers = (): ReactElement => (
 );
 
 
-export const Paragraphs = (): ReactElement => (
+export const Paragraphs = (): React.ReactElement => (
     <React.Fragment>
         <Typography hasGutter variant="body1">
             body1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in,
@@ -108,7 +108,7 @@ export const Paragraphs = (): ReactElement => (
 );
 
 
-export const Truncated = (): ReactElement => (
+export const Truncated = (): React.ReactElement => (
     <Typography shouldTruncate variant="body1">
         body1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante hendrerit, imperdiet lectus in,
         egestas nulla. Donec molestie congue nulla sit amet viverra. Duis dignissim mi eget ex dignissim, id

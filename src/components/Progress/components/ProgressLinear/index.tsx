@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { LinearProgress as MuiProgressLinear } from '@material-ui/core';
+import MuiProgressLinear from '@material-ui/core/LinearProgress';
 import { Props } from './types';
 
 

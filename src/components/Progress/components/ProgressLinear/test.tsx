@@ -20,7 +20,7 @@ describe('ProgressLinear', () => {
                     <ProgressLinear color="secondary" size="medium" value={40} variant="determinate" />
                     <ProgressLinear bufferValue={60} color="tertiary" size="large" value={40} variant="buffer" />
                     <ProgressLinear color="success" variant="query" />
-                    <ProgressLinear color="danger" />
+                    <ProgressLinear color="error" />
                     <ProgressLinear color="warning" />
                     <ProgressLinear color="info" />
                 </React.Fragment>

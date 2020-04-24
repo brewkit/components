@@ -1,0 +1,95 @@
+@use '../utilities';
+
+
+// ==============================================
+// Variables
+// ==============================================
+
+$border-color: utilities.color(grey, 100);
+$border-focus-color: utilities.color(brand, primary);
+$error-color: utilities.color(accent, error);
+
+
+// ==============================================
+// General
+// ==============================================
+
+.brew-TextField {
+
+    .brew-TextField__label {
+        font-size: utilities.size(small);
+        text-transform: uppercase;
+        transform: translate(0) scale(0.75);
+    }
+
+
+    .brew-TextField__input {
+        min-height: 50px;
+        min-width: 300px;
+        padding: utilities.size(small);
+        border: 1px solid $border-color;
+        border-radius: utilities.$border-radius;
+        transition: all 0.3s;
+
+        input {
+            padding: 0;
+        }
+
+        &:before,
+        &:after {
+            display: none;
+        }
+
+    }
+
+    label + .brew-TextField__input {
+        margin-top: utilities.size(large);
+    }
+
+    .brew-TextField__helperText {
+        line-height: 1;
+        margin-top: 4px;
+        transition: color 0.3s;
+    }
+
+    .brew-TextField__visibilityIcon {
+        cursor: pointer;
+        display: flex;
+        color: $border-focus-color;
+    }
+
+    .brew-TextField__searchIcon {
+        display: flex;
+        color: $border-focus-color;
+        margin-right: utilities.size(x-small);
+    }
+
+}
+
+
+// ==============================================
+// Focused
+// ==============================================
+
+.brew-TextField .brew-TextField__input--isFocused {
+    border: 1px solid $border-focus-color;
+}
+
+
+// ==============================================
+// Errored
+// ==============================================
+
+.brew-TextField {
+
+    .brew-TextField__input--hasError {
+        border: 1px solid $error-color;
+    }
+
+    .brew-TextField__helperText--hasError,
+    .brew-TextField__errorIcon {
+        display: flex;
+        color: $error-color;
+    }
+
+}

@@ -1,0 +1,97 @@
+@use 'sass:color';
+@use 'sass:map';
+@use '../utilities';
+
+
+// ==============================================
+// Variables
+// ==============================================
+
+$font_weight: bold;
+$colors: (
+    success: utilities.color(accent, success),
+    error: utilities.color(accent, error),
+    warning: utilities.color(accent, warning),
+    info: utilities.color(accent, info),
+);
+
+
+// ==============================================
+// General
+// ==============================================
+
+.brew-Alert.brew-Alert {
+    display: flex;
+    align-items: center;
+    border-radius: 0;
+    padding: utilities.size(normal);
+
+    .brew-Alert__content {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .brew-Alert__action {
+        margin-right: 0;
+    }
+
+    .brew-Alert__icon {
+        font-size: utilities.size(x-large);
+        padding: 0;
+    }
+
+    .brew-Alert__title {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    .brew-Alert__title:not(:last-child) {
+        margin-bottom: utilities.size(xx-small);
+    }
+
+}
+
+
+// ==============================================
+// Severities
+// ==============================================
+
+$color-variants: success, info, warning, error;
+
+@each $color in $color-variants {
+
+    $accent: map_get($colors, $color);
+
+    .brew-Alert {
+
+        &.brew-Alert--severity-#{$color} {
+            background-color: rgba($accent, 0.2);
+            border-left: utilities.size(x-small) solid $accent;
+
+            &.brew-Alert--variant-filled {
+                background-color: utilities.color(gray, 800);
+            }
+
+            .brew-Alert__title {
+                color: $accent;
+            }
+
+        }
+
+    }
+
+}
+
+
+// ==============================================
+// Variants
+// ==============================================
+
+.brew-Alert.brew-Alert--variant-filled {
+
+    .brew-Alert__content {
+        color: #ffffff;
+    }
+
+}

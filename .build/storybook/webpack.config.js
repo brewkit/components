@@ -10,9 +10,6 @@ module.exports = async ({ config }) => {
             exclude: /node_modules/,
             use: [
                 {
-                    loader: 'cache-loader'
-                },
-                {
                     loader: 'awesome-typescript-loader',
                 },
                 {

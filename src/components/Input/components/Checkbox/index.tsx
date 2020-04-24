@@ -1,6 +1,7 @@
 import React from 'react';
-import { Checkbox as MuiCheckbox, FormControlLabel } from '@material-ui/core';
-import Icon from '@components/Icon';
+import MuiCheckbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { Check, Remove } from '@material-ui/icons';
 import Typography from '@components/Typography';
 import { Props } from './types';
 
@@ -12,7 +13,9 @@ export const Checkbox = React.forwardRef(({
     isChecked,
     isDisabled,
     isIndeterminate,
+    hasError,
     isRequired,
+    name,
     label,
     labelPlacement = 'end',
     value,
@@ -20,8 +23,16 @@ export const Checkbox = React.forwardRef(({
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    const classes = {
+    const labelClasses = {
         root: 'brew-Checkbox',
+        labelPlacementStart: 'brew-Checkbox--labelPlacement-start',
+        labelPlacementTop: 'brew-Checkbox--labelPlacement-top',
+        labelPlacementBottom: 'brew-Checkbox--labelPlacement-bottom',
+    };
+
+
+    const controlClasses = {
+        root: `brew-Checkbox__base ${hasError ? 'brew-Checkbox--hasError' : ''}`,
         disabled: 'brew-Checkbox--isDisabled',
         checked: 'brew-Checkbox--isChecked',
         indeterminate: 'brew-Checkbox--isIndeterminate',
@@ -35,14 +46,14 @@ export const Checkbox = React.forwardRef(({
 
     const CheckedControl = (
         <div className="brew-Checkbox__box">
-            <Icon className="brew-Checkbox__icon" size="large">check</Icon>
+            <Check className="brew-Checkbox__icon" color="inherit" />
         </div>
     );
 
 
     const IndeterminateControl = (
         <div className="brew-Checkbox__box">
-            <Icon className="brew-Checkbox__icon" size="large">remove</Icon>
+            <Remove className="brew-Checkbox__icon" color="inherit" />
         </div>
     );
 
@@ -50,21 +61,25 @@ export const Checkbox = React.forwardRef(({
     return (
         <FormControlLabel
             checked={isChecked}
+            classes={labelClasses}
             control={(
                 <MuiCheckbox
                     checkedIcon={CheckedControl}
-                    classes={classes}
+                    classes={controlClasses}
                     icon={UncheckedControl}
                     indeterminate={isIndeterminate}
                     indeterminateIcon={IndeterminateControl}
+                    inputRef={ref}
                     required={isRequired}
                     {...otherProps}
                 />
             )}
             disabled={isDisabled}
-            label={<Typography variant="body1">{label}</Typography>}
+            label={label && (
+                <Typography className="brew-Checkbox__label" variant="body1">{label}</Typography>
+            )}
             labelPlacement={labelPlacement}
-            ref={ref}
+            name={name}
             value={value}
         />
     );

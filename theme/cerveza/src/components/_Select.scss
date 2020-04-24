@@ -1,0 +1,90 @@
+@use '../utilities';
+
+
+// ==============================================
+// Variables
+// ==============================================
+
+$border-color: utilities.color(grey, 100);
+$border-focus-color: utilities.color(brand, primary);
+$error-color: utilities.color(accent, error);
+
+
+// ==============================================
+// General
+// ==============================================
+.brew-Select {
+    height: 50px;
+    min-width: 300px;
+
+    .brew-Select__base {
+        border: 1px solid $border-color;
+        border-radius: utilities.$border-radius;
+        padding: calc(0.75rem + 2.5px) utilities.size(small);
+        transition: all 0.3s;
+    }
+
+    &:before,
+    &:after {
+        display: none;
+    }
+
+    .brew-Select__icon {
+        right: utilities.size(small);
+    }
+
+}
+
+
+// ==============================================
+// Hover
+// ==============================================
+.brew-Select:hover .brew-Select__base {
+    border: 1px solid $border-focus-color;
+}
+
+// ==============================================
+// Focused
+// ==============================================
+.brew-Select--isOpen .brew-Select__base {
+    background-color: $border-focus-color;
+    color: #ffffff;
+
+    ~ .brew-Select__icon {
+        color: #ffffff;
+    }
+}
+
+.brew-Select__base:focus {
+    border: 1px solid $border-focus-color;
+    background-color: transparent;
+}
+
+
+// ==============================================
+// Menu
+// ==============================================
+.brew-Select__menu {
+    margin-top: utilities.size(x-small);
+    border: 1px solid $border-focus-color;
+    border-radius: utilities.$border-radius;
+
+    .brew-Select__list {
+        padding: utilities.size(x-small);
+    }
+
+    .brew-Select__menuItem {
+        color: utilities.color(grey, 700);
+        transition: all 0.3s;
+
+        &:hover {
+            background-color: rgba($border-focus-color, 0.2);
+        }
+
+        &--selected {
+            background-color: rgba($border-focus-color, 0.2);
+        }
+
+    }
+
+}

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import Flag from '@components/Flag';
 import Progress from './index';
 
@@ -6,10 +6,10 @@ import Progress from './index';
 export default {
     component: Progress,
     parameters: {
-        componentSubtitle: <Flag color="success">Stable</Flag>,
+        componentSubtitle: <Flag color="warning">In Development</Flag>,
     },
-    title: 'Stable|Feedback/Progress',
+    title: 'In Development|User Input/Input',
 };
 
 
-export const General = (): ReactElement => <Progress />;
+export const General = (): React.ReactElement => <Progress />;

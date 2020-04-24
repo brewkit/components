@@ -1,10 +1,8 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { select } from '@storybook/addon-knobs';
 import Icon from './index';
-import Typography from '../Typography';
-import { Colors, Sizes } from './types';
 import Flag from '@components/Flag';
-import icons from './iconList';
+import { Colors as ColorOptions, Sizes as SizeOptions } from './types';
 
 
 export default {
@@ -12,46 +10,64 @@ export default {
     parameters: {
         componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'Stable|Display/Icon',
+    title: 'Stable|Data Display/Icons/Icon',
 };
 
 
-export const Sandbox = (): ReactElement => {
-    const color: Colors = select('color', [
+export const Sandbox = (): React.ReactElement => {
+
+    const color: ColorOptions = select('color', [
         'primary',
         'secondary',
         'success',
-        'danger',
+        'error',
         'warning',
         'info',
         'light',
         'dark',
         'inherit',
-    ], 'primary');
-    const size: Sizes = select('size', ['small', 'medium', 'large'], 'small');
-    const children: string = select(
-        'children',
-        icons,
-        icons[0],
-    );
+    ], 'inherit');
+    const size: SizeOptions = select('size', [
+        'small',
+        'default',
+        'large',
+        'inherit',
+    ], 'inherit');
 
     return (
-        <div>
-            <Icon color={color} size={size}>{children}</Icon>
-        </div>
+        <Icon color={color} size={size}>add_circle</Icon>
     );
+
 };
 
 
-export const IconList = (): ReactElement => (
-    <div style={{ display: 'grid', gridGap: '1rem', gridTemplateColumns: '1fr 1fr' }}>
-        {icons.map((icon: string, index: number) => (
-            <div key={index} style={{ alignContent: 'center', display: 'flex' }}>
-                <span style={{ marginRight: '0.5rem' }}>
-                    <Icon size="large">{icon}</Icon>
-                </span>
-                <Typography>{icon}</Typography>
-            </div>
-        ))}
-    </div>
+export const Default = (): React.ReactElement => (
+    <Icon>add_circle</Icon>
+);
+
+
+export const Sizes = (): React.ReactElement => (
+    <React.Fragment>
+        <Icon>add_circle</Icon>
+        <Icon size="small">add_circle</Icon>
+        <Icon size="default">add_circle</Icon>
+        <Icon size="large">add_circle</Icon>
+        <Icon size="inherit">add_circle</Icon>
+    </React.Fragment>
+);
+
+
+export const Colors = (): React.ReactElement => (
+    <React.Fragment>
+        <Icon>add_circle</Icon>
+        <Icon color="primary">add_circle</Icon>
+        <Icon color="secondary">add_circle</Icon>
+        <Icon color="success">add_circle</Icon>
+        <Icon color="warning">add_circle</Icon>
+        <Icon color="error">add_circle</Icon>
+        <Icon color="info">add_circle</Icon>
+        <Icon color="dark">add_circle</Icon>
+        <Icon color="light">add_circle</Icon>
+        <Icon color="inherit">add_circle</Icon>
+    </React.Fragment>
 );

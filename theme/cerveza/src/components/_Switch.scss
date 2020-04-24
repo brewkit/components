@@ -1,0 +1,112 @@
+@use '../utilities';
+
+
+// ==============================================
+// Variables
+// ==============================================
+
+$off-track-color: utilities.color(grey, 300);
+$on-track-color: utilities.color(brand, primary);
+$spacing: utilities.size(x-small);
+
+
+// ==============================================
+// General
+// ==============================================
+
+.brew-Switch {
+    margin: 0;
+
+    .brew-Switch__base {
+        padding: 0.3rem 0;
+        width: auto;
+        height: auto;
+    }
+
+    .brew-Switch__thumbBase {
+        position: absolute;
+        top: 50%;
+        transform: translate(0%, -50%);
+        padding: 0;
+    }
+
+    .brew-Switch__track {
+        opacity: 1;
+        width: 4rem;
+        height: 1.5rem;
+        border-radius: utilities.$border-radius;
+        background-color: rgba($off-track-color, 0.2);
+    }
+
+    .brew-Switch__thumb {
+        width: 2rem;
+        height: 2rem;
+        border-radius: utilities.$border-radius;
+        background-color: $off-track-color;
+    }
+
+}
+
+
+// ==============================================
+// isChecked
+// ==============================================
+
+.brew-Switch .brew-Switch--isChecked {
+    color: $on-track-color;
+    transform: translate(2rem, -50%);
+
+    .brew-Switch__thumb {
+        background-color: $on-track-color;
+    }
+
+    ~ .brew-Switch__track {
+        opacity: 1;
+        background-color: rgba($on-track-color, 0.2);
+    }
+
+}
+
+
+// ==============================================
+// isDisabled
+// ==============================================
+
+.brew-Switch .brew-Switch--isDisabled {
+    color: $off-track-color;
+
+    .brew-Switch__thumb {
+        background-color: $off-track-color;
+    }
+
+    ~ .brew-Switch__track {
+        opacity: 1;
+        background-color: rgba($off-track-color, 0.2);
+    }
+
+}
+
+
+// ==============================================
+// Label Placements
+// ==============================================
+
+.brew-Switch .brew-Switch__label {
+    margin: 0 0 0 $spacing;
+}
+
+.brew-Switch.brew-Switch--labelPlacement {
+
+    &-start .brew-Switch__label {
+        margin: 0 $spacing 0 0;
+    }
+
+    &-top .brew-Switch__label {
+        margin: 0 0 $spacing 0;
+    }
+
+    &-bottom .brew-Switch__label {
+        margin: $spacing 0 0 0;
+    }
+
+}

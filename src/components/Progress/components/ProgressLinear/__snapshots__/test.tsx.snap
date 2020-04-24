@@ -84,7 +84,7 @@ Array [
     />
   </div>,
   <div
-    className="MuiLinearProgress-root MuiLinearProgress-colorPrimary brew-ProgressLinear brew-ProgressLinear--variant-indeterminate brew-ProgressLinear--color-danger brew-ProgressLinear--size-inherit MuiLinearProgress-indeterminate"
+    className="MuiLinearProgress-root MuiLinearProgress-colorPrimary brew-ProgressLinear brew-ProgressLinear--variant-indeterminate brew-ProgressLinear--color-error brew-ProgressLinear--size-inherit MuiLinearProgress-indeterminate"
     role="progressbar"
   >
     <div

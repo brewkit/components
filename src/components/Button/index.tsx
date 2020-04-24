@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Button as MuiButton } from '@material-ui/core';
+import MuiButton from '@material-ui/core/Button';
 import Typography from '@components/Typography';
 import Progress from '@components/Progress';
 import { Props } from './types';
@@ -52,7 +52,7 @@ export const Button = React.forwardRef(({
             <div className="brew-Button__content">
                 {startIcon}
                 {children && (
-                    <Typography className="brew-Button__text" variant="button">
+                    <Typography className="brew-Button__text" style={{ fontSize: 'inherit' }} variant="button">
                         {children}
                     </Typography>
                 )}

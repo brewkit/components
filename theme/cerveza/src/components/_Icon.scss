@@ -9,7 +9,7 @@ $colors: (
     primary: utilities.color(brand, primary),
     secondary: utilities.color(brand, secondary),
     success: utilities.color(accent, success),
-    danger: utilities.color(accent, danger),
+    error: utilities.color(accent, error),
     warning: utilities.color(accent, warning),
     info: utilities.color(accent, info),
     dark: utilities.color(accent, dark),
@@ -18,57 +18,25 @@ $colors: (
 
 
 // ==============================================
-// General
-// ==============================================
-
-.brew-Icon {
-    display: inline-block;
-}
-
-.material-icons {
-    font-size: 1.25em;
-    font-weight: normal;
-}
-
-
-// ==============================================
 // Colors
 // ==============================================
 
-@mixin color-styles($colorName) {
-    $svg_color: map_get($colors, $colorName);
-    color: $svg_color;
-}
-
-.brew-Icon--color-primary { @include color-styles(primary); }
-
-.brew-Icon--color-secondary { @include color-styles(secondary); }
-
-.brew-Icon--color-success { @include color-styles(success); }
-
-.brew-Icon--color-danger { @include color-styles(danger); }
-
-.brew-Icon--color-warning { @include color-styles(warning); }
-
-.brew-Icon--color-info { @include color-styles(info); }
-
-.brew-Icon--color-light { @include color-styles(light); }
-
-.brew-Icon--color-dark { @include color-styles(dark); }
-
-.brew-Icon--color-inherit {
-    color: inherit;
-}
+@include utilities.fetch-color('.brew-Icon.brew-Icon--color-', 'color');
+@include utilities.fetch-color('.brew-SvgIcon.brew-SvgIcon--color-', 'color');
 
 
 // ==============================================
 // Sizes
 // ==============================================
 
-.brew-Icon--size-small { height: utilities.size(small) * 1.5; }
+.brew-Icon--size-small,
+.brew-SvgIcon--size-small { font-size: utilities.size(small) * 1.5; }
 
-.brew-Icon--size-medium { height: utilities.size(normal) * 1.5; }
+.brew-Icon--size-medium,
+.brew-SvgIcon--size-medium { font-size: utilities.size(normal) * 1.5; }
 
-.brew-Icon--size-large { height: utilities.size(large) * 1.5; }
+.brew-Icon--size-large,
+.brew-SvgIcon--size-large { font-size: utilities.size(large) * 1.5; }
 
-.brew-Icon--size-inherit { height: 1em; }
+.brew-Icon--size-inherit,
+.brew-SvgIcon--size-inherit { font-size: 1em; }

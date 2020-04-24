@@ -1,7 +1,7 @@
 import React from 'react';
 import { text, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import Icon from '@components/Icon';
+import { ArrowBack, AddCircleOutline } from '@material-ui/icons';
 import Button from './index';
 import { Variants, Colors, Sizes } from './types';
 import Flag from '@components/Flag';
@@ -23,7 +23,7 @@ export const Sandbox = (): React.ReactElement => {
         'primary',
         'secondary',
         'success',
-        'danger',
+        'error',
         'warning',
         'info',
         'light',
@@ -57,9 +57,9 @@ export const Sandbox = (): React.ReactElement => {
 export const General = (): React.ReactElement => <Button>Default</Button>;
 export const Standard = (): React.ReactElement => <Button variant="standard">Click me!</Button>;
 export const Text = (): React.ReactElement => <Button variant="text">Click me!</Button>;
-export const WithStartIcon = (): React.ReactElement => <Button startIcon={<Icon>arrow_back</Icon>}>Go Back</Button>;
-export const WithEndIcon = (): React.ReactElement => <Button endIcon={<Icon>add_circle_outline</Icon>}>Add Account</Button>;
-export const OnlyIcon = (): React.ReactElement => <Button endIcon={<Icon>add_circle_outline</Icon>} />;
+export const WithStartIcon = (): React.ReactElement => <Button startIcon={<ArrowBack />}>Go Back</Button>;
+export const WithEndIcon = (): React.ReactElement => <Button endIcon={<AddCircleOutline />}>Add Account</Button>;
+export const OnlyIcon = (): React.ReactElement => <Button endIcon={<AddCircleOutline />} />;
 export const Loading = (): React.ReactElement => <Button isLoading variant="standard">Click me!</Button>;
 export const Fluid = (): React.ReactElement => <Button isFluid variant="standard">Click me!</Button>;
 export const Compact = (): React.ReactElement => <Button isCompact variant="standard">Click me!</Button>;
