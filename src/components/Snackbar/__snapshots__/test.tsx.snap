@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="MuiSnackbar-root MuiSnackbar-anchorOriginTopRight brew-Snackbar brew-Snackbar--primary brew-Snackbar--top-right"
+  className="MuiSnackbar-root brew-Snackbar brew-Snackbar--primary brew-Snackbar--top-right MuiSnackbar-anchorOriginTopRight"
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
@@ -17,17 +17,25 @@ exports[`renders correctly 1`] = `
     <div
       className="brew-Snackbar__message"
     >
-      foo
+      <span
+        className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-caption brew-Typography--align-inherit brew-Typography--color-inherit MuiTypography-caption"
+      >
+        foo
+      </span>
     </div>
     <span
       className="brew-Snackbar__action"
       onClick={[Function]}
     >
-      <div
-        onClick={[Function]}
+      <span
+        className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-caption brew-Typography--align-inherit brew-Typography--color-inherit MuiTypography-caption"
       >
-        Close
-      </div>
+        <div
+          onClick={[Function]}
+        >
+          Close
+        </div>
+      </span>
     </span>
   </div>
 </div>
