@@ -12,13 +12,13 @@ export const AppBar = React.forwardRef(({
     anchorFrom = 'left',
     children,
     className,
-    color = 'dark',
+    position,
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
     const classes = {
-        root: `brew-AppBar brew-AppBar--${color} brew-AppBar--${anchorFrom}`,
+        root: `brew-AppBar brew-AppBar-anchorFrom--${anchorFrom}`,
     };
 
 

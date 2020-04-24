@@ -1,12 +1,11 @@
 import React from 'react';
-import { Colors } from '../types';
 
 
 export interface Props {
 
 
     /**
-     * The position in which the element is anchored from by default, responsiveness manipulate by css styling
+     * The position in which the element is anchored from by default, responsiveness manipulated by css styling
      */
     anchorFrom?: 'top' | 'right' | 'bottom' | 'left',
 
@@ -24,14 +23,22 @@ export interface Props {
 
 
     /**
-     * Background color of the element
+     * Shadow depth, corresponds to dp in the spec. It accepts values between 0 and 24 inclusive.
+     * Will be applied to the `Paper` component, default is 1
      */
-    color?: Colors,
+    elevation?: number,
 
 
-}
+    /**
+     * The CSS positioning type
+     */
+    position?: 'absolute' | 'fixed' | 'relative' | 'static' | 'sticky',
 
 
-export interface AppBarComponent extends React.ForwardRefExoticComponent<any> {
-    Item?: any,
+    /**
+     * Applied to the root `Paper` component, default is elevation
+     */
+    variant?: 'elevation' | 'outlined',
+
+
 }
