@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { useTabs } from '../Tabs/context';
+import { useTabs } from '@components/Tabs/context';
 import { Props } from './types';
 
 /**
