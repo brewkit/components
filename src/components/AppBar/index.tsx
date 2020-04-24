@@ -1,17 +1,14 @@
 import React from 'react';
-import {
-    AppBar as MuiAppBar,
-    Toolbar as MuiToolbar
-} from '@material-ui/core';
-import AppBarItem from './components/AppBarItem';
-import { AppBarComponent, Props } from './types';
+import MuiAppBar from '@material-ui/core/AppBar';
+import MuiToolbar from '@material-ui/core/Toolbar';
+import { Props } from './types';
 
 
 /**
  * The `AppBar` component represents content and actions related to the current screen.
  * It can be used for navigation, actions, titles, or branding
  */
-export const AppBar: AppBarComponent = React.forwardRef(({
+export const AppBar = React.forwardRef(({
     anchorFrom = 'left',
     children,
     className,
@@ -21,13 +18,14 @@ export const AppBar: AppBarComponent = React.forwardRef(({
 
 
     const classes = {
-        root: `brew-AppBar brew-AppBar--${color} brew-AppBar--${anchorFrom} ${className}`,
+        root: `brew-AppBar brew-AppBar--${color} brew-AppBar--${anchorFrom}`,
     };
 
 
     return (
         <MuiAppBar
             classes={classes}
+            className={className}
             ref={ref}
             {...otherProps}
         >
@@ -41,7 +39,6 @@ export const AppBar: AppBarComponent = React.forwardRef(({
 });
 
 
-AppBar.Item = AppBarItem;
 AppBar.displayName = 'AppBar';
 
 
