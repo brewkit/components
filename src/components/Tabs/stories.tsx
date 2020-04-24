@@ -1,9 +1,9 @@
 import React from 'react';
 import Tabs from './index';
-import TabList from '../TabList';
-import Tab from '../Tab';
-import TabPanel from '../TabPanel';
-import Typography from '../Typography';
+import TabList from '@components/TabList';
+import Tab from '@components/Tab';
+import TabPanel from '@components/TabPanel';
+import Typography from '@components/Typography';
 
 export default {
     title: 'In Development|Navigation/Tabs',
