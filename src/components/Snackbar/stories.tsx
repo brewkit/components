@@ -35,7 +35,7 @@ export const Sandbox = (): React.ReactElement => {
 
     const colors = select(
         'color',
-        ['primary', 'secondary', 'warning', 'success', 'danger', 'dark', 'light'],
+        ['primary', 'secondary', 'tertiary', 'success', 'error', 'warning', 'info', 'light', 'dark'],
         'primary',
     );
 
@@ -66,10 +66,14 @@ export const Sandbox = (): React.ReactElement => {
 
 
 export const Uncontrolled = (): React.ReactElement => (
+
+
     <Snackbar
         action="close"
-        duration={5}
+        duration={5000}
         message="Foo Bar"
         slideDirection="up"
     />
+
+
 );

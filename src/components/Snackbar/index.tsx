@@ -1,13 +1,13 @@
 import React from 'react';
-import clsx from 'clsx';
-import { Snackbar as MuiSnackbar, Slide } from '@material-ui/core';
+import MuiSnackbar from '@material-ui/core/Snackbar';
+import Slide from '@material-ui/core/Slide';
 import Icon from '@components/Icon';
+import Typography from '@components/Typography';
 import { Props } from './types';
 
 
 /**
- * <Snackbar {...props} /> Notification that pops up to alert the end user
- * Visibility controlled by isOpen prop
+ *  The `<Snackbar />` component provides a notification that pops up to alert the end user.
  */
 const Snackbar = ({
     action = '',
@@ -58,23 +58,21 @@ const Snackbar = ({
     };
 
 
-    const snackbarClasses = clsx(
-        'brew-Snackbar',
-        `brew-Snackbar--${color}`,
-        `brew-Snackbar--${position}`,
-        className,
-    );
+    const classes = {
+        root: `brew-Snackbar brew-Snackbar--${color} brew-Snackbar--${position}`,
+    };
 
 
     /* Don't render anything if snackbar is hidden */
-    if (isOpen === false || (typeof isOpen === 'undefined' && uncontrolledIsOpen === false)) return null;
+    if (isOpen === false || (typeof isOpen === 'undefined' && !uncontrolledIsOpen)) return null;
 
 
     return (
         <MuiSnackbar
             anchorOrigin={getAnchor()}
-            autoHideDuration={duration * 1000 || null}
-            className={snackbarClasses}
+            autoHideDuration={duration || null}
+            classes={classes}
+            className={className}
             onClose={onClose ?? closeUncontrolled}
             open={isOpen ?? uncontrolledIsOpen}
             TransitionComponent={(props: any): React.ReactElement => (
@@ -84,8 +82,18 @@ const Snackbar = ({
         >
             <div className="brew-Snackbar__content">
                 {iconName && <Icon className="brew-Snackbar__icon">{iconName}</Icon>}
-                <div className="brew-Snackbar__message">{message}</div>
-                {action && <span className="brew-Snackbar__action" onClick={closeUncontrolled}>{action}</span>}
+                <div className="brew-Snackbar__message">
+                    <Typography color="inherit" variant="caption">
+                        {message}
+                    </Typography>
+                </div>
+                {action && (
+                    <span className="brew-Snackbar__action" onClick={closeUncontrolled}>
+                        <Typography color="inherit" variant="caption">
+                            {action}
+                        </Typography>
+                    </span>
+                )}
             </div>
         </MuiSnackbar>
     );

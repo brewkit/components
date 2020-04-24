@@ -1,9 +1,6 @@
 @use '../utilities';
 
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
-
-
 $snackColors: primary, secondary, success, warning, danger, info, dark, light;
 
 
@@ -28,12 +25,10 @@ $snackColors: primary, secondary, success, warning, danger, info, dark, light;
 
     &__message {
         padding: 0;
-        font-size: utilities.size(small);
     }
 
     &__action {
         cursor: pointer;
-        font-size: utilities.size(small);
         margin-left: auto;
     }
 
