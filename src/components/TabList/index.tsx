@@ -1,6 +1,6 @@
 import React from 'react';
 import MuiTabs from '@material-ui/core/Tabs';
-import { useTabs } from '../Tabs/context';
+import { useTabs } from '@components/Tabs/context';
 import { Props } from './types';
 
 /**
