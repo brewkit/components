@@ -1,7 +1,7 @@
 import React from 'react';
 import MuiTab from '@material-ui/core/Tab';
-import Typography from '../Typography';
-import Icon from '../Icon';
+import Typography from '@components/Typography';
+import Icon from '@components/Icon';
 import { Props } from './types';
 
 /**
