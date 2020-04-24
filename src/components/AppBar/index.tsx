@@ -5,8 +5,8 @@ import { Props } from './types';
 
 
 /**
- * The `AppBar` component represents content and actions related to the current screen.
- * It can be used for navigation, actions, titles, or branding
+ * The `<AppBar />` component represents content and actions related to the current screen.
+ * It can be used for navigation, actions, titles, and branding.
  */
 export const AppBar = React.forwardRef(({
     anchorFrom = 'left',

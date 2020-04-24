@@ -1,42 +1,35 @@
-import React from 'react';
+import { StyledParentComponent } from '@components/types';
 
 
-export interface Props {
+export interface Props extends StyledParentComponent {
 
 
     /**
-     * The position in which the element is anchored from by default, responsiveness manipulated by css styling
+     * The position in which the element is anchored from by default, responsiveness is manipulated by CSS styling.
+     * @default 'left'
      */
     anchorFrom?: 'top' | 'right' | 'bottom' | 'left',
 
 
     /**
-     * Custom classname added to root
-     */
-    className?: string,
-
-
-    /**
-     * Any valid JSX
-     */
-    children?: React.ReactNode,
-
-
-    /**
-     * Shadow depth, corresponds to dp in the spec. It accepts values between 0 and 24 inclusive.
-     * Will be applied to the `Paper` component, default is 1
+     * Shadow depth, corresponds to `dp` in Material Design. It accepts values between 0 and 24 inclusive.
+     * Will be applied to the `<Paper />` component.
+     * @default '1'
      */
     elevation?: number,
 
 
     /**
-     * The CSS positioning type
+     * The positioning type. The behavior of the different options is described in the [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/position).
+     * Note: `sticky` is not universally supported and will fall back to `static` when unavailable.
+     * @default 'fixed'
      */
     position?: 'absolute' | 'fixed' | 'relative' | 'static' | 'sticky',
 
 
     /**
-     * Applied to the root `Paper` component, default is elevation
+     * Will be applied to the root `<Paper />` component.
+     * @default 'elevation'
      */
     variant?: 'elevation' | 'outlined',
 
