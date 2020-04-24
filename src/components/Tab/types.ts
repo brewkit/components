@@ -1,4 +1,3 @@
-import React from 'react';
 import { StyledParentComponent } from '../types';
 
 export interface Props extends StyledParentComponent {
