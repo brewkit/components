@@ -1,7 +1,5 @@
-// import * as React from 'react';
+import React from 'react';
 import { StyledParentComponent } from '../types';
-
-// import { TabsProps } from '@material-ui/core/Tabs/Tabs.d.ts';
 
 export interface Props extends StyledParentComponent {
 
