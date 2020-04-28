@@ -1,0 +1,42 @@
+@use '../utilities';
+
+
+.brew-ExpansionPanel {
+
+
+    &--isExpanded {
+
+        .brew-ExpansionPanel__summary {
+            background-color: utilities.color(brand,primary);
+
+        }
+
+        .brew-ExpansionPanel__summaryContent {
+            color: utilities.get(blueGrey, 50);
+        }
+    }
+
+    &--isDisabled {
+
+    }
+
+    &__summary {
+
+    }
+
+    &__summaryContent {
+
+    }
+
+    &__expandIcon {
+
+    }
+
+    &__details {
+
+    }
+
+    &__actions {
+
+    }
+}
