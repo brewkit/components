@@ -3,7 +3,7 @@
 exports[`renders correctly 1`] = `
 Array [
   <div
-    className="MuiPaper-root MuiExpansionPanel-root brew-ExpansionPanel Mui-disabled brew-ExpansionPanel--isDisabled MuiExpansionPanel-rounded brew-ExpansionPanel--isRounded MuiPaper-elevation1 MuiPaper-rounded"
+    className="MuiPaper-root MuiExpansionPanel-root brew-ExpansionPanel Mui-disabled brew-ExpansionPanel--isDisabled MuiExpansionPanel-rounded MuiPaper-elevation1 MuiPaper-rounded"
   >
     <div
       aria-disabled={true}
@@ -27,11 +27,11 @@ Array [
       <div
         className="MuiExpansionPanelSummary-content brew-ExpansionPanel__summaryContent"
       >
-        <p
-          className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-body1 brew-Typography--align-inherit MuiTypography-body1"
+        <div
+          className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-body1 brew-Typography--align-inherit brew-Typography--color-inherit MuiTypography-body1"
         >
           foo
-        </p>
+        </div>
       </div>
     </div>
     <div
@@ -54,11 +54,11 @@ Array [
             <div
               className="MuiExpansionPanelDetails-root brew-ExpansionPanel__details"
             >
-              <p
-                className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-body1 brew-Typography--align-inherit MuiTypography-body1"
+              <div
+                className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-body1 brew-Typography--align-inherit brew-Typography--color-inherit MuiTypography-body1"
               >
                 bar
-              </p>
+              </div>
             </div>
           </div>
         </div>
@@ -66,7 +66,7 @@ Array [
     </div>
   </div>,
   <div
-    className="MuiPaper-root MuiExpansionPanel-root brew-ExpansionPanel Mui-expanded brew-ExpansionPanel--isExpanded MuiExpansionPanel-rounded brew-ExpansionPanel--isRounded MuiPaper-elevation1 MuiPaper-rounded"
+    className="MuiPaper-root MuiExpansionPanel-root brew-ExpansionPanel Mui-expanded brew-ExpansionPanel--isExpanded MuiExpansionPanel-rounded MuiPaper-elevation1 MuiPaper-rounded"
   >
     <div
       aria-disabled={false}
@@ -90,11 +90,11 @@ Array [
       <div
         className="MuiExpansionPanelSummary-content brew-ExpansionPanel__summaryContent Mui-expanded"
       >
-        <p
-          className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-body1 brew-Typography--align-inherit MuiTypography-body1"
+        <div
+          className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-body1 brew-Typography--align-inherit brew-Typography--color-inherit MuiTypography-body1"
         >
           hello
-        </p>
+        </div>
       </div>
     </div>
     <div
@@ -117,11 +117,11 @@ Array [
             <div
               className="MuiExpansionPanelDetails-root brew-ExpansionPanel__details"
             >
-              <p
-                className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-body1 brew-Typography--align-inherit MuiTypography-body1"
+              <div
+                className="MuiTypography-root brew-Typography brew-Typography--display-initial brew-Typography--variant-body1 brew-Typography--align-inherit brew-Typography--color-inherit MuiTypography-body1"
               >
                 goodbye
-              </p>
+              </div>
             </div>
           </div>
         </div>
