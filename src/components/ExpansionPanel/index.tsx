@@ -49,18 +49,18 @@ export const ExpansionPanel = React.forwardRef(({
             {...otherProps}
         >
             <MuiExpansionPanelSummary classes={summaryClasses} expandIcon={expandIcon}>
-                <Typography>
+                <Typography color="inherit" component="div">
                     {summary}
                 </Typography>
             </MuiExpansionPanelSummary>
             <MuiExpansionPanelDetails className="brew-ExpansionPanel__details">
-                <Typography>
+                <Typography color="inherit" component="div">
                     {details}
                 </Typography>
             </MuiExpansionPanelDetails>
             {actions && (
                 <MuiExpansionPanelActions className="brew-ExpansionPanel__actions">
-                    <Typography>
+                    <Typography color="inherit" component="div">
                         {actions}
                     </Typography>
                 </MuiExpansionPanelActions>

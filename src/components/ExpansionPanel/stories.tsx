@@ -71,7 +71,7 @@ export const Controlled = (): React.ReactElement => {
         <div>
             <ExpansionPanel
                 expandIcon={<Icon>arrow_drop_up</Icon>}
-                summary="Brief Summary"
+                summary="Lorem Ipsum"
                 details="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
                 an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -93,7 +93,7 @@ export const Controlled = (): React.ReactElement => {
                 expandIcon={<Icon>arrow_drop_up</Icon>}
                 isExpanded={isExpanded === 'panel2'}
                 onChange={handleChange('panel2')}
-                summary="Set the default state to expanded"
+                summary="One panel open at a time"
             />
             <ExpansionPanel
                 details="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -106,7 +106,7 @@ export const Controlled = (): React.ReactElement => {
                 expandIcon={<Icon>arrow_drop_up</Icon>}
                 isExpanded={isExpanded === 'panel3'}
                 onChange={handleChange('panel3')}
-                summary="You may also disable a certain panel"
+                summary="Controlled panel"
             />
         </div>
     );
@@ -121,8 +121,9 @@ export const Custom = (): React.ReactElement => {
     return (
         <div>
             <ExpansionPanel
+                className="custom-class"
                 expandIcon={<Icon>arrow_drop_up</Icon>}
-                summary={<Input.Checkbox label="I acknowledge" />}
+                summary={<Input.Checkbox size="x-small" label="I acknowledge" />}
                 details="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
                 an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -133,10 +134,11 @@ export const Custom = (): React.ReactElement => {
                 aria-label="panel"
             />
             <ExpansionPanel
+                className="custom-class"
                 summary={
                     <div>
-                        <Button size="small" variant="text" onClick={e => e.stopPropagation()}>Click Me</Button>
                         Stop Propagation of the click event to not expand when clicking the button.
+                        <Button size="small" variant="text" onClick={e => e.stopPropagation()}>Click Me</Button>
                     </div>
                 }
                 details="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -149,6 +151,7 @@ export const Custom = (): React.ReactElement => {
                 expandIcon={<Icon>arrow_drop_up</Icon>}
             />
             <ExpansionPanel
+                className="custom-class"
                 details="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
                 an unknown printer took a galley of type and scrambled it to make a type specimen book.

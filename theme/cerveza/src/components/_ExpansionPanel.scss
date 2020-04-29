@@ -1,31 +1,55 @@
 @use '../utilities';
+@use '../material-colors';
 
 
 .brew-ExpansionPanel {
+
+    &.custom-class {
+        margin: 0;
+
+        .brew-Checkbox__box {
+            height: 1rem;
+            width: 1rem;
+        }
+
+        .brew-Checkbox__label {
+            color: material-colors.get(blue, 900);
+        }
+
+        &.brew-ExpansionPanel--isExpanded {
+
+            .brew-ExpansionPanel__summaryContent {
+                color: material-colors.get(blue, 900);
+            }
+        }
+    }
 
 
     &--isExpanded {
 
         .brew-ExpansionPanel__summary {
-            background-color: utilities.color(brand,primary);
-
+            border-bottom: 1px solid utilities.color(grey, 100);
         }
 
         .brew-ExpansionPanel__summaryContent {
-            color: utilities.get(blueGrey, 50);
+        }
+
+        .brew-ExpansionPanel__expandIcon {
+            color: utilities.color(brand, primary);
         }
     }
 
-    &--isDisabled {
-
+    &.brew-ExpansionPanel--isDisabled {
+        background-color: utilities.color(brand, tertiary);
     }
 
     &__summary {
+        background-color: material-colors.get(blueGrey, 50);
 
     }
 
     &__summaryContent {
-
+        color: material-colors.get(blue, 900);
     }
 
     &__expandIcon {
@@ -33,7 +57,7 @@
     }
 
     &__details {
-
+        color: utilities.color(grey, 500)
     }
 
     &__actions {
