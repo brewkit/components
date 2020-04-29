@@ -32,7 +32,7 @@ export interface Props extends StyledComponent {
 
     /**
      * Determines if the panel is disabled or not
-     * @default 'false
+     * @default 'false'
      */
     isDisabled?: boolean,
 

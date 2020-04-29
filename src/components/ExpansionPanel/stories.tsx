@@ -1,5 +1,4 @@
 import React from 'react';
-import { boolean, text } from '@storybook/addon-knobs';
 import ExpansionPanel from '@components/ExpansionPanel';
 import Flag from '@components/Flag';
 import Icon from '@components/Icon';
@@ -115,10 +114,7 @@ export const Controlled = (): React.ReactElement => {
 };
 
 
-export const Custom = (): React.ReactElement => {
-
-
-    return (
+export const Custom = (): React.ReactElement => (
         <div>
             <ExpansionPanel
                 className="custom-class"
@@ -164,7 +160,4 @@ export const Custom = (): React.ReactElement => {
                 summary={<Input.Checkbox label="I must stop click propagation for this to work" />}
             />
         </div>
-    );
-
-
-};
+);
