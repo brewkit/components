@@ -66,14 +66,10 @@ export const Sandbox = (): React.ReactElement => {
 
 
 export const Uncontrolled = (): React.ReactElement => (
-
-
     <Snackbar
         action="close"
         duration={5000}
         message="Foo Bar"
         slideDirection="up"
     />
-
-
 );
