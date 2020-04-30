@@ -3,8 +3,10 @@
 exports[`renders correctly 1`] = `
 <div
   className="MuiSnackbar-root brew-Snackbar brew-Snackbar--primary brew-Snackbar--top-right MuiSnackbar-anchorOriginTopRight"
+  onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
+  onTouchEnd={[Function]}
 >
   <div
     className="brew-Snackbar__content"
