@@ -24,6 +24,17 @@
         }
     }
 
+    &__summary {
+        background-color: material-colors.get(blueGrey, 50);
+    }
+
+    &__summaryContent {
+        color: material-colors.get(blue, 900);
+    }
+
+    &__details {
+        color: utilities.color(grey, 500)
+    }
 
     &--isExpanded {
 
@@ -41,26 +52,5 @@
 
     &.brew-ExpansionPanel--isDisabled {
         background-color: utilities.color(brand, tertiary);
-    }
-
-    &__summary {
-        background-color: material-colors.get(blueGrey, 50);
-
-    }
-
-    &__summaryContent {
-        color: material-colors.get(blue, 900);
-    }
-
-    &__expandIcon {
-
-    }
-
-    &__details {
-        color: utilities.color(grey, 500)
-    }
-
-    &__actions {
-
     }
 }
