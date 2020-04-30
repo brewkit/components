@@ -2,27 +2,11 @@
 @use '../material-colors';
 
 
+// ==============================================
+// General
+// ==============================================
+
 .brew-ExpansionPanel {
-
-    &.custom-class {
-        margin: 0;
-
-        .brew-Checkbox__box {
-            height: 1rem;
-            width: 1rem;
-        }
-
-        .brew-Checkbox__label {
-            color: material-colors.get(blue, 900);
-        }
-
-        &.brew-ExpansionPanel--isExpanded {
-
-            .brew-ExpansionPanel__summaryContent {
-                color: material-colors.get(blue, 900);
-            }
-        }
-    }
 
     &__summary {
         background-color: material-colors.get(blueGrey, 50);
@@ -52,5 +36,30 @@
 
     &.brew-ExpansionPanel--isDisabled {
         background-color: utilities.color(brand, tertiary);
+    }
+}
+
+
+// ==============================================
+// Custom styling for Story/Documentation
+// ==============================================
+
+&.custom-class {
+    margin: 0;
+
+    .brew-Checkbox__box {
+        height: 1rem;
+        width: 1rem;
+    }
+
+    .brew-Checkbox__label {
+        color: material-colors.get(blue, 900);
+    }
+
+    &.brew-ExpansionPanel--isExpanded {
+
+        .brew-ExpansionPanel__summaryContent {
+            color: material-colors.get(blue, 900);
+        }
     }
 }
