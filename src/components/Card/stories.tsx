@@ -44,10 +44,7 @@ export const Sandbox = (): React.ReactElement => {
 };
 
 
-export const Outlined = (): React.ReactElement => {
-
-
-    return (
+export const Outlined = (): React.ReactElement => (
         <div>
             <Card className="custom-storybook-2" variant="outlined">
                 <Typography align="center" hasGutter variant="body1" component="div">120V</Typography>
@@ -66,7 +63,4 @@ export const Outlined = (): React.ReactElement => {
                 <Typography align="center" variant="caption" component="div">STATUS LABEL</Typography>
             </Card>
         </div>
-    );
-
-
-};
+);
