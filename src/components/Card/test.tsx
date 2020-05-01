@@ -6,12 +6,7 @@ import Card from '@components/Card';
 it('renders correctly', () => {
     const tree = renderer
         .create((
-            <Card
-                headerTitle="foo"
-                headerSubtitle="bar"
-            >
-                Default
-            </Card>
+            <Card>Default</Card>
         ))
         .toJSON();
     expect(tree).toMatchSnapshot();
