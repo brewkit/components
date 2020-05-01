@@ -1,78 +1,34 @@
 import React from 'react';
+import { StyledParentComponent } from '@components/types';
 
 
-export interface Props {
+export interface Props extends StyledParentComponent {
 
 
     /**
-     *
+     * The content to show actions available
      */
     actions?: React.ReactNode,
 
 
     /**
-     * Any valid JSX to be wrapped in the main CardContent
+     * Shadow depth, corresponds to dp in the spec. It accepts values between 0 and 24 inclusive.
+     * @default '1'
      */
-    children?: React.ReactNode,
+    elevation?: number
 
 
     /**
-     * Component used for the root node of children
+     * The content of the header
      */
-    contentComponent?: React.ElementType,
+    header?: React.ReactNode,
 
 
     /**
-     * Any valid JSX to put before children
+     * The variant to use
+     * @default 'elevation'
      */
-    customContentBefore?: React.ReactNode,
+    variant?: 'elevation' | 'outlined';
 
 
-    /**
-     * Any valid JSX to put after children
-     */
-    customContentAfter?: React.ReactNode,
-
-
-    /**
-     * Action to appear in the header
-     */
-    headerAction?: React.ReactNode,
-
-
-    /**
-     * Avatar to appear in the header
-     */
-    headerAvatar?: React.ReactNode,
-
-
-    /**
-     * The root element for the header
-     */
-    headerComponent?: React.ElementType,
-
-
-    /**
-     * Subtitle for the header
-     */
-    headerSubtitle?: React.ReactNode,
-
-
-    /**
-     * Title for the header
-     */
-    headerTitle?: React.ReactNode,
-
-
-    /**
-     * Determines if the card is raised higher than normal
-     */
-    isRaised?: boolean,
-
-
-}
-
-
-export interface CardComponent extends React.ForwardRefExoticComponent<any> {
-    Media?: any,
 }

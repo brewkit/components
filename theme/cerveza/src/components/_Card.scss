@@ -1,0 +1,55 @@
+@use '../utilities';
+@use '../material-colors';
+
+
+.brew-Card {
+
+    &__content {
+        padding: utilities.size(small);
+    }
+
+    &__actions {
+        padding: 0 utilities.size(normal) utilities.size(normal);
+    }
+}
+
+
+.brew-Card {
+
+    &.custom-storybook {
+        max-width: 350px;
+
+        .brew-Card__content {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: min-content 1fr;
+            grid-gap: utilities.size(normal);
+
+            i {
+                font-size: utilities.size(normal) * 4;
+                align-self: center;
+            }
+        }
+
+        .brew-Card__actions {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: min-content min-content 1fr;
+            grid-gap: utilities.size(normal);
+
+            :last-child {
+                justify-self: end;
+            }
+        }
+    }
+
+    &.custom-storybook-2 {
+        background-color: utilities.color(grey, 50);
+        display: inline-flex;
+        margin: utilities.size(normal);
+
+        .brew-Card__content {
+            padding: utilities.size(normal);
+        }
+    }
+}

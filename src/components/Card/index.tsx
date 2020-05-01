@@ -1,63 +1,39 @@
 import React from 'react';
-import {
-    Card as MuiCard,
-    CardContent as MuiCardContent,
-    CardHeader as MuiCardHeader,
-    CardActions as MuiCardActions,
-} from '@material-ui/core';
-import CardMedia from './components/CardMedia';
-import { CardComponent, Props } from './types';
+import MuiCard from '@material-ui/core/Card';
+import Typography from '@components/Typography';
+import { Props } from './types';
 
 
-export const Card: CardComponent = React.forwardRef(({
+/**
+ * The `<Card /> component is a surface that displays content and actions on a single surface.
+ */
+export const Card = React.forwardRef(({
     actions,
     children,
-    contentComponent = 'div',
-    customContentBefore,
-    customContentAfter,
-    headerAction,
-    headerAvatar,
-    headerComponent = 'div',
-    headerSubtitle,
-    headerTitle,
-    isRaised,
+    header,
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    const headerClasses = {
-        root: 'brew-Card__header',
-        avatar: 'brew-Card__headerAvatar',
-        action: 'brew-Card__headerAction',
-        content: 'brew-Card__headerContent',
-        title: 'brew-Card__headerTitle',
-        subheader: 'brew-Card__headerSubtitle',
+    const classes = {
+        root: 'brew-Card',
     };
 
 
     return (
-        <MuiCard className="brew-Card" raised={isRaised} {...otherProps}>
-            {headerTitle && (
-                <MuiCardHeader
-                    action={headerAction}
-                    avatar={headerAvatar}
-                    classes={headerClasses}
-                    component={headerComponent}
-                    subheader={headerSubtitle}
-                    title={headerTitle}
-                />
+        <MuiCard classes={classes} ref={ref} {...otherProps}>
+            {header && (
+                <div className="brew-Card__header">
+                    {header}
+                </div>
             )}
-            {customContentBefore}
-            {children && (
-                <MuiCardContent className="brew-Card__content" component={contentComponent}>
-                    {children}
-                </MuiCardContent>
-            )}
-            {customContentAfter}
+            <div className="brew-Card__content">
+                {children}
+            </div>
             {actions && (
-                <MuiCardActions className="brew-Card__actions">
+                <div className="brew-Card__actions">
                     {actions}
-                </MuiCardActions>
+                </div>
             )}
         </MuiCard>
     );
@@ -67,7 +43,6 @@ export const Card: CardComponent = React.forwardRef(({
 
 
 Card.displayName = 'Card';
-Card.Media = CardMedia;
 
 
 export default Card;
