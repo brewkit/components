@@ -1,6 +1,5 @@
 import React from 'react';
 import MuiCard from '@material-ui/core/Card';
-import Typography from '@components/Typography';
 import { Props } from './types';
 
 

@@ -15,7 +15,7 @@ export interface Props extends StyledParentComponent {
      * Shadow depth, corresponds to dp in the spec. It accepts values between 0 and 24 inclusive.
      * @default '1'
      */
-    elevation?: number
+    elevation?: number,
 
 
     /**
@@ -28,7 +28,7 @@ export interface Props extends StyledParentComponent {
      * The variant to use
      * @default 'elevation'
      */
-    variant?: 'elevation' | 'outlined';
+    variant?: 'elevation' | 'outlined',
 
 
 }
