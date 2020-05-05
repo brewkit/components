@@ -8,9 +8,9 @@ import { LabelPlacements } from './types';
 export default {
     component: Checkbox,
     parameters: {
-        componentSubtitle: <Flag color="warning">In Development</Flag>,
+        componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'In Development|User Input/Checkbox',
+    title: 'Stable|User Input/Checkbox',
 };
 
 

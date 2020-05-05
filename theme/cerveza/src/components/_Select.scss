@@ -46,7 +46,7 @@ $error-color: utilities.color(accent, error);
 // ==============================================
 // Focused
 // ==============================================
-.brew-Select__base:focus {
+.brew-Select--isOpen .brew-Select__base {
     background-color: $border-focus-color;
     color: #ffffff;
 
@@ -55,11 +55,18 @@ $error-color: utilities.color(accent, error);
     }
 }
 
+.brew-Select__base:focus {
+    border: 1px solid $border-focus-color;
+    background-color: transparent;
+}
+
 
 // ==============================================
 // Menu
 // ==============================================
 .brew-Select__menu {
+    margin-top: utilities.size(x-small);
+    border: 1px solid $border-focus-color;
     border-radius: utilities.$border-radius;
 
     .brew-Select__list {

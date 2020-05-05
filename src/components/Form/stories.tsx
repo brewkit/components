@@ -7,9 +7,9 @@ import Flag from '@components/Flag';
 export default {
     component: Form,
     parameters: {
-        componentSubtitle: <Flag color="warning">In Development</Flag>,
+        componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'In Development|Forms/Form',
+    title: 'Stable|Forms/Form',
 };
 
 

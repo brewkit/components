@@ -12,7 +12,7 @@ import { InputComponent } from './types';
 export const Input: InputComponent = React.forwardRef(({
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => (
-    <Checkbox ref={ref} {...otherProps} />
+    <TextField ref={ref} {...otherProps} />
 ));
 
 

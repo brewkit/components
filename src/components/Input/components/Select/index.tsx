@@ -8,6 +8,11 @@ import { Props, Option } from './types';
 
 /**
  * Selects allow the user to select one or more items from a dropdown.
+ *
+ * TO-DO:
+ * - Add native selection when on mobile screens
+ * - Add Form bindings so it can be validated
+ * - Add defaultValue property
  */
 export const Select = React.forwardRef(({
     options,
@@ -16,8 +21,11 @@ export const Select = React.forwardRef(({
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
+    const [isOpen, setIsOpen] = React.useState(false);
+
+
     const classNames = clsx(
-        'brew-Select',
+        `brew-Select ${isOpen ? 'brew-Select--isOpen' : ''}`,
         className,
     );
 
@@ -39,6 +47,9 @@ export const Select = React.forwardRef(({
             paper: 'brew-Select__menu',
             list: 'brew-Select__list',
         },
+        anchorOrigin: { vertical: 'bottom' as 'bottom', horizontal: 'center' as 'center' },
+        transformOrigin: { vertical: 'top' as 'top', horizontal: 'center' as 'center' },
+        getContentAnchorEl: null,
     };
 
 
@@ -57,6 +68,8 @@ export const Select = React.forwardRef(({
             className={classNames}
             IconComponent={ExpandMoreOutlined}
             MenuProps={MenuProps}
+            onClose={(): void => setIsOpen(false)}
+            onOpen={(): void => setIsOpen(true)}
             ref={ref}
             {...otherProps}
         >
