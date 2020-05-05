@@ -14,7 +14,7 @@ export interface Props extends StyledParentComponent {
     /**
      * Shadow depth, corresponds to `dp` in Material Design. It accepts values between 0 and 24 inclusive.
      * Will be applied to the `<Paper />` component.
-     * @default '1'
+     * @default 1
      */
     elevation?: number,
 
