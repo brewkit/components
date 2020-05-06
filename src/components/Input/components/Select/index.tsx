@@ -50,6 +50,7 @@ export const Select = React.forwardRef(({
         anchorOrigin: { vertical: 'bottom' as 'bottom', horizontal: 'center' as 'center' },
         transformOrigin: { vertical: 'top' as 'top', horizontal: 'center' as 'center' },
         getContentAnchorEl: null,
+        disableScrollLock: true,
     };
 
 
