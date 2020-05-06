@@ -3,11 +3,20 @@ import MuiTabs from '@material-ui/core/Tabs';
 import { useTabs } from '@components/Tabs/context';
 import { Props } from './types';
 
+
 /**
  * The `<TabList />` component provides a wrapper around the individual tabs.  It should exist as a child of the `<Tabs />` component.
  */
-const TabList = React.forwardRef(({ mobileBreakpoint = 600, ...otherProps }: Props, ref: React.Ref<any>): React.ReactElement => {
+const TabList = React.forwardRef(({
+    mobileBreakpoint = 600,
+    ...otherProps
+}: Props, ref: React.Ref<any>): React.ReactElement => {
+
+
     const [isMobile, setIsMobile] = React.useState(window && window.innerWidth <= mobileBreakpoint);
+    const { value, onChange } = useTabs();
+
+
     const muiClasses = {
         root: 'brew-TabList',
         vertical: 'brew-TabList--vertical',
@@ -22,27 +31,26 @@ const TabList = React.forwardRef(({ mobileBreakpoint = 600, ...otherProps }: Pro
         indicator: 'brew-TabList__indicator',
     };
 
-    const { value, onChange } = useTabs();
 
     React.useEffect(() => {
+
         const onWindowResize = () => {
             if (window.innerWidth <= mobileBreakpoint) {
-                if (!isMobile) {
-                    setIsMobile(true);
-                }
-            } else {
-                if (isMobile) {
-                    setIsMobile(false);
-                }
+                if (!isMobile) setIsMobile(true);
+            }
+            else {
+                if (isMobile) setIsMobile(false);
             }
         }
-        
+
         window.addEventListener('resize', onWindowResize);
 
         return () => {
             window.removeEventListener('resize', onWindowResize);
         }
+
     }, [isMobile, mobileBreakpoint]);
+
 
     return (
         <MuiTabs
@@ -54,6 +62,9 @@ const TabList = React.forwardRef(({ mobileBreakpoint = 600, ...otherProps }: Pro
             ref={ref}
         />
     );
+
+
 });
+
 
 export default TabList;
