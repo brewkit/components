@@ -73,12 +73,18 @@ export const TextField = React.forwardRef(({
     }
 
 
+    /**
+     * set our classnames
+     */
     const classNames = clsx(
         'brew-TextField',
         className,
     );
 
 
+    /**
+     * set props to be passed to our underlying <Input />
+     */
     const InputProps = {
         classes: {
             root: 'brew-TextField__input',
@@ -91,6 +97,9 @@ export const TextField = React.forwardRef(({
     };
 
 
+    /**
+     * set props to be passed to our underlying <InputLabel />
+     */
     const InputLabelProps = {
         shrink: true,
         classes: {
@@ -99,6 +108,9 @@ export const TextField = React.forwardRef(({
     };
 
 
+    /**
+     * set props to be passed to our underlying <FormHelperText />
+     */
     const FormHelperTextProps = {
         classes: {
             root: 'brew-TextField__helperText',
