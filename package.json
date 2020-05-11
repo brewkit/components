@@ -94,7 +94,6 @@
         "react": "^16.13.1",
         "react-docgen-typescript-loader": "^3.7.2",
         "react-dom": "^16.13.1",
-        "react-hook-form": "^5.4.2",
         "react-hot-loader": "^4.12.20",
         "react-router-dom": "^5.1.2",
         "react-test-renderer": "^16.13.1",
@@ -116,6 +115,7 @@
         "@popperjs/core": "^2.3.2",
         "clsx": "^1.1.0",
         "lodash": "^4.17.15",
+        "react-hook-form": "^5.7.1",
         "yup": "^0.28.3"
     },
     "config": {
