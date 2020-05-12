@@ -21,7 +21,7 @@ export const Form: FormComponent = React.forwardRef(({
 
     const formMethods = useForm({
         validationSchema,
-        mode: 'onChange',
+        mode: 'onBlur',
     });
 
 
