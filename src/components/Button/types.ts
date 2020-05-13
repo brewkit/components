@@ -92,4 +92,8 @@ export interface Props extends StyledParentComponent {
      */
     endIcon?: React.ReactNode,
 
+    /**
+     * Whether or not the button is disabled
+     */
+    disabled?: boolean,
 }
