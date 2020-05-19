@@ -21,7 +21,7 @@ export type Sizes = (
 );
 
 
-export interface Props extends StyledParentComponent {
+export interface Props extends StyledParentComponent, React.ButtonHTMLAttributes<HTMLButtonElement> {
 
     /**
      * Fires when button is clicked.
@@ -91,9 +91,4 @@ export interface Props extends StyledParentComponent {
      * JSX (preferably an Icon) to be injected after the children.
      */
     endIcon?: React.ReactNode,
-
-    /**
-     * Whether or not the button is disabled
-     */
-    disabled?: boolean,
 }
