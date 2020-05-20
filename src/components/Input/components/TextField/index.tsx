@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import React from 'react';
 import clsx from 'clsx';
 import MuiTextField from '@material-ui/core/TextField';
