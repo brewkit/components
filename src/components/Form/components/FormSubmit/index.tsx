@@ -25,7 +25,14 @@ export const FormSubmit = React.forwardRef(({
 
 
     return (
-        <Button isDisabled={!(formState.isValid)} type="submit" ref={register} {...otherProps}>
+        <Button
+            className={classNames}
+            disabled={false}
+            isDisabled={!(formState.isValid)}
+            ref={register}
+            type="submit"
+            {...otherProps}
+        >
             {children}
         </Button>
     );

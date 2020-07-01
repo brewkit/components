@@ -24,11 +24,11 @@ const validationSchema = yup.object({
 
 export const General = (): React.ReactElement => (
     <Form
-        onSubmit={(values: object) => console.log(values)}
+        onSubmit={(values: object) => alert(`The form was submitted with the following values: ${JSON.stringify(values)}`)}
         style={{ display: 'grid', gridGap: '1rem' }}
         validationSchema={validationSchema}
     >
-        <Form.Field label="Required TextField" name="text"/>
+        <Form.Field label="Required TextField" name="text" />
         <Form.Field label="Required TextField" name="text2" />
         <Form.Field label="Required Checkbox" name="checkbox" type="checkbox" />
         <Form.Field label="Required Radio" name="radio" type="radio" value="foo" />

@@ -21,7 +21,7 @@ const components = {
 export const FormField = React.forwardRef(({
     type = 'text',
     name,
-    validation,
+    validation = {},
     className,
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
@@ -44,7 +44,7 @@ export const FormField = React.forwardRef(({
             hasError={Boolean(errors[name])}
             helperText={supportsHelperText && Boolean(errors[name]) && errors[name].message}
             name={name}
-            ref={register?.(validation ?? {})}
+            ref={register(validation)}
             {...otherProps}
         />
     );
