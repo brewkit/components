@@ -93,8 +93,13 @@ export interface Props extends StyledParentComponent, React.ButtonHTMLAttributes
     endIcon?: React.ReactNode,
 
     /**
-     * Determines the component that is used to render. Accepts any React component, custom and HTML elements.
+     * If set, renders the Button as a Link component that directs to the provided link.
      */
-    component?: React.ElementType,
+    linkTo?: string,
+
+    /**
+     * If set, renders the Button as an 'a' component that directs to the provided link.
+     */
+    href?: string,
 
 }

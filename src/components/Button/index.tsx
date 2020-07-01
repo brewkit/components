@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 import MuiButton from '@material-ui/core/Button';
 import Typography from '@components/Typography';
 import Progress from '@components/Progress';
@@ -23,6 +24,8 @@ export const Button = React.forwardRef(({
     endIcon,
     children,
     className,
+    linkTo,
+    href,
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
@@ -41,11 +44,22 @@ export const Button = React.forwardRef(({
     );
 
 
+    /**
+     * Determine what component to use to render.
+     */
+    let Component: React.ElementType = 'button';
+    if (linkTo) Component = Link;
+    if (href) Component = 'a';
+
+
     return (
         <MuiButton
             className={buttonClasses}
+            component={Component}
             disabled={isDisabled || isLoading}
+            href={href}
             ref={ref}
+            to={linkTo}
             type="button"
             {...otherProps}
         >
