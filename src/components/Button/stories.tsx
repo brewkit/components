@@ -64,3 +64,4 @@ export const Loading = (): React.ReactElement => <Button isLoading variant="stan
 export const Fluid = (): React.ReactElement => <Button isFluid variant="standard">Click me!</Button>;
 export const Compact = (): React.ReactElement => <Button isCompact variant="standard">Click me!</Button>;
 export const Disabled = (): React.ReactElement => <Button isDisabled variant="standard">Click me!</Button>;
+export const CustomElement = (): React.ReactElement => <Button component="span">Click me!</Button>;

@@ -91,4 +91,10 @@ export interface Props extends StyledParentComponent, React.ButtonHTMLAttributes
      * JSX (preferably an Icon) to be injected after the children.
      */
     endIcon?: React.ReactNode,
+
+    /**
+     * Determines the component that is used to render. Accepts any React component, custom and HTML elements.
+     */
+    component?: React.ElementType,
+
 }

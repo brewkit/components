@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs Renders correctly with defaults 1`] = `
+<div
+  className="brew-Tabs"
+/>
+`;
