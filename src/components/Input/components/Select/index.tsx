@@ -17,6 +17,7 @@ import { Props, Option } from './types';
 export const Select = React.forwardRef(({
     options,
     className,
+    isDisabled,
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
@@ -67,6 +68,7 @@ export const Select = React.forwardRef(({
         <MuiSelect
             classes={classes}
             className={classNames}
+            disabled={isDisabled}
             IconComponent={ExpandMoreOutlined}
             MenuProps={MenuProps}
             onClose={(): void => setIsOpen(false)}
