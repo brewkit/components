@@ -62,13 +62,3 @@ export interface StyledParentComponent extends StyledComponent {
     children?: React.ReactNode,
 
 }
-
-
-export interface ComponentProp {
-
-    /**
-     * Accepts any React component, custom and HTML elements.
-     */
-    component?: React.ElementType,
-
-}
