@@ -1,5 +1,5 @@
 import React from 'react';
-import { Colors as GenericColors, StyledParentComponent } from '@components/types';
+import { Colors as GenericColors, StyledParentComponent, ComponentProp } from '@components/types';
 
 
 export type Variants = (
@@ -21,7 +21,7 @@ export type Sizes = (
 );
 
 
-export interface Props extends StyledParentComponent, React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface Props extends StyledParentComponent, React.ButtonHTMLAttributes<HTMLButtonElement>, ComponentProp {
 
     /**
      * Fires when button is clicked.
