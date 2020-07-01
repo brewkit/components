@@ -63,7 +63,7 @@ export const TextField = React.forwardRef(({
                 {isVisible ? <Visibility /> : <VisibilityOff />}
             </span>
         );
-        return (
+        return hasError && (
             <Grow in={hasError}>
                 <span className="brew-TextField__errorIcon">
                     <ErrorOutline />
