@@ -27,9 +27,7 @@
         "build": "ttsc --project ./.build/tsconfig.json && npm run sass-build-cerveza && node .build/copy-package-files.js",
         "build-storybook": "build-storybook -c .build/storybook -o .out",
         "deploy-storybook": "storybook-to-ghpages",
-        "prepublishOnly": "jest && npm run build",
-        "publish": "cd dist && npm run publish",
-        "postpublish": "npm run deploy-storybook"
+        "release": ".build/release.sh"
     },
     "jest": {
         "transform": {
