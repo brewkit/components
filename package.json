@@ -1,6 +1,6 @@
 {
     "name": "@brewkit/components",
-    "version": "2.7.5",
+    "version": "2.7.6",
     "description": "Brewkit components",
     "main": "index.js",
     "repository": {
