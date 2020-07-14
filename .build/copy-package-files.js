@@ -5,6 +5,18 @@ const fs = require('fs');
 // It will not be included in the npm package.
 
 function main() {
+
+    const distFolder = __dirname + '/../dist';
+
+    /**
+     * clean the dist folder
+     */
+    fs.rmdirSync(distFolder, { recursive: true });
+    fs.mkdirSync(distFolder);
+
+    /**
+     * copy over our license and readme
+     */
     fs.copyFileSync(__dirname + "/../LICENSE", __dirname + "/../dist/LICENSE");
     fs.copyFileSync(__dirname + "/../README.md", __dirname + "/../dist/README.md");
 
@@ -16,7 +28,7 @@ function main() {
 
         const result = data.replace(/"private": true/g, '"private": false');
 
-        fs.writeFile(__dirname + '/../dist/package.json', result, 'utf8', function (err) {
+        fs.writeFile(`${distFolder}/package.json`, result, 'utf8', function (err) {
             if (err) return console.log(err);
         });
     });

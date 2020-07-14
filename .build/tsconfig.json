@@ -1,5 +1,6 @@
 {
     "extends": "../tsconfig.json",
+    "include": ["../src/components/index.tsx"],
     "exclude": [
         "node_modules",
         "build",
