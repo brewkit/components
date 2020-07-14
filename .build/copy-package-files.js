@@ -5,9 +5,22 @@ const fs = require('fs');
 // It will not be included in the npm package.
 
 function main() {
-    fs.copyFileSync(__dirname + "/../package.json", __dirname + "/../dist/.package.json");
     fs.copyFileSync(__dirname + "/../LICENSE", __dirname + "/../dist/LICENSE");
     fs.copyFileSync(__dirname + "/../README.md", __dirname + "/../dist/README.md");
+
+    /**
+     * copy over our package.json and change 'private' to false to allow publishing
+     */
+    fs.readFile(__dirname + "/../package.json", 'utf8', function (err,data) {
+        if (err) return console.log(err);
+
+        const result = data.replace(/"private": true/g, '"private": false');
+
+        fs.writeFile(__dirname + '/../dist/package.json', result, 'utf8', function (err) {
+            if (err) return console.log(err);
+        });
+    });
+
 }
 
 main();
