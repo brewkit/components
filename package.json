@@ -2,10 +2,7 @@
     "name": "@brewkit/components",
     "version": "2.7.5",
     "description": "Brewkit components",
-    "main": "dist/index.js",
-    "files": [
-        "dist"
-    ],
+    "main": "index.js",
     "repository": {
         "type": "git",
         "url": "https://github.com/brewkit/components"
@@ -26,10 +23,11 @@
         "commit": "npx git-cz",
         "start": "npm run sass-build-storybook && npm run storybook",
         "storybook": "start-storybook -p 9001 -c .build/storybook",
-        "build": "ttsc --project ./.build/tsconfig.json && npm run sass-build-cerveza",
+        "build": "ttsc --project ./.build/tsconfig.json && npm run sass-build-cerveza && node .build/copy-package-files.js",
         "build-storybook": "build-storybook -c .build/storybook -o .out",
         "deploy-storybook": "storybook-to-ghpages",
         "prepublishOnly": "jest && npm run build",
+        "publish": "cd dist && npm run publish",
         "postpublish": "npm run deploy-storybook"
     },
     "jest": {
