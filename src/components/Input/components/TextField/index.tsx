@@ -1,12 +1,13 @@
 /* eslint-disable max-lines-per-function */
 import React from 'react';
 import clsx from 'clsx';
+import { uniqueId as _uniqueId } from 'lodash';
 import MuiTextField from '@material-ui/core/TextField';
 import ErrorOutline from '@material-ui/icons/ErrorOutlineOutlined';
 import Visibility from '@material-ui/icons/VisibilityOutlined';
 import VisibilityOff from '@material-ui/icons/VisibilityOffOutlined';
 import Search from '@material-ui/icons/SearchOutlined';
-import Grow from '@material-ui/core/Grow';
+import { AnimatePresence, motion } from 'framer-motion';
 import Typography from '@components/Typography';
 import { Props } from './types';
 
@@ -31,6 +32,7 @@ export const TextField = React.forwardRef(({
 
 
     const [isVisible, setVisible] = React.useState(type !== 'password');
+    const [animKey] = React.useState(_uniqueId('motion-'))
 
 
     /**
@@ -60,16 +62,21 @@ export const TextField = React.forwardRef(({
      */
     function getEndAdornment(): React.ReactNode {
         if (type === 'password') return (
-            <span className="brew-TextField__visibilityIcon" onClick={(): void => setVisible(!isVisible)}>
+            <motion.span className="brew-TextField__visibilityIcon" onClick={(): void => setVisible(!isVisible)}>
                 {isVisible ? <Visibility /> : <VisibilityOff />}
-            </span>
+            </motion.span>
         );
         return hasError && (
-            <Grow in={hasError}>
-                <span className="brew-TextField__errorIcon">
-                    <ErrorOutline />
-                </span>
-            </Grow>
+            <motion.span
+                key={animKey}
+                className="brew-TextField__errorIcon"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+            >
+                <ErrorOutline />
+            </motion.span>
         );
     }
 
@@ -93,7 +100,11 @@ export const TextField = React.forwardRef(({
             error: 'brew-TextField__input--hasError',
         },
         startAdornment: getStartAdornment(),
-        endAdornment: getEndAdornment(),
+        endAdornment: (
+            <AnimatePresence>
+                { getEndAdornment() }
+            </AnimatePresence>
+        ),
         readOnly: isReadOnly,
     };
 
@@ -129,9 +140,7 @@ export const TextField = React.forwardRef(({
             FormHelperTextProps={FormHelperTextProps}
             fullWidth={isFluid}
             helperText={helperText && (
-                <Grow in={Boolean(helperText)}>
-                    <span>{helperText}</span>
-                </Grow>
+                <motion.span exit={{ opacity: 0 }}>{helperText}</motion.span>
             )}
             InputLabelProps={InputLabelProps}
             inputProps={{ ref }}

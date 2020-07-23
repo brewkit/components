@@ -40,7 +40,7 @@ module.exports = async ({ config }) => {
             "@utilities": path.resolve(projectRoot, 'src/utilities/'),
         },
 
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '.md', '.scss'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.md', '.mdx', '.scss'],
 
     };
 

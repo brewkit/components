@@ -16,6 +16,7 @@ $error-color: utilities.color(accent, error);
 
 .brew-TextField {
 
+
     .brew-TextField__label {
         font-size: utilities.size(small);
         text-transform: uppercase;
@@ -29,7 +30,6 @@ $error-color: utilities.color(accent, error);
         padding: utilities.size(small);
         border: 1px solid $border-color;
         border-radius: utilities.$border-radius;
-        transition: all 0.3s;
 
         input {
             padding: 0;
