@@ -32,7 +32,8 @@ export const TextField = React.forwardRef(({
 
 
     const [isVisible, setVisible] = React.useState(type !== 'password');
-    const [animKey] = React.useState(_uniqueId('motion-'))
+    const [animKey1] = React.useState(_uniqueId('motion-'))
+    const [animKey2] = React.useState(_uniqueId('motion-'))
 
 
     /**
@@ -68,12 +69,11 @@ export const TextField = React.forwardRef(({
         );
         return hasError && (
             <motion.span
-                key={animKey}
+                key={animKey1}
                 className="brew-TextField__errorIcon"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
             >
                 <ErrorOutline />
             </motion.span>
@@ -139,8 +139,14 @@ export const TextField = React.forwardRef(({
             error={hasError}
             FormHelperTextProps={FormHelperTextProps}
             fullWidth={isFluid}
-            helperText={helperText && (
-                <motion.span exit={{ opacity: 0 }}>{helperText}</motion.span>
+            helperText={(
+                <AnimatePresence>
+                    {helperText &&
+                        <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                            {helperText}
+                        </motion.span>
+                    }
+                </AnimatePresence>
             )}
             InputLabelProps={InputLabelProps}
             inputProps={{ ref }}
