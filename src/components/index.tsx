@@ -13,6 +13,10 @@ export { default as Form } from './Form';
 export { default as Progress } from './Progress';
 export { default as Tooltip } from './Tooltip';
 export { default as Typography } from './Typography';
+export { default as Tab } from './Tab';
+export { default as TabList } from './TabList';
+export { default as TabPanel } from './TabPanel';
+export { default as Tabs } from './Tabs';
 
 
 /**
