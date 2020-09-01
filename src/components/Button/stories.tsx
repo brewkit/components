@@ -1,67 +1,88 @@
-import React from 'react';
+import * as React from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import { text, select, boolean } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
-import { ArrowBack, AddCircleOutline } from '@material-ui/icons';
-import Button from './index';
-import { Variants, Colors, Sizes } from './types';
-import Flag from '@components/Flag';
+import ArrowBack from '@material-ui/icons/ArrowBack';
+import AddCircleOutline from '@material-ui/icons/AddCircleOutline';
+
+
+/**
+ * This is an annoying hack to get Storybook to properly parse the documentation when the underlying component
+ * is wrapped in a HOC. Expect to do/see this on every component with MUI theming options.
+ */
+import { Button as Component } from './index';
+import styles from './styles';
+const Button = withStyles(styles)(Component)
 
 
 export default {
-    component: Button,
-    parameters: {
-        componentSubtitle: <Flag color="success">Stable</Flag>,
-    },
-    title: 'Stable|User Input/Button',
+    component: Component,
+    title: 'Inputs/Button',
 };
 
 
 export const Sandbox = (): React.ReactElement => {
-    const children: React.ReactNode = text('children', 'Click me!');
-    const variant: Variants = select('variant', ['standard', 'text'], 'standard');
-    const color: Colors = select('color', [
-        'primary',
-        'secondary',
-        'success',
-        'error',
-        'warning',
-        'info',
-        'light',
-        'dark',
-        'link',
-    ], 'primary');
-    const size: Sizes = select('size', ['small', 'medium', 'large'], 'medium');
-    const isLoading: boolean = boolean('isLoading', false);
-    const isCompact: boolean = boolean('isCompact', false);
-    const isFluid: boolean = boolean('isFluid', false);
-    const isCircular: boolean = boolean('isCircular', false);
-    const isDisabled: boolean = boolean('isDisabled', false);
+
+    const color = select('color', ['default', 'primary', 'secondary', 'inherit'], 'default');
+    const disabled = boolean('disabled', false);
+    const disableElevation = boolean('disableElevation', false);
+    const fullWidth = boolean('fullWidth', false);
+    const loading = boolean('loading', false);
+    const variant = select('variant', ['contained', 'outlined', 'text'], 'text');
+    const size = select('size', ['large', 'medium', 'small'], 'medium');
+    const children = text('children', 'default');
+
     return (
         <Button
             color={color}
-            isCircular={isCircular}
-            isCompact={isCompact}
-            isDisabled={isDisabled}
-            isFluid={isFluid}
-            isLoading={isLoading}
-            onClick={action('button-click')}
-            size={size}
+            disabled={disabled}
+            disableElevation={disableElevation}
+            fullWidth={fullWidth}
+            loading={loading}
             variant={variant}
-        >
-            {children}
-        </Button>
+            size={size}
+            children={children}
+        />
     );
+
 };
 
 
-export const General = (): React.ReactElement => <Button>Default</Button>;
-export const Standard = (): React.ReactElement => <Button variant="standard">Click me!</Button>;
-export const Text = (): React.ReactElement => <Button variant="text">Click me!</Button>;
-export const WithStartIcon = (): React.ReactElement => <Button startIcon={<ArrowBack />}>Go Back</Button>;
-export const WithEndIcon = (): React.ReactElement => <Button endIcon={<AddCircleOutline />}>Add Account</Button>;
-export const OnlyIcon = (): React.ReactElement => <Button endIcon={<AddCircleOutline />} />;
-export const Loading = (): React.ReactElement => <Button isLoading variant="standard">Click me!</Button>;
-export const Fluid = (): React.ReactElement => <Button isFluid variant="standard">Click me!</Button>;
-export const Compact = (): React.ReactElement => <Button isCompact variant="standard">Click me!</Button>;
-export const Disabled = (): React.ReactElement => <Button isDisabled variant="standard">Click me!</Button>;
-export const Link = (): React.ReactElement => <Button href="http://google.com">Go to Google</Button>;
+export const General = (): React.ReactElement => (
+    <div style={{ display: 'grid', gridAutoFlow: 'column', gridGap: '1rem' }}>
+        <Button variant="contained" color="primary" disableElevation>Generic Button</Button>
+        <Button variant="text" color="primary">Generic Button</Button>
+    </div>
+)
+
+
+export const WithStartIcon = (): React.ReactElement => (
+    <Button variant="contained" color="primary" disableElevation startIcon={<ArrowBack />}>Generic Button</Button>
+)
+
+
+export const WithEndIcon = (): React.ReactElement => (
+    <Button variant="contained" color="primary" disableElevation endIcon={<AddCircleOutline />}>Generic Button</Button>
+)
+
+
+export const OnlyIcon = (): React.ReactElement => (
+    <Button variant="contained" color="primary" disableElevation>
+        <AddCircleOutline />
+    </Button>
+)
+
+
+export const Disabled = (): React.ReactElement => (
+    <div style={{ display: 'grid', gridAutoFlow: 'column', gridGap: '1rem' }}>
+        <Button variant="contained" color="primary" disableElevation disabled>Generic Button</Button>
+        <Button variant="text" color="primary" disabled>Generic Button</Button>
+    </div>
+)
+
+
+export const Loading = (): React.ReactElement => (
+    <div style={{ display: 'grid', gridAutoFlow: 'column', gridGap: '1rem' }}>
+        <Button variant="contained" color="primary" disableElevation loading>Generic Button</Button>
+        <Button variant="text" color="primary" loading>Generic Button</Button>
+    </div>
+)

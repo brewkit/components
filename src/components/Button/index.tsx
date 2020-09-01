@@ -1,80 +1,62 @@
-import React from 'react';
+import * as React from 'react';
 import clsx from 'clsx';
-import { Link } from 'react-router-dom';
+import { withStyles } from '@material-ui/core/styles';
 import MuiButton from '@material-ui/core/Button';
-import Typography from '@components/Typography';
-import Progress from '@components/Progress';
+import CircularProgress from '@components/CircularProgress';
+import styles from './styles';
 import { Props } from './types';
 
 
 /**
- * The `Button` component represents a clickable button, which can be used in forms or anywhere in the application
- * that needs simple, standard button functionality.
+ * Buttons allow users to take actions and make choices with a single tap.
+ *
+ * [Material-UI Docs](https://material-ui.com/components/buttons/)
+ *
+ *
+ * ## Differences in Brewkit:
+ *
+ * - Adds a `loading` prop that automatically disables the button and shows a loading state. Loading class can be
+ * styled with `bkOverrides.Button.loading` within your theme.
  */
 export const Button = React.forwardRef(({
-    variant = 'standard',
-    color = 'primary',
-    size = 'medium',
-    isLoading = false,
-    isCompact = false,
-    isCircular = false,
-    isFluid = false,
-    isDisabled = false,
+    loading,
+    disabled,
     startIcon,
     endIcon,
     children,
+    color = 'primary',
     className,
-    linkTo,
-    href,
+    classes,
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
     const buttonClasses = clsx(
-        'brew-Button',
-        `brew-Button--variant-${variant}`,
-        `brew-Button--color-${color}`,
-        `brew-Button--size-${size}`,
-        { 'brew-Button--isLoading': isLoading },
-        { 'brew-Button--isDisabled': isDisabled || isLoading },
-        { 'brew-Button--isCompact': isCompact },
-        { 'brew-Button--isCircular': isCircular && !isFluid },
-        { 'brew-Button--isFluid': isFluid },
+        classes.root,
+        loading && classes.loading,
         className,
     );
 
 
-    /**
-     * Determine what component to use to render.
-     */
-    let Component: React.ElementType = 'button';
-    if (linkTo) Component = Link;
-    if (href) Component = 'a';
-
-
     return (
         <MuiButton
-            className={buttonClasses}
-            component={Component}
-            disabled={isDisabled || isLoading}
-            href={href}
-            ref={ref}
-            to={linkTo}
-            type="button"
             {...otherProps}
+            className={buttonClasses}
+            color={color}
+            disabled={disabled ?? loading}
+            ref={ref}
         >
-            <div className="brew-Button__content">
+
+            <div className={classes.content}>
                 {startIcon}
-                {children && (
-                    <Typography className="brew-Button__text" style={{ fontSize: 'inherit' }} variant="button">
-                        {children}
-                    </Typography>
-                )}
+                {children && <span>{children}</span>}
                 {endIcon}
             </div>
-            <div className="brew-Button__loadingIndicator">
-                <Progress.Circular color={color === 'link' ? 'primary' : color} />
+
+            <div className={classes.loader}>
+                <CircularProgress color="primary" layered size="1rem" thickness={5} />
             </div>
+
         </MuiButton>
     );
 
@@ -85,4 +67,4 @@ export const Button = React.forwardRef(({
 Button.displayName = 'Button';
 
 
-export default Button;
+export default withStyles(styles)(Button);

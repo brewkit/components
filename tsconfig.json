@@ -25,7 +25,10 @@
         "noImplicitThis": true,
         "strictNullChecks": true
     },
-    "include": ["src/index.ts"],
+    "include": [
+        "src/index.ts",
+        "themes/src/cerveza/index.ts"
+    ],
     "exclude": [
         "node_modules",
         "build",

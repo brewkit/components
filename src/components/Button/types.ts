@@ -1,105 +1,38 @@
-import React from 'react';
-import { Colors as GenericColors, StyledParentComponent } from '@components/types';
+import * as React from 'react';
+import { Theme, ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
+import { ButtonProps } from '@material-ui/core/Button';
 
 
-export type Variants = (
-    | 'standard'
-    | 'text'
-);
+/**
+ * Declare any theme variables we want to make available.
+ */
+declare module '@material-ui/core/styles/createMuiTheme' {
+    interface Theme {
+        BkButton: {
+            loading: React.CSSProperties,
+        },
+    }
+    // allow configuration using `createMuiTheme`
+    interface ThemeOptions {
+        BkButton?: {
+            loading?: React.CSSProperties,
+        },
+    }
+}
 
 
-export type Colors = (
-    | GenericColors
-    | 'link'
-);
-
-
-export type Sizes = (
-    | 'small'
-    | 'medium'
-    | 'large'
-);
-
-
-export interface Props extends StyledParentComponent, React.ButtonHTMLAttributes<HTMLButtonElement> {
-
-    /**
-     * Fires when button is clicked.
-     */
-    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void,
-
-    /**
-     * Determines the display style of the button
-     * @default 'standard'
-     */
-    variant?: Variants,
-
-    /**
-     * The color of the button.
-     * @default 'primary'
-     */
-    color?: Colors,
-
-    /**
-     * The size of the button.
-     * @default 'medium'
-     */
-    size?: Sizes,
-
-    /**
-     * If `true`, will disable the button.
-     * @default false
-     */
-    isDisabled?: boolean,
+export interface Props extends ButtonProps {
 
     /**
      * If `true`, the button will be disabled and show a spinner.
      * @default false
      */
-    isLoading?: boolean,
+    loading?: boolean,
+
 
     /**
-     * Reduces the padding of the button.
-     * @default false
+     * @ignore
      */
-    isCompact?: boolean,
-
-    /**
-     * Makes the button a full-width block element.
-     * @default false
-     */
-    isFluid?: boolean,
-
-    /**
-     * Rounds the corners of the button to make a circle.
-     * @default false
-     */
-    isCircular?: boolean,
-
-    /**
-     * The type of the button.
-     * @default 'button'
-     */
-    type?: 'button' | 'submit' | 'reset',
-
-    /**
-     * JSX (preferably an Icon) to be injected before the children.
-     */
-    startIcon?: React.ReactNode,
-
-    /**
-     * JSX (preferably an Icon) to be injected after the children.
-     */
-    endIcon?: React.ReactNode,
-
-    /**
-     * If set, renders the Button as a Link component that directs to the provided link.
-     */
-    linkTo?: string,
-
-    /**
-     * If set, renders the Button as an 'a' component that directs to the provided link.
-     */
-    href?: string,
+    classes: Record<string, any>,
 
 }

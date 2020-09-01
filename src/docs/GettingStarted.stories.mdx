@@ -1,29 +1,22 @@
 import { Meta } from '@storybook/addon-docs/blocks';
 
 
-<Meta title="Documentation|Getting Started" />
+<Meta title="Documentation/Getting Started" />
 
 
 # Getting Started
 
 Brewkit components are built on top of Material-UI with a focus on improving developer experience without disrupting
-the things people may like about the underlying framework. By default, Brewkit provides no additional theming beyond
-what is provided by Material-UI. Instead, we use themes, comprised of basic BEM and static CSS files to provide specific
-styles to the components. This allows us to simplify the process of implementing themes and makes it easier for you to
-create your own in whatever way you like.
+the things people may like about the underlying framework.
 
 <br />
 
 ## 1. Installing Brewkit
 
-To install and save in your package.json dependencies, in your terminal, run:
+To install Brewkit and it's dependencies, in your terminal, run:
 
 ```js
-// npm
-npm i @brewkit/components
-
-// with yarn
-yarn add @brewkit/components
+npm i @material-ui/core @material-ui/icons @material-ui/lab @brewkit/components @brewkit/themes
 ```
 
 <br />
@@ -60,28 +53,23 @@ render(
 
 ## 3. Adding a Theme
 
-Themes are separately maintained and distributed within the `@brewkit/themes` package.
+Themes are separately maintained and distributed within the `@brewkit/themes` package, installed in the first step.
 
-```js
-// npm
-npm i @brewkit/themes
-
-// with yarn
-yarn add @brewkit/themes
-```
-
-You can then import the desired theme's .css file into your app.
+You can import the desired theme's `index.ts` and passing it to Material-UI's `<ThemeProvider />` component.
 
 ```tsx
 // AppRoot.tsx
 import * as React from 'react';
 import Splash from '@scenes/Splash';
-import '@brewkit/themes/cerveza.css';
+import { ThemeProvider } from '@material-ui/core/styles';
+import Cerveza from '@brewkit/themes/cerveza';
 
 
 function AppRoot(): React.ReactElement {
     return (
-        <Splash />
+        <ThemeProvider theme={Cerveza}>
+            <Splash />
+        </ThemeProvider>
     );
 }
 
@@ -97,7 +85,7 @@ Brewkit components can be imported and accessed from `@brewkit/components`.
 
 ```tsx
 import React from 'react';
-import { Button } from '@brewkit/components';
+import Button from '@brewkit/components/Button';
 
 
 export const MyScene = (): React.ReactElement => {
@@ -117,16 +105,40 @@ export default MyScene;
 
 ```
 
+Like Material-UI components, Brewkit components can also be themed using `createMuiTheme()`. The only difference is that
+instead of using the `overrides` key, use `bkOverrides`. Available overrides can be found on the component documentation
+where available.
+
+```ts
+import { createMuiTheme } from '@material-ui/core/styles';
+
+
+const theme = createMuiTheme(
+    {
+        palette: {},
+        overrides: {},
+        bkOverrides: {
+            Button: {
+                loading: {
+                    backgroundColor: 'blue',
+                    opacity: 1,
+                },
+            },
+        },
+    }
+));
+
+```
+
 <br />
 
 ## Material-UI Components
 
-The entirety of `@material-ui/core` has been made available via the `Mui` component within Brewkit, however we recommend
-you only use these when Brewkit provides no other alternatives.
+The entirety of `@material-ui/core`, `@material-ui/lab`, and `@material-ui/icons` is still available within your project.
 
 ```tsx
 import React from 'react';
-import { Mui } from '@brewkit/components';
+import Button from '@brewkit/components/Button';
 
 
 export const MyScene = (): React.ReactElement => {
@@ -135,7 +147,7 @@ export const MyScene = (): React.ReactElement => {
 
     return (
         <div>
-            <Mui.Button />
+            <Button />
         </div>
     );
 
