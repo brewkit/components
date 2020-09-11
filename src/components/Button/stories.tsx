@@ -22,12 +22,12 @@ export default {
 
 export const Sandbox = (): React.ReactElement => {
 
-    const color = select('color', ['default', 'primary', 'secondary', 'inherit'], 'default');
+    const color = select('color', ['default', 'primary', 'secondary', 'inherit'], 'primary');
     const disabled = boolean('disabled', false);
-    const disableElevation = boolean('disableElevation', false);
+    const disableElevation = boolean('disableElevation', true);
     const fullWidth = boolean('fullWidth', false);
     const loading = boolean('loading', false);
-    const variant = select('variant', ['contained', 'outlined', 'text'], 'text');
+    const variant = select('variant', ['contained', 'outlined', 'text'], 'contained');
     const size = select('size', ['large', 'medium', 'small'], 'medium');
     const children = text('children', 'default');
 
@@ -49,24 +49,24 @@ export const Sandbox = (): React.ReactElement => {
 
 export const General = (): React.ReactElement => (
     <div style={{ display: 'grid', gridAutoFlow: 'column', gridGap: '1rem' }}>
-        <Button variant="contained" color="primary" disableElevation>Generic Button</Button>
-        <Button variant="text" color="primary">Generic Button</Button>
+        <Button>Generic Button</Button>
+        <Button variant="text">Generic Button</Button>
     </div>
 )
 
 
 export const WithStartIcon = (): React.ReactElement => (
-    <Button variant="contained" color="primary" disableElevation startIcon={<ArrowBack />}>Generic Button</Button>
+    <Button startIcon={<ArrowBack />}>Generic Button</Button>
 )
 
 
 export const WithEndIcon = (): React.ReactElement => (
-    <Button variant="contained" color="primary" disableElevation endIcon={<AddCircleOutline />}>Generic Button</Button>
+    <Button endIcon={<AddCircleOutline />}>Generic Button</Button>
 )
 
 
 export const OnlyIcon = (): React.ReactElement => (
-    <Button variant="contained" color="primary" disableElevation>
+    <Button>
         <AddCircleOutline />
     </Button>
 )
@@ -74,15 +74,15 @@ export const OnlyIcon = (): React.ReactElement => (
 
 export const Disabled = (): React.ReactElement => (
     <div style={{ display: 'grid', gridAutoFlow: 'column', gridGap: '1rem' }}>
-        <Button variant="contained" color="primary" disableElevation disabled>Generic Button</Button>
-        <Button variant="text" color="primary" disabled>Generic Button</Button>
+        <Button disabled>Generic Button</Button>
+        <Button variant="text" disabled>Generic Button</Button>
     </div>
 )
 
 
 export const Loading = (): React.ReactElement => (
     <div style={{ display: 'grid', gridAutoFlow: 'column', gridGap: '1rem' }}>
-        <Button variant="contained" color="primary" disableElevation loading>Generic Button</Button>
-        <Button variant="text" color="primary" loading>Generic Button</Button>
+        <Button loading>Generic Button</Button>
+        <Button variant="text" loading>Generic Button</Button>
     </div>
 )

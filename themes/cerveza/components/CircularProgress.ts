@@ -6,13 +6,16 @@ const Badge = {
     props: {
 
         MuiCircularProgress: {
-
             thickness: 3,
-
             size: size.xxlarge,
-
         },
 
+    },
+
+    BkCircularProgress: {
+        props: {
+            layered: true,
+        },
     },
 
 };

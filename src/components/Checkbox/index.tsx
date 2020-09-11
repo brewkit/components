@@ -17,29 +17,25 @@ import styles from './styles';
  *
  * ## Differences in Brewkit:
  *
- * - Changes the default look and feel.
- * - Changes the default value of `color` to `'primary'`.
+ * - Changes the default controls for a different look and feel.
+ *
+ *   > The change in controls can lead to some mismatching in colors when `color="secondary"`, so be prepared to
+ *   have to account for that in your theme's style overrides.
  *
  * ## Additional Classes
  * - `BkCheckbox.controlBase`: Styles applied to all controls
  * - `BkCheckbox.checkedControl`: Additional styles applied to the checked control
  * - `BkCheckbox.uncheckedControl`: Additional styles applied to the unchecked control
- * - `BkCheckbox.colorSecondary`: Additional styles applied if `color="secondary"`
- * - `BkCheckbox.disabled`: Additional styles applied if `disabled={true}`
  */
 export const Checkbox = React.forwardRef(({
     classes,
     className,
-    color = 'primary',
-    disabled,
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
     const checkboxClasses = clsx(
         classes.root,
-        color === 'secondary' && classes.colorSecondary,
-        disabled && classes.disabled,
         className,
     );
 
@@ -77,8 +73,6 @@ export const Checkbox = React.forwardRef(({
             <MuiCheckbox
                 checkedIcon={CheckedIcon}
                 className={checkboxClasses}
-                color={color}
-                disabled={disabled}
                 icon={UncheckedIcon}
                 indeterminateIcon={IndeterminateIcon}
                 ref={ref}

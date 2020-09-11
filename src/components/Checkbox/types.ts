@@ -12,8 +12,6 @@ declare module '@material-ui/core/styles/createMuiTheme' {
             controlBase: React.CSSProperties,
             uncheckedControl: React.CSSProperties,
             checkedControl: React.CSSProperties,
-            colorSecondary: React.CSSProperties,
-            disabled: React.CSSProperties,
         },
     }
     // allow configuration using `createMuiTheme`
@@ -22,8 +20,6 @@ declare module '@material-ui/core/styles/createMuiTheme' {
             controlBase?: React.CSSProperties,
             uncheckedControl?: React.CSSProperties,
             checkedControl?: React.CSSProperties,
-            colorSecondary?: React.CSSProperties,
-            disabled?: React.CSSProperties,
         },
     }
 }

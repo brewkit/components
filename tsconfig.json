@@ -27,7 +27,7 @@
     },
     "include": [
         "src/index.ts",
-        "themes/src/cerveza/index.ts"
+        "themes/cerveza/index.ts"
     ],
     "exclude": [
         "node_modules",

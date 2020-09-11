@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider, StylesProvider, createGenerateClassName } from '@material-ui/core/styles';
-import Cerveza from '../../themes/src/cerveza/index';
+import Cerveza from '../../themes/cerveza/index';
 
 
 const generateClassName = createGenerateClassName({

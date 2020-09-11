@@ -17,7 +17,7 @@ export const Sandbox = (): React.ReactElement => {
     const color = select('color', ['primary', 'secondary', 'inherit'], 'primary');
     const variant = select('variant', ['determinate', 'indeterminate', 'static'], 'indeterminate');
     const disableShrink = boolean('disableShrink', false);
-    const layered = boolean('layered', false);
+    const layered = boolean('layered', true);
     const size = text('size', '2rem');
     const thickness = number('thickness', 4);
     const value = number('value', 0);
@@ -40,10 +40,10 @@ export const Sandbox = (): React.ReactElement => {
 export const Indeterminate = (): React.ReactElement => (
     <div style={{ display: 'grid', gridAutoFlow: 'column', gridGap: '1rem' }}>
 
-        <CircularProgress />
-        <CircularProgress color="primary" />
-        <CircularProgress color="secondary" />
-        <CircularProgress color="inherit" />
+        <CircularProgress layered={false} />
+        <CircularProgress layered={false} color="primary" />
+        <CircularProgress layered={false} color="secondary" />
+        <CircularProgress layered={false} color="inherit" />
 
     </div>
 );

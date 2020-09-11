@@ -24,7 +24,6 @@ export const Button = React.forwardRef(({
     startIcon,
     endIcon,
     children,
-    color = 'primary',
     className,
     classes,
     ...otherProps
@@ -42,7 +41,6 @@ export const Button = React.forwardRef(({
         <MuiButton
             {...otherProps}
             className={buttonClasses}
-            color={color}
             disabled={disabled ?? loading}
             ref={ref}
         >
@@ -54,7 +52,7 @@ export const Button = React.forwardRef(({
             </div>
 
             <div className={classes.loader}>
-                <CircularProgress color="primary" layered size="1rem" thickness={5} />
+                <CircularProgress color="primary" size="1rem" thickness={5} />
             </div>
 
         </MuiButton>

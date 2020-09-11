@@ -3,6 +3,16 @@ import { color, size } from '../variables';
 
 const Button = {
 
+    props: {
+
+        MuiButton: {
+            color: 'primary',
+            variant: 'contained',
+            disableElevation: true,
+        },
+
+    },
+
     overrides: {
 
         MuiButton: {

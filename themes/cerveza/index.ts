@@ -8,7 +8,10 @@ import Alert from './components/Alert';
 import AlertTitle from './components/AlertTitle';
 import Badge from './components/Badge';
 import Button from './components/Button';
+import ButtonGroup from './components/ButtonGroup';
 import CircularProgress from './components/CircularProgress';
+import Checkbox from './components/Checkbox';
+import Switch from './components/Switch';
 
 
 // @ts-ignore
@@ -57,7 +60,10 @@ const Cerveza = createMuiTheme(_merge(
     AlertTitle,
     Badge,
     Button,
+    ButtonGroup,
     CircularProgress,
+    Checkbox,
+    Switch,
 ));
 
 

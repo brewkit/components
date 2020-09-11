@@ -3,6 +3,7 @@ import { color } from '../variables';
 
 const Typography = {
 
+
     typography: {
         fontSize: 16,
         h1: {
@@ -64,6 +65,7 @@ const Typography = {
         },
     },
 
+
     overrides: {
 
         MuiTypography: {
@@ -80,9 +82,18 @@ const Typography = {
                 color: color.blue.main,
             },
 
+            body1: {
+                color: color.blueGray.dark,
+            },
+
+            body2: {
+                color: color.blueGray.dark,
+            },
+
         },
 
     },
+
 
 };
 

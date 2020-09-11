@@ -31,22 +31,6 @@ const styles = (theme: Theme): any => ({
     }, theme?.BkCheckbox?.checkedControl),
 
 
-    colorSecondary: _merge({
-        '& $checkedControl': {
-            backgroundColor: theme?.palette?.secondary?.main,
-            borderColor: theme?.palette?.secondary?.main,
-        },
-    }, theme?.BkCheckbox?.uncheckedControl),
-
-
-    disabled: _merge({
-        '& $controlBase, & $checkedControl': {
-            backgroundColor: blueGrey[100],
-            borderColor: blueGrey[100],
-        },
-    }, theme?.BkCheckbox?.disabled),
-
-
 });
 
 
