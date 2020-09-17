@@ -4,9 +4,9 @@ import { Props } from './types';
 
 
 /**
- * The Switch component can be used to group related buttons.
+ * Switches toggle the state of a single setting on or off.
  *
- * [Material-UI Docs](https://material-ui.com/components/button-group/)
+ * [Material-UI Docs](https://material-ui.com/components/switches/)
  *
  * > No differences in Brewkit.
  */

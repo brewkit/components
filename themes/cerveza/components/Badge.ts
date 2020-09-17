@@ -7,6 +7,10 @@ const Badge = {
 
         MuiBadge: {
 
+            badge: {
+                borderRadius: '4px',
+            },
+
             colorPrimary: {
                 color: color.gray.lightest,
             },
