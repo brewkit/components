@@ -25,7 +25,7 @@ declare module '@material-ui/core/styles/createMuiTheme' {
 }
 
 
-export interface Props extends CheckboxProps {
+export type Props = CheckboxProps & {
 
     /**
      * The color of the component. It supports those theme colors that make sense for this component.
@@ -38,4 +38,4 @@ export interface Props extends CheckboxProps {
      */
     classes: Record<string, any>,
 
-}
+};

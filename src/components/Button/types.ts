@@ -21,7 +21,7 @@ declare module '@material-ui/core/styles/createMuiTheme' {
 }
 
 
-export interface Props extends ButtonProps {
+export type Props = ButtonProps & {
 
     /**
      * If `true`, the button will be disabled and show a spinner.
@@ -35,4 +35,4 @@ export interface Props extends ButtonProps {
      */
     classes: Record<string, any>,
 
-}
+};

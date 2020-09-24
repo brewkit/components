@@ -14,8 +14,6 @@ import { Props } from './types';
  *
  */
 export const Radio = React.forwardRef(({
-    classes,
-    className,
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 

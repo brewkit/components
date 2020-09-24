@@ -34,12 +34,18 @@ export const Checkbox = React.forwardRef(({
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
+    /**
+     * merge our custom classes into the ones passed to the component
+     */
     const checkboxClasses = clsx(
         classes.root,
         className,
     );
 
 
+    /**
+     * configure our Framer animation
+     */
     const fadeAnim = {
         initial: { opacity: 0 },
         animate: { opacity: 1 },
@@ -47,6 +53,9 @@ export const Checkbox = React.forwardRef(({
     };
 
 
+    /**
+     * the control that will be used if checked
+     */
     const CheckedIcon = (
         <div className={clsx(classes.controlBase, classes.checkedControl)}>
             <Check component={motion.svg} key="checkedIcon" {...fadeAnim} />
@@ -54,6 +63,9 @@ export const Checkbox = React.forwardRef(({
     );
 
 
+    /**
+     * the control that will be used if unchecked
+     */
     const UncheckedIcon = (
         <div className={clsx(classes.controlBase, classes.uncheckedControl)}>
             <motion.div key="icon" {...fadeAnim} />
@@ -61,6 +73,9 @@ export const Checkbox = React.forwardRef(({
     );
 
 
+    /**
+     * the control that will be used if indeterminate
+     */
     const IndeterminateIcon = (
         <div className={clsx(classes.controlBase, classes.checkedControl)}>
             <Remove component={motion.svg} key="indeterminateIcon" {...fadeAnim} />

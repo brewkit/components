@@ -24,11 +24,11 @@ declare module '@material-ui/core/styles/createMuiTheme' {
 }
 
 
-export interface Props extends CircularProgressProps {
+export type Props = CircularProgressProps & {
 
     /**
      * adds a background circle
      */
     layered?: boolean,
 
-}
+};

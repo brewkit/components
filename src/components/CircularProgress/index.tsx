@@ -23,10 +23,13 @@ export const CircularProgress = React.forwardRef(({
 
 
     const theme = useTheme();
-    const isLayered = theme?.BkCircularProgress?.props?.layered || layered;
     const classes = useStyles();
+    const isLayered = theme?.BkCircularProgress?.props?.layered || layered;
 
 
+    /**
+     * if layered=true, we layer another CircularProgress in the background with a lower opacity
+     */
     if (isLayered) return (
         <div className={classes.root} ref={ref}>
             <MuiCircularProgress {...otherProps} value={100} variant="static" />

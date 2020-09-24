@@ -30,6 +30,9 @@ export const Button = React.forwardRef(({
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
+    /**
+     * merge our custom classes into the ones passed to the component
+     */
     const buttonClasses = clsx(
         classes.root,
         loading && classes.loading,
