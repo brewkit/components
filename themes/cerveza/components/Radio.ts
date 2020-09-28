@@ -1,4 +1,4 @@
-import { color } from '../variables';
+import { color, size } from '../variables';
 
 
 const Radio = {
@@ -21,6 +21,7 @@ const Radio = {
                 width: '2rem',
                 height: '2rem',
                 color: color.blueGray.light,
+                padding: size.small,
                 '& div': {
                     borderWidth: '2px',
                     borderStyle: 'solid',

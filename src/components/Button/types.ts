@@ -33,6 +33,6 @@ export type Props = ButtonProps & {
     /**
      * @ignore
      */
-    classes: Record<string, any>,
+    classes?: Record<string, any>,
 
 };

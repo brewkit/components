@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { select, boolean } from '@storybook/addon-knobs';
 import Radio from '@components/Radio';
-import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 
 export default {

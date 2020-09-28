@@ -1,4 +1,4 @@
-import { size } from '../variables';
+import { color } from '../variables';
 
 
 const TextField = {
@@ -16,22 +16,16 @@ const TextField = {
 
     overrides: {
 
-        MuiOutlinedInput: {
+        MuiTextField: {
 
             root: {
-                '& fieldset': {
-                    transition: 'all 0.3s',
-                    borderWidth: '1px !important',
+
+                '& label': {
+                    transform: 'translate(18px, 18px) scale(1)',
                 },
+
             },
 
-        },
-
-        MuiFormHelperText: {
-            root: {
-                fontSize: size.small,
-                fontWeight: 'normal',
-            },
         },
 
     },

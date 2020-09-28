@@ -10,7 +10,7 @@ module.exports = async ({ config }) => {
             exclude: /node_modules/,
             use: [
                 {
-                    loader: 'awesome-typescript-loader',
+                    loader: 'ts-loader',
                 },
                 {
                     loader: require.resolve('react-docgen-typescript-loader'),

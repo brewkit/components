@@ -13,6 +13,10 @@ import CircularProgress from './components/CircularProgress';
 import Checkbox from './components/Checkbox';
 import Radio from './components/Radio';
 import TextField from './components/TextField';
+import FormHelperText from './components/FormHelperText';
+import FormControlLabel from './components/FormControlLabel';
+import InputLabel from './components/InputLabel';
+import OutlinedInput from './components/OutlinedInput';
 import Switch from './components/Switch';
 
 
@@ -68,6 +72,10 @@ const Cerveza = createMuiTheme(_merge(
     Radio,
     Switch,
     TextField,
+    FormHelperText,
+    FormControlLabel,
+    InputLabel,
+    OutlinedInput,
 ));
 
 

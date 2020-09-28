@@ -36,6 +36,6 @@ export type Props = CheckboxProps & {
     /**
      * @ignore
      */
-    classes: Record<string, any>,
+    classes?: Record<string, any>,
 
 };

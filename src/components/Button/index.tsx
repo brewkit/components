@@ -31,11 +31,11 @@ export const Button = React.forwardRef(({
 
 
     /**
-     * merge our custom classes into the ones passed to the component
+     * merge our custom classes? into the ones passed to the component
      */
     const buttonClasses = clsx(
-        classes.root,
-        loading && classes.loading,
+        classes?.root,
+        loading && classes?.loading,
         className,
     );
 
@@ -48,13 +48,13 @@ export const Button = React.forwardRef(({
             ref={ref}
         >
 
-            <div className={classes.content}>
+            <div className={classes?.content}>
                 {startIcon}
                 {children && <span>{children}</span>}
                 {endIcon}
             </div>
 
-            <div className={classes.loader}>
+            <div className={classes?.loader}>
                 <CircularProgress color="primary" size="1rem" thickness={5} />
             </div>
 

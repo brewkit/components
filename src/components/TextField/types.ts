@@ -28,6 +28,6 @@ export type Props = TextFieldProps & {
     /**
      * @ignore
      */
-    classes: Record<string, any>,
+    classes?: Record<string, any>,
 
 };
