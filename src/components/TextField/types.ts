@@ -11,6 +11,9 @@ declare module '@material-ui/core/styles/createMuiTheme' {
         BkTextField: {
             searchIcon: React.CSSProperties,
             visibilityIcon: React.CSSProperties,
+            menu: React.CSSProperties,
+            menuItem: React.CSSProperties,
+            activeMenuItem: React.CSSProperties,
         },
     }
     // allow configuration using `createMuiTheme`
@@ -18,12 +21,20 @@ declare module '@material-ui/core/styles/createMuiTheme' {
         BkTextField?: {
             searchIcon?: React.CSSProperties,
             visibilityIcon?: React.CSSProperties,
+            menu?: React.CSSProperties,
+            menuItem?: React.CSSProperties,
+            activeMenuItem?: React.CSSProperties,
         },
     }
 }
 
 
 export type Props = TextFieldProps & {
+
+    options?: {
+        label: React.ReactNode,
+        value: any,
+    }[],
 
     /**
      * @ignore

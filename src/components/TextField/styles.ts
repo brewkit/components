@@ -20,6 +20,13 @@ const styles = (theme: Theme): any => ({
     }, theme?.BkTextField?.visibilityIcon),
 
 
+    menu: _merge({}, theme?.BkTextField?.menu),
+
+    menuItem: _merge({}, theme?.BkTextField?.menuItem),
+
+    activeMenuItem: _merge({}, theme?.BkTextField?.activeMenuItem),
+
+
 });
 
 

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { text, boolean } from '@storybook/addon-knobs';
 import { withStyles } from '@material-ui/core';
+import MenuItem from '@material-ui/core/MenuItem';
 
 
 /**
@@ -54,7 +55,47 @@ export const Types = (): React.ReactElement => {
             <TextField label="Password" type="password" />
             <TextField label="Search" type="search" />
             <TextField label="Number" type="number" />
+            <TextField
+                label="Multiline"
+                multiline
+                rows={4}
+                defaultValue="Default Value"
+            />
+            <TextField
+                id="outlined-select-currency"
+                select
+                label="Select"
+                helperText="Please select your number."
+                variant="outlined"
+            >
+                <MenuItem value="One">One</MenuItem>
+                <MenuItem value="Two">Two</MenuItem>
+                <MenuItem value="Three">Three</MenuItem>
+            </TextField>
         </div>
+    );
+
+}
+
+
+export const Select = (): React.ReactElement => {
+
+    const options = [
+        { label: 'one', value: 1 },
+        { label: 'two', value: 2 },
+        { label: 'three', value: 3 },
+        { label: 'four', value: 4 },
+    ]
+
+    return (
+        <TextField
+            defaultValue={2}
+            select
+            label="Select"
+            helperText="Please select your number."
+            variant="outlined"
+            options={options}
+        />
     );
 
 }

@@ -16,7 +16,7 @@ import { Props } from './types';
  * ## Differences in Brewkit:
  *
  * - Adds a `loading` prop that automatically disables the button and shows a loading state. Loading class can be
- * styled with `bkOverrides.Button.loading` within your theme.
+ * styled with `BkButton.loading` within your theme.
  */
 export const Button = React.forwardRef(({
     loading,

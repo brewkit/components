@@ -11,7 +11,7 @@ export default {
     parameters: {
         // componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'Inputs/FormField',
+    title: 'Forms/FormField',
 };
 
 
@@ -23,8 +23,8 @@ export const Types = (): React.ReactElement => {
             message: 'This field is required.',
         },
         minLength: {
-            value: 10,
-            message: 'A length of 10 or more is required.'
+            value: 2,
+            message: 'A length of 2 or more is required.'
         }
     };
 
@@ -32,22 +32,22 @@ export const Types = (): React.ReactElement => {
         <Form style={{ display: 'grid', gridGap: '1rem' }} onSubmit={(values: any) => console.log(values)} >
             <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>
-                    <FormField label="text1" name="text1" type="text" placeholder="text" autoComplete="new" validation={validation} />
+                    <FormField label="Text" name="text" type="text" placeholder="Text" validation={validation} />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <FormField label="text2" name="text2" type="password" placeholder="text" autoComplete="new" validation={validation} />
+                    <FormField label="Password" name="password" type="password" placeholder="Password" validation={validation} />
                 </Grid>
                 <Grid item xs={6} sm={3}>
-                    <FormField label="text1" name="text3" type="text" placeholder="text" autoComplete="new" validation={validation} />
+                    <FormField label="Number" name="number" type="number" placeholder="1" validation={validation} />
                 </Grid>
                 <Grid item xs={6} sm={3}>
-                    <FormField label="text1" name="text4" type="text" placeholder="text" autoComplete="new" validation={validation} />
+                    <FormField label="text1" name="text4" type="text" placeholder="text" validation={validation} />
                 </Grid>
                 <Grid item xs={6} sm={3}>
-                    <FormField label="text1" name="text5" type="text" placeholder="text" autoComplete="new" validation={validation} />
+                    <FormField label="text1" name="text5" type="text" placeholder="text" validation={validation} />
                 </Grid>
                 <Grid item xs={6} sm={3}>
-                    <FormField label="text1" name="text6" type="text" placeholder="text" autoComplete="new" validation={validation} />
+                    <FormField label="text1" name="text6" type="text" placeholder="text" validation={validation} />
                 </Grid>
             </Grid>
             <FormField label="Radio" name="radio" type="radio" value="checked" validation={validation} />

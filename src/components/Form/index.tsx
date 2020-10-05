@@ -5,7 +5,7 @@ import { Props } from './types';
 
 
 /**
- * `Form` wraps around the actual body of the form and binds with any underlying `Form` based components. It also
+ * `Form` wraps around underlying `Form` based components and provides a context provider for them to bind to. It also
  * handles the form's submission and can use validation schema to validate the content.
  *
  * > This component is not found in Material UI.

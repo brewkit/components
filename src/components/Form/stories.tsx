@@ -1,51 +1,39 @@
 import * as React from 'react';
 import { text, boolean } from '@storybook/addon-knobs';
-import TextField from '@components/TextField';
+import Form from '@components/Form';
+import FormField from '@components/FormField';
+import FormSubmit from '@components/FormSubmit';
 
 
 export default {
-    component: TextField,
+    component: Form,
     parameters: {
         // componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'Inputs/TextField',
+    title: 'Forms/Form',
 };
 
 
-export const Sandbox = (): React.ReactElement => {
+export const General = (): React.ReactElement => {
 
-    const label = text('label', 'Form Label');
-    const placeholder = text('placeholder', 'Some placeholder text');
-    const helperText = text('helperText', 'Some helper text');
-    const error = boolean('error', false);
-    const fullWidth = boolean('fullWidth', false);
-    const disabled = boolean('disabled', false);
-    const multiline = boolean('multiline', false);
-
-    return (
-        <TextField
-            error={error}
-            label={label}
-            placeholder={placeholder}
-            disabled={disabled}
-            fullWidth={fullWidth}
-            helperText={helperText}
-            multiline={multiline}
-        />
-    );
-
-};
-
-
-export const Types = (): React.ReactElement => {
+    const validation = {
+        required: {
+            value: true,
+            message: 'This field is required.',
+        },
+        minLength: {
+            value: 10,
+            message: 'A length of 10 or more is required.'
+        }
+    };
 
     return (
-        <div style={{ display: 'grid', gridGap: '1rem' }}>
-            <TextField label="Text" type="text" />
-            <TextField label="Password" type="password" />
-            <TextField label="Search" type="search" />
-            <TextField label="Number" type="number" />
-        </div>
+        <Form style={{ display: 'grid', gridGap: '1rem' }} onSubmit={(values: any) => console.log(values)} >
+            <FormField label="text1" name="text1" type="text" placeholder="text" autoComplete="new" validation={validation} />
+            <FormField label="Switch" name="switch" type="switch" validation={validation} />
+            <FormField label="Checkbox" name="checkbox" type="checkbox" validation={validation} />
+            <FormSubmit>Submit</FormSubmit>
+        </Form>
     );
 
 }

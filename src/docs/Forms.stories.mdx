@@ -9,10 +9,10 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 Forms are generally comprised of three components:
 
 1. `<Form />` - Wraps the form's fields and determines what to do when the form is submitted.
-2. `<Form.Field />` - Renders an input field and binds it to the `Form`. Also handled input validation.
-3. `<Form.Submit />` - The submit button usually at the end of a form. Will lock and unlock based on validity of the inputs.
+2. `<FormField />` - Renders an input field and binds it to the `Form`. Also handles input validation.
+3. `<FormSubmit />` - The submit button usually at the end of a form. Will lock and unlock based on validity of the inputs.
 
-For better usage examples, check out the [documentation on Form](/?path=/docs/stable-forms-form--general).
+For better usage examples, check out the [documentation on Form](/?path=/docs/forms-form--general).
 
 <br />
 
@@ -27,7 +27,9 @@ const validationSchema = yup.object({
     myField: yup.string().required('This field is required.').min(10, 'A length of 10 or more is required.'),
 });
 
+
 <Form validationSchema={validationSchema}>
-    <Form.Field label="Required TextField" name="myField"/>
+    <FormField label="Required TextField" name="myField" />
+    <FormSubmit />
 </Form>
 ```

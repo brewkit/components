@@ -21,37 +21,7 @@ npm i @material-ui/core @material-ui/icons @material-ui/lab @brewkit/components 
 
 <br />
 
-## 2. Adding `<BrewkitProvider />`
-
-In order to ensure components behave correctly and styles don't fight for specificity, your application should be
-wrapped with the `<BrewkitProvider />` component.
-
-```tsx
-
-// index.tsx
-
-import * as React from 'react';
-import { render } from 'react-dom';
-import BrewkitProvider from '@brewkit/components/BrewkitProvider';
-
-
-const AppRoot = React.lazy(() => import('@scenes/App'));
-
-
-render(
-    <BrewkitProvider>
-        <React.Suspense fallback={null}>
-            <AppRoot />
-        </React.Suspense>
-    </BrewkitProvider>,
-    document.getElementById('root'),
-);
-
-```
-
-<br />
-
-## 3. Adding a Theme
+## 2. Adding a Theme
 
 Themes are separately maintained and distributed within the `@brewkit/themes` package, installed in the first step.
 
@@ -79,9 +49,10 @@ export default AppRoot;
 
 <br />
 
-## 4. Brewkit Components
+## 3. Using Brewkit Components
 
-Brewkit components can be imported and accessed from `@brewkit/components`.
+Brewkit components can be imported and accessed from `@brewkit/components`. Brewkit components that share a name with an
+existing Material UI component are backwards compatible and can be replaced without any changes to existing `props`.
 
 ```tsx
 import React from 'react';
@@ -132,7 +103,7 @@ const theme = createMuiTheme(
 
 <br />
 
-## Material-UI Components
+## Using Material-UI Components
 
 The entirety of `@material-ui/core`, `@material-ui/lab`, and `@material-ui/icons` is still available within your project.
 

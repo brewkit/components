@@ -8,7 +8,7 @@ export default {
     parameters: {
         // componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'Feedback/Progress/CircularProgress',
+    title: 'Feedback/CircularProgress',
 };
 
 
