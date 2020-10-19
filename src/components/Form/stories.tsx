@@ -1,38 +1,39 @@
-import React from 'react';
-import * as yup from 'yup';
-import Form from './index';
-import Flag from '@components/Flag';
+import * as React from 'react';
+import { text, boolean } from '@storybook/addon-knobs';
+import Form from '@components/Form';
+import FormField from '@components/FormField';
+import FormSubmit from '@components/FormSubmit';
 
 
 export default {
     component: Form,
     parameters: {
-        componentSubtitle: <Flag color="success">Stable</Flag>,
+        // componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'Stable|Forms/Form',
+    title: 'Forms/Form',
 };
 
 
-const validationSchema = yup.object({
-    text: yup.string().required('This field is required.').min(10, 'A length of 10 or more is required.'),
-    text2: yup.string().required(),
-    checkbox: yup.bool().oneOf([true], 'Field must be checked'),
-    radio: yup.string().oneOf(['foo'], 'Field must be checked'),
-    switch: yup.bool().oneOf([true], 'Field must be checked'),
-});
+export const General = (): React.ReactElement => {
 
+    const validation = {
+        required: {
+            value: true,
+            message: 'This field is required.',
+        },
+        minLength: {
+            value: 10,
+            message: 'A length of 10 or more is required.'
+        }
+    };
 
-export const General = (): React.ReactElement => (
-    <Form
-        onSubmit={(values: object) => alert(`The form was submitted with the following values: ${JSON.stringify(values)}`)}
-        style={{ display: 'grid', gridGap: '1rem' }}
-        validationSchema={validationSchema}
-    >
-        <Form.Field label="Required TextField" name="text" />
-        <Form.Field label="Required TextField" name="text2" />
-        <Form.Field label="Required Checkbox" name="checkbox" type="checkbox" />
-        <Form.Field label="Required Radio" name="radio" type="radio" value="foo" />
-        <Form.Field label="Required Switch" name="switch" type="switch" />
-        <Form.Submit />
-    </Form>
-);
+    return (
+        <Form style={{ display: 'grid', gridGap: '1rem' }} onSubmit={(values: any) => console.log(values)} >
+            <FormField label="text1" name="text1" type="text" placeholder="text" autoComplete="new" validation={validation} />
+            <FormField label="Switch" name="switch" type="switch" validation={validation} />
+            <FormField label="Checkbox" name="checkbox" type="checkbox" validation={validation} />
+            <FormSubmit>Submit</FormSubmit>
+        </Form>
+    );
+
+}

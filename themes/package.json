@@ -1,0 +1,16 @@
+{
+    "name": "@brewkit/themes",
+    "version": "2.1.1",
+    "description": "Brewkit themes",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/brewkit/components"
+    },
+    "author": "lawren",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/brewkit/components/issues"
+    },
+    "homepage": "https://brewkit.github.io",
+    "sideEffects": false
+}

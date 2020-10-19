@@ -1,0 +1,39 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+
+
+<Meta title="Documentation/BkOverrides" />
+
+
+# BkOverrides
+
+Like Material-UI components, Brewkit components can also be themed using `createMuiTheme()`.
+
+Here you will find a complete list of override-able properties that are available in Brewkit.
+
+```typescript
+
+type createMuiTheme = {
+
+    //...
+
+    BkButton: {
+        loading: React.CSSProperties,
+    },
+
+    BkCheckbox: {
+        controlBase: React.CSSProperties,
+        uncheckedControl: React.CSSProperties,
+        checkedControl: React.CSSProperties,
+    },
+
+    BkTextField: {
+        searchIcon: React.CSSProperties,
+        visibilityIcon: React.CSSProperties,
+        menu: React.CSSProperties,
+        menuItem: React.CSSProperties,
+        activeMenuItem: React.CSSProperties,
+    },
+
+}
+
+```

@@ -1,55 +1,39 @@
-import React from 'react';
-import clsx from 'clsx';
-import { useForm, FormContext } from 'react-hook-form';
-import FormField from './components/FormField';
-import FormSubmit from './components/FormSubmit';
-import { FormComponent, Props } from './types';
+import * as React from 'react';
+import { useForm, FormProvider } from 'react-hook-form';
+import { AnimateSharedLayout } from 'framer-motion';
+import { Props } from './types';
 
 
 /**
- * `Form` wraps around the actual body of the form and binds with any underlying `Form` based components. It also
+ * `Form` wraps around underlying `Form` based components and provides a context provider for them to bind to. It also
  * handles the form's submission and can use validation schema to validate the content.
+ *
+ * > This component is not found in Material UI.
  */
-export const Form: FormComponent = React.forwardRef(({
+export const Form = React.forwardRef(({
     children,
-    className,
     onSubmit,
-    validationSchema,
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    const formMethods = useForm({
-        validationSchema,
-        mode: 'onBlur',
+    const methods = useForm({
+        mode: 'onChange',
     });
 
 
-    function submitForm(data: object): void {
-        if (onSubmit) onSubmit(data);
-    }
-
-
-    const classNames = clsx(
-        'brew-Form',
-        className,
-    );
-
-
     return (
-        <FormContext {...formMethods}>
-            <form className={classNames} onSubmit={formMethods.handleSubmit(submitForm)} ref={ref} {...otherProps}>
-                {children}
+        <FormProvider {...methods}>
+            <form noValidate onSubmit={methods.handleSubmit(onSubmit)} ref={ref} {...otherProps}>
+                <AnimateSharedLayout>
+                    {children}
+                </AnimateSharedLayout>
             </form>
-        </FormContext>
+        </FormProvider>
     );
 
 
 });
-
-
-Form.Field = FormField;
-Form.Submit = FormSubmit;
 
 
 Form.displayName = 'Form';

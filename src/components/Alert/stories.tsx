@@ -1,25 +1,23 @@
-import React from 'react';
+import * as React from 'react';
 import { text, select } from '@storybook/addon-knobs';
-import SystemUpdateAltOutlined from '@material-ui/icons/SystemUpdateAltOutlined';
-import Alert from './index';
-import Button from '@components/Button';
-import Flag from '@components/Flag';
-import { Severities } from './types';
+import Alert from '@components/Alert';
+import MuiAlert from '@material-ui/lab/Alert';
+import MuiAlertTitle from '@material-ui/lab/AlertTitle';
 
 
 export default {
     component: Alert,
     parameters: {
-        componentSubtitle: <Flag color="success">Stable</Flag>,
+        // componentSubtitle: <Flag color="success">Stable</Flag>,
     },
-    title: 'Stable|Data Display/Alert',
+    title: 'Data Display/Alert',
 };
 
 
 export const Sandbox = (): React.ReactElement => {
 
     const title = text('title', 'Alert Title');
-    const severity: Severities = select('severity', ['error', 'warning', 'info', 'success'], 'success');
+    const severity = select('severity', ['error', 'warning', 'info', 'success'], 'success');
     const children = text('children', 'Some content for the alert.');
 
     return (
@@ -31,31 +29,76 @@ export const Sandbox = (): React.ReactElement => {
 
 export const General = (): React.ReactElement => (
     <div style={{ display: 'grid', gridGap: '1rem' }}>
-        <Alert title="This is a simple success banner." />
-        <Alert title="This is a simple info banner." severity="info" />
-        <Alert title="This is a simple warning banner." severity="warning" />
-        <Alert title="This is a simple error banner." severity="error" />
+
+        <MuiAlert severity="error">
+            <MuiAlertTitle>This is an error alert with no call to action</MuiAlertTitle>
+        </MuiAlert>
+
+        <MuiAlert severity="warning">
+            <MuiAlertTitle>This is a warning alert with no call to action</MuiAlertTitle>
+        </MuiAlert>
+
+        <MuiAlert severity="info">
+            <MuiAlertTitle>This is an info alert with no call to action</MuiAlertTitle>
+        </MuiAlert>
+
+        <MuiAlert severity="success">
+            <MuiAlertTitle>This is a success alert with no call to action</MuiAlertTitle>
+        </MuiAlert>
+
     </div>
 );
+
 
 export const Filled = (): React.ReactElement => (
     <div style={{ display: 'grid', gridGap: '1rem' }}>
-        <Alert title="This is a simple success banner." variant="filled" />
-        <Alert title="This is a simple info banner." severity="info" variant="filled" />
-        <Alert title="This is a simple warning banner." severity="warning" variant="filled">
-            This banner has some supporting content.
-        </Alert>
-        <Alert title="This is a simple error banner." severity="error" variant="filled" />
+
+        <MuiAlert severity="error" variant="filled">
+            <MuiAlertTitle>Error</MuiAlertTitle>
+            This is an error alert with no call to action
+        </MuiAlert>
+
+        <MuiAlert severity="warning" variant="filled">
+            <MuiAlertTitle>Warning</MuiAlertTitle>
+            This is a warning alert with no call to action
+        </MuiAlert>
+
+        <MuiAlert severity="info" variant="filled">
+            <MuiAlertTitle>Info</MuiAlertTitle>
+            This is an info alert with no call to action
+        </MuiAlert>
+
+        <MuiAlert severity="success" variant="filled">
+            <MuiAlertTitle>Success</MuiAlertTitle>
+            This is a success alert with no call to action
+        </MuiAlert>
+
     </div>
 );
 
-export const CustomIcon = (): React.ReactElement => (
-    <Alert
-        title="Device Firmware Update"
-        severity="error"
-        icon={<SystemUpdateAltOutlined style={{ fontSize: '2rem' }} />}
-        action={<Button size="small">Update</Button>}
-    >
-        A device firmware update is available. Some features may not work until the update is applied.
-    </Alert>
+
+export const WithTitle = (): React.ReactElement => (
+    <div style={{ display: 'grid', gridGap: '1rem' }}>
+
+        <MuiAlert severity="error">
+            <MuiAlertTitle>Error</MuiAlertTitle>
+            This is an error alert with no call to action
+        </MuiAlert>
+
+        <MuiAlert severity="warning">
+            <MuiAlertTitle>Warning</MuiAlertTitle>
+            This is a warning alert with no call to action
+        </MuiAlert>
+
+        <MuiAlert severity="info">
+            <MuiAlertTitle>Info</MuiAlertTitle>
+            This is an info alert with no call to action
+        </MuiAlert>
+
+        <MuiAlert severity="success">
+            <MuiAlertTitle>Success</MuiAlertTitle>
+            This is a success alert with no call to action
+        </MuiAlert>
+
+    </div>
 );

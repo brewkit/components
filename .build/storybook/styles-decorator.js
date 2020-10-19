@@ -1,16 +1,19 @@
 import React from 'react';
-import { StylesProvider, createGenerateClassName } from '@material-ui/core/styles';
+import { ThemeProvider, StylesProvider, createGenerateClassName } from '@material-ui/core/styles';
+import Cerveza from '../../themes/cerveza/index';
 
 
 const generateClassName = createGenerateClassName({
-    productionPrefix: 'bk',
     disableGlobal: true,
+    productionPrefix: 'bk',
 });
 
 
 const StylesDecorator = storyFn => (
-    <StylesProvider generateClassName={generateClassName} injectFirst>
-        {storyFn()}
+    <StylesProvider generateClassName={generateClassName}>
+        <ThemeProvider theme={Cerveza}>
+            {storyFn()}
+        </ThemeProvider>
     </StylesProvider>
 );
 

@@ -1,24 +1,12 @@
-import React from 'react';
-import { StyledParentComponent } from '@components/types';
+import { FormHTMLAttributes } from 'react';
+import { SubmitHandler } from 'react-hook-form';
 
 
-export interface FormComponent extends React.ForwardRefExoticComponent<any> {
-    Field?: any,
-    Submit?: any,
-}
-
-
-export interface Props extends StyledParentComponent {
+export type Props = FormHTMLAttributes<HTMLFormElement> & {
 
     /**
-     * Callback fired when the form is submitted
+     * function to be called on form submission
      */
-    onSubmit?: (values: object) => void,
+    onSubmit: SubmitHandler<Record<string, unknown>>,
 
-    /**
-     * Validation schema used to validate the form. This is the preferred way to handle validation for Forms. Supports
-     * [yup](https://github.com/jquense/yup)
-     */
-    validationSchema?: object,
-
-}
+};

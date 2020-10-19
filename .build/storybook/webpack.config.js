@@ -10,7 +10,7 @@ module.exports = async ({ config }) => {
             exclude: /node_modules/,
             use: [
                 {
-                    loader: 'awesome-typescript-loader',
+                    loader: 'ts-loader',
                 },
                 {
                     loader: require.resolve('react-docgen-typescript-loader'),
@@ -40,7 +40,7 @@ module.exports = async ({ config }) => {
             "@utilities": path.resolve(projectRoot, 'src/utilities/'),
         },
 
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '.md', '.scss'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.md', '.mdx', '.scss'],
 
     };
 

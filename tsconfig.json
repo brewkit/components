@@ -19,13 +19,17 @@
                 "exclude": ["*"]
             }
         ],
+        "types": ["webpack-env"],
         "removeComments": true,
         "strict": true,
         "noImplicitAny": true,
         "noImplicitThis": true,
         "strictNullChecks": true
     },
-    "include": ["src/index.ts"],
+    "include": [
+        "src/index.ts",
+        "themes/cerveza/components/index.ts"
+    ],
     "exclude": [
         "node_modules",
         "build",

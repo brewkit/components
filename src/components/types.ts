@@ -1,10 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 
 
 /**
  * Utility type for converting arrays to usable types to help with maintaining Storybook
  */
-// eslint-disable-next-line @typescript-eslint/generic-type-naming
 export type ElementType<T extends readonly unknown[]> = T extends readonly (infer ElementType)[] ? ElementType : never;
 
 
@@ -14,13 +13,10 @@ export type ElementType<T extends readonly unknown[]> = T extends readonly (infe
 export type Colors = (
     | 'primary'
     | 'secondary'
-    | 'tertiary'
     | 'success'
     | 'error'
     | 'warning'
     | 'info'
-    | 'light'
-    | 'dark'
 );
 
 
