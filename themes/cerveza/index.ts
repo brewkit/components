@@ -19,6 +19,10 @@ import InputLabel from './components/InputLabel';
 import OutlinedInput from './components/OutlinedInput';
 import Select from './components/Select';
 import Switch from './components/Switch';
+import Dialog from './components/Dialog';
+import DialogContent from './components/DialogContent';
+import DialogContentText from './components/DialogContentText';
+import DialogActions from './components/DialogActions';
 
 
 // @ts-ignore
@@ -78,6 +82,10 @@ const Cerveza = createMuiTheme(_merge(
     FormControlLabel,
     InputLabel,
     OutlinedInput,
+    Dialog,
+    DialogContent,
+    DialogContentText,
+    DialogActions,
 ));
 
 
