@@ -50,9 +50,9 @@ var Typography = {
             lineHeight: 1.2
         },
         caption: {
-            fontWeight: 'bold',
-            fontSize: '1.25rem',
-            lineHeight: 1.2
+            fontWeight: 'normal',
+            fontSize: '0.75rem',
+            lineHeight: 1.33
         },
         overline: {
             fontWeight: 'bold',
@@ -75,6 +75,9 @@ var Typography = {
                 color: color.blueGray.dark
             },
             body2: {
+                color: color.blueGray.dark
+            },
+            caption: {
                 color: color.blueGray.dark
             }
         }

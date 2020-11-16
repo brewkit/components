@@ -76,6 +76,9 @@ declare const Typography: {
             body2: {
                 color: string;
             };
+            caption: {
+                color: string;
+            };
         };
     };
 };
