@@ -34,6 +34,7 @@ const Typography = {
         h6: {},
         body1: {
             lineHeight: 1.25,
+            fontSize: '1rem',
         },
         body2: {
             lineHeight: 1.25,

@@ -29,6 +29,7 @@ declare const Typography: {
         h6: {};
         body1: {
             lineHeight: number;
+            fontSize: string;
         };
         body2: {
             lineHeight: number;
