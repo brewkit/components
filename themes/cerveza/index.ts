@@ -21,6 +21,7 @@ import Select from './components/Select';
 import Switch from './components/Switch';
 import Tabs from './components/Tabs';
 import Tab from './components/Tab';
+import Tooltip from './components/Tooltip';
 
 
 // @ts-ignore
@@ -82,6 +83,7 @@ const Cerveza = createMuiTheme(_merge(
     OutlinedInput,
     Tabs,
     Tab,
+    Tooltip,
 ));
 
 
