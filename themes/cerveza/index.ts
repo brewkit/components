@@ -19,6 +19,8 @@ import InputLabel from './components/InputLabel';
 import OutlinedInput from './components/OutlinedInput';
 import Select from './components/Select';
 import Switch from './components/Switch';
+import Tabs from './components/Tabs';
+import Tab from './components/Tab';
 
 
 // @ts-ignore
@@ -78,6 +80,8 @@ const Cerveza = createMuiTheme(_merge(
     FormControlLabel,
     InputLabel,
     OutlinedInput,
+    Tabs,
+    Tab,
 ));
 
 
