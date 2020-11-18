@@ -17,6 +17,9 @@ import InputLabel from './components/InputLabel';
 import OutlinedInput from './components/OutlinedInput';
 import Select from './components/Select';
 import Switch from './components/Switch';
+import Tabs from './components/Tabs';
+import Tab from './components/Tab';
+import Tooltip from './components/Tooltip';
 var Cerveza = createMuiTheme(_merge({
     palette: {
         primary: {
@@ -45,5 +48,5 @@ var Cerveza = createMuiTheme(_merge({
             primary: color.gray.dark
         }
     }
-}, Typography, Alert, AlertTitle, Badge, Button, ButtonGroup, CircularProgress, Checkbox, Radio, Select, Switch, TextField, FormHelperText, FormControlLabel, InputLabel, OutlinedInput));
+}, Typography, Alert, AlertTitle, Badge, Button, ButtonGroup, CircularProgress, Checkbox, Radio, Select, Switch, TextField, FormHelperText, FormControlLabel, InputLabel, OutlinedInput, Tabs, Tab, Tooltip));
 export default Cerveza;
