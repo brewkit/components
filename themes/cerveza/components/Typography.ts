@@ -34,6 +34,7 @@ const Typography = {
         h6: {},
         body1: {
             lineHeight: 1.25,
+            fontSize: '1rem',
         },
         body2: {
             lineHeight: 1.25,
@@ -54,9 +55,9 @@ const Typography = {
             lineHeight: 1.2,
         },
         caption: {
-            fontWeight: 'bold',
-            fontSize: '1.25rem',
-            lineHeight: 1.2,
+            fontWeight: 'normal',
+            fontSize: '0.75rem',
+            lineHeight: 1.33,
         },
         overline: {
             fontWeight: 'bold',
@@ -89,6 +90,10 @@ const Typography = {
             body2: {
                 color: color.blueGray.dark,
             },
+
+            caption : {
+                color: color.blueGray.dark,
+            }
 
         },
 
