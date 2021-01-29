@@ -19,6 +19,10 @@ var Select = {
                 '&:focus ~ svg': {
                     color: '#fff'
                 },
+                '&$select option': {
+                    color: color.gray.dark,
+                    padding: size.small
+                },
                 '& label': {
                     transform: 'translate(18px, 18px) scale(1)'
                 }

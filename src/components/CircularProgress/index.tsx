@@ -32,7 +32,7 @@ export const CircularProgress = React.forwardRef(({
      */
     if (isLayered) return (
         <div className={classes.root} ref={ref}>
-            <MuiCircularProgress {...otherProps} value={100} variant="static" />
+            <MuiCircularProgress {...otherProps} value={100} variant="determinate" />
             <MuiCircularProgress {...otherProps} ref={ref} />
         </div>
     );

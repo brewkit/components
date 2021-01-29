@@ -18,6 +18,10 @@ declare const Select: {
                 '&:focus ~ svg': {
                     color: string;
                 };
+                '&$select option': {
+                    color: string;
+                    padding: string;
+                };
                 '& label': {
                     transform: string;
                 };
