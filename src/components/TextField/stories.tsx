@@ -81,6 +81,7 @@ export const Types = (): React.ReactElement => {
 export const Select = (): React.ReactElement => {
 
     const options = [
+        { label: '', value: '', hidden: true },
         { label: 'one', value: 1 },
         { label: 'two', value: 2 },
         { label: 'three', value: 3 },
@@ -89,7 +90,7 @@ export const Select = (): React.ReactElement => {
 
     return (
         <TextField
-            defaultValue={2}
+            defaultValue=""
             select
             label="Select"
             helperText="Please select your number."

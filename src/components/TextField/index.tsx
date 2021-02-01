@@ -77,15 +77,19 @@ export const TextField = React.forwardRef(({
      */
     function getOptions(): React.ReactNode {
         const OptionComponent = isMobile ? 'option' : MenuItem;
-        return options?.map((option) => (
-            <OptionComponent
-                classes={(isMobile ? undefined : { root: classes?.menuItem, selected: classes?.activeMenuItem })}
-                key={option.value}
-                value={option.value}
-            >
-                {option.label}
-            </OptionComponent>
-        ));
+        return options?.map((option) => {
+            if (!isMobile && option.hidden) return null;
+            return (
+                <OptionComponent
+                    classes={(isMobile ? undefined : { root: classes?.menuItem, selected: classes?.activeMenuItem })}
+                    hidden={option.hidden}
+                    key={option.value}
+                    value={option.value}
+                >
+                    {option.label}
+                </OptionComponent>
+            );
+        });
     }
 
 

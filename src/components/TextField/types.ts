@@ -34,6 +34,7 @@ export type Props = TextFieldProps & {
     options?: {
         label: React.ReactNode,
         value: any,
+        hidden?: boolean,
     }[],
 
     /**
