@@ -11,7 +11,7 @@ printf "${BLUE}█▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅�
 
 
 # run our tests, then build, then publish from the dist folder
-jest && npm run build && npm publish dist
+jest && npm run build && npm publish ./dist
 
 
 printf "${BLUE}█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█\n"
