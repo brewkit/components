@@ -9,4 +9,13 @@ export type Props = FormHTMLAttributes<HTMLFormElement> & {
      */
     onSubmit: SubmitHandler<Record<string, unknown>>,
 
+    /**
+     * configuration options to be passed to the underlying RHF `useForm` hook
+     * (https://react-hook-form.com/api#useForm)
+     */
+    useFormConfig?: {
+        [key: string]: any,
+    },
+
+
 };

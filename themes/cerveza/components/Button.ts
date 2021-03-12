@@ -1,3 +1,4 @@
+import Color from 'color';
 import { color, size } from '../variables';
 
 
@@ -46,6 +47,9 @@ const Button = {
                     color: color.brand.primary,
                     borderColor: color.brand.primary,
                 },
+                '&:hover': {
+                    backgroundColor: Color(color.brand.primary).darken(0.1).hex(),
+                },
             },
 
             containedSecondary: {
@@ -57,6 +61,15 @@ const Button = {
                     color: color.brand.secondary,
                     borderColor: color.brand.secondary,
                 },
+                '&:hover': {
+                    backgroundColor: Color(color.brand.secondary).darken(0.1).hex(),
+                },
+            },
+
+            sizeSmall: {
+                fontSize: size.small,
+                padding: `${size.xsmall} ${size.small}`,
+                minWidth: 0,
             },
 
         },

@@ -45,7 +45,7 @@ export const color = {
         success: '#4caf50',
         info: '#03a9f4',
         warning: '#ffa000',
-        error: '#ff5722',
+        error: '#dd2c00',
         shared: '#7e57c2',
     },
 
