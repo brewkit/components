@@ -27,8 +27,19 @@ export const General = (): React.ReactElement => {
         }
     };
 
+
+    const handleSubmit = (values) => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log(values);
+                resolve('foo');
+            }, 2000);
+        });
+    }
+
+
     return (
-        <Form style={{ display: 'grid', gridGap: '1rem' }} onSubmit={(values: any) => console.log(values)} >
+        <Form style={{ display: 'grid', gridGap: '1rem' }} onSubmit={handleSubmit} >
             <FormField label="text1" name="text1" type="text" placeholder="text" autoComplete="new" validation={validation} />
             <FormField label="Switch" name="switch" type="switch" validation={validation} />
             <FormField label="Checkbox" name="checkbox" type="checkbox" validation={validation} />

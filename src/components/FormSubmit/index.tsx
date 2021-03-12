@@ -19,7 +19,8 @@ export const FormSubmit = React.forwardRef(({
 
     return (
         <Button
-            disabled={!(formState.isValid)}
+            disabled={!(formState.isValid) || formState.isSubmitting}
+            loading={formState.isSubmitting}
             ref={ref}
             type="submit"
             {...otherProps}
