@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders badge component 1`] = `
+<span
+  className="MuiBadge-root"
+>
+  <span
+    className="MuiBadge-badge MuiBadge-anchorOriginTopRightRectangle MuiBadge-dot"
+  >
+    
+  </span>
+</span>
+`;

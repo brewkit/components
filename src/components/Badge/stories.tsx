@@ -3,11 +3,10 @@ import { text, select, boolean } from '@storybook/addon-knobs';
 import Badge from '@components/Badge';
 import MailIcon from '@material-ui/icons/Mail';
 
-
 export default {
     component: Badge,
     parameters: {
-        // componentSubtitle: <Flag color="success">Stable</Flag>,
+        jest: ['Badge.test']
     },
     title: 'Data Display/Badge',
 };

@@ -16,6 +16,9 @@ const Button = withStyles(styles)(Component)
 
 export default {
     component: Component,
+    parameters: {
+        jest: ['Button.test'],
+    },
     title: 'Inputs/Button',
 };
 

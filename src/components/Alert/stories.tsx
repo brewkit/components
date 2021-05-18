@@ -4,15 +4,13 @@ import Alert from '@components/Alert';
 import MuiAlert from '@material-ui/lab/Alert';
 import MuiAlertTitle from '@material-ui/lab/AlertTitle';
 
-
 export default {
     component: Alert,
     parameters: {
-        // componentSubtitle: <Flag color="success">Stable</Flag>,
+        jest: ['Alert.test']
     },
     title: 'Data Display/Alert',
 };
-
 
 export const Sandbox = (): React.ReactElement => {
 
@@ -25,7 +23,6 @@ export const Sandbox = (): React.ReactElement => {
     );
 
 };
-
 
 export const General = (): React.ReactElement => (
     <div style={{ display: 'grid', gridGap: '1rem' }}>
