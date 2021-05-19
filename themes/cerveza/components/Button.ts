@@ -25,7 +25,6 @@ const Button = {
                 fontSize: size.normal,
                 padding: `${size.normal} ${size.large}`,
                 minWidth: '150px',
-                lineHeight: 0,
 
                 '&$contained': {
                     borderWidth: '2px',

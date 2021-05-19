@@ -11,7 +11,7 @@ export type Props = CheckboxProps & SwitchProps & RadioProps & TextFieldProps & 
      * The type of input to render.
      * @default 'text'
      */
-    type?: 'text' | 'password' | 'number' | 'checkbox' | 'radio' | 'switch',
+    type?: 'text' | 'password' | 'number' | 'checkbox' | 'radio' | 'switch' | string,
 
     /**
      * The label of the input
