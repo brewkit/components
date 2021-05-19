@@ -90,7 +90,7 @@ export const FormField = React.forwardRef(({
     if (Component === TextField) return (
         <Component
             error={Boolean(errors[name])}
-            helperText={getHelperText()}
+            helperText={helperText && getHelperText()}
             inputRef={register(validation)}
             label={label}
             name={name}
@@ -98,6 +98,12 @@ export const FormField = React.forwardRef(({
             {...otherProps}
         />
     );
+
+
+    /**
+     * if there is no label and not a TextField, we just use the component
+     */
+    if (!label) return <Component inputRef={register(validation)} name={name} {...otherProps} />;
 
 
     /**
