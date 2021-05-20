@@ -1,12 +1,18 @@
 module.exports = {
-    addons: [
-        '@storybook/addon-knobs/register',
-        '@storybook/addon-viewport/register',
-        '@storybook/addon-backgrounds/register',
-        '@storybook/addon-actions/register',
-        '@storybook/addon-jest/register',
-    ],
-    presets: [
-        '@storybook/addon-docs/preset',
-    ]
+    typescript: {
+        reactDocgen: 'react-docgen-typescript',
+        reactDocgenTypescriptOptions: {
+            tsconfigPath: '../../tsconfig.json',
+            shouldExtractLiteralValuesFromEnum: true,
+            propFilter: (prop) => {
+                if (!prop.parent) return true;
+                else if (prop.parent.name === 'DOMAttributes') return false;
+                else if (prop.parent.name === 'AriaAttributes') return false;
+                else if (prop.parent.name === 'RefAttributes') return false;
+                else if (prop.parent.name === 'HTMLAttributes') return false;
+                else return true;
+            },
+        },
+    },
+    addons: ['@storybook/addon-essentials'],
 };

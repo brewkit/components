@@ -10,13 +10,12 @@ import { Props } from './types';
 
 
 /* Map our input components for easier access */
-const components = {
+const components: {
+    [key: string]: React.ReactNode,
+} = {
     checkbox: Checkbox,
     radio: Radio,
     switch: Switch,
-    text: TextField,
-    password: TextField,
-    number: TextField,
 };
 
 
@@ -37,7 +36,7 @@ export const FormField = React.forwardRef(({
 
 
     const { register, errors } = useFormContext();
-    const Component: any = components[type] || TextField;
+    const Component: any = components[type] ?? TextField;
 
 
     /**

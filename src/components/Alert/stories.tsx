@@ -1,104 +1,58 @@
 import * as React from 'react';
-import { text, select } from '@storybook/addon-knobs';
+import { Story } from '@storybook/react';
 import Alert from '@components/Alert';
-import MuiAlert from '@material-ui/lab/Alert';
-import MuiAlertTitle from '@material-ui/lab/AlertTitle';
+import { Props } from './types';
 
 
 export default {
     component: Alert,
-    parameters: {
-        // componentSubtitle: <Flag color="success">Stable</Flag>,
-    },
     title: 'Data Display/Alert',
 };
 
 
-export const Sandbox = (): React.ReactElement => {
-
-    const title = text('title', 'Alert Title');
-    const severity = select('severity', ['error', 'warning', 'info', 'success'], 'success');
-    const children = text('children', 'Some content for the alert.');
-
-    return (
-        <Alert title={title} severity={severity} children={children} />
-    );
-
+export const Sandbox: Story<Props> = (args) => <Alert {...args} />;
+Sandbox.args = {
+    title: 'I am an alert!',
+    severity: 'warning',
+    variant: 'standard',
+    square: false,
+    children: 'I am a description of the alert!'
 };
 
 
-export const General = (): React.ReactElement => (
+export const General : Story<Props> = (args) => (
     <div style={{ display: 'grid', gridGap: '1rem' }}>
-
-        <MuiAlert severity="error">
-            <MuiAlertTitle>This is an error alert with no call to action</MuiAlertTitle>
-        </MuiAlert>
-
-        <MuiAlert severity="warning">
-            <MuiAlertTitle>This is a warning alert with no call to action</MuiAlertTitle>
-        </MuiAlert>
-
-        <MuiAlert severity="info">
-            <MuiAlertTitle>This is an info alert with no call to action</MuiAlertTitle>
-        </MuiAlert>
-
-        <MuiAlert severity="success">
-            <MuiAlertTitle>This is a success alert with no call to action</MuiAlertTitle>
-        </MuiAlert>
-
+        <Alert severity="error" title="This is an error alert with no call to action." />
+        <Alert severity="warning" title="This is an warning alert with no call to action." />
+        <Alert severity="info" title="This is an info alert with no call to action." />
+        <Alert severity="success" title="This is an success alert with no call to action." />
     </div>
 );
 
 
-export const Filled = (): React.ReactElement => (
+export const Filled : Story<Props> = (args) => (
     <div style={{ display: 'grid', gridGap: '1rem' }}>
-
-        <MuiAlert severity="error" variant="filled">
-            <MuiAlertTitle>Error</MuiAlertTitle>
-            This is an error alert with no call to action
-        </MuiAlert>
-
-        <MuiAlert severity="warning" variant="filled">
-            <MuiAlertTitle>Warning</MuiAlertTitle>
-            This is a warning alert with no call to action
-        </MuiAlert>
-
-        <MuiAlert severity="info" variant="filled">
-            <MuiAlertTitle>Info</MuiAlertTitle>
-            This is an info alert with no call to action
-        </MuiAlert>
-
-        <MuiAlert severity="success" variant="filled">
-            <MuiAlertTitle>Success</MuiAlertTitle>
-            This is a success alert with no call to action
-        </MuiAlert>
-
+        <Alert severity="error" title="This is an error alert with no call to action." variant="filled" />
+        <Alert severity="warning" title="This is an warning alert with no call to action." variant="filled" />
+        <Alert severity="info" title="This is an info alert with no call to action." variant="filled" />
+        <Alert severity="success" title="This is an success alert with no call to action." variant="filled" />
     </div>
 );
 
 
-export const WithTitle = (): React.ReactElement => (
+export const WithDescription : Story<Props> = (args) => (
     <div style={{ display: 'grid', gridGap: '1rem' }}>
-
-        <MuiAlert severity="error">
-            <MuiAlertTitle>Error</MuiAlertTitle>
-            This is an error alert with no call to action
-        </MuiAlert>
-
-        <MuiAlert severity="warning">
-            <MuiAlertTitle>Warning</MuiAlertTitle>
-            This is a warning alert with no call to action
-        </MuiAlert>
-
-        <MuiAlert severity="info">
-            <MuiAlertTitle>Info</MuiAlertTitle>
-            This is an info alert with no call to action
-        </MuiAlert>
-
-        <MuiAlert severity="success">
-            <MuiAlertTitle>Success</MuiAlertTitle>
-            This is a success alert with no call to action
-        </MuiAlert>
-
+        <Alert severity="error" title="Error">
+            This is an error alert with no call to action.
+        </Alert>
+        <Alert severity="warning" title="Warning">
+            This is an warning alert with no call to action.
+        </Alert>
+        <Alert severity="info" title="Info">
+            This is an info alert with no call to action.
+        </Alert>
+        <Alert severity="success" title="Success">
+            This is an success alert with no call to action.
+        </Alert>
     </div>
 );
