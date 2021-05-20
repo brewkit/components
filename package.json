@@ -57,6 +57,7 @@
         "@storybook/addon-actions": "^6.1.21",
         "@storybook/addon-backgrounds": "^6.1.21",
         "@storybook/addon-docs": "^6.1.21",
+        "@storybook/addon-essentials": "^6.2.9",
         "@storybook/addon-jest": "^6.1.21",
         "@storybook/addon-knobs": "^6.1.21",
         "@storybook/addon-storyshots": "^6.1.21",
