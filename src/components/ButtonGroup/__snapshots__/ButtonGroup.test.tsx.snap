@@ -32,35 +32,6 @@ exports[`Renders ButtonGroup component 1`] = `
           One
         </span>
       </div>
-      <div
-        className="Button-loader-3"
-      >
-        <div
-          className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-          role="progressbar"
-          style={
-            Object {
-              "height": "1rem",
-              "width": "1rem",
-            }
-          }
-        >
-          <svg
-            className="MuiCircularProgress-svg"
-            viewBox="22 22 44 44"
-          >
-            <circle
-              className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-              cx={44}
-              cy={44}
-              fill="none"
-              r={19.5}
-              strokeWidth={5}
-              style={Object {}}
-            />
-          </svg>
-        </div>
-      </div>
     </span>
   </button>
   <button
@@ -90,35 +61,6 @@ exports[`Renders ButtonGroup component 1`] = `
           Two
         </span>
       </div>
-      <div
-        className="Button-loader-3"
-      >
-        <div
-          className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-          role="progressbar"
-          style={
-            Object {
-              "height": "1rem",
-              "width": "1rem",
-            }
-          }
-        >
-          <svg
-            className="MuiCircularProgress-svg"
-            viewBox="22 22 44 44"
-          >
-            <circle
-              className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-              cx={44}
-              cy={44}
-              fill="none"
-              r={19.5}
-              strokeWidth={5}
-              style={Object {}}
-            />
-          </svg>
-        </div>
-      </div>
     </span>
   </button>
   <button
@@ -147,35 +89,6 @@ exports[`Renders ButtonGroup component 1`] = `
         <span>
           Three
         </span>
-      </div>
-      <div
-        className="Button-loader-3"
-      >
-        <div
-          className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-          role="progressbar"
-          style={
-            Object {
-              "height": "1rem",
-              "width": "1rem",
-            }
-          }
-        >
-          <svg
-            className="MuiCircularProgress-svg"
-            viewBox="22 22 44 44"
-          >
-            <circle
-              className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-              cx={44}
-              cy={44}
-              fill="none"
-              r={19.5}
-              strokeWidth={5}
-              style={Object {}}
-            />
-          </svg>
-        </div>
       </div>
     </span>
   </button>

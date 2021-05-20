@@ -7,7 +7,7 @@ import Button from '@components/Button';
 export default {
     component: ButtonGroup,
     parameters: {
-        // componentSubtitle: <Flag color="success">Stable</Flag>,
+        jest: ['ButtonGroup.test']
     },
     title: 'Inputs/ButtonGroup',
 };

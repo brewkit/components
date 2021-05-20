@@ -6,7 +6,7 @@ import LinearProgress from '@components/LinearProgress';
 export default {
     component: LinearProgress,
     parameters: {
-        // componentSubtitle: <Flag color="success">Stable</Flag>,
+        jest: ['LinearProgress.test']
     },
     title: 'Feedback/LinearProgress',
 };

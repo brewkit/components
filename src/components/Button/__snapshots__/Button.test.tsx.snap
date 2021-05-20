@@ -38,35 +38,6 @@ exports[`Ensure rerender happens on endIcon prop change 1`] = `
         />
       </svg>
     </div>
-    <div
-      className="Button-loader-3"
-    >
-      <div
-        className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-        role="progressbar"
-        style={
-          Object {
-            "height": "1rem",
-            "width": "1rem",
-          }
-        }
-      >
-        <svg
-          className="MuiCircularProgress-svg"
-          viewBox="22 22 44 44"
-        >
-          <circle
-            className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-            cx={44}
-            cy={44}
-            fill="none"
-            r={19.5}
-            strokeWidth={5}
-            style={Object {}}
-          />
-        </svg>
-      </div>
-    </div>
   </span>
   <span
     className="MuiTouchRipple-root"
@@ -111,35 +82,6 @@ exports[`Ensure rerender happens on endIcon prop change 2`] = `
           d="M17.51 3.87L15.73 2.1 5.84 12l9.9 9.9 1.77-1.77L9.38 12l8.13-8.13z"
         />
       </svg>
-    </div>
-    <div
-      className="Button-loader-3"
-    >
-      <div
-        className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-        role="progressbar"
-        style={
-          Object {
-            "height": "1rem",
-            "width": "1rem",
-          }
-        }
-      >
-        <svg
-          className="MuiCircularProgress-svg"
-          viewBox="22 22 44 44"
-        >
-          <circle
-            className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-            cx={44}
-            cy={44}
-            fill="none"
-            r={19.5}
-            strokeWidth={5}
-            style={Object {}}
-          />
-        </svg>
-      </div>
     </div>
   </span>
   <span
@@ -186,36 +128,10 @@ exports[`Ensure rerender happens on startIcon prop change 1`] = `
         Go back
       </span>
     </div>
-    <div
-      className="Button-loader-3"
-    >
-      <div
-        className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-        role="progressbar"
-        style={
-          Object {
-            "height": "1rem",
-            "width": "1rem",
-          }
-        }
-      >
-        <svg
-          className="MuiCircularProgress-svg"
-          viewBox="22 22 44 44"
-        >
-          <circle
-            className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-            cx={44}
-            cy={44}
-            fill="none"
-            r={19.5}
-            strokeWidth={5}
-            style={Object {}}
-          />
-        </svg>
-      </div>
-    </div>
   </span>
+  <span
+    className="MuiTouchRipple-root"
+  />
 </button>
 `;
 
@@ -257,34 +173,40 @@ exports[`Ensure rerender happens on startIcon prop change 2`] = `
         Go back (IOS)
       </span>
     </div>
+  </span>
+  <span
+    className="MuiTouchRipple-root"
+  />
+</button>
+`;
+
+exports[`It should render a div child with classes.content 1`] = `
+<button
+  className="MuiButtonBase-root MuiButton-root MuiButton-text Button-root-1"
+  disabled={false}
+  onBlur={[Function]}
+  onDragLeave={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex={0}
+  type="button"
+>
+  <span
+    className="MuiButton-label"
+  >
     <div
-      className="Button-loader-3"
+      className="Button-content-2"
     >
-      <div
-        className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-        role="progressbar"
-        style={
-          Object {
-            "height": "1rem",
-            "width": "1rem",
-          }
-        }
-      >
-        <svg
-          className="MuiCircularProgress-svg"
-          viewBox="22 22 44 44"
-        >
-          <circle
-            className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-            cx={44}
-            cy={44}
-            fill="none"
-            r={19.5}
-            strokeWidth={5}
-            style={Object {}}
-          />
-        </svg>
-      </div>
+      <span>
+        Button with default props
+      </span>
     </div>
   </span>
   <span
@@ -317,35 +239,6 @@ exports[`Renders a button with disabled prop 1`] = `
     <div
       className="Button-content-2"
     />
-    <div
-      className="Button-loader-3"
-    >
-      <div
-        className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-        role="progressbar"
-        style={
-          Object {
-            "height": "1rem",
-            "width": "1rem",
-          }
-        }
-      >
-        <svg
-          className="MuiCircularProgress-svg"
-          viewBox="22 22 44 44"
-        >
-          <circle
-            className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-            cx={44}
-            cy={44}
-            fill="none"
-            r={19.5}
-            strokeWidth={5}
-            style={Object {}}
-          />
-        </svg>
-      </div>
-    </div>
   </span>
 </button>
 `;
@@ -388,40 +281,11 @@ exports[`Renders a button with endIcon prop 1`] = `
         />
       </svg>
     </div>
-    <div
-      className="Button-loader-3"
-    >
-      <div
-        className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-        role="progressbar"
-        style={
-          Object {
-            "height": "1rem",
-            "width": "1rem",
-          }
-        }
-      >
-        <svg
-          className="MuiCircularProgress-svg"
-          viewBox="22 22 44 44"
-        >
-          <circle
-            className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-            cx={44}
-            cy={44}
-            fill="none"
-            r={19.5}
-            strokeWidth={5}
-            style={Object {}}
-          />
-        </svg>
-      </div>
-    </div>
   </span>
 </button>
 `;
 
-exports[`Renders a button with loading prop 1`] = `
+exports[`Renders a button with loading prop, with corresponding div wrapper 1`] = `
 <button
   className="MuiButtonBase-root MuiButton-root MuiButton-text Button-root-1 Button-loading-4 Mui-disabled Mui-disabled"
   disabled={true}
@@ -516,39 +380,7 @@ exports[`Renders a button with startIcon prop 1`] = `
         Go back
       </span>
     </div>
-    <div
-      className="Button-loader-3"
-    >
-      <div
-        className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-        role="progressbar"
-        style={
-          Object {
-            "height": "1rem",
-            "width": "1rem",
-          }
-        }
-      >
-        <svg
-          className="MuiCircularProgress-svg"
-          viewBox="22 22 44 44"
-        >
-          <circle
-            className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-            cx={44}
-            cy={44}
-            fill="none"
-            r={19.5}
-            strokeWidth={5}
-            style={Object {}}
-          />
-        </svg>
-      </div>
-    </div>
   </span>
-  <span
-    className="MuiTouchRipple-root"
-  />
 </button>
 `;
 
@@ -579,35 +411,6 @@ exports[`Renders a plain button 1`] = `
       <span>
         Button with default props
       </span>
-    </div>
-    <div
-      className="Button-loader-3"
-    >
-      <div
-        className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-        role="progressbar"
-        style={
-          Object {
-            "height": "1rem",
-            "width": "1rem",
-          }
-        }
-      >
-        <svg
-          className="MuiCircularProgress-svg"
-          viewBox="22 22 44 44"
-        >
-          <circle
-            className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-            cx={44}
-            cy={44}
-            fill="none"
-            r={19.5}
-            strokeWidth={5}
-            style={Object {}}
-          />
-        </svg>
-      </div>
     </div>
   </span>
 </button>

@@ -7,7 +7,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 export default {
     component: Switch,
     parameters: {
-        // componentSubtitle: <Flag color="success">Stable</Flag>,
+        jest: ['Switch.test']
     },
     title: 'Inputs/Switch',
 };

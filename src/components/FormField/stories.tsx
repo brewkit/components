@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 export default {
     component: FormField,
     parameters: {
-        // componentSubtitle: <Flag color="success">Stable</Flag>,
+        jest: ['FormField.test']
     },
     title: 'Forms/FormField',
 };
