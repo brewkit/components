@@ -5,11 +5,13 @@ import StylesDecorator from './styles-decorator';
 // import './assets/css/theme.css';
 import results from '../jest/test-results.json';
 
+
 addDecorator(withKnobs);
 addDecorator(StylesDecorator);
 addDecorator(withTests({
     results
 }));
+
 
 configure(
     [
