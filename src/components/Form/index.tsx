@@ -13,12 +13,12 @@ import { Props } from './types';
 export const Form = React.forwardRef(({
     children,
     onSubmit,
-    useFormConfig,
+    useFormMethods,
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    const methods = useForm(useFormConfig ?? {
+    const methods = useFormMethods ? useFormMethods : useForm({
         mode: 'onChange',
     });
 
