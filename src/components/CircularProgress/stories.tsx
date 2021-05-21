@@ -6,7 +6,7 @@ import CircularProgress from '@components/CircularProgress';
 export default {
     component: CircularProgress,
     parameters: {
-        jest: ['CircularProgress.test']
+        jest: ['CirularProgress.test']
     },
     title: 'Feedback/CircularProgress',
 };

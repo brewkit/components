@@ -16,7 +16,7 @@ const TextField = withStyles(styles)(Component)
 export default {
     component: TextField,
     parameters: {
-        // componentSubtitle: <Flag color="success">Stable</Flag>,
+        jest: ['TextField.test']
     },
     title: 'Inputs/TextField',
 };

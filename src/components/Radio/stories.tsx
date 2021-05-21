@@ -7,7 +7,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 export default {
     component: Radio,
     parameters: {
-        test: ['Radio.test']
+        jest: ['Radio.test']
     },
     title: 'Inputs/Radio',
 };
