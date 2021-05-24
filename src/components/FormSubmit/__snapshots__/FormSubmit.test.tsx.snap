@@ -34,9 +34,6 @@ exports[`Renders FormSubmit component 1`] = `
         type="text"
       />
     </div>
-    <p
-      className="MuiFormHelperText-root"
-    />
   </div>
   <button
     className="MuiButtonBase-root MuiButton-root MuiButton-text Button-root-6"

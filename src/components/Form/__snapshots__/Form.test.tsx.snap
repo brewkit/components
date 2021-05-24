@@ -33,9 +33,6 @@ exports[`Renders Form component 1`] = `
         type="text"
       />
     </div>
-    <p
-      className="MuiFormHelperText-root"
-    />
   </div>
   <label
     className="MuiFormControlLabel-root"
