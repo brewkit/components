@@ -12,7 +12,6 @@ declare const Button: {
                 fontSize: string;
                 padding: string;
                 minWidth: string;
-                lineHeight: number;
                 '&$contained': {
                     borderWidth: string;
                     borderStyle: string;
@@ -28,6 +27,9 @@ declare const Button: {
                     color: string;
                     borderColor: string;
                 };
+                '&:hover': {
+                    backgroundColor: string;
+                };
             };
             containedSecondary: {
                 color: string;
@@ -38,6 +40,14 @@ declare const Button: {
                     color: string;
                     borderColor: string;
                 };
+                '&:hover': {
+                    backgroundColor: string;
+                };
+            };
+            sizeSmall: {
+                fontSize: string;
+                padding: string;
+                minWidth: number;
             };
         };
     };

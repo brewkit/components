@@ -1,3 +1,4 @@
+import Color from 'color';
 import { color, size } from '../variables';
 var Button = {
     props: {
@@ -13,7 +14,6 @@ var Button = {
                 fontSize: size.normal,
                 padding: size.normal + " " + size.large,
                 minWidth: '150px',
-                lineHeight: 0,
                 '&$contained': {
                     borderWidth: '2px',
                     borderStyle: 'solid',
@@ -28,6 +28,9 @@ var Button = {
                     opacity: 0.5,
                     color: color.brand.primary,
                     borderColor: color.brand.primary
+                },
+                '&:hover': {
+                    backgroundColor: Color(color.brand.primary).darken(0.1).hex()
                 }
             },
             containedSecondary: {
@@ -38,7 +41,15 @@ var Button = {
                     opacity: 0.5,
                     color: color.brand.secondary,
                     borderColor: color.brand.secondary
+                },
+                '&:hover': {
+                    backgroundColor: Color(color.brand.secondary).darken(0.1).hex()
                 }
+            },
+            sizeSmall: {
+                fontSize: size.small,
+                padding: size.xsmall + " " + size.small,
+                minWidth: 0
             }
         }
     }

@@ -10,11 +10,9 @@ const generateClassName = createGenerateClassName({
 
 
 const StylesDecorator = storyFn => (
-    <StylesProvider generateClassName={generateClassName}>
-        <ThemeProvider theme={Cerveza}>
-            {storyFn()}
-        </ThemeProvider>
-    </StylesProvider>
+    <ThemeProvider theme={Cerveza}>
+        {storyFn()}
+    </ThemeProvider>
 );
 
 

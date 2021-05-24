@@ -1,6 +1,6 @@
 {
     "name": "@brewkit/components",
-    "version": "4.4.0",
+    "version": "4.4.4",
     "description": "Brewkit components",
     "main": "index.js",
     "private": true,
@@ -22,6 +22,7 @@
         "start": "npm run storybook",
         "storybook": "start-storybook -p 9001 -c .build/storybook",
         "build": "node .build/copy-package-files.js && ttsc --project ./.build/tsconfig.json",
+        "build-themes": "node .build/copy-package-files.js && ttsc --project ./themes/tsconfig.json",
         "build-storybook": "build-storybook -c .build/storybook -o .out",
         "deploy-storybook": "storybook-to-ghpages",
         "release": ".build/release.sh"
