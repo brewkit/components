@@ -17,7 +17,7 @@
     "sideEffects": false,
     "scripts": {
         "test:generate-output": "jest --watchAll --json --outputFile=.build/jest/test-results.json || true",
-        "test": "jest --json --outputFile=.build/jest/test-results.json",
+        "test": "jest --json --coverage --outputFile=.build/jest/test-results.json",
         "commit": "npx git-cz",
         "start": "npm run storybook",
         "storybook": "start-storybook -p 9001 -c .build/storybook",
@@ -28,9 +28,18 @@
         "release": ".build/release.sh"
     },
     "jest": {
+        "coverageReporters": [
+            "text",
+            "text-summary"
+        ],
         "transform": {
             ".(ts|tsx)": "ts-jest"
         },
+        "collectCoverage": true,
+        "collectCoverageFrom": [
+            "**/*.tsx",
+            "!**/stories.tsx"
+        ],
         "testPathIgnorePatterns": [
             "/node_modules/",
             "/lib/"
