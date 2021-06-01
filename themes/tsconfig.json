@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "baseUrl": ".",
-        "module": "amd",
+        "module": "ES2015",
         "moduleResolution": "node",
         "lib": ["dom", "esnext"],
         "jsx": "react",
@@ -13,8 +13,7 @@
         "strict": true,
         "noImplicitAny": true,
         "noImplicitThis": true,
-        "strictNullChecks": true,
-        "outFile": "cerveza/index.js"
+        "strictNullChecks": true
     },
     "include": [
         "cerveza/index.ts"
