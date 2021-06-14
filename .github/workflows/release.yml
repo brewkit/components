@@ -27,7 +27,7 @@ jobs:
         run: npm ci
 
       - name: Build Project
-        run: npm run build
+        run: npm run build && npm run build-themes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 

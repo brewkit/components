@@ -21,10 +21,10 @@
         "commit": "npx git-cz",
         "start": "npm run storybook",
         "storybook": "start-storybook -p 9001 -c .build/storybook",
-        "build": "node .build/copy-package-files.js && ttsc --project ./.build/tsconfig.json",
-        "build-themes": "node .build/copy-package-files.js && ttsc --project ./themes/tsconfig.json",
+        "build": "node .build/scripts/copy-package-files.js && ttsc --project ./.build/tsconfig.json",
+        "build-themes": "node .build/scripts/copy-package-files.js && ttsc --project ./themes/tsconfig.json",
         "build-storybook": "build-storybook -c .build/storybook -o .out",
-        "postversion": "node .build/copy-package-files.js",
+        "postversion": "node .build/scripts/copy-package-files.js && node .build/scripts/sync-versions.js",
         "deploy-storybook": "storybook-to-ghpages"
     },
     "jest": {
@@ -89,6 +89,7 @@
         "enzyme-adapter-react-16": "^1.15.6",
         "eslint": "^7.21.0",
         "eslint-plugin-react": "^7.22.0",
+        "execa": "^4.1.0",
         "fork-ts-checker-webpack-plugin": "^6.1.1",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^26.6.3",
@@ -133,8 +134,7 @@
                 "@semantic-release/git",
                 {
                     "assets": [
-                        "package.json",
-                        "README.md"
+                        "package.json"
                     ],
                     "message": "🤖 chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
                 }
