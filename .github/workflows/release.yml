@@ -10,6 +10,8 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
 
       - name: Checkout
@@ -27,8 +29,6 @@ jobs:
         run: npm ci
 
       - name: Build Project
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm run release
 
       - name: Generate Release
