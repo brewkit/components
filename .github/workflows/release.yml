@@ -26,10 +26,13 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Build Project
-        run: npm run build && npm run build-themes && cd dist && ls
+      - name: Build Components Project
+        run: npm run build
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Build Themes Project
+        run: npm run build-themes
 
       - name: Generate Release
         env:
