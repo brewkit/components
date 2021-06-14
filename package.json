@@ -24,6 +24,7 @@
         "build": "node .build/copy-package-files.js && ttsc --project ./.build/tsconfig.json",
         "build-themes": "node .build/copy-package-files.js && ttsc --project ./themes/tsconfig.json",
         "build-storybook": "build-storybook -c .build/storybook -o .out",
+        "postversion": "node .build/copy-package-files.js",
         "deploy-storybook": "storybook-to-ghpages"
     },
     "jest": {
@@ -127,6 +128,7 @@
             "@semantic-release/commit-analyzer",
             "@semantic-release/release-notes-generator",
             "@semantic-release/github",
+            "@semantic-release/npm",
             [
                 "@semantic-release/git",
                 {
