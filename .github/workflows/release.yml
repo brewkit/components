@@ -36,15 +36,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         run: npx semantic-release
 
-      - name: Build Project
+      - name: Publish Components
         run: npm publish ./dist && git status
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Build Project
-          run: npm publish ./dist && git status
-          env:
-            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish Themes
+        run: cd themes && npm version patch && npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Delete Older Releases
         uses: dev-drprasad/delete-older-releases@v0.2.0
