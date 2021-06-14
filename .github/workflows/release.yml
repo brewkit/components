@@ -27,7 +27,7 @@ jobs:
         run: npm ci
 
       - name: Build Project
-        run: npm run build && npm run build-themes
+        run: npm run build && npm run build-themes && git status
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
