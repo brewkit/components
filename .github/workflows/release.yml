@@ -10,8 +10,6 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    env:
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
 
       - name: Checkout
@@ -29,7 +27,7 @@ jobs:
         run: npm ci
 
       - name: Build Project
-        run: npm run release
+        run: npm run build
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -37,6 +35,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         run: npx semantic-release
+
+      - name: Build Project
+        run: npm publish ./dist && git status
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Delete Older Releases
         uses: dev-drprasad/delete-older-releases@v0.2.0

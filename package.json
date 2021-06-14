@@ -24,8 +24,7 @@
         "build": "node .build/copy-package-files.js && ttsc --project ./.build/tsconfig.json",
         "build-themes": "node .build/copy-package-files.js && ttsc --project ./themes/tsconfig.json",
         "build-storybook": "build-storybook -c .build/storybook -o .out",
-        "deploy-storybook": "storybook-to-ghpages",
-        "release": "npm run build && npm publish ./dist && cd - && git status"
+        "deploy-storybook": "storybook-to-ghpages"
     },
     "jest": {
         "transform": {
