@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 // DO NOT DELETE THIS FILE
 // This file is used by build system to build a clean npm package with the compiled js files in the root of the package.
@@ -6,29 +7,30 @@ const fs = require('fs');
 
 function main() {
 
-    const distFolder = __dirname + '/../dist';
+    const appDir = process.cwd();
+    const distDir = path.resolve(appDir, 'dist');
 
     /**
      * clean the dist folder
      */
-    fs.rmdirSync(distFolder, { recursive: true });
-    fs.mkdirSync(distFolder);
+    fs.rmdirSync(distDir, { recursive: true });
+    fs.mkdirSync(distDir);
 
     /**
      * copy over our license and readme
      */
-    fs.copyFileSync(__dirname + "/../LICENSE", __dirname + "/../dist/LICENSE");
-    fs.copyFileSync(__dirname + "/../README.md", __dirname + "/../dist/README.md");
+    fs.copyFileSync(path.resolve(appDir, "LICENSE"), path.resolve(distDir, "LICENSE"));
+    fs.copyFileSync(path.resolve(appDir, "README.md"), path.resolve(distDir, "README.md"));
 
     /**
      * copy over our package.json and change 'private' to false to allow publishing
      */
-    fs.readFile(__dirname + "/../package.json", 'utf8', function (err,data) {
+    fs.readFile(path.resolve(appDir, "package.json"), 'utf8', function (err,data) {
         if (err) return console.log(err);
 
         const result = data.replace(/"private": true/g, '"private": false');
 
-        fs.writeFile(`${distFolder}/package.json`, result, 'utf8', function (err) {
+        fs.writeFile(`${distDir}/package.json`, result, 'utf8', function (err) {
             if (err) return console.log(err);
         });
     });
