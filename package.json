@@ -22,7 +22,7 @@
         "start": "npm run storybook",
         "storybook": "start-storybook -p 9001 -c .build/storybook",
         "build": "node .build/scripts/copy-package-files.js && ttsc --project ./.build/tsconfig.json",
-        "build-themes": "node .build/scripts/copy-package-files.js && ttsc --project ./themes/tsconfig.json",
+        "build-themes": "ttsc --project ./themes/tsconfig.json",
         "build-storybook": "build-storybook -c .build/storybook -o .out",
         "postversion": "node .build/scripts/copy-package-files.js && node .build/scripts/sync-versions.js",
         "deploy-storybook": "storybook-to-ghpages"

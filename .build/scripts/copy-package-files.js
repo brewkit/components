@@ -1,40 +1,35 @@
 const fs = require('fs');
 const path = require('path');
 
+
 // DO NOT DELETE THIS FILE
 // This file is used by build system to build a clean npm package with the compiled js files in the root of the package.
 // It will not be included in the npm package.
 
-function main() {
+const appDir = process.cwd();
+const distDir = path.resolve(appDir, 'dist');
 
-    const appDir = process.cwd();
-    const distDir = path.resolve(appDir, 'dist');
+/**
+ * clean the dist folder
+ */
+fs.rmdirSync(distDir, { recursive: true });
+fs.mkdirSync(distDir);
 
-    /**
-     * clean the dist folder
-     */
-    fs.rmdirSync(distDir, { recursive: true });
-    fs.mkdirSync(distDir);
+/**
+ * copy over our license and readme
+ */
+fs.copyFileSync(path.resolve(appDir, "LICENSE"), path.resolve(distDir, "LICENSE"));
+fs.copyFileSync(path.resolve(appDir, "README.md"), path.resolve(distDir, "README.md"));
 
-    /**
-     * copy over our license and readme
-     */
-    fs.copyFileSync(path.resolve(appDir, "LICENSE"), path.resolve(distDir, "LICENSE"));
-    fs.copyFileSync(path.resolve(appDir, "README.md"), path.resolve(distDir, "README.md"));
+/**
+ * copy over our package.json and change 'private' to false to allow publishing
+ */
+fs.readFile(path.resolve(appDir, "package.json"), 'utf8', function (err,data) {
+    if (err) return console.log(err);
 
-    /**
-     * copy over our package.json and change 'private' to false to allow publishing
-     */
-    fs.readFile(path.resolve(appDir, "package.json"), 'utf8', function (err,data) {
+    const result = data.replace(/"private": true/g, '"private": false');
+
+    fs.writeFile(`${distDir}/package.json`, result, 'utf8', function (err) {
         if (err) return console.log(err);
-
-        const result = data.replace(/"private": true/g, '"private": false');
-
-        fs.writeFile(`${distDir}/package.json`, result, 'utf8', function (err) {
-            if (err) return console.log(err);
-        });
     });
-
-}
-
-main();
+});
