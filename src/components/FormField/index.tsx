@@ -35,8 +35,9 @@ export const FormField = React.forwardRef(({
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    const { register, errors } = useFormContext();
+    const { register, formState: { errors } } = useFormContext();
     const Component: any = components[type] ?? TextField;
+    const { ref: formInputRef, ...otherInputProps } = register(name, validation);
 
 
     /**
@@ -90,10 +91,10 @@ export const FormField = React.forwardRef(({
         <Component
             error={Boolean(errors[name])}
             helperText={helperText && getHelperText()}
-            inputRef={register(validation)}
+            inputRef={formInputRef}
             label={label}
-            name={name}
             type={type}
+            {...otherInputProps}
             {...otherProps}
         />
     );
@@ -102,7 +103,7 @@ export const FormField = React.forwardRef(({
     /**
      * if there is no label and not a TextField, we just use the component
      */
-    if (!label) return <Component inputRef={register(validation)} name={name} {...otherProps} />;
+    if (!label) return <Component inputRef={formInputRef} {...otherInputProps} {...otherProps} />;
 
 
     /**
@@ -110,8 +111,8 @@ export const FormField = React.forwardRef(({
      */
     return (
         <FormControlLabel
-            control={<Component name={name} {...otherProps} />}
-            inputRef={register(validation)}
+            control={<Component {...otherInputProps} {...otherProps} />}
+            inputRef={formInputRef}
             label={label}
         />
     );
