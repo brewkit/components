@@ -24,12 +24,6 @@ fs.copyFileSync(path.resolve(appDir, "README.md"), path.resolve(distDir, "README
 /**
  * copy over our package.json and change 'private' to false to allow publishing
  */
-fs.readFile(path.resolve(appDir, "package.json"), 'utf8', function (err,data) {
-    if (err) return console.log(err);
-
-    const result = data.replace(/"private": true/g, '"private": false');
-
-    fs.writeFile(`${distDir}/package.json`, result, 'utf8', function (err) {
-        if (err) return console.log(err);
-    });
-});
+const pjson = fs.readFileSync(path.resolve(appDir, "package.json"), 'utf8');
+const result = pjson.replace(/"private": true/g, '"private": false');
+fs.writeFileSync(`${distDir}/package.json`, result, 'utf8');
