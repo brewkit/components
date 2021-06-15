@@ -37,7 +37,7 @@ jobs:
         run: npx semantic-release
 
       - name: Publish Components
-        run: cd dist && npm publish
+        run: cd dist && ls && cd - && npm publish ./dist
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
