@@ -100,6 +100,7 @@
         "react-router-dom": "^5.2.0",
         "react-test-renderer": "^17.0.1",
         "semantic-release": "^17.4.3",
+        "storybook-dark-mode": "^1.0.8",
         "ts-jest": "^26.5.3",
         "ts-loader": "^8.0.18",
         "ttypescript": "^1.5.12",

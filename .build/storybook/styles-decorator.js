@@ -1,6 +1,9 @@
 import React from 'react';
 import { ThemeProvider, StylesProvider, createGenerateClassName } from '@material-ui/core/styles';
+import { useDarkMode } from 'storybook-dark-mode';
+import { merge as _merge } from 'lodash';
 import Cerveza from '../../themes/cerveza/index';
+import CervezaDark from '../../themes/cerveza-dark/index';
 
 
 const generateClassName = createGenerateClassName({
@@ -10,7 +13,7 @@ const generateClassName = createGenerateClassName({
 
 
 const StylesDecorator = storyFn => (
-    <ThemeProvider theme={Cerveza}>
+    <ThemeProvider theme={useDarkMode() ? _merge({}, Cerveza, CervezaDark) : Cerveza}>
         {storyFn()}
     </ThemeProvider>
 );
