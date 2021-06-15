@@ -21,8 +21,8 @@
         "commit": "npx git-cz",
         "start": "npm run storybook",
         "storybook": "start-storybook -p 9001 -c .build/storybook",
-        "build": "node .build/scripts/copy-package-files.js && ttsc --project ./.build/tsconfig.json",
-        "build-themes": "ttsc --project ./themes/tsconfig.json",
+        "build": "node .build/scripts/copy-package-files.js && npx ttsc --project ./.build/tsconfig.json",
+        "build-themes": "npx ttsc --project ./themes/tsconfig.json",
         "build-storybook": "build-storybook -c .build/storybook -o .out",
         "postversion": "node .build/scripts/copy-package-files.js && node .build/scripts/sync-versions.js",
         "deploy-storybook": "storybook-to-ghpages"
@@ -102,7 +102,6 @@
         "semantic-release": "^17.4.3",
         "ts-jest": "^26.5.3",
         "ts-loader": "^8.0.18",
-        "ttypescript": "^1.5.12",
         "typescript": "^4.2.3"
     },
     "peerDependencies": {
