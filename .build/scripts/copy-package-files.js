@@ -20,6 +20,7 @@ fs.mkdirSync(distDir);
  */
 fs.copyFileSync(path.resolve(appDir, "LICENSE"), path.resolve(distDir, "LICENSE"));
 fs.copyFileSync(path.resolve(appDir, "README.md"), path.resolve(distDir, "README.md"));
+fs.copyFileSync(path.resolve(appDir, ".npmignore"), path.resolve(distDir, ".npmignore"));
 
 /**
  * copy over our package.json and change 'private' to false to allow publishing
