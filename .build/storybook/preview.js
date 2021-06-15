@@ -1,9 +1,14 @@
 import { configure, addDecorator } from '@storybook/react';
+import { withTests } from '@storybook/addon-jest';
 import StylesDecorator from './styles-decorator';
-import './assets/css/theme.css';
+// import './assets/css/theme.css';
+import results from '../jest/test-results.json';
 
 
 addDecorator(StylesDecorator);
+addDecorator(withTests({
+    results
+}));
 
 
 configure(

@@ -2,22 +2,8 @@ import * as React from 'react';
 import { useFormContext } from 'react-hook-form';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { AnimatePresence, motion } from 'framer-motion';
-import Checkbox from '@components/Checkbox';
-import Radio from '@components/Radio';
-import TextField from '@components/TextField';
-import Switch from '@components/Switch';
+import components from './componentTypes';
 import { Props } from './types';
-
-
-/* Map our input components for easier access */
-const components: {
-    [key: string]: React.ReactNode,
-} = {
-    checkbox: Checkbox,
-    radio: Radio,
-    switch: Switch,
-};
-
 
 /**
  * `FormField` is an abstraction of most inputs, additionally binding the rendered input to a `Form` so they can be
@@ -36,7 +22,7 @@ export const FormField = React.forwardRef(({
 
 
     const { register, errors } = useFormContext();
-    const Component: any = components[type] ?? TextField;
+    const Component: any = components[type] || components.text;
 
 
     /**
@@ -86,7 +72,7 @@ export const FormField = React.forwardRef(({
     /**
      * if the component is a TextField, we just use that.
      */
-    if (Component === TextField) return (
+    if (Component === components.text) return (
         <Component
             error={Boolean(errors[name])}
             helperText={helperText && getHelperText()}

@@ -19,12 +19,17 @@
                 "exclude": ["*"]
             }
         ],
-        "types": ["webpack-env"],
+        "types": ["webpack-env", "jest", "node"],
         "removeComments": true,
         "strict": true,
         "noImplicitAny": true,
         "noImplicitThis": true,
         "strictNullChecks": true
+    },
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
     },
     "include": [
         "src/index.ts",

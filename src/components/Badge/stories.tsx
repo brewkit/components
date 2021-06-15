@@ -4,9 +4,11 @@ import Badge from '@components/Badge';
 import MailIcon from '@material-ui/icons/Mail';
 import { Props } from './types';
 
-
 export default {
     component: Badge,
+    parameters: {
+        jest: ['Badge.test']
+    },
     title: 'Data Display/Badge',
 };
 

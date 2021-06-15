@@ -15,6 +15,9 @@ const Checkbox = withStyles(styles)(Component)
 
 export default {
     component: Component,
+    parameters: {
+        jest: ['Checkbox.test']
+    },
     title: 'Inputs/Checkbox',
 };
 

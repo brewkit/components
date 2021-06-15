@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { text, boolean } from '@storybook/addon-knobs';
 import Form from '@components/Form';
 import FormField from '@components/FormField';
 import FormSubmit from '@components/FormSubmit';
@@ -8,7 +7,7 @@ import FormSubmit from '@components/FormSubmit';
 export default {
     component: Form,
     parameters: {
-        // componentSubtitle: <Flag color="success">Stable</Flag>,
+        jest: ['Form.test']
     },
     title: 'Forms/Form',
 };

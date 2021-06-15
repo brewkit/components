@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders checkbox component 1`] = `
+<span
+  aria-disabled={false}
+  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+  onBlur={[Function]}
+  onDragLeave={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex={null}
+>
+  <span
+    className="MuiIconButton-label"
+  >
+    <input
+      className="PrivateSwitchBase-input-7"
+      data-indeterminate={false}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <div
+      className="Checkbox-controlBase-1 Checkbox-uncheckedControl-2"
+    >
+      <div
+        style={
+          Object {
+            "opacity": 0,
+          }
+        }
+      />
+    </div>
+  </span>
+</span>
+`;

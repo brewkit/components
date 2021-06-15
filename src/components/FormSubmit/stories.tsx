@@ -7,7 +7,7 @@ import FormField from '@components/FormField';
 export default {
     component: FormSubmit,
     parameters: {
-        // componentSubtitle: <Flag color="success">Stable</Flag>,
+        jest: ['FormSubmit.test']
     },
     title: 'Forms/FormSubmit',
 };

@@ -3,9 +3,11 @@ import { Story } from '@storybook/react';
 import Alert from '@components/Alert';
 import { Props } from './types';
 
-
 export default {
     component: Alert,
+    parameters: {
+        jest: ['Alert.test']
+    },
     title: 'Data Display/Alert',
 };
 

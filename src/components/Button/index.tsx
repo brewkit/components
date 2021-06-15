@@ -54,9 +54,11 @@ export const Button = React.forwardRef(({
                 {endIcon}
             </div>
 
-            <div className={classes?.loader}>
-                <CircularProgress color="primary" size="1rem" thickness={5} />
-            </div>
+            {loading && (
+                <div className={classes?.loader}>
+                    <CircularProgress color="primary" size="1rem" thickness={5} />
+                </div>
+            )}
 
         </MuiButton>
     );
