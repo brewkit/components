@@ -1,5 +1,5 @@
 import { FormHTMLAttributes } from 'react';
-import { SubmitHandler, UseFormMethods } from 'react-hook-form';
+import { SubmitHandler, UseFormReturn } from 'react-hook-form';
 
 
 export type Props = FormHTMLAttributes<HTMLFormElement> & {
@@ -13,7 +13,7 @@ export type Props = FormHTMLAttributes<HTMLFormElement> & {
      * configuration options to be passed to the underlying RHF `useForm` hook
      * (https://react-hook-form.com/api#useForm)
      */
-    useFormMethods?: UseFormMethods,
+    useFormMethods?: UseFormReturn,
 
 
 };
