@@ -27,7 +27,7 @@ jobs:
         run: npm ci
 
       - name: Build Project
-        run: npm run build && npm run build-themes && cd dist && ls
+        run: npm run build && npm run build-themes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -37,7 +37,7 @@ jobs:
         run: npx semantic-release
 
       - name: Publish Components
-        run: npm publish ./dist
+        run: cd dist && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
