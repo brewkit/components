@@ -26,23 +26,18 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Build Project
-        run: npm run build && npm run build-themes
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: Generate Release
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         run: npx semantic-release
 
       - name: Publish Components
-        run: cd dist && ls && cd - && npm publish ./dist
+        run: npm run build && npm publish ./dist
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish Themes
-        run: npm publish ./themes
+        run: npm run build-themes && npm publish ./themes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
