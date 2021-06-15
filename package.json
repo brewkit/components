@@ -1,6 +1,6 @@
 {
     "name": "@brewkit/components",
-    "version": "4.4.16",
+    "version": "4.4.15",
     "description": "Brewkit components",
     "main": "index.js",
     "private": true,
@@ -102,6 +102,7 @@
         "semantic-release": "^17.4.3",
         "ts-jest": "^26.5.3",
         "ts-loader": "^8.0.18",
+        "ttypescript": "^1.5.12",
         "typescript": "^4.2.3"
     },
     "peerDependencies": {
