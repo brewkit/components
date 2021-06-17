@@ -5,7 +5,7 @@ import Cerveza from '../cerveza';
 import InputLabel from './components/InputLabel';
 import OutlinedInput from './components/OutlinedInput';
 
-const CervezaDark = createMuiTheme(_merge(
+const CervezaDark = createMuiTheme(_merge({},
     Cerveza,
     InputLabel,
     OutlinedInput,
