@@ -1,3 +1,4 @@
+// components
 export { default as Alert } from './Alert';
 export { default as Badge } from './Badge';
 export { default as Button } from './Button';
@@ -10,3 +11,7 @@ export { default as TextField } from './TextField';
 export { default as Form } from './Form';
 export { default as FormField } from './FormField';
 export { default as FormSubmit } from './FormSubmit';
+
+
+// hooks
+export { default as useCheatCode } from './hooks/useCheatCode';
