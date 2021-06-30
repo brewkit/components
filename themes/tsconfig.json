@@ -16,6 +16,7 @@
         "strictNullChecks": true
     },
     "include": [
-        "cerveza/index.ts"
+        "cerveza/index.ts",
+        "cerveza-dark/index.ts"
     ]
 }

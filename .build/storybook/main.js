@@ -14,5 +14,8 @@ module.exports = {
             },
         },
     },
-    addons: ['@storybook/addon-essentials'],
+    addons: [
+        '@storybook/addon-essentials',
+        'storybook-dark-mode',
+    ],
 };
