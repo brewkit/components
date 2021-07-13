@@ -71,7 +71,12 @@ export const FormField = React.forwardRef(({
             key = 3;
         }
 
-        if (key === 1) return <AnimatePresence />;
+        /**
+         * Do not render an empty string
+         * this prevents a 3rd grid row being drawn when not needed
+         * This does cause an animation to NOT happen when an error is cleared
+         * */
+        if (key === 1) return undefined;
 
         return (
             <AnimatePresence>
@@ -90,7 +95,7 @@ export const FormField = React.forwardRef(({
     if (Component === TextField) return (
         <Component
             error={Boolean(errors[name])}
-            helperText={helperText && getHelperText()}
+            helperText={getHelperText()}
             inputRef={formInputRef}
             label={label}
             type={type}
