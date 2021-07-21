@@ -41,8 +41,7 @@ export const FormField = React.forwardRef(({
     const classes = useStyles();
     const { register, formState: { errors } } = useFormContext();
     const Component: any = components[type] ?? TextField;
-    const { ref: formInputRef, ...otherInputProps } = register(name, { shouldUnregister: true, ...validation });
-    const showHelperText = Boolean(errors[name]) || Boolean(helperText);
+    const { ref: formInputRef, ...otherInputProps } = register(name, validation);
 
 
     /**
