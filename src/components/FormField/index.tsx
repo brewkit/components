@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import { useFormContext } from 'react-hook-form';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -18,6 +19,9 @@ const components: {
     switch: Switch,
 };
 
+const useStyles = makeStyles({
+    noMargin: { marginTop: 0 },
+});
 
 /**
  * `FormField` is an abstraction of most inputs, additionally binding the rendered input to a `Form` so they can be
@@ -34,10 +38,11 @@ export const FormField = React.forwardRef(({
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
-
+    const classes = useStyles();
     const { register, formState: { errors } } = useFormContext();
     const Component: any = components[type] ?? TextField;
-    const { ref: formInputRef, ...otherInputProps } = register(name, validation);
+    const { ref: formInputRef, ...otherInputProps } = register(name, { shouldUnregister: true, ...validation });
+    const showHelperText = Boolean(errors[name]) || Boolean(helperText);
 
 
     /**
@@ -89,8 +94,13 @@ export const FormField = React.forwardRef(({
      */
     if (Component === TextField) return (
         <Component
+            FormHelperTextProps={{
+                classes: {
+                    contained: showHelperText ? null : classes.noMargin,
+                },
+            }}
             error={Boolean(errors[name])}
-            helperText={helperText && getHelperText()}
+            helperText={getHelperText()}
             inputRef={formInputRef}
             label={label}
             type={type}
