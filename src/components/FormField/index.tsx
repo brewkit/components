@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import { useFormContext } from 'react-hook-form';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -7,6 +6,7 @@ import Checkbox from '@components/Checkbox';
 import Radio from '@components/Radio';
 import TextField from '@components/TextField';
 import Switch from '@components/Switch';
+import useStyles from './styles';
 import { Props } from './types';
 
 
@@ -19,9 +19,6 @@ const components: {
     switch: Switch,
 };
 
-const useStyles = makeStyles({
-    noMargin: { marginTop: 0 },
-});
 
 /**
  * `FormField` is an abstraction of most inputs, additionally binding the rendered input to a `Form` so they can be
@@ -39,9 +36,13 @@ export const FormField = React.forwardRef(({
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
     const classes = useStyles();
-    const { register, formState: { errors } } = useFormContext();
+    const { unregister, register, formState: { errors } } = useFormContext();
     const Component: any = components[type] ?? TextField;
     const { ref: formInputRef, ...otherInputProps } = register(name, validation);
+    const showHelperText = Boolean(helperText) || Boolean(errors[name]);
+
+    /** Needed for new validation config to work when same input is used for multiple fields (w/ a dropdown) */
+    React.useEffect(() => unregister(name), []);
 
 
     /**
