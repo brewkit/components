@@ -35,6 +35,7 @@ export const FormField = React.forwardRef(({
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
+
     const classes = useStyles();
     const { unregister, register, formState: { errors } } = useFormContext();
     const Component: any = components[type] ?? TextField;
@@ -96,7 +97,7 @@ export const FormField = React.forwardRef(({
         <Component
             FormHelperTextProps={{
                 classes: {
-                    contained: showHelperText ? null : classes.noMargin,
+                    contained: showHelperText ? null : classes.noMarginTop,
                 },
             }}
             error={Boolean(errors[name])}
