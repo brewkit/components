@@ -11,7 +11,7 @@ export { default as TextField } from './TextField';
 export { default as Form } from './Form';
 export { default as FormField } from './FormField';
 export { default as FormSubmit } from './FormSubmit';
-export { default as Select } from './Autocomplete';
+export { default as Autocomplete } from './Autocomplete';
 
 
 // hooks
