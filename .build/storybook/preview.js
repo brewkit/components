@@ -1,7 +1,7 @@
 import { configure, addDecorator } from '@storybook/react';
 import StylesDecorator from './styles-decorator';
 import { themes } from '@storybook/theming';
-import './assets/css/theme.css';
+// import './assets/css/theme.css';
 
 
 addDecorator(StylesDecorator);
