@@ -6,6 +6,7 @@ import Checkbox from '@components/Checkbox';
 import Radio from '@components/Radio';
 import TextField from '@components/TextField';
 import Switch from '@components/Switch';
+import useStyles from './styles';
 import { Props } from './types';
 
 
@@ -35,9 +36,14 @@ export const FormField = React.forwardRef(({
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    const { register, formState: { errors } } = useFormContext();
+    const classes = useStyles();
+    const { unregister, register, formState: { errors } } = useFormContext();
     const Component: any = components[type] ?? TextField;
     const { ref: formInputRef, ...otherInputProps } = register(name, validation);
+    const showHelperText = Boolean(helperText) || Boolean(errors[name]);
+
+    /** Needed for new validation config to work when same input is used for multiple fields (w/ a dropdown) */
+    React.useEffect(() => unregister(name), []);
 
 
     /**
@@ -89,8 +95,13 @@ export const FormField = React.forwardRef(({
      */
     if (Component === TextField) return (
         <Component
+            FormHelperTextProps={{
+                classes: {
+                    contained: showHelperText ? null : classes.noMarginTop,
+                },
+            }}
             error={Boolean(errors[name])}
-            helperText={helperText && getHelperText()}
+            helperText={getHelperText()}
             inputRef={formInputRef}
             label={label}
             type={type}
