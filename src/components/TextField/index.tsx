@@ -1,3 +1,4 @@
+
 import * as React from 'react';
 import MuiTextField from '@material-ui/core/TextField';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
@@ -8,7 +9,7 @@ import VisibilityOff from '@material-ui/icons/VisibilityOffOutlined';
 import Search from '@material-ui/icons/SearchOutlined';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Props } from './types';
-import styles from './styles';
+import useStyles from './styles';
 
 
 /**
@@ -27,14 +28,13 @@ import styles from './styles';
  */
 export const TextField = React.forwardRef(({
     children,
-    classes,
     type = 'text',
     select,
     options,
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
-
+    const classes = useStyles();
     const [isVisible, setVisible] = React.useState(type !== 'password');
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -144,4 +144,4 @@ export const TextField = React.forwardRef(({
 TextField.displayName = 'TextField';
 
 
-export default withStyles(styles)(TextField);
+export default TextField;
