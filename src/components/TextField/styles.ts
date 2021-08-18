@@ -5,6 +5,7 @@ import { merge as _merge } from 'lodash';
 
 
 const useStyles = makeStyles<Theme>((theme): any => ({
+    
     searchIcon: _merge({
         display: 'flex',
         marginRight: '0.5rem',
