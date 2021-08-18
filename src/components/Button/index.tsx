@@ -1,9 +1,9 @@
+
 import * as React from 'react';
 import clsx from 'clsx';
-import { withStyles } from '@material-ui/core/styles';
 import MuiButton from '@material-ui/core/Button';
 import CircularProgress from '@components/CircularProgress';
-import styles from './styles';
+import useStyles from './styles';
 import { Props } from './types';
 
 
@@ -25,11 +25,11 @@ export const Button = React.forwardRef(({
     endIcon,
     children,
     className,
-    classes,
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
+    const classes = useStyles();
     /**
      * merge our custom classes? into the ones passed to the component
      */
@@ -68,4 +68,4 @@ export const Button = React.forwardRef(({
 Button.displayName = 'Button';
 
 
-export default withStyles(styles)(Button);
+export default Button;
