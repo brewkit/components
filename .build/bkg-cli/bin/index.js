@@ -81,7 +81,10 @@ function commit() {
         checkDependencies,
     ]).run().then(() => {
         console.log(`  ${chalk.bgGreen('  DONE  ')}`)
-        execa(`npx`, ['git-cz'], { stdio: ["inherit", "inherit", "inherit"] });
+
+        // swap these if this doesn't work for you
+        execa(`npx`, ['git', 'cz'], { stdio: ["inherit", "inherit", "inherit"] });
+        // execa(`npx`, ['git-cz'], { stdio: ["inherit", "inherit", "inherit"] });
     }).catch((err) => console.log(err));
 }
 
