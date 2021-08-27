@@ -1,0 +1,5 @@
+# This file allows us to automatically add reviewers
+# https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
+
+# These are the default owners for everything in the repo
+*       @alyssadee @beahoop @emdrayallday @gajinm @ItsEricWoodward @kbulatovic @PavleControl4 @anelson-c4 @FDrazicC4
