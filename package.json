@@ -16,6 +16,7 @@
     "homepage": "https://brewkit.github.io",
     "sideEffects": false,
     "scripts": {
+        "install": "cd .build/bkg-cli && npm link",
         "test:generate-output": "jest --watchAll --json --outputFile=.build/jest/test-results.json || true",
         "test": "jest --watchAll --json --outputFile=.build/jest/test-results.json",
         "commit": "npx git-cz",
