@@ -28,7 +28,8 @@
     },
     "include": [
         "src/index.ts",
-        "themes/cerveza/components/index.ts"
+        "themes/cerveza/index.ts",
+        "themes/cerveza-dark/index.ts"
     ],
     "exclude": [
         "node_modules",

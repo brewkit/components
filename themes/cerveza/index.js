@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 import { merge as _merge } from 'lodash';
 import { color } from './variables';
 import Typography from './components/Typography';
@@ -20,7 +20,7 @@ import Switch from './components/Switch';
 import Tabs from './components/Tabs';
 import Tab from './components/Tab';
 import Tooltip from './components/Tooltip';
-var Cerveza = createMuiTheme(_merge({
+var Cerveza = createTheme(_merge({
     palette: {
         primary: {
             light: color.blue.light,
