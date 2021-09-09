@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { withStyles } from '@material-ui/core/styles';
 import { text, select, boolean } from '@storybook/addon-knobs';
 import ArrowBack from '@material-ui/icons/ArrowBack';
 import AddCircleOutline from '@material-ui/icons/AddCircleOutline';
@@ -9,13 +8,11 @@ import AddCircleOutline from '@material-ui/icons/AddCircleOutline';
  * This is an annoying hack to get Storybook to properly parse the documentation when the underlying component
  * is wrapped in a HOC. Expect to do/see this on every component with MUI theming options.
  */
-import { Button as Component } from './index';
-import styles from './styles';
-const Button = withStyles(styles)(Component)
+import { Button } from './index';
 
 
 export default {
-    component: Component,
+    component: Button,
     title: 'Inputs/Button',
 };
 

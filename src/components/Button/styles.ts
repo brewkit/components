@@ -1,8 +1,10 @@
+
 import { Theme } from '@material-ui/core/styles/createMuiTheme';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 
-const styles = (theme: Theme): any => ({
+const useStyles = makeStyles<Theme>((theme): any => ({
 
     root: {
         padding: '1em 1.25em',
@@ -48,8 +50,8 @@ const styles = (theme: Theme): any => ({
 
     },
 
-});
+}), { name: 'Button' });
 
 
+export default useStyles;
 
-export default styles;
