@@ -1,11 +1,10 @@
-
-import { Theme } from '@material-ui/core/styles/createMuiTheme';
+import { Theme } from '@material-ui/core/styles/createTheme';
 import { makeStyles } from '@material-ui/core/styles';
 import { merge as _merge } from 'lodash';
 
 
 const useStyles = makeStyles<Theme>((theme): any => ({
-    
+
     searchIcon: _merge({
         display: 'flex',
         marginRight: '0.5rem',

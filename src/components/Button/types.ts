@@ -1,18 +1,17 @@
 import * as React from 'react';
-import { Theme, ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
 import { ButtonProps } from '@material-ui/core/Button';
 
 
 /**
  * Declare any theme variables we want to make available.
  */
-declare module '@material-ui/core/styles/createMuiTheme' {
+declare module '@material-ui/core/styles/createTheme' {
     interface Theme {
         BkButton: {
             loading: React.CSSProperties,
         },
     }
-    // allow configuration using `createMuiTheme`
+    // allow configuration using `createTheme`
     interface ThemeOptions {
         BkButton?: {
             loading?: React.CSSProperties,

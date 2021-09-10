@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { Theme } from '@material-ui/core/styles/createMuiTheme';
 import { CheckboxProps } from '@material-ui/core/Checkbox';
 
 
 /**
  * Declare any theme variables we want to make available.
  */
-declare module '@material-ui/core/styles/createMuiTheme' {
+declare module '@material-ui/core/styles/createTheme' {
     interface Theme {
         BkCheckbox: {
             controlBase: React.CSSProperties,
@@ -14,7 +13,7 @@ declare module '@material-ui/core/styles/createMuiTheme' {
             checkedControl: React.CSSProperties,
         },
     }
-    // allow configuration using `createMuiTheme`
+    // allow configuration using `createTheme`
     interface ThemeOptions {
         BkCheckbox?: {
             controlBase?: React.CSSProperties,
