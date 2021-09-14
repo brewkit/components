@@ -11,6 +11,7 @@ import Button from './components/Button';
 import ButtonGroup from './components/ButtonGroup';
 import CircularProgress from './components/CircularProgress';
 import Checkbox from './components/Checkbox';
+import DataGrid from './components/DataGrid';
 import Radio from './components/Radio';
 import TextField from './components/TextField';
 import FormHelperText from './components/FormHelperText';
@@ -19,6 +20,7 @@ import InputLabel from './components/InputLabel';
 import OutlinedInput from './components/OutlinedInput';
 import Select from './components/Select';
 import Switch from './components/Switch';
+import Table from './components/Table';
 import Tabs from './components/Tabs';
 import Tab from './components/Tab';
 import Tooltip from './components/Tooltip';
@@ -73,6 +75,7 @@ const Cerveza = createMuiTheme(_merge(
     ButtonGroup,
     CircularProgress,
     Checkbox,
+    DataGrid,
     Radio,
     Select,
     Switch,
@@ -81,6 +84,7 @@ const Cerveza = createMuiTheme(_merge(
     FormControlLabel,
     InputLabel,
     OutlinedInput,
+    Table,
     Tabs,
     Tab,
     Tooltip,
