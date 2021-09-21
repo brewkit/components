@@ -1,9 +1,9 @@
-import { Theme } from '@material-ui/core/styles/createMuiTheme';
+import { Theme } from '@material-ui/core/styles/createTheme';
+import { makeStyles } from '@material-ui/core/styles';
 import { merge as _merge } from 'lodash';
 
 
-const styles = (theme: Theme): any => ({
-
+const useStyles = makeStyles<Theme>((theme): any => ({
 
     searchIcon: _merge({
         display: 'flex',
@@ -27,7 +27,8 @@ const styles = (theme: Theme): any => ({
     activeMenuItem: _merge({}, theme?.BkTextField?.activeMenuItem),
 
 
-});
+}), { name: 'TextField' });
 
 
-export default styles;
+export default useStyles;
+

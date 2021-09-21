@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 import { merge as _merge } from 'lodash';
 import { color } from './variables';
 
@@ -25,7 +25,7 @@ import Tooltip from './components/Tooltip';
 
 
 // @ts-ignore
-const Cerveza = createMuiTheme(_merge(
+const Cerveza = createTheme(_merge(
     {
 
         palette: {

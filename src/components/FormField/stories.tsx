@@ -38,7 +38,7 @@ export const Types = (): React.ReactElement => {
                     <FormField label="Password" name="password" type="password" placeholder="Password" validation={validation} />
                 </Grid>
                 <Grid item xs={6} sm={3}>
-                    <FormField label="Number" name="number" type="number" placeholder="1" validation={validation} />
+                    <FormField label="Number" name="number" type="number" placeholder="1" validation={validation} helperText="some help" />
                 </Grid>
                 <Grid item xs={6} sm={3}>
                     <FormField label="text1" name="text4" type="text" placeholder="text" validation={validation} />
@@ -50,7 +50,7 @@ export const Types = (): React.ReactElement => {
                     <FormField label="text1" name="text6" type="text" placeholder="text" validation={validation} />
                 </Grid>
             </Grid>
-            <FormField label="Radio" name="radio" type="radio" value="checked" validation={validation} />
+            <FormField label="Radio" name="radio" type="radio" value="checked" validation={validation} helperText="Some help here" />
             <FormField label="Switch" name="switch" type="switch" validation={validation} />
             <FormField label="Checkbox" name="checkbox" type="checkbox" validation={validation} />
             <FormSubmit>Submit</FormSubmit>

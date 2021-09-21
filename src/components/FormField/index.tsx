@@ -40,7 +40,7 @@ export const FormField = React.forwardRef(({
     const { unregister, register, formState: { errors } } = useFormContext();
     const Component: any = components[type] ?? TextField;
     const { ref: formInputRef, ...otherInputProps } = register(name, validation);
-    const showHelperText = Boolean(helperText) || Boolean(errors[name]);
+    const showHelperText = Boolean(errors[name]) || Boolean(helperText);
 
     /** Needed for new validation config to work when same input is used for multiple fields (w/ a dropdown) */
     React.useEffect(() => unregister(name), []);
@@ -65,16 +65,16 @@ export const FormField = React.forwardRef(({
         let content: React.ReactNode = ' ';
         let key = 1;
 
-        /** if there is an error, return that */
-        if (errors[name]?.message) {
-            content = errors[name]?.message;
-            key = 2;
-        }
-
         /** else, return helperText if provided */
         if (helperText) {
             content = helperText;
             key = 3;
+        }
+
+        /** if there is an error, return that */
+        if (errors[name]?.message) {
+            content = errors[name]?.message;
+            key = 2;
         }
 
         if (key === 1) return <AnimatePresence />;

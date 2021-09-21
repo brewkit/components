@@ -1,4 +1,4 @@
-import {color, size} from '../../cerveza/variables';
+import { color } from '../../cerveza/variables';
 
 
 const InputLabel = {
@@ -20,7 +20,7 @@ const InputLabel = {
             root: {
 
                 '&$outlined$shrink': {
-                    color: color.gray.light,
+                    color: color.gray.main,
                 },
 
             },
