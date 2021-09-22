@@ -81,7 +81,14 @@ export const FormField = React.forwardRef(({
 
         return (
             <AnimatePresence>
-                <motion.span key={key} layout style={{ display: 'inline-block' }} {...fadeAnim}>
+                <motion.span
+                    key={key}
+                    layout
+                    style={{
+                        display: 'inline-block',
+                        position: 'absolute',
+                    }}
+                    {...fadeAnim}>
                     {content}
                 </motion.span>
             </AnimatePresence>

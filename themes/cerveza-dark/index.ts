@@ -4,11 +4,14 @@ import Cerveza from '../cerveza';
 
 import InputLabel from './components/InputLabel';
 import OutlinedInput from './components/OutlinedInput';
+import TextField from './components/TextField';
 
-const CervezaDark = createMuiTheme(_merge({},
+const CervezaDark = createMuiTheme(_merge(
+    {},
     Cerveza,
     InputLabel,
     OutlinedInput,
+    TextField,
 ));
 
 
