@@ -111,6 +111,7 @@ export const FormField = React.forwardRef(({
             helperText={getHelperText()}
             inputRef={formInputRef}
             label={label}
+            ref={ref}
             type={type}
             {...otherInputProps}
             {...otherProps}
@@ -121,7 +122,7 @@ export const FormField = React.forwardRef(({
     /**
      * if there is no label and not a TextField, we just use the component
      */
-    if (!label) return <Component inputRef={formInputRef} {...otherInputProps} {...otherProps} />;
+    if (!label) return <Component inputRef={formInputRef} ref={ref} {...otherInputProps} {...otherProps} />;
 
 
     /**
@@ -129,7 +130,7 @@ export const FormField = React.forwardRef(({
      */
     return (
         <FormControlLabel
-            control={<Component {...otherInputProps} {...otherProps} />}
+            control={<Component ref={ref} {...otherInputProps} {...otherProps} />}
             inputRef={formInputRef}
             label={label}
         />
