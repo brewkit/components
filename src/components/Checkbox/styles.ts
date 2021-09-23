@@ -1,4 +1,4 @@
-import { Theme } from '@material-ui/core/styles/createMuiTheme';
+import { Theme } from '@material-ui/core/styles/createTheme';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import { merge as _merge } from 'lodash';
 

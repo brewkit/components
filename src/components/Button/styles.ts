@@ -1,7 +1,5 @@
-
-import { Theme } from '@material-ui/core/styles/createMuiTheme';
+import { Theme } from '@material-ui/core/styles/createTheme';
 import { makeStyles } from '@material-ui/core/styles';
-
 
 
 const useStyles = makeStyles<Theme>((theme): any => ({

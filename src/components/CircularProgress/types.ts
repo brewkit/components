@@ -1,11 +1,10 @@
 import { CircularProgressProps } from '@material-ui/core/CircularProgress';
-import { Theme } from '@material-ui/core/styles/createMuiTheme';
 
 
 /**
  * Declare any theme variables we want to make available.
  */
-declare module '@material-ui/core/styles/createMuiTheme' {
+declare module '@material-ui/core/styles/createTheme' {
     interface Theme {
         BkCircularProgress: {
             props: {
@@ -13,7 +12,7 @@ declare module '@material-ui/core/styles/createMuiTheme' {
             },
         },
     }
-    // allow configuration using `createMuiTheme`
+    // allow configuration using `createTheme`
     interface ThemeOptions {
         BkCircularProgress: {
             props: {

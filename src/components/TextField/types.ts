@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { Theme } from '@material-ui/core/styles/createMuiTheme';
 import { TextFieldProps } from '@material-ui/core/TextField';
 
 
 /**
  * Declare any theme variables we want to make available.
  */
-declare module '@material-ui/core/styles/createMuiTheme' {
+declare module '@material-ui/core/styles/createTheme' {
     interface Theme {
         BkTextField: {
             searchIcon: React.CSSProperties,
@@ -16,7 +15,7 @@ declare module '@material-ui/core/styles/createMuiTheme' {
             activeMenuItem: React.CSSProperties,
         },
     }
-    // allow configuration using `createMuiTheme`
+    // allow configuration using `createTheme`
     interface ThemeOptions {
         BkTextField?: {
             searchIcon?: React.CSSProperties,
