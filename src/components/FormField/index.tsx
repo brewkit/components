@@ -27,30 +27,46 @@ const components: {
  * > This component is not found in Material UI.
  */
 export const FormField = React.forwardRef(({
-    type = 'text',
+    helperText,
     label,
     name,
+    onChange,
+    type = 'text',
     validation = {},
-    helperText,
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
     const classes = useStyles();
-    const { unregister, register, formState: { errors } } = useFormContext();
+    const { formState: { errors }, trigger, register, unregister } = useFormContext();
     const Component: any = components[type] ?? TextField;
     const { ref: formInputRef, ...otherInputProps } = register(name, validation);
-    const showHelperText = Boolean(errors[name]) || Boolean(helperText);
+
+    const [showHelperText, setShowHelperText] = React.useState(false);
+
 
     /** Needed for new validation config to work when same input is used for multiple fields (w/ a dropdown) */
     React.useEffect(() => unregister(name), []);
+
+
+    React.useEffect(() => {
+        setShowHelperText(Boolean(errors[name]) || Boolean(helperText));
+    }, [errors, helperText]);
+
+    const handleChange = async(evt: React.ChangeEvent<HTMLInputElement>): Promise<void> => {
+
+        if (onChange) onChange(evt);
+        await trigger([name]);
+    };
 
 
     /**
      * configure our Framer animation
      */
     const fadeAnim = {
+        // eslint-disable-next-line id-length
         initial: { opacity: 0, y: -5 },
+        // eslint-disable-next-line id-length
         animate: { opacity: 1, y: -0 },
         exit: { opacity: 0 },
     };
@@ -81,7 +97,14 @@ export const FormField = React.forwardRef(({
 
         return (
             <AnimatePresence>
-                <motion.span key={key} layout style={{ display: 'inline-block' }} {...fadeAnim}>
+                <motion.span
+                    key={key}
+                    layout
+                    style={{
+                        display: 'inline-block',
+                        position: 'absolute',
+                    }}
+                    {...fadeAnim}>
                     {content}
                 </motion.span>
             </AnimatePresence>
@@ -104,9 +127,11 @@ export const FormField = React.forwardRef(({
             helperText={getHelperText()}
             inputRef={formInputRef}
             label={label}
+            ref={ref}
             type={type}
             {...otherInputProps}
             {...otherProps}
+            onChange={handleChange}
         />
     );
 
@@ -114,7 +139,15 @@ export const FormField = React.forwardRef(({
     /**
      * if there is no label and not a TextField, we just use the component
      */
-    if (!label) return <Component inputRef={formInputRef} {...otherInputProps} {...otherProps} />;
+    if (!label) return (
+        <Component
+            inputRef={formInputRef}
+            ref={ref}
+            {...otherInputProps}
+            {...otherProps}
+            onChange={handleChange}
+        />
+    );
 
 
     /**
@@ -122,7 +155,7 @@ export const FormField = React.forwardRef(({
      */
     return (
         <FormControlLabel
-            control={<Component {...otherInputProps} {...otherProps} />}
+            control={<Component ref={ref} {...otherInputProps} {...otherProps} onChange={handleChange} />}
             inputRef={formInputRef}
             label={label}
         />
