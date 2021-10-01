@@ -38,8 +38,7 @@ export const FormField = React.forwardRef(({
 
 
     const classes = useStyles();
-    const { trigger } = useForm();
-    const { unregister, register, formState: { errors } } = useFormContext();
+    const { formState: { errors }, trigger, register, unregister } = useFormContext();
     const Component: any = components[type] ?? TextField;
     const { ref: formInputRef, ...otherInputProps } = register(name, validation);
 
@@ -56,7 +55,6 @@ export const FormField = React.forwardRef(({
 
     const handleChange = async(evt: React.ChangeEvent<HTMLInputElement>): Promise<void> => {
 
-        console.log('handleChange');
         if (onChange) onChange(evt);
         await trigger([name]);
     };
