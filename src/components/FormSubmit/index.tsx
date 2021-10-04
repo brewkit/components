@@ -14,13 +14,19 @@ export const FormSubmit = React.forwardRef(({
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    const { formState } = useFormContext();
+    const { formState: {
+
+        /** In case we have async validators */
+        isValidating,
+        isSubmitting,
+        isValid,
+    } } = useFormContext();
 
 
     return (
         <Button
-            disabled={!(formState.isValid) || formState.isSubmitting}
-            loading={formState.isSubmitting}
+            disabled={!(isValid) || isSubmitting || isValidating}
+            loading={isSubmitting}
             ref={ref}
             type="submit"
             {...otherProps}

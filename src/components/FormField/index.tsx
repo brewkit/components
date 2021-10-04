@@ -6,7 +6,6 @@ import Checkbox from '@components/Checkbox';
 import Radio from '@components/Radio';
 import TextField from '@components/TextField';
 import Switch from '@components/Switch';
-import useStyles from './styles';
 import { Props } from './types';
 
 
@@ -37,26 +36,38 @@ export const FormField = React.forwardRef(({
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    const classes = useStyles();
-    const { formState: { errors }, trigger, register, unregister } = useFormContext();
+    const { formState: { errors }, register, unregister, setValue } = useFormContext();
     const Component: any = components[type] ?? TextField;
     const { ref: formInputRef, ...otherInputProps } = register(name, validation);
-
-    const [showHelperText, setShowHelperText] = React.useState(false);
 
 
     /** Needed for new validation config to work when same input is used for multiple fields (w/ a dropdown) */
     React.useEffect(() => unregister(name), []);
 
 
-    React.useEffect(() => {
-        setShowHelperText(Boolean(errors[name]) || Boolean(helperText));
-    }, [errors, helperText]);
+    const handleChange = (evt: React.ChangeEvent<HTMLInputElement>): void => {
+        let valueResolver = null;
 
-    const handleChange = async(evt: React.ChangeEvent<HTMLInputElement>): Promise<void> => {
+        /** Extract native values from events */
+        switch (type) {
+        case 'checkbox':
+        case 'switch':
+            valueResolver = evt.target.checked;
+            break;
 
-        if (onChange) onChange(evt);
-        await trigger([name]);
+        /** All related TextField types + radio */
+        default:
+            valueResolver = evt.target.value;
+            break;
+        }
+
+
+        setValue(name, valueResolver, {
+            shouldValidate: true,
+            shouldDirty: true,
+        });
+
+        onChange?.(evt);
     };
 
 
@@ -99,7 +110,7 @@ export const FormField = React.forwardRef(({
             <AnimatePresence>
                 <motion.span
                     key={key}
-                    layout
+                    layout="position"
                     style={{
                         display: 'inline-block',
                         position: 'absolute',
@@ -118,11 +129,6 @@ export const FormField = React.forwardRef(({
      */
     if (Component === TextField) return (
         <Component
-            FormHelperTextProps={{
-                classes: {
-                    contained: showHelperText ? null : classes.noMarginTop,
-                },
-            }}
             error={Boolean(errors[name])}
             helperText={getHelperText()}
             inputRef={formInputRef}
