@@ -1,11 +1,14 @@
 import * as React from 'react';
 import { useFormContext } from 'react-hook-form';
+
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { AnimatePresence, motion } from 'framer-motion';
+
 import Checkbox from '@components/Checkbox';
 import Radio from '@components/Radio';
 import TextField from '@components/TextField';
 import Switch from '@components/Switch';
+
 import { Props } from './types';
 
 
@@ -38,14 +41,16 @@ export const FormField = React.forwardRef(({
 
     const { formState: { errors }, register, unregister, setValue } = useFormContext();
     const Component: any = components[type] ?? TextField;
-    const { ref: formInputRef, ...otherInputProps } = register(name, validation);
+    const { ref: formInputRef, onChange: onFieldChange, ...otherInputProps } = register(name, validation);
 
 
     /** Needed for new validation config to work when same input is used for multiple fields (w/ a dropdown) */
     React.useEffect(() => unregister(name), []);
 
 
-    const handleChange = (evt: React.ChangeEvent<HTMLInputElement>): void => {
+    const handleChange = async(evt: React.ChangeEvent<HTMLInputElement>): Promise<void> => {
+        await onFieldChange(evt);
+
         let valueResolver = null;
 
         /** Extract native values from events */
