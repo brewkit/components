@@ -32,6 +32,14 @@ export const Types = (): React.ReactElement => {
         <Form style={{ display: 'grid', gridGap: '1rem' }} onSubmit={(values: any) => console.log(values)} >
             <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>
+                    <FormField label="Email" name="email" type="email" placeholder="Email" validation={{
+                      pattern: {
+                        value: /([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|"([]!#-[^-~ \t]|(\\[\t -~]))+")@[0-9A-Za-z]([0-9A-Za-z-]{0,61}[0-9A-Za-z])?(\.[0-9A-Za-z]([0-9A-Za-z-]{0,61}[0-9A-Za-z])?)+/,
+                        message: 'Email is not valid!'
+                      }
+                    }} />
+                </Grid>
+                <Grid item xs={12} sm={6}>
                     <FormField label="Text" name="text" type="text" placeholder="Text" validation={validation} />
                 </Grid>
                 <Grid item xs={12} sm={6}>
