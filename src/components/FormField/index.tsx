@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { useFormContext } from 'react-hook-form';
+
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { AnimatePresence, motion } from 'framer-motion';
+
 import Checkbox from '@components/Checkbox';
 import Radio from '@components/Radio';
 import TextField from '@components/TextField';
 import Switch from '@components/Switch';
-import useStyles from './styles';
+
 import { Props } from './types';
 
 
@@ -27,30 +29,60 @@ const components: {
  * > This component is not found in Material UI.
  */
 export const FormField = React.forwardRef(({
-    type = 'text',
+    helperText,
     label,
     name,
+    onChange,
+    type = 'text',
     validation = {},
-    helperText,
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    const classes = useStyles();
-    const { unregister, register, formState: { errors } } = useFormContext();
+    const { formState: { errors }, register, unregister, setValue } = useFormContext();
     const Component: any = components[type] ?? TextField;
-    const { ref: formInputRef, ...otherInputProps } = register(name, validation);
-    const showHelperText = Boolean(errors[name]) || Boolean(helperText);
+    const { ref: formInputRef, onChange: onFieldChange, ...otherInputProps } = register(name, validation);
+
 
     /** Needed for new validation config to work when same input is used for multiple fields (w/ a dropdown) */
     React.useEffect(() => unregister(name), []);
+
+
+    const handleChange = async(evt: React.ChangeEvent<HTMLInputElement>): Promise<void> => {
+        await onFieldChange(evt);
+
+        let valueResolver = null;
+
+        /** Extract native values from events */
+        switch (type) {
+        case 'checkbox':
+        case 'switch':
+            valueResolver = evt.target.checked;
+            break;
+
+        /** All related TextField types + radio */
+        default:
+            valueResolver = evt.target.value;
+            break;
+        }
+
+
+        setValue(name, valueResolver, {
+            shouldValidate: true,
+            shouldDirty: true,
+        });
+
+        onChange?.(evt);
+    };
 
 
     /**
      * configure our Framer animation
      */
     const fadeAnim = {
+        // eslint-disable-next-line id-length
         initial: { opacity: 0, y: -5 },
+        // eslint-disable-next-line id-length
         animate: { opacity: 1, y: -0 },
         exit: { opacity: 0 },
     };
@@ -83,7 +115,7 @@ export const FormField = React.forwardRef(({
             <AnimatePresence>
                 <motion.span
                     key={key}
-                    layout
+                    layout="position"
                     style={{
                         display: 'inline-block',
                         position: 'absolute',
@@ -102,11 +134,6 @@ export const FormField = React.forwardRef(({
      */
     if (Component === TextField) return (
         <Component
-            FormHelperTextProps={{
-                classes: {
-                    contained: showHelperText ? null : classes.noMarginTop,
-                },
-            }}
             error={Boolean(errors[name])}
             helperText={getHelperText()}
             inputRef={formInputRef}
@@ -115,6 +142,7 @@ export const FormField = React.forwardRef(({
             type={type}
             {...otherInputProps}
             {...otherProps}
+            onChange={handleChange}
         />
     );
 
@@ -122,7 +150,15 @@ export const FormField = React.forwardRef(({
     /**
      * if there is no label and not a TextField, we just use the component
      */
-    if (!label) return <Component inputRef={formInputRef} ref={ref} {...otherInputProps} {...otherProps} />;
+    if (!label) return (
+        <Component
+            inputRef={formInputRef}
+            ref={ref}
+            {...otherInputProps}
+            {...otherProps}
+            onChange={handleChange}
+        />
+    );
 
 
     /**
@@ -130,7 +166,7 @@ export const FormField = React.forwardRef(({
      */
     return (
         <FormControlLabel
-            control={<Component ref={ref} {...otherInputProps} {...otherProps} />}
+            control={<Component ref={ref} {...otherInputProps} {...otherProps} onChange={handleChange} />}
             inputRef={formInputRef}
             label={label}
         />
