@@ -17,8 +17,6 @@
     "sideEffects": false,
     "scripts": {
         "install-bkg": "cd .build/bkg-cli && npm link",
-        "test:generate-output": "jest --watchAll --json --outputFile=.build/jest/test-results.json || true",
-        "test": "jest --watchAll --json --outputFile=.build/jest/test-results.json",
         "commit": "npx git-cz",
         "start": "npm run storybook",
         "storybook": "start-storybook -p 9001 -c .build/storybook",
@@ -27,29 +25,6 @@
         "build-storybook": "build-storybook -c .build/storybook -o .out",
         "postversion": "node .build/scripts/copy-package-files.js && node .build/scripts/sync-versions.js",
         "deploy-storybook": "storybook-to-ghpages"
-    },
-    "jest": {
-        "transform": {
-            ".(ts|tsx)": "ts-jest"
-        },
-        "testPathIgnorePatterns": [
-            "/node_modules/",
-            "/lib/"
-        ],
-        "moduleFileExtensions": [
-            "ts",
-            "tsx",
-            "js",
-            "json"
-        ],
-        "moduleNameMapper": {
-            "^@components/(.+)$": "<rootDir>/src/components/$1",
-            "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|md)$": "<rootDir>/.build/jest/mocks/fileMock.js",
-            "^.+\\.(css|less|scss)$": "identity-obj-proxy"
-        },
-        "setupFilesAfterEnv": [
-            "<rootDir>/.build/jest/setupTests.js"
-        ]
     },
     "devDependencies": {
         "@material-ui/core": "^4.12.3",
@@ -62,7 +37,6 @@
         "@storybook/addon-backgrounds": "^6.3.10",
         "@storybook/addon-docs": "^6.3.10",
         "@storybook/addon-essentials": "^6.3.10",
-        "@storybook/addon-jest": "^6.3.10",
         "@storybook/addon-knobs": "^6.3.1",
         "@storybook/addon-storyshots": "^6.3.10",
         "@storybook/addon-viewport": "^6.3.10",
@@ -72,38 +46,29 @@
         "@storybook/storybook-deployer": "^2.8.10",
         "@storybook/theming": "^6.3.10",
         "@types/color": "^3.0.2",
-        "@types/enzyme": "^3.10.9",
-        "@types/enzyme-adapter-react-16": "^1.0.6",
-        "@types/jest": "^26.0.24",
         "@types/lodash": "^4.14.175",
         "@types/node": "^14.17.21",
         "@types/react": "^17.0.27",
         "@types/react-dom": "^17.0.9",
         "@types/react-router-dom": "^5.3.1",
-        "@types/react-test-renderer": "^17.0.1",
         "@types/yup": "^0.29.13",
         "@typescript-eslint/eslint-plugin": "^4.33.0",
         "@typescript-eslint/parser": "^4.33.0",
         "@zerollup/ts-transform-paths": "^1.7.18",
         "babel-loader": "^8.2.2",
-        "enzyme": "^3.11.0",
-        "enzyme-adapter-react-16": "^1.15.6",
         "eslint": "^7.32.0",
         "eslint-plugin-react": "^7.26.1",
         "execa": "^4.1.0",
         "fork-ts-checker-webpack-plugin": "^6.3.4",
         "identity-obj-proxy": "^3.0.0",
-        "jest": "^26.6.3",
         "listr2": "^3.12.2",
         "react": "^17.0.2",
         "react-docgen-typescript-loader": "^3.7.2",
         "react-dom": "^17.0.2",
         "react-hot-loader": "^4.13.0",
         "react-router-dom": "^5.3.0",
-        "react-test-renderer": "^17.0.1",
         "semantic-release": "^17.4.7",
         "storybook-dark-mode": "^1.0.8",
-        "ts-jest": "^26.5.3",
         "ts-loader": "^8.0.18",
         "ttypescript": "^1.5.12",
         "typescript": "^4.4.3",
