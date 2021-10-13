@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useFormContext } from 'react-hook-form';
+import { useFormContext, useController } from 'react-hook-form';
 
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -32,48 +32,21 @@ export const FormField = React.forwardRef(({
     helperText,
     label,
     name,
-    onChange,
     type = 'text',
     validation = {},
     ...otherProps
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    const { formState: { errors }, register, unregister, setValue } = useFormContext();
+    const { formState: { errors }, register, unregister, control } = useFormContext();
     const Component: any = components[type] ?? TextField;
-    const { ref: formInputRef, onChange: onFieldChange, ...otherInputProps } = register(name, validation);
+    const { ref: formInputRef, ...otherInputProps } = register(name, validation);
 
+    /** Used for controlled components */
+    const { field } = useController({ name, control, rules: validation });
 
     /** Needed for new validation config to work when same input is used for multiple fields (w/ a dropdown) */
     React.useEffect(() => unregister(name), []);
-
-
-    const handleChange = async(evt: React.ChangeEvent<HTMLInputElement>): Promise<void> => {
-        await onFieldChange(evt);
-
-        let valueResolver = null;
-
-        /** Extract native values from events */
-        switch (type) {
-        case 'checkbox':
-        case 'switch':
-            valueResolver = evt.target.checked;
-            break;
-
-        /** All related TextField types + radio */
-        default:
-            valueResolver = evt.target.value;
-            break;
-        }
-
-
-        setValue(name, valueResolver, {
-            shouldValidate: true,
-            shouldDirty: true,
-        });
-
-        onChange?.(evt);
-    };
 
 
     /**
@@ -138,11 +111,10 @@ export const FormField = React.forwardRef(({
             helperText={getHelperText()}
             inputRef={formInputRef}
             label={label}
-            ref={ref}
             type={type}
             {...otherInputProps}
             {...otherProps}
-            onChange={handleChange}
+            {...field}
         />
     );
 
@@ -153,10 +125,9 @@ export const FormField = React.forwardRef(({
     if (!label) return (
         <Component
             inputRef={formInputRef}
-            ref={ref}
             {...otherInputProps}
             {...otherProps}
-            onChange={handleChange}
+            {...field}
         />
     );
 
@@ -166,9 +137,10 @@ export const FormField = React.forwardRef(({
      */
     return (
         <FormControlLabel
-            control={<Component ref={ref} {...otherInputProps} {...otherProps} onChange={handleChange} />}
+            control={<Component ref={ref} {...otherInputProps} {...otherProps} />}
             inputRef={formInputRef}
             label={label}
+            {...field}
         />
     );
 

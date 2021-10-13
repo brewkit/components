@@ -38,9 +38,10 @@ export const General = (): React.ReactElement => {
     }
 
 
+    const [controlledValue, setControlledValue] = React.useState('hi');
     return (
         <Form style={{ display: 'grid', gridGap: '1rem' }} onSubmit={handleSubmit} >
-            <FormField label="text1" name="text1" type="text" placeholder="text" autoComplete="new" validation={validation} />
+            <FormField value={controlledValue} onChange={(e) => setControlledValue(e.target.value)} label="text1" name="text1" type="text" placeholder="text" autoComplete="new" validation={validation} />
             <FormField label="Switch" name="switch" type="switch" validation={validation} />
             <FormField label="Checkbox" name="checkbox" type="checkbox" validation={validation} />
             <FormSubmit>Submit</FormSubmit>
