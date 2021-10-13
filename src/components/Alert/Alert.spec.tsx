@@ -4,7 +4,7 @@ import Alert from '.'
 
 describe('Alert component', () => {
   test('to render properly', () => {
-    const tree = renderer.create(<Alert />).toJSON();
+    const tree = renderer.create(<Alert title="Holla" />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 

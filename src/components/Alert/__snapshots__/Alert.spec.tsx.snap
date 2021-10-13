@@ -21,6 +21,12 @@ exports[`Alert component to render properly 1`] = `
   </div>
   <div
     className="MuiAlert-message"
-  />
+  >
+    <div
+      className="MuiTypography-root MuiAlertTitle-root MuiTypography-body1 MuiTypography-gutterBottom"
+    >
+      HELLO
+    </div>
+  </div>
 </div>
 `;
