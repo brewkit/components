@@ -137,10 +137,9 @@ export const FormField = React.forwardRef(({
      */
     return (
         <FormControlLabel
-            control={<Component ref={ref} {...otherInputProps} {...otherProps} />}
+            control={<Component {...otherInputProps} {...otherProps} {...field} />}
             inputRef={formInputRef}
             label={label}
-            {...field}
         />
     );
 
