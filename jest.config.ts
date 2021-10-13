@@ -24,6 +24,7 @@ const config: Config.InitialOptions = {
   roots: [
     "<rootDir>/src"
   ],
+  setupFilesAfterEnv: ["<rootDir>/enzyme.ts"],
   transform: {
     '.(ts)': 'ts-jest'
   }
