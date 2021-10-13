@@ -25,3 +25,20 @@
 Brewkit is a collection of React components and tools with a focus on UX and DX. It can be thought of as a superset of
 Material-UI – MUI at the foundation, but with additional components, abstractions, and tooling layered on top.
 </p>
+
+<h1>Guides</h1>
+<h2>Testing</h2>
+<p>Brewkit uses <code><a href="https://jestjs.io/" target="_blank">jest</a></code>, <code><a href="https://enzymejs.github.io/enzyme/" target="_blank">enzyme</a></code>, and <code><a href="https://reactjs.org/docs/test-renderer.html" target="_blank">react-test-renderer</a></code> to handle unit testing for the components. Since it is based on Material UI, it will not cover the functionality of their components, it will only cover our funcionality added on top of that. Jest is famous for snapshot testing concept, which takes existing snapshot (a file representation of the component), and comapres it to new version. Their website explains it in more detail.<br /><br />
+Put in more simpler terms when the source code is changed Jest will complain until the snapshot has been updated. So when you change existing test files, make sure they reflect existing snapshot properly before you update it.
+<br /><br />
+To run tests - <code>npm run test:run</code>
+<br />
+<br />
+It will run the command in watch mode, so the process will be dedicated to observing changes in the project. The CLI itself has the cmd to update existing snapshots by pressing - <code>u</code>.
+<br />
+<h3>Majestic</h3>
+<a href="https://github.com/Raathigesh/majestic" target="_blank">Majestic </a>is a GUI for Jest, for better developer experience, with some handy functionality built on top of it.
+<br />
+<br />
+<code>npm run test:ui</code> - opens in browser
+</p>
