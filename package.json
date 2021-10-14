@@ -97,7 +97,7 @@
         "clsx": "^1.1.1",
         "color": "^3.2.1",
         "framer-motion": "^3.10.3",
-        "loda```sh": "^4.17.21",
+        "lodash": "^4.17.21",
         "react-hook-form": "^7.17.2"
     },
     "majestic": {
