@@ -2,7 +2,7 @@
 import * as React from 'react';
 import MuiTextField from '@material-ui/core/TextField';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { useTheme, withStyles } from '@material-ui/core/styles';
+import { useTheme } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import Visibility from '@material-ui/icons/VisibilityOutlined';
 import VisibilityOff from '@material-ui/icons/VisibilityOffOutlined';

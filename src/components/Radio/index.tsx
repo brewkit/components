@@ -1,5 +1,6 @@
+
+
 import * as React from 'react';
-import { withStyles } from '@material-ui/core/styles';
 import MuiRadio from '@material-ui/core/Radio';
 import { Props } from './types';
 
@@ -15,18 +16,17 @@ import { Props } from './types';
  */
 export const Radio = React.forwardRef(({
     ...otherProps
-}: Props, ref: React.Ref<any>): React.ReactElement => {
+}: Props, ref: React.Ref<any>): React.ReactElement => (
 
 
-    return (
-        <MuiRadio ref={ref} {...otherProps} />
-    );
+    <MuiRadio ref={ref} {...otherProps} />
 
 
-});
+));
 
 
 Radio.displayName = 'Radio';
 
 
 export default Radio;
+

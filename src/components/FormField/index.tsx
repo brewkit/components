@@ -6,7 +6,6 @@ import Checkbox from '@components/Checkbox';
 import Radio from '@components/Radio';
 import TextField from '@components/TextField';
 import Switch from '@components/Switch';
-import useStyles from './styles';
 import { Props } from './types';
 
 
@@ -36,11 +35,9 @@ export const FormField = React.forwardRef(({
 }: Props, ref: React.Ref<any>): React.ReactElement => {
 
 
-    const classes = useStyles();
     const { unregister, register, formState: { errors } } = useFormContext();
     const Component: any = components[type] ?? TextField;
     const { ref: formInputRef, ...otherInputProps } = register(name, validation);
-    const showHelperText = Boolean(errors[name]) || Boolean(helperText);
 
     /** Needed for new validation config to work when same input is used for multiple fields (w/ a dropdown) */
     React.useEffect(() => unregister(name), []);
@@ -50,7 +47,9 @@ export const FormField = React.forwardRef(({
      * configure our Framer animation
      */
     const fadeAnim = {
+        // eslint-disable-next-line id-length
         initial: { opacity: 0, y: -5 },
+        // eslint-disable-next-line id-length
         animate: { opacity: 1, y: -0 },
         exit: { opacity: 0 },
     };
@@ -83,7 +82,7 @@ export const FormField = React.forwardRef(({
             <AnimatePresence>
                 <motion.span
                     key={key}
-                    layout
+                    layout="position"
                     style={{
                         display: 'inline-block',
                         position: 'absolute',
@@ -102,11 +101,6 @@ export const FormField = React.forwardRef(({
      */
     if (Component === TextField) return (
         <Component
-            FormHelperTextProps={{
-                classes: {
-                    contained: showHelperText ? null : classes.noMarginTop,
-                },
-            }}
             error={Boolean(errors[name])}
             helperText={getHelperText()}
             inputRef={formInputRef}
@@ -122,7 +116,14 @@ export const FormField = React.forwardRef(({
     /**
      * if there is no label and not a TextField, we just use the component
      */
-    if (!label) return <Component inputRef={formInputRef} ref={ref} {...otherInputProps} {...otherProps} />;
+    if (!label) return (
+        <Component
+            inputRef={formInputRef}
+            ref={ref}
+            {...otherInputProps}
+            {...otherProps}
+        />
+    );
 
 
     /**
