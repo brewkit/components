@@ -11,13 +11,11 @@ const config: Config.InitialOptions = {
   coverageReporters: [
     'json',
     'json-summary',
-    ['text', { skipFull: true }]
+    'text'
   ],
   coverageDirectory: 'coverage',
   coveragePathIgnorePatterns: [
     '/node_modules',
-    '/dist',
-    '/themes'
   ],
   errorOnDeprecated: true,
   moduleFileExtensions: ['js', 'ts', 'tsx'],
@@ -25,6 +23,7 @@ const config: Config.InitialOptions = {
     "<rootDir>/src"
   ],
   setupFilesAfterEnv: ["<rootDir>/enzyme.ts"],
+  testEnvironment: 'jsdom',
   transform: {
     '.(ts)': 'ts-jest'
   }

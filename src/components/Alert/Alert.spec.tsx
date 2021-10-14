@@ -1,12 +1,21 @@
+import { shallow, mount } from 'enzyme';
 import React from 'react';
-import renderer from 'react-test-renderer';
+
 import Alert from '.'
 
-describe('Alert component', () => {
-  test('to render properly', () => {
-    const tree = renderer.create(<Alert title="Holla" />).toJSON();
-    expect(tree).toMatchSnapshot();
+describe('<Alert />', () => {
+
+
+  test('to have child text node', () => {
+    const wrapper = shallow(<Alert>Hello world</Alert>);
+    expect(wrapper.children()).toHaveLength(1);
+    expect(wrapper.contains('Hello world')).toEqual(true);
   });
 
-  test.todo('Need to write more meaninful tests here!');
+  
+  test('with `title` prop', () => {
+    const wrapper = mount(<Alert title="Notice!">Hello world</Alert>);
+    expect(wrapper.prop('title')).toEqual('Notice!');
+  });
+
 });

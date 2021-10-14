@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
-import Alert from '@components/Alert';
-import { Props } from './types';
+import Alert from './Alert';
+import { AlertProps } from './Alert.Types';
 
 
 export default {
@@ -10,7 +10,7 @@ export default {
 };
 
 
-export const Sandbox: Story<Props> = (args) => <Alert {...args} />;
+export const Sandbox: Story<AlertProps> = (args) => <Alert {...args} />;
 Sandbox.args = {
     title: 'I am an alert!',
     severity: 'warning',
@@ -20,7 +20,7 @@ Sandbox.args = {
 };
 
 
-export const General : Story<Props> = (args) => (
+export const General : Story<AlertProps> = (args) => (
     <div style={{ display: 'grid', gridGap: '1rem' }}>
         <Alert severity="error" title="This is an error alert with no call to action." />
         <Alert severity="warning" title="This is an warning alert with no call to action." />
@@ -30,7 +30,7 @@ export const General : Story<Props> = (args) => (
 );
 
 
-export const Filled : Story<Props> = (args) => (
+export const Filled : Story<AlertProps> = (args) => (
     <div style={{ display: 'grid', gridGap: '1rem' }}>
         <Alert severity="error" title="This is an error alert with no call to action." variant="filled" />
         <Alert severity="warning" title="This is an warning alert with no call to action." variant="filled" />
@@ -40,7 +40,7 @@ export const Filled : Story<Props> = (args) => (
 );
 
 
-export const WithDescription : Story<Props> = (args) => (
+export const WithDescription : Story<AlertProps> = (args) => (
     <div style={{ display: 'grid', gridGap: '1rem' }}>
         <Alert severity="error" title="Error">
             This is an error alert with no call to action.
