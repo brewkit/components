@@ -1,8 +1,12 @@
 
+
 import * as React from 'react';
 import clsx from 'clsx';
+
 import MuiButton from '@material-ui/core/Button';
+
 import CircularProgress from '@components/CircularProgress';
+
 import useStyles from './styles';
 import { Props } from './types';
 
@@ -30,6 +34,7 @@ export const Button = React.forwardRef(({
 
 
     const classes = useStyles();
+
     /**
      * merge our custom classes? into the ones passed to the component
      */

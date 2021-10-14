@@ -1,30 +1,31 @@
+
+
 import { createTheme } from '@material-ui/core/styles';
 import { merge as _merge } from 'lodash';
 import { color } from './variables';
 
 
-import Typography from './components/Typography';
 import Alert from './components/Alert';
 import AlertTitle from './components/AlertTitle';
 import Badge from './components/Badge';
 import Button from './components/Button';
 import ButtonGroup from './components/ButtonGroup';
-import CircularProgress from './components/CircularProgress';
 import Checkbox from './components/Checkbox';
-import Radio from './components/Radio';
-import TextField from './components/TextField';
-import FormHelperText from './components/FormHelperText';
+import CircularProgress from './components/CircularProgress';
 import FormControlLabel from './components/FormControlLabel';
+import FormHelperText from './components/FormHelperText';
 import InputLabel from './components/InputLabel';
 import OutlinedInput from './components/OutlinedInput';
+import Radio from './components/Radio';
 import Select from './components/Select';
 import Switch from './components/Switch';
-import Tabs from './components/Tabs';
 import Tab from './components/Tab';
+import Tabs from './components/Tabs';
+import TextField from './components/TextField';
 import Tooltip from './components/Tooltip';
+import Typography from './components/Typography';
 
 
-// @ts-ignore
 const Cerveza = createTheme(_merge(
     {
 
@@ -65,26 +66,27 @@ const Cerveza = createTheme(_merge(
         },
 
     },
-    Typography,
     Alert,
     AlertTitle,
     Badge,
     Button,
     ButtonGroup,
-    CircularProgress,
     Checkbox,
+    CircularProgress,
+    FormControlLabel,
+    FormHelperText,
+    InputLabel,
+    OutlinedInput,
     Radio,
     Select,
     Switch,
-    TextField,
-    FormHelperText,
-    FormControlLabel,
-    InputLabel,
-    OutlinedInput,
-    Tabs,
     Tab,
+    Tabs,
+    TextField,
     Tooltip,
+    Typography,
 ));
 
 
 export default Cerveza;
+
