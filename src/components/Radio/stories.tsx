@@ -1,7 +1,11 @@
+
+
 import * as React from 'react';
-import { select, boolean } from '@storybook/addon-knobs';
-import Radio from '@components/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { Story } from '@storybook/react';
+
+import Radio from './index';
+import { Props } from './types';
 
 
 export default {
@@ -13,78 +17,79 @@ export default {
 };
 
 
-export const Sandbox = (): React.ReactElement => {
-
-    const color = select('color', ['default', 'primary', 'secondary'], 'default');
-    const disabled = boolean('disabled', false);
-
-    return (
-        <Radio
-            color={color}
-            disabled={disabled}
-        />
-    );
-
+const defaultArgs = {
+    disabled: false,
+    fullWidth: false,
 };
 
 
-export const WithLabel = (): React.ReactElement => {
+export const Sandbox: Story<Props> = (args) => <Radio {...args} />;
 
-    return (
-        <div>
-            <FormControlLabel
-                control={<Radio defaultChecked name="checkedA" color="primary" />}
-                label="Primary"
-            />
-            <FormControlLabel
-                control={<Radio defaultChecked name="checkedA" color="secondary" />}
-                label="Secondary"
-            />
-            <FormControlLabel
-                control={<Radio defaultChecked name="checkedA" color="primary" />}
-                disabled
-                label="Disabled Checked"
-            />
-            <FormControlLabel
-                control={<Radio name="checkedA" />}
-                disabled
-                label="Disabled Unchecked"
-            />
-        </div>
-    );
-
-}
+Sandbox.args = {
+    ...defaultArgs,
+    checked: true,
+    color: 'default',
+};
 
 
-export const LabelPlacement = (): React.ReactElement => {
+export const WithLabel: Story<Props> = (args) => (
+    <div>
 
-    return (
-        <div>
-            <FormControlLabel
-                value="top"
-                control={<Radio />}
-                label="Top"
-                labelPlacement="top"
-            />
-            <FormControlLabel
-                value="start"
-                control={<Radio />}
-                label="Start"
-                labelPlacement="start"
-            />
-            <FormControlLabel
-                value="bottom"
-                control={<Radio />}
-                label="Bottom"
-                labelPlacement="bottom"
-            />
-            <FormControlLabel
-                value="end"
-                control={<Radio />}
-                label="End"
-                labelPlacement="end"
-            />
-        </div>
-    );
+        <FormControlLabel
+            control={<Radio defaultChecked name="WithLabel" {...args} />}
+            label="Example 1"
+        />
 
-}
+        <FormControlLabel
+            control={<Radio name="WithLabel" {...args} />}
+            label="Example 2"
+        />
+
+    </div>
+);
+
+WithLabel.args = {
+    ...defaultArgs,
+    color: 'default',
+};
+
+
+export const LabelPlacement: Story<Props> = (args) => (
+    <div>
+
+        <FormControlLabel
+            value="top"
+            control={<Radio defaultChecked name="LabelPlacement" {...args} />}
+            label="Top"
+            labelPlacement="top"
+        />
+
+        <FormControlLabel
+            value="start"
+            control={<Radio name="LabelPlacement" {...args} />}
+            label="Start"
+            labelPlacement="start"
+        />
+
+        <FormControlLabel
+            value="bottom"
+            control={<Radio name="LabelPlacement" {...args} />}
+            label="Bottom"
+            labelPlacement="bottom"
+        />
+
+        <FormControlLabel
+            value="end"
+            control={<Radio name="LabelPlacement" {...args} />}
+            label="End"
+            labelPlacement="end"
+        />
+
+    </div>
+);
+
+LabelPlacement.args = {
+    ...defaultArgs,
+    color: 'default',
+};
+
