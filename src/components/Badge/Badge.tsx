@@ -1,6 +1,6 @@
 import * as React from 'react';
 import MuiBadge from '@material-ui/core/Badge';
-import { Props } from './Badge.types';
+import { BadgeProps } from './Badge.types';
 
 
 /**
@@ -10,12 +10,10 @@ import { Props } from './Badge.types';
  *
  * > No differences in Brewkit.
  */
-export const Badge = React.forwardRef(({
-    ...otherProps
-}: Props, ref: React.Ref<any>): React.ReactElement => (
+export const Badge = React.forwardRef((props: BadgeProps, ref: React.Ref<any>): React.ReactElement => (
 
 
-    <MuiBadge ref={ref} {...otherProps} />
+    <MuiBadge ref={ref} {...props} />
 
 
 ));
