@@ -9,9 +9,6 @@
 ---
 
 <p align="center">
-    <a href="https://discord.gg/GWBTQrm">
-        <img src="https://img.shields.io/discord/680131581066871038?logo=discord" alt="chat on Discord">
-    </a>
     <a href="https://github.com/brewkit/brewkit-ui/blob/master/LICENSE">
         <img src="https://img.shields.io/badge/license-MIT-blue.svg">
     </a>
