@@ -28,8 +28,8 @@ Material-UI – MUI at the foundation, but with additional components, abstracti
 
 <h1>Guides</h1>
 <h2>Testing</h2>
-<p>Brewkit uses <code><a href="https://jestjs.io/" target="_blank">jest</a></code>, <code><a href="https://enzymejs.github.io/enzyme/" target="_blank">enzyme</a></code>, and <code><a href="https://reactjs.org/docs/test-renderer.html" target="_blank">react-test-renderer</a></code> to handle unit testing for the components. Since it is based on Material UI, it will not cover the functionality of their components, it will only cover our funcionality added on top of that. Jest is famous for snapshot testing concept, which takes existing snapshot (a file representation of the component), and comapres it to new version. Their website explains it in more detail.<br /><br />
-Put in more simpler terms when the source code is changed Jest will complain until the snapshot has been updated. So when you change existing test files, make sure they reflect existing snapshot properly before you update it.
+<p>Brewkit uses <code><a href="https://jestjs.io/" target="_blank">jest</a></code>, <code><a href="https://enzymejs.github.io/enzyme/" target="_blank">enzyme</a></code>, and <code><a href="https://reactjs.org/docs/test-renderer.html" target="_blank">react-test-renderer</a></code> to handle unit testing for the components. Since it is based on Material UI, it will not cover the functionality of their components, it will only cover our funcionality added on top of that. 
+The tests are mocked by using the enzyme which allows us to emulate the web browser DOM enviroment by using <a href="https://github.com/jsdom/jsdom">jsdom</a>. Snapshot testing was considered at one point, but since the crust of funtionality used in Brewkit will be based on "hard" javascript, so unit testing with cli interface has more sense.
 <br /><br />
 To run tests - <code>npm run test:run</code>
 <br />

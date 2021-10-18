@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
-import Badge from '@components/Badge';
+import Badge from './Badge';
 import MailIcon from '@material-ui/icons/Mail';
-import { Props } from './types';
+import { Props } from './Badge.types';
 
 
 export default {
