@@ -1,4 +1,4 @@
-import { BadgeProps } from '@material-ui/core/Badge';
+import { BadgeProps as _BadgeProps } from '@material-ui/core/Badge';
 
 
-export type Props = BadgeProps;
+export type BadgeProps = _BadgeProps;
