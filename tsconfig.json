@@ -19,7 +19,7 @@
                 "exclude": ["*"]
             }
         ],
-        "types": ["webpack-env"],
+        "types": ["webpack-env", "jest"],
         "removeComments": true,
         "strict": true,
         "noImplicitAny": true,
