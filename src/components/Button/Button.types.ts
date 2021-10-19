@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ButtonProps } from '@material-ui/core/Button';
+import { ButtonProps as MUIButtonProps } from '@material-ui/core';
 
 
 /**
@@ -20,7 +20,7 @@ declare module '@material-ui/core/styles/createTheme' {
 }
 
 
-export type Props = ButtonProps & {
+export type ButtonProps = MUIButtonProps & {
 
     /**
      * If `true`, the button will be disabled and show a spinner.
