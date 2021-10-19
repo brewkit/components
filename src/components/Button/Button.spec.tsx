@@ -25,7 +25,8 @@ describe('<Button />', () => {
      * since we want it to be disabled if either prop is truthy
      */
     test('button is disabled', () => {
-        wrapper.setProps({ disabled: false, loading: true });
+        wrapper.setProps({ disabled: true, loading: false });
         expect(wrapper.find(disabledClasses)).toHaveLength(1);
     });
 })
+
