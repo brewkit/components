@@ -4,13 +4,13 @@ import * as React from 'react';
 import { Story } from '@storybook/react';
 import ArrowBack from '@material-ui/icons/ArrowBack';
 import AddCircleOutline from '@material-ui/icons/AddCircleOutline';
-import { Props } from './types';
+import { ButtonProps } from './Button.types';
 
 /**
  * This is an annoying hack to get Storybook to properly parse the documentation when the underlying component
  * is wrapped in a HOC. Expect to do/see this on every component with MUI theming options.
  */
-import { Button } from './index';
+import Button from '.';
 
 
 export default {
@@ -26,7 +26,7 @@ const defaultArgs = {
 };
 
 
-export const Sandbox: Story<Props> = (args) => <Button {...args} />;
+export const Sandbox: Story<ButtonProps> = (args) => <Button {...args} />;
 
 Sandbox.args = {
     ...defaultArgs,
@@ -34,7 +34,7 @@ Sandbox.args = {
 };
 
 
-export const General: Story<Props> = (args) => <Button {...args} />;
+export const General: Story<ButtonProps> = (args) => <Button {...args} />;
 
 General.args = {
     ...defaultArgs,
@@ -43,7 +43,7 @@ General.args = {
 };
 
 
-export const WithStartIcon: Story<Props> = (args) => <Button {...args} />;
+export const WithStartIcon: Story<ButtonProps> = (args) => <Button {...args} />;
 
 WithStartIcon.args = {
     ...defaultArgs,
@@ -52,7 +52,7 @@ WithStartIcon.args = {
 };
 
 
-export const WithEndIcon: Story<Props> = (args) => <Button {...args} />;
+export const WithEndIcon: Story<ButtonProps> = (args) => <Button {...args} />;
 
 WithEndIcon.args = {
     ...defaultArgs,
@@ -61,7 +61,7 @@ WithEndIcon.args = {
 };
 
 
-export const OnlyIcon: Story<Props> = (args) => <Button {...args} />;
+export const OnlyIcon: Story<ButtonProps> = (args) => <Button {...args} />;
 
 OnlyIcon.args = {
     ...defaultArgs,
@@ -70,7 +70,7 @@ OnlyIcon.args = {
 };
 
 
-export const Disabled: Story<Props> = (args) => <Button {...args} />;
+export const Disabled: Story<ButtonProps> = (args) => <Button {...args} />;
 
 Disabled.args = {
     ...defaultArgs,
@@ -79,7 +79,7 @@ Disabled.args = {
 };
 
 
-export const Loading: Story<Props> = (args) => <Button {...args} />;
+export const Loading: Story<ButtonProps> = (args) => <Button {...args} />;
 
 Loading.args = {
     ...defaultArgs,
