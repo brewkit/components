@@ -1,7 +1,7 @@
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import React from 'react';
 
-import Alert from '.'
+import Alert from '.';
 
 describe('<Alert />', () => {
     const wrapper = mount(<Alert title="Notice!">Hello world</Alert>);
@@ -12,7 +12,7 @@ describe('<Alert />', () => {
         expect(wrapper.contains('Hello world')).toEqual(true);
     });
 
-    
+
     test('with `title` prop', () => {
         expect(wrapper.prop('title')).toEqual('Notice!');
     });
