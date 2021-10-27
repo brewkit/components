@@ -15,7 +15,19 @@ const config: Config.InitialOptions = {
     ],
     coverageDirectory: 'coverage',
     coveragePathIgnorePatterns: [
-        '/node_modules',
+        '/node_modules/'
+    ],
+    collectCoverageFrom: [
+        '!src/components/**/*.story.tsx',
+        '!src/components/**/*.types.ts',
+        '!src/components/**/*.styles.ts',
+        '!src/components/**/index.tsx',
+
+        // Old structure - remove after refactor
+        '!src/components/**/stories.tsx',
+        '!src/components/**/types.ts',
+        '!src/components/**/styles.ts',
+
     ],
     errorOnDeprecated: true,
     moduleFileExtensions: [
@@ -27,7 +39,7 @@ const config: Config.InitialOptions = {
         "<rootDir>/src"
     ],
     setupFilesAfterEnv: [
-        '<rootDir>/enzyme.ts'
+        '<rootDir>/setupTestEnv.ts'
     ],
     testEnvironment: 'jsdom',
     transform: {

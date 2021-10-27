@@ -2,10 +2,10 @@ import * as React from 'react';
 import { useFormContext } from 'react-hook-form';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { AnimatePresence, motion } from 'framer-motion';
-import Checkbox from '@components/Checkbox';
-import Radio from '@components/Radio';
-import TextField from '@components/TextField';
-import Switch from '@components/Switch';
+import Checkbox from '../Checkbox';
+import Radio from '../Radio';
+import TextField from '../TextField';
+import Switch from '../Switch';
 import { Props } from './types';
 
 
@@ -83,6 +83,7 @@ export const FormField = React.forwardRef(({
                 <motion.span
                     key={key}
                     layout="position"
+                    role="alert"
                     style={{
                         display: 'inline-block',
                         position: 'absolute',

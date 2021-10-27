@@ -23,31 +23,29 @@ export const General = (): React.ReactElement => {
         },
         minLength: {
             value: 10,
-            message: 'A length of 10 or more is required.'
-        }
+            message: 'A length of 10 or more is required.',
+        },
     };
 
 
-    const handleSubmit = (values) => {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                console.log(values);
-                resolve('foo');
-            }, 2000);
-        });
-    }
+    const handleSubmit = (values) => new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log(values);
+            resolve('foo');
+        }, 2000);
+    });
 
 
     return (
-        <Form style={{ display: 'grid', gridGap: '1rem' }} onSubmit={handleSubmit} >
-            <FormField label="text1" name="text1" type="text" placeholder="text" autoComplete="new" validation={validation} />
+        <Form onSubmit={handleSubmit} style={{ display: 'grid', gridGap: '1rem' }} >
+            <FormField autoComplete="new" label="text1" name="text1" placeholder="text" type="text" validation={validation} />
             <FormField label="Switch" name="switch" type="switch" validation={validation} />
             <FormField label="Checkbox" name="checkbox" type="checkbox" validation={validation} />
             <FormSubmit>Submit</FormSubmit>
         </Form>
     );
 
-}
+};
 
 
 export const CustomFormMethods = (): React.ReactElement => {
@@ -61,28 +59,26 @@ export const CustomFormMethods = (): React.ReactElement => {
         },
         minLength: {
             value: 10,
-            message: 'A length of 10 or more is required.'
-        }
+            message: 'A length of 10 or more is required.',
+        },
     };
 
 
-    const handleSubmit = (values) => {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                console.log(values);
-                resolve('foo');
-            }, 2000);
-        });
-    }
+    const handleSubmit = (values) => new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log(values);
+            resolve('foo');
+        }, 2000);
+    });
 
 
     return (
-        <Form style={{ display: 'grid', gridGap: '1rem' }} onSubmit={handleSubmit} useFormMethods={formMethods}>
-            <FormField label="text1" name="text1" type="text" placeholder="text" autoComplete="new" validation={validation} />
+        <Form onSubmit={handleSubmit} style={{ display: 'grid', gridGap: '1rem' }} useFormMethods={formMethods}>
+            <FormField autoComplete="new" label="text1" name="text1" placeholder="text" type="text" validation={validation} />
             <FormField label="Switch" name="switch" type="switch" validation={validation} />
             <FormField label="Checkbox" name="checkbox" type="checkbox" validation={validation} />
             <FormSubmit>Submit</FormSubmit>
         </Form>
     );
 
-}
+};
