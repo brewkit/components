@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Story } from '@storybook/react';
 import Badge from './Badge';
 import MailIcon from '@material-ui/icons/Mail';
-import { Props } from './Badge.types';
+import { BadgeProps } from './Badge.types';
 
 
 export default {
@@ -11,7 +11,7 @@ export default {
 };
 
 
-export const Sandbox: Story<Props> = (args) => <Badge {...args}><MailIcon /></Badge>;
+export const Sandbox: Story<BadgeProps> = (args) => <Badge {...args}><MailIcon /></Badge>;
 Sandbox.args = {
     color: 'primary',
     invisible: false,
@@ -27,7 +27,7 @@ Sandbox.args = {
 };
 
 
-export const Basic: Story<Props> = (args) => (
+export const Basic: Story<BadgeProps> = (args) => (
     <div style={{ fontSize: '2rem' }}>
         <Badge badgeContent={4} color="primary">
             😀
@@ -42,22 +42,22 @@ export const Basic: Story<Props> = (args) => (
 );
 
 
-export const MaxValue: Story<Props> = (args) => (
+export const MaxValue: Story<BadgeProps> = (args) => (
     <div style={{ fontSize: '2rem' }}>
-        <Badge color="primary" badgeContent={99}>
+        <Badge badgeContent={99} color="primary">
             😀
         </Badge>
-        <Badge color="secondary" badgeContent={100} max={99}>
+        <Badge badgeContent={100} color="secondary" max={99}>
             😀
         </Badge>
-        <Badge color="error" badgeContent={1000} max={999}>
+        <Badge badgeContent={1000} color="error" max={999}>
             😀
         </Badge>
     </div>
 );
 
 
-export const DotBadge: Story<Props> = (args) => (
+export const DotBadge: Story<BadgeProps> = (args) => (
     <div style={{ fontSize: '2rem' }}>
 
         <Badge color="primary" variant="dot">
@@ -74,19 +74,19 @@ export const DotBadge: Story<Props> = (args) => (
 );
 
 
-export const Alignment: Story<Props> = (args) => (
+export const Alignment: Story<BadgeProps> = (args) => (
     <div style={{ fontSize: '2rem' }}>
 
-        <Badge badgeContent={99} color="primary" anchorOrigin={{ vertical: 'top', horizontal: 'left' }}>
+        <Badge anchorOrigin={{ vertical: 'top', horizontal: 'left' }} badgeContent={99} color="primary">
             😀
         </Badge>
-        <Badge badgeContent={99} color="secondary" anchorOrigin={{ vertical: 'top', horizontal: 'right' }}>
+        <Badge anchorOrigin={{ vertical: 'top', horizontal: 'right' }} badgeContent={99} color="secondary">
             😀
         </Badge>
-        <Badge badgeContent={99} color="error" anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}>
+        <Badge anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }} badgeContent={99} color="error">
             😀
         </Badge>
-        <Badge badgeContent={99} color="primary" anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
+        <Badge anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} badgeContent={99} color="primary">
             😀
         </Badge>
 

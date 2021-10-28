@@ -28,9 +28,8 @@ export const General = (): React.ReactElement => {
     };
 
 
-    const handleSubmit = (values) => new Promise((resolve, reject) => {
+    const handleSubmit = (): Promise<string> => new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log(values);
             resolve('foo');
         }, 2000);
     });
@@ -64,7 +63,7 @@ export const CustomFormMethods = (): React.ReactElement => {
     };
 
 
-    const handleSubmit = (values) => new Promise((resolve, reject) => {
+    const handleSubmit = (values: any): Promise<any> => new Promise((resolve, reject) => {
         setTimeout(() => {
             console.log(values);
             resolve('foo');

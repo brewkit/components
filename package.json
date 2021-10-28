@@ -18,9 +18,7 @@
     "scripts": {
         "install-bkg": "cd .build/bkg-cli && npm link",
         "commit": "npx git-cz",
-        "test:run": "jest -c jest.config.ts --watchAll",
-        "test:update": "jest -c jest.config.ts --updateSnapshot",
-        "test:ui": "majestic",
+        "test": "node .build/jest/runner.js",
         "start": "npm run storybook",
         "storybook": "start-storybook -p 9001 -c .build/storybook",
         "build": "node .build/scripts/copy-package-files.js && npx ttsc --project ./.build/tsconfig.json",
@@ -107,7 +105,7 @@
     "majestic": {
         "jestScriptPath": "node_modules/jest/bin/jest.js",
         "args": [
-            "--outputFile=jest.config.ts"
+            "--config=.build/jest/bin/jest.config.js"
         ],
         "env": {
             "CI": "true"

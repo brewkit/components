@@ -3,9 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type { Config } from '@jest/types'
-
-const config: Config.InitialOptions = {
+module.exports = {
     clearMocks: true,
     collectCoverage: true,
     coverageReporters: [
@@ -13,7 +11,7 @@ const config: Config.InitialOptions = {
         'json-summary',
         'text'
     ],
-    coverageDirectory: 'coverage',
+    coverageDirectory: `${process.cwd()}/coverage`,
     coveragePathIgnorePatterns: [
         '/node_modules/'
     ],
@@ -36,15 +34,13 @@ const config: Config.InitialOptions = {
         'tsx'
     ],
     roots: [
-        "<rootDir>/src"
+        process.cwd() + '/src'
     ],
     setupFilesAfterEnv: [
-        '<rootDir>/setupTestEnv.ts'
+        '<rootDir>/setupTestEnv.js'
     ],
     testEnvironment: 'jsdom',
     transform: {
         '.(ts)': 'ts-jest'
     }
 }
-
-export default config;
