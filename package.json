@@ -18,7 +18,6 @@
     "scripts": {
         "install-bkg": "cd .build/bkg-cli && npm link",
         "commit": "npx git-cz",
-        "test": "node .build/jest/runner.js",
         "start": "npm run storybook",
         "storybook": "start-storybook -p 9001 -c .build/storybook",
         "build": "node .build/scripts/copy-package-files.js && npx ttsc --project ./.build/tsconfig.json",
