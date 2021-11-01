@@ -1,0 +1,10 @@
+{
+    "name": "test-runner",
+    "version": "1.0.0",
+    "description": "",
+    "main": "bin/runner.js",
+    "private": true,
+    "bin": {
+        "test-runner": "./bin/runner.js"
+    }
+}
