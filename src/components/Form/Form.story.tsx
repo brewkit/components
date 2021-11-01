@@ -28,7 +28,7 @@ export const General = (): React.ReactElement => {
     };
 
 
-    const handleSubmit = (): Promise<string> => new Promise((resolve, reject) => {
+    const handleSubmit = (): Promise<string> => new Promise((resolve) => {
         setTimeout(() => {
             resolve('foo');
         }, 2000);
@@ -37,7 +37,14 @@ export const General = (): React.ReactElement => {
 
     return (
         <Form onSubmit={handleSubmit} style={{ display: 'grid', gridGap: '1rem' }} >
-            <FormField autoComplete="new" label="text1" name="text1" placeholder="text" type="text" validation={validation} />
+            <FormField
+                autoComplete="new"
+                label="text1"
+                name="text1"
+                placeholder="text"
+                type="text"
+                validation={validation}
+            />
             <FormField label="Switch" name="switch" type="switch" validation={validation} />
             <FormField label="Checkbox" name="checkbox" type="checkbox" validation={validation} />
             <FormSubmit>Submit</FormSubmit>
@@ -63,9 +70,11 @@ export const CustomFormMethods = (): React.ReactElement => {
     };
 
 
-    const handleSubmit = (values: any): Promise<any> => new Promise((resolve, reject) => {
+    const handleSubmit = (values: any): Promise<any> => new Promise((resolve) => {
         setTimeout(() => {
+            // eslint-disable-next-line no-console
             console.log(values);
+
             resolve('foo');
         }, 2000);
     });
@@ -73,7 +82,14 @@ export const CustomFormMethods = (): React.ReactElement => {
 
     return (
         <Form onSubmit={handleSubmit} style={{ display: 'grid', gridGap: '1rem' }} useFormMethods={formMethods}>
-            <FormField autoComplete="new" label="text1" name="text1" placeholder="text" type="text" validation={validation} />
+            <FormField
+                autoComplete="new"
+                label="text1"
+                name="text1"
+                placeholder="text"
+                type="text"
+                validation={validation}
+            />
             <FormField label="Switch" name="switch" type="switch" validation={validation} />
             <FormField label="Checkbox" name="checkbox" type="checkbox" validation={validation} />
             <FormSubmit>Submit</FormSubmit>

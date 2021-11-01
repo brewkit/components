@@ -1,12 +1,14 @@
 import React from 'react';
-import { Form, FormField, FormSubmit } from '../../';
+import { Form, FormField, FormSubmit } from '../..';
 
-const BigAssForm = ({ formService }) => {
+interface LargeFormMockProps {
+    formService: (data: any) => Promise<void>,
+}
+
+const LargeForm = ({ formService }: LargeFormMockProps): React.ReactElement => {
 
 
-    const handleForm = (data) => {
-        formService(data);
-    };
+    const handleForm = (data: any): Promise<void> => formService(data);
 
     return (
         <Form onSubmit={handleForm}>
@@ -42,4 +44,9 @@ const BigAssForm = ({ formService }) => {
             <FormSubmit />
         </Form>
     );
+};
+
+
+export {
+    LargeForm as default,
 };

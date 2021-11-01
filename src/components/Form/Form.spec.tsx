@@ -1,12 +1,9 @@
-/* eslint-disable @typescript-eslint/require-await */
-/* eslint-disable require-await */
 import React from 'react';
 import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import LoginMock, { LoginResponse } from './__mocks__/_LoginMock';
 
 const {
-    debug,
     findByRole,
     findByText,
 } = screen;
@@ -18,6 +15,7 @@ const handleSubmit = jest.fn(({ email, password }: LoginResponse): any => (
  * A hack to ensure we dont get bunch of act warnings
  */
 beforeEach(async() => {
+    // eslint-disable-next-line @typescript-eslint/require-await
     await act(async(): Promise<void> => {
         render(<LoginMock loginService={handleSubmit} />);
     });

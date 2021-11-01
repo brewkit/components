@@ -136,7 +136,8 @@
         "prefer-promise-reject-errors": "error",
         "prefer-regex-literals": "error",
         "radix": "error",
-        "require-await": "error",
+        // `require-await` replaced by TS version
+        "require-await": "off",
         "require-unicode-regexp": "error",
         "vars-on-top": "error",
         "wrap-iife": "error",
@@ -151,7 +152,8 @@
         "no-undef": "error",
         "no-undef-init": "error",
         "no-undefined": "off",
-        "no-unused-vars": "error",
+        // `no-unused-vars` replaced by TS version
+        "no-unused-vars": "off",
         "no-use-before-define": "off",
         "callback-return": "error",
         "global-require": "error",

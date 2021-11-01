@@ -1,6 +1,5 @@
 import React from 'react';
 import { Form, FormField, FormSubmit } from '../..';
-import { FormProps } from '../Form.types';
 
 interface LoginResponse {
     email: string,
@@ -8,13 +7,10 @@ interface LoginResponse {
 }
 
 interface LoginMockProps {
-    // eslint-disable-next-line no-unused-vars
     loginService: (data: LoginResponse) => Promise<void>,
 }
 
-const LoginMock = (props: LoginMockProps): React.ReactElement => {
-
-    const { loginService } = props;
+const LoginMock = ({ loginService }: LoginMockProps): React.ReactElement => {
 
     const submitHandler = async(data: any): Promise<void> => {
         const {

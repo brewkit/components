@@ -27,7 +27,7 @@ Sandbox.args = {
 };
 
 
-export const Basic: Story<BadgeProps> = (args) => (
+export const Basic: Story<BadgeProps> = () => (
     <div style={{ fontSize: '2rem' }}>
         <Badge badgeContent={4} color="primary">
             😀
@@ -42,7 +42,7 @@ export const Basic: Story<BadgeProps> = (args) => (
 );
 
 
-export const MaxValue: Story<BadgeProps> = (args) => (
+export const MaxValue: Story<BadgeProps> = () => (
     <div style={{ fontSize: '2rem' }}>
         <Badge badgeContent={99} color="primary">
             😀
@@ -57,7 +57,7 @@ export const MaxValue: Story<BadgeProps> = (args) => (
 );
 
 
-export const DotBadge: Story<BadgeProps> = (args) => (
+export const DotBadge: Story<BadgeProps> = () => (
     <div style={{ fontSize: '2rem' }}>
 
         <Badge color="primary" variant="dot">
@@ -74,7 +74,7 @@ export const DotBadge: Story<BadgeProps> = (args) => (
 );
 
 
-export const Alignment: Story<BadgeProps> = (args) => (
+export const Alignment: Story<BadgeProps> = () => (
     <div style={{ fontSize: '2rem' }}>
 
         <Badge anchorOrigin={{ vertical: 'top', horizontal: 'left' }} badgeContent={99} color="primary">

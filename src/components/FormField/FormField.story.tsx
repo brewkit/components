@@ -38,9 +38,18 @@ const validation = {
     },
 };
 
+const handleSubmit = (values: any): Promise<any> => new Promise((resolve) => {
+    setTimeout(() => {
+
+        // eslint-disable-next-line no-console
+        console.log(values);
+
+        resolve('foo');
+    }, 2000);
+});
 
 export const Sandbox: Story<FormFieldProps> = (args) => (
-    <Form onSubmit={(values: any) => console.log(values)} style={{ display: 'grid', gridGap: '1rem' }} >
+    <Form onSubmit={handleSubmit} style={{ display: 'grid', gridGap: '1rem' }} >
 
         <Grid container spacing={3}>
 
@@ -49,28 +58,72 @@ export const Sandbox: Story<FormFieldProps> = (args) => (
             </Grid>
 
             <Grid item sm={6} xs={12}>
-                <FormField {...args} label="Password" name="password" placeholder="Password" type="password" validation={validation} />
+                <FormField
+                    {...args}
+                    label="Password"
+                    name="password"
+                    placeholder="Password"
+                    type="password"
+                    validation={validation}
+                />
             </Grid>
 
             <Grid item sm={3} xs={6}>
-                <FormField {...args} helperText="some help" label="Number" name="number" placeholder="1" type="number" validation={validation} />
+                <FormField
+                    {...args}
+                    helperText="some help"
+                    label="Number"
+                    name="number"
+                    placeholder="1"
+                    type="number"
+                    validation={validation}
+                />
             </Grid>
 
             <Grid item sm={3} xs={6}>
-                <FormField {...args} label="text1" name="text4" placeholder="text" type="text" validation={validation} />
+                <FormField
+                    {...args}
+                    label="text1"
+                    name="text4"
+                    placeholder="text"
+                    type="text"
+                    validation={validation}
+                />
             </Grid>
 
             <Grid item sm={3} xs={6}>
-                <FormField {...args} label="text1" name="text5" placeholder="text" type="text" validation={validation} />
+                <FormField
+                    {...args}
+                    label="text1"
+                    name="text5"
+                    placeholder="text"
+                    type="text"
+                    validation={validation}
+                />
             </Grid>
 
             <Grid item sm={3} xs={6}>
-                <FormField {...args} label="text1" name="text6" placeholder="text" type="text" validation={validation} />
+                <FormField
+                    {...args}
+                    label="text1"
+                    name="text6"
+                    placeholder="text"
+                    type="text"
+                    validation={validation}
+                />
             </Grid>
 
         </Grid>
 
-        <FormField {...args} helperText="Some help here" label="Radio" name="radio" type="radio" validation={validation} value="checked" />
+        <FormField
+            {...args}
+            helperText="Some help here"
+            label="Radio"
+            name="radio"
+            type="radio"
+            validation={validation}
+            value="checked"
+        />
         <FormField {...args} label="Switch" name="switch" type="switch" validation={validation} />
         <FormField {...args} label="Checkbox" name="checkbox" type="checkbox" validation={validation} />
 

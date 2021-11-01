@@ -4,7 +4,6 @@ import { Form, FormField } from '..';
 import { noop } from 'lodash';
 
 const {
-    debug,
     findByRole,
 } = screen;
 
@@ -23,6 +22,7 @@ describe('<FormField />', () => {
         });
     });
 
+    // eslint-disable-next-line @typescript-eslint/require-await
     test('render as select with options prop', async() => {
         render(
             <Form onSubmit={noop}>
