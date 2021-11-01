@@ -1,4 +1,4 @@
-import { color } from '../variables';
+import { color } from '../../cerveza/variables';
 
 
 const Typography = {
