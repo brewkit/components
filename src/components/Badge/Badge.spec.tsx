@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { shallow } from 'enzyme';
 import { Badge } from './Badge';
 
@@ -8,6 +8,4 @@ describe('<Badge />', () => {
         const wrapper = shallow(<Badge />);
         expect(wrapper.isEmptyRender()).toEqual(false);
     });
-  
-    
 });
