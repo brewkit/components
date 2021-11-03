@@ -17,6 +17,7 @@
     "sideEffects": false,
     "scripts": {
         "install-bkg": "cd .build/bkg-cli && npm link",
+        "install-test-runner": "cd .build/jest && npm link",
         "commit": "npx git-cz",
         "start": "npm run storybook",
         "storybook": "start-storybook -p 9001 -c .build/storybook",
@@ -102,9 +103,9 @@
         "react-hook-form": "^7.17.5"
     },
     "majestic": {
-        "jestScriptPath": "node_modules/jest/bin/jest.js",
+        "jestScriptPath": "node_modules/jest/bin/jest",
         "args": [
-            "--config=.build/jest/bin/jest.config.js"
+            "--config=jest.config.js"
         ],
         "env": {
             "CI": "true"
