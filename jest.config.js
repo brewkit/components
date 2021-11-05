@@ -3,6 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
+const { cwd } = process;
+
 module.exports = {
     clearMocks: true,
     collectCoverage: true,
@@ -11,21 +13,18 @@ module.exports = {
         'json-summary',
         'text'
     ],
-    coverageDirectory: `${process.cwd()}/coverage`,
+    coverageDirectory: 'coverage',
     coveragePathIgnorePatterns: [
-        '/node_modules/'
+        '/node_modules/',
+        '/themes/',
+        '/dist/',
+        '/.build/'
     ],
     collectCoverageFrom: [
-        '!src/components/**/*.story.tsx',
-        '!src/components/**/*.types.ts',
-        '!src/components/**/*.styles.ts',
-        '!src/components/**/index.tsx',
-
-        // Old structure - remove after refactor
-        '!src/components/**/stories.tsx',
-        '!src/components/**/types.ts',
-        '!src/components/**/styles.ts',
-
+        '<rootDir>/src/components/**/*.tsx',
+        '!<rootDir>/src/components/**/index.ts',
+        '!<rootDir>/src/components/**/*.story.tsx',
+        '!<rootDir>/src/components/**/stories.tsx',
     ],
     errorOnDeprecated: true,
     moduleFileExtensions: [
@@ -34,10 +33,10 @@ module.exports = {
         'tsx'
     ],
     roots: [
-        process.cwd() + '/src'
+        `<rootDir>/src`
     ],
     setupFilesAfterEnv: [
-        '<rootDir>/setupTestEnv.js'
+        '<rootDir>/.build/jest/setupTestEnv.js'
     ],
     testEnvironment: 'jsdom',
     transform: {
