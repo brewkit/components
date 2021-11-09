@@ -29,6 +29,3 @@ coverage
 
 # dist files (automatically handled in Github)
 dist
-
-# tests
-.build/jest
