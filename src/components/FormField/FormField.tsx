@@ -2,9 +2,9 @@ import * as React from 'react';
 import { useFormContext } from 'react-hook-form';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { AnimatePresence, motion } from 'framer-motion';
-import Checkbox from '../Checkbox';
+import Checkbox from '../Checkbox/Checkbox';
 import Radio from '../Radio';
-import TextField from '../TextField';
+import TextField from '../TextField/TextField';
 import Switch from '../Switch';
 import { FormFieldProps } from './FormField.types';
 

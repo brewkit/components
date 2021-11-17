@@ -98,7 +98,7 @@ export const TextField = React.forwardRef(({
      */
     function getEndAdornment(): React.ReactNode {
         if (type === 'password') return (
-            <span className={classes?.visibilityIcon} onClick={(): void => setVisible(!isVisible)}>
+            <span className={classes?.visibilityIcon} data-testid='visibilityIcon' onClick={(): void => setVisible(!isVisible)}>
                 <AnimatePresence>
                     { isVisible ? (
                         <Visibility component={motion.svg} {...fadeAnim} />

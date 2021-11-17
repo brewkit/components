@@ -57,7 +57,7 @@ export const Checkbox = React.forwardRef(({
      * the control that will be used if checked
      */
     const CheckedIcon = (
-        <div className={clsx(classes?.controlBase, classes?.checkedControl)}>
+        <div className={clsx(classes?.controlBase, classes?.checkedControl)} data-testid='checkedIcon'>
             <Check component={motion.svg} key="checkedIcon" {...fadeAnim} />
         </div>
     );
@@ -67,7 +67,7 @@ export const Checkbox = React.forwardRef(({
      * the control that will be used if unchecked
      */
     const UncheckedIcon = (
-        <div className={clsx(classes?.controlBase, classes?.uncheckedControl)}>
+        <div className={clsx(classes?.controlBase, classes?.uncheckedControl)} data-testid='uncheckedIcon'>
             <motion.div key="icon" {...fadeAnim} />
         </div>
     );
