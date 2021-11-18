@@ -11,8 +11,8 @@ describe('<Checkbox />', () => {
         expect(screen.getByRole('checkbox')).toBeInTheDocument();
     })
 
-    test('renders Checkbox component', () => {
-        
+    test('test check/uncheck behave', () => {
+
         const { container } = render(<Checkbox />);
         const checkbox = screen.getByRole('checkbox');
         fireEvent(
