@@ -8,6 +8,7 @@ import { color } from './variables';
 import Alert from './components/Alert';
 import AlertTitle from './components/AlertTitle';
 import Badge from './components/Badge';
+import Breadcrumbs from './components/Breadcrumbs';
 import Button from './components/Button';
 import ButtonGroup from './components/ButtonGroup';
 import Checkbox from './components/Checkbox';
@@ -69,6 +70,7 @@ const Cerveza = createTheme(_merge(
     Alert,
     AlertTitle,
     Badge,
+    Breadcrumbs,
     Button,
     ButtonGroup,
     Checkbox,

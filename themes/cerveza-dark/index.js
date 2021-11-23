@@ -9,6 +9,7 @@ import Typography from './components/Typography';
 import Alert from './components/Alert';
 import AlertTitle from './components/AlertTitle';
 import Badge from './components/Badge';
+import Breadcrumbs from './components/Breadcrumbs';
 import Button from './components/Button';
 import ButtonGroup from './components/ButtonGroup';
 import CircularProgress from './components/CircularProgress';
@@ -59,6 +60,7 @@ var Cerveza = createTheme(_merge(
     Alert,
     AlertTitle,
     Badge,
+    Breadcrumbs,
     Button,
     ButtonGroup,
     Checkbox,

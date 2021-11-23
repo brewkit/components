@@ -1,5 +1,6 @@
 export { default as Alert, AlertProps } from './Alert';
 export { default as Badge, BadgeProps } from './Badge';
+export { default as Breadcrumbs, BreadcrumbsProps } from './Breadcrumbs';
 export { default as Button, ButtonProps } from './Button';
 export { default as ButtonGroup } from './ButtonGroup';
 export { default as Checkbox } from './Checkbox';
