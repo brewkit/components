@@ -84,7 +84,7 @@ export const Sandbox: Story<FormFieldProps> = (args) => (
                 <FormField
                     {...args}
                     label="text1"
-                    name="text4.password"
+                    name="text4"
                     placeholder="text"
                     type="text"
                     validation={validation}
