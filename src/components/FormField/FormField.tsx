@@ -3,6 +3,7 @@ import { useFormContext } from 'react-hook-form';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { AnimatePresence, motion } from 'framer-motion';
 import Checkbox from '../Checkbox';
+import _ from 'lodash';
 import Radio from '../Radio';
 import TextField from '../TextField';
 import Switch from '../Switch';
@@ -17,7 +18,6 @@ const components: {
     radio: Radio,
     switch: Switch,
 };
-
 
 /**
  * `FormField` is an abstraction of most inputs, additionally binding the rendered input to a `Form` so they can be
@@ -61,6 +61,7 @@ export const FormField = React.forwardRef(({
      * determine what to render in the helper text. Keys have to be changed based on content ot ensure the component
      * updates correctly.
      */
+
     function getHelperText(): React.ReactNode {
 
         let content: React.ReactNode = ' ';
@@ -72,9 +73,11 @@ export const FormField = React.forwardRef(({
             key = 3;
         }
 
+        const isError = _.get(errors, `${name}[message]`)
         /** if there is an error, return that */
-        if (errors[name]?.message) {
-            content = errors[name]?.message;
+        if (isError) {
+            console.log(isError)
+            content = isError;
             key = 2;
         }
 
@@ -104,7 +107,7 @@ export const FormField = React.forwardRef(({
      */
     if (Component === TextField) return (
         <Component
-            error={Boolean(errors[name])}
+            error={_.get(errors, `${name}[message]`)}
             helperText={getHelperText()}
             inputRef={formInputRef}
             label={label}
