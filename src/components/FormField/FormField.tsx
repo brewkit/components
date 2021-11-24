@@ -3,7 +3,7 @@ import { useFormContext } from 'react-hook-form';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { AnimatePresence, motion } from 'framer-motion';
 import Checkbox from '../Checkbox';
-import _ from 'lodash';
+import { get } from 'lodash';
 import Radio from '../Radio';
 import TextField from '../TextField';
 import Switch from '../Switch';
@@ -73,7 +73,8 @@ export const FormField = React.forwardRef(({
             key = 3;
         }
 
-        const isError = _.get(errors, `${name}[message]`);
+        const isError = get(errors, `${name}.message`);
+        console.log(isError);
 
         /** if there is an error, return that */
         if (isError) {
@@ -107,7 +108,7 @@ export const FormField = React.forwardRef(({
      */
     if (Component === TextField) return (
         <Component
-            error={_.get(errors, `${name}[message]`)}
+            error={Boolean(errors[name])}
             helperText={getHelperText()}
             inputRef={formInputRef}
             label={label}
