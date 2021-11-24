@@ -13,7 +13,7 @@ const InputBase = {
             disabled: {
                 backgroundColor: color.gray.dark,
                 color: color.gray.lightest,
-            },
+            }
 
         },
 
