@@ -73,10 +73,10 @@ export const FormField = React.forwardRef(({
             key = 3;
         }
 
-        const isError = _.get(errors, `${name}[message]`)
+        const isError = _.get(errors, `${name}[message]`);
+
         /** if there is an error, return that */
         if (isError) {
-            console.log(isError)
             content = isError;
             key = 2;
         }
