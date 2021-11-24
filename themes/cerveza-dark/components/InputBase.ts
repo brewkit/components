@@ -11,9 +11,8 @@ const InputBase = {
         MuiInputBase: {
 
             disabled: {
-                opacity: 1,
-                backgroundColor: color.blueGray.light,
-                color: color.blueGray.darker,
+                backgroundColor: color.gray.dark,
+                color: color.gray.lightest,
             },
 
         },
