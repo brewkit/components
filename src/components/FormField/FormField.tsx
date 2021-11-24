@@ -107,7 +107,7 @@ export const FormField = React.forwardRef(({
      */
     if (Component === TextField) return (
         <Component
-            error={Boolean(get(errors, `${name}.message`))}
+            error={Boolean(get(errors, name))}
             helperText={getHelperText()}
             inputRef={formInputRef}
             label={label}
