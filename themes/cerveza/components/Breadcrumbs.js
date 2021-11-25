@@ -3,13 +3,11 @@ import { color } from '../variables';
 var Breadcrumbs = {
     overrides: {
         MuiBreadcrumbs: {
-            colorPrimary: {
-                color: color.gray.lightest
-            },
-            colorSecondary: {
-                color: color.gray.lightest
+            separator: {
+                color: color.blueGray.dark,
             }
         }
     }
 };
+
 export default Breadcrumbs;
