@@ -19,31 +19,31 @@ var Alert = {
                 marginRight: 0
             },
             standardInfo: {
-                borderLeft: "".concat(size.xsmall, " solid ").concat(color.accent.info),
+                borderLeft: size.xsmall + " solid " + color.accent.info,
                 '& $message > *:first-child': {
                     color: color.accent.info
                 }
             },
             standardSuccess: {
-                borderLeft: "".concat(size.xsmall, " solid ").concat(color.accent.success),
+                borderLeft: size.xsmall + " solid " + color.accent.success,
                 '& $message > *:first-child': {
                     color: color.accent.success
                 }
             },
             standardWarning: {
-                borderLeft: "".concat(size.xsmall, " solid ").concat(color.accent.warning),
+                borderLeft: size.xsmall + " solid " + color.accent.warning,
                 '& $message > *:first-child': {
                     color: color.accent.warning
                 }
             },
             standardError: {
-                borderLeft: "".concat(size.xsmall, " solid ").concat(color.accent.error),
+                borderLeft: size.xsmall + " solid " + color.accent.error,
                 '& $message > *:first-child': {
                     color: color.accent.error
                 }
             },
             filledInfo: {
-                borderLeft: "".concat(size.xsmall, " solid ").concat(color.accent.info),
+                borderLeft: size.xsmall + " solid " + color.accent.info,
                 backgroundColor: color.blueGray.darker,
                 '& $message': {
                     color: color.gray.lightest
@@ -53,7 +53,7 @@ var Alert = {
                 }
             },
             filledSuccess: {
-                borderLeft: "".concat(size.xsmall, " solid ").concat(color.accent.success),
+                borderLeft: size.xsmall + " solid " + color.accent.success,
                 backgroundColor: color.blueGray.darker,
                 '& $message': {
                     color: color.gray.lightest
@@ -63,7 +63,7 @@ var Alert = {
                 }
             },
             filledWarning: {
-                borderLeft: "".concat(size.xsmall, " solid ").concat(color.accent.warning),
+                borderLeft: size.xsmall + " solid " + color.accent.warning,
                 backgroundColor: color.blueGray.darker,
                 '& $message': {
                     color: color.gray.lightest
@@ -73,7 +73,7 @@ var Alert = {
                 }
             },
             filledError: {
-                borderLeft: "".concat(size.xsmall, " solid ").concat(color.accent.error),
+                borderLeft: size.xsmall + " solid " + color.accent.error,
                 backgroundColor: color.blueGray.darker,
                 '& $message': {
                     color: color.gray.lightest

@@ -3,8 +3,8 @@ var FormControlLabel = {
     overrides: {
         MuiFormControlLabel: {
             root: {
-                marginLeft: "-".concat(size.xsmall),
-                marginTop: "-".concat(size.xsmall)
+                marginLeft: "-" + size.xsmall,
+                marginTop: "-" + size.xsmall
             },
             label: {
                 fontSize: size.normal,
