@@ -10,10 +10,10 @@ const InputBase = {
 
         MuiInputBase: {
 
-            disabled: {
-                backgroundColor: color.gray.dark,
+            '&$disabled': {
+                // backgroundColor: color.gray.dark,
                 color: color.gray.lightest,
-            }
+            },
 
         },
 

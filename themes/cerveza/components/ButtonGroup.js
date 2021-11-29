@@ -13,7 +13,7 @@ var Button = {
             root: {
                 '& $groupedContained': {
                     fontSize: size.small,
-                    padding: size.small + " " + size.xsmall
+                    padding: "".concat(size.small, " ").concat(size.xsmall)
                 }
             },
             groupedContained: {
