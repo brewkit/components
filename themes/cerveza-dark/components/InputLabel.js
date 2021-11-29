@@ -1,4 +1,4 @@
-import { color, size } from '../variables';
+import { color } from '../../cerveza/variables';
 var InputLabel = {
     props: {
         MuiInputLabel: {
@@ -9,15 +9,7 @@ var InputLabel = {
         MuiInputLabel: {
             root: {
                 '&$outlined$shrink': {
-                    color: color.gray.main,
-                    position: 'relative',
-                    transform: 'translate(0, 0) scale(1)',
-                    padding: "0 0 " + size.xsmall,
-                    fontSize: size.small,
-                    textTransform: 'uppercase'
-                },
-                '&$outlined$shrink$error': {
-                    color: color.accent.error
+                    color: color.gray.main
                 }
             }
         }
