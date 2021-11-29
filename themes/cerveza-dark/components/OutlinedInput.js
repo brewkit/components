@@ -1,29 +1,16 @@
-import { color } from "../variables";
+import { color } from '../../cerveza/variables';
 var OutlinedInput = {
     overrides: {
         MuiOutlinedInput: {
             root: {
-                transition: 'all 0.3s',
-                '& fieldset': {
-                    transition: 'all 0.3s',
-                    borderWidth: '1px !important'
+                '& input': {
+                    color: color.gray.lightest
                 },
-                '&$disabled': {
-                    opacity: 1,
-                    backgroundColor: color.blueGray.light,
-                    color: color.blueGray.darker
+                '& $notchedOutline': {
+                    borderColor: color.gray.main
                 },
-                '&$disabled $notchedOutline': {
-                    borderColor: color.blueGray.light
-                }
-            },
-            input: {
-                padding: '1rem',
-                '& ~ fieldset': {
-                    top: 0
-                },
-                '& ~ fieldset legend': {
-                    display: 'none'
+                '&:hover $notchedOutline': {
+                    borderColor: color.gray.lighter
                 }
             }
         }
