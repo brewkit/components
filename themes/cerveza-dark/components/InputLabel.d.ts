@@ -9,14 +9,6 @@ declare const InputLabel: {
             root: {
                 '&$outlined$shrink': {
                     color: string;
-                    position: string;
-                    transform: string;
-                    padding: string;
-                    fontSize: string;
-                    textTransform: string;
-                };
-                '&$outlined$shrink$error': {
-                    color: string;
                 };
             };
         };

@@ -1,2 +1,2 @@
-declare const Cerveza: import("@material-ui/core/styles").Theme;
-export default Cerveza;
+declare const CervezaDark: import("@material-ui/core/styles").Theme;
+export default CervezaDark;
