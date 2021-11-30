@@ -5,7 +5,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { Story } from '@storybook/react';
 
 import Radio from './index';
-import { Props } from './types';
+import { RadioProps } from './Radio.types';
 
 
 export default {
@@ -19,11 +19,12 @@ export default {
 
 const defaultArgs = {
     disabled: false,
-    fullWidth: false,
 };
 
 
-export const Sandbox: Story<Props> = (args) => <Radio {...args} />;
+
+export const Sandbox: Story<RadioProps> = (args) => <Radio {...args} />;
+
 
 Sandbox.args = {
     ...defaultArgs,
@@ -32,7 +33,9 @@ Sandbox.args = {
 };
 
 
-export const WithLabel: Story<Props> = (args) => (
+
+export const WithLabel: Story<RadioProps> = (args) => (
+
     <div>
 
         <FormControlLabel
@@ -54,35 +57,36 @@ WithLabel.args = {
 };
 
 
-export const LabelPlacement: Story<Props> = (args) => (
+
+export const LabelPlacement: Story<RadioProps> = (args) => (
     <div>
 
         <FormControlLabel
-            value="top"
             control={<Radio defaultChecked name="LabelPlacement" {...args} />}
             label="Top"
             labelPlacement="top"
+            value="top"
         />
 
         <FormControlLabel
-            value="start"
             control={<Radio name="LabelPlacement" {...args} />}
             label="Start"
             labelPlacement="start"
+            value="start"
         />
 
         <FormControlLabel
-            value="bottom"
             control={<Radio name="LabelPlacement" {...args} />}
             label="Bottom"
             labelPlacement="bottom"
+            value="bottom"
         />
 
         <FormControlLabel
-            value="end"
             control={<Radio name="LabelPlacement" {...args} />}
             label="End"
             labelPlacement="end"
+            value="end"
         />
 
     </div>
