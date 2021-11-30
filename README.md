@@ -9,11 +9,32 @@
 ---
 
 <p align="center">
-    <a href="https://github.com/brewkit/brewkit-ui/blob/master/LICENSE">
-        <img src="https://img.shields.io/badge/license-MIT-blue.svg">
+    <a href="https://www.npmjs.com/package/@brewkit/components">
+        <img alt="npm latest version" src="https://img.shields.io/npm/v/@brewkit/components/latest.svg?label=@brewkit/components&logo=npm" />
     </a>
+    &nbsp;
+    <a href="https://www.npmjs.com/package/@brewkit/themes">
+        <img alt="npm latest version" src="https://img.shields.io/npm/v/@brewkit/themes/latest.svg?label=@brewkit/themes&logo=npm" />
+    </a>
+    &nbsp;
+    <a href="https://GitHub.com/brewkit/components/releases/">
+        <img alt="Github latest release" src="https://img.shields.io/github/release/brewkit/components.svg?logo=github" />
+    </a>
+    <br />
+    <a href="https://brewkit.dev">
+        <img src="https://img.shields.io/website?down_message=offline&label=brewkit.dev&up_message=online&url=https%3A%2F%2Fbrewkit.dev" />
+    </a>
+    &nbsp;
+    <a href="https://github.com/brewkit/components/blob/main/LICENSE">
+        <img src="https://img.shields.io/badge/license-MIT-blue.svg" />
+    </a>
+    &nbsp;
+    <a href="https://v4.mui.com/">
+        <img src="https://img.shields.io/static/v1?label=MUI&message=v4&color=blue&logo=materialui" />
+    </a>
+    &nbsp;
     <a href="https://github.com/storybookjs/storybook">
-        <img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg">
+        <img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg" />
     </a>
 </p>
 
