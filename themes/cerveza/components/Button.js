@@ -12,7 +12,7 @@ var Button = {
         MuiButton: {
             root: {
                 fontSize: size.normal,
-                padding: "".concat(size.normal, " ").concat(size.large),
+                padding: size.normal + " " + size.large,
                 minWidth: '150px',
                 '&$contained': {
                     borderWidth: '2px',
@@ -48,7 +48,7 @@ var Button = {
             },
             sizeSmall: {
                 fontSize: size.small,
-                padding: "".concat(size.xsmall, " ").concat(size.small),
+                padding: size.xsmall + " " + size.small,
                 minWidth: 0
             }
         }

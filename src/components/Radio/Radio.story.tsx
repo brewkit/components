@@ -22,7 +22,9 @@ const defaultArgs = {
 };
 
 
+
 export const Sandbox: Story<RadioProps> = (args) => <Radio {...args} />;
+
 
 Sandbox.args = {
     ...defaultArgs,
@@ -31,7 +33,9 @@ Sandbox.args = {
 };
 
 
+
 export const WithLabel: Story<RadioProps> = (args) => (
+
     <div>
 
         <FormControlLabel
@@ -51,6 +55,7 @@ WithLabel.args = {
     ...defaultArgs,
     color: 'default',
 };
+
 
 
 export const LabelPlacement: Story<RadioProps> = (args) => (
