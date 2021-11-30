@@ -9,18 +9,23 @@ const jestNodePath = 'node_modules/.bin/jest';
 
 yargs(hideBin(process.argv))
     .command({
+        command: 'all',
+        desc: 'Run all tests (CC)',
+        handler: () => execa(jestNodePath, ['-c', jestConfigFile], { stdio: 'inherit' })
+    })
+    .command({
         command: 'watch',
-        desc: 'Run all tests in watch mode (generates CC)',
+        desc: 'Run all tests in watch mode (CC)',
         handler: () => execa(jestNodePath, ['-c', jestConfigFile, '--watchAll'], { stdio: 'inherit' })
     })
     .command({
         command: 'latest',
-        desc: 'Run only latest changed test files (generates CC)',
+        desc: 'Run only latest changed test files (CC)',
         handler: () => execa(jestNodePath, ['-c', jestConfigFile, '--onlyChanged', '--noStackTrace'], { stdio: 'inherit' })
     })
     .command({
         command: 'file <filename>',
-        desc: 'Test a single file (doesnt collect CC)',
+        desc: "Test a single file (no CC)",
         handler: (arg) => execa(jestNodePath, [arg.filename, '-c', jestConfigFile, '--collectCoverage=false'], { stdio: 'inherit' })
     })
     .command({
