@@ -13,9 +13,7 @@ const FormControlLabel = {
                 color: color.gray.main,
 
                 '&$disabled': {
-
                     color: color.gray.main,
-
                 },
 
             },
