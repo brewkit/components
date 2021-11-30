@@ -12,16 +12,12 @@ import { FormFieldProps } from './FormField.types';
 
 export default {
     component: FormField,
-    parameters: {
-        // componentSubtitle: <Flag color="success">Stable</Flag>,
-    },
     title: 'Forms/FormField',
 };
 
 
 const defaultArgs = {
     disabled: false,
-    disableElevation: true,
     fullWidth: false,
     children: 'I am button text',
 };
@@ -112,20 +108,26 @@ export const Sandbox: Story<FormFieldProps> = (args) => (
                     validation={validation}
                 />
             </Grid>
+            <Grid item sm={3} xs={6}>
+                <FormField
+                    {...args}
+                    label="Radio"
+                    name="radio"
+                    type="radio"
+                    validation={validation}
+                    value="checked"
+                />
+            </Grid>
 
+            <Grid item sm={3} xs={6}>
+                <FormField {...args} label="Switch" name="switch" type="switch" validation={validation} />
+            </Grid>
+
+            <Grid item sm={3} xs={6}>
+                <FormField {...args} label="Checkbox" name="checkbox" type="checkbox" validation={validation} />
+            </Grid>
         </Grid>
 
-        <FormField
-            {...args}
-            helperText="Some help here"
-            label="Radio"
-            name="radio"
-            type="radio"
-            validation={validation}
-            value="checked"
-        />
-        <FormField {...args} label="Switch" name="switch" type="switch" validation={validation} />
-        <FormField {...args} label="Checkbox" name="checkbox" type="checkbox" validation={validation} />
 
         <FormSubmit>Submit</FormSubmit>
 

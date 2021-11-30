@@ -5,7 +5,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { Story } from '@storybook/react';
 
 import Radio from './index';
-import { Props } from './types';
+import { RadioProps } from './Radio.types';
 
 
 export default {
@@ -19,7 +19,6 @@ export default {
 
 const defaultArgs = {
     disabled: false,
-    fullWidth: false,
 };
 
 
