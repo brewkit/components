@@ -5,10 +5,22 @@ declare const OutlinedInput: {
                 '& input': {
                     color: string;
                 };
+                '& input$disabled': {
+                    color: string;
+                };
                 '& $notchedOutline': {
                     borderColor: string;
                 };
                 '&:hover $notchedOutline': {
+                    borderColor: string;
+                };
+                '&$disabled': {
+                    backgroundColor: string;
+                    '& input': {
+                        color: string;
+                    };
+                };
+                '&$disabled $notchedOutline': {
                     borderColor: string;
                 };
             };
