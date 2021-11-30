@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Props as CheckboxProps } from '@components/Checkbox/types';
 import { Props as SwitchProps } from '@components/Switch/types';
-import { Props as RadioProps } from '@components/Radio/types';
+import { RadioProps } from '@components/Radio/Radio.types';
 import { Props as TextFieldProps } from '@components/TextField/types';
 
 
