@@ -8,7 +8,7 @@ const useStyles = makeStyles({
             display: 'flex',
             alignItems: 'center',
         },
-        '& .MuiSvgIcon-root': {
+        '& a > .MuiSvgIcon-root': {
             fontSize: 'inherit',
             marginRight: size.xxsmall,
         },
