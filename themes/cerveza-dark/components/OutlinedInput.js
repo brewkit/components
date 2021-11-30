@@ -11,6 +11,15 @@ var OutlinedInput = {
                 },
                 '&:hover $notchedOutline': {
                     borderColor: color.gray.lighter
+                },
+                '&$disabled': {
+                    backgroundColor: color.blueGray.dark,
+                    '& input': {
+                        color: color.blueGray.light
+                    }
+                },
+                '&$disabled $notchedOutline': {
+                    borderColor: color.blueGray.dark
                 }
             }
         }
