@@ -6,6 +6,9 @@ var OutlinedInput = {
                 '& input': {
                     color: color.gray.lightest
                 },
+                '& input$disabled': {
+                    color: color.gray.darker
+                },
                 '& $notchedOutline': {
                     borderColor: color.gray.main
                 },

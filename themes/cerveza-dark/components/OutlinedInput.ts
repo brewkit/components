@@ -1,4 +1,6 @@
-import {color, size} from '../../cerveza/variables';
+
+
+import { color } from '../../cerveza/variables';
 
 const OutlinedInput = {
 
@@ -43,3 +45,4 @@ const OutlinedInput = {
 
 
 export default OutlinedInput;
+
