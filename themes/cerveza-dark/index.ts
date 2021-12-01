@@ -20,7 +20,6 @@ const CervezaDark = createTheme(_merge(
     OutlinedInput,
     TextField,
     Select,
-    TextField,
     Typography,
 ));
 
