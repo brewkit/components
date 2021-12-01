@@ -2,27 +2,26 @@ declare const OutlinedInput: {
     overrides: {
         MuiOutlinedInput: {
             root: {
-                transition: string;
-                '& fieldset': {
-                    transition: string;
-                    borderWidth: string;
+                '& input': {
+                    color: string;
+                };
+                '& input$disabled': {
+                    color: string;
+                };
+                '& $notchedOutline': {
+                    borderColor: string;
+                };
+                '&:hover $notchedOutline': {
+                    borderColor: string;
                 };
                 '&$disabled': {
-                    opacity: number;
                     backgroundColor: string;
-                    color: string;
+                    '& input': {
+                        color: string;
+                    };
                 };
                 '&$disabled $notchedOutline': {
                     borderColor: string;
-                };
-            };
-            input: {
-                padding: string;
-                '& ~ fieldset': {
-                    top: number;
-                };
-                '& ~ fieldset legend': {
-                    display: string;
                 };
             };
         };

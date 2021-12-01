@@ -36,7 +36,7 @@ var Select = {
         menu: {
             padding: size.xsmall,
             backgroundColor: '#fff',
-            border: "1px solid " + color.brand.primary,
+            border: "1px solid ".concat(color.brand.primary),
             '& ul': {
                 padding: 0
             }
@@ -46,7 +46,7 @@ var Select = {
             transition: 'all 0.3s'
         },
         activeMenuItem: {
-            backgroundColor: color.brand.primary + " !important",
+            backgroundColor: "".concat(color.brand.primary, " !important"),
             color: '#fff'
         }
     }

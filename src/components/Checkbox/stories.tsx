@@ -8,7 +8,7 @@ import { withStyles } from '@material-ui/core/styles';
  * This is an annoying hack to get Storybook to properly parse the documentation when the underlying component
  * is wrapped in a HOC. Expect to do/see this on every component with MUI theming options.
  */
-import { Checkbox as Component } from './index';
+import { Checkbox as Component } from './Checkbox';
 import styles from './styles';
 const Checkbox = withStyles(styles)(Component)
 

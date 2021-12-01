@@ -1,39 +1,22 @@
-
-
 import { color } from '../../cerveza/variables';
-
-
-const Select = {
-
+var Select = {
     overrides: {
-
         MuiSelect: {
-
             select: {
-                color: color.gray.lightest,
+                color: color.gray.lightest
             },
-
             icon: {
-                color: color.gray.lightest,
-            },
-
-        },
-
+                color: color.gray.lightest
+            }
+        }
     },
-
     BkTextField: {
-
         menu: {
-            backgroundColor: color.blueGray.darkest,
+            backgroundColor: color.blueGray.darkest
         },
-
         menuItem: {
             color: color.gray.lightest
-        },
-    },
-
-
+        }
+    }
 };
-
-
 export default Select;

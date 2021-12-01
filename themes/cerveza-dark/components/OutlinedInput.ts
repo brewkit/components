@@ -1,4 +1,6 @@
-import {color, size} from '../../cerveza/variables';
+
+
+import { color } from '../../cerveza/variables';
 
 const OutlinedInput = {
 
@@ -20,6 +22,18 @@ const OutlinedInput = {
                     borderColor: color.gray.lighter,
                 },
 
+                '&$disabled': {
+                    backgroundColor: color.blueGray.dark,
+
+                    '& input': {
+                        color: color.blueGray.light,
+                    },
+                },
+
+                '&$disabled $notchedOutline': {
+                    borderColor: color.blueGray.dark,
+                },
+
             },
 
         },
@@ -31,3 +45,4 @@ const OutlinedInput = {
 
 
 export default OutlinedInput;
+

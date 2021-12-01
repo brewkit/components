@@ -7,7 +7,7 @@ import MenuItem from '@material-ui/core/MenuItem';
  * This is an annoying hack to get Storybook to properly parse the documentation when the underlying component
  * is wrapped in a HOC. Expect to do/see this on every component with MUI theming options.
  */
-import { TextField  } from './index';
+import { TextField  } from './TextField';
 
 
 export default {
