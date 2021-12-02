@@ -1,7 +1,11 @@
+
+
 import * as React from 'react';
-import { select, boolean } from '@storybook/addon-knobs';
-import Switch from '@components/Switch';
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import { Story } from '@storybook/react';
+
+import Switch from './index';
+import { Props } from './types';
 
 
 export default {
@@ -13,78 +17,78 @@ export default {
 };
 
 
-export const Sandbox = (): React.ReactElement => {
-
-    const color = select('color', ['default', 'primary', 'secondary'], 'default');
-    const disabled = boolean('disabled', false);
-
-    return (
-        <Switch
-            color={color}
-            disabled={disabled}
-        />
-    );
-
+const defaultArgs = {
+    disabled: false,
 };
 
 
-export const WithLabel = (): React.ReactElement => {
+export const Sandbox: Story<Props> = (args) => <Switch {...args} />;
 
-    return (
-        <div>
-            <FormControlLabel
-                control={<Switch defaultChecked name="checkedA" color="primary" />}
-                label="Primary"
-            />
-            <FormControlLabel
-                control={<Switch defaultChecked name="checkedA" color="secondary" />}
-                label="Secondary"
-            />
-            <FormControlLabel
-                control={<Switch defaultChecked name="checkedA" color="primary" />}
-                disabled
-                label="Disabled Checked"
-            />
-            <FormControlLabel
-                control={<Switch name="checkedA" />}
-                disabled
-                label="Disabled Unchecked"
-            />
-        </div>
-    );
-
-}
+Sandbox.args = {
+    ...defaultArgs,
+    checked: true,
+    color: 'default',
+};
 
 
-export const LabelPlacement = (): React.ReactElement => {
+export const WithLabel: Story<Props> = (args) => (
+    <div>
 
-    return (
-        <div>
-            <FormControlLabel
-                value="top"
-                control={<Switch />}
-                label="Top"
-                labelPlacement="top"
-            />
-            <FormControlLabel
-                value="start"
-                control={<Switch />}
-                label="Start"
-                labelPlacement="start"
-            />
-            <FormControlLabel
-                value="bottom"
-                control={<Switch />}
-                label="Bottom"
-                labelPlacement="bottom"
-            />
-            <FormControlLabel
-                value="end"
-                control={<Switch />}
-                label="End"
-                labelPlacement="end"
-            />
-        </div>
-    );
+        <FormControlLabel
+            control={<Switch defaultChecked name="WithLabel" {...args} />}
+            label="Example 1"
+        />
 
-}
+        <FormControlLabel
+            control={<Switch name="WithLabel" {...args} />}
+            label="Example 2"
+        />
+
+    </div>
+);
+
+WithLabel.args = {
+    ...defaultArgs,
+    color: 'default',
+};
+
+
+export const LabelPlacement: Story<Props> = (args) => (
+    <div>
+
+        <FormControlLabel
+            value="top"
+            control={<Switch defaultChecked name="LabelPlacement" {...args} />}
+            label="Top"
+            labelPlacement="top"
+        />
+
+        <FormControlLabel
+            value="start"
+            control={<Switch name="LabelPlacement" {...args} />}
+            label="Start"
+            labelPlacement="start"
+        />
+
+        <FormControlLabel
+            value="bottom"
+            control={<Switch name="LabelPlacement" {...args} />}
+            label="Bottom"
+            labelPlacement="bottom"
+        />
+
+        <FormControlLabel
+            value="end"
+            control={<Switch name="LabelPlacement" {...args} />}
+            label="End"
+            labelPlacement="end"
+        />
+
+    </div>
+);
+
+LabelPlacement.args = {
+    ...defaultArgs,
+    color: 'default',
+};
+

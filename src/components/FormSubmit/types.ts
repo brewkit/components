@@ -1,4 +1,4 @@
-import { Props as ButtonProps } from '@components/Button/types';
+import { ButtonProps } from '../Button';
 
 
 export type Props = Omit<ButtonProps, 'classes'>;

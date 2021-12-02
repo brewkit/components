@@ -1,7 +1,5 @@
 import { configure, addDecorator } from '@storybook/react';
 import StylesDecorator from './styles-decorator';
-// import { themes } from '@storybook/theming';
-// import './assets/css/theme.css';
 
 
 addDecorator(StylesDecorator);
@@ -14,7 +12,7 @@ configure(
         require.context('../../src/docs', true, /GettingStarted.stories.mdx/),
         require.context('../../src/docs', true, /Forms.stories.mdx/),
         require.context('../../src/docs', true, /BkOverrides.stories.mdx/),
-        require.context('../../src', true, /stories\.(ts|tsx|mdx)$/),
+        require.context('../../src', true, /(stories|story)\.(ts|tsx|mdx)$/),
     ],
     module
 );

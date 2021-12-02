@@ -22,7 +22,7 @@
         "node": true,
         "jest": true
     },
-    "rules": {
+    "rules": { 
         // ESLINT RULES
         "for-direction": "error",
         "getter-return": "error",
@@ -136,7 +136,8 @@
         "prefer-promise-reject-errors": "error",
         "prefer-regex-literals": "error",
         "radix": "error",
-        "require-await": "error",
+        // `require-await` replaced by TS version
+        "require-await": "off",
         "require-unicode-regexp": "error",
         "vars-on-top": "error",
         "wrap-iife": "error",
@@ -151,8 +152,9 @@
         "no-undef": "error",
         "no-undef-init": "error",
         "no-undefined": "off",
-        "no-unused-vars": "error",
-        "no-use-before-define": "error",
+        // `no-unused-vars` replaced by TS version
+        "no-unused-vars": "off",
+        "no-use-before-define": "off",
         "callback-return": "error",
         "global-require": "error",
         "handle-callback-err": "error",
@@ -182,7 +184,7 @@
         "func-names": "error",
         "func-style": "off",
         "function-call-argument-newline": ["error", "consistent"],
-        "function-paren-newline": "error",
+        "function-paren-newline": "off",
         "id-blacklist": "error",
         "id-length": "error",
         "id-match": "error",
@@ -198,10 +200,10 @@
         "max-depth": "error",
         "max-len": ["warn", 120],
         "max-lines": "error",
-        "max-lines-per-function": ["warn", 100],
+        "max-lines-per-function": "off",
         "max-nested-callbacks": "error",
         "max-params": "error",
-        "max-statements": "error",
+        "max-statements": ["warn", 100],
         "max-statements-per-line": "error",
         "multiline-comment-style": "error",
         "multiline-ternary": "off",

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { text, boolean } from '@storybook/addon-knobs';
-import { withStyles } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
 
 
@@ -8,9 +7,7 @@ import MenuItem from '@material-ui/core/MenuItem';
  * This is an annoying hack to get Storybook to properly parse the documentation when the underlying component
  * is wrapped in a HOC. Expect to do/see this on every component with MUI theming options.
  */
-import { TextField as Component } from './index';
-import styles from './styles';
-const TextField = withStyles(styles)(Component)
+import { TextField  } from './TextField';
 
 
 export default {
