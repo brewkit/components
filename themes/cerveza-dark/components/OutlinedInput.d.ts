@@ -5,9 +5,6 @@ declare const OutlinedInput: {
                 '& input': {
                     color: string;
                 };
-                '& input$disabled': {
-                    color: string;
-                };
                 '& $notchedOutline': {
                     borderColor: string;
                 };
