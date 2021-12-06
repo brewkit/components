@@ -19,7 +19,14 @@ var Checkbox = {
                     borderColor: color.brand.secondary
                 }
             }
-        }
+        },
+        MuiIconButton: {
+            label: {
+                '& div': {
+                    borderWidth: '1px',
+                },
+            },
+        },
     }
 };
 export default Checkbox;
