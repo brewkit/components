@@ -1,6 +1,5 @@
 import * as React from 'react';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import { withStyles } from '@material-ui/core/styles';
 
 
 /**
@@ -8,8 +7,7 @@ import { withStyles } from '@material-ui/core/styles';
  * is wrapped in a HOC. Expect to do/see this on every component with MUI theming options.
  */
 import { Checkbox as Component } from './Checkbox';
-import styles from './styles';
-const Checkbox = withStyles(styles)(Component);
+const Checkbox = (Component);
 
 
 export default {

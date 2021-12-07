@@ -22,7 +22,8 @@ export const Sandbox = (args: any): React.ReactElement => (
         <Button>One</Button>
         <Button>Two</Button>
         <Button>Three</Button>
-    </ButtonGroup>);
+    </ButtonGroup>
+);
 Sandbox.args = {
     ...defaultArgs,
     color: 'primary',
