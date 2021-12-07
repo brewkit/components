@@ -4,6 +4,7 @@ import { color } from './variables';
 import Alert from './components/Alert';
 import AlertTitle from './components/AlertTitle';
 import Badge from './components/Badge';
+import Breadcrumbs from './components/Breadcrumbs';
 import Button from './components/Button';
 import ButtonGroup from './components/ButtonGroup';
 import Checkbox from './components/Checkbox';
@@ -48,5 +49,5 @@ var Cerveza = createTheme(_merge({
             primary: color.gray.dark
         }
     }
-}, Alert, AlertTitle, Badge, Button, ButtonGroup, Checkbox, CircularProgress, FormControlLabel, FormHelperText, InputLabel, OutlinedInput, Radio, Select, Switch, Tab, Tabs, TextField, Tooltip, Typography));
+}, Alert, AlertTitle, Badge, Breadcrumbs, Button, ButtonGroup, Checkbox, CircularProgress, FormControlLabel, FormHelperText, InputLabel, OutlinedInput, Radio, Select, Switch, Tab, Tabs, TextField, Tooltip, Typography));
 export default Cerveza;
