@@ -30,7 +30,8 @@
         "src/components/**/*",
         "src/index.ts",
         "themes/cerveza/index.ts",
-        "themes/cerveza-dark/index.ts"
+        "themes/cerveza-dark/index.ts",
+        ".eslintrc.js"
     ],
     "exclude": [
         "node_modules",
