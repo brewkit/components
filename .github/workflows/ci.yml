@@ -1,0 +1,40 @@
+name: "Test"
+
+on:
+  push:
+    branches: [ next, main ]
+  pull_request:
+    branches: [ next ]
+
+jobs:
+  analyze:
+    name: Test
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+        persist-credentials: false
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+
+    - name: Install Dependencies
+      run: |
+        npm install
+        npm install -g jest
+        npm run install-test-runner
+
+    - name: test
+      run: jest
