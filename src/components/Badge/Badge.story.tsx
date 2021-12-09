@@ -15,19 +15,18 @@ const defaultArgs = {
     showZero: false,
     max: 99,
     badgeContent: '4',
+    anchorOrigin: {
+        vertical: 'top' as "top",
+        horizontal: 'right' as "right",
+    },
+    overlap: 'rectangle' as "rectangle",
+    variant: 'standard' as "standard",
 }
 export const Sandbox: Story<BadgeProps> = (args) => <Badge {...args}><MailIcon /></Badge>;
 
 Sandbox.args = {
     ...defaultArgs,
     color: 'primary',
-    overlap: 'rectangle',
-    variant: 'standard',
-    anchorOrigin: {
-        vertical: 'top',
-        horizontal: 'right',
-    },
-   
 };
 
 
