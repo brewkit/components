@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
-import Badge from './Badge';
 import MailIcon from '@material-ui/icons/Mail';
-import { BadgeProps } from './Badge.types';
+import Badge from '.';
+import { BadgeProps } from '.';
 
 
 export default {
@@ -10,20 +10,23 @@ export default {
     title: 'Data Display/Badge',
 };
 
-
-export const Sandbox: Story<BadgeProps> = (args) => <Badge {...args}><MailIcon /></Badge>;
-Sandbox.args = {
-    color: 'primary',
+const defaultArgs = {
     invisible: false,
-    variant: 'standard',
-    overlap: 'rectangle',
-    badgeContent: '4',
     showZero: false,
     max: 99,
+    badgeContent: '4',
     anchorOrigin: {
-        vertical: 'top',
-        horizontal: 'right',
+        vertical: 'top' as "top",
+        horizontal: 'right' as "right",
     },
+    overlap: 'rectangle' as "rectangle",
+    variant: 'standard' as "standard",
+}
+export const Sandbox: Story<BadgeProps> = (args) => <Badge {...args}><MailIcon /></Badge>;
+
+Sandbox.args = {
+    ...defaultArgs,
+    color: 'primary',
 };
 
 
