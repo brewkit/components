@@ -4,9 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import MuiCheckbox from '@material-ui/core/Checkbox';
 import Check from '@material-ui/icons/Check';
 import Remove from '@material-ui/icons/Remove';
-import { Props } from './types';
-import useStyles from './styles';
-
+import { Props } from './Checkbox.types';
+import useStyles from './Checkbox.styles';
 
 /**
  * Checkboxes allow the user to select one or more items from a set.
@@ -26,80 +25,87 @@ import useStyles from './styles';
  * - `BkCheckbox.checkedControl`: Additional styles applied to the checked control
  * - `BkCheckbox.uncheckedControl`: Additional styles applied to the unchecked control
  */
-export const Checkbox = React.forwardRef(({
-    className,
-    ...otherProps
-}: Props, ref: React.Ref<any>): React.ReactElement => {
 
-    const classes = useStyles();
+export const Checkbox = React.forwardRef(
+    (
+        { className, ...otherProps }: Props,
+        ref: React.Ref<any>,
+    ): React.ReactElement => {
+        const classes = useStyles();
 
-    /**
-     * merge our custom classes into the ones passed to the component
-     */
-    const checkboxClasses = clsx(
-        classes?.root,
-        className,
-    );
+        /**
+         * merge our custom classes into the ones passed to the component
+         */
 
+        const checkboxClasses = clsx(classes?.root, className);
 
-    /**
-     * configure our Framer animation
-     */
-    const fadeAnim = {
-        initial: { opacity: 0 },
-        animate: { opacity: 1 },
-        exit: { opacity: 0 },
-    };
+        /**
+         * configure our Framer animation
+         */
 
+        const fadeAnim = {
+            initial: { opacity: 0 },
+            animate: { opacity: 1 },
+            exit: { opacity: 0 },
+        };
 
-    /**
-     * the control that will be used if checked
-     */
-    const CheckedIcon = (
-        <div className={clsx(classes?.controlBase, classes?.checkedControl)} data-testid='checkedIcon'>
-            <Check component={motion.svg} key="checkedIcon" {...fadeAnim} />
-        </div>
-    );
+        /**
+         * the control that will be used if checked
+         */
 
+        const CheckedIcon = (
+            <div
+                className={clsx(classes?.controlBase, classes?.checkedControl)}
+                data-testid="checkedIcon">
+                <Check component={motion.svg} key="checkedIcon" {...fadeAnim} />
+            </div>
+        );
 
-    /**
-     * the control that will be used if unchecked
-     */
-    const UncheckedIcon = (
-        <div className={clsx(classes?.controlBase, classes?.uncheckedControl)} data-testid='uncheckedIcon'>
-            <motion.div key="icon" {...fadeAnim} />
-        </div>
-    );
+        /**
+         * the control that will be used if unchecked
+         */
 
+        const UncheckedIcon = (
+            <div
+                className={clsx(
+                    classes?.controlBase,
+                    classes?.uncheckedControl,
+                )}
+                data-testid="uncheckedIcon">
+                <motion.div key="icon" {...fadeAnim} />
+            </div>
+        );
 
-    /**
-     * the control that will be used if indeterminate
-     */
-    const IndeterminateIcon = (
-        <div className={clsx(classes?.controlBase, classes?.checkedControl)}>
-            <Remove component={motion.svg} key="indeterminateIcon" {...fadeAnim} />
-        </div>
-    );
+        /**
+         * the control that will be used if indeterminate
+         */
 
+        const IndeterminateIcon = (
+            <div
+                className={clsx(classes?.controlBase, classes?.checkedControl)}>
+                <Remove
+                    component={motion.svg}
+                    key="indeterminateIcon"
+                    {...fadeAnim}
+                />
+            </div>
+        );
 
-    return (
-        <AnimatePresence>
-            <MuiCheckbox
-                checkedIcon={CheckedIcon}
-                className={checkboxClasses}
-                icon={UncheckedIcon}
-                indeterminateIcon={IndeterminateIcon}
-                ref={ref}
-                {...otherProps}
-            />
-        </AnimatePresence>
-    );
-
-
-});
-
+        return (
+            <AnimatePresence>
+                <MuiCheckbox
+                    checkedIcon={CheckedIcon}
+                    className={checkboxClasses}
+                    icon={UncheckedIcon}
+                    indeterminateIcon={IndeterminateIcon}
+                    ref={ref}
+                    {...otherProps}
+                />
+            </AnimatePresence>
+        );
+    },
+);
 
 Checkbox.displayName = 'Checkbox';
-
 
 export default Checkbox;
