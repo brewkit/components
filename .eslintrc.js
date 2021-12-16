@@ -135,16 +135,27 @@ module.exports = {
         'react/forbid-prop-types': 'off',
 
         /*
-         * *
-         * *
+         * * Enforce consistent usage of destructuring assignment of props, state, and context
+         * * https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md
          */
         'react/destructuring-assignment': 'off',
 
         /*
-         * * Enforce consistent usage of destructuring assignment of props, state, and context
-         * * https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md
+         * * Limits every line in JSX to one expression each
+         * * https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-one-expression-per-line.md
          */
         'react/jsx-one-expression-per-line': 'off',
+
+        /*
+         * * Disallow JSX props spreading - custom set to ignore will ignore all custom jsx tags
+         * * https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
+         */
+        'react/jsx-props-no-spreading': [
+            'error',
+            {
+                custom: 'ignore',
+            },
+        ],
 
         /*
          * * ESLint plugin for prettier formatting
