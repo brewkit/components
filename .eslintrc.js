@@ -53,7 +53,6 @@ module.exports = {
 
     rules: {
         // ESLINT RULES
-
         'for-direction': 'error',
         'getter-return': 'error',
         'no-async-promise-executor': 'error',
@@ -166,9 +165,7 @@ module.exports = {
         'prefer-promise-reject-errors': 'error',
         'prefer-regex-literals': 'error',
         radix: 'error',
-
         // `require-await` replaced by TS version
-
         'require-await': 'off',
         'require-unicode-regexp': 'error',
         'vars-on-top': 'error',
@@ -184,9 +181,7 @@ module.exports = {
         'no-undef': 'error',
         'no-undef-init': 'error',
         'no-undefined': 'off',
-
         // `no-unused-vars` replaced by TS version
-
         'no-unused-vars': 'off',
         'no-use-before-define': 'off',
         'callback-return': 'error',
@@ -229,21 +224,7 @@ module.exports = {
         'keyword-spacing': 'error',
         'line-comment-position': 'error',
         'linebreak-style': 'error',
-        'lines-around-comment': [
-            'error',
-            {
-                beforeBlockComment: false,
-                afterBlockComment: true,
-                beforeLineComment: true,
-                afterLineComment: true,
-                allowBlockStart: true,
-                allowBlockEnd: true,
-                allowObjectStart: true,
-                allowObjectEnd: true,
-                allowArrayStart: true,
-                allowArrayEnd: true,
-            },
-        ],
+        'lines-around-comment': 'error',
         'lines-between-class-members': 'error',
         'max-depth': 'error',
         'max-len': ['warn', 120],
@@ -340,7 +321,6 @@ module.exports = {
         'yield-star-spacing': 'error',
 
         // TYPESCRIPT RULES
-
         '@typescript-eslint/adjacent-overload-signatures': 'error',
         '@typescript-eslint/array-type': 'error',
         '@typescript-eslint/await-thenable': 'error',
@@ -356,11 +336,11 @@ module.exports = {
             'error',
             {
                 multiline: {
-                    delimiter: 'semi',
+                    delimiter: 'comma',
                     requireLast: true,
                 },
                 singleline: {
-                    delimiter: 'semi',
+                    delimiter: 'comma',
                     requireLast: true,
                 },
             },
@@ -422,7 +402,6 @@ module.exports = {
         '@typescript-eslint/unified-signatures': 'error',
 
         // REACT RULES
-
         'react/boolean-prop-naming': 'error',
         'react/button-has-type': 'error',
         'react/default-props-match-prop-types': 'error',
