@@ -10,7 +10,7 @@ import { BadgeProps } from './Badge.types';
  * > No differences in Brewkit.
  */
 export const Badge = React.forwardRef(
-    (props: BadgeProps, ref: React.Ref<any>): React.ReactElement => (
+    (props: BadgeProps, ref: React.Ref<HTMLDivElement>): React.ReactElement => (
         <MuiBadge ref={ref} {...props} />
     ),
 );
