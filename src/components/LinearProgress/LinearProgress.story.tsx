@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { select, number } from '@storybook/addon-knobs';
-import LinearProgress from '@components/LinearProgress';
-
+import LinearProgress from '@components/LinearProgress/LinearProgress';
 
 export default {
     component: LinearProgress,
@@ -11,64 +10,51 @@ export default {
     title: 'Feedback/LinearProgress',
 };
 
-
-export const Sandbox = (): React.ReactElement => {
-
-    const color = select('color', ['primary', 'secondary'], 'primary');
-    const variant = select('variant', ['determinate', 'indeterminate', 'buffer', 'query'], 'indeterminate');
-    const value = number('value', 0);
-
-    return (
-        <LinearProgress
-            color={color}
-            variant={variant}
-            value={value}
-        />
-    );
-
+const args = {
+    color: select('color', ['primary', 'secondary'], 'primary'),
+    variant: select(
+        'variant',
+        ['determinate', 'indeterminate', 'buffer', 'query'],
+        'indeterminate',
+    ),
+    value: number('value', 0),
 };
 
+export const Sandbox = (): React.ReactElement => <LinearProgress {...args} />;
 
 export const Indeterminate = (): React.ReactElement => (
     <div style={{ display: 'grid', gridAutoFlow: 'row', gridGap: '1rem' }}>
-
         <LinearProgress />
         <LinearProgress color="primary" />
         <LinearProgress color="secondary" />
-
     </div>
 );
 
-
 export const Determinate = (): React.ReactElement => {
-
     const [completed, setCompleted] = React.useState(0);
 
     React.useEffect(() => {
         function progress() {
-            setCompleted(prevCompleted => (prevCompleted >= 100 ? 0 : prevCompleted + 10));
+            setCompleted((prevCompleted) =>
+                prevCompleted >= 100 ? 0 : prevCompleted + 10,
+            );
         }
         const timer = setInterval(progress, 1000);
-        return () => clearInterval(timer); ;
+        return () => clearInterval(timer);
     }, []);
 
     return (
         <div style={{ display: 'grid', gridAutoFlow: 'row', gridGap: '1rem' }}>
-
-            <LinearProgress variant="determinate" value={25} />
-            <LinearProgress variant="determinate" value={50} />
-            <LinearProgress variant="determinate" value={75} />
-            <LinearProgress variant="determinate" value={100} />
-            <LinearProgress variant="determinate" value={completed} />
-
+            <LinearProgress value={25} variant="determinate" />
+            <LinearProgress value={50} variant="determinate" />
+            <LinearProgress value={75} variant="determinate" />
+            <LinearProgress value={100} variant="determinate" />
+            <LinearProgress value={completed} variant="determinate" />
         </div>
-    )
-
+    );
 };
 
-
 export const Buffer = (): React.ReactElement => {
-
     const [progress, setProgress] = React.useState(0);
     const [buffer, setBuffer] = React.useState(10);
     const progressRef = React.useRef(() => {});
@@ -92,6 +78,11 @@ export const Buffer = (): React.ReactElement => {
         return () => clearInterval(timer);
     }, []);
 
-    return <LinearProgress variant="buffer" value={progress} valueBuffer={buffer} />;
-
+    return (
+        <LinearProgress
+            value={progress}
+            valueBuffer={buffer}
+            variant="buffer"
+        />
+    );
 };

@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import MuiButton from '@material-ui/core/Button';
 
-import CircularProgress from '../CircularProgress';
+import CircularProgress from '../CircularProgress/CircularProgress';
 
 import useStyles from './Button.styles';
 import { ButtonProps } from './Button.types';
