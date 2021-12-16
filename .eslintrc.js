@@ -177,5 +177,14 @@ module.exports = {
                 tsx: 'never',
             },
         ],
+
+        /*
+         * * Forbid the use of extraneous packages
+         * * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-extraneous-dependencies.md
+         */
+        'import/no-extraneous-dependencies': [
+            'error',
+            { devDependencies: true },
+        ],
     },
 };

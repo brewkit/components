@@ -44,6 +44,7 @@
         "@storybook/addon-viewport": "^6.4.8",
         "@storybook/addons": "^6.4.8",
         "@storybook/preset-typescript": "^3.0.0",
+        "@storybook/react": "^6.4.8",
         "@storybook/storybook-deployer": "^2.8.10",
         "@storybook/theming": "^6.4.8",
         "@testing-library/dom": "^8.11.1",
@@ -108,8 +109,7 @@
         "color": "^3.2.1",
         "framer-motion": "^3.10.3",
         "lodash": "^4.17.21",
-        "react-hook-form": "^7.21.0",
-        "@storybook/react": "^6.4.8"
+        "react-hook-form": "^7.21.0"
     },
     "majestic": {
         "jestScriptPath": "node_modules/jest/bin/jest",
