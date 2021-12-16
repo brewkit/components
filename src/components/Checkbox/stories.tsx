@@ -1,13 +1,14 @@
 import * as React from 'react';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
+
 /**
  * This is an annoying hack to get Storybook to properly parse the documentation when the underlying component
  * is wrapped in a HOC. Expect to do/see this on every component with MUI theming options.
  */
-
 import { Checkbox as Component } from './Checkbox';
-const Checkbox = Component;
+const Checkbox = (Component);
+
 
 export default {
     component: Component,
@@ -20,19 +21,13 @@ const defaultArgs = {
     indeterminate: false,
 };
 
-interface ArgsProps {
-    disabled: boolean;
-    checked: boolean;
-    indeterminate: boolean;
-}
 
-export const Sandbox = (args: ArgsProps): React.ReactElement => (
-    <Checkbox {...args} />
-);
+export const Sandbox = (args: any): React.ReactElement => <Checkbox {...args} />;
 Sandbox.args = {
     ...defaultArgs,
     color: 'primary',
 };
+
 
 export const General = (): React.ReactElement => (
     <div>
@@ -40,16 +35,9 @@ export const General = (): React.ReactElement => (
             defaultChecked
             inputProps={{ 'aria-label': 'secondary checkbox' }}
         />
-        <Checkbox
-            color="secondary"
-            inputProps={{ 'aria-label': 'uncontrolled-checkbox' }}
-        />
+        <Checkbox color="secondary" inputProps={{ 'aria-label': 'uncontrolled-checkbox' }} />
         <Checkbox disabled inputProps={{ 'aria-label': 'disabled checkbox' }} />
-        <Checkbox
-            checked
-            disabled
-            inputProps={{ 'aria-label': 'disabled checked checkbox' }}
-        />
+        <Checkbox checked disabled inputProps={{ 'aria-label': 'disabled checked checkbox' }} />
         <Checkbox
             defaultChecked
             indeterminate
@@ -68,6 +56,7 @@ export const General = (): React.ReactElement => (
     </div>
 );
 
+
 export const WithLabel = (): React.ReactElement => (
     <div>
         <FormControlLabel
@@ -75,9 +64,7 @@ export const WithLabel = (): React.ReactElement => (
             label="Primary"
         />
         <FormControlLabel
-            control={
-                <Checkbox color="secondary" defaultChecked name="checkedA" />
-            }
+            control={<Checkbox color="secondary" defaultChecked name="checkedA" />}
             label="Secondary"
         />
         <FormControlLabel
@@ -96,6 +83,7 @@ export const WithLabel = (): React.ReactElement => (
         />
     </div>
 );
+
 
 export const LabelPlacement = (): React.ReactElement => (
     <div>
