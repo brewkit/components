@@ -5,6 +5,12 @@ module.exports = {
         react: {
             version: 'detect',
         },
+        'import/resolver': {
+            node: {
+                moduleDirectory: ['node_modules', './'],
+                extensions: ['.js', '.jsx', '.ts', '.tsx'],
+            },
+        },
     },
 
     parser: '@typescript-eslint/parser',
@@ -34,6 +40,8 @@ module.exports = {
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
         'plugin:react/recommended',
         'plugin:react-hooks/recommended',
+        'plugin:import/typescript',
+        'plugin:jsx-a11y/recommended',
         'airbnb',
         'plugin:prettier/recommended',
     ],
@@ -143,5 +151,20 @@ module.exports = {
          * * https://github.com/prettier/eslint-plugin-prettier
          */
         'prettier/prettier': 'error',
+
+        /*
+         * * Ensure consistent use of file extension within the import path
+         * * https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/extensions.md
+         */
+        'import/extensions': [
+            'error',
+            'ignorePackages',
+            {
+                js: 'never',
+                jsx: 'never',
+                ts: 'never',
+                tsx: 'never',
+            },
+        ],
     },
 };
