@@ -1,0 +1,14 @@
+{
+    "extends": "tsconfig.json",
+    "compilerOptions": {
+        "declaration": true,
+        "module": "CommonJS",
+        "emitDeclarationOnly": false,
+        "declarationMap": false,
+        "outDir": "../../dist/components",
+        "target": "ES5",
+        "strict": true
+    },
+    "include": ["./src/**/*.ts*"],
+    "exclude": ["./src/**/*.spec.js"]
+}

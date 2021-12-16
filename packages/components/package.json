@@ -1,0 +1,24 @@
+{
+    "name": "@brewkit/components",
+    "version": "0.1.3",
+    "description": "A brewkit dev components",
+    "main": "src/index.js",
+    "license": "MIT",
+    "private": false,
+    "dependencies": {
+        "classnames": "^2.3.1",
+        "color": "^4.1.0",
+        "framer-motion": "^5.4.5",
+        "react-hook-form": "^7.21.2"
+    },
+    "gitHead": "0fedfeffea56424d91a19a5d84d541386945594b",
+    "peerDependencies": {
+        "@material-ui/core": "^4.12.3",
+        "@material-ui/icons": "^4.11.2",
+        "@material-ui/lab": "^4.0.0-alpha.60",
+        "@types/react": "^17.0.37",
+        "@types/react-dom": "^17.0.11",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    }
+}

@@ -1,41 +1,34 @@
 {
     "compilerOptions": {
-        "baseUrl": "./src",
+        "baseUrl": ".",
         "paths": {
-            "@components/*": ["components/*"],
-            "@utilities/*": ["utilities/*"]
+            "@brewkit/components": ["packages/components/src"],
+            "@brewkit/components/*": ["packages/components/src/*"],
+            "@brewkit/themes": ["packages/themes/src"],
+            "@docs/components": ["docs/src/components"],
+            "@docs/components/*": ["docs/src/components/*"],
+            "@docs/style": ["docs/src/style/index.ts"],
+            "@docs/style/*": ["docs/src/style/*"]
         },
         "outDir": "./dist",
         "module": "ES2015",
         "moduleResolution": "node",
-        "lib": ["dom", "esnext"],
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
         "jsx": "react",
         "declaration": true,
+        "skipLibCheck": true,
         "esModuleInterop": true,
+        "isolatedModules": true,
+        "resolveJsonModule": true,
         "allowJs": true,
-        "plugins": [
-            {
-                "transform": "@zerollup/ts-transform-paths",
-                "exclude": ["*"]
-            }
-        ],
-        "types": ["webpack-env", "jest", "@testing-library/jest-dom"],
+        "types": ["jest", "@testing-library/jest-dom"],
+        "noEmit": true,
         "removeComments": true,
         "strict": true,
         "noImplicitAny": true,
         "noImplicitThis": true,
         "strictNullChecks": true
     },
-    "include": [
-        "src/components/**/*",
-        "src/index.ts",
-        "themes/cerveza/index.ts",
-        "themes/cerveza-dark/index.ts",
-        ".eslintrc.js"
-    ],
-    "exclude": [
-        "node_modules",
-        "build",
-        "scripts"
-    ]
+    "include": ["packages/*", "docs/*"],
+    "exclude": ["node_modules", "build", "scripts"]
 }

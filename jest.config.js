@@ -8,17 +8,13 @@ const { cwd } = process;
 module.exports = {
     clearMocks: true,
     collectCoverage: true,
-    coverageReporters: [
-        'json',
-        'json-summary',
-        'text'
-    ],
+    coverageReporters: ['json', 'json-summary', 'text'],
     coverageDirectory: 'coverage',
     coveragePathIgnorePatterns: [
         '/node_modules/',
         '/themes/',
         '/dist/',
-        '/.build/'
+        '/.build/',
     ],
     collectCoverageFrom: [
         '<rootDir>/src/components/**/*.tsx',
@@ -27,19 +23,11 @@ module.exports = {
         '!<rootDir>/src/components/**/stories.tsx',
     ],
     errorOnDeprecated: true,
-    moduleFileExtensions: [
-        'js',
-        'ts',
-        'tsx'
-    ],
-    roots: [
-        `<rootDir>/src`
-    ],
-    setupFilesAfterEnv: [
-        '<rootDir>/.build/jest/setupTestEnv.js'
-    ],
+    moduleFileExtensions: ['js', 'ts', 'tsx'],
+    roots: [`<rootDir>/src`],
+    setupFilesAfterEnv: ['<rootDir>/.build/jest/setupTestEnv.js'],
     testEnvironment: 'jsdom',
     transform: {
-        '.(ts)': 'ts-jest'
-    }
-}
+        '.(ts)': 'ts-jest',
+    },
+};
