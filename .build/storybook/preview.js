@@ -4,7 +4,6 @@ import StylesDecorator from './styles-decorator';
 
 addDecorator(StylesDecorator);
 
-
 configure(
     [
         // Ensure we load Intro First
@@ -16,3 +15,10 @@ configure(
     ],
     module
 );
+
+export const parameters = {
+    docs: {
+      // Opt-out of inline rendering
+      inlineStories: true,
+    },
+};

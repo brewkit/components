@@ -1,9 +1,10 @@
 import { Theme } from '@material-ui/core/styles/createTheme';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import { merge as _merge } from 'lodash';
+import { makeStyles } from '@material-ui/core/styles';
 
 
-const styles = (theme: Theme): any => ({
+const useStyles = makeStyles<Theme>((theme): any => ({
 
 
     controlBase: _merge({
@@ -31,7 +32,7 @@ const styles = (theme: Theme): any => ({
     }, theme?.BkCheckbox?.checkedControl),
 
 
-});
+}), { name: 'Checkbox' });
 
 
-export default styles;
+export default useStyles;
