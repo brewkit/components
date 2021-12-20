@@ -1,8 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-
 const useStyles = makeStyles({
-
     root: {
         display: 'inline-block',
         position: 'relative',
@@ -11,8 +9,6 @@ const useStyles = makeStyles({
             opacity: 0.25,
         },
     },
-
 });
-
 
 export default useStyles;
