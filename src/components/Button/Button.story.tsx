@@ -1,5 +1,3 @@
-
-
 import * as React from 'react';
 import { Story } from '@storybook/react';
 import ArrowBack from '@material-ui/icons/ArrowBack';
@@ -10,8 +8,7 @@ import { ButtonProps } from './Button.types';
  * This is an annoying hack to get Storybook to properly parse the documentation when the underlying component
  * is wrapped in a HOC. Expect to do/see this on every component with MUI theming options.
  */
-import Button from '.';
-
+import { Button } from '.';
 
 export default {
     component: Button,
@@ -25,16 +22,18 @@ const defaultArgs = {
     children: 'I am button text',
 };
 
-
-export const Sandbox: Story<ButtonProps> = (args) => <Button {...args} />;
+export const Sandbox: Story<ButtonProps> = function sandbox(args) {
+    return <Button {...args} />;
+};
 
 Sandbox.args = {
     ...defaultArgs,
     color: 'primary',
 };
 
-
-export const General: Story<ButtonProps> = (args) => <Button {...args} />;
+export const General: Story<ButtonProps> = function storyGeneral(args) {
+    return <Button {...args} />;
+};
 
 General.args = {
     ...defaultArgs,
@@ -42,8 +41,11 @@ General.args = {
     variant: 'text',
 };
 
-
-export const WithStartIcon: Story<ButtonProps> = (args) => <Button {...args} />;
+export const WithStartIcon: Story<ButtonProps> = function storyWithStartIcon(
+    args,
+) {
+    return <Button {...args} />;
+};
 
 WithStartIcon.args = {
     ...defaultArgs,
@@ -51,8 +53,9 @@ WithStartIcon.args = {
     startIcon: <ArrowBack />,
 };
 
-
-export const WithEndIcon: Story<ButtonProps> = (args) => <Button {...args} />;
+export const WithEndIcon: Story<ButtonProps> = function storyWithEndIcon(args) {
+    return <Button {...args} />;
+};
 
 WithEndIcon.args = {
     ...defaultArgs,
@@ -60,8 +63,9 @@ WithEndIcon.args = {
     endIcon: <AddCircleOutline />,
 };
 
-
-export const OnlyIcon: Story<ButtonProps> = (args) => <Button {...args} />;
+export const OnlyIcon: Story<ButtonProps> = function storyOnlyIcon(args) {
+    return <Button {...args} />;
+};
 
 OnlyIcon.args = {
     ...defaultArgs,
@@ -69,8 +73,9 @@ OnlyIcon.args = {
     children: <AddCircleOutline />,
 };
 
-
-export const Disabled: Story<ButtonProps> = (args) => <Button {...args} />;
+export const Disabled: Story<ButtonProps> = function storyDisabled(args) {
+    return <Button {...args} />;
+};
 
 Disabled.args = {
     ...defaultArgs,
@@ -78,8 +83,9 @@ Disabled.args = {
     disabled: true,
 };
 
-
-export const Loading: Story<ButtonProps> = (args) => <Button {...args} />;
+export const Loading: Story<ButtonProps> = function storyLoading(args) {
+    return <Button {...args} />;
+};
 
 Loading.args = {
     ...defaultArgs,
@@ -87,4 +93,3 @@ Loading.args = {
     disabled: true,
     loading: true,
 };
-

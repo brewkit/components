@@ -43,6 +43,7 @@ module.exports = {
         'plugin:import/typescript',
         'plugin:jsx-a11y/recommended',
         'airbnb',
+        'airbnb-typescript',
         'plugin:prettier/recommended',
     ],
 
