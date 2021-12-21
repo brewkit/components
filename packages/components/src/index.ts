@@ -1,3 +1,5 @@
+export { default as createCervezaTheme } from './styles/createCervezaTheme';
+
 export { default as Alert } from './Alert';
 export * from './Alert';
 

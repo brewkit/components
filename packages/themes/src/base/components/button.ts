@@ -12,10 +12,6 @@ export const buttonProps: ButtonProps = {
 export default function buttonOverrides(type: PaletteType) {
     return {
         root: {
-            fontSize: size.normal,
-            padding: `${size.normal} ${size.large}`,
-            minWidth: '150px',
-
             '&$contained': {
                 borderWidth: '2px',
                 borderStyle: 'solid',

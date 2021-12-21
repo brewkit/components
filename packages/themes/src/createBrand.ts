@@ -3,6 +3,26 @@ import { getComponentDefaultProps, getComponentOverrides } from './base';
 import cervezaPalette from './palette';
 import { size } from './variables';
 
+export interface GapSizes {
+    xlarge: string;
+    large: string;
+    normal: string;
+    small: string;
+    xsmall: string;
+    xxsmall: string;
+    xxlarge: string;
+}
+
+declare module '@material-ui/core/styles/createTheme' {
+    interface Theme {
+        gaps: GapSizes;
+    }
+
+    interface ThemeOptions {
+        gaps: GapSizes;
+    }
+}
+
 export default function createBrand(type: PaletteType): Theme {
     const c = (darkColor: string, lightColor: string) =>
         type === 'dark' ? darkColor : lightColor;
@@ -10,6 +30,15 @@ export default function createBrand(type: PaletteType): Theme {
     const theme = createTheme({
         overrides: getComponentOverrides(type),
         props: getComponentDefaultProps(),
+        gaps: {
+            xxsmall: '0.25rem',
+            xsmall: '0.5rem',
+            small: '0.75rem',
+            normal: '1rem',
+            large: '1.25rem',
+            xlarge: '1.5rem',
+            xxlarge: '2rem',
+        },
         palette: {
             type,
             primary: { main: cervezaPalette.primary },
