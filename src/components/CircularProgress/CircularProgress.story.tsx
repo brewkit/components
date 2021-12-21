@@ -1,53 +1,58 @@
+
 import * as React from 'react';
-import { text, select, boolean, number } from '@storybook/addon-knobs';
-import CircularProgress from '@components/CircularProgress/CircularProgress';
+import { Story } from '@storybook/react';
+
+import CircularProgress from './CircularProgress';
+import { Props as CircularProgressProps } from './CircularProgress.types';
 
 export default {
     component: CircularProgress,
-    parameters: {
-        // componentSubtitle: <Flag color="success">Stable</Flag>,
-    },
     title: 'Feedback/CircularProgress',
 };
 
-const args = {
-    color: select('color', ['primary', 'secondary', 'inherit'], 'primary'),
-    variant: select(
-        'variant',
-        ['determinate', 'indeterminate', 'static'],
-        'indeterminate',
-    ),
-    disableShrink: boolean('disableShrink', false),
-    layered: boolean('layered', true),
-    size: text('size', '2rem'),
-    thickness: number('thickness', 4),
-    value: number('value', 0),
+const defaultArgs = {
+    disableShrink: false,
+    layered: false,
+    size: '2rem',
+    thickness: 4,
+    value: 0,
 };
 
-export const Sandbox = (): React.ReactElement => <CircularProgress {...args} />;
+export const Sandbox: Story<CircularProgressProps> = (args) => (
+    <CircularProgress {...args} />
+);
 
-export const Indeterminate = (): React.ReactElement => (
+Sandbox.args = {
+    ...defaultArgs,
+    color: 'primary',
+    variant: 'indeterminate',
+};
+
+export const Indeterminate: Story<CircularProgressProps> = (args) => (
     <div style={{ display: 'grid', gridAutoFlow: 'column', gridGap: '1rem' }}>
-        <CircularProgress layered={false} />
-        <CircularProgress color="primary" layered={false} />
-        <CircularProgress color="secondary" layered={false} />
-        <CircularProgress color="inherit" layered={false} />
+        <CircularProgress {...args} />
+        <CircularProgress {...args} color="primary" />
+        <CircularProgress {...args} color="secondary" />
+        <CircularProgress {...args} color="inherit" />
     </div>
 );
 
-export const Determinate = (): React.ReactElement => {
+Indeterminate.args = {
+    ...defaultArgs,
+    variant: 'indeterminate',
+};
+
+export const Determinate: Story<CircularProgressProps> = (args) => {
     const [completed, setCompleted] = React.useState(0);
 
     React.useEffect(() => {
-        function progress() {
-            setCompleted((prevCompleted) =>
-                prevCompleted >= 100 ? 0 : prevCompleted + 10,
-            );
-        }
+        const progress = (): void => {
+            setCompleted((prevCompleted) => prevCompleted >= 100 ? 0 : prevCompleted + 10);
+        };
 
         const timer = setInterval(progress, 1000);
 
-        return () => {
+        return (): void => {
             clearInterval(timer);
         };
     }, []);
@@ -59,20 +64,32 @@ export const Determinate = (): React.ReactElement => {
                 gridAutoFlow: 'column',
                 gridGap: '1rem',
             }}>
-            <CircularProgress value={25} variant="static" />
-            <CircularProgress value={50} variant="static" />
-            <CircularProgress value={75} variant="static" />
-            <CircularProgress value={100} variant="static" />
-            <CircularProgress value={completed} variant="static" />
+            <CircularProgress {...args} value={25} variant="determinate" />
+            <CircularProgress {...args} value={50} variant="determinate" />
+            <CircularProgress {...args} value={75} variant="determinate" />
+            <CircularProgress {...args} value={100} variant="determinate" />
+            <CircularProgress
+                {...args}
+                value={completed}
+                variant="determinate"
+            />
         </div>
     );
 };
 
-export const Layered = (): React.ReactElement => (
+Determinate.args = {
+    ...defaultArgs,
+};
+
+export const Layered: Story<CircularProgressProps> = (args) => (
     <div style={{ display: 'grid', gridAutoFlow: 'column', gridGap: '1rem' }}>
-        <CircularProgress layered />
-        <CircularProgress color="primary" layered />
-        <CircularProgress color="secondary" layered />
-        <CircularProgress color="inherit" layered />
+        <CircularProgress {...args} layered />
+        <CircularProgress {...args} color="primary" layered />
+        <CircularProgress {...args} color="secondary" layered />
+        <CircularProgress {...args} color="inherit" layered />
     </div>
 );
+
+Layered.args = {
+    ...defaultArgs,
+};

@@ -1,66 +1,80 @@
+
 import * as React from 'react';
-import { select, number } from '@storybook/addon-knobs';
-import LinearProgress from '@components/LinearProgress/LinearProgress';
+import { Story } from '@storybook/react';
+import LinearProgress from './LinearProgress';
+import { Props as LinearProgressProps } from './LinearProgress.types';
 
 export default {
     component: LinearProgress,
-    parameters: {
-        // componentSubtitle: <Flag color="success">Stable</Flag>,
-    },
     title: 'Feedback/LinearProgress',
 };
 
-const args = {
-    color: select('color', ['primary', 'secondary'], 'primary'),
-    variant: select(
-        'variant',
-        ['determinate', 'indeterminate', 'buffer', 'query'],
-        'indeterminate',
-    ),
-    value: number('value', 0),
+const defaultArgs = {
+    value: 0,
 };
 
-export const Sandbox = (): React.ReactElement => <LinearProgress {...args} />;
+export const Sandbox: Story<LinearProgressProps> = (args) => (
+    <LinearProgress {...args} />
+);
 
-export const Indeterminate = (): React.ReactElement => (
+Sandbox.args = {
+    ...defaultArgs,
+    color: 'primary',
+    variant: 'indeterminate',
+};
+
+export const Indeterminate: Story<LinearProgressProps> = (args) => (
     <div style={{ display: 'grid', gridAutoFlow: 'row', gridGap: '1rem' }}>
-        <LinearProgress />
-        <LinearProgress color="primary" />
-        <LinearProgress color="secondary" />
+        <LinearProgress {...args} />
+        <LinearProgress {...args} color="primary" />
+        <LinearProgress {...args} color="secondary" />
     </div>
 );
 
-export const Determinate = (): React.ReactElement => {
+Indeterminate.args = {
+    ...defaultArgs,
+    variant: 'indeterminate',
+};
+
+export const Determinate: Story<LinearProgressProps> = (args) => {
     const [completed, setCompleted] = React.useState(0);
 
     React.useEffect(() => {
-        function progress() {
-            setCompleted((prevCompleted) =>
-                prevCompleted >= 100 ? 0 : prevCompleted + 10,
-            );
-        }
+        const progress = (): void => {
+            setCompleted((prevCompleted) => prevCompleted >= 100 ? 0 : prevCompleted + 10);
+        };
+
         const timer = setInterval(progress, 1000);
-        return () => clearInterval(timer);
+
+        return (): void => {
+            clearInterval(timer);
+        };
     }, []);
 
     return (
         <div style={{ display: 'grid', gridAutoFlow: 'row', gridGap: '1rem' }}>
-            <LinearProgress value={25} variant="determinate" />
-            <LinearProgress value={50} variant="determinate" />
-            <LinearProgress value={75} variant="determinate" />
-            <LinearProgress value={100} variant="determinate" />
-            <LinearProgress value={completed} variant="determinate" />
+            <LinearProgress {...args} value={25} variant="determinate" />
+            <LinearProgress {...args} value={50} variant="determinate" />
+            <LinearProgress {...args} value={75} variant="determinate" />
+            <LinearProgress {...args} value={100} variant="determinate" />
+            <LinearProgress {...args} value={completed} variant="determinate" />
         </div>
     );
 };
 
-export const Buffer = (): React.ReactElement => {
+Determinate.args = {
+    ...defaultArgs,
+};
+
+export const Buffer: Story<LinearProgressProps> = (args) => {
     const [progress, setProgress] = React.useState(0);
     const [buffer, setBuffer] = React.useState(10);
-    const progressRef = React.useRef(() => {});
+    const progressRef = React.useRef(() => {
+        // nothing to see here
+    });
 
     React.useEffect(() => {
-        progressRef.current = () => {
+        progressRef.current = (): void => {
             if (progress > 100) {
                 setProgress(0);
                 setBuffer(10);
@@ -75,11 +89,12 @@ export const Buffer = (): React.ReactElement => {
 
     React.useEffect(() => {
         const timer = setInterval(() => progressRef.current(), 500);
-        return () => clearInterval(timer);
+        return (): void => clearInterval(timer);
     }, []);
 
     return (
         <LinearProgress
+            {...args}
             value={progress}
             valueBuffer={buffer}
             variant="buffer"
