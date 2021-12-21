@@ -8,24 +8,27 @@ import {
     ThemeProvider,
     CssBaseline,
 } from '@material-ui/core';
-import { useBrandTheme, UserThemeContext } from '@docs/style';
+import { useGlobalCss, UserThemeContext } from '@docs/style';
+import { createBrand } from '@brewkit/themes';
 
 const DocsRoot: NextPage<AppProps> = ({ Component, pageProps }: AppProps) => {
     const isDarkDefault = useMediaQuery('(prefers-color-scheme: dark)');
     const [themeType, setThemeType] = React.useState<PaletteType>(
-        isDarkDefault ? 'dark' : 'light',
+        isDarkDefault ? 'light' : 'dark',
     );
 
     const onUpdate = () => {
         setThemeType(themeType === 'dark' ? 'light' : 'dark');
     };
 
-    const theme = useBrandTheme(themeType);
+    const theme = createBrand(themeType);
+
+    useGlobalCss();
 
     return (
         <ClientOnly>
             <CssBaseline />
-            <UserThemeContext.Provider value={{ onUpdate, themeType }}>
+            <UserThemeContext.Provider value={{ onUpdate }}>
                 <ThemeProvider theme={theme}>
                     <Component {...pageProps} />
                 </ThemeProvider>

@@ -1,22 +1,16 @@
-import { Theme } from '@material-ui/core';
+import { PaletteType, Theme } from '@material-ui/core';
+import { TextFieldProps } from 'material-ui';
 
-const textField: Partial<Theme> = {
-  props: {
-    MuiTextField: {
-      variant: 'outlined',
-      fullWidth: true,
-    },
-  },
-
-  overrides: {
-    MuiTextField: {
-      root: {
-        '& label': {
-          transform: 'translate(18px, 18px) scale(1)',
-        },
-      },
-    },
-  },
+export const textFieldProps = {
+    fullWidth: true,
 };
 
-export default textField;
+export default function textFieldOverrides(type: PaletteType) {
+    return {
+        root: {
+            '& label': {
+                transform: 'translate(18px, 18px) scale(1)',
+            },
+        },
+    };
+}

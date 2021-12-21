@@ -1,31 +1,21 @@
-import { Theme } from '@material-ui/core';
+import { PaletteType, Theme } from '@material-ui/core';
 import { color, size } from '../../variables';
 
-const inputLabel: Partial<Theme> = {
-  props: {
-    MuiInputLabel: {
-      shrink: true,
-    },
-  },
+export default function inputLabelOverrides(type: PaletteType) {
+    return {
+        root: {
+            '&$outlined$shrink': {
+                color: color.blueGray.dark,
+                position: 'relative',
+                transform: 'translate(0, 0) scale(1)',
+                padding: `0 0 ${size.xsmall}`,
+                fontSize: size.small,
+                textTransform: 'uppercase',
+            },
 
-  overrides: {
-    MuiInputLabel: {
-      root: {
-        '&$outlined$shrink': {
-          color: color.blueGray.dark,
-          position: 'relative',
-          transform: 'translate(0, 0) scale(1)',
-          padding: `0 0 ${size.xsmall}`,
-          fontSize: size.small,
-          textTransform: 'uppercase',
+            '&$outlined$shrink$error': {
+                color: color.accent.error,
+            },
         },
-
-        '&$outlined$shrink$error': {
-          color: color.accent.error,
-        },
-      },
-    },
-  },
-};
-
-export default inputLabel;
+    };
+}

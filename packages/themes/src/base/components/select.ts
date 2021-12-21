@@ -1,65 +1,55 @@
-import { Theme } from '@material-ui/core';
+import { PaletteType, Theme } from '@material-ui/core';
 import { color, size } from '../../variables';
 
-const select: Partial<Theme> = {
-  props: {
-    MuiSelect: {
-      MenuProps: {},
-    },
-  },
+export default function selectOverrides(type: PaletteType) {
+    return {
+        root: {
+            '&$select': {
+                transition: 'all 0.3s',
+            },
 
-  overrides: {
-    MuiSelect: {
-      root: {
-        '&$select': {
-          transition: 'all 0.3s',
+            '&$select:focus': {
+                background: color.brand.primary,
+                color: '#fff',
+                borderRadius: '4px',
+            },
+
+            '&:focus ~ svg': {
+                color: '#fff',
+            },
+
+            '&$select option': {
+                color: color.gray.dark,
+                padding: size.small,
+            },
+
+            '& label': {
+                transform: 'translate(18px, 18px) scale(1)',
+            },
         },
 
-        '&$select:focus': {
-          background: color.brand.primary,
-          color: '#fff',
-          borderRadius: '4px',
+        iconOpen: {
+            color: '#fff',
         },
+    };
+}
 
-        '&:focus ~ svg': {
-          color: '#fff',
-        },
-
-        '&$select option': {
-          color: color.gray.dark,
-          padding: size.small,
-        },
-
-        '& label': {
-          transform: 'translate(18px, 18px) scale(1)',
-        },
-      },
-
-      iconOpen: {
-        color: '#fff',
-      },
-    },
-  },
-
-  BkTextField: {
+export const selectBkClasses = {
     menu: {
-      padding: size.xsmall,
-      backgroundColor: '#fff',
-      border: `1px solid ${color.brand.primary}`,
+        padding: size.xsmall,
+        backgroundColor: '#fff',
+        border: `1px solid ${color.brand.primary}`,
 
-      '& ul': {
-        padding: 0,
-      },
+        '& ul': {
+            padding: 0,
+        },
     },
     menuItem: {
-      padding: size.small,
-      transition: 'all 0.3s',
+        padding: size.small,
+        transition: 'all 0.3s',
     },
     activeMenuItem: {
-      backgroundColor: `${color.brand.primary} !important`,
-      color: '#fff',
+        backgroundColor: `${color.brand.primary} !important`,
+        color: '#fff',
     },
-  },
 };
-
-export default select;

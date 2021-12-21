@@ -71,3 +71,36 @@ export const typographyVariants = {
     body1: { fontSize: size.normal },
     caption: { fontSize: size.small },
 };
+
+export const themeColors = {
+    common: {
+        white: '#fff',
+        black: '#000',
+    },
+
+    background: {
+        main: {
+            dark: '#002130',
+            light: '#fff',
+        },
+
+        paper: {
+            dark: '#37474f',
+            light: '#ECEFF1',
+        },
+    },
+
+    accent: {
+        success: '#4caf50',
+        info: '#03a9f4',
+        warning: '#ffa000',
+        error: '#dd2c00',
+        shared: '#7e57c2',
+    },
+
+    brand: {
+        primary: '#03a9f4',
+        secondary: '#dd2c00',
+        tertiary: '#cfd8dc',
+    },
+};

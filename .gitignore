@@ -29,3 +29,5 @@ coverage
 
 # dist files (automatically handled in Github)
 dist
+
+docs/.next/**

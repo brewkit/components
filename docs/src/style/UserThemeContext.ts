@@ -3,7 +3,7 @@ import React from 'react';
 
 interface UserThemeContextProps {
     onUpdate?: () => void;
-    themeType: PaletteType;
+    themeType?: PaletteType;
 }
 
 const UserThemeContext = React.createContext<UserThemeContextProps | null>(

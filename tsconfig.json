@@ -5,6 +5,7 @@
             "@brewkit/components": ["packages/components/src"],
             "@brewkit/components/*": ["packages/components/src/*"],
             "@brewkit/themes": ["packages/themes/src"],
+            "@brewkit/themes/*": ["packages/themes/src/*"],
             "@docs/components": ["docs/src/components"],
             "@docs/components/*": ["docs/src/components/*"],
             "@docs/style": ["docs/src/style/index.ts"],

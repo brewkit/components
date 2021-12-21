@@ -1,65 +1,28 @@
-import { Theme } from '@material-ui/core';
-import { color, size } from '../../variables';
+import {
+    ButtonGroupClassKey,
+    ButtonGroupProps,
+    PaletteType,
+    Theme,
+} from '@material-ui/core';
+import cervezaPalette from '../../palette';
+import { size } from '../../variables';
 
-const buttonGroup: Partial<Theme> = {
-  props: {
-    MuiButtonGroup: {
-      color: 'primary',
-      variant: 'contained',
-      disableElevation: true,
-      size: 'small',
-    },
-  },
-
-  overrides: {
-    MuiButtonGroup: {
-      /**
-       * general root styles
-       * some styles are nested in here to increase specificity
-       */
-      root: {
-        '& $groupedContained': {
-          fontSize: size.small,
-          padding: `${size.small} ${size.xsmall}`,
+export default function buttonGroupOverrides(type: PaletteType) {
+    return {
+        groupedContained: {
+            fontSize: size.small,
+            padding: `${size.small} ${size.xsmall}`,
+            backgroundColor:
+                type === 'dark'
+                    ? cervezaPalette.background.paper.dark
+                    : cervezaPalette.background.paper.light,
         },
-      },
+    };
+}
 
-      groupedContained: {
-        backgroundColor: color.blueGray.lighter,
-      },
-
-      groupedContainedHorizontal: {
-        '&:not(:last-child)': {
-          borderWidth: 0,
-          marginRight: '1px',
-        },
-      },
-
-      groupedContainedVertical: {
-        '&:not(:last-child)': {
-          borderWidth: 0,
-          borderBottom: 'none',
-          marginBottom: '1px',
-        },
-      },
-
-      groupedContainedPrimary: {
-        color: color.brand.primary,
-        '&:hover': {
-          backgroundColor: color.brand.primary,
-          color: color.gray.lightest,
-        },
-      },
-
-      groupedContainedSecondary: {
-        color: color.brand.secondary,
-        '&:hover': {
-          backgroundColor: color.brand.secondary,
-          color: color.gray.lightest,
-        },
-      },
-    },
-  },
+export const buttonGroupProps: ButtonGroupProps = {
+    color: 'primary',
+    variant: 'contained',
+    disableElevation: true,
+    size: 'small',
 };
-
-export default buttonGroup;

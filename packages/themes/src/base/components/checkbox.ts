@@ -1,30 +1,42 @@
-import { Theme } from '@material-ui/core';
-import { color } from '../../variables';
+import { PaletteType, Theme } from '@material-ui/core';
+import cervezaPalette from '../../palette';
 
-const checkbox: Partial<Theme> = {
-  props: {
-    MuiCheckbox: {
-      color: 'primary',
-    },
-  },
+declare module '@material-ui/core/styles/createTheme' {
+    interface Theme {
+        BkCheckbox: {
+            controlBase: React.CSSProperties;
+            uncheckedControl: React.CSSProperties;
+            checkedControl: React.CSSProperties;
+        };
+    }
+    // allow configuration using `createTheme`
+    interface ThemeOptions {
+        BkCheckbox?: {
+            controlBase?: React.CSSProperties;
+            uncheckedControl?: React.CSSProperties;
+            checkedControl?: React.CSSProperties;
+        };
+    }
+}
 
-  overrides: {
-    MuiCheckbox: {
-      root: {
-        '&$disabled div, &$disabled div': {
-          backgroundColor: color.blueGray.light,
-          borderColor: color.blueGray.light,
+export default function checkboxOverrides(type: PaletteType) {
+    return {
+        root: {
+            '&$disabled div, &$disabled div': {
+                backgroundColor: cervezaPalette.primary,
+                borderColor: cervezaPalette.primary,
+            },
         },
-      },
 
-      colorSecondary: {
-        '&$checked div': {
-          backgroundColor: color.brand.secondary,
-          borderColor: color.brand.secondary,
+        colorSecondary: {
+            '&$checked div': {
+                backgroundColor: cervezaPalette.secondary,
+                borderColor: cervezaPalette.secondary,
+            },
         },
-      },
-    },
-  },
+    };
+}
+
+export const checkboxProps = {
+    color: 'primary',
 };
-
-export default checkbox;

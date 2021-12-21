@@ -1,25 +1,20 @@
-import { Theme } from '@material-ui/core';
+import { PaletteType } from '@material-ui/core';
 import { size, color } from '../../variables';
 
-const formHelperText: Partial<Theme> = {
-  overrides: {
-    MuiFormHelperText: {
-      root: {
-        fontSize: size.small,
-        fontWeight: 'normal',
+export default function formHelperTextOverrides(type: PaletteType) {
+    return {
+        root: {
+            fontSize: size.small,
 
-        '&$disabled': {
-          color: color.blueGray.main,
-          opacity: 1,
+            '&$disabled': {
+                color: color.blueGray.main,
+                opacity: 1,
+            },
         },
-      },
 
-      contained: {
-        marginTop: size.xxsmall,
-        marginLeft: '0 !important',
-      },
-    },
-  },
-};
-
-export default formHelperText;
+        contained: {
+            marginTop: size.xxsmall,
+            marginLeft: '0 !important',
+        },
+    };
+}

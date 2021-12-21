@@ -1,25 +1,17 @@
-import { Theme } from '@material-ui/core';
+import { PaletteType, Theme } from '@material-ui/core';
+import { TabsProps } from 'material-ui';
 import { color, size } from '../../variables';
 
-const tabs: Partial<Theme> = {
-  props: {
-    MuiTabs: {
-      indicatorColor: 'primary',
-      textColor: 'primary',
-    },
-  },
+export default function tabsOverrides(type: PaletteType) {
+    return {
+        root: {
+            borderBottom: '2px solid ' + color.brand.tertiary,
+        },
 
-  overrides: {
-    MuiTabs: {
-      root: {
-        borderBottom: '2px solid ' + color.brand.tertiary,
-      },
+        indicator: {
+            height: size.xxsmall,
+        },
+    };
+}
 
-      indicator: {
-        height: size.xxsmall,
-      },
-    },
-  },
-};
-
-export default tabs;
+export const tabsProps: TabsProps = {};

@@ -1,21 +1,17 @@
-import { Theme } from '@material-ui/core';
+import { PaletteType, Theme } from '@material-ui/core';
 import { size, color } from '../../variables';
 
-const formControlLabel: Partial<Theme> = {
-  overrides: {
-    MuiFormControlLabel: {
-      root: {
-        marginLeft: `-${size.xsmall}`,
-        marginTop: `-${size.xsmall}`,
-      },
+export default function formControlLabelOverrides(type: PaletteType) {
+    return {
+        root: {
+            marginLeft: `-${size.xsmall}`,
+            marginTop: `-${size.xsmall}`,
+        },
 
-      label: {
-        fontSize: size.normal,
-        fontWeight: 'normal',
-        color: color.blueGray.dark,
-      },
-    },
-  },
-};
-
-export default formControlLabel;
+        label: {
+            fontSize: size.normal,
+            fontWeight: 'normal',
+            color: color.blueGray.dark,
+        },
+    };
+}

@@ -1,89 +1,60 @@
-import { Theme } from '@material-ui/core';
-import { Palette, PaletteColor } from '@material-ui/core/styles/createPalette';
-import { merge } from 'lodash';
-import { color } from '../variables';
-import alert from './components/alert';
-import alertTitle from './components/alertTitle';
-import badge from './components/badge';
-import button from './components/button';
-import buttonGroup from './components/buttonGroup';
-import checkbox from './components/checkbox';
-import circularProgress from './components/circularProgress';
-import formControlLabel from './components/formControlLabel';
-import formHelperText from './components/formHelperText';
-import inputLabel from './components/inputLabel';
-import outlinedInput from './components/outlinedInput';
-import radio from './components/radio';
-import select from './components/select';
-import _switch from './components/switch';
-import tab from './components/tab';
-import tabs from './components/tabs';
-import textField from './components/textField';
-import tooltip from './components/tooltip';
-import typography from './components/typography';
+import { PaletteType } from '@material-ui/core';
+import { ComponentsProps } from '@material-ui/core/styles/props';
+import { Overrides } from '@material-ui/core/styles/overrides';
 
-const basePalette: { palette: Partial<Palette> } = {
-  palette: {
-    primary: {
-      light: color.blue.light,
-      main: color.brand.primary,
-      dark: color.blue.dark,
-      contrastText: color.common.white,
-    },
-    secondary: {
-      light: color.orange.light,
-      main: color.brand.secondary,
-      dark: color.orange.dark,
-      contrastText: color.common.white,
-    },
-    success: {
-      light: color.accent.success,
-      main: color.accent.success,
-      dark: color.accent.success,
-      contrastText: color.accent.success,
-    },
-    warning: {
-      light: color.accent.warning,
-      main: color.accent.warning,
-      dark: color.accent.warning,
-      contrastText: color.accent.warning,
-    },
-    info: {
-      light: color.accent.info,
-      main: color.accent.info,
-      dark: color.accent.info,
-      contrastText: color.accent.info,
-    },
-    error: {
-      light: color.accent.error,
-      main: color.accent.error,
-      dark: color.accent.error,
-      contrastText: color.accent.error,
-    },
-  },
-};
+import buttonOverrides, { buttonProps } from './components/button';
+import buttonGroupOverrides, {
+    buttonGroupProps,
+} from './components/buttonGroup';
+import badgeOverrides from './components/badge';
+import inputLabelOverrides from './components/inputLabel';
+import checkboxOverrides, { checkboxProps } from './components/checkbox';
+import formControlLabelOverrides from './components/formControlLabel';
+import formHelperTextOverrides from './components/formHelperText';
+import outlinedInputOverrides from './components/outlinedInput';
+import paperOverrides from './components/paper';
+import radioOverrides from './components/radio';
+import selectOverrides from './components/select';
+import switchOverrides from './components/switch';
+import tabOverrides from './components/tab';
+import tabsOverrides, { tabsProps } from './components/tabs';
+import textFieldOverrides, { textFieldProps } from './components/textField';
+import tooltipOverrides, { tooltipProps } from './components/tooltip';
 
-const baseTheme: Theme = merge(
-  basePalette,
-  alert,
-  alertTitle,
-  badge,
-  button,
-  buttonGroup,
-  checkbox,
-  circularProgress,
-  formControlLabel,
-  formHelperText,
-  inputLabel,
-  outlinedInput,
-  radio,
-  select,
-  _switch,
-  tab,
-  tabs,
-  textField,
-  tooltip,
-  typography
-);
+/**
+ * Material UI class overrides
+ */
+export function getComponentOverrides(type: PaletteType): Overrides {
+    return {
+        MuiButton: buttonOverrides(type),
+        MuiButtonGroup: buttonGroupOverrides(type),
+        MuiBadge: badgeOverrides(type),
+        MuiCheckbox: checkboxOverrides(type),
+        MuiFormControl: formControlLabelOverrides(type),
+        MuiFormHelperText: formHelperTextOverrides(type),
+        MuiInputLabel: inputLabelOverrides(type),
+        MuiOutlinedInput: outlinedInputOverrides(type),
+        MuiPaper: paperOverrides(type),
+        MuiRadio: radioOverrides(type),
+        MuiSelect: selectOverrides(type),
+        MuiSwitch: switchOverrides(type),
+        MuiTab: tabOverrides(type),
+        MuiTabs: tabsOverrides(type),
+        MuiTextField: textFieldOverrides(type),
+        MuiTooltip: tooltipOverrides(type),
+    };
+}
 
-export default baseTheme;
+/**
+ * Material UI overrite default props
+ */
+export function getComponentDefaultProps(): ComponentsProps {
+    return {
+        MuiButton: buttonProps,
+        MuiButtonGroup: buttonGroupProps,
+        MuiCheckbox: checkboxProps,
+        MuiTabs: tabsProps,
+        MuiTooltip: tooltipProps,
+        MuiTextField: textFieldProps,
+    };
+}
