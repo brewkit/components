@@ -7,5 +7,4 @@ declare const Breadcrumbs: {
         };
     };
 };
-
 export default Breadcrumbs;
