@@ -3,6 +3,8 @@ import TurndownService from 'turndown';
 import ReactMarkdown from 'react-markdown';
 import CodeExample from './CodeExample';
 import ExamplePreview from './ExamplePreview';
+import { Link as MUILink } from '@material-ui/core';
+import { Link as RouterLink } from 'react-router-dom';
 
 type MarkdownPageProps = {
     filePath: string;
@@ -42,6 +44,19 @@ const MarkdownPage = ({ filePath }: MarkdownPageProps) => {
         <ReactMarkdown
             children={markdownData?.data || ''}
             components={{
+                a: ({ children, href }) => {
+                    const isExternal = href?.startsWith('http');
+
+                    if (isExternal) {
+                        return (
+                            <MUILink target="_blank" href={href}>
+                                {children}
+                            </MUILink>
+                        );
+                    }
+
+                    return <RouterLink to={href || ''}>{children}</RouterLink>;
+                },
                 code: ({ children, ...props }) => {
                     return <CodeExample {...props} children={children} />;
                 },

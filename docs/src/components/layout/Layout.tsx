@@ -1,8 +1,7 @@
 import React from 'react';
 import { RouteMapEntry } from 'docs/utils/routes';
-import { Box, PaletteType, useTheme } from '@material-ui/core';
+import { Box, PaletteType, Paper } from '@material-ui/core';
 import { BrowserRouter } from 'react-router-dom';
-import { Paper } from '@material-ui/core';
 import SetupRoutes from './SetupRoutes';
 import Navbar from './Navbar';
 import TopBar from './TopBar';

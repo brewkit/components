@@ -1,6 +1,6 @@
-import { Typography } from '@brewkit/components';
-import { Box } from '@material-ui/core';
 import React from 'react';
+import { Box } from '@material-ui/core';
+import { Typography } from '@brewkit/components';
 
 const NotFound = () => (
     <Box textAlign="center">

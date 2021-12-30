@@ -5,12 +5,13 @@ import { createCervezaTheme } from '@brewkit/components';
 import { createRoutesMap } from 'docs/utils/routes';
 import Layout from './Layout';
 
+const routes = createRoutesMap();
+
 const Main = () => {
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
     const [themeType, setThemeType] = useState<PaletteType>(
         prefersDarkMode ? 'light' : 'dark',
     );
-    const routes = createRoutesMap();
 
     const updateTheme = (type: PaletteType) => setThemeType(type);
 
