@@ -1,19 +1,26 @@
-import React from 'react';
-import Layout from './Layout';
-import { createRoutesMap } from 'docs/utils/routes';
+import React, { useState, useMemo } from 'react';
 import { ThemeProvider } from '@material-ui/styles';
-import { CssBaseline } from '@material-ui/core';
+import { CssBaseline, PaletteType, useMediaQuery } from '@material-ui/core';
 import { createCervezaTheme } from '@brewkit/components';
+import { createRoutesMap } from 'docs/utils/routes';
+import Layout from './Layout';
 
 const Main = () => {
-    const theme = createCervezaTheme();
+    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+    const [themeType, setThemeType] = useState<PaletteType>(
+        prefersDarkMode ? 'light' : 'dark',
+    );
     const routes = createRoutesMap();
+
+    const updateTheme = (type: PaletteType) => setThemeType(type);
+
+    const theme = useMemo(() => createCervezaTheme(themeType), [themeType]);
 
     return (
         <React.Fragment>
             <CssBaseline />
             <ThemeProvider theme={theme}>
-                <Layout routes={routes} />
+                <Layout onThemeUpdate={updateTheme} routes={routes} />
             </ThemeProvider>
         </React.Fragment>
     );

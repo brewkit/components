@@ -1,12 +1,10 @@
 import React from 'react';
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { materialOceanic } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { CodeProps } from 'react-markdown/lib/ast-to-react';
 
 interface CodeExampleProps extends CodeProps {
     children: React.ReactNode & React.ReactNode[];
-    file: string;
-    path: string;
 }
 
 const CodeExample = ({ children }: CodeExampleProps) => {
@@ -14,7 +12,7 @@ const CodeExample = ({ children }: CodeExampleProps) => {
         <React.Fragment>
             <SyntaxHighlighter
                 useInlineStyles
-                style={materialOceanic}
+                style={atomDark}
                 language="typescript">
                 {children}
             </SyntaxHighlighter>

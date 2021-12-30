@@ -7,21 +7,23 @@ import { Link } from 'react-router-dom';
 const PagesList = ({ routes }: { routes: RouteMapEntry[] }) => {
     return (
         <React.Fragment>
-            {routes.map(({ base, path, name }) => {
+            {routes.map(({ base, path, name }, i) => {
                 if (!path) {
                     return (
-                        <Box pt={2} key={name} whiteSpace="nowrap">
+                        <Box pt={2} key={path + name + i} whiteSpace="nowrap">
                             <Typography variant="h6">{name}</Typography>
                         </Box>
                     );
                 }
 
                 return (
-                    <Typography variant="body1" key={name}>
-                        <MUILink component={Link} to={path}>
-                            {name}
-                        </MUILink>
-                    </Typography>
+                    <Box lineHeight={4} key={path + name + i}>
+                        <Typography variant="body1">
+                            <MUILink component={Link} to={path}>
+                                {name}
+                            </MUILink>
+                        </Typography>
+                    </Box>
                 );
             })}
         </React.Fragment>

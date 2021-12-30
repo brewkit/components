@@ -12,6 +12,10 @@ export interface RouteMapEntry {
 // @ts-ignore
 const files = import.meta.glob('../pages/**/*.{tsx,md}');
 
+function formatName(name: string = ''): string {
+    return capitalize(name).split('-').join(' ');
+}
+
 function createEntry(path: string): Partial<RouteMapEntry> {
     const segments = path.split('/').slice(2);
     const file =
@@ -38,29 +42,28 @@ export function createRoutesMap() {
         }
 
         const isMarkdown = getFileExt(path) === 'md';
+        const sharedProps = {
+            ...entry,
+            rawPath: path,
+            isMarkdown,
+        };
 
         if (!hasBase) {
             acc.push(
                 {
-                    ...entry,
-                    name: capitalize(entry.base).split('-').join(' '),
+                    ...sharedProps,
+                    name: formatName(entry.base),
                     path: undefined,
-                    rawPath: path,
-                    isMarkdown,
                 },
                 {
-                    ...entry,
-                    name: capitalize(entry.name).split('-').join(' '),
-                    rawPath: path,
-                    isMarkdown,
+                    ...sharedProps,
+                    name: formatName(entry.name),
                 },
             );
         } else {
             acc.push({
-                ...entry,
-                name: capitalize(entry.name).split('-').join(' '),
-                rawPath: path,
-                isMarkdown,
+                ...sharedProps,
+                name: formatName(entry.name),
             });
         }
 

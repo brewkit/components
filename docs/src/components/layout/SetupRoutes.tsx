@@ -17,7 +17,7 @@ export default function SetupRoutes({ routes }: { routes: RouteMapEntry[] }) {
                         return (
                             <Route
                                 path={path}
-                                key={name}
+                                key={path + name}
                                 element={<MarkdownPage filePath={rawPath} />}
                             />
                         );
@@ -26,7 +26,7 @@ export default function SetupRoutes({ routes }: { routes: RouteMapEntry[] }) {
                     if (Component) {
                         return (
                             <Route
-                                path={path}
+                                path={path + name}
                                 key={name}
                                 element={<Component />}
                             />
