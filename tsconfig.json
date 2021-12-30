@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
-        "baseUrl": "./src",
+        "baseUrl": "./",
         "paths": {
-            "@components/*": ["components/*"],
-            "@utilities/*": ["utilities/*"]
+            "@components/*": ["src/components/*"],
+            "@themes/*": ["themes/*"],
         },
         "outDir": "./dist",
         "module": "ES2015",
