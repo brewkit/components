@@ -2,17 +2,12 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@brewkit/components": ["packages/components/src"],
-            "@brewkit/components/*": ["packages/components/src/*"],
-            "@brewkit/themes": ["packages/themes/src"],
-            "@brewkit/themes/*": ["packages/themes/src/*"],
-            "@docs/components": ["docs/src/components"],
-            "@docs/components/*": ["docs/src/components/*"],
-            "@docs/style": ["docs/src/style/index.ts"],
-            "@docs/style/*": ["docs/src/style/*"]
+            "@brewkit/components": ["src"],
+            "@brewkit/components/*": ["src/*"],
+            "docs/*": ["docs/src/*"]
         },
         "outDir": "./dist",
-        "module": "ES2015",
+        "module": "esnext",
         "moduleResolution": "node",
         "lib": ["DOM", "DOM.Iterable", "ESNext"],
         "jsx": "react",
@@ -22,7 +17,7 @@
         "isolatedModules": true,
         "resolveJsonModule": true,
         "allowJs": true,
-        "types": ["jest", "@testing-library/jest-dom"],
+        "types": ["jest", "@testing-library/jest-dom", "vite"],
         "noEmit": true,
         "removeComments": true,
         "strict": true,
@@ -30,6 +25,6 @@
         "noImplicitThis": true,
         "strictNullChecks": true
     },
-    "include": ["packages/*", "docs/*"],
+    "include": ["src/**/*", "docs/**/*"],
     "exclude": ["node_modules", "build", "scripts"]
 }
