@@ -65,13 +65,11 @@
         "majestic": "^1.8.1",
         "prettier": "^2.5.1",
         "react-test-renderer": "^17.0.2",
-        "rollup-plugin-string": "^3.0.0",
         "semantic-release": "^18.0.1",
         "ts-jest": "^27.1.0",
         "ts-loader": "^9.2.6",
         "ts-node": "^10.4.0",
         "ttypescript": "^1.5.13",
-        "vite-plugin-markdown": "^2.0.2",
         "yargs": "^17.3.0"
     },
     "dependencies": {
@@ -83,9 +81,6 @@
         "color": "^4.1.0",
         "framer-motion": "^5.5.5",
         "lodash": "^4.17.21",
-        "marked": "^4.0.8",
-        "node-html-parser": "^5.2.0",
-        "prismjs": "^1.25.0",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-hook-form": "^7.22.5",
@@ -95,8 +90,7 @@
         "react-router-dom": "^6.2.1",
         "react-syntax-highlighter": "^15.4.5",
         "turndown": "^7.1.1",
-        "vite": "^2.7.6",
-        "vite-plugin-dynamic-import": "^0.1.1"
+        "vite": "^2.7.6"
     },
     "majestic": {
         "jestScriptPath": "node_modules/jest/bin/jest",
