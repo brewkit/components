@@ -1,26 +1,27 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 import { merge as _merge } from 'lodash';
 import { color } from './variables';
-import Typography from './components/Typography';
 import Alert from './components/Alert';
 import AlertTitle from './components/AlertTitle';
 import Badge from './components/Badge';
+import Breadcrumbs from './components/Breadcrumbs';
 import Button from './components/Button';
 import ButtonGroup from './components/ButtonGroup';
-import CircularProgress from './components/CircularProgress';
 import Checkbox from './components/Checkbox';
-import Radio from './components/Radio';
-import TextField from './components/TextField';
-import FormHelperText from './components/FormHelperText';
+import CircularProgress from './components/CircularProgress';
 import FormControlLabel from './components/FormControlLabel';
+import FormHelperText from './components/FormHelperText';
 import InputLabel from './components/InputLabel';
 import OutlinedInput from './components/OutlinedInput';
+import Radio from './components/Radio';
 import Select from './components/Select';
 import Switch from './components/Switch';
-import Tabs from './components/Tabs';
 import Tab from './components/Tab';
+import Tabs from './components/Tabs';
+import TextField from './components/TextField';
 import Tooltip from './components/Tooltip';
-var Cerveza = createMuiTheme(_merge({
+import Typography from './components/Typography';
+var Cerveza = createTheme(_merge({
     palette: {
         primary: {
             light: color.blue.light,
@@ -48,5 +49,5 @@ var Cerveza = createMuiTheme(_merge({
             primary: color.gray.dark
         }
     }
-}, Typography, Alert, AlertTitle, Badge, Button, ButtonGroup, CircularProgress, Checkbox, Radio, Select, Switch, TextField, FormHelperText, FormControlLabel, InputLabel, OutlinedInput, Tabs, Tab, Tooltip));
+}, Alert, AlertTitle, Badge, Breadcrumbs, Button, ButtonGroup, Checkbox, CircularProgress, FormControlLabel, FormHelperText, InputLabel, OutlinedInput, Radio, Select, Switch, Tab, Tabs, TextField, Tooltip, Typography));
 export default Cerveza;

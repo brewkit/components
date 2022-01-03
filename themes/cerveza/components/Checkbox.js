@@ -18,6 +18,13 @@ var Checkbox = {
                     backgroundColor: color.brand.secondary,
                     borderColor: color.brand.secondary
                 }
+            },
+            MuiIconButton: {
+                label: {
+                    '& div': {
+                        borderWidth: '1px'
+                    }
+                }
             }
         }
     }

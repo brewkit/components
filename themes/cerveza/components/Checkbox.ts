@@ -30,6 +30,14 @@ const Checkbox = {
                 },
             },
 
+            MuiIconButton: {
+                label: {
+                    '& div': {
+                        borderWidth: '1px',
+                    },
+                },
+            },
+
         },
 
     },
