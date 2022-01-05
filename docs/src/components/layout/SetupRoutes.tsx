@@ -1,4 +1,4 @@
-import { RouteMapEntry } from 'docs/utils/routes';
+import { flatPaths, RouteMapEntry } from 'docs/utils/routes';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import MarkdownPage from '../pageUtils/MarkdownPage';
@@ -8,31 +8,36 @@ export default function SetupRoutes({ routes }: { routes: RouteMapEntry[] }) {
     return (
         <React.Suspense fallback="">
             <Routes>
-                {routes.map(({ path, name, isMarkdown, rawPath }) => {
-                    const Component = React.lazy(
-                        () => import(/* @vite-ignore */ `../${rawPath}`),
-                    );
+                {flatPaths(routes).map(
+                    ({ path, contents, name, isMarkdown, rawPath }) => {
+                        if (isMarkdown) {
+                            return (
+                                <Route
+                                    path={path}
+                                    key={path + name}
+                                    element={
+                                        <MarkdownPage
+                                            // @ts-ignore
+                                            data={contents}
+                                            path={rawPath}
+                                        />
+                                    }
+                                />
+                            );
+                        }
 
-                    if (isMarkdown) {
+                        const Component = contents;
+
                         return (
+                            // @ts-ignore
                             <Route
                                 path={path}
-                                key={path + name}
-                                element={<MarkdownPage filePath={rawPath} />}
-                            />
-                        );
-                    }
-
-                    if (Component) {
-                        return (
-                            <Route
-                                path={path + name}
                                 key={name}
                                 element={<Component />}
                             />
                         );
-                    }
-                })}
+                    },
+                )}
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </React.Suspense>

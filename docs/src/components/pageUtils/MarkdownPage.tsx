@@ -1,48 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import TurndownService from 'turndown';
 import ReactMarkdown from 'react-markdown';
-import CodeExample from './CodeExample';
-import ExamplePreview from './ExamplePreview';
 import { Link as MUILink } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
 
-type MarkdownPageProps = {
-    filePath: string;
-};
+import CodeExample from './CodeExample';
+import ExamplePreview from './ExamplePreview';
 
 type MarkdownMeta = {
-    data: string;
+    html: string;
+};
+
+type MarkdownPageProps = {
+    data: MarkdownMeta;
     path: string;
 };
 
-const MarkdownPage = ({ filePath }: MarkdownPageProps) => {
-    const [markdownData, setMarkdownData] = useState<MarkdownMeta>({
-        data: '',
-        path: '',
-    });
+const MarkdownPage = ({ data, path }: MarkdownPageProps) => {
+    const [markdown, setMarkdown] = useState<any>('');
 
     useEffect(() => {
-        (async () => {
-            try {
-                const {
-                    default: { html, path },
-                } = await import(
-                    /* @vite-ignore */ `../../${filePath.slice(3)}`
-                );
-
-                const turndownService = new TurndownService();
-                const raw = turndownService.turndown(html);
-
-                setMarkdownData({ data: raw, path });
-            } catch (error) {
-                throw new Error('Unable to get markdown contents ' + error);
-            }
-        })();
-    }, [filePath]);
+        const turndownService = new TurndownService();
+        const converted = turndownService.turndown(data?.html);
+        setMarkdown(converted);
+    }, [data]);
 
     return (
         <ReactMarkdown
-            children={markdownData?.data || ''}
+            children={markdown || ''}
             components={{
                 a: ({ children, href }) => {
                     const isExternal = href?.startsWith('http');
@@ -70,7 +55,7 @@ const MarkdownPage = ({ filePath }: MarkdownPageProps) => {
                         return (
                             <ExamplePreview
                                 {...props}
-                                path={markdownData?.path}
+                                path={path}
                                 file={node}
                             />
                         );

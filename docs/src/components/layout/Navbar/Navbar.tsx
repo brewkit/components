@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, createStyles, makeStyles, Paper } from '@material-ui/core';
-import PagesList from './PagesList';
 import { RouteMapEntry } from 'docs/utils/routes';
+import PagesList from './PagesList';
 
 const useStyles = makeStyles(({ palette }) =>
     createStyles({
@@ -15,7 +15,7 @@ const Navbar = ({ routes }: { routes: RouteMapEntry[] }) => {
     const classes = useStyles();
     return (
         <Paper square classes={{ root: classes.root }}>
-            <Box width="280px" height="100vh" overflow="auto" padding={4}>
+            <Box width="280px" height="100%" overflow="auto">
                 <PagesList routes={routes} />
             </Box>
         </Paper>

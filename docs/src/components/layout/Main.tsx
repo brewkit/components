@@ -2,12 +2,10 @@ import React, { useState, useMemo } from 'react';
 import { ThemeProvider } from '@material-ui/styles';
 import { CssBaseline, PaletteType, useMediaQuery } from '@material-ui/core';
 import { createCervezaTheme } from '@brewkit/components';
-import { createRoutesMap } from 'docs/utils/routes';
+import { RouteMapEntry } from 'docs/utils/routes';
 import Layout from './Layout';
 
-const routes = createRoutesMap();
-
-const Main = () => {
+const Main = ({ routes }: { routes: RouteMapEntry[] }) => {
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
     const [themeType, setThemeType] = useState<PaletteType>(
         prefersDarkMode ? 'light' : 'dark',

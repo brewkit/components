@@ -1,6 +1,8 @@
 # Alert
 
-Alert is a Material ui Lab component. For more info visit - [Alert API](https://v4.mui.com/api/alert/#alert-api)
+## Extends [Alert](https://v4.mui.com/api/alert/#alert-api)
+
+Alert is a Material ui Lab component.
 
 ## With title prop
 
