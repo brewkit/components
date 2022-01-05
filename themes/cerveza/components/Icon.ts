@@ -11,7 +11,7 @@ const Icon = {
 
     overrides: {
 
-        MuiButton: {
+        MuiIcon: {
 
             /**
              * general styles
