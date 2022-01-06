@@ -54,7 +54,7 @@
         "@types/color": "^3.0.2",
         "@types/enzyme": "^3.10.11",
         "@types/lodash": "^4.14.178",
-        "@types/node": "^14.18.4",
+        "@types/node": "^14.18.5",
         "@types/react": "^17.0.38",
         "@types/react-dom": "^17.0.11",
         "@types/react-router-dom": "^5.3.2",
@@ -72,7 +72,7 @@
         "eslint-plugin-react": "^7.28.0",
         "eslint-plugin-storybook": "^0.5.5",
         "execa": "^4.1.0",
-        "jest": "^27.4.5",
+        "jest": "^27.4.7",
         "listr2": "^3.14.0",
         "majestic": "^1.8.1",
         "prettier": "^2.5.1",
@@ -99,7 +99,7 @@
         "react-router-dom": "^5.2.0"
     },
     "dependencies": {
-        "@popperjs/core": "^2.11.0",
+        "@popperjs/core": "^2.11.2",
         "clsx": "^1.1.1",
         "color": "^3.2.1",
         "framer-motion": "^3.10.3",
