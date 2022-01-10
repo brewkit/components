@@ -11,6 +11,7 @@ import Checkbox from './components/Checkbox';
 import CircularProgress from './components/CircularProgress';
 import FormControlLabel from './components/FormControlLabel';
 import FormHelperText from './components/FormHelperText';
+import Icon from './components/Icon';
 import InputLabel from './components/InputLabel';
 import OutlinedInput from './components/OutlinedInput';
 import Radio from './components/Radio';
@@ -49,5 +50,5 @@ var Cerveza = createTheme(_merge({
             primary: color.gray.dark
         }
     }
-}, Alert, AlertTitle, Badge, Breadcrumbs, Button, ButtonGroup, Checkbox, CircularProgress, FormControlLabel, FormHelperText, InputLabel, OutlinedInput, Radio, Select, Switch, Tab, Tabs, TextField, Tooltip, Typography));
+}, Alert, AlertTitle, Badge, Breadcrumbs, Button, ButtonGroup, Checkbox, CircularProgress, FormControlLabel, FormHelperText, Icon, InputLabel, OutlinedInput, Radio, Select, Switch, Tab, Tabs, TextField, Tooltip, Typography));
 export default Cerveza;
