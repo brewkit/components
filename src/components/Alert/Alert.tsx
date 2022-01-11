@@ -16,7 +16,7 @@ import { AlertProps } from './Alert.types';
 export const Alert = React.forwardRef(
     (
         { title, children, ...otherProps }: AlertProps,
-        ref: React.Ref<any>,
+        ref: React.Ref<unknown>,
     ): React.ReactElement => (
         <MuiAlert ref={ref} {...otherProps}>
             {title && <MuiAlertTitle>{title}</MuiAlertTitle>}
