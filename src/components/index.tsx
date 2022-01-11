@@ -8,6 +8,7 @@ export { default as CircularProgress } from './CircularProgress';
 export { default as Form, FormProps } from './Form';
 export { default as FormField } from './FormField';
 export { default as FormSubmit } from './FormSubmit';
+export { default as Icon } from './Icon';
 export { default as LinearProgress } from './LinearProgress';
 export { default as Radio } from './Radio';
 export { default as TextField, TextFieldProps } from './TextField';
