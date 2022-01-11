@@ -3,7 +3,6 @@ import MuiAlert from '@material-ui/lab/Alert';
 import MuiAlertTitle from '@material-ui/lab/AlertTitle';
 import { AlertProps } from './Alert.types';
 
-
 /**
  * An alert displays a short, important message in a way that attracts the user's attention without interrupting the
  * user's task.
@@ -14,23 +13,18 @@ import { AlertProps } from './Alert.types';
  *
  * - Adds a `title` prop that can be used in place of `<AlertTitle />`.
  */
-export const Alert = React.forwardRef(({
-    title,
-    children,
-    ...otherProps
-}: AlertProps, ref: React.Ref<any>): React.ReactElement => (
-
-
-    <MuiAlert ref={ref} {...otherProps}>
-        {title && <MuiAlertTitle>{title}</MuiAlertTitle>}
-        {children}
-    </MuiAlert>
-
-
-));
-
+export const Alert = React.forwardRef(
+    (
+        { title, children, ...otherProps }: AlertProps,
+        ref: React.Ref<unknown>,
+    ): React.ReactElement => (
+        <MuiAlert ref={ref} {...otherProps}>
+            {title && <MuiAlertTitle>{title}</MuiAlertTitle>}
+            {children}
+        </MuiAlert>
+    ),
+);
 
 Alert.displayName = 'Alert';
-
 
 export default Alert;

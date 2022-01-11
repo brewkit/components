@@ -1,19 +1,18 @@
-
 import React from 'react';
 import { mount } from 'enzyme';
-import Button from '.';
-
+import { Button } from '.';
 
 describe('<Button />', () => {
-
-
-    const wrapper = mount(<Button disabled loading>Submit</Button>);
+    const wrapper = mount(
+        <Button disabled loading>
+            Submit
+        </Button>,
+    );
     const disabledClasses = 'button.MuiButton-root.Mui-disabled';
 
     test('use button slot', () => {
         expect(wrapper.contains('Submit')).toEqual(true);
     });
-
 
     test('loading prop toggle', () => {
         expect(wrapper.prop('loading')).toEqual(true);
@@ -31,6 +30,4 @@ describe('<Button />', () => {
         wrapper.setProps({ disabled: true, loading: false });
         expect(wrapper.find(disabledClasses)).toHaveLength(1);
     });
-
-
 });
