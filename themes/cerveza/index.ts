@@ -17,6 +17,7 @@ import InputLabel from './components/InputLabel';
 import OutlinedInput from './components/OutlinedInput';
 import Radio from './components/Radio';
 import Select from './components/Select';
+import SvgIcon from './components/SvgIcon';
 import Switch from './components/Switch';
 import Tab from './components/Tab';
 import Tabs from './components/Tabs';
@@ -76,6 +77,7 @@ const Cerveza = createTheme(
         OutlinedInput,
         Radio,
         Select,
+        SvgIcon,
         Switch,
         Tab,
         Tabs,
