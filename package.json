@@ -2,7 +2,7 @@
     "name": "@brewkit/components",
     "version": "4.6.17",
     "description": "Brewkit components",
-    "main": "index.js",
+    "main": "dist/index.js",
     "private": true,
     "repository": {
         "type": "git",

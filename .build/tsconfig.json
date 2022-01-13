@@ -1,12 +1,11 @@
 {
     "extends": "../tsconfig.json",
-    "include": ["../src/components/index.tsx"],
+    "include": ["../src/index.ts"],
     "exclude": [
         "node_modules",
         "build",
         "scripts",
-        "../src/**/stories.*",
-        "../src/**/types.*",
-        "../src/**/test.*"
+        "../src/**/.spec.*",
+        "../src/**/.styles.*"
     ]
 }
