@@ -1,5 +1,5 @@
-import { IconProps as MUISvgIconProps } from '@material-ui/core/Icon';
+import { IconProps as MUIIconProps } from '@material-ui/core/Icon';
 
 
-export type IconProps = MUISvgIconProps;
+export type IconProps = MUIIconProps;
 
