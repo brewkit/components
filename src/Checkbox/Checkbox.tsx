@@ -22,11 +22,13 @@ export type BkCheckboxProps = MUICheckboxProps & {
 };
 
 export const Checkbox = React.forwardRef(
-    (props: BkCheckboxProps, ref: React.Ref<any>): React.ReactElement => {
+    (
+        props: BkCheckboxProps,
+        ref: React.Ref<HTMLButtonElement>,
+    ): React.ReactElement => {
         const {
             color = 'primary',
             classes: userClasses,
-            className,
             ...otherProps
         } = props;
         const classes = useStyles();
@@ -110,6 +112,6 @@ export const Checkbox = React.forwardRef(
     },
 );
 
-Checkbox.displayName = 'Checkbox';
+Checkbox.displayName = 'BkCheckbox';
 
 export default Checkbox;

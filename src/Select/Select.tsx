@@ -26,6 +26,6 @@ const Select = React.forwardRef(
     },
 );
 
-Select.displayName = 'Select';
+Select.displayName = 'BkSelect';
 
 export default Select;

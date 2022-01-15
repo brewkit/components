@@ -7,10 +7,14 @@ const Link = React.forwardRef(
     (props: BkLinkProps, ref: React.Ref<HTMLAnchorElement>) => {
         const { children, classes: userClasses, ...otherProps } = props;
 
-        return <MuiLink {...otherProps}>{children}</MuiLink>;
+        return (
+            <MuiLink classes={userClasses} ref={ref} {...otherProps}>
+                {children}
+            </MuiLink>
+        );
     },
 );
 
-Link.displayName = 'Link';
+Link.displayName = 'BkLink';
 
 export default Link;

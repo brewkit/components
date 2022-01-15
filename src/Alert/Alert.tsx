@@ -25,6 +25,6 @@ export const Alert = React.forwardRef(
     },
 );
 
-Alert.displayName = 'Alert';
+Alert.displayName = 'BkAlert';
 
 export default Alert;

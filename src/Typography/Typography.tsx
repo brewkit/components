@@ -1,42 +1,51 @@
 import React from 'react';
-import classnames from 'classnames';
+import clsx from 'clsx';
+import { merge } from 'lodash';
 import {
     Typography as MUITypography,
     TypographyProps as MUITypographyProps,
 } from '@material-ui/core';
-
 import useStyles from './Typography.styles';
-
-type ColorTypes =
-    | 'primary'
-    | 'secondary'
-    | 'textPrimary'
-    | 'error'
-    | 'success'
-    | 'warning';
+import { withoutKeys } from 'utils/withoutKeys';
 
 export interface BkTypographyProps extends Omit<MUITypographyProps, 'color'> {
-    color?: ColorTypes,
+    color?:
+        | 'primary'
+        | 'secondary'
+        | 'error'
+        | 'success'
+        | 'warning'
+        | 'textPrimary'
+        | 'textSecondary';
 }
 
 const Typography = React.forwardRef(
-    (props: BkTypographyProps, ref: React.Ref<any>) => {
+    (props: BkTypographyProps, ref: React.Ref<HTMLElement>) => {
         const {
             children,
             className,
-            classes: classesProp = {},
+            classes: userClasses = {},
             color = 'textPrimary',
             variant = 'body1',
             ...otherProps
         } = props;
-
-        const userClasses = useStyles();
-        const classes = classnames(classesProp, userClasses[color], className);
+        const typographyClasses = useStyles();
+        const classes = merge(typographyClasses, userClasses);
+        const muiClasses = withoutKeys(classes, [
+            'error',
+            'primary',
+            'secondary',
+            'success',
+            'textPrimary',
+            'textSecondary',
+            'warning',
+        ]);
 
         return (
             <MUITypography
-                className={classes}
-                color={undefined} // We use custom colors with classes
+                className={clsx(className, classes?.[color])}
+                classes={muiClasses}
+                color={undefined} // We manually resolve colors color
                 ref={ref}
                 variant={variant}
                 {...otherProps}>
@@ -45,5 +54,7 @@ const Typography = React.forwardRef(
         );
     },
 );
+
+Typography.displayName = 'BkTypography';
 
 export default Typography;

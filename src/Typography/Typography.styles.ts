@@ -9,8 +9,9 @@ const useStyles = makeStyles(
             error: { color: theme.palette.error.main },
             warning: { color: theme.palette.warning.main },
             textPrimary: { color: theme.palette.text.primary },
+            textSecondary: { color: theme.palette.text.secondary },
         }),
-    { name: 'Typography' },
+    { name: 'BkTypography' },
 );
 
 export default useStyles;

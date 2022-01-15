@@ -6,13 +6,17 @@ import useStyles from './Radio.styles';
 export type BkRadioProps = MUIRadioProps;
 
 export const Radio = React.forwardRef(
-    (props: BkRadioProps, ref: React.Ref<any>): React.ReactElement => {
+    (
+        props: BkRadioProps,
+        ref: React.Ref<HTMLButtonElement>,
+    ): React.ReactElement => {
         const { classes: userClasses, ...otherProps } = props;
         const classes = merge(useStyles(), userClasses);
+
         return <MuiRadio classes={classes} ref={ref} {...otherProps} />;
     },
 );
 
-Radio.displayName = 'Radio';
+Radio.displayName = 'BkRadio';
 
 export default Radio;

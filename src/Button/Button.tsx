@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { merge } from 'lodash';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import MUIButton, {
     ButtonClassKey as MUIButtonClassKey,
     ButtonProps as MUIButtonProps,
@@ -18,6 +18,7 @@ export type BkButtonProps = MUIButtonProps & {
      * Custom classes for Button
      */
     classes?: ClassNameMap<MUIButtonClassKey | BkButtonClassKey>;
+
     /**
      * If `true`, the button will be disabled and show a spinner.
      * @default false
@@ -66,36 +67,24 @@ export const Button = React.forwardRef(
         return (
             <MUIButton
                 {...otherProps}
-                classes={mergedClasses}
-                className={classNames(
+                className={clsx(
                     classes.root,
                     loading && classes.loading,
                     className,
                 )}
+                classes={mergedClasses}
+                color={color}
+                disableElevation={disableElevation}
                 disabled={disabled ?? loading}
                 ref={ref}
-                variant={variant}
-                disableElevation={disableElevation}
-                color={color}>
-                <div
-                    className={classNames(
-                        classes?.content,
-                        userClasses?.content,
-                    )}>
+                variant={variant}>
+                <div className={clsx(classes?.content, userClasses?.content)}>
                     {startIcon}
-                    {children && (
-                        <Typography variant="body2" {...TypographyProps}>
-                            {children}
-                        </Typography>
-                    )}
+                    {children && <span>{children}</span>}
                     {endIcon}
                 </div>
 
-                <div
-                    className={classNames(
-                        classes?.loader,
-                        userClasses?.loader,
-                    )}>
+                <div className={clsx(classes?.loader, userClasses?.loader)}>
                     <CircularProgress
                         color="primary"
                         size="1rem"
@@ -107,6 +96,6 @@ export const Button = React.forwardRef(
     },
 );
 
-Button.displayName = 'Button';
+Button.displayName = 'BkButton';
 
 export default Button;

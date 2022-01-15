@@ -1,6 +1,6 @@
 import { PaletteType } from '@material-ui/core';
 import { Overrides } from '@material-ui/core/styles/overrides';
-import { sizes, cervezaPalette } from './defaultTheme';
+import { sizes, DefaultTheme } from './defaultTheme';
 
 import { AlertClassKey } from '@material-ui/lab/Alert';
 import { AlertTitleClassKey } from '@material-ui/lab/AlertTitle';
@@ -12,7 +12,10 @@ declare module '@material-ui/core/styles/overrides' {
     }
 }
 
-const componentOverrides = (type: PaletteType): Overrides => ({
+const componentOverrides = (
+    type: PaletteType,
+    theme: DefaultTheme,
+): Overrides => ({
     MuiAlertTitle: {
         root: {
             fontSize: sizes.normal,
@@ -27,7 +30,7 @@ const componentOverrides = (type: PaletteType): Overrides => ({
         label: {
             fontSize: sizes.normal,
             fontWeight: 'normal',
-            color: cervezaPalette.text.secondary.light,
+            color: theme.gray.main,
         },
     },
     MuiFormHelperText: {
@@ -35,7 +38,7 @@ const componentOverrides = (type: PaletteType): Overrides => ({
             fontSize: sizes.small,
             fontWeight: 'normal',
             '&$disabled': {
-                color: cervezaPalette.blueGray.main,
+                color: theme.blueGray.main,
                 opacity: 1,
             },
         },
@@ -47,7 +50,7 @@ const componentOverrides = (type: PaletteType): Overrides => ({
     MuiInputLabel: {
         root: {
             '&$outlined$shrink': {
-                color: cervezaPalette.text.secondary,
+                color: theme.gray.main,
                 position: 'relative',
                 transform: 'translate(0, 0) scale(1)',
                 padding: '0 0 '.concat(sizes.xsmall),
@@ -55,12 +58,21 @@ const componentOverrides = (type: PaletteType): Overrides => ({
                 textTransform: 'uppercase',
             },
             '&$outlined$shrink$error': {
-                color: cervezaPalette.states.error,
+                color: theme.states.error,
             },
         },
     },
     MuiOutlinedInput: {
         root: {
+            '& input': {
+                color: theme.blueGray.light,
+            },
+            '& $notchedOutline': {
+                borderColor: theme.blueGray.main,
+            },
+            '&:hover $notchedOutline': {
+                borderColor: theme.background.paper.light,
+            },
             transition: 'all 0.3s',
             '& fieldset': {
                 transition: 'all 0.3s',
@@ -68,14 +80,28 @@ const componentOverrides = (type: PaletteType): Overrides => ({
             },
             '&$disabled': {
                 opacity: 1,
-                backgroundColor: cervezaPalette.blueGray.light,
-                color: cervezaPalette.background.paper.dark,
+                backgroundColor:
+                    type === 'light'
+                        ? theme.blueGray.light
+                        : theme.text.secondary.light,
+                color: theme.background.paper.dark,
+
+                '& input': {
+                    color: theme.blueGray.light,
+                },
             },
             '&$disabled $notchedOutline': {
-                borderColor: cervezaPalette.background.paper.dark,
+                borderColor:
+                    type === 'light'
+                        ? theme.blueGray.light
+                        : theme.text.secondary.light,
             },
         },
         input: {
+            '&:-webkit-autofill': {
+                WebkitBoxShadow: 'none',
+                WebkitTextFillColor: 'none',
+            },
             padding: '1rem',
             '& ~ fieldset': {
                 top: 0,
@@ -92,17 +118,17 @@ const componentOverrides = (type: PaletteType): Overrides => ({
             },
 
             '&$select:focus': {
-                background: cervezaPalette.primary,
-                color: cervezaPalette.white,
+                background: theme.primary,
+                color: theme.white,
                 borderRadius: '4px',
             },
 
             '&:focus ~ svg': {
-                color: cervezaPalette.white,
+                color: theme.white,
             },
 
             '&$select option': {
-                color: cervezaPalette.text.secondary,
+                color: theme.text.secondary,
                 padding: sizes.small,
             },
 
@@ -112,7 +138,7 @@ const componentOverrides = (type: PaletteType): Overrides => ({
         },
 
         iconOpen: {
-            color: cervezaPalette.white,
+            color: theme.white,
         },
     },
 });

@@ -186,6 +186,6 @@ export const FormField = React.forwardRef(
     },
 );
 
-FormField.displayName = 'FormField';
+FormField.displayName = 'BkFormField';
 
 export default FormField;

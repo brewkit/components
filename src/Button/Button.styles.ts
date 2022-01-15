@@ -48,7 +48,7 @@ export const useStyles = makeStyles(({ sizes, palette }) =>
 
         sizeSmall: {
             fontSize: sizes.small,
-            padding: ''.concat(sizes.xsmall, ' ').concat(sizes.small),
+            padding: `${sizes.small} ${sizes.normal}`,
             minWidth: 0,
         },
 
@@ -58,7 +58,7 @@ export const useStyles = makeStyles(({ sizes, palette }) =>
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            height: '1em',
+            height: sizes.normal,
             opacity: 1,
             transition: 'all 0.3s',
 

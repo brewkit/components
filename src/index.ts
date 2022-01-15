@@ -1,3 +1,7 @@
+export * from './themes/defaultTheme';
+export { default as createCervezaTheme } from './styles/createCervezaTheme';
+export { default as componentOverrides } from './themes/overrides';
+
 export { default as Alert } from './Alert';
 export * from './Alert';
 
@@ -56,5 +60,3 @@ export { default as Typography } from './Typography';
 export * from './Typography';
 
 export { default as useCheatCode } from './useCheatCode';
-
-export { default as createCervezaTheme } from './styles/createCervezaTheme';

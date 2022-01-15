@@ -15,8 +15,9 @@ import { merge } from 'lodash';
 import { withoutKeys } from '../utils/withoutKeys';
 import { ClassNameMap } from '@material-ui/styles';
 import { SelectProps } from '@material-ui/core';
+import clsx from 'clsx';
 
-export type BkTextFieldProps<T = any> = MUITextFieldProps & {
+export type BkTextFieldProps<T = string | number> = MUITextFieldProps & {
     options?: {
         label: React.ReactNode;
         value: T;
@@ -27,6 +28,7 @@ export type BkTextFieldProps<T = any> = MUITextFieldProps & {
         | TextFieldClassKey
         | 'activeMenuItem'
         | 'menu'
+        | 'input'
         | 'menuItem'
         | 'searchIcon'
         | 'visibilityIcon'
@@ -40,7 +42,10 @@ export type BkTextFieldProps<T = any> = MUITextFieldProps & {
 };
 
 export const TextField = React.forwardRef(
-    (props: BkTextFieldProps, ref: React.Ref<any>): React.ReactElement => {
+    (
+        props: BkTextFieldProps,
+        ref: React.Ref<HTMLInputElement>,
+    ): React.ReactElement => {
         const {
             classes: userClasses = {},
             children,
@@ -48,16 +53,20 @@ export const TextField = React.forwardRef(
             type = 'text',
             select,
             options,
+            InputProps = {},
             SelectProps = {},
+            InputLabelProps = {},
             variant = 'outlined',
             ...otherProps
         } = props;
-        const classes = useStyles();
-        const muiTextFieldClasses = merge(
+        const isPassword = type === 'password';
+        const classes = useStyles({ isPassword });
+        const muiClasses = merge(
             withoutKeys(classes, [
                 'activeMenuItem',
                 'menu',
                 'menuItem',
+                'input',
                 'searchIcon',
                 'visibilityIcon',
             ]),
@@ -71,8 +80,7 @@ export const TextField = React.forwardRef(
          * figure our what type to our input is based on password visibility toggle
          */
         function getType(): string {
-            if (type !== 'password') return type;
-            return isVisible ? 'text' : 'password';
+            return !isPassword ? type : isVisible ? 'text' : 'password';
         }
 
         /**
@@ -154,16 +162,30 @@ export const TextField = React.forwardRef(
         /**
          * set props to be passed to our underlying <Input />
          */
-        const InputProps = {
+        const andormentProps = {
             startAdornment: getStartAdornment(),
             endAdornment: getEndAdornment(),
         };
 
         return (
             <MUITextField
-                classes={muiTextFieldClasses}
-                InputProps={InputProps}
+                classes={muiClasses}
                 fullWidth={fullWidth}
+                InputProps={{
+                    ...andormentProps,
+                    ...(InputProps || {}),
+                    classes: {
+                        ...(InputProps?.classes || {}),
+                        input: clsx(classes.input, InputProps?.classes?.input),
+                    },
+                }}
+                InputLabelProps={{
+                    shrink: true,
+                    classes: {
+                        ...(InputLabelProps?.classes || {}),
+                    },
+                    ...InputLabelProps,
+                }}
                 SelectProps={{
                     native: Boolean(select && isMobile) || undefined,
                     MenuProps: { classes: { paper: classes?.menu } },
@@ -180,6 +202,6 @@ export const TextField = React.forwardRef(
     },
 );
 
-TextField.displayName = 'TextField';
+TextField.displayName = 'BkTextField';
 
 export default TextField;

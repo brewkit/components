@@ -40,6 +40,6 @@ export const ButtonGroup = React.forwardRef(
     },
 );
 
-ButtonGroup.displayName = 'ButtonGroup';
+ButtonGroup.displayName = 'BkButtonGroup';
 
 export default ButtonGroup;

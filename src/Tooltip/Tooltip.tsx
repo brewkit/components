@@ -7,11 +7,14 @@ import useStyles from './Tooltip.styles';
 
 export type BkTooltipProps = MUITooltipProps;
 
-const Tooltip = (props: BkTooltipProps) => {
-    const classes = useStyles();
-    return <MUITooltip classes={classes} {...props} />;
-};
+const Tooltip = React.forwardRef(
+    (props: BkTooltipProps, ref: React.Ref<HTMLDivElement>) => {
+        const classes = useStyles();
 
-Tooltip.displayName = 'Tooltip';
+        return <MUITooltip ref={ref} classes={classes} {...props} />;
+    },
+);
+
+Tooltip.displayName = 'BkTooltip';
 
 export default Tooltip;

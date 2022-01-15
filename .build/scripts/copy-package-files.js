@@ -24,6 +24,6 @@ fs.copyFileSync(path.resolve(appDir, "README.md"), path.resolve(distDir, "README
 /**
  * copy over our package.json and change 'private' to false to allow publishing
  */
-const pjson = fs.readFileSync(path.resolve(appDir, "package.json"), 'utf8');
+const pjson = fs.readFileSync(path.resolve(appDir, 'src', "package.json"), 'utf8');
 const result = pjson.replace(/"private": true/g, '"private": false');
 fs.writeFileSync(`${distDir}/package.json`, result, 'utf8');

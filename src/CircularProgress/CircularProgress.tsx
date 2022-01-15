@@ -54,6 +54,6 @@ export const CircularProgress = React.forwardRef(
     },
 );
 
-CircularProgress.displayName = 'CircularProgress';
+CircularProgress.displayName = 'BkCircularProgress';
 
 export default CircularProgress;

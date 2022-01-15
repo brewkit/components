@@ -8,13 +8,15 @@ import useStyles from './FormControlLabel.styles';
 
 export type BkFormControlLabelProps = FormControlLabelProps;
 
-const FormControlLabel = (props: BkFormControlLabelProps) => {
+const FormControlLabel = (
+    props: BkFormControlLabelProps,
+): React.ReactElement => {
     const { classes: userClasses = {} } = props;
     const classes = merge(useStyles(), userClasses);
 
     return <MUIFormControlLabel classes={classes} {...props} />;
 };
 
-FormControlLabel.displayName = 'FormControlLabel';
+FormControlLabel.displayName = 'BkFormControlLabel';
 
 export default FormControlLabel;

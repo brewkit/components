@@ -1,6 +1,7 @@
 import { createTheme, PaletteType, Theme } from '@material-ui/core';
-import { sizes, cervezaPalette } from './defaultTheme';
-import componentOverrides from './overrides';
+import { sizes, defaultTheme, DefaultTheme } from '../themes/defaultTheme';
+import componentOverrides from '../themes/overrides';
+import createTypography from './createTypography';
 
 export interface Sizes {
     xlarge: string;
@@ -25,7 +26,7 @@ declare module '@material-ui/core/styles/createTheme' {
 export default function createCervezaTheme<T>(
     type: PaletteType = 'light',
     args: T = {} as T,
-    theme = cervezaPalette,
+    theme: DefaultTheme = defaultTheme,
 ): Theme {
     const c = (darkColor: string, lightColor: string) =>
         type === 'dark' ? darkColor : lightColor;
@@ -33,7 +34,8 @@ export default function createCervezaTheme<T>(
     return createTheme(
         {
             sizes,
-            overrides: componentOverrides(type),
+            typography: createTypography(type, sizes),
+            overrides: componentOverrides(type, theme),
             palette: {
                 type,
                 primary: { main: theme.primary },

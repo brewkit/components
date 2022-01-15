@@ -20,6 +20,6 @@ const Breadcrumbs = React.forwardRef(
     },
 );
 
-Breadcrumbs.displayName = 'Breadcrumbs';
+Breadcrumbs.displayName = 'BkBreadcrumbs';
 
 export default Breadcrumbs;

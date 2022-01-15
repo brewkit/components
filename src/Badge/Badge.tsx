@@ -16,6 +16,6 @@ export const Badge = React.forwardRef(
     },
 );
 
-Badge.displayName = 'Badge';
+Badge.displayName = 'BkBadge';
 
 export default Badge;

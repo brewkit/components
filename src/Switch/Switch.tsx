@@ -9,13 +9,13 @@ export type BkSwitchProps = MUISwitchProps;
 export const Switch = React.forwardRef(
     (
         { ...otherProps }: BkSwitchProps,
-        ref: React.Ref<any>,
+        ref: React.Ref<HTMLButtonElement>,
     ): React.ReactElement => {
         const classes = useStyles();
         return <MUISwitch classes={classes} ref={ref} {...otherProps} />;
     },
 );
 
-Switch.displayName = 'Switch';
+Switch.displayName = 'BkSwitch';
 
 export default Switch;
