@@ -3,12 +3,12 @@ import MuiLinearProgress, {
     LinearProgressProps as MUILinearProgress,
 } from '@material-ui/core/LinearProgress';
 
-export type BkLinearProgress = MUILinearProgress;
+export type BkLinearProgressProps = MUILinearProgress;
 
 export const LinearProgress = React.forwardRef(
     (
-        { ...otherProps }: BkLinearProgress,
-        ref: React.Ref<HTMLElement>,
+        { ...otherProps }: BkLinearProgressProps,
+        ref: React.Ref<HTMLElement | unknown>,
     ): React.ReactElement => <MuiLinearProgress {...otherProps} ref={ref} />,
 );
 

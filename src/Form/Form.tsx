@@ -4,10 +4,11 @@ import {
     FormProvider,
     SubmitHandler,
     UseFormReturn,
+    FieldValues,
 } from 'react-hook-form';
 import { AnimateSharedLayout } from 'framer-motion';
 
-export type BkFormProps<T> = React.FormHTMLAttributes<HTMLFormElement> & {
+export type BkFormProps<T> = JSX.IntrinsicElements['form'] & {
     /**
      * function to be called on form submission
      */
@@ -22,9 +23,10 @@ export type BkFormProps<T> = React.FormHTMLAttributes<HTMLFormElement> & {
 
 export const Form = React.forwardRef(
     (
-        { children, onSubmit, useFormMethods, ...otherProps }: BkFormProps<any>,
+        props: BkFormProps<FieldValues>,
         ref: React.Ref<HTMLFormElement>,
     ): React.ReactElement => {
+        const { children, onSubmit, useFormMethods, ...otherProps } = props;
         const methods = useFormMethods
             ? useFormMethods
             : useForm({

@@ -18,7 +18,7 @@ export type BkCircularProgressProps = MUICircularProgressProps & {
 export const CircularProgress = React.forwardRef(
     (
         props: BkCircularProgressProps,
-        ref: React.Ref<HTMLDivElement>,
+        ref: React.Ref<HTMLDivElement | unknown>,
     ): React.ReactElement => {
         const { sizes } = useTheme();
         const {
