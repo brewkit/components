@@ -60,13 +60,13 @@
         "@types/react-router-dom": "^5.3.3",
         "@types/react-test-renderer": "^17.0.1",
         "@types/yup": "^0.29.13",
-        "@typescript-eslint/eslint-plugin": "^5.7.0",
-        "@typescript-eslint/parser": "^5.7.0",
+        "@typescript-eslint/eslint-plugin": "^5.10.0",
+        "@typescript-eslint/parser": "^5.10.0",
         "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
         "@zerollup/ts-transform-paths": "^1.7.18",
         "babel-loader": "^8.2.3",
         "enzyme": "^3.11.0",
-        "eslint": "^8.4.1",
+        "eslint": "^8.7.0",
         "eslint-config-airbnb": "^19.0.2",
         "eslint-config-airbnb-typescript": "^16.1.0",
         "eslint-config-prettier": "^8.3.0",
@@ -111,7 +111,7 @@
         "color": "^3.2.1",
         "framer-motion": "^3.10.3",
         "lodash": "^4.17.21",
-        "react-hook-form": "^7.24.1"
+        "react-hook-form": "^7.24.2"
     },
     "majestic": {
         "jestScriptPath": "node_modules/jest/bin/jest",
