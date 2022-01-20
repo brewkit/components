@@ -20,7 +20,10 @@ import { ButtonProps } from './Button.types';
  * styled with `BkButton.loading` within your theme.
  */
 export const Button = React.forwardRef(
-    (props: ButtonProps, ref: React.Ref<any>): React.ReactElement => {
+    (
+        props: ButtonProps,
+        ref: React.Ref<HTMLButtonElement>,
+    ): React.ReactElement => {
         const {
             loading,
             disabled,

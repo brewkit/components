@@ -4,6 +4,5 @@ export type AlertProps = MUIAlertProps & {
     /**
      * An abstraction for `<AlertTitle />`
      */
-    title?: string,
-
+    title?: string;
 };

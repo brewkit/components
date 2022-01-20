@@ -19,7 +19,6 @@ coverage
 
 # IDE metadata
 **/.idea/
-.vscode
 
 # Mac files
 .DS_Store
