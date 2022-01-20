@@ -1,7 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 
-import { Alert } from '.';
+import Alert from '.';
 
 describe('<Alert />', () => {
     const wrapper = mount(<Alert title="Notice!">Hello world</Alert>);

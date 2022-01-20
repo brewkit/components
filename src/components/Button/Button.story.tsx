@@ -8,7 +8,7 @@ import { ButtonProps } from './Button.types';
  * This is an annoying hack to get Storybook to properly parse the documentation when the underlying component
  * is wrapped in a HOC. Expect to do/see this on every component with MUI theming options.
  */
-import { Button } from '.';
+import { Button } from './Button';
 
 export default {
     component: Button,
