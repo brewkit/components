@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
-import Alert, { BkAlertProps as AlertProps } from './Alert';
+import Alert from './Alert';
+import { AlertProps } from './Alert.types';
 
 export default {
     component: Alert,

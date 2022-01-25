@@ -1,0 +1,28 @@
+{
+    "editor.detectIndentation": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.organizeImports": false
+    },
+    "editor.accessibilitySupport": "off",
+    "editor.linkedEditing": true,
+    "editor.suggest.shareSuggestSelections": true,
+    "editor.formatOnSaveMode": "file",
+
+    "javascript.format.enable": true,
+    "javascript.preferences.quoteStyle": "single",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+
+    "eslint.validate": ["javascript"],
+    "eslint.alwaysShowStatus": true,
+    "eslint.debug": true,
+    "eslint.format.enable": true,
+
+    "prettier.enable": true,
+    "prettier.singleQuote": true
+}

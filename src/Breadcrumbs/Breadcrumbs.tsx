@@ -16,7 +16,7 @@ const Breadcrumbs = React.forwardRef(
         const { classes: userClasses = {} } = props;
         const classes = merge(useStyles(), userClasses);
 
-        return <MuiBreadcrumbs className={classes.root} ref={ref} {...props} />;
+        return <MuiBreadcrumbs classes={classes} ref={ref} {...props} />;
     },
 );
 

@@ -1,6 +1,8 @@
+
 import * as React from 'react';
 import { Story } from '@storybook/react';
-import LinearProgress, { BkLinearProgressProps } from './LinearProgress';
+import LinearProgress from './LinearProgress';
+import { Props as LinearProgressProps } from './LinearProgress.types';
 
 export default {
     component: LinearProgress,
@@ -11,7 +13,7 @@ const defaultArgs = {
     value: 0,
 };
 
-export const Sandbox: Story<BkLinearProgressProps> = (args) => (
+export const Sandbox: Story<LinearProgressProps> = (args) => (
     <LinearProgress {...args} />
 );
 
@@ -21,7 +23,7 @@ Sandbox.args = {
     variant: 'indeterminate',
 };
 
-export const Indeterminate: Story<BkLinearProgressProps> = (args) => (
+export const Indeterminate: Story<LinearProgressProps> = (args) => (
     <div style={{ display: 'grid', gridAutoFlow: 'row', gridGap: '1rem' }}>
         <LinearProgress {...args} />
         <LinearProgress {...args} color="primary" />
@@ -34,14 +36,12 @@ Indeterminate.args = {
     variant: 'indeterminate',
 };
 
-export const Determinate: Story<BkLinearProgressProps> = (args) => {
+export const Determinate: Story<LinearProgressProps> = (args) => {
     const [completed, setCompleted] = React.useState(0);
 
     React.useEffect(() => {
         const progress = (): void => {
-            setCompleted((prevCompleted) =>
-                prevCompleted >= 100 ? 0 : prevCompleted + 10,
-            );
+            setCompleted((prevCompleted) => prevCompleted >= 100 ? 0 : prevCompleted + 10);
         };
 
         const timer = setInterval(progress, 1000);
@@ -66,7 +66,7 @@ Determinate.args = {
     ...defaultArgs,
 };
 
-export const Buffer: Story<BkLinearProgressProps> = (args) => {
+export const Buffer: Story<LinearProgressProps> = (args) => {
     const [progress, setProgress] = React.useState(0);
     const [buffer, setBuffer] = React.useState(10);
     const progressRef = React.useRef(() => {

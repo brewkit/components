@@ -4,14 +4,14 @@ import { Typography, Link } from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';
 import Flare from '@material-ui/icons/Flare';
 import GrainIcon from '@material-ui/icons/Grain';
-import Breadcrumbs, { BkBreadcrumbsProps } from './Breadcrumbs';
+import Breadcrumbs, { BkBreadcrumbsProps as BreadcrumbsProps } from './';
 
 export default {
     component: Breadcrumbs,
     title: 'Navigation/Breadcrumbs',
 };
 
-export const Sandbox: Story<BkBreadcrumbsProps> = function sandbox(args) {
+export const Sandbox: Story<BreadcrumbsProps> = function sandbox(args) {
     return (
         <Breadcrumbs {...args}>
             <Link href="/">MUI</Link>
@@ -27,7 +27,7 @@ Sandbox.args = {
 };
 
 export const WithIcons = function storyWithIcons(
-    args: BkBreadcrumbsProps,
+    args: BreadcrumbsProps,
 ): React.ReactElement {
     return (
         <Breadcrumbs aria-label="breadcrumb" {...args}>

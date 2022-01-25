@@ -30,14 +30,19 @@ export type BkButtonProps = MUIButtonProps & {
      * @default {}
      */
     CircularProgressProps?: BkCircularProgressProps;
-
-    /**
-     * Props for typography text
-     * @default {}
-     */
-    TypographyProps?: BkTypographyProps;
 };
 
+/**
+ * Buttons allow users to take actions and make choices with a single tap.
+ *
+ * [Material-UI Docs](https://material-ui.com/components/buttons/)
+ *
+ *
+ * ## Differences in Brewkit:
+ *
+ * - Adds a `loading` prop that automatically disables the button and shows a loading state. Loading class can be
+ * styled with `BkButton.loading` within your theme.
+ */
 export const Button = React.forwardRef(
     (
         props: BkButtonProps,
@@ -56,7 +61,6 @@ export const Button = React.forwardRef(
             className,
             variant = 'contained',
             color = 'primary',
-            TypographyProps = {},
             ...otherProps
         } = props;
         const mergedClasses = merge(

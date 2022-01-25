@@ -1,6 +1,10 @@
 {
     "name": "@brewkit/themes",
+<<<<<<< HEAD
     "version": "5.0.0-alpha.1",
+=======
+    "version": "4.8.1",
+>>>>>>> next
     "description": "Brewkit themes",
     "repository": {
         "type": "git",

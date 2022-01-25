@@ -1,59 +1,51 @@
 import * as React from 'react';
-import MUICircularProgess, {
-    CircularProgressProps as MUICircularProgressProps,
-} from '@material-ui/core/CircularProgress';
+import {CircularProgress as MuiCircularProgress, CircularProgressProps as MuiCircularProgressProps } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
-import useStyles from './CircularProgress.styles';
-import { merge } from 'lodash';
+import useStyles from './CircularProgess.styles';
+import { Props } from './CircularProgress.types';
 
-export type BkCircularProgressProps = MUICircularProgressProps & {
-    /**
-     * adds a background circle
-     *
-     * @default true
-     */
-    layered?: boolean;
-};
+
+
+/**
+ * Progress indicators commonly known as spinners, express an unspecified wait time or display the length of a process.
+ * The animation works with CSS, not JavaScript.
+ *
+ * [Material-UI Docs](https://material-ui.com/components/progress/)
+ *
+ * ## Differences in Brewkit:
+ *
+ * - Adds a `layered` property that can be used to render an always visible circular background. The default value of
+ * this prop can be set using `BkCircularProgress.props.layered` in your theme.
+ */
 
 export const CircularProgress = React.forwardRef(
     (
-        props: BkCircularProgressProps,
-        ref: React.Ref<HTMLDivElement | unknown>,
+        { layered, ...otherProps }: Props,
+        ref: React.Ref<any>,
     ): React.ReactElement => {
-        const { sizes } = useTheme();
-        const {
-            classes: userClasses,
-            thickness = 3,
-            size = sizes.xxlarge,
-            layered = true,
-            ...otherProps
-        } = props;
-        const classes = merge(useStyles(), userClasses);
-        const sharedProps = {
-            thickness,
-            size,
-            ...otherProps,
-        };
+        const theme = useTheme();
+        const classes = useStyles();
+        const isLayered = theme?.BkCircularProgress?.props?.layered || layered;
 
         /**
          * if layered=true, we layer another CircularProgress in the background with a lower opacity
          */
-        if (layered)
-            return (
-                <div className={classes.root}>
-                    <MUICircularProgess
-                        {...sharedProps}
-                        value={100}
-                        variant="determinate"
-                    />
-                    <MUICircularProgess {...sharedProps} ref={ref} />
-                </div>
-            );
 
-        return <MUICircularProgess {...sharedProps} ref={ref} />;
+        if (isLayered) return (
+            <div className={classes.root} ref={ref}>
+                <MuiCircularProgress
+                    {...otherProps}
+                    value={100}
+                    variant="determinate"
+                />
+                <MuiCircularProgress {...otherProps} ref={ref} />
+            </div>
+        );
+
+        return <MuiCircularProgress {...otherProps} ref={ref} />;
     },
 );
 
-CircularProgress.displayName = 'BkCircularProgress';
+CircularProgress.displayName = 'CircularProgress';
 
 export default CircularProgress;

@@ -84,6 +84,7 @@ export const useStyles = makeStyles(({ sizes, palette }) =>
             opacity: 0.5,
 
             '& $content': {
+                top: `${-sizes.normal}`,
                 opacity: 0,
             },
 
