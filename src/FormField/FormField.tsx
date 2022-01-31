@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useFormContext } from 'react-hook-form';
-import FormControlLabel from '../FormControlLabel';
 import { AnimatePresence, motion } from 'framer-motion';
 import { get } from 'lodash';
+import FormControlLabel from '../FormControlLabel';
 import Checkbox, { BkCheckboxProps } from '../Checkbox';
 import Radio, { BkRadioProps } from '../Radio';
 import TextField, { BkTextFieldProps } from '../TextField';
@@ -16,14 +16,7 @@ export type BkFormFieldProps = BkCheckboxProps &
          * The type of input to render.
          * @default 'text'
          */
-        type?:
-            | 'text'
-            | 'password'
-            | 'number'
-            | 'checkbox'
-            | 'radio'
-            | 'switch'
-            | string;
+        type?: 'text' | 'password' | 'number' | 'checkbox' | 'radio' | 'switch';
 
         /**
          * The label of the input
@@ -43,7 +36,7 @@ export type BkFormFieldProps = BkCheckboxProps &
         /**
          * the value of the input
          */
-        value?: any;
+        value?: string | number;
     };
 
 const components: {
@@ -72,14 +65,14 @@ export const FormField = React.forwardRef(
             helperText,
             ...otherProps
         }: BkFormFieldProps,
-        ref: React.Ref<any>,
+        ref: React.Ref<never>,
     ): React.ReactElement => {
         const {
             unregister,
             register,
             formState: { errors },
         } = useFormContext();
-        const Component: any = components[type] ?? TextField;
+        const Component = (components[type] ?? TextField) as React.ReactElement;
         const { ref: formInputRef, ...otherInputProps } = register(
             name,
             validation,

@@ -3,7 +3,7 @@ import {
     useForm,
     FormProvider,
     SubmitHandler,
-    UseFormReturn,
+    UseFormProps,
 } from 'react-hook-form';
 import { AnimateSharedLayout } from 'framer-motion';
 
@@ -17,34 +17,32 @@ export type BkFormProps<T> = React.FormHTMLAttributes<HTMLFormElement> & {
      * configuration options to be passed to the underlying RHF `useForm` hook
      * (https://react-hook-form.com/api#useForm)
      */
-    useFormMethods?: UseFormReturn;
+    useFormMethods?: UseFormProps<T>;
+
+    /**
+     * Form ref object
+     */
+    formRef?: React.Ref<HTMLFormElement>;
 };
 
-export const Form = React.forwardRef(
-    (
-        { children, onSubmit, useFormMethods, ...otherProps }: BkFormProps<any>,
-        ref: React.Ref<HTMLFormElement>,
-    ): React.ReactElement => {
-        const methods = useFormMethods
-            ? useFormMethods
-            : useForm({
-                  mode: 'onChange',
-              });
+export default function Form<T>(props: BkFormProps<T>) {
+    const { children, formRef, onSubmit, useFormMethods, ...otherProps } =
+        props;
+    const methods = useForm({
+        ...(useFormMethods || { mode: 'onChange' }),
+    });
 
-        return (
-            <FormProvider {...methods}>
-                <form
-                    noValidate
-                    onSubmit={methods.handleSubmit(onSubmit)}
-                    ref={ref}
-                    {...otherProps}>
-                    <AnimateSharedLayout>{children}</AnimateSharedLayout>
-                </form>
-            </FormProvider>
-        );
-    },
-);
+    return (
+        <FormProvider {...methods}>
+            <form
+                noValidate
+                onSubmit={methods.handleSubmit(onSubmit)}
+                ref={formRef}
+                {...otherProps}>
+                <AnimateSharedLayout>{children}</AnimateSharedLayout>
+            </form>
+        </FormProvider>
+    );
+}
 
 Form.displayName = 'BkForm';
-
-export default Form;

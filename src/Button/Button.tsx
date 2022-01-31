@@ -7,9 +7,8 @@ import MUIButton, {
 } from '@material-ui/core/Button';
 import { ClassNameMap } from '@material-ui/core/styles/withStyles';
 import CircularProgress, { BkCircularProgressProps } from '../CircularProgress';
-import Typography, { BkTypographyProps } from '../Typography';
-import useStyles from './Button.styles';
-import { withoutKeys } from '../utils/withoutKeys';
+import { useStyles } from './Button.styles';
+import withoutKeys from '../utils/withoutKeys';
 
 type BkButtonClassKey = 'loading' | 'loader' | 'content';
 
@@ -30,25 +29,18 @@ export type BkButtonProps = MUIButtonProps & {
      * @default {}
      */
     CircularProgressProps?: BkCircularProgressProps;
-
-    /**
-     * Props for typography text
-     * @default {}
-     */
-    TypographyProps?: BkTypographyProps;
 };
 
-export const Button = React.forwardRef(
+const Button = React.forwardRef(
     (
         props: BkButtonProps,
         ref: React.Ref<HTMLButtonElement>,
     ): React.ReactElement => {
-        const classes = useStyles();
         const {
             loading = false,
             disabled,
             classes: userClasses = {} as BkButtonProps['classes'],
-            CircularProgressProps = {},
+            CircularProgressProps = {} as BkCircularProgressProps,
             disableElevation = true,
             startIcon,
             endIcon,
@@ -56,9 +48,10 @@ export const Button = React.forwardRef(
             className,
             variant = 'contained',
             color = 'primary',
-            TypographyProps = {},
             ...otherProps
         } = props;
+
+        const classes = useStyles();
         const mergedClasses = merge(
             withoutKeys(classes, ['loader', 'loading', 'content']),
             userClasses,
@@ -86,6 +79,7 @@ export const Button = React.forwardRef(
 
                 <div className={clsx(classes?.loader, userClasses?.loader)}>
                     <CircularProgress
+                        {...CircularProgressProps}
                         color="primary"
                         size="1rem"
                         thickness={5}

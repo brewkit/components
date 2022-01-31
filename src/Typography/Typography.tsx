@@ -5,8 +5,8 @@ import {
     Typography as MUITypography,
     TypographyProps as MUITypographyProps,
 } from '@material-ui/core';
+import withoutKeys from '../utils/withoutKeys';
 import useStyles from './Typography.styles';
-import { withoutKeys } from 'utils/withoutKeys';
 
 export interface BkTypographyProps extends Omit<MUITypographyProps, 'color'> {
     color?:

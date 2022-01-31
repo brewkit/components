@@ -5,7 +5,7 @@ import useStyles from './Radio.styles';
 
 export type BkRadioProps = MUIRadioProps;
 
-export const Radio = React.forwardRef(
+const Radio = React.forwardRef(
     (
         props: BkRadioProps,
         ref: React.Ref<HTMLButtonElement>,
@@ -17,6 +17,6 @@ export const Radio = React.forwardRef(
     },
 );
 
-Radio.displayName = 'BkRadio';
+Radio.displayName = 'Radio';
 
 export default Radio;

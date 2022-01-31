@@ -6,7 +6,7 @@ import useStyles from './Switch.styles';
 
 export type BkSwitchProps = MUISwitchProps;
 
-export const Switch = React.forwardRef(
+const Switch = React.forwardRef(
     (
         { ...otherProps }: BkSwitchProps,
         ref: React.Ref<HTMLButtonElement>,

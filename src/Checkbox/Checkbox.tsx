@@ -9,8 +9,8 @@ import MUICheckbox, {
 import Check from '@material-ui/icons/Check';
 import Remove from '@material-ui/icons/Remove';
 import { ClassNameMap } from '@material-ui/core/styles/withStyles';
-import { useStyles } from './Checkbox.styles';
-import { withoutKeys } from '../utils/withoutKeys';
+import useStyles from './Checkbox.styles';
+import withoutKeys from '../utils/withoutKeys';
 
 export type BkCheckboxProps = MUICheckboxProps & {
     /**
@@ -21,16 +21,14 @@ export type BkCheckboxProps = MUICheckboxProps & {
     >;
 };
 
-export const Checkbox = React.forwardRef(
-    (
-        props: BkCheckboxProps,
-        ref: React.Ref<HTMLButtonElement>,
-    ): React.ReactElement => {
+const Checkbox = React.forwardRef(
+    (props: BkCheckboxProps, ref: React.Ref<never>): React.ReactElement => {
         const {
             color = 'primary',
             classes: userClasses,
             ...otherProps
         } = props;
+
         const classes = useStyles();
         const mergedClasses = merge(
             withoutKeys(classes, [

@@ -10,12 +10,12 @@ import Visibility from '@material-ui/icons/VisibilityOutlined';
 import VisibilityOff from '@material-ui/icons/VisibilityOffOutlined';
 import Search from '@material-ui/icons/SearchOutlined';
 import { motion, AnimatePresence } from 'framer-motion';
-import useStyles from './TextField.styles';
 import { merge } from 'lodash';
-import { withoutKeys } from '../utils/withoutKeys';
 import { ClassNameMap } from '@material-ui/styles';
-import { SelectProps } from '@material-ui/core';
+import { SelectProps as MuiSelectProps } from '@material-ui/core';
 import clsx from 'clsx';
+import withoutKeys from '../utils/withoutKeys';
+import useStyles from './TextField.styles';
 
 export type BkTextFieldProps<T = string | number> = MUITextFieldProps & {
     options?: {
@@ -38,10 +38,10 @@ export type BkTextFieldProps<T = string | number> = MUITextFieldProps & {
      * Props for Select component if 'select' is true
      * @default {}
      */
-    SelectProps?: SelectProps;
+    SelectProps?: MuiSelectProps;
 };
 
-export const TextField = React.forwardRef(
+const TextField = React.forwardRef(
     (
         props: BkTextFieldProps,
         ref: React.Ref<HTMLInputElement>,

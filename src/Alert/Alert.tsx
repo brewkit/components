@@ -1,8 +1,8 @@
 import * as React from 'react';
 import MUIAlert, { AlertProps as MUIAlertProps } from '@material-ui/lab/Alert';
 import MUIAlertTitle from '@material-ui/lab/AlertTitle';
-import useStyles from './Alert.styles';
 import { merge } from 'lodash';
+import useStyles from './Alert.styles';
 
 export type BkAlertProps = MUIAlertProps & {
     /**
@@ -11,8 +11,8 @@ export type BkAlertProps = MUIAlertProps & {
     title?: string;
 };
 
-export const Alert = React.forwardRef(
-    (props: BkAlertProps, ref: React.Ref<any>): React.ReactElement => {
+const Alert = React.forwardRef(
+    (props: BkAlertProps, ref: React.Ref<unknown>): React.ReactElement => {
         const { classes: userClasses, title, children, ...otherProps } = props;
         const classes = merge(useStyles(), userClasses);
 

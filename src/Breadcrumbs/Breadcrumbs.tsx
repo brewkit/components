@@ -3,10 +3,10 @@ import {
     Breadcrumbs as MuiBreadcrumbs,
     BreadcrumbsProps as MuiBreadcrumbsProps,
 } from '@material-ui/core';
-import useStyles from './Breadcrumbs.styles';
 import { merge } from 'lodash';
+import useStyles from './Breadcrumbs.styles';
 
-type BkBreadcrumbsProps = MuiBreadcrumbsProps;
+export type BkBreadcrumbsProps = MuiBreadcrumbsProps;
 
 const Breadcrumbs = React.forwardRef(
     (
@@ -16,7 +16,7 @@ const Breadcrumbs = React.forwardRef(
         const { classes: userClasses = {} } = props;
         const classes = merge(useStyles(), userClasses);
 
-        return <MuiBreadcrumbs className={classes.root} ref={ref} {...props} />;
+        return <MuiBreadcrumbs classes={classes} ref={ref} {...props} />;
     },
 );
 
