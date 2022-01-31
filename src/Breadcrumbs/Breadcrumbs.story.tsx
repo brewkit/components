@@ -4,8 +4,7 @@ import { Typography, Link } from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';
 import Flare from '@material-ui/icons/Flare';
 import GrainIcon from '@material-ui/icons/Grain';
-import { BreadcrumbsProps } from './Breadcrumbs.types';
-import Breadcrumbs from './Breadcrumbs';
+import Breadcrumbs, { BkBreadcrumbsProps as BreadcrumbsProps } from '../Breadcrumbs';
 
 export default {
     component: Breadcrumbs,

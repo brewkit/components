@@ -6,7 +6,10 @@ import useStyles from './Badge.styles';
 export type BkBadgeProps = MUIBadgeProps;
 
 const Badge = React.forwardRef(
-    (props: BkBadgeProps, ref: React.Ref<unknown>): React.ReactElement => {
+    (
+        props: BkBadgeProps,
+        ref: React.Ref<HTMLDivElement>,
+    ): React.ReactElement => {
         const { classes: userClasses = {}, color = 'primary' } = props;
         const classes = merge(useStyles(), userClasses);
 

@@ -1,11 +1,6 @@
-
-
 import * as React from 'react';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { Story } from '@storybook/react';
-
-import Icon from './index';
-import { IconProps } from './Icon.types';
+import Icon, { BkIconProps as IconProps } from './';
 
 
 export default {

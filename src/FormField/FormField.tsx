@@ -65,14 +65,15 @@ export const FormField = React.forwardRef(
             helperText,
             ...otherProps
         }: BkFormFieldProps,
-        ref: React.Ref<never>,
+        ref: React.Ref<HTMLInputElement>,
     ): React.ReactElement => {
         const {
             unregister,
             register,
             formState: { errors },
         } = useFormContext();
-        const Component = (components[type] ?? TextField) as React.ReactElement;
+        const Component =
+            (components[type] as React.FC<BkTextFieldProps>) ?? TextField;
         const { ref: formInputRef, ...otherInputProps } = register(
             name,
             validation,

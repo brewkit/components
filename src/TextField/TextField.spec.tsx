@@ -6,6 +6,7 @@ import { TextField } from '..';
 describe('<TextField />', () => {
     test('renders TextField component', () => {
         render(<TextField />);
+        screen.debug();
         expect(screen.getByRole('textbox')).toBeInTheDocument();
     });
 
@@ -13,20 +14,15 @@ describe('<TextField />', () => {
         const { container } = render(
             <TextField label="pass" id="pass" type="password" />,
         );
-        const icon: HTMLElement | null = queryByTestId(
-            container,
-            'visibilityIcon',
-        );
+        const icon: any = queryByTestId(container, 'visibilityIcon');
         expect(icon).toBeInTheDocument();
-        if (icon) {
-            fireEvent(
-                icon,
-                new MouseEvent('click', {
-                    bubbles: true,
-                    cancelable: true,
-                }),
-            );
-            expect(screen.getByRole('textbox')).toBeInTheDocument();
-        }
+        fireEvent(
+            icon,
+            new MouseEvent('click', {
+                bubbles: true,
+                cancelable: true,
+            }),
+        );
+        expect(screen.getByRole('textbox')).toBeInTheDocument();
     });
 });

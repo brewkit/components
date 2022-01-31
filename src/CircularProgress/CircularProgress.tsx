@@ -37,7 +37,7 @@ export type BkCircularProgressProps = MuiCircularProgressProps & {
 const CircularProgress = React.forwardRef(
     (
         props: BkCircularProgressProps,
-        ref: React.Ref<unknown>,
+        ref: React.Ref<HTMLDivElement | unknown>,
     ): React.ReactElement => {
         const { sizes } = useTheme();
         const {
@@ -62,7 +62,7 @@ const CircularProgress = React.forwardRef(
 
         if (layered)
             return (
-                <div className={classes.layeredWrapper} ref={ref}>
+                <div className={classes.layeredWrapper}>
                     <MuiCircularProgress
                         {...sharedProps}
                         value={100}

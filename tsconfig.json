@@ -27,7 +27,7 @@
         "strictNullChecks": true
     },
     "include": [
-        "src/components/**/*",
+        "src/**/*",
         "src/index.ts",
         "themes/cerveza/index.ts",
         "themes/cerveza-dark/index.ts",

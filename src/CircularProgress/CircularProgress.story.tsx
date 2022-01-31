@@ -1,9 +1,9 @@
-
 import * as React from 'react';
 import { Story } from '@storybook/react';
 
-import CircularProgress from './CircularProgress';
-import { Props as CircularProgressProps } from './CircularProgress.types';
+import CircularProgress, {
+    BkCircularProgressProps as CircularProgressProps,
+} from '.';
 
 export default {
     component: CircularProgress,
@@ -47,7 +47,9 @@ export const Determinate: Story<CircularProgressProps> = (args) => {
 
     React.useEffect(() => {
         const progress = (): void => {
-            setCompleted((prevCompleted) => prevCompleted >= 100 ? 0 : prevCompleted + 10);
+            setCompleted((prevCompleted) =>
+                prevCompleted >= 100 ? 0 : prevCompleted + 10,
+            );
         };
 
         const timer = setInterval(progress, 1000);

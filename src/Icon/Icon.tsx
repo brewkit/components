@@ -1,8 +1,8 @@
-
-
 import * as React from 'react';
 import MuiIcon from '@material-ui/core/Icon';
-import { IconProps } from './Icon.types';
+import { IconProps as MUIIconProps } from '@material-ui/core/Icon';
+
+export type BkIconProps = MUIIconProps;
 
 
 /**
@@ -14,14 +14,8 @@ import { IconProps } from './Icon.types';
  * > TODO: Add custom icons used by OVRC
  *
  */
-export const Icon = React.forwardRef(({
-    ...otherProps
-}: IconProps, ref: React.Ref<any>): React.ReactElement => (
-
-
-    <MuiIcon ref={ref} {...otherProps} />
-
-
+const Icon = React.forwardRef((props: BkIconProps, ref: React.Ref<HTMLSpanElement>): React.ReactElement => (
+    <MuiIcon ref={ref} {...props} />
 ));
 
 

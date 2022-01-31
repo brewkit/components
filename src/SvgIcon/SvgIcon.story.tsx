@@ -4,8 +4,7 @@ import * as React from 'react';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { Story } from '@storybook/react';
 
-import SvgIcon from './index';
-import { SvgIconProps } from './SvgIcon.types';
+import SvgIcon, { BkSvgIconProps as SvgIconProps } from './';
 
 
 export default {
