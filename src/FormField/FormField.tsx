@@ -55,7 +55,7 @@ const components: {
  *
  * > This component is not found in Material UI.
  */
-export const FormField = React.forwardRef(
+const FormField = React.forwardRef(
     (
         {
             type = 'text',

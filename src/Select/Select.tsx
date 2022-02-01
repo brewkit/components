@@ -4,11 +4,11 @@ import {
     SelectClassKey,
     SelectProps as MUISelectProps,
 } from '@material-ui/core';
-import useStyles from './Select.styles';
 import { ClassNameMap } from '@material-ui/core/styles/withStyles';
 import { merge } from 'lodash';
+import useStyles from './Select.styles';
 
-type BkSelectProps = MUISelectProps & {
+export type BkSelectProps = MUISelectProps & {
     classes?: ClassNameMap<
         SelectClassKey | 'menu' | 'menuItem' | 'activeMenuItem'
     >;

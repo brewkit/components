@@ -4,7 +4,7 @@ import BkButton, { BkButtonProps } from '../Button';
 
 export type BkFormSubmitProps = BkButtonProps;
 
-export const FormSubmit = React.forwardRef(
+const FormSubmit = React.forwardRef(
     (
         { children = 'Submit', ...otherProps }: BkFormSubmitProps,
         ref: React.Ref<HTMLButtonElement>,

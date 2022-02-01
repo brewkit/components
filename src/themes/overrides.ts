@@ -1,9 +1,9 @@
 import { PaletteType } from '@material-ui/core';
 import { Overrides } from '@material-ui/core/styles/overrides';
-import { sizes, DefaultTheme } from './defaultTheme';
 
 import { AlertClassKey } from '@material-ui/lab/Alert';
 import { AlertTitleClassKey } from '@material-ui/lab/AlertTitle';
+import { sizes, DefaultTheme } from './defaultTheme';
 
 declare module '@material-ui/core/styles/overrides' {
     export interface ComponentNameToClassKey {
@@ -65,7 +65,10 @@ const componentOverrides = (
     MuiOutlinedInput: {
         root: {
             '& input': {
-                color: theme.blueGray.light,
+                color:
+                    type === 'dark'
+                        ? theme.blueGray.light
+                        : theme.text.primary.light,
             },
             '& $notchedOutline': {
                 borderColor: theme.blueGray.main,

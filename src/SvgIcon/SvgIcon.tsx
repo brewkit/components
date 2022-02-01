@@ -12,7 +12,7 @@ export type BkSvgIconProps = MuiSvgIconProps;
  * [Material-UI Docs](https://mui.com/api/svg-icon/)
  *
  */
-export const SvgIcon = React.forwardRef(
+const SvgIcon = React.forwardRef(
     (
         props: BkSvgIconProps,
         ref: React.Ref<SVGSVGElement>,

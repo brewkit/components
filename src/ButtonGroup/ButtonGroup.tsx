@@ -7,7 +7,7 @@ import useStyles from './ButtonGroup.styles';
 
 export type BkButtonGroupProps = MUIButtonGroupProps;
 
-export const ButtonGroup = React.forwardRef(
+const ButtonGroup = React.forwardRef(
     (
         props: BkButtonGroupProps,
         ref: React.Ref<HTMLDivElement>,

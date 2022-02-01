@@ -1,8 +1,8 @@
-
 import * as React from 'react';
 import { Story } from '@storybook/react';
-import LinearProgress from './LinearProgress';
-import { Props as LinearProgressProps } from './LinearProgress.types';
+import LinearProgress, {
+    BkLinearProgressProps as LinearProgressProps,
+} from '.';
 
 export default {
     component: LinearProgress,
@@ -41,7 +41,9 @@ export const Determinate: Story<LinearProgressProps> = (args) => {
 
     React.useEffect(() => {
         const progress = (): void => {
-            setCompleted((prevCompleted) => prevCompleted >= 100 ? 0 : prevCompleted + 10);
+            setCompleted((prevCompleted) =>
+                prevCompleted >= 100 ? 0 : prevCompleted + 10,
+            );
         };
 
         const timer = setInterval(progress, 1000);

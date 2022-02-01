@@ -1,6 +1,10 @@
 import * as React from 'react';
-import MuiLinearProgress from '@material-ui/core/LinearProgress';
-import { Props } from './LinearProgress.types';
+import {
+    LinearProgress as MuiLinearProgress,
+    LinearProgressProps as MuiLinearProgressProps,
+} from '@material-ui/core';
+
+export type BkLinearProgressProps = MuiLinearProgressProps;
 
 /**
  * Progress indicators commonly known as spinners, express an unspecified wait time or display the length of a process. The animation works with CSS, not JavaScript.
@@ -10,10 +14,11 @@ import { Props } from './LinearProgress.types';
  * > No differences in Brewkit.
  */
 
-export const LinearProgress = React.forwardRef(
-    ({ ...otherProps }: Props, ref: React.Ref<any>): React.ReactElement => (
-        <MuiLinearProgress {...otherProps} ref={ref} />
-    ),
+const LinearProgress = React.forwardRef(
+    (
+        { ...otherProps }: BkLinearProgressProps,
+        ref: React.Ref<HTMLDivElement | unknown>,
+    ): React.ReactElement => <MuiLinearProgress {...otherProps} ref={ref} />,
 );
 
 LinearProgress.displayName = 'LinearProgress';
