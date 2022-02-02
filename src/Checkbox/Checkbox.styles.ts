@@ -3,11 +3,14 @@ import { createStyles, makeStyles } from '@material-ui/core';
 
 export const useStyles = makeStyles(({ palette }) =>
     createStyles({
-        root: {
-            '&$disabled div, &$disabled div': {
-                backgroundColor: palette.primary.main,
-                borderColor: palette.primary.main,
-            },
+        checked: {
+            backgroundColor: palette.primary.main,
+            borderColor: palette.primary.main,
+        },
+
+        disabled: {
+            backgroundColor: palette.primary.main,
+            borderColor: palette.primary.main,
         },
 
         colorSecondary: {

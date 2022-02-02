@@ -1,12 +1,11 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '../testUtils';
 import { queryByTestId } from '@testing-library/dom';
 import { TextField } from '..';
 
 describe('<TextField />', () => {
   test('renders TextField component', () => {
     render(<TextField />);
-    screen.debug();
     expect(screen.getByRole('textbox')).toBeInTheDocument();
   });
 

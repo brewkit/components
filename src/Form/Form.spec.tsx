@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, render, screen, waitFor } from '@testing-library/react';
+import { act, render, screen, waitFor } from '../testUtils';
 import userEvent from '@testing-library/user-event';
 import LoginMock, { LoginResponse } from './__mocks__/_LoginMock';
 

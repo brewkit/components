@@ -90,7 +90,6 @@ export const Button = React.forwardRef(
                     )}
                     {endIcon}
                 </div>
-
                 <div
                     className={classNames(
                         classes?.loader,
@@ -100,6 +99,7 @@ export const Button = React.forwardRef(
                         color="primary"
                         size="1rem"
                         thickness={5}
+                        {...CircularProgressProps}
                     />
                 </div>
             </MUIButton>

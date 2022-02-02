@@ -18,6 +18,7 @@ export type BkFormFieldProps = BkCheckboxProps &
          */
         type?:
             | 'text'
+            | 'email'
             | 'password'
             | 'number'
             | 'checkbox'

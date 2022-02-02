@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '../testUtils';
 import { queryByTestId } from '@testing-library/dom'
 import { Checkbox } from '..';
 
@@ -7,11 +7,10 @@ describe('<Checkbox />', () => {
 
     test('renders Checkbox component', () => {
         render(<Checkbox />);
-        screen.debug();
         expect(screen.getByRole('checkbox')).toBeInTheDocument();
     })
 
-    test('test check/uncheck behave', () => {
+    test('change icon from checkedIcon to uncheckedIcon in the document when user clciks', () => {
 
         const { container } = render(<Checkbox />);
         const checkbox = screen.getByRole('checkbox');
