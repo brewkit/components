@@ -56,6 +56,8 @@ Complete changelog is underway, some of the changes include
  - Few more components wrappers are imported from Material
  - Much of the Typescript errors fixed
 
+## What this means to SnapOne?
+Brewkit is an open source project that is started by our beloved friend and mentor Lawren Anderson. As this is an open source project (no one is using this lol), its main purpose is to unify all OVRC styling solutions over all projects to a recognizable brand. It will ease te job of developers, designers, and QA staff with strict rules when approaching the look, the feel and overall user experience of people using, and developing it.
 
 ## What about storybook?
 We have plans for new Storybook UI created from scratch that will much better underline the philosophy, and goal of Brewkit. It still exists in the repo, currently not working due to massive changes in components. It will be fixed in next few releases only to serve its purpose until new one is deployed.
@@ -89,8 +91,7 @@ As this is not much flexibile, more realistic approach would be something like
 ```tsx
 import React from 'react';
 import { createCervezaTheme } from '@brewkit/components';
-import { ThemeProvider, PaletteType
- } from '@material-ui/themes';
+import { ThemeProvider, PaletteType } from '@material-ui/themes';
 import { useMediaQuery } from '@material-ui/core';
 
 export default function MyApp() {
