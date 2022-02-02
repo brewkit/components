@@ -11,7 +11,7 @@ export type BkAlertProps = MUIAlertProps & {
     title?: string;
 };
 
-export const Alert = React.forwardRef(
+const Alert = React.forwardRef(
     (props: BkAlertProps, ref: React.Ref<any>): React.ReactElement => {
         const { classes: userClasses, title, children, ...otherProps } = props;
         const classes = merge(useStyles(), userClasses);

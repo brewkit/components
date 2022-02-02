@@ -18,6 +18,13 @@ declare const Checkbox: {
                     borderColor: string;
                 };
             };
+            MuiIconButton: {
+                label: {
+                    '& div': {
+                        borderWidth: string;
+                    };
+                };
+            };
         };
     };
 };

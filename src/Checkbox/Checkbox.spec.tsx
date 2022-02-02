@@ -1,14 +1,13 @@
 import React from 'react';
 import { render, screen, fireEvent } from '../testUtils';
-import { queryByTestId } from '@testing-library/dom'
-import { Checkbox } from '..';
+import { queryByTestId } from '@testing-library/dom';
+import Checkbox from '.';
 
 describe('<Checkbox />', () => {
-
     test('renders Checkbox component', () => {
         render(<Checkbox />);
         expect(screen.getByRole('checkbox')).toBeInTheDocument();
-    })
+    });
 
     test('change icon from checkedIcon to uncheckedIcon in the document when user clciks', () => {
 
@@ -20,8 +19,11 @@ describe('<Checkbox />', () => {
                 bubbles: true,
                 cancelable: true,
             }),
-        )
-        const checkedIcon: any = queryByTestId(container, 'checkedIcon');
+        );
+        const checkedIcon: HTMLElement | null = queryByTestId(
+            container,
+            'checkedIcon',
+        );
         expect(checkedIcon).toBeInTheDocument();
         fireEvent(
             checkbox,
@@ -29,9 +31,11 @@ describe('<Checkbox />', () => {
                 bubbles: true,
                 cancelable: true,
             }),
-        )
-        const uncheckedIcon: any = queryByTestId(container, 'uncheckedIcon');
+        );
+        const uncheckedIcon: HTMLElement | null = queryByTestId(
+            container,
+            'uncheckedIcon',
+        );
         expect(uncheckedIcon).toBeInTheDocument();
-
-    })
+    });
 });

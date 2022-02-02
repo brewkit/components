@@ -14,5 +14,5 @@ export default makeStyles(
                 },
             },
         }),
-    { name: 'Breadcrumbs' },
+    { name: 'BkBreadcrumbs' },
 );

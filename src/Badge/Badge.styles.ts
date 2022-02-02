@@ -17,5 +17,5 @@ export default makeStyles(({ palette }) =>
         colorError: {
             color: palette.common.white,
         },
-    }),
+    }), { name: 'BkBadge' },
 );

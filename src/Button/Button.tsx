@@ -11,7 +11,7 @@ import Typography, { BkTypographyProps } from '../Typography';
 import useStyles from './Button.styles';
 import { withoutKeys } from '../utils/withoutKeys';
 
-type BkButtonClassKey = 'loading' | 'loader' | 'content';
+export type BkButtonClassKey = 'loading' | 'loader' | 'content';
 
 export type BkButtonProps = MUIButtonProps & {
     /**
@@ -37,7 +37,7 @@ export type BkButtonProps = MUIButtonProps & {
     TypographyProps?: BkTypographyProps;
 };
 
-export const Button = React.forwardRef(
+const Button = React.forwardRef(
     (
         props: BkButtonProps,
         ref: React.Ref<HTMLButtonElement>,

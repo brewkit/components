@@ -37,5 +37,5 @@ export default makeStyles(({ sizes, palette }) =>
                 color: palette.common.white,
             },
         },
-    }),
+    }), { name: 'BkButtonGroup' }
 );

@@ -1,0 +1,453 @@
+@font-face {
+    font-family: 'ovrc-custom';
+    src:  url('~Base/fonts/ovrc-custom/ovrc-custom.eot?m77che');
+    src:  url('~Base/fonts/ovrc-custom/ovrc-custom.eot?m77che#iefix') format('embedded-opentype'),
+    url('~Base/fonts/ovrc-custom/ovrc-custom.ttf?m77che') format('truetype'),
+    url('~Base/fonts/ovrc-custom/ovrc-custom.woff?m77che') format('woff'),
+    url('~Base/fonts/ovrc-custom/ovrc-custom.svg?m77che#ovrc-custom') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'ovrc-custom' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.icon-add:before {
+    content: "\e909";
+}
+.icon-arrow-down:before {
+    content: "\e626";
+}
+.icon-arrow-left:before {
+    content: "\e625";
+}
+.icon-arrow-right:before {
+    content: "\e624";
+}
+.icon-arrow-up:before {
+    content: "\e623";
+}
+.icon-battery:before {
+    content: "\e918";
+}
+.icon-battery-low:before {
+    content: "\e917";
+}
+.icon-calendar:before {
+    content: "\e622";
+}
+.icon-check:before {
+    content: "\e621";
+}
+.icon-cloud:before {
+    content: "\e62d";
+}
+.icon-cloud-add:before {
+    content: "\e620";
+}
+.icon-cloud-devices:before {
+    content: "\e914";
+}
+.icon-cm-accesspoint:before {
+    content: "\e931";
+}
+.icon-cm-audio:before {
+    content: "\e649";
+}
+.icon-cm-bluray:before {
+    content: "\e64a";
+}
+.icon-cm-cablebox:before {
+    content: "\e64b";
+}
+.icon-cm-controlsys:before {
+    content: "\e930";
+}
+.icon-cm-ethernet:before {
+    content: "\e92f";
+}
+.icon-cm-firewall:before {
+    content: "\e92e";
+}
+.icon-cm-game:before {
+    content: "\e64d";
+}
+.icon-cm-gateway:before {
+    content: "\e92d";
+}
+.icon-cm-internet:before {
+    content: "\e64e";
+}
+.icon-cm-ir:before {
+    content: "\e64f";
+}
+.icon-cm-laptop:before {
+    content: "\e92c";
+}
+.icon-cm-mobile:before {
+    content: "\e92a";
+}
+.icon-cm-nvr:before {
+    content: "\e651";
+}
+.icon-cm-pos:before {
+    content: "\e653";
+}
+.icon-cm-projector:before {
+    content: "\e654";
+}
+.icon-cm-proscreen:before {
+    content: "\e655";
+}
+.icon-cm-receiver:before {
+    content: "\e656";
+}
+.icon-cm-remote:before {
+    content: "\e927";
+}
+.icon-cm-reset:before {
+    content: "\e911";
+}
+.icon-cm-router:before {
+    content: "\e929";
+}
+.icon-cm-satellite:before {
+    content: "\e657";
+}
+.icon-cm-server:before {
+    content: "\e658";
+}
+.icon-cm-streambox:before {
+    content: "\e659";
+}
+.icon-cm-surveillance:before {
+    content: "\e913";
+}
+.icon-cm-switch:before {
+    content: "\e928";
+}
+.icon-cm-tablet:before {
+    content: "\e92b";
+}
+.icon-cm-tower:before {
+    content: "\e65a";
+}
+.icon-cm-tv:before {
+    content: "\e65b";
+}
+.icon-cm-wap:before {
+    content: "\e65c";
+}
+.icon-cog:before {
+    content: "\e61e";
+}
+.icon-company:before {
+    content: "\e925";
+}
+.icon-control4:before {
+    content: "\e904";
+}
+.icon-delete-round:before {
+    content: "\e61d";
+}
+.icon-delete-x:before {
+    content: "\e61c";
+}
+.icon-device-accesspoint:before {
+    content: "\e921";
+}
+.icon-device-audio:before {
+    content: "\e63e";
+}
+.icon-device-autonomic:before {
+    content: "\e91f";
+}
+.icon-down-arrow-slim:before {
+    content: "\e63c";
+}
+.icon-download:before {
+    content: "\e906";
+}
+.icon-dropdown-arrow:before {
+    content: "\e61b";
+}
+.icon-edit:before {
+    content: "\e61a";
+}
+.icon-feedback:before {
+    content: "\e619";
+}
+.icon-firmware:before {
+    content: "\e600";
+}
+.icon-globe:before {
+    content: "\e618";
+}
+.icon-globe-cloud:before {
+    content: "\e907";
+}
+.icon-hide-device:before {
+    content: "\e900";
+}
+.icon-home-devices:before {
+    content: "\e936";
+}
+.icon-home-pause:before {
+    content: "\e932";
+}
+.icon-home-play:before {
+    content: "\e933";
+}
+.icon-home-schedule:before {
+    content: "\e937";
+}
+.icon-home-user:before {
+    content: "\e935";
+}
+.icon-hub-device:before {
+    content: "\e635";
+}
+.icon-hub-network .path1:before {
+    content: "\e922";
+}
+.icon-hub-network .path2:before {
+    content: "\e926";
+    margin-left: -1em;
+    color: rgb(76, 175, 80);
+}
+.icon-inventory:before {
+    content: "\e617";
+}
+.icon-invite:before {
+    content: "\e616";
+}
+.icon-loading:before {
+    content: "\e615";
+}
+.icon-local-ui:before {
+    content: "\e63a";
+}
+.icon-location:before {
+    content: "\e915";
+}
+.icon-location-missing:before {
+    content: "\e924";
+}
+.icon-locked:before {
+    content: "\e647";
+}
+.icon-lutron-bridge:before {
+    content: "\e939";
+}
+.icon-members:before {
+    content: "\e614";
+}
+.icon-menu-launch:before {
+    content: "\e93e";
+}
+.icon-menu-notifications:before {
+    content: "\e901";
+}
+.icon-minus:before {
+    content: "\e90a";
+}
+.icon-moip-device:before {
+    content: "\e641";
+}
+.icon-more-info:before {
+    content: "\e613";
+}
+.icon-network-switch:before {
+    content: "\e61f";
+}
+.icon-no-access:before {
+    content: "\e643";
+}
+.icon-notification:before {
+    content: "\e612";
+}
+.icon-notification-off:before {
+    content: "\e923";
+}
+.icon-nvr-dvr:before {
+    content: "\e63f";
+}
+.icon-ookla-speedtest:before {
+    content: "\e946";
+}
+.icon-ovrc-home-camera:before {
+    content: "\e62e";
+}
+.icon-ovrc-home-check:before {
+    content: "\e663";
+}
+.icon-ovrc-home-email:before {
+    content: "\e665";
+}
+.icon-ovrc-home-error:before {
+    content: "\e664";
+}
+.icon-ovrc-logo:before {
+    content: "\e642";
+}
+.icon-pages:before {
+    content: "\e611";
+}
+.icon-panel-big:before {
+    content: "\e62a";
+}
+.icon-panel-small:before {
+    content: "\e62b";
+}
+.icon-pending:before {
+    content: "\e666";
+}
+.icon-phone:before {
+    content: "\e652";
+}
+.icon-pioneer-avr:before {
+    content: "\e916";
+}
+.icon-popup-alert:before {
+    content: "\e610";
+}
+.icon-popup-loading:before {
+    content: "\e60f";
+}
+.icon-popup-search:before {
+    content: "\e60e";
+}
+.icon-port-connected:before {
+    content: "\e91a";
+}
+.icon-port-disconnected:before {
+    content: "\e91b";
+}
+.icon-port-poe:before {
+    content: "\e91e";
+}
+.icon-port-poe-in:before {
+    content: "\e91c";
+}
+.icon-port-poe-out:before {
+    content: "\e91d";
+}
+.icon-power-device:before {
+    content: "\e60c";
+}
+.icon-power-ups-batt:before {
+    content: "\e919";
+}
+.icon-pro-diagnostics:before {
+    content: "\e912";
+}
+.icon-resend:before {
+    content: "\e60b";
+}
+.icon-reset:before {
+    content: "\e60a";
+}
+.icon-router-device:before {
+    content: "\e640";
+}
+.icon-safe-voltage:before {
+    content: "\e628";
+}
+.icon-search:before {
+    content: "\e644";
+}
+.icon-shared:before {
+    content: "\e93a";
+}
+.icon-socket:before {
+    content: "\e608";
+}
+.icon-socket-blank:before {
+    content: "\e609";
+}
+.icon-speed-test:before {
+    content: "\e636";
+}
+.icon-ssh:before {
+    content: "\e934";
+}
+.icon-stopwatch:before {
+    content: "\e908";
+}
+.icon-telnet:before {
+    content: "\e938";
+}
+.icon-time-settings:before {
+    content: "\e903";
+}
+.icon-transfer:before {
+    content: "\e607";
+}
+.icon-trash:before {
+    content: "\e606";
+}
+.icon-unlocked:before {
+    content: "\e648";
+}
+.icon-unsafe-volt:before {
+    content: "\e627";
+}
+.icon-unsafe-voltage:before {
+    content: "\e605";
+}
+.icon-upload:before {
+    content: "\e905";
+}
+.icon-urc:before {
+    content: "\e902";
+}
+.icon-user:before {
+    content: "\e604";
+}
+.icon-user-out:before {
+    content: "\e93b";
+}
+.icon-user-pro:before {
+    content: "\e93c";
+}
+.icon-user-shared:before {
+    content: "\e93d";
+}
+.icon-wan-home:before {
+    content: "\e638";
+}
+.icon-wifi:before {
+    content: "\e63d";
+}
+.icon-wifi-low:before {
+    content: "\e90b";
+    color: rgb(255, 87, 34);
+}
+.icon-wifi-low .path2:before {
+    content: "\e90c";
+    margin-left: -1em;
+    color: rgb(255, 87, 34);
+    opacity: 0.2;
+}
+.icon-wifi-med:before {
+    content: "\e90f";
+    color: rgb(255, 213, 79);
+}
+.icon-wifi-med .path2:before {
+    content: "\e910";
+    margin-left: -1em;
+    color: rgb(255, 213, 79);
+    opacity: 0.2;
+}

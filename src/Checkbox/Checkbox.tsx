@@ -21,7 +21,7 @@ export type BkCheckboxProps = MUICheckboxProps & {
     >;
 };
 
-export const Checkbox = React.forwardRef(
+const Checkbox = React.forwardRef(
     (props: BkCheckboxProps, ref: React.Ref<any>): React.ReactElement => {
         const {
             color = 'primary',

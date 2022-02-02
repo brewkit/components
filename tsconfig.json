@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
-        "baseUrl": "./src",
+        "baseUrl": "./",
         "paths": {
-            "@components/*": ["components/*"],
-            "@utilities/*": ["utilities/*"]
+            "@components/*": ["src/components/*"],
+            "@themes/*": ["themes/*"],
         },
         "outDir": "./dist",
         "module": "ES2015",
@@ -19,7 +19,7 @@
                 "exclude": ["*"]
             }
         ],
-        "types": ["webpack-env", "jest", "@testing-library/jest-dom"],
+        "types": ["webpack-env", "jest", "@testing-library/jest-dom", "node"],
         "removeComments": true,
         "strict": true,
         "noImplicitAny": true,

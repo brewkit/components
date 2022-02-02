@@ -31,6 +31,9 @@ export * from './FormField';
 export { default as FormSubmit } from './FormSubmit';
 export * from './FormSubmit';
 
+export { default as Icon } from './Icon';
+export * from './Icon';
+
 export { default as LinearProgress } from './LinearProgress';
 export * from './LinearProgress';
 
@@ -42,6 +45,9 @@ export * from './Radio';
 
 export { default as Select } from './Select';
 export * from './Select';
+
+export { default as SvgIcon } from './SvgIcon';
+export * from './SvgIcon';
 
 export { default as Switch } from './Switch';
 export * from './Switch';

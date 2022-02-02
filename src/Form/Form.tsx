@@ -3,49 +3,46 @@ import {
     useForm,
     FormProvider,
     SubmitHandler,
-    UseFormReturn,
+    UseFormProps,
 } from 'react-hook-form';
 import { AnimateSharedLayout } from 'framer-motion';
 
-export type BkFormProps<T = never> =
-    React.FormHTMLAttributes<HTMLFormElement> & {
-        /**
-         * function to be called on form submission
-         */
-        onSubmit: SubmitHandler<T>;
+export type BkFormProps<T> = React.FormHTMLAttributes<HTMLFormElement> & {
+    /**
+     * function to be called on form submission
+     */
+    onSubmit: SubmitHandler<T>;
 
-        /**
-         * configuration options to be passed to the underlying RHF `useForm` hook
-         * (https://react-hook-form.com/api#useForm)
-         */
-        useFormMethods?: UseFormReturn;
-    };
+    /**
+     * configuration options to be passed to the underlying RHF `useForm` hook
+     * (https://react-hook-form.com/api#useForm)
+     */
+    useFormMethods?: UseFormProps<T>;
 
-export const Form = React.forwardRef(
-    (
-        { children, onSubmit, useFormMethods, ...otherProps }: BkFormProps,
-        ref: React.Ref<any>,
-    ): React.ReactElement => {
-        const methods = useFormMethods
-            ? useFormMethods
-            : useForm({
-                  mode: 'onChange',
-              });
+    /**
+     * Form ref object
+     */
+    formRef?: React.Ref<HTMLFormElement>;
+};
 
-        return (
-            <FormProvider {...methods}>
-                <form
-                    noValidate
-                    onSubmit={methods.handleSubmit(onSubmit)}
-                    ref={ref}
-                    {...otherProps}>
-                    <AnimateSharedLayout>{children}</AnimateSharedLayout>
-                </form>
-            </FormProvider>
-        );
-    },
-);
+export default function Form<T>(props: BkFormProps<T>) {
+    const { children, formRef, onSubmit, useFormMethods, ...otherProps } =
+        props;
+    const methods = useForm({
+        ...(useFormMethods || { mode: 'onChange' }),
+    });
 
-Form.displayName = 'Form';
+    return (
+        <FormProvider {...methods}>
+            <form
+                noValidate
+                onSubmit={methods.handleSubmit(onSubmit)}
+                ref={formRef}
+                {...otherProps}>
+                <AnimateSharedLayout>{children}</AnimateSharedLayout>
+            </form>
+        </FormProvider>
+    );
+}
 
-export default Form;
+Form.displayName = 'BkForm';

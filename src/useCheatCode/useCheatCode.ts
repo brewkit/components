@@ -39,6 +39,7 @@ function useCheatCode(callback: () => void, { code = defaultCode } = {}) {
       timer = null;
     }
     /** create a new timer */
+     // @ts-ignore:
     timer = setTimeout(() => (inputList = []), 2000);
   };
 
