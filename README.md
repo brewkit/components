@@ -109,7 +109,7 @@ export default function MyApp() {
 
 ## Palette
 
-Material's theming philosophy comes with opinionated approach in regards to dark/light variants. In some cases you just need to bind colors to either `dark`, or 'light' property of for example `primary' keys. Unfortunately this is not flexibile enough. Much of those stuff is addressed and fixed in MUI 5, but we need to get by with version 4 for now. By utilizng a `createCervezaTheme` we are now customizing brand colors to mimic the ones we already used but in a predictible manner by supplying our `defaultTheme` which has its own palette definitions.
+Material's theming philosophy comes with opinionated approach in regards to dark/light variants. In some cases you just need to bind colors to either `dark`, or 'light' property of for example `primary` keys. Unfortunately this is not flexibile enough. Much of those stuff is addressed and fixed in MUI 5, but we need to get by with version 4 for now. By utilizng a `createCervezaTheme` we are now customizing brand colors to mimic the ones we already used but in a predictible manner by supplying our `defaultTheme` which has its own palette definitions.
 
 ```tsx
 // defaultTheme.js
