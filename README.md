@@ -3,6 +3,7 @@
 </p>
 
 ---
+
 An easy-to-theme design system for creating impactful UIs using React and TypeScript.
 
 ---
@@ -37,37 +38,46 @@ An easy-to-theme design system for creating impactful UIs using React and TypeSc
     </a>
 </p>
 
-## What is this?
+
+## What Is This?
 
 Brewkit is a collection of React components and tools with a focus on UX and DX. It can be thought of as a superset of
 Material-UI – MUI at the foundation, but with additional components, abstractions, and tooling layered on top.
-Brewkit relies on `@material-ui@4.` version, newer major releases are not compatible.
-
-## What is changed ?
-Complete changelog is underway, some of the changes include
- - Styles philosophy and structure went through a major rewrite, ditching `@brewkit/themes` in favor of local styling API - `createCervezaTheme`. Old version used style overrides exclusively (which is still necessary in some components), but it became an overhead in maintenance, due to overwhelming, and unnecessary bloated file structure, cumbersome way of defining styles and default props
- - All the default props are defined in-component via ES6 default parameters + object spread (in contrast to, `overrides: { props: { ... } }`)
- - .types files are ommited from components since before it was producing and empty export file in production, which resulted in bigger bundle size
- - Cerveza theme palette is now much smaller, removing much of the unused colors
- - All Cerveza theme colors are now avaiable in `makeStyles`, via `palette` prop.
- - Sizes and spacing are also now available in `palette` in constrast to manual import
- - Styles and Props types are prefixed with `Bk` letters for easier debuging, and to differentiate Brewkit from Material's imports.
- - Most of the components are made more Typescript friendly to custom classes used in brewkit. Also all the classes are customizable which wasn't the case before
- - Few more components wrappers are imported from Material
- - Much of the Typescript errors fixed
-
-## What this means to SnapOne?
-Brewkit is an open source project that is started by our beloved friend and mentor Lawren Anderson. As this is an open source project (no one is using this lol), its main purpose is to unify all OVRC styling solutions over all projects to a recognizable brand. It will ease te job of developers, designers, and QA staff with strict rules when approaching the look, the feel and overall user experience of people using, and developing it.
-
-## What about storybook?
-We have plans for new Storybook UI created from scratch that will much better underline the philosophy, and goal of Brewkit. It still exists in the repo, currently not working due to massive changes in components. It will be fixed in next few releases only to serve its purpose until new one is deployed.
+Brewkit relies on verson 4 of MUI (`@material-ui@4.x`), newer major releases are not compatible.
 
 
-## First steps
+## What Changed?
 
-Brewkit utilizes Material's styles JSS in CSS solutions, its just a ready to use customizable theme in light/dark variations. Api is designed for easy customization.
+A complete changelog is underway, but some of the changes include:
 
-### Basic example
+- The philosophy and structure of our style-system went through a major rewrite, ditching `@brewkit/themes` in favor of local styling API - `createCervezaTheme`. The old version used style overrides exclusively (which is still necessary in some components), but it caused unnecessary overhead in maintenance, mostly due to an overwhelming (and unnecessarily bloated) file structure caused by the cumbersome way we used to define styles and default props.
+- All of the default props are defined in-component via ES6 default parameters + object spread (as opposed to `overrides: { props: { ... } }`).
+- `.types` files are now omitted from components, since producing an empty export file in production resulted in bigger bundle size.
+- The Cerveza theme palette is now much smaller, removing most of the unused colors.
+- All Cerveza theme colors are now avaiable in `makeStyles`, via the `palette` prop.
+- Sizes and spacing are also now available in `palette`, rather tha having to be imported manually.
+- Styles and Props types are prefixed with `Bk` letters for easier debuging, and to differentiate Brewkit from Material's imports.
+- Most of the components are made more Typescript friendly via the custom classes used in brewkit (ad all of the classes are now customizable).
+- A few more components wrappers are imported from Material.
+- Most of the Typescript errors have been addressed.
+
+
+## What Does This Mean to SnapOne?
+
+Brewkit is an open source project that is started by our beloved friend and mentor Lawren Anderson. As this is an open source project, its main purpose is to unify all of the OVRC styling solutions over all projects into a single recognizable brand. It will ease the job of developers, designers, and QA staff with strict rules concerning the look, feel, and overall user experience it creates for our cusomers.
+
+
+## What About Storybook?
+
+We have plans for a new Storybook UI created from scratch that will better align with the philosophies and goals of Brewkit. The current version of Storybook is still in the repo, although it don't currently work due to the recent changes in our components. It will be fixed soon, and will be replaced by our new system sometime after that.
+
+
+## First Steps
+
+Brewkit utilizes Material's "JSS in CSS" solution, and comes with a ready to use customizable theme in light/dark variations. Additionaly, the API is designed for easy customization.
+
+
+### Basic Example
 
 ```tsx
 import React from 'react';
@@ -86,7 +96,7 @@ export default function MyApp() {
 
 ```
 
-As this is not much flexibile, more realistic approach would be something like
+As this is not very flexibile, a more realistic approach may be something like this:
 
 ```tsx
 import React from 'react';
@@ -108,9 +118,10 @@ export default function MyApp() {
 }
 ```
 
+
 ## Palette
 
-Material's theming philosophy comes with opinionated approach in regards to dark/light variants. In some cases you just need to bind colors to either `dark`, or 'light' property of for example `primary` keys. Unfortunately this is not flexibile enough. Much of those stuff is addressed and fixed in MUI 5, but we need to get by with version 4 for now. By utilizng a `createCervezaTheme` we are now customizing brand colors to mimic the ones we already used but in a predictible manner by supplying our `defaultTheme` which has its own palette definitions.
+Material's theming philosophy carries with it an opinionated approach regarding dark/light variants. In some cases, you just need to bind colors to either the `dark` or `light` property of a `primary` key. Unfortunately, this is not flexibile enough. Many of these issues were addressed and fixed in MUI 5, but since we need to get by with version 4 for now, we needed to come up witth a different solution. By utilizng `createCervezaTheme`, we are now allow customized brand colors to mimic the ones we already have in place, handled in a predictible manner by supplying our `defaultTheme` which has its own palette definitions.
 
 ```tsx
 // defaultTheme.js
@@ -166,17 +177,19 @@ export const cervezaPalette = {
 
 ```
 
-So `createCervezaTheme` just does this
+So `createCervezaTheme` just does this:
 
 ```tsx
   createCervezaTheme('dark', defaultTheme, ...argsProvidedToCreateTheme)
 ```
 
-So it is customizable in a way, if we decide to change brand colors (for whatever reason), or introduce additional themes, it will be fast and easy without needing to tackle component geometry definitions. If we do need to do that we will probably build a new library :)
+As you can see, this customizability allows us to make style changes as needed, so if the brand colors change or we have a need to introduce additional themes, it will be fast and easy to do without needing to tackle component geometry definitions.
 
-## What we need to do now?
+
+## Next Steps
+
  1. Deploy alpha release of components on npm (in progress)
- 2. Test this release in battle projects (ovrc-ui, driver repos, composer etc) (in progress on ovrc-ui)
+ 2. Test this release in battle projects, like ovrc-ui, driver repos, composer, etc. (in progress on ovrc-ui)
  3. 100% CC with new components
  4. Finish styles overrides for all components via `classes` prop
  5. New storybook (in progress)
