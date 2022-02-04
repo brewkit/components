@@ -10,8 +10,7 @@ module.exports = {
     collectCoverage: true,
     coverageReporters: [
         'json',
-        'json-summary',
-        'text'
+        ['text', { skipFull: true }]
     ],
     coverageDirectory: 'coverage',
     coveragePathIgnorePatterns: [
@@ -21,10 +20,10 @@ module.exports = {
         '/.build/'
     ],
     collectCoverageFrom: [
-        '<rootDir>/src/components/**/*.tsx',
-        '!<rootDir>/src/components/**/index.ts',
-        '!<rootDir>/src/components/**/*.story.tsx',
-        '!<rootDir>/src/components/**/stories.tsx',
+        '<rootDir>/src/**/*.tsx',
+        '!<rootDir>/src/**/index.ts',
+        '!<rootDir>/src/**/*.story.tsx',
+        '!<rootDir>/src/**/stories.tsx',
     ],
     errorOnDeprecated: true,
     moduleFileExtensions: [

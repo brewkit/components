@@ -1,12 +1,5 @@
 {
     "extends": "../tsconfig.json",
-    "include": ["../src/components/index.tsx"],
-    "exclude": [
-        "node_modules",
-        "build",
-        "scripts",
-        "../src/**/stories.*",
-        "../src/**/types.*",
-        "../src/**/test.*"
-    ]
+    "include": ["../src/index.ts"],
+    "exclude": ["node_modules", "build", "scripts", "../src/**/test.*"]
 }
