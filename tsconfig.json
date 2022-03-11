@@ -19,7 +19,7 @@
                 "exclude": ["*"]
             }
         ],
-        "types": ["webpack-env", "jest", "@testing-library/jest-dom"],
+        "types": ["webpack-env", "jest", "@testing-library/jest-dom", "node"],
         "removeComments": true,
         "strict": true,
         "noImplicitAny": true,
@@ -33,9 +33,5 @@
         "themes/cerveza-dark/index.ts",
         ".eslintrc.js"
     ],
-    "exclude": [
-        "node_modules",
-        "build",
-        "scripts"
-    ]
+    "exclude": ["node_modules", "build", "scripts"]
 }
